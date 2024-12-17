@@ -8,9 +8,21 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Lexend", "sans-serif"],
+      },
+      fontSize: {
+        h1: ["4rem", { lineHeight: "5rem" }],
+        h2: ["2rem", { lineHeight: "2rem" }],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+
+        ravenci: {
+          dark: "#1b1b1b",
+          primary: "#7f1670",
+        },
       },
     },
   },
