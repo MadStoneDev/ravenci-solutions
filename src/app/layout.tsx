@@ -1,8 +1,14 @@
+import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
+
+import { IconMenu } from "@tabler/icons-react";
 
 import { Lexend } from "next/font/google";
 
 import "./globals.css";
+import MainNavigation from "@/components/main-navigation";
+import MainFooter from "@/components/main-footer";
 
 const lexend = Lexend({
   variable: "--font-lexend",
@@ -22,7 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexend.variable} antialiased`}>{children}</body>
+      <body className={`${lexend.variable} antialiased`}>
+        <MainNavigation />
+        {children}
+        <MainFooter />
+      </body>
     </html>
   );
 }
