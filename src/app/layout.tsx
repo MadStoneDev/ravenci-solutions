@@ -1,8 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
-
-import { IconMenu } from "@tabler/icons-react";
 
 import { Lexend } from "next/font/google";
 
@@ -11,8 +7,9 @@ import MainNavigation from "@/components/main-navigation";
 import MainFooter from "@/components/main-footer";
 
 const lexend = Lexend({
-  variable: "--font-lexend",
-});
+    variable: "--font-lexend",
+    subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title:
