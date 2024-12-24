@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexend.variable} antialiased`}>
+      <body className={`relative ${lexend.variable} antialiased`}>
         <MainNavigation />
         {children}
         <MainFooter />
