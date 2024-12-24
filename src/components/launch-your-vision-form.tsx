@@ -1,7 +1,9 @@
 ﻿"use client";
 
-import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+
+import { sendContactForm } from "@/lib/send-contact-form";
 
 export default function LaunchYourVisionForm() {
   // States
@@ -47,6 +49,17 @@ export default function LaunchYourVisionForm() {
     }
   };
 
+  async function handleSubmit() {
+    try {
+      await sendContactForm(formData);
+      
+      // Handle success (e.g., show success message, reset form)
+    } catch (error) {
+      // Handle error (e.g., show error message)
+      console.error("Failed to send message:", error);
+    }
+  }
+
   // Effects
   useEffect(() => {
     if (textAreaRef.current) {
@@ -56,7 +69,7 @@ export default function LaunchYourVisionForm() {
   }, [formData.message]);
 
   return (
-    <form className={`mt-16 flex flex-col w-full max-w-full lg:max-w-2xl`}>
+    <form className={`mt-16 flex flex-col w-full max-w-full lg:max-w-2xl`} action={handleSubmit}>
       <div className={`w-full`}>
         <input
           type="text"
