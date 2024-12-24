@@ -71,7 +71,7 @@ export default function MainNavigation() {
     <>
       {isMenuOpen && (
         <section
-          className={`fixed top-0 ${showMenu ? "right-0 pl-24" : "right-full pl-0"} left-0 min-h-dvh flex flex-col justify-center items-start gap-y-6 bg-white z-40 transition-all duration-300 ease-in-out`}
+          className={`fixed top-0 ${showMenu ? "right-0 pl-10 md:pl-24" : "right-full pl-0"} left-0 min-h-dvh flex flex-col justify-center items-start gap-y-6 bg-white z-40 transition-all duration-300 ease-in-out`}
         >
           <Link
             href={`/`}
@@ -84,7 +84,7 @@ export default function MainNavigation() {
               className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
             ></div>
             <IconHome
-              className={`text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
+              className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
             />
             <span
               className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
@@ -104,7 +104,7 @@ export default function MainNavigation() {
               className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
             ></div>
             <IconMail
-              className={`text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
+              className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
             />
             <span
               className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
