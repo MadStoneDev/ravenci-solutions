@@ -114,9 +114,10 @@ export default function MainNavigation() {
           </Link>
         </section>
       )}
+
       <nav
         id={`menu`}
-        className={`pl-3 pr-5 md:px-12 ${
+        className={`pointer-events-none pl-3 pr-5 md:px-12 ${
           isAtTop ? "py-8" : "py-4"
         } fixed top-0 flex justify-between items-center w-full z-50 transition-all duration-300 ease-in-out`}
       >
@@ -124,7 +125,7 @@ export default function MainNavigation() {
         <Link
           ref={logoRef}
           href={`/`}
-          className={`flex items-center gap-1 z-10`}
+          className={`pointer-events-auto flex items-center gap-1 z-10`}
         >
           <Image
             src={
@@ -151,7 +152,7 @@ export default function MainNavigation() {
           aria-label={`Open menu`}
           aria-expanded={isMenuOpen}
           aria-controls={`menu`}
-          className={`relative w-7 h-7 transition-all duration-300 ease-in-out`}
+          className={`pointer-events-auto relative w-7 h-7 transition-all duration-300 ease-in-out`}
           onClick={() => handleMenuClick(!isMenuOpen)}
         >
           <IconMenu
