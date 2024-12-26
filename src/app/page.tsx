@@ -9,6 +9,7 @@ import { CLIENT_LOGOS } from "@/lib/our-clients";
 import { IconPlayerPause, IconPlayerPauseFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import { Route } from "next";
+import ServicesShowcase from "@/components/services-showcase";
 
 export default function Home() {
   return (
@@ -60,107 +61,7 @@ export default function Home() {
           </div>
         </article>
 
-        <article className={`col-span-12 lg:col-span-4 flex justify-center`}>
-          <div
-            className={`py-3 flex flex-col justify-center w-full max-w-md h-full min-h-[510px] bg-white rounded-3xl`}
-          >
-            <div
-              className={`cursor-pointer group relative px-5 flex items-center justify-end h-6`}
-            >
-              <IconPlayerPause
-                className={`absolute top-1/2 -translate-y-1/2 group-hover:opacity-0 transition-all duration-300 ease-in-out`}
-              />
-              <IconPlayerPauseFilled
-                className={`absolute top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out`}
-              />
-            </div>
-
-            <section
-              className={`py-3 flex-grow flex flex-col justify-center gap-3 w-full`}
-            >
-              <div className={`overflow-hidden`}>
-                <div className={`flex gap-3 w-fit`}>
-                  <article
-                    className={`w-[200px] h-[150px] bg-neutral-200`}
-                  ></article>
-
-                  <article
-                    className={`w-[200px] h-[150px] bg-neutral-200`}
-                  ></article>
-
-                  <article
-                    className={`w-[200px] h-[150px] bg-neutral-200`}
-                  ></article>
-
-                  <article
-                    className={`w-[200px] h-[150px] bg-neutral-200`}
-                  ></article>
-                </div>
-              </div>
-
-              <div className={`overflow-hidden`}>
-                <div className={`flex gap-3 w-fit`}>
-                  <article
-                    className={`w-[200px] h-[150px] bg-neutral-200`}
-                  ></article>
-
-                  <article
-                    className={`w-[200px] h-[150px] bg-neutral-200`}
-                  ></article>
-
-                  <article
-                    className={`w-[200px] h-[150px] bg-neutral-200`}
-                  ></article>
-
-                  <article
-                    className={`w-[200px] h-[150px] bg-neutral-200`}
-                  ></article>
-                </div>
-              </div>
-            </section>
-
-            <section className={`pb-5 px-5`}>
-              <h3 className={`text-2xl leading-7`}>
-                Business Website Development
-              </h3>
-            </section>
-
-            <section className={`px-5 grid grid-cols-3 gap-1 w-full h-2`}>
-              <article
-                className={`relative w-full h-full bg-neutral-200 rounded-full overflow-hidden`}
-              >
-                <div
-                  className={`absolute top-0 left-0 h-full bg-ravenci-primary`}
-                  style={{
-                    width: "100%",
-                  }}
-                ></div>
-              </article>
-
-              <article
-                className={`relative w-full h-full bg-neutral-200 rounded-full overflow-hidden`}
-              >
-                <div
-                  className={`absolute top-0 left-0 h-full bg-ravenci-primary`}
-                  style={{
-                    width: "60%",
-                  }}
-                ></div>
-              </article>
-
-              <article
-                className={`relative w-full h-full bg-neutral-200 rounded-full overflow-hidden`}
-              >
-                <div
-                  className={`absolute top-0 left-0 h-full bg-ravenci-primary`}
-                  style={{
-                    width: "0%",
-                  }}
-                ></div>
-              </article>
-            </section>
-          </div>
-        </article>
+        <ServicesShowcase />
       </section>
 
       {/* Video */}

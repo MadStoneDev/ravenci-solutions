@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8f457241-9352-4e0c-9ff0-672a555261b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main-navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main-navigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -43,7 +43,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\richa\\AppData\\Roaming\\npm\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "settings.editor.selected.configurable": "editor.stickyLines",
     "ts.external.directory.path": "D:\\Development_Sandbox\\ravenci-solutions\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -57,7 +57,8 @@
       <option name="presentableId" value="Default" />
       <updated>1734883853966</updated>
       <workItem from="1734883856209" duration="3951000" />
-      <workItem from="1734995039749" duration="10560000" />
+      <workItem from="1734995039749" duration="12415000" />
+      <workItem from="1735220654126" duration="4394000" />
     </task>
     <servers />
   </component>
