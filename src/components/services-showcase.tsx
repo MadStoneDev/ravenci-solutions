@@ -276,10 +276,10 @@ export default function ServicesShowcase() {
 
   return (
     <article
-      className={`col-span-12 lg:col-span-4 flex justify-center items-end max-w-[350px]`}
+      className={`col-span-12 lg:col-span-4 flex justify-center lg:justify-end items-end`}
     >
       <div
-        className={`py-3 flex flex-col justify-center items-start w-full max-w-md h-full min-h-[510px] bg-white rounded-3xl`}
+        className={`py-3 flex flex-col justify-center items-start w-full max-w-[350px] h-full min-h-[510px] bg-white rounded-3xl`}
       >
         <button
           type="button"
