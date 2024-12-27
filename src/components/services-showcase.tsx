@@ -20,80 +20,110 @@ interface ServiceItem {
 }
 
 export default function ServicesShowcase() {
-  const ourServices = [
+  const ourServices: ServiceItem[] = [
     {
       title: "Business Website Development",
       projectsTopRow: [
-        { name: "Top 1" },
-        { name: "Top 2" },
-        { name: "Top 3" },
-        { name: "Top 4" },
+        {
+          name: "Peninsula Homes",
+          image: "/showcase/Peninsula Homes Showcase.png",
+        },
+        {
+          name: "SAC Consulting",
+          image: "/showcase/SAC Consulting Showcase.png",
+        },
+        {
+          name: "Nikita Morell",
+          image: "/showcase/Nikita Morell Showcase.png",
+        },
       ],
       projectsBottomRow: [
-        { name: "Bottom 1" },
-        { name: "Bottom 2" },
-        { name: "Bottom 3" },
-        { name: "Bottom 4" },
+        {
+          name: "Auburn Friends",
+          image: "/showcase/Auburn Friends Showcase.png",
+        },
+        {
+          name: "Covenant Security Solutions",
+          image: "/showcase/Covenant Security Solutions Showcase.png",
+        },
+        {
+          name: "Coast Remedial Solutions",
+          image: "/showcase/Coast Remedial Solutions Showcase.png",
+        },
+        {
+          name: "Insight Medical Careers",
+          image: "/showcase/Insight Medical Careers Showcase.png",
+        },
+        {
+          name: "Intercorp",
+          image: "/showcase/Intercorp Developments Showcase.png",
+        },
+        // {
+        //   name: "Willis Electrical QLD",
+        //   image: "/showcase/WEQ Showcase.png",
+        // },
       ],
     },
     {
       title: "Web Platform Development",
       projectsTopRow: [
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
+        { name: "QRmory", image: "/showcase/QRmory Showcase.png" },
+        { name: "Pixecute", image: "/showcase/Pixecute Showcase.png" },
+        {
+          name: "The Watchman Reviews",
+          image: "/showcase/The Watchman Reviews Showcase.png",
+        },
       ],
-      projectsBottomRow: [
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-      ],
+      projectsBottomRow: [],
     },
+    // {
+    //   title: "Mobile App Development",
+    //   projectsTopRow: [
+    //     { name: "Coming Soon" },
+    //     { name: "Coming Soon" },
+    //     { name: "Coming Soon" },
+    //     { name: "Coming Soon" },
+    //   ],
+    //   projectsBottomRow: [
+    //     { name: "Coming Soon" },
+    //     { name: "Coming Soon" },
+    //     { name: "Coming Soon" },
+    //     { name: "Coming Soon" },
+    //   ],
+    // },
     {
-      title: "Mobile App Development",
+      title: "eCommerce Development",
       projectsTopRow: [
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
+        { name: "Cadeaurable", image: "/showcase/Cadeaurable Showcase.png" },
+        { name: "Vipertac", image: "/showcase/Vipertac Showcase.png" },
       ],
-      projectsBottomRow: [
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-      ],
-    },
-    {
-      title: "Web Platform Development",
-      projectsTopRow: [
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-      ],
-      projectsBottomRow: [
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-      ],
+      projectsBottomRow: [],
     },
     {
       title: "Web Maintenance and Hosting",
       projectsTopRow: [
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
+        {
+          name: "Peninsula Homes",
+          image: "/showcase/Peninsula Homes Showcase.png",
+        },
+        {
+          name: "Nikita Morell",
+          image: "/showcase/Nikita Morell 2 Showcase.png",
+        },
+        {
+          name: "SAC Consulting",
+          image: "/showcase/SAC Consulting 2 Showcase.png",
+        },
       ],
       projectsBottomRow: [
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
-        { name: "Coming Soon" },
+        {
+          name: "Intercorp",
+          image: "/showcase/Intercorp Developments Showcase.png",
+        },
+        {
+          name: "Coast Remedial Solutions",
+          image: "/showcase/Coast Remedial Solutions Showcase.png",
+        },
       ],
     },
   ];
@@ -173,27 +203,22 @@ export default function ServicesShowcase() {
   };
 
   useEffect(() => {
-    const projectWidth = 200; // width of each project
-    const gapWidth = 12; // gap-3 = 12px in Tailwind
-    const numberOfProjects = currentService.projectsTopRow.length;
-    const totalDistance =
-      projectWidth * numberOfProjects + gapWidth * (numberOfProjects - 1);
-
     const animateScroll = (timestamp: number) => {
       if (!scrollStartTimeRef.current) scrollStartTimeRef.current = timestamp;
 
       const elapsed =
         timestamp - scrollStartTimeRef.current + scrollPausedTimeRef.current;
+
       const topSpeed = 0.03;
       const bottomSpeed = 0.07;
 
       if (!isPaused) {
         setTopTranslate(() => {
-          return -(elapsed * topSpeed) % totalDistance;
+          return -(elapsed * topSpeed);
         });
 
         setBottomTranslate(() => {
-          return -(elapsed * bottomSpeed) % totalDistance;
+          return -(elapsed * bottomSpeed);
         });
 
         scrollAnimationFrameRef.current = requestAnimationFrame(animateScroll);
@@ -252,11 +277,11 @@ export default function ServicesShowcase() {
   return (
     <article className={`col-span-12 lg:col-span-4 flex justify-center`}>
       <div
-        className={`py-3 flex flex-col justify-center items-end w-full max-w-md h-full min-h-[510px] bg-white rounded-3xl`}
+        className={`py-3 flex flex-col justify-center items-start w-full max-w-md h-full min-h-[510px] bg-white rounded-3xl`}
       >
         <button
           type="button"
-          className={`cursor-pointer group relative mr-5 flex items-center justify-end w-fit h-6`}
+          className={`cursor-pointer group relative self-end mr-5 flex items-center justify-end w-fit h-6`}
           onClick={togglePause}
         >
           {isPaused ? (
@@ -281,21 +306,26 @@ export default function ServicesShowcase() {
         </button>
 
         <section
-          className={`py-3 flex-grow flex flex-col justify-center gap-3 w-full`}
+          className={`py-6 flex-grow flex flex-col justify-start gap-3 w-full`}
         >
           <div className={`overflow-hidden`}>
             <div
               className={`flex gap-3 w-fit transition-transform duration-100 ease-linear`}
               style={{ transform: `translateX(${topTranslate}px)` }}
             >
-              {topProjects.map((project, index) => (
-                <article
-                  key={`top-projects-${index}`}
-                  className={`grid place-content-center w-[200px] h-[150px] bg-neutral-200 font-light italic`}
-                >
-                  {project.name}
-                </article>
-              ))}
+              {topProjects.length &&
+                topProjects.map((project, index) => (
+                  <article
+                    key={`top-projects-${index}`}
+                    className={`relative grid place-content-center w-[200px] h-[150px] bg-neutral-200 font-light italic`}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className={`absolute top-0 left-0 h-full w-full object-cover`}
+                    />
+                  </article>
+                ))}
             </div>
           </div>
 
@@ -304,14 +334,19 @@ export default function ServicesShowcase() {
               className={`flex gap-3 w-fit transition-transform duration-100 ease-linear`}
               style={{ transform: `translateX(${bottomTranslate}px)` }}
             >
-              {bottomProjects.map((project, index) => (
-                <article
-                  key={`bottom-projects-${index}`}
-                  className={`grid place-content-center w-[200px] h-[150px] bg-neutral-200 font-light italic`}
-                >
-                  {project.name}
-                </article>
-              ))}
+              {bottomProjects.length &&
+                bottomProjects.map((project, index) => (
+                  <article
+                    key={`bottom-projects-${index}`}
+                    className={`relative grid place-content-center w-[200px] h-[150px] bg-neutral-200 font-light italic`}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className={`absolute top-0 left-0 h-full w-full object-cover`}
+                    />
+                  </article>
+                ))}
             </div>
           </div>
         </section>
