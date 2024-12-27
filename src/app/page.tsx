@@ -6,7 +6,6 @@ import TestimonialsSingle from "@/components/testimonials-single";
 
 import { CLIENT_LOGOS } from "@/lib/our-clients";
 
-import { IconPlayerPause, IconPlayerPauseFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import { Route } from "next";
 import ServicesShowcase from "@/components/services-showcase";
@@ -48,16 +47,16 @@ export default function Home() {
               ></div>
             </Link>
 
-            <button
-              className={`group relative px-6 py-3 rounded-full text-white transition-all duration-300 ease-in-out`}
-            >
-              <span className={`z-20`}>Work</span>
+            {/*<button*/}
+            {/*  className={`group relative px-6 py-3 rounded-full text-white transition-all duration-300 ease-in-out`}*/}
+            {/*>*/}
+            {/*  <span className={`z-20`}>Work</span>*/}
 
-              {/* Border */}
-              <div
-                className={`absolute top-0 bottom-0 left-0 right-0 rounded-full border-2 border-transparent group-hover:border-white z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-            </button>
+            {/*  /!* Border *!/*/}
+            {/*  <div*/}
+            {/*    className={`absolute top-0 bottom-0 left-0 right-0 rounded-full border-2 border-transparent group-hover:border-white z-10 transition-all duration-500 ease-in-out`}*/}
+            {/*  ></div>*/}
+            {/*</button>*/}
           </div>
         </article>
 
@@ -154,15 +153,6 @@ export default function Home() {
           <Accordion
             items={[
               {
-                title: `Design`,
-                content: `<p class="mb-4 text-neutral-100">A Strategic Approach to Digital Development: Building Stable, Scalable, and Reliable Solutions</p><p class="text-neutral-100">Wireframing</p>
-<p class="mb-4 text-neutral-400/90">Wireframing is the structural blueprint which shapes how users will interact with your digital platform. This planning stage ensures we build interfaces that serve your needs while delivering intuitive user experiences.</p>
-<p class="text-neutral-100">UI Design (User Interface)</p>
-<p class="mb-4 text-neutral-400/90">Bringing your wireframes to life is what UI Design is all about. Through carefully crafted visual elements, everything from button styles and color schemes to typography and spacing, our design for your product works together to create a cohesive, engaging interface.</p>
-<p class="text-neutral-100">UX Design (User Experience)</p>
-<p class="mb-4 text-neutral-400/90">Accompanying UI Design, the UX design focuses on how users navigate and interact with your platform. By mapping user journeys and optimizing flows, we create experiences that feel natural and keep users engaged, leading to better conversion rates and user satisfaction.</p>`,
-              },
-              {
                 title: `Development`,
                 content: `<p class="mb-4 text-neutral-100">Strategic Digital Development: Engineering Solutions Built to Last</p>
 
@@ -178,6 +168,15 @@ export default function Home() {
 <p class="text-neutral-100">API Integration & Development</p>
 <p class="mb-4 text-neutral-400/90">Connect your platform with third-party services or create custom APIs to power your applications. We ensure smooth data flow between systems while maintaining security and performance standards.</p>
 `,
+              },
+              {
+                title: `Design`,
+                content: `<p class="mb-4 text-neutral-100">A Strategic Approach to Digital Development: Building Stable, Scalable, and Reliable Solutions</p><p class="text-neutral-100">Wireframing</p>
+<p class="mb-4 text-neutral-400/90">Wireframing is the structural blueprint which shapes how users will interact with your digital platform. This planning stage ensures we build interfaces that serve your needs while delivering intuitive user experiences.</p>
+<p class="text-neutral-100">UI Design (User Interface)</p>
+<p class="mb-4 text-neutral-400/90">Bringing your wireframes to life is what UI Design is all about. Through carefully crafted visual elements, everything from button styles and color schemes to typography and spacing, our design for your product works together to create a cohesive, engaging interface.</p>
+<p class="text-neutral-100">UX Design (User Experience)</p>
+<p class="mb-4 text-neutral-400/90">Accompanying UI Design, the UX design focuses on how users navigate and interact with your platform. By mapping user journeys and optimizing flows, we create experiences that feel natural and keep users engaged, leading to better conversion rates and user satisfaction.</p>`,
               },
               // {
               //   title: `Branding`,
