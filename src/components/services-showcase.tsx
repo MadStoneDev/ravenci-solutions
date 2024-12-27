@@ -275,7 +275,9 @@ export default function ServicesShowcase() {
   }, [isPaused, ourServices.length]);
 
   return (
-    <article className={`col-span-12 lg:col-span-4 flex justify-center`}>
+    <article
+      className={`col-span-12 lg:col-span-4 flex justify-center items-end max-w-[350px]`}
+    >
       <div
         className={`py-3 flex flex-col justify-center items-start w-full max-w-md h-full min-h-[510px] bg-white rounded-3xl`}
       >
