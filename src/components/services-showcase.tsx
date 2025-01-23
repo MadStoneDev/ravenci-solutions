@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+
 import {
   IconPlayerPause,
   IconPlayerPauseFilled,
@@ -127,152 +128,144 @@ export default function ServicesShowcase() {
       ],
     },
   ];
-  const DURATION = 10000;
+
+  // Constants
+  const TIMER_DURATION = 10000;
 
   // States
-  const [progress, setProgress] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [timerRunning, setTimerRunning] = useState(true);
+  const [timerProgress, setTimerProgress] = useState(0);
   const [topTranslate, setTopTranslate] = useState(0);
   const [bottomTranslate, setBottomTranslate] = useState(0);
 
+  // Variables
   const currentService = ourServices[currentIndex];
+
   const topProjects = [
     ...currentService.projectsTopRow,
     ...currentService.projectsTopRow,
+    ...currentService.projectsTopRow,
   ];
+
   const bottomProjects = [
+    ...currentService.projectsBottomRow,
     ...currentService.projectsBottomRow,
     ...currentService.projectsBottomRow,
   ];
 
   // Refs
-  const startTimeRef = useRef<number | null>(null);
-  const pausedTimeRef = useRef<number>(0);
-  const scrollStartTimeRef = useRef<number | null>(null);
-  const scrollPausedTimeRef = useRef<number>(0);
-  const animationFrameRef = useRef<number>(0);
-  const scrollAnimationFrameRef = useRef<number>(0);
-  const timerStartRef = useRef<number | null>(null);
+  const blockTimer = useRef<NodeJS.Timeout | null>(null);
+  const startTime = useRef<number | null>(null);
+  const pausedTime = useRef<number | null>(null);
+  const scrollStartTime = useRef<number | null>(null);
+  const scrollPausedTime = useRef<number>(0);
 
   // Functions
-  const animate = (timestamp: number) => {
-    if (!startTimeRef.current) startTimeRef.current = timestamp;
+  const resetTimer = useCallback(
+    (shouldReset = true) => {
+      if (blockTimer.current) {
+        clearInterval(blockTimer.current);
+      }
 
-    const elapsed = timestamp - startTimeRef.current + pausedTimeRef.current;
-    const newProgress = Math.min((elapsed / DURATION) * 100, 100);
+      if (shouldReset) {
+        setTimerProgress(0);
+        startTime.current = Date.now();
+        pausedTime.current = null;
+      } else if (pausedTime.current !== null) {
+        startTime.current = Date.now() - pausedTime.current;
+        pausedTime.current = null;
+      }
 
-    setProgress(newProgress);
+      blockTimer.current = setInterval(() => {
+        if (startTime.current === null) return;
 
-    if (elapsed < DURATION && !isPaused) {
-      animationFrameRef.current = requestAnimationFrame(animate);
-    }
+        const elapsed = Date.now() - startTime.current;
+        const progress = Math.min((elapsed / TIMER_DURATION) * 100, 100);
+        setTimerProgress(progress);
+
+        if (progress >= 100) {
+          setCurrentIndex((prev) => (prev + 1) % ourServices.length);
+          resetTimer();
+        }
+      }, 50);
+    },
+    [ourServices.length],
+  );
+
+  const handleIndicatorClick = (index: number) => {
+    setCurrentIndex(index);
+    resetTimer(true);
   };
 
   const togglePause = () => {
-    setIsPaused((prev) => {
-      if (!prev) {
-        // Pausing
-        // Store how much time has elapsed in this cycle
-        if (timerStartRef.current) {
-          pausedTimeRef.current = performance.now() - timerStartRef.current;
-        }
-
-        if (scrollStartTimeRef.current) {
-          scrollPausedTimeRef.current =
-            performance.now() - scrollStartTimeRef.current;
-        }
-
-        // Clear all animations
-        if (animationFrameRef.current)
-          cancelAnimationFrame(animationFrameRef.current);
-        if (scrollAnimationFrameRef.current)
-          cancelAnimationFrame(scrollAnimationFrameRef.current);
-
-        // Clear the timer start
-        timerStartRef.current = null;
-      } else {
-        // Resuming
-        // Resume from where we paused
-        timerStartRef.current = performance.now() - pausedTimeRef.current;
-        scrollStartTimeRef.current =
-          performance.now() - scrollPausedTimeRef.current;
+    if (timerRunning) {
+      if (blockTimer.current) {
+        clearInterval(blockTimer.current);
       }
-      return !prev;
-    });
+
+      if (startTime.current !== null) {
+        pausedTime.current = Date.now() - startTime.current;
+      }
+
+      scrollPausedTime.current = scrollStartTime.current
+        ? performance.now() - (scrollStartTime.current || 0)
+        : 0;
+
+      scrollStartTime.current = null;
+    } else {
+      resetTimer(false);
+      scrollStartTime.current = performance.now() - scrollPausedTime.current;
+    }
+
+    setTimerRunning(!timerRunning);
   };
 
+  // Effects
   useEffect(() => {
+    if (timerRunning) {
+      if (startTime.current !== null) {
+        resetTimer(false);
+      } else {
+        resetTimer(true);
+      }
+    }
+
+    return () => {
+      if (blockTimer.current) {
+        clearInterval(blockTimer.current);
+      }
+    };
+  }, [timerRunning, resetTimer]);
+
+  useEffect(() => {
+    setTopTranslate(0);
+    setBottomTranslate(0);
+    scrollStartTime.current = performance.now();
+    scrollPausedTime.current = 0;
+  }, [currentIndex]);
+
+  useEffect(() => {
+    if (!timerRunning) return undefined;
+
+    let animationFrameId: number;
+
     const animateScroll = (timestamp: number) => {
-      if (!scrollStartTimeRef.current) scrollStartTimeRef.current = timestamp;
-
-      const elapsed =
-        timestamp - scrollStartTimeRef.current + scrollPausedTimeRef.current;
-
-      const topSpeed = 0.03;
-      const bottomSpeed = 0.07;
-
-      if (!isPaused) {
-        setTopTranslate(() => {
-          return -(elapsed * topSpeed);
-        });
-
-        setBottomTranslate(() => {
-          return -(elapsed * bottomSpeed);
-        });
-
-        scrollAnimationFrameRef.current = requestAnimationFrame(animateScroll);
+      if (!scrollStartTime.current) {
+        scrollStartTime.current = timestamp;
       }
+
+      const elapsed = timestamp - scrollStartTime.current;
+      setTopTranslate(-(elapsed * 0.03));
+      setBottomTranslate(-(elapsed * 0.07));
+
+      animationFrameId = requestAnimationFrame(animateScroll);
     };
 
-    if (!isPaused) {
-      scrollStartTimeRef.current = null;
-      scrollAnimationFrameRef.current = requestAnimationFrame(animateScroll);
-    }
+    animationFrameId = requestAnimationFrame(animateScroll);
 
-    return () => {
-      if (scrollAnimationFrameRef.current) {
-        cancelAnimationFrame(scrollAnimationFrameRef.current);
-      }
-    };
-  }, [currentIndex, currentService.projectsTopRow.length, isPaused]);
-
-  useEffect(() => {
-    if (!isPaused) {
-      // Initialize timer start if not set
-      if (!timerStartRef.current) {
-        timerStartRef.current = performance.now();
-      }
-
-      const animateProgress = (timestamp: number) => {
-        if (!timerStartRef.current) return;
-
-        const elapsed = timestamp - timerStartRef.current;
-        const newProgress = Math.min((elapsed / DURATION) * 100, 100);
-
-        setProgress(newProgress);
-
-        if (elapsed >= DURATION) {
-          // Reset timer and move to next index
-          timerStartRef.current = performance.now();
-          setCurrentIndex((prev) => (prev + 1) % ourServices.length);
-          setProgress(0);
-        }
-
-        if (!isPaused) {
-          animationFrameRef.current = requestAnimationFrame(animateProgress);
-        }
-      };
-
-      animationFrameRef.current = requestAnimationFrame(animateProgress);
-    }
-
-    return () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
-  }, [isPaused, ourServices.length]);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [timerRunning]);
 
   return (
     <article
@@ -286,21 +279,21 @@ export default function ServicesShowcase() {
           className={`cursor-pointer group relative self-end mr-5 flex items-center justify-end w-fit h-6`}
           onClick={togglePause}
         >
-          {isPaused ? (
-            <>
-              <IconPlayerPlay
-                className={`absolute top-1/2 -translate-y-1/2 group-hover:opacity-0 transition-all duration-300 ease-in-out`}
-              />
-              <IconPlayerPlayFilled
-                className={`absolute top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out`}
-              />
-            </>
-          ) : (
+          {timerRunning ? (
             <>
               <IconPlayerPause
                 className={`absolute top-1/2 -translate-y-1/2 group-hover:opacity-0 transition-all duration-300 ease-in-out`}
               />
               <IconPlayerPauseFilled
+                className={`absolute top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out`}
+              />
+            </>
+          ) : (
+            <>
+              <IconPlayerPlay
+                className={`absolute top-1/2 -translate-y-1/2 group-hover:opacity-0 transition-all duration-300 ease-in-out`}
+              />
+              <IconPlayerPlayFilled
                 className={`absolute top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out`}
               />
             </>
@@ -315,7 +308,7 @@ export default function ServicesShowcase() {
               className={`flex gap-3 w-fit transition-transform duration-100 ease-linear`}
               style={{ transform: `translateX(${topTranslate}px)` }}
             >
-              {topProjects.length &&
+              {topProjects.length > 0 &&
                 topProjects.map((project, index) => (
                   <article
                     key={`top-projects-${index}`}
@@ -336,7 +329,7 @@ export default function ServicesShowcase() {
               className={`flex gap-3 w-fit transition-transform duration-100 ease-linear`}
               style={{ transform: `translateX(${bottomTranslate}px)` }}
             >
-              {bottomProjects.length &&
+              {bottomProjects.length > 0 &&
                 bottomProjects.map((project, index) => (
                   <article
                     key={`bottom-projects-${index}`}
@@ -363,16 +356,17 @@ export default function ServicesShowcase() {
           {ourServices.map((_, index) => (
             <article
               key={`indicator-${index}`}
-              className={`relative w-full h-full bg-neutral-200 rounded-full overflow-hidden`}
+              className={`cursor-pointer relative w-full h-full bg-neutral-200 hover:bg-ravenci-primary/30 rounded-full hover:scale-105 overflow-hidden transition-all duration-300 ease-in-out`}
+              onClick={() => handleIndicatorClick(index)}
             >
               <div
-                className={`absolute top-0 left-0 h-full bg-ravenci-primary transition-all duration-50 ease-linear`}
+                className={`absolute top-0 left-0 h-full bg-ravenci-primary transition-all duration-75 ease-in-out`}
                 style={{
                   width:
                     index < currentIndex
                       ? "100%"
                       : index === currentIndex
-                        ? `${progress}%`
+                        ? `${timerProgress}%`
                         : "0%",
                 }}
               />
