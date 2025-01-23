@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 
+import "./globals.css";
+
 import { Lexend } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import Script from "next/script";
+import MicrosoftClarity from "@/components/metrics-microsoft-clarity";
 
-import "./globals.css";
 import MainNavigation from "@/components/main-navigation";
 import MainFooter from "@/components/main-footer";
 import SpinningCircleText from "@/components/spinning-circle-text";
@@ -36,13 +37,7 @@ export default function RootLayout({
 
         <SpinningCircleText />
 
-        <Script id={`clarity-script`} strategy={`afterInteractive`}>
-          {`(function(c,l,a,r,i,t,y){
-                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "py6lstoq0x");`}
-        </Script>
+        <MicrosoftClarity />
       </body>
     </html>
   );
