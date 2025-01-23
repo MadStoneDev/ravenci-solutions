@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { Lexend } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "./globals.css";
 import MainNavigation from "@/components/main-navigation";
@@ -38,6 +39,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <GoogleAnalytics gaId={`G-8TL2E4F9CH`} />
       <body className={`relative ${lexend.variable} antialiased`}>
         <MainNavigation />
         {children}
