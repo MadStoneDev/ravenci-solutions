@@ -18,14 +18,14 @@ export default async function handler(
 
     const recipients = [
       new Recipient(
-        process.env.MAILERSEND_FROM_EMAIL || "",
-        process.env.MAILERSEND_FROM_NAME || "",
+        process.env.MAILERSEND_RAVENCI_EMAIL || "",
+        process.env.MAILERSEND_RAVENCI_NAME || "",
       ),
     ];
 
     const sentFrom = new Sender(
-      process.env.MAILERSEND_FROM_EMAIL || "",
-      process.env.MAILERSEND_FROM_NAME || "",
+      process.env.MAILERSEND_RAVENCI_EMAIL || "",
+      process.env.MAILERSEND_RAVENCI_NAME || "",
     );
 
     const noReply = new Sender(
@@ -35,7 +35,7 @@ export default async function handler(
 
     const personalization = [
       {
-        email: "recipient@email.com",
+        email: recipients[0].email,
         data: {
           elements: [
             {
