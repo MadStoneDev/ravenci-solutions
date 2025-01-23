@@ -1,7 +1,7 @@
 ﻿import axios from "axios";
 import { redis } from "@/lib/redis";
 
-const CACHE_TIME = 5 * 60 * 1000; // 5 minutes
+const CACHE_TIME = 7 * 24 * 60 * 60; // 1 week
 
 export async function getArticleBySlug(slug: string) {
   const cacheKey = `article:${slug}`;
@@ -19,6 +19,6 @@ export async function getArticleBySlug(slug: string) {
   );
 
   const article = response.data.data ? response.data.data[0] : false;
-  await redis.setex(`article:${slug}`, CACHE_TIME, JSON.stringify(article));
+  await redis.set(cacheKey, article, { ex: CACHE_TIME });
   return article;
 }
