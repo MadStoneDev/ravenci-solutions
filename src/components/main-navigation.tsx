@@ -71,11 +71,15 @@ export default function MainNavigation() {
     <>
       {isMenuOpen && (
         <section
-          className={`fixed top-0 ${showMenu ? "right-0 pl-10 md:pl-24" : "right-full pl-0"} left-0 min-h-dvh flex flex-col justify-center items-start gap-y-6 bg-white z-40 transition-all duration-300 ease-in-out`}
+          className={`fixed top-0 ${
+            showMenu ? "right-0 pl-10 md:pl-24" : "right-full pl-0"
+          } left-0 min-h-dvh flex flex-col justify-center items-start gap-y-6 bg-white z-40 transition-all duration-300 ease-in-out`}
         >
           <Link
             href={`/`}
-            className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${showMenu ? "opacity-100" : "opacity-0"} overflow-hidden transition-all duration-500 ease-in-out`}
+            className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
+              showMenu ? "opacity-100" : "opacity-0"
+            } overflow-hidden transition-all duration-500 ease-in-out`}
             onClick={() => {
               handleMenuClick(false);
             }}
@@ -95,7 +99,9 @@ export default function MainNavigation() {
 
           <Link
             href={`/launch-your-vision`}
-            className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${showMenu ? "opacity-100" : "opacity-0"} overflow-hidden transition-all duration-500 ease-in-out`}
+            className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
+              showMenu ? "opacity-100" : "opacity-0"
+            } overflow-hidden transition-all duration-500 ease-in-out`}
             onClick={() => {
               handleMenuClick(false);
             }}
@@ -130,14 +136,14 @@ export default function MainNavigation() {
           <Image
             src={
               isMenuOpen
-                ? `ravenci-logo-dark.svg`
+                ? `/ravenci-logo-dark.svg`
                 : isAtTop
                   ? isLogoOnDark
-                    ? `ravenci-logo.svg`
-                    : `ravenci-logo-dark.svg`
+                    ? `/ravenci-logo.svg`
+                    : `/ravenci-logo-dark.svg`
                   : isLogoOnDark
-                    ? `ravenci-symbol.svg`
-                    : `ravenci-symbol-dark.svg`
+                    ? `/ravenci-symbol.svg`
+                    : `/ravenci-symbol-dark.svg`
             }
             alt={`Welcome to RAVENCI`}
             width={125}

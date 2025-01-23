@@ -6,7 +6,7 @@ async function getArticles() {
     `https://strapi.ravenci.solutions/api/articles`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.STRAPI_API_KEY}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
       },
     },
   );
@@ -31,16 +31,28 @@ export default async function ArticlesPage() {
           </h2>
         </article>
       </section>
+
       <section
         className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid grid-cols-4 gap-6 min-h-[750px] bg-ravenci-dark`}
       >
-        {articles.map((article) => (
-          <article key={article.id}>
-            <h3 className={`text-white`}>
-              <Link href={`/articles/${article.Slug}`}>{article.Title}</Link>
-            </h3>
-          </article>
-        ))}
+        {articles &&
+          articles.map(
+            ({
+              id,
+              Slug,
+              Title,
+            }: {
+              id: string;
+              Slug: string;
+              Title: string;
+            }) => (
+              <article key={id}>
+                <h3 className={`text-white`}>
+                  <Link href={`/articles/${Slug}`}>{Title}</Link>
+                </h3>
+              </article>
+            ),
+          )}
       </section>
     </main>
   );

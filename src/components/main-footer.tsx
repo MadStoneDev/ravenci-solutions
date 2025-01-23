@@ -10,7 +10,7 @@ export default function MainFooter() {
         }}
       >
         <Image
-          src={`raven-on-rock.svg`}
+          src={`/raven-on-rock.svg`}
           alt={`RAVENCI crow standing on a rock`}
           width={200}
           height={79}
