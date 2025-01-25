@@ -7,6 +7,14 @@ function formatContent(content: any[]) {
     .map((block, index) => {
       const text = block.children[0].text;
 
+      if (text.startsWith("###")) {
+        return (
+          <h3 key={index} className="text-xl font-bold mt-8 mb-4">
+            {text.replace("###", "").trim()}
+          </h3>
+        );
+      }
+
       if (text.startsWith("##")) {
         return (
           <h2 key={index} className="text-2xl font-bold mt-8 mb-4">

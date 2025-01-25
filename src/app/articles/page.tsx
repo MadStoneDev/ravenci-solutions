@@ -3,7 +3,7 @@ import Link from "next/link";
 
 async function getArticles() {
   const response = await axios.get(
-    `https://strapi.ravenci.solutions/api/articles`,
+    `https://strapi.ravenci.solutions/api/articles?sort[0]=publishedAt:desc`,
     {
       headers: {
         Authorization: `Bearer ${process.env.STRAPI_API_KEY}`,
@@ -33,7 +33,7 @@ export default async function ArticlesPage() {
       </section>
 
       <section
-        className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-6 min-h-[750px] bg-ravenci-dark`}
+        className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[750px] bg-ravenci-dark`}
       >
         {articles &&
           articles.map(
@@ -46,7 +46,13 @@ export default async function ArticlesPage() {
               Slug: string;
               Title: string;
             }) => (
-              <article key={id}>
+              <article key={id} className={`flex flex-col gap-4`}>
+                <div
+                  className={`w-full`}
+                  style={{
+                    aspectRatio: `5/6`,
+                  }}
+                ></div>
                 <h3 className={`text-white`}>
                   <Link href={`/articles/${Slug}`}>{Title}</Link>
                 </h3>
@@ -54,6 +60,9 @@ export default async function ArticlesPage() {
             ),
           )}
       </section>
+      <section
+        className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[250px] bg-white`}
+      ></section>
     </main>
   );
 }
