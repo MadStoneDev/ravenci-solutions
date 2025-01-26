@@ -1,34 +1,12 @@
-﻿import { getArticleBySlug } from "@/lib/article";
-import Link from "next/link";
+﻿import Link from "next/link";
+
+import { getArticleBySlug } from "@/lib/article";
 import { IconArrowLeft } from "@tabler/icons-react";
+import { ContentBlock } from "@/lib/markdown-parse";
 
 function formatContent(content: any[]) {
   return content
-    .map((block, index) => {
-      const text = block.children[0].text;
-
-      if (text.startsWith("###")) {
-        return (
-          <h3 key={index} className="text-xl font-bold mt-8 mb-4">
-            {text.replace("###", "").trim()}
-          </h3>
-        );
-      }
-
-      if (text.startsWith("##")) {
-        return (
-          <h2 key={index} className="text-2xl font-bold mt-8 mb-4">
-            {text.replace("##", "").trim()}
-          </h2>
-        );
-      }
-
-      return text ? (
-        <p key={index} className="mb-4">
-          {text}
-        </p>
-      ) : null;
-    })
+    .map((block, index) => <ContentBlock key={index} block={block} />)
     .filter(Boolean);
 }
 
