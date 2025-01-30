@@ -3,7 +3,8 @@ import { Recipient, EmailParams, Sender, MailerSend } from "mailersend";
 
 export async function POST(request: Request) {
   try {
-    const { name, email, message, budget } = await request.json();
+    const body = await request.json();
+    const { name, email, message, budget } = body;
 
     const mailerSend = new MailerSend({
       apiKey: process.env.MAILERSEND_API_KEY || "",
@@ -55,7 +56,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: "Email sent successfully" });
   } catch (error) {
     console.error("Error sending email:", error);
-    // Return specific error messages when possible
     return NextResponse.json(
       {
         message: error instanceof Error ? error.message : "Error sending email",
