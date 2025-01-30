@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import Link from "next/link";
+import { sendGTMEvent } from "@next/third-parties/google";
 import { useEffect, useRef, useState } from "react";
 
 import { sendContactForm } from "@/lib/send-contact-form";
@@ -51,8 +51,15 @@ export default function LaunchYourVisionForm() {
 
   async function handleSubmit() {
     try {
-      await sendContactForm(formData);
-      
+      await sendContactForm(formData).then(() => {
+        sendGTMEvent({
+          event: "contact-form-submit",
+          category: "Launch Your Vision",
+          action: "Submit",
+          label: "Launch Your Vision",
+        });
+      });
+
       // Handle success (e.g., show success message, reset form)
     } catch (error) {
       // Handle error (e.g., show error message)
@@ -69,7 +76,10 @@ export default function LaunchYourVisionForm() {
   }, [formData.message]);
 
   return (
-    <form className={`mt-16 flex flex-col w-full max-w-full lg:max-w-2xl`} action={handleSubmit}>
+    <form
+      className={`mt-16 flex flex-col w-full max-w-full lg:max-w-2xl`}
+      action={handleSubmit}
+    >
       <div className={`w-full`}>
         <input
           type="text"
