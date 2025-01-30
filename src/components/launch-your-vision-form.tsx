@@ -7,6 +7,10 @@ import { sendContactForm } from "@/lib/send-contact-form";
 
 export default function LaunchYourVisionForm() {
   // States
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -50,6 +54,8 @@ export default function LaunchYourVisionForm() {
   };
 
   async function handleSubmit() {
+    setSubmitStatus("loading");
+
     try {
       await sendContactForm(formData);
       sendGTMEvent({
@@ -60,6 +66,8 @@ export default function LaunchYourVisionForm() {
         value: formData.budget.replace(/[^0-9]/g, ""), // Strip non-numeric chars
         status: "success",
       });
+
+      setSubmitStatus("success");
 
       // Handle success (e.g., show success message, reset form)
     } catch (error) {
@@ -72,6 +80,8 @@ export default function LaunchYourVisionForm() {
         status: "error",
       });
 
+      setSubmitStatus("error");
+
       console.error("Failed to send message:", error);
     }
   }
@@ -83,6 +93,35 @@ export default function LaunchYourVisionForm() {
       textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`;
     }
   }, [formData.message]);
+
+  if (submitStatus === "success") {
+    return (
+      <div
+        className={`mt-16 flex flex-col w-full max-w-full lg:max-w-2xl bg-emerald-500 p-4 rounded-2xl text-white`}
+      >
+        <span className={`text-lg font-bold`}>Thank you.</span>
+        <span>
+          Your message has been sent successfully! We'll be in touch soon.
+        </span>
+      </div>
+    );
+  } else if (submitStatus === "error") {
+    return (
+      <div
+        className={`mt-16 flex flex-col w-full max-w-full lg:max-w-2xl bg-rose-500 p-4 rounded-2xl text-white`}
+      >
+        <span className={`text-lg font-bold`}>Not what you expected?</span>
+        <span>
+          Us neither. Please refresh the page and try again later or email us
+          directly at{" "}
+          <a href={`mailto:hello@ravenci.solutions`} className={`font-bold`}>
+            hello@ravenci.solutions
+          </a>
+          .
+        </span>
+      </div>
+    );
+  }
 
   return (
     <form
@@ -149,17 +188,24 @@ export default function LaunchYourVisionForm() {
       </div>
 
       <button
-        className={`group relative mt-10 px-6 py-3 grid place-content-center bg-ravenci-primary rounded-full w-fit text-white hover:text-ravenci-primary transition-all duration-300 ease-in-out overflow-hidden`}
+        disabled={submitStatus === "loading"}
+        className={`group relative mt-10 px-6 py-3 grid place-content-center bg-ravenci-primary disabled:bg-ravenci-primary/50 rounded-full w-fit text-white hover:not-disabled:text-ravenci-primary transition-all duration-300 ease-in-out overflow-hidden`}
       >
-        <span className={`z-20`}>Get in Touch</span>
+        {submitStatus === "loading" ? (
+          <span className={`z-20`}>Sending...</span>
+        ) : (
+          <span className={`z-20`}>Get in Touch</span>
+        )}
 
         <div
-          className={`absolute top-0 bottom-full group-hover:bottom-0 left-0 right-0 bg-white z-0 transition-all duration-500 ease-in-out`}
+          className={`absolute top-0 bottom-full group-hover:not-disabled:bottom-0 left-0 right-0 bg-white z-0 transition-all duration-500 ease-in-out`}
         ></div>
 
         {/* Border */}
         <div
-          className={`absolute top-0 bottom-0 left-0 right-0 rounded-full border-2 border-ravenci-primary z-10`}
+          className={`absolute top-0 bottom-0 left-0 right-0 rounded-full border-2 border-ravenci-primary ${
+            submitStatus === "loading" && "border-0"
+          } z-10 transition-all duration-500 ease-in-out`}
         ></div>
       </button>
     </form>
