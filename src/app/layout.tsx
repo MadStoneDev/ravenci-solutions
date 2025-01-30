@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { Lexend } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import MicrosoftClarity from "@/components/metrics-microsoft-clarity";
 
 import MainNavigation from "@/components/main-navigation";
@@ -30,6 +30,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleAnalytics gaId={`G-8TL2E4F9CH`} />
+      <GoogleTagManager gtmId={`GTM-K6S8KCK5`} />
+
       <body className={`relative ${lexend.variable} antialiased`}>
         <MainNavigation />
         {children}
