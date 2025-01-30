@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 import "./globals.css";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleAnalytics gaId={`G-8TL2E4F9CH`} />
+      <GoogleTagManager gtmId={`GTM-K6S8KCK5`} />
       <body className={`relative ${lexend.variable} antialiased`}>
         <MainNavigation />
         {children}
