@@ -1,27 +1,29 @@
 type ContactFormData = {
-    name: string;
-    email: string;
-    message: string;
-    budget: string;
+  name: string;
+  email: string;
+  message: string;
+  budget: string;
 };
 
 export async function sendContactForm(data: ContactFormData) {
-    try {
-        const response = await fetch("/api/launch-your-vision", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        });
+  try {
+    const response = await fetch("/api/launch-your-vision", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-        if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.message || "Something went wrong");
-        }
+    const result = await response.json();
 
-        return await response.json();
-    } catch (error) {
-        throw error;
+    if (!response.ok) {
+      throw new Error(result.message || "Failed to send message");
     }
+
+    return result;
+  } catch (error) {
+    // Preserve the original error message
+    throw error instanceof Error ? error : new Error("Network error");
+  }
 }

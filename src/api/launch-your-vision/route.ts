@@ -1,16 +1,9 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 import { Recipient, EmailParams, Sender, MailerSend } from "mailersend";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse,
-) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
-  }
-
+export async function POST(request: Request) {
   try {
-    const { name, email, message, budget } = req.body;
+    const { name, email, message, budget } = await request.json();
 
     const mailerSend = new MailerSend({
       apiKey: process.env.MAILERSEND_API_KEY || "",
@@ -59,9 +52,15 @@ export default async function handler(
 
     await mailerSend.email.send(emailParams);
 
-    res.status(200).json({ message: "Email sent successfully" });
+    return NextResponse.json({ message: "Email sent successfully" });
   } catch (error) {
     console.error("Error sending email:", error);
-    res.status(500).json({ message: "Error sending email" });
+    // Return specific error messages when possible
+    return NextResponse.json(
+      {
+        message: error instanceof Error ? error.message : "Error sending email",
+      },
+      { status: 500 },
+    );
   }
 }

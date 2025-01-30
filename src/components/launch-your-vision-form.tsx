@@ -51,20 +51,27 @@ export default function LaunchYourVisionForm() {
 
   async function handleSubmit() {
     try {
-      await sendContactForm(formData).then(() => {
-        sendGTMEvent({
-          event: "contact-form-submit",
-          category: "Launch Your Vision",
-          action: "Submit",
-          label: "Launch Your Vision",
-          value: formData.budget, // Adding budget could be valuable for analytics
-          status: "success", // Adding status helps track success vs failure
-        });
+      await sendContactForm(formData);
+      sendGTMEvent({
+        event: "contact_form_submit",
+        category: "Launch Your Vision",
+        action: "Submit",
+        label: "Success",
+        value: formData.budget.replace(/[^0-9]/g, ""), // Strip non-numeric chars
+        status: "success",
       });
 
       // Handle success (e.g., show success message, reset form)
     } catch (error) {
-      // Handle error (e.g., show error message)
+      sendGTMEvent({
+        event: "contact_form_submit",
+        category: "Launch Your Vision",
+        action: "Submit",
+        label: "Error",
+        error_message: error instanceof Error ? error.message : "Unknown error",
+        status: "error",
+      });
+
       console.error("Failed to send message:", error);
     }
   }
