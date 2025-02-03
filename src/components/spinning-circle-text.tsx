@@ -1,15 +1,27 @@
-﻿import Link from "next/link";
+﻿"use client";
 
-export default function SpinningCircleText() {
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+
+export default function SpinningCircleText({
+  text = "Book Now · Free Consultation · ",
+}: {
+  text: string;
+}) {
   const size = 112;
   const padding = 10;
   const radius = (size - padding * 2) / 2;
   const center = size / 2;
+  const circumference = Math.PI * radius * 2;
 
   const pathD = `
     M ${center},${padding}
     A ${radius},${radius} 0 1 1 ${center},${size - padding}
     A ${radius},${radius} 0 1 1 ${center},${padding}`;
+
+  const textLength = text.length * 8;
+  const repetitions = Math.ceil(circumference / textLength);
+  const repeatedText = text.repeat(repetitions);
 
   return (
     <Link
@@ -32,13 +44,18 @@ export default function SpinningCircleText() {
           <defs>
             <path id="circle" d={pathD} fill="transparent" />
           </defs>
-          <text className="fill-neutral-400 text-[8px] uppercase">
+          <text
+            className="fill-neutral-400 text-[8px] uppercase"
+            style={{
+              letterSpacing: "0.58em",
+            }}
+          >
             <textPath
               href="#circle"
-              startOffset="0%"
-              textLength={Math.floor(Math.PI * radius * 2)}
+              startOffset={`0%`}
+              // textLength={Math.floor(Math.PI * radius * 2)}
             >
-              Book Now · Free Consultation·&nbsp;
+              {text}
             </textPath>
           </text>
         </svg>
