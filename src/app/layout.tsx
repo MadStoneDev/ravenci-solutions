@@ -37,7 +37,7 @@ export default function RootLayout({
         {children}
         <MainFooter />
 
-        <SpinningCircleText />
+        <SpinningCircleText text={"Book Now · Free Consultation · "} />
 
         <MicrosoftClarity />
       </body>
