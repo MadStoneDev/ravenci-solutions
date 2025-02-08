@@ -8,9 +8,9 @@ import { ContentBlock } from "@/lib/markdown-parse";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const article = await getArticleBySlug(params.slug);
+  const article = await getArticleBySlug((await params).slug);
 
   if (!article) {
     return {
@@ -59,9 +59,9 @@ function formatContent(content: any[]) {
 export default async function ArticlePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   const article = await getArticleBySlug(slug);
 
   if (!article) {
