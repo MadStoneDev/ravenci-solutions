@@ -68,7 +68,6 @@ export default function LaunchYourVisionForm() {
       });
 
       setSubmitStatus("success");
-
       // Handle success (e.g., show success message, reset form)
     } catch (error) {
       sendGTMEvent({

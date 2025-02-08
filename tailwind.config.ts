@@ -10,6 +10,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Lexend", "sans-serif"],
+        serif: ["Playfair Display", "serif"],
       },
       fontSize: {
         h1: ["4rem", { lineHeight: "5rem" }],
