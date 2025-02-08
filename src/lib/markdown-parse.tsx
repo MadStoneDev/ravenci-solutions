@@ -5,7 +5,7 @@
 
   if (text.startsWith("###")) {
     return (
-      <h3 className="text-xl font-bold mt-6 mb-3">
+      <h3 className="text-xl font-bold mt-10 mb-3">
         {text.replace("###", "").trim()}
       </h3>
     );
@@ -13,7 +13,7 @@
 
   if (text.startsWith("##")) {
     return (
-      <h2 className="text-2xl font-bold mt-8 mb-4">
+      <h2 className="text-2xl font-bold mt-10 mb-4">
         {text.replace("##", "").trim()}
       </h2>
     );
@@ -37,7 +37,10 @@
 
   return (
     <p
-      className="mb-4 text-gray-700"
+      className={"mb-6 font-light"}
+      style={{
+        lineHeight: "1.7em",
+      }}
       dangerouslySetInnerHTML={{ __html: withBoldAndItalic }}
     />
   );

@@ -10,7 +10,7 @@ export async function getArticleBySlug(slug: string) {
   if (cached) return cached;
 
   const response = await axios.get(
-    `https://strapi.ravenci.solutions/api/articles?filters[Slug][$eq]=${slug}`,
+    `https://strapi.ravenci.solutions/api/articles?filters[Slug][$eq]=${slug}&populate=*`,
     {
       headers: {
         Authorization: `Bearer ${process.env.STRAPI_API_KEY}`,

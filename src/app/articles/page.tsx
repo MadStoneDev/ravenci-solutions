@@ -3,7 +3,7 @@ import Link from "next/link";
 
 async function getArticles() {
   const response = await axios.get(
-    `https://strapi.ravenci.solutions/api/articles?sort[0]=publishedAt:desc`,
+    `https://strapi.ravenci.solutions/api/articles?sort[0]=createdAt:desc&populate=*`,
     {
       headers: {
         Authorization: `Bearer ${process.env.STRAPI_API_KEY}`,
@@ -39,25 +39,65 @@ export default async function ArticlesPage() {
           articles.map(
             ({
               id,
-              Slug,
               Title,
+              Excerpt,
+              Slug,
+              categories,
+              Featured_Image,
             }: {
               id: string;
-              Slug: string;
               Title: string;
-            }) => (
-              <article key={id} className={`flex flex-col gap-4`}>
-                <div
-                  className={`w-full`}
-                  style={{
-                    aspectRatio: `5/6`,
-                  }}
-                ></div>
-                <h3 className={`text-white`}>
-                  <Link href={`/articles/${Slug}`}>{Title}</Link>
-                </h3>
-              </article>
-            ),
+              Excerpt: string;
+              Slug: string;
+              categories: any[];
+              Featured_Image: any;
+            }) => {
+              return (
+                <article key={id} className={`flex flex-col`}>
+                  <div
+                    className={`mb-4 w-full bg-cover bg-center`}
+                    style={{
+                      aspectRatio: `5/6`,
+                      backgroundImage: Featured_Image
+                        ? `url(https://strapi.ravenci.solutions${Featured_Image.url})`
+                        : ``,
+                    }}
+                  ></div>
+                  <div
+                    className={`mb-2 group px-2 py-1 relative flex w-fit hover:scale-105 transition-all duration-300 ease-in-out`}
+                  >
+                    <p
+                      className={`text-xs uppercase font-bold text-neutral-400 group-hover:text-white z-10 transition-all duration-300 ease-in-out`}
+                    >
+                      {categories.length > 0 ? categories[0].Name : ` `}
+                    </p>
+                    <div
+                      className={`absolute top-0 left-0 right-full group-hover:right-0 bottom-0 bg-ravenci-primary transition-all duration-300 ease-in-out`}
+                    ></div>
+                  </div>
+
+                  <Link
+                    href={`/articles/${Slug}`}
+                    className={`mb-4 group relative px-1 py-0.5 flex hover:scale-105 transition-all duration-300 ease-in-out`}
+                  >
+                    <h3
+                      className={`font-serif text-xl text-white font-semibold`}
+                    >
+                      {Title}
+                    </h3>
+                  </Link>
+
+                  <p
+                    className={`text-sm text-neutral-400 font-light`}
+                    style={{
+                      lineHeight: "1.6em",
+                    }}
+                  >
+                    {Excerpt}
+                  </p>
+                </article>
+              );
+            },
           )}
       </section>
       <section
