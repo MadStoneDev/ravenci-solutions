@@ -265,7 +265,16 @@ export default function Home() {
           <section
             className={`flex flex-row flex-wrap border-t border-l border-neutral-200`}
           >
-            {CLIENT_LOGOS.map(({ title, logo, href }, index) => {
+            {(() => {
+              const shuffled = [...CLIENT_LOGOS];
+
+              for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+              }
+
+              return shuffled.slice(0, 9);
+            })().map(({ title, logo, href }, index) => {
               return (
                 <div
                   key={`icon-${title}-${index}`}

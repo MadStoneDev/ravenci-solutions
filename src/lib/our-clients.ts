@@ -54,4 +54,9 @@
     logo: "/clients/intercorp-logo.svg",
     href: "https://intercorpdevelopments.com.au/",
   },
+  {
+    title: "Willis Electrical QLD",
+    logo: "/clients/weq-logo.svg",
+    href: "https://weq.com.au/",
+  },
 ];
