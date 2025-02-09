@@ -7,8 +7,8 @@ export async function getArticleBySlug(slug: string) {
   const cacheKey = `article:${slug}`;
 
   try {
-    const cached = await redis.get<string>(cacheKey);
-    if (cached) return JSON.parse(cached);
+    const cached = await redis.get(cacheKey);
+    if (cached) return cached;
 
     const response = await axios.get(
       `https://strapi.ravenci.solutions/api/articles?filters[Slug][$eq]=${slug}&populate=*`,
@@ -22,12 +22,25 @@ export async function getArticleBySlug(slug: string) {
     const article = response.data.data ? response.data.data[0] : false;
 
     if (article) {
-      await redis.set(cacheKey, JSON.stringify(article), { ex: CACHE_TIME });
+      await redis.set(cacheKey, article, { ex: CACHE_TIME });
     }
 
     return article;
   } catch (error) {
     console.error(error);
+    return false;
+  }
+}
+
+// Add this to your article.ts file
+export async function testRedisConnection() {
+  try {
+    const testKey = "test-connection";
+    await redis.set(testKey, "test-value", { ex: 60 });
+    const value = await redis.get(testKey);
+    return value === "test-value";
+  } catch (error) {
+    console.error("Redis connection test failed:", error);
     return false;
   }
 }

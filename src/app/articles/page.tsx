@@ -33,7 +33,7 @@ export default async function ArticlesPage() {
       </section>
 
       <section
-        className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[750px] bg-ravenci-dark`}
+        className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 min-h-[750px] bg-ravenci-dark`}
       >
         {articles &&
           articles.map(
