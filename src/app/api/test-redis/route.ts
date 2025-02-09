@@ -1,6 +1,8 @@
-﻿import { testRedisConnection } from "@/lib/article";
+﻿// app/api/test-redis/route.ts
+import { testRedisConnection } from "@/lib/article";
+import { NextResponse } from "next/server";
 
-export default async function handler(req, res) {
+export async function GET() {
   const isConnected = await testRedisConnection();
-  res.status(200).json({ connected: isConnected });
+  return NextResponse.json({ connected: isConnected });
 }
