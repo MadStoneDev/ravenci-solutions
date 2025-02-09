@@ -31,16 +31,3 @@ export async function getArticleBySlug(slug: string) {
     return false;
   }
 }
-
-// Add this to your article.ts file
-export async function testRedisConnection() {
-  try {
-    const testKey = "test-connection";
-    await redis.set(testKey, "test-value", { ex: 60 });
-    const value = await redis.get(testKey);
-    return value === "test-value";
-  } catch (error) {
-    console.error("Redis connection test failed:", error);
-    return false;
-  }
-}
