@@ -279,7 +279,7 @@ export default function Home() {
                 <div
                   key={`icon-${title}-${index}`}
                   title={title}
-                  className={`px-4 flex justify-center items-center w-1/2 sm:w-1/3 h-24 hover:bg-neutral-200/40 border-b border-r border-neutral-200 transition-all duration-300 ease-in-out`}
+                  className={`px-4 py-5 flex justify-center items-center w-1/2 sm:w-1/3 h-24 hover:bg-neutral-200/40 border-b border-r border-neutral-200 transition-all duration-300 ease-in-out`}
                 >
                   <img src={logo} alt={title} className={`w-full h-full`} />
                 </div>
