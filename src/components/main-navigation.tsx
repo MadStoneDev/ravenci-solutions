@@ -36,14 +36,12 @@ export default function MainNavigation() {
   const handleMenuClick = (status: boolean) => {
     if (status) {
       setIsMenuOpen(status);
-      document.body.style.overflow = "hidden";
 
       setTimeout(() => {
         setShowMenu(status);
       }, 100);
     } else {
       setShowMenu(status);
-      document.body.style.overflow = "auto";
 
       setTimeout(() => {
         setIsMenuOpen(status);
@@ -75,123 +73,131 @@ export default function MainNavigation() {
     };
   }, [pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+  }, [isMenuOpen]);
+
   return (
     <>
       {isMenuOpen && (
         <section
-          className={`fixed top-0 ${
-            showMenu ? "right-0 pl-10 md:pl-24" : "right-full pl-0"
-          } left-0 min-h-dvh flex flex-col justify-center items-start gap-y-6 bg-white z-40 transition-all duration-300 ease-in-out`}
+          className={`fixed py-20 top-0 ${
+            showMenu ? "right-0 px-10 md:px-24" : "right-full pl-0"
+          } left-0 h-dvh bg-white z-40 overflow-y-auto transition-all duration-300 ease-in-out`}
         >
-          <Link
-            href={`/`}
-            className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-              showMenu ? "opacity-100" : "opacity-0"
-            } overflow-hidden transition-all duration-500 ease-in-out`}
-            onClick={() => {
-              handleMenuClick(false);
-            }}
+          <article
+            className={`flex flex-col justify-center items-start gap-y-6 min-h-full`}
           >
-            <div
-              className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-            ></div>
-            <IconHome
-              className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-            />
-            <span
-              className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+            <Link
+              href={`/`}
+              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
+                showMenu ? "opacity-100" : "opacity-0"
+              } overflow-hidden transition-all duration-500 ease-in-out`}
+              onClick={() => {
+                handleMenuClick(false);
+              }}
             >
-              Home
-            </span>
-          </Link>
+              <div
+                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
+              ></div>
+              <IconHome
+                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
+              />
+              <span
+                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+              >
+                Home
+              </span>
+            </Link>
 
-          <Link
-            href={`/articles`}
-            className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-              showMenu ? "opacity-100" : "opacity-0"
-            } overflow-hidden transition-all duration-500 ease-in-out`}
-            onClick={() => {
-              handleMenuClick(false);
-            }}
-          >
-            <div
-              className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-            ></div>
-            <IconNews
-              className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-            />
-            <span
-              className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+            <Link
+              href={`/articles`}
+              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
+                showMenu ? "opacity-100" : "opacity-0"
+              } overflow-hidden transition-all duration-500 ease-in-out`}
+              onClick={() => {
+                handleMenuClick(false);
+              }}
             >
-              Articles
-            </span>
-          </Link>
+              <div
+                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
+              ></div>
+              <IconNews
+                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
+              />
+              <span
+                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+              >
+                Articles
+              </span>
+            </Link>
 
-          <Link
-            href={`/website-maintenance`}
-            className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-              showMenu ? "opacity-100" : "opacity-0"
-            } overflow-hidden transition-all duration-500 ease-in-out`}
-            onClick={() => {
-              handleMenuClick(false);
-            }}
-          >
-            <div
-              className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-            ></div>
-            <IconHammer
-              className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-            />
-            <span
-              className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+            <Link
+              href={`/website-maintenance`}
+              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
+                showMenu ? "opacity-100" : "opacity-0"
+              } overflow-hidden transition-all duration-500 ease-in-out`}
+              onClick={() => {
+                handleMenuClick(false);
+              }}
             >
-              Website Maintenance
-            </span>
-          </Link>
+              <div
+                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
+              ></div>
+              <IconHammer
+                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
+              />
+              <span
+                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+              >
+                Website Maintenance
+              </span>
+            </Link>
 
-          <Link
-            href={`/web-hosting`}
-            className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-              showMenu ? "opacity-100" : "opacity-0"
-            } overflow-hidden transition-all duration-500 ease-in-out`}
-            onClick={() => {
-              handleMenuClick(false);
-            }}
-          >
-            <div
-              className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-            ></div>
-            <IconCloudComputing
-              className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-            />
-            <span
-              className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+            <Link
+              href={`/web-hosting`}
+              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
+                showMenu ? "opacity-100" : "opacity-0"
+              } overflow-hidden transition-all duration-500 ease-in-out`}
+              onClick={() => {
+                handleMenuClick(false);
+              }}
             >
-              Web Hosting
-            </span>
-          </Link>
+              <div
+                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
+              ></div>
+              <IconCloudComputing
+                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
+              />
+              <span
+                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+              >
+                Web Hosting
+              </span>
+            </Link>
 
-          <Link
-            href={`/launch-your-vision`}
-            className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-              showMenu ? "opacity-100" : "opacity-0"
-            } overflow-hidden transition-all duration-500 ease-in-out`}
-            onClick={() => {
-              handleMenuClick(false);
-            }}
-          >
-            <div
-              className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-            ></div>
-            <IconMail
-              className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-            />
-            <span
-              className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+            <Link
+              href={`/launch-your-vision`}
+              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
+                showMenu ? "opacity-100" : "opacity-0"
+              } overflow-hidden transition-all duration-500 ease-in-out`}
+              onClick={() => {
+                handleMenuClick(false);
+              }}
             >
-              Launch Your Vision
-            </span>
-          </Link>
+              <div
+                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
+              ></div>
+              <IconMail
+                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
+              />
+              <span
+                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+              >
+                Launch Your Vision
+              </span>
+            </Link>
+          </article>
         </section>
       )}
 
