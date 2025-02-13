@@ -15,6 +15,7 @@ export default {
       fontSize: {
         h1: ["4rem", { lineHeight: "5rem" }],
         h2: ["2rem", { lineHeight: "2rem" }],
+        h3: ["1.5rem", { lineHeight: "2rem" }],
       },
       colors: {
         background: "var(--background)",

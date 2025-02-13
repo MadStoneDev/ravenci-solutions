@@ -59,4 +59,9 @@
     logo: "/clients/weq-logo.svg",
     href: "https://weq.com.au/",
   },
+  {
+    title: "Beauty Retreat Bribie Island",
+    logo: "/clients/beauty-retreat-logo.svg",
+    href: "https://beautyretreatbribieisland.com.au/",
+  },
 ];
