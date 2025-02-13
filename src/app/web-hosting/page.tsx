@@ -1,6 +1,12 @@
 ﻿import { IconCircleCheckFilled } from "@tabler/icons-react";
 import PriceButton from "@/components/price-button";
 
+export const metadata = {
+  title: "Website Hosting Solutions - RAVENCI Solutions",
+  description:
+    "Lightning-fast cloud hosting with servers worldwide. Serve your website to visitors everywhere, backed by 24/7 monitoring and ironclad security.",
+};
+
 export default function WebHostingPage() {
   const features = [
     {
