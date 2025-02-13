@@ -9,12 +9,27 @@
 
 <url>
   <loc>https://ravenci.solutions/</loc>
-  <lastmod>2025-01-23T02:00:54+00:00</lastmod>
+  <lastmod>2025-02-13T08:24:13+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://ravenci.solutions/launch-your-vision</loc>
-  <lastmod>2025-01-23T02:00:54+00:00</lastmod>
+  <lastmod>2025-02-13T08:24:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ravenci.solutions/website-maintenance</loc>
+  <lastmod>2025-02-13T08:24:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ravenci.solutions/web-hosting</loc>
+  <lastmod>2025-02-13T08:24:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ravenci.solutions/articles</loc>
+  <lastmod>2025-02-13T08:24:13+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
