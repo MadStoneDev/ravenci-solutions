@@ -127,7 +127,7 @@ export default function WebHostingPage() {
             </p>
           </article>
 
-          <PriceButton />
+          <PriceButton price={29} frequency={"mo."} />
         </section>
       </div>
 
