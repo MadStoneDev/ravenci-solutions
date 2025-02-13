@@ -51,6 +51,11 @@ export default function WebMaintenancePage() {
       description:
         "Regular testing across different browsers and devices to ensure consistent experience",
     },
+    {
+      title: "Monthly Reports",
+      description:
+        "Receive monthly maintenance reports outlining the work done and any issues encountered",
+    },
   ];
 
   return (
@@ -153,12 +158,12 @@ export default function WebMaintenancePage() {
             includeFrom={false}
             callToAction={`Keep your site healthy`}
             subCallToAction={`Sign Up Now`}
+            link={`https://buy.stripe.com/bIY4j8cLc9U8bNSeUV`}
           />
 
           <PriceButton
             price={450}
             frequency={""}
-            includeFrom={false}
             callToAction={`One-off maintenance`}
           />
         </section>
