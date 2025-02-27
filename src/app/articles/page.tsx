@@ -3,7 +3,7 @@ import Link from "next/link";
 
 async function getArticles() {
   const response = await axios.get(
-    `https://strapi.ravenci.solutions/api/articles?sort[0]=createdAt:desc&populate=*`,
+    `https://strapi.ravenci.solutions/api/articles?sort[0]=createdAt:desc&populate=*&filters[publishedAt][$notNull]=true`,
     {
       headers: {
         Authorization: `Bearer ${process.env.STRAPI_API_KEY}`,
