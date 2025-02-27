@@ -37,8 +37,9 @@
 
   return (
     <p
-      className={"mb-6 font-light"}
+      className={"font-light"}
       style={{
+        marginBottom: "1.5em",
         lineHeight: "1.7em",
       }}
       dangerouslySetInnerHTML={{ __html: withBoldAndItalic }}
