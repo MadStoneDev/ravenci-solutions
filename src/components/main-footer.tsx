@@ -1,4 +1,5 @@
 ﻿import Image from "next/image";
+import Link from "next/link";
 
 export default function MainFooter() {
   return (
@@ -35,11 +36,29 @@ export default function MainFooter() {
           <p>Domains & Cloud Hosting</p>
         </article>
 
-        <article className={`mt-16 pt-3 border-t border-neutral-600`}>
+        <article
+          className={`mt-16 pt-3 flex flex-col gap-2 border-t border-neutral-600`}
+        >
           <p className={`text-xs text-neutral-500`}>
             © 2018 - 2024 1VINE Design (Operating as{" "}
             <span className={`font-bold`}>RAVENCI</span>)
           </p>
+
+          <div className={`text-xs text-neutral-500`}>
+            <Link
+              href={`/privacy-policy`}
+              className={`py-0.5 hover:px-1 hover:text-white hover:bg-ravenci-primary transition-all duration-300`}
+            >
+              Privacy Policy
+            </Link>
+            &nbsp;|&nbsp;
+            <Link
+              href={`/terms-and-conditions`}
+              className={`py-0.5 hover:px-1 hover:text-white hover:bg-ravenci-primary transition-all duration-300`}
+            >
+              Terms of Service
+            </Link>
+          </div>
         </article>
       </section>
     </footer>
