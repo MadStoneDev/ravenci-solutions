@@ -32,8 +32,46 @@ export default function MainFooter() {
           <p>Web App Development</p>
           <p>Mobile App Development</p>
           <p>WordPress</p>
-          <p>Maintenance</p>
-          <p>Domains & Cloud Hosting</p>
+          <div className={`group/link relative pl-2 pr-2`}>
+            <Link href={`/website-maintenance`} className={`relative z-10`}>
+              Maintenance
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative pl-2 pr-2`}>
+            <Link href={`/web-hosting`} className={`relative z-10`}>
+              Domains & Cloud Hosting
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+        </article>
+
+        <h4 className={`mt-12 text-neutral-400/70`}>Info</h4>
+        <article
+          className={`mt-6 flex flex-wrap gap-x-6 gap-y-5 max-w-2xl text-sm font-light`}
+        >
+          <div className={`group/link relative pl-2 pr-2`}>
+            <Link href={`/articles`} className={`relative z-10`}>
+              Articles
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative pl-2 pr-2`}>
+            <Link href={`/launch-your-vision`} className={`relative z-10`}>
+              Launch Your Vision
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
         </article>
 
         <article
