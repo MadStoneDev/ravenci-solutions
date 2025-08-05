@@ -1,7 +1,7 @@
 ﻿// /app/quote/success/page.tsx
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 interface SessionData {
@@ -19,11 +19,8 @@ interface SessionData {
   };
 }
 
-export default function SuccessPage() {
-  // Hooks
+function SuccessPageContent() {
   const router = useRouter();
-
-  // Hooks
   const searchParams = useSearchParams();
   const sessionId = searchParams.get("session_id");
   const [sessionData, setSessionData] = useState<SessionData | null>(null);
@@ -224,5 +221,26 @@ export default function SuccessPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+// Loading fallback component
+function LoadingFallback() {
+  return (
+    <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-ravenci-primary mx-auto mb-4"></div>
+        <p className="text-neutral-600">Loading...</p>
+      </div>
+    </div>
+  );
+}
+
+// Main component with Suspense boundary
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <SuccessPageContent />
+    </Suspense>
   );
 }
