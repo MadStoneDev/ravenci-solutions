@@ -9,7 +9,13 @@ interface AccordionItem {
   content: string | ReactNode;
 }
 
-const Accordion = ({ items }: { items: AccordionItem[] }) => {
+const Accordion = ({
+  items,
+  titleClassName,
+}: {
+  items: AccordionItem[];
+  titleClassName?: string;
+}) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
@@ -22,10 +28,10 @@ const Accordion = ({ items }: { items: AccordionItem[] }) => {
         <div key={index} className="border-b border-white/50 overflow-hidden">
           <button
             onClick={() => toggleItem(index)}
-            className={`relative py-6 flex justify-between items-center w-full`}
+            className={`relative flex justify-between items-center w-full text-left ${titleClassName}`}
             aria-expanded={openIndex === index}
           >
-            <span className="text-2xl text-left">{item.title}</span>
+            <span className={``}>{item.title}</span>
             <IconPlus
               className={`absolute top-1/2 -translate-y-1/2 right-0 ${
                 openIndex === index ? "rotate-180 opacity-0" : "opacity-100"
@@ -46,7 +52,7 @@ const Accordion = ({ items }: { items: AccordionItem[] }) => {
           <div
             className={`h-fit ${
               openIndex === index
-                ? "max-h-[999px] opacity-100"
+                ? "max-h-[9999px] opacity-100"
                 : "max-h-0 opacity-0"
             } transition-all duration-700 ease-in-out overflow-hidden`}
           >

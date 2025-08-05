@@ -26,7 +26,7 @@ export default function PriceButton({
 
   return (
     <article
-      className={`group cursor-pointer mt-12 flex items-stretch gap-6 max-w-lg border border-neutral-200/50 hover:border-white hover:bg-white hover:scale-105 rounded-xl overflow-hidden transition-all duration-300 ease-in-out ${className}`}
+      className={`group cursor-pointer mt-12 flex items-stretch max-w-lg border border-neutral-200/50 hover:border-white hover:bg-white hover:scale-105 rounded-xl overflow-hidden transition-all duration-300 ease-in-out ${className}`}
       onClick={() => router.push(link)}
     >
       <div className={`p-4 flex-shrink-0 flex flex-col bg-white`}>
@@ -48,7 +48,9 @@ export default function PriceButton({
         </p>
       </div>
 
-      <div className={`p-4 flex-grow flex flex-col items-center`}>
+      <div
+        className={`p-4 flex-grow flex flex-col items-center justify-center`}
+      >
         <p
           className={`font-bold text-lg text-white group-hover:text-ravenci-dark text-center uppercase transition-all duration-300 ease-in-out`}
           style={{

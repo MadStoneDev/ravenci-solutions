@@ -1,6 +1,6 @@
 {
   "name": "ravenci-solutions",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack --port 3377",
@@ -19,6 +19,7 @@
     "next-mdx-remote": "^5.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "stripe": "^18.4.0",
     "zustand": "^5.0.3"
   },
   "devDependencies": {

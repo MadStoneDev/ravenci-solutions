@@ -12,6 +12,8 @@ import {
   IconMail,
   IconMenu,
   IconNews,
+  IconPalette,
+  IconTerminal2,
   IconX,
 } from "@tabler/icons-react";
 import { checkOverlappingElements } from "@/lib/general-utils";
@@ -129,6 +131,50 @@ export default function MainNavigation() {
                 className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
               >
                 Articles
+              </span>
+            </Link>
+
+            <Link
+              href={`/web-development`}
+              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
+                showMenu ? "opacity-100" : "opacity-0"
+              } overflow-hidden transition-all duration-500 ease-in-out`}
+              onClick={() => {
+                handleMenuClick(false);
+              }}
+            >
+              <div
+                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
+              ></div>
+              <IconTerminal2
+                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
+              />
+              <span
+                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+              >
+                Web Development
+              </span>
+            </Link>
+
+            <Link
+              href={`/business-design`}
+              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
+                showMenu ? "opacity-100" : "opacity-0"
+              } overflow-hidden transition-all duration-500 ease-in-out`}
+              onClick={() => {
+                handleMenuClick(false);
+              }}
+            >
+              <div
+                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
+              ></div>
+              <IconPalette
+                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
+              />
+              <span
+                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+              >
+                Business Design
               </span>
             </Link>
 

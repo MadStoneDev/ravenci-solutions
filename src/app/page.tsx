@@ -151,6 +151,7 @@ export default function Home() {
 
         <article className={`lg:col-start-8 col-span-12 lg:col-span-5`}>
           <Accordion
+            titleClassName={`py-6 text-2xl`}
             items={[
               {
                 title: `Development`,
