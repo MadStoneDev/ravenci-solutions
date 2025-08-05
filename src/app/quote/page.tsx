@@ -18,6 +18,7 @@ import {
   IconPaint,
   IconTerminal2,
 } from "@tabler/icons-react";
+import { Drill } from "lucide-react";
 
 interface Service {
   id: string;
@@ -87,16 +88,16 @@ const QuotingPage: React.FC = () => {
       id: "web-hosting",
       name: "Web Hosting",
       icon: <IconServer size={40} />,
-      basePrice: 29.95,
+      basePrice: 29,
       isRecurring: true,
       recurringPeriod: "monthly",
       description:
         "Professional web hosting with SSL, backups, and 99.9% uptime guarantee.",
-      addons: ["ssl-cert", "backup-service", "cdn", "email-hosting"],
+      addons: ["email-hosting", "wordpress-migration"],
     },
-    "web-maintenance": {
-      id: "web-maintenance",
-      name: "Web Maintenance",
+    "monthly-web-maintenance": {
+      id: "monthly-web-maintenance",
+      name: "Monthly Web Maintenance",
       icon: <IconTool size={40} />,
       basePrice: 195,
       isRecurring: true,
@@ -106,6 +107,24 @@ const QuotingPage: React.FC = () => {
         "content-updates",
         "security-monitoring",
         "performance-optimization",
+      ],
+    },
+    "oneoff-web-maintenance": {
+      id: "oneoff-web-maintenance",
+      name: "One-Off Web Maintenance",
+      icon: <Drill size={40} />,
+      basePrice: 450,
+      isRecurring: false,
+      description:
+        "Get your website running smoothly again with optimised system updates, fixes, plugin tests and upgrades and" +
+        " security checks.",
+      addons: [
+        "content-updates",
+        "performance-optimization",
+        "contact-form",
+        "cookie-banner",
+        "copywriting",
+        "seo-content",
       ],
     },
     "web-hosting-maintenance": {
@@ -118,18 +137,14 @@ const QuotingPage: React.FC = () => {
       description:
         "Complete hosting and maintenance solution with bundle savings.",
       addons: [
-        "ssl-cert",
-        "backup-service",
-        "cdn",
         "email-hosting",
+        "wordpress-migration",
         "content-updates",
-        "security-monitoring",
-      ],
-      discountRules: [
-        {
-          trigger: ["ssl-cert"],
-          action: { type: "free", items: ["ssl-cert"] },
-        },
+        "performance-optimization",
+        "contact-form",
+        "cookie-banner",
+        "copywriting",
+        "seo-content",
       ],
     },
     "web-dev-single": {
@@ -152,10 +167,6 @@ const QuotingPage: React.FC = () => {
         "maintenance-addon",
       ],
       discountRules: [
-        {
-          trigger: ["web-hosting-addon"],
-          action: { type: "free", items: ["ssl-cert"] },
-        },
         {
           trigger: ["contact-form", "newsletter-signup", "facebook-pixel"],
           action: { type: "discount", percentage: 10 },
@@ -189,16 +200,11 @@ const QuotingPage: React.FC = () => {
         "blog-setup",
         "newsletter-signup",
         "facebook-pixel",
-        "facebook-pixel",
         "google-business",
         "web-hosting-addon",
         "maintenance-addon",
       ],
       discountRules: [
-        {
-          trigger: ["web-hosting-addon"],
-          action: { type: "free", items: ["ssl-cert"] },
-        },
         {
           trigger: ["contact-form", "newsletter-signup", "facebook-pixel"],
           action: { type: "discount", percentage: 15 },
@@ -239,10 +245,6 @@ const QuotingPage: React.FC = () => {
       ],
       discountRules: [
         {
-          trigger: ["web-hosting-addon"],
-          action: { type: "free", items: ["ssl-cert"] },
-        },
-        {
           trigger: ["business-cards", "letterhead"],
           action: { type: "discount", percentage: 20 },
         },
@@ -257,6 +259,16 @@ const QuotingPage: React.FC = () => {
         },
       ],
     },
+    "business-stationery": {
+      id: "business-stationery",
+      name: "Business Design - Business Stationery",
+      icon: <IconId size={40} />,
+      basePrice: 695,
+      isRecurring: false,
+      description:
+        "Professional business stationery including business cards and letterheads.",
+      addons: ["social-media-kit"],
+    },
     "business-branding": {
       id: "business-branding",
       name: "Business Design - Branding Package",
@@ -265,58 +277,27 @@ const QuotingPage: React.FC = () => {
       isRecurring: false,
       description:
         "Complete brand identity development from logo to style guide.",
-      addons: [
-        "business-cards",
-        "letterhead",
-        "brochure",
-        "social-media-kit",
-        "brand-guidelines",
-      ],
+      addons: ["business-cards", "letterhead", "social-media-kit"],
     },
-    "business-signage": {
-      id: "business-signage",
-      name: "Business Design - Signage & Vehicle Wraps",
-      basePrice: 1295,
-      icon: <IconTruck size={40} />,
-      isRecurring: false,
-      description:
-        "Professional signage and vehicle wrap designs that make your brand stand out.",
-      addons: [
-        "vehicle-wrap",
-        "storefront-sign",
-        "banner-design",
-        "display-boards",
-      ],
-    },
-    "business-stationery": {
-      id: "business-stationery",
-      name: "Business Design - Business Stationery",
-      icon: <IconId size={40} />,
-      basePrice: 695,
-      isRecurring: false,
-      description:
-        "Professional business stationery including cards, letterheads, and more.",
-      addons: [
-        "business-cards",
-        "letterhead",
-        "invoice-template",
-        "presentation-template",
-      ],
-    },
+    // "business-signage": {
+    //   id: "business-signage",
+    //   name: "Business Design - Signage & Vehicle Wraps",
+    //   basePrice: 195,
+    //   icon: <IconTruck size={40} />,
+    //   isRecurring: false,
+    //   description:
+    //     "Professional signage and vehicle wrap designs that make your brand stand out.",
+    //   addons: [
+    //     "vehicle-wrap",
+    //     "storefront-sign",
+    //     "banner-design",
+    //     "display-boards",
+    //   ],
+    // },
   };
 
   // Addon definitions
   const addons: Record<string, Addon> = {
-    "ssl-cert": {
-      title: "SSL Certificate",
-      price: 99,
-      isRecurring: true,
-      recurringPeriod: "yearly",
-      description: "Secure your website with SSL encryption",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
     "backup-service": {
       title: "Daily Backups",
       price: 19.95,
@@ -327,19 +308,21 @@ const QuotingPage: React.FC = () => {
       minQty: 1,
       maxQty: 1,
     },
-    cdn: {
-      title: "CDN Service",
-      price: 29.95,
-      isRecurring: true,
+    "wordpress-migration": {
+      title: "Migrate Your Website to RAVENCI",
+      price: 250,
+      isRecurring: false,
       recurringPeriod: "monthly",
-      description: "Global content delivery network for faster loading",
+      description:
+        "Wordpress website migration service. If your website is not built with Wordpress, get in touch" +
+        " for a tailored quote",
       customerQty: false,
       minQty: 1,
       maxQty: 1,
     },
     "email-hosting": {
       title: "Professional Email",
-      price: 9.95,
+      price: 5,
       isRecurring: true,
       recurringPeriod: "monthly",
       description: "Professional email hosting with your domain",
@@ -414,7 +397,7 @@ const QuotingPage: React.FC = () => {
       maxQty: 1,
     },
     copywriting: {
-      title: "Professional Copywriting",
+      title: "Professional Copywriting (per page)",
       price: 295,
       isRecurring: false,
       description: "Compelling content that converts visitors",
@@ -423,7 +406,7 @@ const QuotingPage: React.FC = () => {
       maxQty: 10,
     },
     "seo-content": {
-      title: "SEO Content Optimization",
+      title: "SEO Content Optimization (per page)",
       price: 495,
       isRecurring: false,
       description: "Boost search rankings with optimized content",
@@ -469,7 +452,7 @@ const QuotingPage: React.FC = () => {
     },
     "web-hosting-addon": {
       title: "Web Hosting",
-      price: 29.95,
+      price: 29,
       isRecurring: true,
       recurringPeriod: "monthly",
       description: "Professional web hosting",
@@ -516,16 +499,16 @@ const QuotingPage: React.FC = () => {
     },
     "social-media-kit": {
       title: "Social Media Kit",
-      price: 695,
+      price: 495,
       isRecurring: false,
-      description: "10 social media templates",
+      description: "5 social media templates",
       customerQty: false,
       minQty: 1,
       maxQty: 1,
     },
     "brand-guidelines": {
       title: "Brand Guidelines Manual",
-      price: 1295,
+      price: 595,
       isRecurring: false,
       description: "Comprehensive brand guidelines document",
       customerQty: false,
@@ -534,9 +517,11 @@ const QuotingPage: React.FC = () => {
     },
     "vehicle-wrap": {
       title: "Vehicle Wrap Design",
-      price: 1295,
+      price: 895,
       isRecurring: false,
-      description: "Professional vehicle wrap design",
+      description:
+        "Professional vehicle wrap design for your brand. Includes photos taken of the car and template" +
+        " made to suit.",
       customerQty: true,
       minQty: 1,
       maxQty: 5,
@@ -614,6 +599,18 @@ const QuotingPage: React.FC = () => {
       setSelectedService(serviceParam);
     }
   }, []);
+
+  // Service Selection to push a new history state
+  const handleServiceSelection = (serviceId: string) => {
+    setSelectedService(serviceId);
+
+    // Push a new state when service is selected
+    window.history.pushState(
+      { serviceSelected: true },
+      "",
+      window.location.pathname + window.location.search,
+    );
+  };
 
   // Calculate discounts and totals
   const calculatedTotals = useMemo((): CalculatedTotals => {
@@ -707,6 +704,44 @@ const QuotingPage: React.FC = () => {
       freeItems,
     };
   }, [selectedService, selectedAddons]);
+
+  useEffect(() => {
+    const handlePopState = (event: PopStateEvent) => {
+      if (selectedService) {
+        // If a service is selected, prevent going back and just clear the service
+        event.preventDefault();
+        setSelectedService("");
+        setSelectedAddons({});
+        setError(null);
+        setComments("");
+        setPaymentMethod("now");
+        setSelectedInstallment("3-months");
+
+        // Push the current state back to keep the URL the same
+        window.history.pushState(
+          null,
+          "",
+          window.location.pathname + window.location.search,
+        );
+      }
+      // If no service is selected, allow normal back navigation
+    };
+
+    // Push an initial state when component mounts
+    window.history.pushState(
+      null,
+      "",
+      window.location.pathname + window.location.search,
+    );
+
+    // Add the event listener
+    window.addEventListener("popstate", handlePopState);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [selectedService]);
 
   // Calculate installment pricing
   const installmentPricing = useMemo(() => {
@@ -802,7 +837,9 @@ const QuotingPage: React.FC = () => {
             {Object.values(services).map((service) => (
               <div
                 key={service.id}
-                onClick={() => setSelectedService(service.id)}
+                onClick={() => {
+                  handleServiceSelection(service.id);
+                }}
                 className="flex flex-col items-start justify-between bg-white p-6 rounded-lg shadow-md hover:shadow-lg cursor-pointer transition-shadow border border-neutral-200 hover:border-ravenci-primary"
               >
                 <section>

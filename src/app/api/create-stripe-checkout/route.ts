@@ -33,10 +33,9 @@ interface RequestBody {
 
 // Server-side addon prices - MUST match your frontend exactly
 const ADDON_PRICES: Record<string, { price: number; isRecurring: boolean }> = {
-  "ssl-cert": { price: 99, isRecurring: true },
   "backup-service": { price: 19.95, isRecurring: true },
-  cdn: { price: 29.95, isRecurring: true },
-  "email-hosting": { price: 9.95, isRecurring: true },
+  "wordpress-migration": { price: 250, isRecurring: false },
+  "email-hosting": { price: 5, isRecurring: true },
   "content-updates": { price: 95, isRecurring: true },
   "security-monitoring": { price: 49.95, isRecurring: true },
   "performance-optimization": { price: 149, isRecurring: true },
@@ -50,14 +49,14 @@ const ADDON_PRICES: Record<string, { price: number; isRecurring: boolean }> = {
   "newsletter-signup": { price: 395, isRecurring: false },
   "facebook-pixel": { price: 395, isRecurring: false },
   "google-business": { price: 495, isRecurring: false },
-  "web-hosting-addon": { price: 29.95, isRecurring: true },
+  "web-hosting-addon": { price: 29, isRecurring: true },
   "maintenance-addon": { price: 195, isRecurring: true },
   "business-cards": { price: 295, isRecurring: false },
   letterhead: { price: 395, isRecurring: false },
   brochure: { price: 895, isRecurring: false },
-  "social-media-kit": { price: 695, isRecurring: false },
-  "brand-guidelines": { price: 1295, isRecurring: false },
-  "vehicle-wrap": { price: 1295, isRecurring: false },
+  "social-media-kit": { price: 495, isRecurring: false },
+  "brand-guidelines": { price: 595, isRecurring: false },
+  "vehicle-wrap": { price: 895, isRecurring: false },
   "storefront-sign": { price: 795, isRecurring: false },
   "banner-design": { price: 495, isRecurring: false },
   "display-boards": { price: 395, isRecurring: false },
@@ -70,15 +69,16 @@ const SERVICE_PRICES: Record<
   string,
   { basePrice: number; isRecurring: boolean }
 > = {
-  "web-hosting": { basePrice: 29.95, isRecurring: true },
-  "web-maintenance": { basePrice: 195, isRecurring: true },
+  "web-hosting": { basePrice: 29, isRecurring: true },
+  "monthly-web-maintenance": { basePrice: 195, isRecurring: true },
+  "oneoff-web-maintenance": { basePrice: 450, isRecurring: false },
   "web-hosting-maintenance": { basePrice: 199, isRecurring: true },
   "web-dev-single": { basePrice: 2480, isRecurring: false },
   "web-dev-custom": { basePrice: 4960, isRecurring: false },
   "web-dev-branding": { basePrice: 9920, isRecurring: false },
-  "business-branding": { basePrice: 2495, isRecurring: false },
-  "business-signage": { basePrice: 1295, isRecurring: false },
+  // "business-signage": { basePrice: 195, isRecurring: false },
   "business-stationery": { basePrice: 695, isRecurring: false },
+  "business-branding": { basePrice: 2495, isRecurring: false },
 };
 
 function calculateServerTotals(

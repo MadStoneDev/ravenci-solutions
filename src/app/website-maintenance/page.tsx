@@ -153,17 +153,18 @@ export default function WebMaintenancePage() {
           </article>
 
           <PriceButton
-            price={169}
+            price={195}
             frequency={"mo."}
+            link={`/quote?service=monthly-web-maintenance`}
             includeFrom={false}
             callToAction={`Keep your site healthy`}
             subCallToAction={`Sign Up Now`}
-            link={`https://buy.stripe.com/bIY4j8cLc9U8bNSeUV`}
           />
 
           <PriceButton
             price={450}
             frequency={""}
+            link={`/quote?service=oneoff-web-maintenance`}
             callToAction={`One-off maintenance`}
           />
         </section>
