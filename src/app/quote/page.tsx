@@ -11,6 +11,12 @@ import {
   IconServer,
   IconTool,
   IconServerCog,
+  IconDeviceDesktop,
+  IconPalette,
+  IconTruck,
+  IconId,
+  IconPaint,
+  IconTerminal2,
 } from "@tabler/icons-react";
 
 interface Service {
@@ -130,6 +136,7 @@ const QuotingPage: React.FC = () => {
       id: "web-dev-single",
       name: "Web Development - Single Page Starter",
       basePrice: 2480,
+      icon: <IconDeviceDesktop size={40} />,
       isRecurring: false,
       description:
         "Perfect for businesses looking to get their foot in the door with a professional single-page website.",
@@ -168,6 +175,7 @@ const QuotingPage: React.FC = () => {
       id: "web-dev-custom",
       name: "Web Development - Custom Development",
       basePrice: 4960,
+      icon: <IconTerminal2 size={40} />,
       isRecurring: false,
       description:
         "Perfect for businesses who already have their design sorted and just need it built right.",
@@ -180,6 +188,7 @@ const QuotingPage: React.FC = () => {
         "seo-content",
         "blog-setup",
         "newsletter-signup",
+        "facebook-pixel",
         "facebook-pixel",
         "google-business",
         "web-hosting-addon",
@@ -209,6 +218,7 @@ const QuotingPage: React.FC = () => {
       id: "web-dev-branding",
       name: "Web Development - Branding & Development",
       basePrice: 9920,
+      icon: <IconPaint size={40} />,
       isRecurring: false,
       description: `Complete transformation for businesses who want it all - from logo to launch.`,
       addons: [
@@ -251,6 +261,7 @@ const QuotingPage: React.FC = () => {
       id: "business-branding",
       name: "Business Design - Branding Package",
       basePrice: 2495,
+      icon: <IconPalette size={40} />,
       isRecurring: false,
       description:
         "Complete brand identity development from logo to style guide.",
@@ -266,6 +277,7 @@ const QuotingPage: React.FC = () => {
       id: "business-signage",
       name: "Business Design - Signage & Vehicle Wraps",
       basePrice: 1295,
+      icon: <IconTruck size={40} />,
       isRecurring: false,
       description:
         "Professional signage and vehicle wrap designs that make your brand stand out.",
@@ -279,6 +291,7 @@ const QuotingPage: React.FC = () => {
     "business-stationery": {
       id: "business-stationery",
       name: "Business Design - Business Stationery",
+      icon: <IconId size={40} />,
       basePrice: 695,
       isRecurring: false,
       description:
@@ -790,15 +803,19 @@ const QuotingPage: React.FC = () => {
               <div
                 key={service.id}
                 onClick={() => setSelectedService(service.id)}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg cursor-pointer transition-shadow border border-neutral-200 hover:border-ravenci-primary"
+                className="flex flex-col items-start justify-between bg-white p-6 rounded-lg shadow-md hover:shadow-lg cursor-pointer transition-shadow border border-neutral-200 hover:border-ravenci-primary"
               >
-                <div className={`text-neutral-500`}>
-                  {service.icon && service.icon}
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{service.name}</h3>
-                <p className="text-neutral-600 text-sm mb-4">
-                  {service.description}
-                </p>
+                <section>
+                  <div
+                    className={`mb-4 p-3 inline-block bg-ravenci-primary rounded-full text-white`}
+                  >
+                    {service.icon && service.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{service.name}</h3>
+                  <p className="text-neutral-600 text-sm mb-4">
+                    {service.description}
+                  </p>
+                </section>
                 <div className="text-xl font-bold text-ravenci-primary">
                   From ${service.basePrice.toFixed(2)}
                   {service.isRecurring && (

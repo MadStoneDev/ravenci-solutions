@@ -13,6 +13,7 @@ import {
   IconMenu,
   IconNews,
   IconPalette,
+  IconReceiptDollar,
   IconTerminal2,
   IconX,
 } from "@tabler/icons-react";
@@ -135,6 +136,28 @@ export default function MainNavigation() {
             </Link>
 
             <Link
+              href={`/quote`}
+              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
+                showMenu ? "opacity-100" : "opacity-0"
+              } overflow-hidden transition-all duration-500 ease-in-out`}
+              onClick={() => {
+                handleMenuClick(false);
+              }}
+            >
+              <div
+                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
+              ></div>
+              <IconReceiptDollar
+                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
+              />
+              <span
+                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+              >
+                Get a Quote
+              </span>
+            </Link>
+
+            <Link
               href={`/web-development`}
               className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
                 showMenu ? "opacity-100" : "opacity-0"
@@ -156,27 +179,27 @@ export default function MainNavigation() {
               </span>
             </Link>
 
-            <Link
-              href={`/business-design`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconPalette
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                Business Design
-              </span>
-            </Link>
+            {/*<Link*/}
+            {/*  href={`/business-design`}*/}
+            {/*  className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${*/}
+            {/*    showMenu ? "opacity-100" : "opacity-0"*/}
+            {/*  } overflow-hidden transition-all duration-500 ease-in-out`}*/}
+            {/*  onClick={() => {*/}
+            {/*    handleMenuClick(false);*/}
+            {/*  }}*/}
+            {/*>*/}
+            {/*  <div*/}
+            {/*    className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}*/}
+            {/*  ></div>*/}
+            {/*  <IconPalette*/}
+            {/*    className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}*/}
+            {/*  />*/}
+            {/*  <span*/}
+            {/*    className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}*/}
+            {/*  >*/}
+            {/*    Business Design*/}
+            {/*  </span>*/}
+            {/*</Link>*/}
 
             <Link
               href={`/website-maintenance`}
