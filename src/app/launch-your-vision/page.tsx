@@ -1,5 +1,10 @@
-﻿import Link from "next/link";
-import LaunchYourVisionForm from "@/components/launch-your-vision-form";
+﻿import LaunchYourVisionForm from "@/components/launch-your-vision-form";
+
+export const metadata = {
+  title: "Launch Your Vision - RAVENCI Solutions",
+  description:
+    "Get in touch with us to discuss your vision and have it brought to life.",
+};
 
 export default function ContactPage() {
   return (
