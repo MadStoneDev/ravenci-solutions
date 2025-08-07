@@ -133,7 +133,13 @@ export default function WebHostingPage() {
             </p>
           </article>
 
-          <PriceButton price={29} frequency={"mo."} />
+          <PriceButton
+            price={29}
+            frequency={"mo."}
+            link={`/quote?service=web-hosting`}
+            callToAction={`All-in-One Hosting`}
+            subCallToAction={`Stay secure. Stay performant. Stay online.`}
+          />
         </section>
       </div>
 

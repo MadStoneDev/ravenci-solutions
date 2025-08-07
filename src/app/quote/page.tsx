@@ -1,69 +1,23 @@
 ﻿// /app/quote/page.tsx
 "use client";
 
+import Link from "next/link";
 import React, { useState, useEffect, useMemo } from "react";
+
 import {
   IconMinus,
   IconPlus,
   IconCreditCard,
   IconCalendar,
   IconArrowLeft,
-  IconServer,
-  IconTool,
-  IconServerCog,
-  IconDeviceDesktop,
-  IconPalette,
-  IconTruck,
-  IconId,
-  IconPaint,
-  IconTerminal2,
 } from "@tabler/icons-react";
-import { Drill } from "lucide-react";
 
-interface Service {
-  id: string;
-  name: string;
-  icon?: React.ReactNode;
-  basePrice: number;
-  isRecurring: boolean;
-  recurringPeriod?: string;
-  description: string;
-  addons?: string[];
-  discountRules?: DiscountRule[];
-}
-
-interface Addon {
-  title: string;
-  price: number;
-  isRecurring: boolean;
-  recurringPeriod?: string;
-  description: string;
-  customerQty: boolean;
-  minQty: number;
-  maxQty: number;
-}
+import { addons } from "@/lib/data/addons";
+import { services } from "@/lib/data/services";
+import { paymentOptions } from "@/lib/data/installments";
 
 interface SelectedAddons {
   [key: string]: number;
-}
-
-interface DiscountRule {
-  trigger: string[];
-  action: {
-    type: "free" | "discount" | "quantity_discount";
-    items?: string[];
-    percentage?: number;
-    // New properties for quantity-based discounts
-    target_item?: string;
-    quantity_threshold?: number;
-    new_price?: number;
-  };
-}
-
-interface PaymentOption {
-  name: string;
-  fee: number;
-  installments: number;
 }
 
 interface CalculatedTotals {
@@ -73,554 +27,43 @@ interface CalculatedTotals {
   freeItems?: string[];
 }
 
-interface InstallmentPricing {
-  feeAmount: number;
-  totalWithFee: number;
-  installmentAmount: number;
-  adjustedFirstPayment: number;
-  remainingPayments: number;
-}
+type PaymentMethod = "now" | "installments";
 
 const QuotingPage: React.FC = () => {
-  // Service definitions
-  const services: Record<string, Service> = {
-    "web-hosting": {
-      id: "web-hosting",
-      name: "Web Hosting",
-      icon: <IconServer size={40} />,
-      basePrice: 29,
-      isRecurring: true,
-      recurringPeriod: "monthly",
-      description:
-        "Professional web hosting with SSL, backups, and 99.9% uptime guarantee.",
-      addons: ["email-hosting", "wordpress-migration"],
-    },
-    "monthly-web-maintenance": {
-      id: "monthly-web-maintenance",
-      name: "Monthly Web Maintenance",
-      icon: <IconTool size={40} />,
-      basePrice: 195,
-      isRecurring: true,
-      recurringPeriod: "monthly",
-      description: "Keep your website updated, secure, and running smoothly.",
-      addons: [
-        "content-updates",
-        "security-monitoring",
-        "performance-optimization",
-      ],
-    },
-    "oneoff-web-maintenance": {
-      id: "oneoff-web-maintenance",
-      name: "One-Off Web Maintenance",
-      icon: <Drill size={40} />,
-      basePrice: 450,
-      isRecurring: false,
-      description:
-        "Get your website running smoothly again with optimised system updates, fixes, plugin tests and upgrades and" +
-        " security checks.",
-      addons: [
-        "content-updates",
-        "performance-optimization",
-        "contact-form",
-        "cookie-banner",
-        "copywriting",
-        "seo-content",
-      ],
-    },
-    "web-hosting-maintenance": {
-      id: "web-hosting-maintenance",
-      name: "Web Hosting + Maintenance Package",
-      icon: <IconServerCog size={40} />,
-      basePrice: 199,
-      isRecurring: true,
-      recurringPeriod: "monthly",
-      description:
-        "Complete hosting and maintenance solution with bundle savings.",
-      addons: [
-        "email-hosting",
-        "wordpress-migration",
-        "content-updates",
-        "performance-optimization",
-        "contact-form",
-        "cookie-banner",
-        "copywriting",
-        "seo-content",
-      ],
-    },
-    "web-dev-single": {
-      id: "web-dev-single",
-      name: "Web Development - Single Page Starter",
-      basePrice: 2480,
-      icon: <IconDeviceDesktop size={40} />,
-      isRecurring: false,
-      description:
-        "Perfect for businesses looking to get their foot in the door with a professional single-page website.",
-      addons: [
-        "contact-form",
-        "cookie-banner",
-        "copywriting",
-        "seo-content",
-        "newsletter-signup",
-        "facebook-pixel",
-        "google-business",
-        "web-hosting-addon",
-        "maintenance-addon",
-      ],
-      discountRules: [
-        {
-          trigger: ["contact-form", "newsletter-signup", "facebook-pixel"],
-          action: { type: "discount", percentage: 10 },
-        },
-        {
-          trigger: ["extra-pages"],
-          action: {
-            type: "quantity_discount",
-            target_item: "extra-pages",
-            quantity_threshold: 6,
-            new_price: 250,
-          },
-        },
-      ],
-    },
-    "web-dev-custom": {
-      id: "web-dev-custom",
-      name: "Web Development - Custom Development",
-      basePrice: 4960,
-      icon: <IconTerminal2 size={40} />,
-      isRecurring: false,
-      description:
-        "Perfect for businesses who already have their design sorted and just need it built right.",
-      addons: [
-        "extra-pages",
-        "portfolio",
-        "contact-form",
-        "cookie-banner",
-        "copywriting",
-        "seo-content",
-        "blog-setup",
-        "newsletter-signup",
-        "facebook-pixel",
-        "google-business",
-        "web-hosting-addon",
-        "maintenance-addon",
-      ],
-      discountRules: [
-        {
-          trigger: ["contact-form", "newsletter-signup", "facebook-pixel"],
-          action: { type: "discount", percentage: 15 },
-        },
-        {
-          trigger: ["extra-pages"],
-          action: {
-            type: "quantity_discount",
-            target_item: "extra-pages",
-            quantity_threshold: 6,
-            new_price: 250,
-          },
-        },
-      ],
-    },
-    "web-dev-branding": {
-      id: "web-dev-branding",
-      name: "Web Development - Branding & Development",
-      basePrice: 9920,
-      icon: <IconPaint size={40} />,
-      isRecurring: false,
-      description: `Complete transformation for businesses who want it all - from logo to launch.`,
-      addons: [
-        "extra-pages",
-        "portfolio",
-        "contact-form",
-        "cookie-banner",
-        "copywriting",
-        "seo-content",
-        "blog-setup",
-        "newsletter-signup",
-        "facebook-pixel",
-        "google-business",
-        "business-cards",
-        "letterhead",
-        "web-hosting-addon",
-        "maintenance-addon",
-      ],
-      discountRules: [
-        {
-          trigger: ["business-cards", "letterhead"],
-          action: { type: "discount", percentage: 20 },
-        },
-        {
-          trigger: ["extra-pages"],
-          action: {
-            type: "quantity_discount",
-            target_item: "extra-pages",
-            quantity_threshold: 6,
-            new_price: 250,
-          },
-        },
-      ],
-    },
-    "business-stationery": {
-      id: "business-stationery",
-      name: "Business Design - Business Stationery",
-      icon: <IconId size={40} />,
-      basePrice: 695,
-      isRecurring: false,
-      description:
-        "Professional business stationery including business cards and letterheads.",
-      addons: ["social-media-kit"],
-    },
-    "business-branding": {
-      id: "business-branding",
-      name: "Business Design - Branding Package",
-      basePrice: 2495,
-      icon: <IconPalette size={40} />,
-      isRecurring: false,
-      description:
-        "Complete brand identity development from logo to style guide.",
-      addons: ["business-cards", "letterhead", "social-media-kit"],
-    },
-    // "business-signage": {
-    //   id: "business-signage",
-    //   name: "Business Design - Signage & Vehicle Wraps",
-    //   basePrice: 195,
-    //   icon: <IconTruck size={40} />,
-    //   isRecurring: false,
-    //   description:
-    //     "Professional signage and vehicle wrap designs that make your brand stand out.",
-    //   addons: [
-    //     "vehicle-wrap",
-    //     "storefront-sign",
-    //     "banner-design",
-    //     "display-boards",
-    //   ],
-    // },
-  };
-
-  // Addon definitions
-  const addons: Record<string, Addon> = {
-    "backup-service": {
-      title: "Daily Backups",
-      price: 19.95,
-      isRecurring: true,
-      recurringPeriod: "monthly",
-      description: "Automated daily backups of your website",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "wordpress-migration": {
-      title: "Migrate Your Website to RAVENCI",
-      price: 250,
-      isRecurring: false,
-      recurringPeriod: "monthly",
-      description:
-        "Wordpress website migration service. If your website is not built with Wordpress, get in touch" +
-        " for a tailored quote",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "email-hosting": {
-      title: "Professional Email",
-      price: 5,
-      isRecurring: true,
-      recurringPeriod: "monthly",
-      description: "Professional email hosting with your domain",
-      customerQty: true,
-      minQty: 1,
-      maxQty: 10,
-    },
-    "content-updates": {
-      title: "Content Updates",
-      price: 95,
-      isRecurring: true,
-      recurringPeriod: "monthly",
-      description: "4 content updates per month",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "security-monitoring": {
-      title: "Security Monitoring",
-      price: 49.95,
-      isRecurring: true,
-      recurringPeriod: "monthly",
-      description: "24/7 security monitoring and malware protection",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "performance-optimization": {
-      title: "Performance Optimization",
-      price: 149,
-      isRecurring: true,
-      recurringPeriod: "monthly",
-      description: "Monthly performance optimization and speed improvements",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "extra-pages": {
-      title: "Extra Pages",
-      price: 295,
-      isRecurring: false,
-      description: "Additional pages beyond the standard package",
-      customerQty: true,
-      minQty: 1,
-      maxQty: 20,
-    },
-    portfolio: {
-      title: "Portfolio / Gallery",
-      price: 795,
-      isRecurring: false,
-      description: "Showcase your work with a professional portfolio section",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "contact-form": {
-      title: "Contact Form + Integration",
-      price: 595,
-      isRecurring: false,
-      description: "Advanced contact form with email integration",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "cookie-banner": {
-      title: "Cookie Consent Banner",
-      price: 195,
-      isRecurring: false,
-      description: "Stay compliant with privacy laws",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    copywriting: {
-      title: "Professional Copywriting (per page)",
-      price: 295,
-      isRecurring: false,
-      description: "Compelling content that converts visitors",
-      customerQty: true,
-      minQty: 1,
-      maxQty: 10,
-    },
-    "seo-content": {
-      title: "SEO Content Optimization (per page)",
-      price: 495,
-      isRecurring: false,
-      description: "Boost search rankings with optimized content",
-      customerQty: true,
-      minQty: 1,
-      maxQty: 5,
-    },
-    "blog-setup": {
-      title: "Advanced Blog Setup",
-      price: 895,
-      isRecurring: false,
-      description: "Professional blog with categories and management",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "newsletter-signup": {
-      title: "Newsletter Signup Forms",
-      price: 395,
-      isRecurring: false,
-      description: "Build your email list effectively",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "facebook-pixel": {
-      title: "Facebook Pixel Integration",
-      price: 395,
-      isRecurring: false,
-      description: "Track website visitors for Facebook ads",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "google-business": {
-      title: "Google Business Profile",
-      price: 495,
-      isRecurring: false,
-      description: "Optimize your Google Business Profile",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "web-hosting-addon": {
-      title: "Web Hosting",
-      price: 29,
-      isRecurring: true,
-      recurringPeriod: "monthly",
-      description: "Professional web hosting",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "maintenance-addon": {
-      title: "Web Maintenance",
-      price: 195,
-      isRecurring: true,
-      recurringPeriod: "monthly",
-      description: "Website maintenance",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "business-cards": {
-      title: "Business Cards Design",
-      price: 295,
-      isRecurring: false,
-      description: "Professional business card design",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    letterhead: {
-      title: "Letterhead Design",
-      price: 395,
-      isRecurring: false,
-      description: "Professional letterhead design",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    brochure: {
-      title: "Brochure Design",
-      price: 895,
-      isRecurring: false,
-      description: "Tri-fold brochure design",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "social-media-kit": {
-      title: "Social Media Kit",
-      price: 495,
-      isRecurring: false,
-      description: "5 social media templates",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "brand-guidelines": {
-      title: "Brand Guidelines Manual",
-      price: 595,
-      isRecurring: false,
-      description: "Comprehensive brand guidelines document",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "vehicle-wrap": {
-      title: "Vehicle Wrap Design",
-      price: 895,
-      isRecurring: false,
-      description:
-        "Professional vehicle wrap design for your brand. Includes photos taken of the car and template" +
-        " made to suit.",
-      customerQty: true,
-      minQty: 1,
-      maxQty: 5,
-    },
-    "storefront-sign": {
-      title: "Storefront Signage",
-      price: 795,
-      isRecurring: false,
-      description: "Professional storefront sign design",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "banner-design": {
-      title: "Banner Design",
-      price: 495,
-      isRecurring: false,
-      description: "Professional banner design for events",
-      customerQty: true,
-      minQty: 1,
-      maxQty: 10,
-    },
-    "display-boards": {
-      title: "Display Boards",
-      price: 395,
-      isRecurring: false,
-      description: "Professional display board design",
-      customerQty: true,
-      minQty: 1,
-      maxQty: 10,
-    },
-    "invoice-template": {
-      title: "Invoice Template",
-      price: 295,
-      isRecurring: false,
-      description: "Professional invoice template design",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-    "presentation-template": {
-      title: "Presentation Template",
-      price: 695,
-      isRecurring: false,
-      description: "Professional presentation template",
-      customerQty: false,
-      minQty: 1,
-      maxQty: 1,
-    },
-  };
-
-  // Payment options
-  const paymentOptions: Record<string, PaymentOption> = {
-    "3-months": { name: "3 Monthly Payments", fee: 5, installments: 3 },
-    "4-months": { name: "4 Monthly Payments", fee: 7, installments: 4 },
-    "6-months": { name: "6 Monthly Payments", fee: 10, installments: 6 },
-    "12-months": { name: "12 Monthly Payments", fee: 15, installments: 12 },
-  };
-
   // States
   const [selectedService, setSelectedService] = useState("");
   const [selectedAddons, setSelectedAddons] = useState<SelectedAddons>({});
-  const [paymentMethod, setPaymentMethod] = useState("now"); // 'now' or 'installments'
-  const [selectedInstallment, setSelectedInstallment] = useState("3-months");
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("now");
+  const [selectedInstallment, setSelectedInstallment] =
+    useState<string>("3-months");
+
   const [comments, setComments] = useState("");
+
+  const [interceptBack, setInterceptBack] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Get search params on mount
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const serviceParam = urlParams.get("service");
-    if (serviceParam && services[serviceParam]) {
-      setSelectedService(serviceParam);
-    }
-  }, []);
-
-  // Service Selection to push a new history state
+  // Service Selection
   const handleServiceSelection = (serviceId: string) => {
     setSelectedService(serviceId);
+    setInterceptBack(true);
 
-    // Push a new state when service is selected
-    window.history.pushState(
-      { serviceSelected: true },
-      "",
-      window.location.pathname + window.location.search,
-    );
+    // Push a new history state
+    window.history.pushState(null, "", window.location.href);
   };
 
   // Calculate discounts and totals
   const calculatedTotals = useMemo((): CalculatedTotals => {
     if (!selectedService) return { oneTime: 0, recurring: 0, discounts: [] };
+
     const service = services[selectedService];
+
+    const appliedDiscounts: { description: string; amount: number }[] = [];
+    const freeItems: string[] = [];
+
     let oneTimeTotal = service.isRecurring ? 0 : service.basePrice;
     let recurringTotal = service.isRecurring ? service.basePrice : 0;
-    const appliedDiscounts: { description: string; amount: number }[] = [];
-    const quantityDiscounts: { description: string; amount: number }[] = [];
-    const freeItems: string[] = [];
 
     // Calculate addon totals
     Object.entries(selectedAddons).forEach(([addonId, quantity]) => {
@@ -705,44 +148,6 @@ const QuotingPage: React.FC = () => {
     };
   }, [selectedService, selectedAddons]);
 
-  useEffect(() => {
-    const handlePopState = (event: PopStateEvent) => {
-      if (selectedService) {
-        // If a service is selected, prevent going back and just clear the service
-        event.preventDefault();
-        setSelectedService("");
-        setSelectedAddons({});
-        setError(null);
-        setComments("");
-        setPaymentMethod("now");
-        setSelectedInstallment("3-months");
-
-        // Push the current state back to keep the URL the same
-        window.history.pushState(
-          null,
-          "",
-          window.location.pathname + window.location.search,
-        );
-      }
-      // If no service is selected, allow normal back navigation
-    };
-
-    // Push an initial state when component mounts
-    window.history.pushState(
-      null,
-      "",
-      window.location.pathname + window.location.search,
-    );
-
-    // Add the event listener
-    window.addEventListener("popstate", handlePopState);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("popstate", handlePopState);
-    };
-  }, [selectedService]);
-
   // Calculate installment pricing
   const installmentPricing = useMemo(() => {
     if (paymentMethod !== "installments") return null;
@@ -821,6 +226,34 @@ const QuotingPage: React.FC = () => {
     }
   };
 
+  // Get search params on mount
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const serviceParam = urlParams.get("service");
+    if (serviceParam && services[serviceParam]) {
+      setSelectedService(serviceParam);
+    }
+  }, []);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      if (selectedService && interceptBack) {
+        // Clear service selection
+        setSelectedService("");
+        setSelectedAddons({});
+        setPaymentMethod("now");
+        setSelectedInstallment("3-months");
+        setComments("");
+
+        setInterceptBack(false);
+        setError(null);
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [selectedService, interceptBack]);
+
   if (!selectedService) {
     return (
       <main className="pb-10 flex flex-col min-h-screen bg-neutral-50">
@@ -878,7 +311,7 @@ const QuotingPage: React.FC = () => {
       <section className="content-section pt-32 pb-12 px-5 sm:px-20 xl:px-36">
         <button
           onClick={() => setSelectedService("")}
-          className="mb-6 flex items-center gap-1 text-ravenci-primary hover:text-ravenci-primary/80 font-medium"
+          className="mb-6 flex items-center gap-1 text-ravenci-primary hover:text-ravenci-primary/80 font-medium transition-all duration-300 ease-in-out"
         >
           <IconArrowLeft /> Back to Services
         </button>
@@ -909,6 +342,18 @@ const QuotingPage: React.FC = () => {
                   </span>
                 )}
               </div>
+            </div>
+
+            <div className={`mt-5`}>
+              <p className="text-sm text-ravenci-dark/50">
+                Not quite what you're looking for?{" "}
+                <Link
+                  href={`/launch-your-vision`}
+                  className={`text-ravenci-primary hover:text-ravenci-primary/70 transition-all duration-300 ease-in-out`}
+                >
+                  Get in touch!
+                </Link>
+              </p>
             </div>
           </div>
 
@@ -1015,6 +460,18 @@ const QuotingPage: React.FC = () => {
               </div>
             </div>
           )}
+
+          <div className={`mt-5`}>
+            <p className="text-sm text-ravenci-dark/50">
+              Not quite what you're looking for?{" "}
+              <Link
+                href={`/launch-your-vision`}
+                className={`text-ravenci-primary hover:text-ravenci-primary/70 transition-all duration-300 ease-in-out`}
+              >
+                Get in touch!
+              </Link>
+            </p>
+          </div>
         </div>
 
         {/* Order Summary */}
@@ -1065,7 +522,7 @@ const QuotingPage: React.FC = () => {
                     name="payment"
                     value="now"
                     checked={paymentMethod === "now"}
-                    onChange={(e) => setPaymentMethod(e.target.value)}
+                    onChange={() => setPaymentMethod("now")}
                     className="mr-2"
                   />
                   <IconCreditCard size={18} className="mr-2" />
@@ -1079,7 +536,7 @@ const QuotingPage: React.FC = () => {
                       name="payment"
                       value="installments"
                       checked={paymentMethod === "installments"}
-                      onChange={(e) => setPaymentMethod(e.target.value)}
+                      onChange={() => setPaymentMethod("installments")}
                       className="mr-2"
                     />
                     <IconCalendar size={18} className="mr-2" />

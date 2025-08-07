@@ -29,6 +29,8 @@ interface RequestBody {
   installmentPricing?: any;
   comments?: string;
   customerEmail?: string;
+  // Add coupon code field
+  couponCode?: string;
 }
 
 // Server-side addon prices - MUST match your frontend exactly
@@ -36,6 +38,7 @@ const ADDON_PRICES: Record<string, { price: number; isRecurring: boolean }> = {
   "backup-service": { price: 19.95, isRecurring: true },
   "wordpress-migration": { price: 250, isRecurring: false },
   "email-hosting": { price: 5, isRecurring: true },
+  "malware-protection": { price: 5, isRecurring: true },
   "content-updates": { price: 95, isRecurring: true },
   "security-monitoring": { price: 49.95, isRecurring: true },
   "performance-optimization": { price: 149, isRecurring: true },
@@ -76,7 +79,6 @@ const SERVICE_PRICES: Record<
   "web-dev-single": { basePrice: 2480, isRecurring: false },
   "web-dev-custom": { basePrice: 4960, isRecurring: false },
   "web-dev-branding": { basePrice: 9920, isRecurring: false },
-  // "business-signage": { basePrice: 195, isRecurring: false },
   "business-stationery": { basePrice: 695, isRecurring: false },
   "business-branding": { basePrice: 2495, isRecurring: false },
 };
@@ -166,6 +168,7 @@ export async function POST(request: NextRequest) {
       installmentPricing,
       comments,
       customerEmail,
+      couponCode, // Extract coupon code
     } = body;
 
     // CRITICAL: Server-side price validation
@@ -211,6 +214,7 @@ export async function POST(request: NextRequest) {
       original_one_time_total: totals.oneTime.toString(),
       recurring_total: totals.recurring.toString(),
       server_validated: "true",
+      coupon_code: couponCode || "", // Store coupon code in metadata
     };
 
     if (paymentMethod === "now") {
@@ -260,6 +264,8 @@ export async function POST(request: NextRequest) {
           ...baseMetadata,
           payment_type: "full_payment",
         },
+        // OPTION 1: Allow promotion codes in Stripe Checkout
+        allow_promotion_codes: true,
       };
 
       // Add customer email if provided
@@ -331,7 +337,19 @@ export async function POST(request: NextRequest) {
           payment_type: "installments",
           installment_plan: installmentPlan.name,
         },
+        // Enable promotion codes for installment subscriptions too
+        allow_promotion_codes: true,
       };
+
+      // OPTION 2: Apply specific coupon to installment subscription
+      /*
+      if (couponCode) {
+        sessionConfig.subscription_data = {
+          ...sessionConfig.subscription_data,
+          coupon: couponCode,
+        };
+      }
+      */
 
       // Add customer email if provided
       if (customerEmail) {
