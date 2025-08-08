@@ -57,9 +57,9 @@ export const services: Record<string, Service> = {
     recurringPeriod: "monthly",
     description: "Keep your website updated, secure, and running smoothly.",
     addons: [
-      "content-updates",
-      "security-monitoring",
+      "malware-protection",
       "performance-optimization",
+      "content-updates",
     ],
   },
   "oneoff-web-maintenance": {

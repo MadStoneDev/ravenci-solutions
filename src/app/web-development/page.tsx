@@ -1,4 +1,4 @@
-﻿import { IconCircleCheckFilled } from "@tabler/icons-react";
+﻿import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
 
@@ -116,11 +116,36 @@ export default function WebHostingDevelopmentPage() {
             Build it Right From the Get-Go!
           </h1>
           <h2
-            className={`max-w-3xl text-2xl md:text-3xl lg:text-h2 font-light`}
+            className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
           >
-            Have your website developed to last
+            Professional websites that convert visitors into customers
           </h2>
         </article>
+      </section>
+
+      <section
+        className={`p-10 flex flex-col items-center gap-3 bg-ravenci-primary text-white text-center`}
+      >
+        <div className={`max-w-lg`}>
+          <h3
+            className={`pb-6 border-b border-white/20 font-serif font-medium text-xl`}
+          >
+            Trusted by 50+ businesses across Australia to build websites that
+            actually work
+          </h3>
+          <p
+            className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
+          >
+            "Richard is the absolute best at what he does. Our brand new startup
+            is launching with the best possible website I could have imagined.
+            He took the time from the very beginning to understand us and our
+            business, and he has made our branding and website reflect that and
+            represent us perfectly."
+          </p>
+          <h3 className={`font-poppins text-2xl font-light text-neutral-100`}>
+            <span className={`font-bold`}>Adam</span> Bisset
+          </h3>
+        </div>
       </section>
 
       <div className={`grid grid-cols-1 lg:grid-cols-2 bg-white`}>
@@ -176,6 +201,53 @@ export default function WebHostingDevelopmentPage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
           <article className={`max-w-lg`}>
+            <h3 className={`font-serif text-h3 font-bold text-white`}>
+              Tired of Web Development Nightmares?
+            </h3>
+            <p className={`my-4 text-neutral-400/90`}>
+              Stop dealing with:
+              <ul className={`mt-4 flex flex-col gap-2`}>
+                <li>- Developers who disappear after launch</li>
+                <li>- Websites that look nothing like what you wanted</li>
+                <li>- Sites that don't work on mobile devices</li>
+                <li>- Hidden costs and endless revision charges</li>
+                <li>- Technical jargon instead of clear communication</li>
+              </ul>
+            </p>
+
+            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
+              Why Choose RAVENCI Over Other Developers?
+            </h3>
+            <ul className={`flex flex-col gap-4 mb-6 text-neutral-400/90`}>
+              <li className={`flex gap-2`}>
+                <IconCheck
+                  size={24}
+                  className={`p-1 bg-ravenci-primary rounded-full text-white`}
+                />
+                Fixed pricing vs endless scope creep
+              </li>
+              <li className={`flex gap-2`}>
+                <IconCheck
+                  size={24}
+                  className={`p-1 bg-ravenci-primary rounded-full text-white`}
+                />
+                Brisbane-based vs offshore development
+              </li>
+              <li className={`flex gap-2`}>
+                <IconCheck
+                  size={24}
+                  className={`p-1 bg-ravenci-primary rounded-full text-white`}
+                />
+                Ongoing support vs build-and-abandon
+              </li>
+              <li className={`flex gap-2`}>
+                <IconCheck
+                  size={24}
+                  className={`p-1 bg-ravenci-primary rounded-full text-white`}
+                />
+                85+ PageSpeed guaranteed vs "we'll make it pretty"
+              </li>
+            </ul>
             <p className={`mb-4 text-neutral-400/90`}>
               The web development process should never be overwhelming for you.
               It should respect your vision and bring it to life in a way that
@@ -235,6 +307,14 @@ export default function WebHostingDevelopmentPage() {
                 callToAction={`Single Page Starter`}
                 subCallToAction={`Get your foot in the door`}
               />
+
+              <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
+                <p className="text-sm text-yellow-200">
+                  ⚡ Limited: We only take on 12 new Single Page Starter
+                  projects per quarter to ensure quality and timely delivery
+                  while still allowing you time for checking and feedback
+                </p>
+              </div>
             </div>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
@@ -293,6 +373,14 @@ export default function WebHostingDevelopmentPage() {
                 callToAction={`Custom Development`}
                 subCallToAction={`Bring your vision to life`}
               />
+
+              <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
+                <p className="text-sm text-yellow-200">
+                  ⚡ Limited: We only take on 6 new Custom Development projects
+                  to ensure quality and timely delivery while allowing for
+                  feedback and revision rounds
+                </p>
+              </div>
             </div>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
@@ -301,7 +389,7 @@ export default function WebHostingDevelopmentPage() {
             <p className={`mb-4 text-neutral-400/90`}>
               Our Branding & Development option offers a complete transformation
               for businesses who want it all. Starting from scratch or need a
-              complete rebrand? This is the perfect solutions for you. We will
+              complete rebrand? This is the perfect solution for you. We will
               create your entire brand identity from the ground up, then design
               and build a stunning website that brings it all together. From
               logo to launch, get everything you need to stand out in the
@@ -327,11 +415,17 @@ export default function WebHostingDevelopmentPage() {
 </ul>
 <p class="mt-5 text-neutral-100">Website Design</p>
 <ul class="list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
-    <li>Professional responsive build</li>
-    <li>Multi-page custom website (up to 8 pages)</li>
-    <li>Extra Pages purchasable as add-ons</li>
-    <li>Advanced CMS setup with user training</li>
-    <li>Homepage with hero section</li>
+    <li>Custom design faithful to your new branding</li>
+    <li>Professional mockups and wireframes</li>
+    <li>User experience (UX) optimization</li>
+    <li>Responsive design layouts on all devices</li>
+    <li>Brand-consistent color schemes and typography</li>
+    <li>Custom graphics and visual elements</li>
+    <li>Strategic layout for conversion optimization</li>
+    <li>2 design concept presentations</li>
+    <li>2 rounds of design revisions</li>
+    <li>3-4 weeks delivery</li>
+    <li>Final design approval before development begins</li>
 </ul>
 <p class="mt-5 text-neutral-100">Website Development</p>
 <ul class="mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
@@ -351,7 +445,7 @@ export default function WebHostingDevelopmentPage() {
     <li>Basic SEO setup (meta tags, sitemap)</li>
     <li>Social media integration</li>
     <li>85+ Google PageSpeed score guaranteed</li>
-    <li>2 rounds of revisions</li>
+    <li>2 rounds of development revisions</li>
     <li>4-6 weeks delivery</li>
     <li>Discounted Hosting with RAVENCI</li>
     <li>Discounted Maintenance with RAVENCI</li>
@@ -371,10 +465,49 @@ export default function WebHostingDevelopmentPage() {
                 callToAction={`Branding & Development`}
                 subCallToAction={`Full Service Solution`}
               />
+
+              <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
+                <p className="text-sm text-yellow-200">
+                  ⚡ Limited: We only take on 4 new Branding & Development
+                  projects per quarter to ensure quality and timely delivery
+                  while allowing for feedback, changes and revisions
+                </p>
+              </div>
             </div>
           </article>
         </section>
       </div>
+
+      <section
+        className={`content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white`}
+      >
+        <h2 className={`font-serif text-h3`}>Development Questions Answered</h2>
+        <Accordion
+          titleClassName={`py-6 text-lg`}
+          items={[
+            {
+              title: `How long does a typical website take to build?`,
+              content: `Single Page Starter: 3 weeks. Custom Development: 4-6 weeks. Branding & Development: 10-14 weeks total (4 weeks branding + 3-4 weeks design + 4-6 weeks development). We stick to these timelines and provide regular progress updates.`,
+            },
+            {
+              title: `What if I'm not happy with the result?`,
+              content: `We guarantee your website will match your vision. Each package includes multiple revision rounds, and we won't consider the project complete until you're 100% satisfied.`,
+            },
+            {
+              title: `Can I update the website myself after it's built?`,
+              content: `Absolutely. We build on user-friendly CMS platforms and provide training so you can easily update content, add blog posts, and make basic changes without needing a developer.`,
+            },
+            {
+              title: `What makes your development different from cheaper options?`,
+              content: `We guarantee 85+ PageSpeed scores, provide ongoing support, use professional development practices, and we're local to Brisbane. Cheap developers often create slow, problematic sites that cost more to fix later.`,
+            },
+            {
+              title: `Do you handle the domain and hosting setup?`,
+              content: `Yes, all packages include 1 year free domain registration and we can handle hosting setup. We recommend our own hosting for optimal performance, but can work with other quality hosts if needed.`,
+            },
+          ]}
+        />
+      </section>
 
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}

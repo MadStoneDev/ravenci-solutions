@@ -329,12 +329,14 @@ export default function QuotingComponent() {
         <div className="lg:col-span-2">
           <div className="bg-white rounded-lg shadow-md p-6 mb-8">
             <h2 className="text-2xl font-semibold mb-4">Base Service</h2>
-            <div className="flex justify-between items-center p-4 bg-ravenci-primary/10 rounded-lg">
+            <div className="p-4 flex flex-col md:flex-row justify-between md:items-center gap-5 md:gap-2 bg-ravenci-primary/10 rounded-lg">
               <div className={`max-w-xl`}>
                 <h3 className="text-lg font-semibold">{service.name}</h3>
                 <p className="text-neutral-600">{service.description}</p>
               </div>
-              <div className="text-2xl font-bold text-ravenci-primary">
+              <div
+                className={`min-w-[180px] text-2xl font-bold text-ravenci-primary text-right`}
+              >
                 ${service.basePrice.toFixed(2)}
                 {service.isRecurring && (
                   <span className="text-sm font-normal">

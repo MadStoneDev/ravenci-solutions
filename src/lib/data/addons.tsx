@@ -57,7 +57,7 @@ export const addons: Record<string, Addon> = {
     price: 95,
     isRecurring: true,
     recurringPeriod: "monthly",
-    description: "4 content updates per month",
+    description: "4 content updates per month. Does not accrue.",
     customerQty: false,
     minQty: 1,
     maxQty: 1,
@@ -74,10 +74,11 @@ export const addons: Record<string, Addon> = {
   },
   "performance-optimization": {
     title: "Performance Optimization",
-    price: 149,
+    price: 95,
     isRecurring: true,
     recurringPeriod: "monthly",
-    description: "Monthly performance optimization and speed improvements",
+    description:
+      "Monthly performance optimization and speed improvements to help your website load faster and perform better",
     customerQty: false,
     minQty: 1,
     maxQty: 1,

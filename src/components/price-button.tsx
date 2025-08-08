@@ -7,6 +7,7 @@ export default function PriceButton({
   link = "/launch-your-vision",
   price = 29,
   includeFrom = true,
+  fromText = "from",
   frequency = "mo.",
   callToAction = "Only pay for what you need",
   subCallToAction = "Get in touch for a tailored quote",
@@ -16,6 +17,7 @@ export default function PriceButton({
   link?: string;
   price: number;
   includeFrom?: boolean;
+  fromText?: string;
   frequency: string;
   callToAction?: string;
   subCallToAction?: string;
@@ -29,12 +31,14 @@ export default function PriceButton({
       className={`group cursor-pointer mt-12 flex items-stretch max-w-lg border border-neutral-200/50 hover:border-white hover:bg-white hover:scale-105 rounded-xl overflow-hidden transition-all duration-300 ease-in-out ${className}`}
       onClick={() => router.push(link)}
     >
-      <div className={`p-4 flex-shrink-0 flex flex-col bg-white`}>
+      <div
+        className={`p-4 flex-shrink-0 flex flex-col justify-center bg-white`}
+      >
         {includeFrom && (
           <p
             className={`text-xs text-neutral-500/80 transition-all duration-300 ease-in-out`}
           >
-            from
+            {fromText || "from"}
           </p>
         )}
         <p className={`text-4xl font-bold text-ravenci-primary`}>
