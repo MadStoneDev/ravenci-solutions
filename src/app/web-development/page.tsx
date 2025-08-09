@@ -204,7 +204,7 @@ export default function WebHostingDevelopmentPage() {
             <h3 className={`font-serif text-h3 font-bold text-white`}>
               Tired of Web Development Nightmares?
             </h3>
-            <p className={`my-4 text-neutral-400/90`}>
+            <div className={`my-4 text-neutral-400/90`}>
               Stop dealing with:
               <ul className={`mt-4 flex flex-col gap-2`}>
                 <li>- Developers who disappear after launch</li>
@@ -213,7 +213,7 @@ export default function WebHostingDevelopmentPage() {
                 <li>- Hidden costs and endless revision charges</li>
                 <li>- Technical jargon instead of clear communication</li>
               </ul>
-            </p>
+            </div>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
               Why Choose RAVENCI Over Other Developers?
