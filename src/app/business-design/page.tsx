@@ -1,6 +1,7 @@
 ﻿import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
+import StickyCTA from "@/components/sticky-cta";
 
 export const metadata = {
   title: "Business Design Solutions - RAVENCI Solutions",
@@ -611,6 +612,13 @@ export default function BusinessDesignPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      {/* Mobile sticky CTA */}
+      <StickyCTA
+        link="/quote?service=business-design"
+        startingPrice={1980}
+        priceNote=""
+      />
     </main>
   );
 }

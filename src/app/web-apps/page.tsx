@@ -1,6 +1,7 @@
 ﻿import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
+import StickyCTA from "@/components/sticky-cta";
 
 export const metadata = {
   title: "Web App Development - RAVENCI Solutions",
@@ -499,6 +500,13 @@ export default function WebAppPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      {/* Mobile sticky CTA */}
+      <StickyCTA
+        link="/quote?service=web-apps"
+        startingPrice={18900}
+        priceNote=""
+      />
     </main>
   );
 }

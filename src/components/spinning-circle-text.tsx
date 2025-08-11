@@ -25,7 +25,7 @@ export default function SpinningCircleText({
 
   return (
     <Link
-      className={`cursor-pointer fixed bottom-5 right-5 w-24 md:w-28 h-24 md:h-28 rounded-full hover:scale-110 z-50 transition-transform duration-300 ease-in-out`}
+      className={`cursor-pointer fixed bottom-16 md:bottom-5 right-5 w-24 md:w-28 h-24 md:h-28 rounded-full hover:scale-110 z-50 transition-transform duration-300 ease-in-out`}
       href={`https://calendly.com/ravenci`}
       target="_blank"
     >
