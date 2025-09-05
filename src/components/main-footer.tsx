@@ -1,5 +1,10 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
+import {
+  IconDeviceMobileFilled,
+  IconMailFilled,
+  IconPhoneFilled,
+} from "@tabler/icons-react";
 
 export default function MainFooter() {
   return (
@@ -26,13 +31,43 @@ export default function MainFooter() {
         <article
           className={`mt-6 flex flex-wrap gap-x-6 gap-y-5 max-w-2xl text-sm font-light`}
         >
-          <p>Business Website Development</p>
-          <p>Business Web Design</p>
-          <p>UI/UX Design</p>
-          <p>Web App Development</p>
-          <p>Mobile App Development</p>
-          <p>WordPress</p>
-          <div className={`group/link relative pl-2 pr-2`}>
+          <div className={`group/link relative px-2`}>
+            <Link href={`/web-development`} className={`relative z-10`}>
+              Business Website Development
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
+            <Link href={`/business-design`} className={`relative z-10`}>
+              Business Design
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
+            <Link href={`/web-apps`} className={`relative z-10`}>
+              Web App Development
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
+            <Link href={`/mobile-apps`} className={`relative z-10`}>
+              Mobile App Development
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
             <Link href={`/website-maintenance`} className={`relative z-10`}>
               Maintenance
             </Link>
@@ -41,9 +76,18 @@ export default function MainFooter() {
             ></div>
           </div>
 
-          <div className={`group/link relative pl-2 pr-2`}>
+          <div className={`group/link relative px-2`}>
             <Link href={`/web-hosting`} className={`relative z-10`}>
               Domains & Cloud Hosting
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
+            <Link href={`/seo-and-content`} className={`relative z-10`}>
+              SEO and Content
             </Link>
             <div
               className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
@@ -55,7 +99,7 @@ export default function MainFooter() {
         <article
           className={`mt-6 flex flex-wrap gap-x-6 gap-y-5 max-w-2xl text-sm font-light`}
         >
-          <div className={`group/link relative pl-2 pr-2`}>
+          <div className={`group/link relative px-2`}>
             <Link href={`/articles`} className={`relative z-10`}>
               Articles
             </Link>
@@ -64,13 +108,66 @@ export default function MainFooter() {
             ></div>
           </div>
 
-          <div className={`group/link relative pl-2 pr-2`}>
+          <div className={`group/link relative px-2`}>
             <Link href={`/launch-your-vision`} className={`relative z-10`}>
               Launch Your Vision
             </Link>
             <div
               className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
             ></div>
+          </div>
+        </article>
+
+        <h4 className={`mt-12 text-neutral-400/70`}>Contact</h4>
+        <article
+          className={`mt-6 flex flex-wrap gap-x-6 gap-y-5 max-w-2xl text-sm font-light`}
+        >
+          <div
+            className={`group/link pl-1 pr-2 relative flex items-center gap-1`}
+          >
+            <IconPhoneFilled
+              size={18}
+              className={`text-ravenci-primary group-hover/link:text-white z-10 transition-all duration-300 ease-in-out`}
+            />
+            <Link href={`tel:+61731061836`} className={`relative z-10`}>
+              07 3106 1836
+            </Link>
+
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-0 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            />
+          </div>
+
+          <div
+            className={`group/link pl-1 pr-2 relative flex items-center gap-1`}
+          >
+            <IconDeviceMobileFilled
+              size={18}
+              className={`text-ravenci-primary group-hover/link:text-white z-10 transition-all duration-300 ease-in-out`}
+            />
+            <Link href={`tel:+61426238272`} className={`relative z-10`}>
+              0426 238 272
+            </Link>
+
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-0 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            />
+          </div>
+
+          <div
+            className={`group/link pl-1 pr-2 relative flex items-center gap-1`}
+          >
+            <IconMailFilled
+              size={18}
+              className={`text-ravenci-primary group-hover/link:text-white z-10 transition-all duration-300 ease-in-out`}
+            />
+            <Link href={`/launch-your-vision`} className={`relative z-10`}>
+              Contact Form
+            </Link>
+
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-0 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            />
           </div>
         </article>
 

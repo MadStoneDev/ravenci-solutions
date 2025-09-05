@@ -103,7 +103,7 @@ export const services: Record<string, Service> = {
   "web-dev-single": {
     id: "web-dev-single",
     name: "Web Development - Single Page Starter",
-    basePrice: 2480,
+    basePrice: 2240,
     icon: <IconDeviceDesktop size={40} />,
     isRecurring: false,
     description:
@@ -138,7 +138,7 @@ export const services: Record<string, Service> = {
   "web-dev-custom": {
     id: "web-dev-custom",
     name: "Web Development - Custom Development",
-    basePrice: 4960,
+    basePrice: 7800,
     icon: <IconTerminal2 size={40} />,
     isRecurring: false,
     description:
@@ -176,7 +176,7 @@ export const services: Record<string, Service> = {
   "web-dev-branding": {
     id: "web-dev-branding",
     name: "Web Development - Branding & Development",
-    basePrice: 9920,
+    basePrice: 12000,
     icon: <IconPaint size={40} />,
     isRecurring: false,
     description: `Complete transformation for businesses who want it all - from logo to launch.`,

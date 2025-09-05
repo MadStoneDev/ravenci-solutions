@@ -15,7 +15,7 @@ export default function PriceButton({
 }: {
   mode?: "dark" | "light";
   link?: string;
-  price: number;
+  price: number | string;
   includeFrom?: boolean;
   fromText?: string;
   frequency: string;
@@ -42,7 +42,7 @@ export default function PriceButton({
           </p>
         )}
         <p className={`text-4xl font-bold text-ravenci-primary`}>
-          ${price}
+          ${price as string}
           <span
             className={`text-lg text-neutral-700 transition-all duration-300 ease-in-out`}
           >
