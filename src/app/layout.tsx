@@ -28,6 +28,34 @@ export const metadata: Metadata = {
   description:
     "Innovative and expert solutions to a digital tomorrow - RAVENCI is an Australian website and app development" +
     " agency based in Brisbane, Queensland.",
+  openGraph: {
+    title:
+      "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
+    description:
+      "Innovative and expert solutions to a digital tomorrow - RAVENCI is an Australian website and app development" +
+      " agency based in Brisbane, Queensland.",
+    url: "https://your-domain.com", // Replace with your actual domain
+    siteName: "RAVENCI Solutions",
+    images: [
+      {
+        url: "/og-image.jpg", // Replace with your image path once created
+        width: 1200,
+        height: 630,
+        alt: "RAVENCI Solutions - Digital Development & Design Agency Brisbane",
+      },
+    ],
+    locale: "en_AU",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
+    description:
+      "Innovative and expert solutions to a digital tomorrow - RAVENCI is an Australian website and app development" +
+      " agency based in Brisbane, Queensland.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
