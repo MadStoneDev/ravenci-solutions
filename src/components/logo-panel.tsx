@@ -20,6 +20,11 @@ const TECH_LOGOS = [
     href: "https://wordpress.org/",
   },
   {
+    title: "Prismic",
+    logo: "/tech/tech-logos-prismic.svg",
+    href: "https://prismic.io/",
+  },
+  {
     title: "Shopify",
     logo: "/tech/tech-logos-shopify.svg",
     href: "https://shopify.com",
@@ -94,11 +99,11 @@ const TECH_LOGOS = [
   //   logo: "/tech/tech-logos-flutter.svg",
   //   href: "https://flutter.dev/",
   // },
-  // {
-  //   title: "Kotlin",
-  //   logo: "/tech/tech-logos-kotlin.svg",
-  //   href: "https://kotlinlang.org/",
-  // },
+  {
+    title: "Kotlin",
+    logo: "/tech/tech-logos-kotlin.svg",
+    href: "https://kotlinlang.org/",
+  },
   {
     title: "Swift",
     logo: "/tech/tech-logos-swift.svg",
@@ -200,7 +205,7 @@ export default function LogosPanel({
               title={title}
               target={"_blank"}
               rel={"noreferrer nofollow"}
-              className={`inline-block`}
+              className={`py-6 inline-grid place-content-center rounded-xl hover:scale-110 hover:bg-neutral-200 transition-all duration-300 ease-in-out`}
             >
               <img src={logo} alt={title} className={`mx-6 h-12`} />
             </Link>

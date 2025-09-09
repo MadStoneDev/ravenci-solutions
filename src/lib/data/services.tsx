@@ -103,7 +103,7 @@ export const services: Record<string, Service> = {
   "web-dev-single": {
     id: "web-dev-single",
     name: "Web Development - Single Page Starter",
-    basePrice: 2480,
+    basePrice: 2240,
     icon: <IconDeviceDesktop size={40} />,
     isRecurring: false,
     description:
@@ -138,7 +138,7 @@ export const services: Record<string, Service> = {
   "web-dev-custom": {
     id: "web-dev-custom",
     name: "Web Development - Custom Development",
-    basePrice: 4960,
+    basePrice: 7800,
     icon: <IconTerminal2 size={40} />,
     isRecurring: false,
     description:
@@ -176,7 +176,7 @@ export const services: Record<string, Service> = {
   "web-dev-branding": {
     id: "web-dev-branding",
     name: "Web Development - Branding & Development",
-    basePrice: 9920,
+    basePrice: 12000,
     icon: <IconPaint size={40} />,
     isRecurring: false,
     description: `Complete transformation for businesses who want it all - from logo to launch.`,
@@ -212,39 +212,23 @@ export const services: Record<string, Service> = {
       },
     ],
   },
-  "business-stationery": {
-    id: "business-stationery",
-    name: "Business Design - Business Stationery",
-    icon: <IconId size={40} />,
-    basePrice: 695,
-    isRecurring: false,
-    description:
-      "Professional business stationery including business cards and letterheads.",
-    addons: ["social-media-kit"],
-  },
-  "business-branding": {
-    id: "business-branding",
-    name: "Business Design - Branding Package",
-    basePrice: 2495,
+  "business-essentials": {
+    id: "business-essentials",
+    name: "Business Design - Essentials",
     icon: <IconPalette size={40} />,
+    basePrice: 2480,
+    isRecurring: false,
+    description: "Professional business stationery.",
+    addons: [],
+  },
+  "business-marketing": {
+    id: "business-marketing",
+    name: "Business Design - Marketing Materials",
+    icon: <IconId size={40} />,
+    basePrice: 4560,
     isRecurring: false,
     description:
-      "Complete brand identity development from logo to style guide.",
-    addons: ["business-cards", "letterhead", "social-media-kit"],
+      "Premium business branding including business cards and letterheads.",
+    addons: [],
   },
-  // "business-signage": {
-  //   id: "business-signage",
-  //   name: "Business Design - Signage & Vehicle Wraps",
-  //   basePrice: 195,
-  //   icon: <IconTruck size={40} />,
-  //   isRecurring: false,
-  //   description:
-  //     "Professional signage and vehicle wrap designs that make your brand stand out.",
-  //   addons: [
-  //     "vehicle-wrap",
-  //     "storefront-sign",
-  //     "banner-design",
-  //     "display-boards",
-  //   ],
-  // },
 };

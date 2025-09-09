@@ -22,7 +22,7 @@ export const addons: Record<string, Addon> = {
   },
   "wordpress-migration": {
     title: "Migrate Your Website to RAVENCI",
-    price: 250,
+    price: 175,
     isRecurring: false,
     recurringPeriod: "monthly",
     description:

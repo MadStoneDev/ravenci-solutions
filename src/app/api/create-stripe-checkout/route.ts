@@ -4,39 +4,10 @@ import { Stripe } from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
-// Add validation schemas
-interface ServiceData {
-  id: string;
-  name: string;
-  basePrice: number;
-  isRecurring: boolean;
-  description: string;
-}
-
-interface AddonData {
-  [key: string]: number;
-}
-
-interface RequestBody {
-  service: ServiceData;
-  addons: AddonData;
-  paymentMethod: "now" | "installments";
-  installmentPlan?: any;
-  totals: {
-    oneTime: number;
-    recurring: number;
-  };
-  installmentPricing?: any;
-  comments?: string;
-  customerEmail?: string;
-  // Add coupon code field
-  couponCode?: string;
-}
-
 // Server-side addon prices - MUST match your frontend exactly
 const ADDON_PRICES: Record<string, { price: number; isRecurring: boolean }> = {
   "backup-service": { price: 19.95, isRecurring: true },
-  "wordpress-migration": { price: 250, isRecurring: false },
+  "wordpress-migration": { price: 175, isRecurring: false },
   "email-hosting": { price: 5, isRecurring: true },
   "malware-protection": { price: 5, isRecurring: true },
   "content-updates": { price: 95, isRecurring: true },
@@ -79,8 +50,8 @@ const SERVICE_PRICES: Record<
   "web-dev-single": { basePrice: 2480, isRecurring: false },
   "web-dev-custom": { basePrice: 4960, isRecurring: false },
   "web-dev-branding": { basePrice: 9920, isRecurring: false },
-  "business-stationery": { basePrice: 695, isRecurring: false },
-  "business-branding": { basePrice: 2495, isRecurring: false },
+  "business-essentials": { basePrice: 2480, isRecurring: false },
+  "business-marketing": { basePrice: 4560, isRecurring: false },
 };
 
 function calculateServerTotals(

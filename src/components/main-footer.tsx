@@ -1,10 +1,8 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
 import {
-  IconBrandEnvato,
   IconDeviceMobileFilled,
   IconMailFilled,
-  IconPhone,
   IconPhoneFilled,
 } from "@tabler/icons-react";
 
@@ -34,18 +32,37 @@ export default function MainFooter() {
           className={`mt-6 flex flex-wrap gap-x-6 gap-y-5 max-w-2xl text-sm font-light`}
         >
           <div className={`group/link relative px-2`}>
-            <Link href={`/website-development`} className={`relative z-10`}>
+            <Link href={`/web-development`} className={`relative z-10`}>
               Business Website Development
             </Link>
             <div
               className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
             ></div>
           </div>
-          <p>Business Design</p>
-          <p>UI/UX Design</p>
-          <p>Web App Development</p>
-          <p>Mobile App Development</p>
-          <p>WordPress</p>
+
+          <div className={`group/link relative px-2`}>
+            <Link href={`/business-design`} className={`relative z-10`}>
+              Business Design
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
+            <p className={`relative z-10`}>Web App Development</p>
+            {/*<div*/}
+            {/*  className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}*/}
+            {/*></div>*/}
+          </div>
+
+          <div className={`group/link relative px-2`}>
+            <p className={`relative z-10`}>Mobile App Development</p>
+            {/*<div*/}
+            {/*  className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}*/}
+            {/*></div>*/}
+          </div>
+
           <div className={`group/link relative px-2`}>
             <Link href={`/website-maintenance`} className={`relative z-10`}>
               Maintenance
@@ -62,6 +79,13 @@ export default function MainFooter() {
             <div
               className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
             ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
+            <p className={`relative z-10`}>SEO and Content</p>
+            {/*<div*/}
+            {/*  className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}*/}
+            {/*></div>*/}
           </div>
         </article>
 

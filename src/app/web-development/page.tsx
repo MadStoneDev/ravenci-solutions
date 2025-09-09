@@ -55,6 +55,10 @@ export default function WebHostingDevelopmentPage() {
       description:
         "Modern contact forms with spam protection and email notifications",
     },
+    {
+      title: "SSL Certificate",
+      description: "Free SSL Certificate when you choose to host with RAVENCI",
+    },
   ];
 
   const addons = [
@@ -204,7 +208,7 @@ export default function WebHostingDevelopmentPage() {
             <h3 className={`font-serif text-h3 font-bold text-white`}>
               Tired of Web Development Nightmares?
             </h3>
-            <p className={`my-4 text-neutral-400/90`}>
+            <div className={`my-4 text-neutral-400/90`}>
               Stop dealing with:
               <ul className={`mt-4 flex flex-col gap-2`}>
                 <li>- Developers who disappear after launch</li>
@@ -213,7 +217,7 @@ export default function WebHostingDevelopmentPage() {
                 <li>- Hidden costs and endless revision charges</li>
                 <li>- Technical jargon instead of clear communication</li>
               </ul>
-            </p>
+            </div>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
               Why Choose RAVENCI Over Other Developers?
@@ -300,7 +304,7 @@ export default function WebHostingDevelopmentPage() {
                 ]}
               />
               <PriceButton
-                price={2480}
+                price={2240}
                 link={`/quote?service=web-dev-single`}
                 frequency={""}
                 includeFrom={true}
@@ -318,7 +322,7 @@ export default function WebHostingDevelopmentPage() {
             </div>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
-              2. Custom Development
+              2. Professional Development
             </h3>
             <p className={`mb-4 text-neutral-400/90`}>
               Already have your design sorted? Have your website built just
@@ -366,25 +370,25 @@ export default function WebHostingDevelopmentPage() {
               />
 
               <PriceButton
-                price={4960}
+                price={7200}
                 link={`/quote?service=web-dev-custom`}
                 frequency={""}
                 includeFrom={true}
-                callToAction={`Custom Development`}
+                callToAction={`Professional Development`}
                 subCallToAction={`Bring your vision to life`}
               />
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
                 <p className="text-sm text-yellow-200">
                   ⚡ Limited: We only take on 6 new Custom Development projects
-                  to ensure quality and timely delivery while allowing for
-                  feedback and revision rounds
+                  per quarter to ensure quality and timely delivery while
+                  allowing for feedback and revision rounds
                 </p>
               </div>
             </div>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
-              3. Branding & Development
+              3. Enterprise Branding & Development
             </h3>
             <p className={`mb-4 text-neutral-400/90`}>
               Our Branding & Development option offers a complete transformation
@@ -458,7 +462,7 @@ export default function WebHostingDevelopmentPage() {
               />
 
               <PriceButton
-                price={9920}
+                price={"12k"}
                 link={`/quote?service=web-dev-branding`}
                 frequency={""}
                 includeFrom={true}
@@ -468,7 +472,7 @@ export default function WebHostingDevelopmentPage() {
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
                 <p className="text-sm text-yellow-200">
-                  ⚡ Limited: We only take on 4 new Branding & Development
+                  ⚡ Limited: We only take on 3 new Branding & Development
                   projects per quarter to ensure quality and timely delivery
                   while allowing for feedback, changes and revisions
                 </p>

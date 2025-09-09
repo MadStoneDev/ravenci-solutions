@@ -128,16 +128,14 @@ export default function WebHostingPage() {
             <h3 className={`font-serif text-h3 font-bold text-white`}>
               Tired of Hosting Headaches?
             </h3>
-            <p className={`my-4 text-neutral-400/90`}>
-              Stop dealing with:
-              <ul className={`flex flex-col gap-2 mt-2`}>
-                <li>- Websites that crash during high traffic</li>
-                <li>- Slow loading times that lose customers</li>
-                <li>- Complex hosting panels you can't understand</li>
-                <li>- Surprise overage charges and hidden fees</li>
-                <li>- Offshore support that can't relate to you</li>
-              </ul>
-            </p>
+            <p className={`my-4 text-neutral-400/90`}>Stop dealing with:</p>
+            <ul className={`flex flex-col gap-2 mt-2 text-neutral-400/90`}>
+              <li>- Websites that crash during high traffic</li>
+              <li>- Slow loading times that lose customers</li>
+              <li>- Complex hosting panels you can't understand</li>
+              <li>- Surprise overage charges and hidden fees</li>
+              <li>- Offshore support that can't relate to you</li>
+            </ul>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
               Why Choose RAVENCI Over Other Hosts?
