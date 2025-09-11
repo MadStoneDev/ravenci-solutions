@@ -6,13 +6,16 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 // Server-side addon prices - MUST match your frontend exactly
 const ADDON_PRICES: Record<string, { price: number; isRecurring: boolean }> = {
-  "backup-service": { price: 19.95, isRecurring: true },
+  "backup-service": { price: 19, isRecurring: true },
+  "oneoff-backup-service": { price: 39, isRecurring: false },
   "wordpress-migration": { price: 175, isRecurring: false },
   "email-hosting": { price: 5, isRecurring: true },
-  "malware-protection": { price: 5, isRecurring: true },
+  "malware-protection": { price: 6, isRecurring: true },
+  "malware-audit": { price: 49, isRecurring: false },
   "content-updates": { price: 95, isRecurring: true },
-  "security-monitoring": { price: 49.95, isRecurring: true },
-  "performance-optimization": { price: 149, isRecurring: true },
+  "oneoff-content-updates": { price: 85, isRecurring: false },
+  "performance-optimization": { price: 95, isRecurring: true },
+  "oneoff-performance-optimization": { price: 120, isRecurring: false },
   "extra-pages": { price: 295, isRecurring: false },
   portfolio: { price: 795, isRecurring: false },
   "contact-form": { price: 595, isRecurring: false },
@@ -43,13 +46,13 @@ const SERVICE_PRICES: Record<
   string,
   { basePrice: number; isRecurring: boolean }
 > = {
-  "web-hosting": { basePrice: 29, isRecurring: true },
+  "web-hosting": { basePrice: 24, isRecurring: true },
   "monthly-web-maintenance": { basePrice: 195, isRecurring: true },
   "oneoff-web-maintenance": { basePrice: 450, isRecurring: false },
   "web-hosting-maintenance": { basePrice: 199, isRecurring: true },
-  "web-dev-single": { basePrice: 2480, isRecurring: false },
+  "web-dev-single": { basePrice: 2240, isRecurring: false },
   "web-dev-custom": { basePrice: 4960, isRecurring: false },
-  "web-dev-branding": { basePrice: 9920, isRecurring: false },
+  "web-dev-branding": { basePrice: 12000, isRecurring: false },
   "business-essentials": { basePrice: 2480, isRecurring: false },
   "business-marketing": { basePrice: 4560, isRecurring: false },
 };

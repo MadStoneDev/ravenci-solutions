@@ -41,7 +41,7 @@ export const services: Record<string, Service> = {
     id: "web-hosting",
     name: "Web Hosting",
     icon: <IconServer size={40} />,
-    basePrice: 29,
+    basePrice: 24,
     isRecurring: true,
     recurringPeriod: "monthly",
     description:
@@ -59,6 +59,7 @@ export const services: Record<string, Service> = {
     addons: [
       "malware-protection",
       "performance-optimization",
+      "backup-service",
       "content-updates",
     ],
   },
@@ -72,8 +73,10 @@ export const services: Record<string, Service> = {
       "Get your website running smoothly again with optimised system updates, fixes, plugin tests and upgrades and" +
       " security checks.",
     addons: [
-      "content-updates",
-      "performance-optimization",
+      "oneoff-backup-service",
+      "oneoff-content-updates",
+      "malware-audit",
+      "oneoff-performance-optimization",
       "contact-form",
       "cookie-banner",
       "copywriting",
@@ -138,7 +141,7 @@ export const services: Record<string, Service> = {
   "web-dev-custom": {
     id: "web-dev-custom",
     name: "Web Development - Custom Development",
-    basePrice: 7800,
+    basePrice: 4960,
     icon: <IconTerminal2 size={40} />,
     isRecurring: false,
     description:
