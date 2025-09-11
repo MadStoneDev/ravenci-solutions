@@ -163,6 +163,12 @@ export default function MainFooter() {
               className={`absolute top-0 left-0 bottom-0 w-0 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
             />
           </div>
+
+          <div
+            className={`group/link pl-1 pr-2 relative flex items-center gap-1 opacity-50`}
+          >
+            Brisbane, Australia
+          </div>
         </article>
 
         <article

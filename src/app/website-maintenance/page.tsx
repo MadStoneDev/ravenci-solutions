@@ -83,8 +83,8 @@ export default function WebMaintenancePage() {
           <h3
             className={`pb-6 border-b border-white/20 font-serif font-medium text-xl`}
           >
-            Trusted by over 50 Australian businesses including law firms,
-            medical practices and retail stores
+            Maintaining website for over 25 Australian businesses including law
+            firms, medical practices and retail stores
           </h3>
           <p
             className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
@@ -153,13 +153,13 @@ export default function WebMaintenancePage() {
             <p className={`my-4 text-neutral-400/90`}>
               Websites face over 40,000 attacks daily and without proper
               maintenance, your website is vulnerable to:
-              <ul className={`mt-4 flex flex-col gap-2`}>
-                <li>- Security breaches that could be costly to recover</li>
-                <li>- Downtime causing loss of sales</li>
-                <li>- Slow speeds that drive customers to competitors</li>
-                <li>- Outdated plugins creating compatibility issues</li>
-              </ul>
             </p>
+            <ul className={`mt-4 flex flex-col gap-2 text-neutral-400/90`}>
+              <li>- Security breaches that could be costly to recover</li>
+              <li>- Downtime causing loss of sales</li>
+              <li>- Slow speeds that drive customers to competitors</li>
+              <li>- Outdated plugins creating compatibility issues</li>
+            </ul>
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
               Why Businesses Choose RAVENCI Over DIY Maintenance:
             </h3>

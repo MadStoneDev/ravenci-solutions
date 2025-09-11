@@ -72,8 +72,8 @@ export default function WebHostingPage() {
           <h3
             className={`pb-6 border-b border-white/20 font-serif font-medium text-xl`}
           >
-            Trusted by over 50 Australian businesses including law firms,
-            medical practices and retail stores
+            Hosting over 25 Australian businesses websites including for law
+            firms, medical practices and retail stores
           </h3>
           <p
             className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
