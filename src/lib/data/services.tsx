@@ -145,7 +145,8 @@ export const services: Record<string, Service> = {
     icon: <IconTerminal2 size={40} />,
     isRecurring: false,
     description:
-      "Perfect for businesses who already have their design sorted and just need it built right.",
+      "Perfect for businesses who already have their design sorted and just need it built right. This includes up to" +
+      " 8 pages.",
     addons: [
       "extra-pages",
       "portfolio",
