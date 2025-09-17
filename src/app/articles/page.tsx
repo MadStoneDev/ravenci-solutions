@@ -2,8 +2,14 @@
 import Link from "next/link";
 
 async function getArticles() {
+  const currentDate = new Date().toISOString();
+
   const response = await axios.get(
-    `https://strapi.ravenci.solutions/api/articles?sort[0]=createdAt:desc&populate=*&filters[publishedAt][$notNull]=true`,
+    `https://strapi.ravenci.solutions/api/articles?` +
+      `sort[0]=Publication_Date:desc&` + // Changed from createdAt to Publication_Date
+      `populate=*&` +
+      `filters[publishedAt][$notNull]=true&` + // Still using Strapi's built-in publish filter
+      `filters[Publication_Date][$lte]=${currentDate}`, // Only show articles with pub date <= now
     {
       headers: {
         Authorization: `Bearer ${process.env.STRAPI_API_KEY}`,
