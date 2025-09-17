@@ -9,52 +9,62 @@
 
 <url>
   <loc>https://ravenci.solutions/</loc>
-  <lastmod>2025-08-07T13:25:18+00:00</lastmod>
+  <lastmod>2025-09-17T15:42:54+00:00</lastmod>
   <priority>1.00</priority>
 </url>
-  <url>
-    <loc>https://ravenci.solutions/quote</loc>
-    <lastmod>2025-08-07T13:25:18+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
 <url>
-  <loc>https://ravenci.solutions/web-development</loc>
-  <lastmod>2025-08-07T13:25:18+00:00</lastmod>
+  <loc>https://ravenci.solutions/launch-your-vision</loc>
+  <lastmod>2025-09-17T15:42:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://ravenci.solutions/website-maintenance</loc>
-  <lastmod>2025-08-07T13:25:18+00:00</lastmod>
+  <lastmod>2025-09-17T15:42:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://ravenci.solutions/web-hosting</loc>
-  <lastmod>2025-08-07T13:25:18+00:00</lastmod>
+  <lastmod>2025-09-17T15:42:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-  <url>
-    <loc>https://ravenci.solutions/launch-your-vision</loc>
-    <lastmod>2025-08-07T13:25:18+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
+<url>
+  <loc>https://ravenci.solutions/web-development</loc>
+  <lastmod>2025-09-17T15:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ravenci.solutions/business-design</loc>
+  <lastmod>2025-09-17T15:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 <url>
   <loc>https://ravenci.solutions/articles</loc>
-  <lastmod>2025-08-07T13:25:18+00:00</lastmod>
+  <lastmod>2025-09-17T15:42:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://ravenci.solutions/privacy-policy</loc>
-  <lastmod>2025-08-07T13:25:18+00:00</lastmod>
-  <priority>0.60</priority>
+  <lastmod>2025-09-17T15:42:54+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://ravenci.solutions/terms-and-conditions</loc>
-  <lastmod>2025-08-07T13:25:18+00:00</lastmod>
-  <priority>0.60</priority>
+  <lastmod>2025-09-17T15:42:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ravenci.solutions/quote?service=business-design</loc>
+  <lastmod>2025-09-17T15:42:54+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ravenci.solutions/articles/10-point-website-launch-checklist</loc>
+  <lastmod>2025-09-17T15:42:54+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://ravenci.solutions/articles/three-factors-that-drive-customer-choice-over-having-the-best</loc>
-  <lastmod>2025-08-07T13:25:18+00:00</lastmod>
+  <lastmod>2025-09-17T15:42:54+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
