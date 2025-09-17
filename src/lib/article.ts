@@ -21,8 +21,6 @@ export async function getArticleBySlug(slug: string) {
 
     const article = response.data.data ? response.data.data[0] : false;
 
-    console.log(article);
-
     if (article) {
       await redis.set(cacheKey, article, { ex: CACHE_TIME });
     }
