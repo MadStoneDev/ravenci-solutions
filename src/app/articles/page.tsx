@@ -9,7 +9,7 @@ async function getArticles() {
       `sort[0]=Publication_Date:desc&` + // Changed from createdAt to Publication_Date
       `populate=*&` +
       `filters[publishedAt][$notNull]=true&` + // Still using Strapi's built-in publish filter
-      `filters[Publication_Date][$lte]=${currentDate}`, // Only show articles with pub date <= now
+      `filters[Schedule_Date][$lte]=${currentDate}`, // Only show articles with pub date <= now
     {
       headers: {
         Authorization: `Bearer ${process.env.STRAPI_API_KEY}`,
