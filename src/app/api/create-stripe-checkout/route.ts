@@ -10,7 +10,7 @@ const ADDON_PRICES: Record<string, { price: number; isRecurring: boolean }> = {
   "oneoff-backup-service": { price: 39, isRecurring: false },
   "wordpress-migration": { price: 175, isRecurring: false },
   "email-hosting": { price: 5, isRecurring: true },
-  "malware-protection": { price: 6, isRecurring: true },
+  "malware-protection": { price: 10, isRecurring: true },
   "malware-audit": { price: 49, isRecurring: false },
   "content-updates": { price: 95, isRecurring: true },
   "oneoff-content-updates": { price: 85, isRecurring: false },
