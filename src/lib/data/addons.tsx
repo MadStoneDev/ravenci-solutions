@@ -55,7 +55,7 @@ export const addons: Record<string, Addon> = {
   },
   "malware-protection": {
     title: "Malware Protection",
-    price: 6,
+    price: 10,
     isRecurring: true,
     recurringPeriod: "monthly",
     description: "Add extra security to your website with malware protection",
