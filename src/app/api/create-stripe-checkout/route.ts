@@ -26,7 +26,7 @@ const ADDON_PRICES: Record<string, { price: number; isRecurring: boolean }> = {
   "newsletter-signup": { price: 395, isRecurring: false },
   "facebook-pixel": { price: 395, isRecurring: false },
   "google-business": { price: 495, isRecurring: false },
-  "web-hosting-addon": { price: 29, isRecurring: true },
+  "web-hosting-addon": { price: 32, isRecurring: true },
   "maintenance-addon": { price: 195, isRecurring: true },
   "business-cards": { price: 295, isRecurring: false },
   letterhead: { price: 395, isRecurring: false },
@@ -46,7 +46,7 @@ const SERVICE_PRICES: Record<
   string,
   { basePrice: number; isRecurring: boolean }
 > = {
-  "web-hosting": { basePrice: 24, isRecurring: true },
+  "web-hosting": { basePrice: 32, isRecurring: true },
   "monthly-web-maintenance": { basePrice: 195, isRecurring: true },
   "oneoff-web-maintenance": { basePrice: 450, isRecurring: false },
   "web-hosting-maintenance": { basePrice: 199, isRecurring: true },
