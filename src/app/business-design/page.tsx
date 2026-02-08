@@ -451,6 +451,58 @@ export default function BusinessDesignPage() {
         startingPrice={1980}
         priceNote=""
       />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How long does design work typically take?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Brand Essentials: 2 weeks. Marketing Materials: 3-4 weeks. Signage & Vehicle Wraps: 4-6 weeks. We provide regular updates and involve you in every decision.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What if I don't like the initial concepts?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We include multiple revisions with every package. Our aim is that our designs perfectly capture your vision and business goals.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you handle printing and installation?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Though we do not personally handle printing, we do work closely with trusted local suppliers and installers that we have collaborated with for near a decade.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can you work with our existing brand guidelines?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Absolutely. We can work within existing brand guidelines or help evolve and strengthen your current brand identity. We'll assess what's working and what needs improvement.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What file formats do we receive?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Our designs and print-ready files are provided in industry standard formats. Where applicable, you will receive source web-ready files in PNG and JPG, and print-ready files in PDF and SVG versions.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </main>
   );
 }

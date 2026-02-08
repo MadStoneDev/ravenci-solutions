@@ -175,8 +175,8 @@ export default function MainFooter() {
           className={`mt-16 pt-3 flex flex-col gap-2 border-t border-neutral-600`}
         >
           <p className={`text-xs text-neutral-500`}>
-            © 2018 - 2024 1VINE Design (Operating as{" "}
-            <span className={`font-bold`}>RAVENCI</span>)
+            © 2018 - {new Date().getFullYear()}{" "}
+            <span className={`font-bold`}>RAVENCI</span> Solutions
           </p>
 
           <div className={`text-xs text-neutral-500`}>

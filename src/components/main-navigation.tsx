@@ -301,6 +301,36 @@ export default function MainNavigation() {
           />
         </Link>
 
+        {/* Desktop Nav Links */}
+        <div
+          className={`pointer-events-auto hidden lg:flex items-center gap-8 ${
+            isMenuOpen ? "opacity-0" : "opacity-100"
+          } transition-opacity duration-300 ease-in-out`}
+        >
+          <Link
+            href={`/web-development`}
+            className={`text-sm font-medium ${
+              isMenuOnDark ? "text-white/80 hover:text-white" : "text-ravenci-dark/70 hover:text-ravenci-dark"
+            } transition-colors duration-300 ease-in-out`}
+          >
+            Services
+          </Link>
+          <Link
+            href={`/articles`}
+            className={`text-sm font-medium ${
+              isMenuOnDark ? "text-white/80 hover:text-white" : "text-ravenci-dark/70 hover:text-ravenci-dark"
+            } transition-colors duration-300 ease-in-out`}
+          >
+            Articles
+          </Link>
+          <Link
+            href={`/launch-your-vision`}
+            className={`px-5 py-2 text-sm font-medium bg-ravenci-primary hover:bg-ravenci-primary/85 text-white rounded-full transition-colors duration-300 ease-in-out`}
+          >
+            Get Started
+          </Link>
+        </div>
+
         <button
           ref={menuButtonRef}
           type={`button`}

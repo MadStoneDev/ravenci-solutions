@@ -1,5 +1,6 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
-Disallow:
+Disallow: /api/
+Disallow: /quote/success
 
 Sitemap: https://ravenci.solutions/sitemap.xml

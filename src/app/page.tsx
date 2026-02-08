@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import Accordion from "@/components/accordion";
+import LazyVideo from "@/components/lazy-video";
 import LogosPanel from "@/components/logo-panel";
 import TestimonialsSingle from "@/components/testimonials-single";
 
@@ -22,12 +23,14 @@ export default function Home() {
           <h1
             className={`max-w-[500px] lg:max-w-[660px] text-4xl md:text-5xl lg:text-h1 font-medium text-white`}
           >
-            Digital Development that simply works.
+            Websites that work as hard as you do.
           </h1>
           <h2
-            className={`mt-16 text-2xl md:text-3xl lg:text-h2 font-light text-white`}
+            className={`mt-8 max-w-[500px] text-lg md:text-xl font-light text-neutral-400`}
           >
-            Stable. Scalable. Reliable.
+            20+ years of experience building digital platforms for Australian
+            businesses. We handle everything from design and development to
+            hosting and ongoing maintenance.
           </h2>
 
           <div className={`mt-16 flex gap-6`}>
@@ -71,16 +74,11 @@ export default function Home() {
         }}
       >
         <article className={`fixed inset-0 w-full h-[750px] -z-10`}>
-          <video
-            className={`absolute object-cover w-full h-screen`}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-          >
-            <source src={`ravenci-promo.mp4`} type="video/mp4" />
-          </video>
+          <LazyVideo
+            src="ravenci-promo.mp4"
+            poster="/og-image.jpg"
+            className="relative w-full h-screen"
+          />
         </article>
 
         <article className={`relative z-10 h-[750px]`}></article>
@@ -102,7 +100,7 @@ export default function Home() {
         <Image
           className={`absolute -top-[52px] md:-top-[60px] lg:-top-[70px] right-2 md:right-12 scale-50 sm:scale-75 lg:scale-100 z-20`}
           src={`/standing-raven.svg`}
-          alt={``}
+          alt={`RAVENCI Solutions`}
           width={74}
           height={88}
         />
@@ -112,21 +110,20 @@ export default function Home() {
             className={`max-w-[500px] text-5xl font-light`}
             style={{ lineHeight: "3.75rem" }}
           >
-            Empowering growth through stability, scalability, and reliability.
+            Your website should generate results, not headaches.
           </h3>
 
           <div className={`mt-16 mb-24 flex flex-col gap-8 max-w-[500px]`}>
             <p>
-              We don't just build websites and apps - we create digital
-              foundations that brands can truly rely on. Your success isn't just
-              about the initial launch. It's about establishing a presence that
-              thrives over time.
+              We build digital platforms that attract customers, build trust,
+              and grow with your business. No templates. No shortcuts. Just
+              solid engineering backed by two decades of experience.
             </p>
 
             <p>
-              That's why RAVENCI handles everything from design and development
-              to maintenance and hosting, ensuring your website remains robust
-              at every stage of its journey.
+              From design and development to hosting and ongoing maintenance,
+              RAVENCI handles every stage of your website's lifecycle so you
+              can focus on running your business.
             </p>
           </div>
 
@@ -266,23 +263,14 @@ export default function Home() {
           <section
             className={`flex flex-row flex-wrap border-t border-l border-neutral-200`}
           >
-            {(() => {
-              const shuffled = [...CLIENT_LOGOS];
-
-              for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-              }
-
-              return shuffled.slice(0, 9);
-            })().map(({ title, logo, href }, index) => {
+            {CLIENT_LOGOS.slice(0, 9).map(({ title, logo, href }, index) => {
               return (
                 <div
                   key={`icon-${title}-${index}`}
                   title={title}
                   className={`px-4 py-5 flex justify-center items-center w-1/2 sm:w-1/3 h-24 hover:bg-neutral-200/40 border-b border-r border-neutral-200 transition-all duration-300 ease-in-out`}
                 >
-                  <img src={logo} alt={title} className={`w-full h-full`} />
+                  <Image src={logo} alt={title} width={150} height={60} className={`w-full h-full object-contain`} />
                 </div>
               );
             })}

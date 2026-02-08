@@ -516,6 +516,58 @@ export default function WebHostingDevelopmentPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How long does a typical website take to build?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Single Page Starter: 3 weeks. Custom Development: 4-6 weeks. Branding & Development: 10-14 weeks total (4 weeks branding + 3-4 weeks design + 4-6 weeks development). We stick to these timelines and provide regular progress updates.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What if I'm not happy with the result?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We guarantee your website will match your vision. Each package includes multiple revision rounds, and we won't consider the project complete until you're 100% satisfied.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can I update the website myself after it's built?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Absolutely. We build on user-friendly CMS platforms and provide training so you can easily update content, add blog posts, and make basic changes without needing a developer.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What makes your development different from cheaper options?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We guarantee 85+ PageSpeed scores, provide ongoing support, use professional development practices, and we're local to Brisbane. Cheap developers often create slow, problematic sites that cost more to fix later.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you handle the domain and hosting setup?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes, all packages include 1 year free domain registration and we can handle hosting setup. We recommend our own hosting for optimal performance, but can work with other quality hosts if needed.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </main>
   );
 }

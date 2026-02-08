@@ -370,6 +370,50 @@ export default function MobileAppDevelopmentPage() {
         startingPrice={14900}
         priceNote=""
       />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Can you publish on both Apple and Google stores?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. We handle submissions, guidelines, and resubmissions if needed.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "React Native or fully native?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We use React Native when it's a great fit and drop to Swift or Kotlin where native performance is required.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you build the backend too?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. We frequently use Node/Express and Supabase, but we'll choose what best suits your project.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Will the app be maintained after launch?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We offer support plans for OS changes, library updates, and new features.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </main>
   );
 }

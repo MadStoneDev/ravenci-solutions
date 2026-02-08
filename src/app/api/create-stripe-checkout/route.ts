@@ -26,7 +26,7 @@ const ADDON_PRICES: Record<string, { price: number; isRecurring: boolean }> = {
   "newsletter-signup": { price: 395, isRecurring: false },
   "facebook-pixel": { price: 395, isRecurring: false },
   "google-business": { price: 495, isRecurring: false },
-  "web-hosting-addon": { price: 32, isRecurring: true },
+  "web-hosting-addon": { price: 29, isRecurring: true },
   "maintenance-addon": { price: 195, isRecurring: true },
   "business-cards": { price: 295, isRecurring: false },
   letterhead: { price: 395, isRecurring: false },
@@ -46,7 +46,7 @@ const SERVICE_PRICES: Record<
   string,
   { basePrice: number; isRecurring: boolean }
 > = {
-  "web-hosting": { basePrice: 32, isRecurring: true },
+  "web-hosting": { basePrice: 24, isRecurring: true },
   "monthly-web-maintenance": { basePrice: 195, isRecurring: true },
   "oneoff-web-maintenance": { basePrice: 450, isRecurring: false },
   "web-hosting-maintenance": { basePrice: 199, isRecurring: true },
@@ -55,6 +55,67 @@ const SERVICE_PRICES: Record<
   "web-dev-branding": { basePrice: 12000, isRecurring: false },
   "business-essentials": { basePrice: 2480, isRecurring: false },
   "business-marketing": { basePrice: 4560, isRecurring: false },
+};
+
+// Server-side discount rules — MUST match frontend services.tsx discount rules
+const DISCOUNT_RULES: Record<
+  string,
+  Array<{
+    trigger: string[];
+    action: {
+      type: "discount" | "quantity_discount";
+      percentage?: number;
+      target_item?: string;
+      quantity_threshold?: number;
+      new_price?: number;
+    };
+  }>
+> = {
+  "web-dev-single": [
+    {
+      trigger: ["contact-form", "newsletter-signup", "facebook-pixel"],
+      action: { type: "discount", percentage: 10 },
+    },
+    {
+      trigger: ["extra-pages"],
+      action: {
+        type: "quantity_discount",
+        target_item: "extra-pages",
+        quantity_threshold: 6,
+        new_price: 250,
+      },
+    },
+  ],
+  "web-dev-custom": [
+    {
+      trigger: ["contact-form", "newsletter-signup", "facebook-pixel"],
+      action: { type: "discount", percentage: 15 },
+    },
+    {
+      trigger: ["extra-pages"],
+      action: {
+        type: "quantity_discount",
+        target_item: "extra-pages",
+        quantity_threshold: 6,
+        new_price: 250,
+      },
+    },
+  ],
+  "web-dev-branding": [
+    {
+      trigger: ["business-cards", "letterhead"],
+      action: { type: "discount", percentage: 20 },
+    },
+    {
+      trigger: ["extra-pages"],
+      action: {
+        type: "quantity_discount",
+        target_item: "extra-pages",
+        quantity_threshold: 6,
+        new_price: 250,
+      },
+    },
+  ],
 };
 
 function calculateServerTotals(
@@ -85,6 +146,48 @@ function calculateServerTotals(
       }
     }
   });
+
+  // Apply discount rules (must match frontend logic)
+  const rules = DISCOUNT_RULES[serviceId];
+  if (rules) {
+    rules.forEach((rule) => {
+      const hasAllTriggers = rule.trigger.every(
+        (triggerId) => (addons[triggerId] || 0) > 0,
+      );
+
+      if (hasAllTriggers) {
+        if (
+          rule.action.type === "discount" &&
+          rule.action.percentage !== undefined
+        ) {
+          const discountAmount =
+            oneTimeTotal * (rule.action.percentage / 100);
+          oneTimeTotal -= discountAmount;
+        } else if (
+          rule.action.type === "quantity_discount" &&
+          rule.action.target_item &&
+          rule.action.quantity_threshold &&
+          rule.action.new_price
+        ) {
+          const targetAddon = rule.action.target_item;
+          const quantity = addons[targetAddon] || 0;
+
+          if (quantity >= rule.action.quantity_threshold) {
+            const addon = ADDON_PRICES[targetAddon];
+            const originalTotal = addon.price * quantity;
+            const discountedTotal = rule.action.new_price * quantity;
+
+            if (addon.isRecurring) {
+              recurringTotal =
+                recurringTotal - originalTotal + discountedTotal;
+            } else {
+              oneTimeTotal = oneTimeTotal - originalTotal + discountedTotal;
+            }
+          }
+        }
+      }
+    });
+  }
 
   return { oneTime: oneTimeTotal, recurring: recurringTotal };
 }
@@ -361,9 +464,4 @@ export async function POST(request: NextRequest) {
       { status: isValidationError ? 400 : 500 },
     );
   }
-}
-
-function isValidEmail(email: string): boolean {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
 }

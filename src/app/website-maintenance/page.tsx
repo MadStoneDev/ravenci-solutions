@@ -293,6 +293,50 @@ We're Brisbane-based with local support, not an overseas call center. You get di
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Can't I just do website maintenance myself?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "You absolutely could, but most business owners don't have 5+ hours monthly for security monitoring, performance optimization, and technical updates. Plus, when something breaks at 2 AM on a weekend, you'll be scrambling to fix it while losing sales.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What if my site goes down?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We monitor 24/7 and typically restore sites within 2 hours during business hours. Our monitoring catches 95% of issues before they cause downtime.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Is website maintenance really necessary?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "WordPress sites without maintenance are 70% more likely to be hacked. One security breach typically costs $5,000-$15,000 to fix, plus the damage to your reputation. Our maintenance costs less than one emergency website fix per year.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What makes RAVENCI different from other maintenance providers?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We're Brisbane-based with local support, not an overseas call center. You get direct access to our team and, if we built your website, you will get direct access to the same developer who built your site. We promise a 2-hour response time during business hours, and proactive monitoring that prevents problems rather than just reacting to them.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </main>
   );
 }

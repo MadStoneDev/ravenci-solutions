@@ -244,7 +244,7 @@ export default function WebHostingPage() {
               content: `Yes, we handle the complete migration from your current host though extra charges may apply. Your site will be faster and more secure from day one, and we'll make sure nothing breaks in the process.`,
             },
             {
-              title: `What's included in the $29/month price?`,
+              title: `What's included in the $24/month price?`,
               content: `Everything: cloud hosting, SSL certificate, daily backups, security monitoring, automatic scaling, and Brisbane-based support. No hidden fees, no surprise charges, no complex add-ons to buy.`,
             },
             {
@@ -258,6 +258,58 @@ export default function WebHostingPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How is this different from cheap hosting like Bluehost?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Our hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimization that cheap hosts can't match. Plus everything is included - SSL, backups, security - no extra charges.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What if my traffic suddenly spikes?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Our cloud hosting automatically scales to handle traffic spikes without your site crashing. Our servers grow with your traffic so you never have to worry about any downtime. Compare this to shared hosting where traffic spikes can take your site offline.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you migrate my existing website?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes, we handle the complete migration from your current host though extra charges may apply. Your site will be faster and more secure from day one, and we'll make sure nothing breaks in the process.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What's included in the $24/month price?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Everything: cloud hosting, SSL certificate, daily backups, security monitoring, automatic scaling, and Brisbane-based support. No hidden fees, no surprise charges, no complex add-ons to buy.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can I host my website elsewhere and still get your other services?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "While we prefer to host sites we maintain to guarantee optimal performance and security, we can work with other quality hosts. However, our hosting + maintenance bundles offer the best value and performance since everything is optimized to work together.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </main>
   );
 }

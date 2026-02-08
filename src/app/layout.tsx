@@ -23,6 +23,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ravenci.solutions"),
   title:
     "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
   description:
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     description:
       "Innovative and expert solutions to a digital tomorrow - RAVENCI is an Australian website and app development" +
       " agency based in Brisbane, Queensland.",
-    url: "https://your-domain.com", // Replace with your actual domain
+    url: "https://ravenci.solutions",
     siteName: "RAVENCI Solutions",
     images: [
       {
@@ -63,8 +64,56 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "RAVENCI Solutions",
+    alternateName: "RAVENCI",
+    url: "https://ravenci.solutions",
+    logo: "https://ravenci.solutions/ravenci-logo.svg",
+    image: "https://ravenci.solutions/og-image.jpg",
+    description:
+      "Premium web development and digital design agency in Brisbane, Australia. 20+ years of experience building high-performance websites for established businesses.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Brisbane",
+      addressRegion: "QLD",
+      addressCountry: "AU",
+    },
+    telephone: "+61731061836",
+    priceRange: "$$$$",
+    areaServed: {
+      "@type": "Country",
+      name: "Australia",
+    },
+    serviceType: [
+      "Web Development",
+      "Website Design",
+      "Business Design",
+      "Web Hosting",
+      "Website Maintenance",
+      "SEO",
+    ],
+    foundingDate: "2018",
+    knowsAbout: [
+      "Web Development",
+      "Next.js",
+      "React",
+      "WordPress",
+      "E-commerce",
+      "UI/UX Design",
+      "SEO",
+    ],
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <GoogleAnalytics gaId={`G-8TL2E4F9CH`} />
       <GoogleTagManager gtmId={`GTM-K6S8KCK5`} />
 

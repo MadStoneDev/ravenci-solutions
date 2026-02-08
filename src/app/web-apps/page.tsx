@@ -397,6 +397,58 @@ export default function WebAppPage() {
         startingPrice={12900}
         priceNote=""
       />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How do you ensure the app actually solves our business problems?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We start every project with a comprehensive business process analysis. We map your current workflows, identify bottlenecks, and design solutions that eliminate specific pain points. You'll see exactly how the app will improve your operations before we write a single line of code.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can the application integrate with our existing systems?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. All our packages include API integration capabilities. We commonly integrate with accounting software, CRM systems, and other business tools. We make sure your app works seamlessly with your existing tech stack.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What if our needs change as we grow?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We build all applications with scalability in mind. The architecture can handle increased users, data, and functionality. We also provide ongoing development services to add new features as your business evolves.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How do you handle data security and backups?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "The database platforms we use are secure and stable. We prioritise cloud-based hosting to make sure that your customers are connecting to servers and data that is closest to them for optimised performance.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What ROI can we expect from a custom web application?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Most clients see ROI within 6-12 months through time savings, reduced errors, and improved decision-making. Common benefits include 40-60% reduction in manual work, 25-50% faster reporting, and significantly improved customer service response times.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </main>
   );
 }
