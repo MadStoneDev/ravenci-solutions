@@ -94,6 +94,15 @@ export default function MainFooter() {
           className={`mt-6 flex flex-wrap gap-x-6 gap-y-5 max-w-2xl text-sm font-light`}
         >
           <div className={`group/link relative px-2`}>
+            <Link href={`/about`} className={`relative z-10`}>
+              About
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
             <Link href={`/articles`} className={`relative z-10`}>
               Articles
             </Link>
