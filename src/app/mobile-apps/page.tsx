@@ -2,6 +2,7 @@
 import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
 import StickyCTA from "@/components/sticky-cta";
+import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
   title: "Mobile App Development - RAVENCI Solutions",
@@ -10,6 +11,7 @@ export const metadata = {
 };
 
 export default function MobileAppDevelopmentPage() {
+  const testimonials = getTestimonialsForPage("mobile-apps");
   const features = [
     {
       title: "Cross-Platform & Native",
@@ -113,14 +115,19 @@ export default function MobileAppDevelopmentPage() {
           <h3 className="pb-6 border-b border-white/20 font-serif font-medium text-xl">
             Brisbane-founded apps, built for reliability and growth
           </h3>
-          <p className="my-6 font-poppins font-light leading-8 text-ravenci-light-gray">
-            {
-              "“RAVENCI turned our concept into a polished, store-ready app. Clear communication and on-time delivery.”"
-            }
-          </p>
-          <h3 className="font-poppins text-2xl font-light text-neutral-100">
-            <span className="font-bold">Ethan</span> Miles
-          </h3>
+          {testimonials[0] && (
+            <>
+              <p className="my-6 font-poppins font-light leading-8 text-ravenci-light-gray">
+                &ldquo;{testimonials[0].content}&rdquo;
+              </p>
+              <h3 className="font-poppins text-2xl font-light text-neutral-100">
+                <span className="font-bold">
+                  {testimonials[0].author.split(" ")[0]}
+                </span>{" "}
+                {testimonials[0].author.split(" ").slice(1).join(" ")}
+              </h3>
+            </>
+          )}
         </div>
       </section>
 
@@ -248,12 +255,12 @@ export default function MobileAppDevelopmentPage() {
                 ]}
               />
               <PriceButton
-                price={14900}
-                link={"/quote?service=mobile-mvp"}
+                price={"30,000"}
+                link={"/launch-your-vision"}
                 frequency={""}
                 includeFrom={true}
                 callToAction={"MVP Sprint"}
-                subCallToAction={"Launch fast and learn"}
+                subCallToAction={"Enquire for a tailored proposal"}
               />
             </div>
 
@@ -283,12 +290,12 @@ export default function MobileAppDevelopmentPage() {
                 ]}
               />
               <PriceButton
-                price={29900}
-                link={"/quote?service=mobile-growth"}
+                price={"30,000"}
+                link={"/launch-your-vision"}
                 frequency={""}
                 includeFrom={true}
                 callToAction={"Growth Build"}
-                subCallToAction={"Scale features and reliability"}
+                subCallToAction={"Enquire for a tailored proposal"}
               />
             </div>
 
@@ -318,12 +325,12 @@ export default function MobileAppDevelopmentPage() {
                 ]}
               />
               <PriceButton
-                price={59900}
-                link={"/quote?service=mobile-enterprise"}
+                price={"30,000"}
+                link={"/launch-your-vision"}
                 frequency={""}
                 includeFrom={true}
                 callToAction={"Enterprise"}
-                subCallToAction={"Complex apps, de-risked"}
+                subCallToAction={"Enquire for a tailored proposal"}
               />
             </div>
           </article>
@@ -366,8 +373,8 @@ export default function MobileAppDevelopmentPage() {
 
       {/* Mobile sticky CTA */}
       <StickyCTA
-        link="/quote?service=mobile"
-        startingPrice={14900}
+        link="/launch-your-vision"
+        startingPrice={30000}
         priceNote=""
       />
 

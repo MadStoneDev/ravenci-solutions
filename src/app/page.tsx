@@ -4,14 +4,18 @@ import Accordion from "@/components/accordion";
 import LazyVideo from "@/components/lazy-video";
 import LogosPanel from "@/components/logo-panel";
 import TestimonialsSingle from "@/components/testimonials-single";
+import VisibilityCheckForm from "@/components/visibility-check-form";
 
 import { CLIENT_LOGOS } from "@/lib/our-clients";
+import { getTestimonialsForPage } from "@/data/testimonials";
 
 import Image from "next/image";
 import { Route } from "next";
 import ServicesShowcase from "@/components/services-showcase";
 
 export default function Home() {
+  const homepageTestimonials = getTestimonialsForPage("homepage");
+
   return (
     <main className={`flex flex-col`}>
       <section
@@ -196,16 +200,20 @@ export default function Home() {
       {/* Client Logos */}
       <LogosPanel headingColour={`text-white`} speed={`slow`} />
 
-      {/* Scroll Lock Section */}
-      <TestimonialsSingle
-        testimonial={{
-          content:
-            "I could not recommend Richard more highly. His knowledge is remarkable, his professionalism exceptional, and the way he completely sorted my issues, quickly, effortlessly was simply brilliant. Champion bloke, brilliant at what he does.",
-          author: "Geoff Beisler",
-          image: null,
-        }}
-        extraClassNames={`content-section bg-ravenci-primary`}
-      />
+      {/* Testimonials */}
+      {homepageTestimonials.map((testimonial) => (
+        <TestimonialsSingle
+          key={testimonial.id}
+          testimonial={{
+            content: testimonial.content,
+            author: testimonial.author,
+            role: testimonial.role,
+            company: testimonial.company,
+            image: testimonial.image || null,
+          }}
+          extraClassNames={`content-section bg-ravenci-primary`}
+        />
+      ))}
 
       {/* From the Founder */}
       <section
@@ -276,6 +284,22 @@ export default function Home() {
             })}
           </section>
         </article>
+      </section>
+
+      {/* Visibility Check Lead Magnet */}
+      <section
+        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-100`}
+      >
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-medium mb-4">
+            Is Your Website Visible to Google and AI?
+          </h2>
+          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            Get a free visibility report showing how search engines and AI
+            platforms see your business. No obligation, no spam.
+          </p>
+        </div>
+        <VisibilityCheckForm />
       </section>
 
       <footer className={`bg-ravenci-dark`}></footer>

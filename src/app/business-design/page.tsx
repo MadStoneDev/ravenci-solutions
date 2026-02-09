@@ -2,6 +2,7 @@
 import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
 import StickyCTA from "@/components/sticky-cta";
+import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
   title: "Business Design Solutions - RAVENCI Solutions",
@@ -10,6 +11,7 @@ export const metadata = {
 };
 
 export default function BusinessDesignPage() {
+  const testimonials = getTestimonialsForPage("business-design");
   const features = [
     {
       title: "Brand Consistency",
@@ -130,16 +132,21 @@ export default function BusinessDesignPage() {
             Trusted by 40+ Australian businesses to create brands that command
             premium prices
           </h3>
-          <p
-            className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
-          >
-            "Richard went ABOVE and beyond for my request. Quality was amazing
-            and his efforts to satisfy my extra needs (he fitted it to a damn
-            guitar!) Pure talent. Thankyou sir"
-          </p>
-          <h3 className={`font-poppins text-2xl font-light text-neutral-100`}>
-            <span className={`font-bold`}>Timothy</span> O'Donnell
-          </h3>
+          {testimonials[0] && (
+            <>
+              <p
+                className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
+              >
+                &ldquo;{testimonials[0].content}&rdquo;
+              </p>
+              <h3 className={`font-poppins text-2xl font-light text-neutral-100`}>
+                <span className={`font-bold`}>
+                  {testimonials[0].author.split(" ")[0]}
+                </span>{" "}
+                {testimonials[0].author.split(" ").slice(1).join(" ")}
+              </h3>
+            </>
+          )}
         </div>
       </section>
 
@@ -288,12 +295,12 @@ export default function BusinessDesignPage() {
                 ]}
               />
               <PriceButton
-                price={2480}
-                link={`/quote?service=business-essentials`}
+                price={"2,490"}
+                link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
                 callToAction={`Brand Essentials`}
-                subCallToAction={`Professional foundation for your business`}
+                subCallToAction={`Request a proposal`}
               />
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
@@ -349,12 +356,12 @@ export default function BusinessDesignPage() {
               />
 
               <PriceButton
-                price={4560}
-                link={`/quote?service=business-marketing`}
+                price={"4,590"}
+                link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
                 callToAction={`Marketing Materials Suite`}
-                subCallToAction={`Complete marketing toolkit`}
+                subCallToAction={`Request a proposal`}
               />
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
@@ -447,8 +454,8 @@ export default function BusinessDesignPage() {
 
       {/* Mobile sticky CTA */}
       <StickyCTA
-        link="/quote?service=business-design"
-        startingPrice={1980}
+        link="/launch-your-vision"
+        startingPrice={2490}
         priceNote=""
       />
 

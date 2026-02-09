@@ -2,6 +2,7 @@
 import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
 import StickyCTA from "@/components/sticky-cta";
+import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
   title: "SEO & Content Services - RAVENCI Solutions",
@@ -10,6 +11,7 @@ export const metadata = {
 };
 
 export default function SEOContentPage() {
+  const testimonials = getTestimonialsForPage("seo-and-content");
   const features = [
     {
       title: "Keyword Research",
@@ -124,14 +126,20 @@ export default function SEOContentPage() {
             Trusted by 60+ Australian businesses to win the right searches and
             convert
           </h3>
-          <blockquote className="my-6 font-poppins font-light leading-8 text-ravenci-light-gray">
-            {
-              "“RAVENCI's SEO and content work has been transformational. We went from page 3 to ranking #1 for our main keywords. Our organic traffic has increased 300% and leads have tripled.”"
-            }
-          </blockquote>
-          <p className="font-poppins text-2xl font-light text-neutral-100">
-            <span className="font-bold">Lisa</span> Parker, Marketing Manager
-          </p>
+          {testimonials[0] && (
+            <>
+              <blockquote className="my-6 font-poppins font-light leading-8 text-ravenci-light-gray">
+                &ldquo;{testimonials[0].content}&rdquo;
+              </blockquote>
+              <p className="font-poppins text-2xl font-light text-neutral-100">
+                <span className="font-bold">
+                  {testimonials[0].author.split(" ")[0]}
+                </span>{" "}
+                {testimonials[0].author.split(" ").slice(1).join(" ")}
+                {testimonials[0].role && `, ${testimonials[0].role}`}
+              </p>
+            </>
+          )}
         </div>
       </section>
 
@@ -265,12 +273,12 @@ export default function SEOContentPage() {
                 ]}
               />
               <PriceButton
-                price={2490}
-                link={`/quote?service=seo-foundation`}
+                price={"2,490"}
+                link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
                 callToAction={`SEO Foundation`}
-                subCallToAction={`One-off project, ex GST`}
+                subCallToAction={`Request a proposal`}
               />
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
                 <p className="text-sm text-yellow-200">
@@ -313,20 +321,12 @@ export default function SEOContentPage() {
                 ]}
               />
               <PriceButton
-                price={1980}
-                link={`/quote?service=seo-growth-setup`}
-                frequency={""}
-                includeFrom={true}
-                callToAction={`Setup Fee`}
-                subCallToAction={`One-off, ex GST`}
-              />
-              <PriceButton
-                price={4980}
-                link={`/quote?service=seo-growth-monthly`}
+                price={"1,980"}
+                link={`/launch-your-vision`}
                 frequency={"per month"}
                 includeFrom={true}
-                callToAction={`Monthly Retainer`}
-                subCallToAction={`Content volume capped, ex GST`}
+                callToAction={`Growth SEO + Content`}
+                subCallToAction={`Request a proposal`}
               />
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
                 <p className="text-sm text-yellow-200">
@@ -364,12 +364,12 @@ export default function SEOContentPage() {
                 ]}
               />
               <PriceButton
-                price={3480}
-                link={`/quote?service=copywriting-only`}
-                frequency={""}
+                price={"390"}
+                link={`/launch-your-vision`}
+                frequency={"per page"}
                 includeFrom={true}
-                callToAction={`Copywriting Only`}
-                subCallToAction={`One-off project, ex GST`}
+                callToAction={`Copywriting`}
+                subCallToAction={`Request a proposal`}
               />
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
                 <p className="text-sm text-yellow-200">
@@ -467,7 +467,7 @@ export default function SEOContentPage() {
       />
 
       {/* Mobile sticky CTA */}
-      <StickyCTA link="/quote?service=seo" startingPrice={2490} priceNote="" />
+      <StickyCTA link="/launch-your-vision" startingPrice={2490} priceNote="" />
     </main>
   );
 }

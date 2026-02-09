@@ -1,6 +1,7 @@
 ﻿import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
+import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
   title: "Website Hosting Solutions - RAVENCI Solutions",
@@ -9,6 +10,7 @@ export const metadata = {
 };
 
 export default function WebHostingPage() {
+  const testimonials = getTestimonialsForPage("web-hosting");
   const features = [
     {
       title: "Cloud Hosting",
@@ -75,22 +77,22 @@ export default function WebHostingPage() {
             Hosting over 25 Australian businesses websites including for law
             firms, medical practices and retail stores
           </h3>
-          <p
-            className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
-          >
-            Eleven out of ten for an amazing service! Richard goes above and
-            beyond to ensure all the i's are dotted and t's are crossed.
-          </p>
-          <p
-            className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
-          >
-            I highly recommend Richard to any business looking for a website or
-            a designer looking to partner with a highly-skilled and experienced
-            developer. You will be in good hands!
-          </p>
-          <h3 className={`font-poppins text-2xl font-light text-neutral-100`}>
-            <span className={`font-bold`}>Danni</span> Green
-          </h3>
+          {testimonials.map((t) => (
+            <p
+              key={t.id}
+              className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
+            >
+              &ldquo;{t.content}&rdquo;
+            </p>
+          ))}
+          {testimonials[0] && (
+            <h3 className={`font-poppins text-2xl font-light text-neutral-100`}>
+              <span className={`font-bold`}>
+                {testimonials[0].author.split(" ")[0]}
+              </span>{" "}
+              {testimonials[0].author.split(" ").slice(1).join(" ")}
+            </h3>
+          )}
         </div>
       </section>
 
@@ -194,7 +196,7 @@ export default function WebHostingPage() {
           </article>
 
           <PriceButton
-            price={24}
+            price={39}
             frequency={"mo."}
             link={`/quote?service=web-hosting`}
             callToAction={`All-in-One Hosting`}
@@ -244,7 +246,7 @@ export default function WebHostingPage() {
               content: `Yes, we handle the complete migration from your current host though extra charges may apply. Your site will be faster and more secure from day one, and we'll make sure nothing breaks in the process.`,
             },
             {
-              title: `What's included in the $24/month price?`,
+              title: `What's included in the $39/month price?`,
               content: `Everything: cloud hosting, SSL certificate, daily backups, security monitoring, automatic scaling, and Brisbane-based support. No hidden fees, no surprise charges, no complex add-ons to buy.`,
             },
             {
@@ -292,7 +294,7 @@ export default function WebHostingPage() {
               },
               {
                 "@type": "Question",
-                name: "What's included in the $24/month price?",
+                name: "What's included in the $39/month price?",
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "Everything: cloud hosting, SSL certificate, daily backups, security monitoring, automatic scaling, and Brisbane-based support. No hidden fees, no surprise charges, no complex add-ons to buy.",

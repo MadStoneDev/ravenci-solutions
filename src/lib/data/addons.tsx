@@ -205,7 +205,7 @@ export const addons: Record<string, Addon> = {
   },
   "web-hosting-addon": {
     title: "Web Hosting",
-    price: 29,
+    price: 39,
     isRecurring: true,
     recurringPeriod: "monthly",
     description: "Professional web hosting",
@@ -215,7 +215,7 @@ export const addons: Record<string, Addon> = {
   },
   "maintenance-addon": {
     title: "Web Maintenance",
-    price: 195,
+    price: 249,
     isRecurring: true,
     recurringPeriod: "monthly",
     description: "Website maintenance",

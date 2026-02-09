@@ -1,4 +1,4 @@
-﻿// Enhanced /app/api/create-stripe-checkout/route.ts
+// Enhanced /app/api/create-stripe-checkout/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { Stripe } from "stripe";
 
@@ -16,29 +16,12 @@ const ADDON_PRICES: Record<string, { price: number; isRecurring: boolean }> = {
   "oneoff-content-updates": { price: 85, isRecurring: false },
   "performance-optimization": { price: 95, isRecurring: true },
   "oneoff-performance-optimization": { price: 120, isRecurring: false },
-  "extra-pages": { price: 295, isRecurring: false },
-  portfolio: { price: 795, isRecurring: false },
   "contact-form": { price: 595, isRecurring: false },
   "cookie-banner": { price: 195, isRecurring: false },
   copywriting: { price: 295, isRecurring: false },
   "seo-content": { price: 495, isRecurring: false },
-  "blog-setup": { price: 895, isRecurring: false },
-  "newsletter-signup": { price: 395, isRecurring: false },
-  "facebook-pixel": { price: 395, isRecurring: false },
-  "google-business": { price: 495, isRecurring: false },
-  "web-hosting-addon": { price: 29, isRecurring: true },
-  "maintenance-addon": { price: 195, isRecurring: true },
-  "business-cards": { price: 295, isRecurring: false },
-  letterhead: { price: 395, isRecurring: false },
-  brochure: { price: 895, isRecurring: false },
-  "social-media-kit": { price: 495, isRecurring: false },
-  "brand-guidelines": { price: 595, isRecurring: false },
-  "vehicle-wrap": { price: 895, isRecurring: false },
-  "storefront-sign": { price: 795, isRecurring: false },
-  "banner-design": { price: 495, isRecurring: false },
-  "display-boards": { price: 395, isRecurring: false },
-  "invoice-template": { price: 295, isRecurring: false },
-  "presentation-template": { price: 695, isRecurring: false },
+  "web-hosting-addon": { price: 39, isRecurring: true },
+  "maintenance-addon": { price: 249, isRecurring: true },
 };
 
 // Server-side service prices - MUST match your frontend exactly
@@ -46,76 +29,10 @@ const SERVICE_PRICES: Record<
   string,
   { basePrice: number; isRecurring: boolean }
 > = {
-  "web-hosting": { basePrice: 24, isRecurring: true },
-  "monthly-web-maintenance": { basePrice: 195, isRecurring: true },
-  "oneoff-web-maintenance": { basePrice: 450, isRecurring: false },
-  "web-hosting-maintenance": { basePrice: 199, isRecurring: true },
-  "web-dev-single": { basePrice: 2240, isRecurring: false },
-  "web-dev-custom": { basePrice: 4960, isRecurring: false },
-  "web-dev-branding": { basePrice: 12000, isRecurring: false },
-  "business-essentials": { basePrice: 2480, isRecurring: false },
-  "business-marketing": { basePrice: 4560, isRecurring: false },
-};
-
-// Server-side discount rules — MUST match frontend services.tsx discount rules
-const DISCOUNT_RULES: Record<
-  string,
-  Array<{
-    trigger: string[];
-    action: {
-      type: "discount" | "quantity_discount";
-      percentage?: number;
-      target_item?: string;
-      quantity_threshold?: number;
-      new_price?: number;
-    };
-  }>
-> = {
-  "web-dev-single": [
-    {
-      trigger: ["contact-form", "newsletter-signup", "facebook-pixel"],
-      action: { type: "discount", percentage: 10 },
-    },
-    {
-      trigger: ["extra-pages"],
-      action: {
-        type: "quantity_discount",
-        target_item: "extra-pages",
-        quantity_threshold: 6,
-        new_price: 250,
-      },
-    },
-  ],
-  "web-dev-custom": [
-    {
-      trigger: ["contact-form", "newsletter-signup", "facebook-pixel"],
-      action: { type: "discount", percentage: 15 },
-    },
-    {
-      trigger: ["extra-pages"],
-      action: {
-        type: "quantity_discount",
-        target_item: "extra-pages",
-        quantity_threshold: 6,
-        new_price: 250,
-      },
-    },
-  ],
-  "web-dev-branding": [
-    {
-      trigger: ["business-cards", "letterhead"],
-      action: { type: "discount", percentage: 20 },
-    },
-    {
-      trigger: ["extra-pages"],
-      action: {
-        type: "quantity_discount",
-        target_item: "extra-pages",
-        quantity_threshold: 6,
-        new_price: 250,
-      },
-    },
-  ],
+  "web-hosting": { basePrice: 39, isRecurring: true },
+  "monthly-web-maintenance": { basePrice: 249, isRecurring: true },
+  "oneoff-web-maintenance": { basePrice: 495, isRecurring: false },
+  "web-hosting-maintenance": { basePrice: 269, isRecurring: true },
 };
 
 function calculateServerTotals(
@@ -147,48 +64,6 @@ function calculateServerTotals(
     }
   });
 
-  // Apply discount rules (must match frontend logic)
-  const rules = DISCOUNT_RULES[serviceId];
-  if (rules) {
-    rules.forEach((rule) => {
-      const hasAllTriggers = rule.trigger.every(
-        (triggerId) => (addons[triggerId] || 0) > 0,
-      );
-
-      if (hasAllTriggers) {
-        if (
-          rule.action.type === "discount" &&
-          rule.action.percentage !== undefined
-        ) {
-          const discountAmount =
-            oneTimeTotal * (rule.action.percentage / 100);
-          oneTimeTotal -= discountAmount;
-        } else if (
-          rule.action.type === "quantity_discount" &&
-          rule.action.target_item &&
-          rule.action.quantity_threshold &&
-          rule.action.new_price
-        ) {
-          const targetAddon = rule.action.target_item;
-          const quantity = addons[targetAddon] || 0;
-
-          if (quantity >= rule.action.quantity_threshold) {
-            const addon = ADDON_PRICES[targetAddon];
-            const originalTotal = addon.price * quantity;
-            const discountedTotal = rule.action.new_price * quantity;
-
-            if (addon.isRecurring) {
-              recurringTotal =
-                recurringTotal - originalTotal + discountedTotal;
-            } else {
-              oneTimeTotal = oneTimeTotal - originalTotal + discountedTotal;
-            }
-          }
-        }
-      }
-    });
-  }
-
   return { oneTime: oneTimeTotal, recurring: recurringTotal };
 }
 
@@ -201,7 +76,7 @@ function validateInput(body: any) {
     throw new Error("Invalid addons data");
   }
 
-  if (!["now", "installments"].includes(body.paymentMethod)) {
+  if (body.paymentMethod !== "now") {
     throw new Error("Invalid payment method");
   }
 
@@ -213,11 +88,11 @@ function validateInput(body: any) {
     throw new Error("Invalid totals data");
   }
 
-  if (body.totals.oneTime < 0 || body.totals.oneTime > 50000) {
+  if (body.totals.oneTime < 0 || body.totals.oneTime > 5000) {
     throw new Error("One-time amount out of range");
   }
 
-  if (body.totals.recurring < 0 || body.totals.recurring > 5000) {
+  if (body.totals.recurring < 0 || body.totals.recurring > 2000) {
     throw new Error("Recurring amount out of range");
   }
 
@@ -239,13 +114,10 @@ export async function POST(request: NextRequest) {
     const {
       service,
       addons,
-      paymentMethod,
-      installmentPlan,
       totals,
-      installmentPricing,
       comments,
       customerEmail,
-      couponCode, // Extract coupon code
+      couponCode,
     } = body;
 
     // CRITICAL: Server-side price validation
@@ -291,160 +163,69 @@ export async function POST(request: NextRequest) {
       original_one_time_total: totals.oneTime.toString(),
       recurring_total: totals.recurring.toString(),
       server_validated: "true",
-      coupon_code: couponCode || "", // Store coupon code in metadata
+      coupon_code: couponCode || "",
     };
 
-    if (paymentMethod === "now") {
-      // === SINGLE PAYMENT CHECKOUT ===
-      const lineItems: any[] = [];
+    // === SINGLE PAYMENT CHECKOUT ===
+    const lineItems: any[] = [];
 
-      // Add one-time payment if exists
-      if (totals.oneTime > 0) {
-        lineItems.push({
-          price_data: {
-            currency: "aud",
-            product_data: {
-              name: `${service.name} - Complete Package`,
-              description: description,
-            },
-            unit_amount: Math.round(totals.oneTime * 100), // Convert to cents
+    // Add one-time payment if exists
+    if (totals.oneTime > 0) {
+      lineItems.push({
+        price_data: {
+          currency: "aud",
+          product_data: {
+            name: `${service.name} - Complete Package`,
+            description: description,
           },
-          quantity: 1,
-        });
-      }
-
-      // Add recurring subscription if exists
-      if (totals.recurring > 0) {
-        lineItems.push({
-          price_data: {
-            currency: "aud",
-            product_data: {
-              name: `${service.name} - Monthly Services`,
-              description: `Recurring services: hosting, maintenance, etc.`,
-            },
-            unit_amount: Math.round(totals.recurring * 100),
-            recurring: {
-              interval: "month",
-            },
-          },
-          quantity: 1,
-        });
-      }
-
-      const sessionConfig: Stripe.Checkout.SessionCreateParams = {
-        payment_method_types: ["card"],
-        line_items: lineItems,
-        mode: totals.recurring > 0 ? "subscription" : "payment",
-        success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/quote/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/quote`,
-        metadata: {
-          ...baseMetadata,
-          payment_type: "full_payment",
+          unit_amount: Math.round(totals.oneTime * 100),
         },
-        // OPTION 1: Allow promotion codes in Stripe Checkout
-        allow_promotion_codes: true,
-      };
-
-      // Add customer email if provided
-      if (customerEmail) {
-        sessionConfig.customer_email = customerEmail;
-      }
-
-      const session = await stripe.checkout.sessions.create(sessionConfig);
-
-      return NextResponse.json({
-        checkoutUrl: session.url,
-        sessionId: session.id,
-      });
-    } else if (paymentMethod === "installments") {
-      // === INSTALLMENT PAYMENT CHECKOUT ===
-
-      if (!installmentPricing || totals.oneTime <= 0) {
-        return NextResponse.json(
-          { error: "Invalid installment data" },
-          { status: 400 },
-        );
-      }
-
-      // Create a subscription that will charge for X months then cancel
-      const sessionConfig: Stripe.Checkout.SessionCreateParams = {
-        payment_method_types: ["card"],
-        line_items: [
-          {
-            price_data: {
-              currency: "aud",
-              product_data: {
-                name: `${service.name} - Installment Plan`,
-                description: `${description} | ${
-                  installmentPlan.installments
-                } monthly payments of $${installmentPricing.installmentAmount.toFixed(
-                  2,
-                )} | Processing fee: $${installmentPricing.feeAmount.toFixed(
-                  2,
-                )}`,
-              },
-              unit_amount: Math.round(
-                installmentPricing.installmentAmount * 100,
-              ),
-              recurring: {
-                interval: "month",
-                interval_count: 1,
-              },
-            },
-            quantity: 1,
-          },
-        ],
-        mode: "subscription",
-        success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/quote/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/quote`,
-        subscription_data: {
-          metadata: {
-            ...baseMetadata,
-            payment_type: "installments",
-            installment_plan: installmentPlan.name,
-            total_installments: (
-              installmentPricing.remainingPayments + 1
-            ).toString(),
-            installment_amount: installmentPricing.installmentAmount.toString(),
-            processing_fee: installmentPricing.feeAmount.toString(),
-          },
-        },
-        metadata: {
-          ...baseMetadata,
-          payment_type: "installments",
-          installment_plan: installmentPlan.name,
-        },
-        // Enable promotion codes for installment subscriptions too
-        allow_promotion_codes: true,
-      };
-
-      // OPTION 2: Apply specific coupon to installment subscription
-      /*
-      if (couponCode) {
-        sessionConfig.subscription_data = {
-          ...sessionConfig.subscription_data,
-          coupon: couponCode,
-        };
-      }
-      */
-
-      // Add customer email if provided
-      if (customerEmail) {
-        sessionConfig.customer_email = customerEmail;
-      }
-
-      const session = await stripe.checkout.sessions.create(sessionConfig);
-
-      return NextResponse.json({
-        checkoutUrl: session.url,
-        sessionId: session.id,
+        quantity: 1,
       });
     }
 
-    return NextResponse.json(
-      { error: "Invalid payment method" },
-      { status: 400 },
-    );
+    // Add recurring subscription if exists
+    if (totals.recurring > 0) {
+      lineItems.push({
+        price_data: {
+          currency: "aud",
+          product_data: {
+            name: `${service.name} - Monthly Services`,
+            description: `Recurring services: hosting, maintenance, etc.`,
+          },
+          unit_amount: Math.round(totals.recurring * 100),
+          recurring: {
+            interval: "month",
+          },
+        },
+        quantity: 1,
+      });
+    }
+
+    const sessionConfig: Stripe.Checkout.SessionCreateParams = {
+      payment_method_types: ["card"],
+      line_items: lineItems,
+      mode: totals.recurring > 0 ? "subscription" : "payment",
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/quote/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/quote`,
+      metadata: {
+        ...baseMetadata,
+        payment_type: "full_payment",
+      },
+      allow_promotion_codes: true,
+    };
+
+    // Add customer email if provided
+    if (customerEmail) {
+      sessionConfig.customer_email = customerEmail;
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionConfig);
+
+    return NextResponse.json({
+      checkoutUrl: session.url,
+      sessionId: session.id,
+    });
   } catch (error) {
     console.error("Stripe checkout error:", error);
 

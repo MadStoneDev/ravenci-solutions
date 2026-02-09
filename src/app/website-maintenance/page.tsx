@@ -3,6 +3,7 @@ import PriceButton from "@/components/price-button";
 
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import Accordion from "@/components/accordion";
+import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
   title: "Website Maintenance Solutions - RAVENCI Solutions",
@@ -11,6 +12,7 @@ export const metadata = {
 };
 
 export default function WebMaintenancePage() {
+  const testimonials = getTestimonialsForPage("website-maintenance");
   const features = [
     {
       title: "Digital Insurance",
@@ -86,16 +88,21 @@ export default function WebMaintenancePage() {
             Maintaining website for over 25 Australian businesses including law
             firms, medical practices and retail stores
           </h3>
-          <p
-            className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
-          >
-            Richard is amazing! He really cares about his work, his customers
-            and people in general. The work that he has done for me goes above
-            and beyond. Definitely recommend Richard to anyone!
-          </p>
-          <h3 className={`font-poppins text-2xl font-light text-neutral-100`}>
-            <span className={`font-bold`}>Viv</span> Luhrs
-          </h3>
+          {testimonials[0] && (
+            <>
+              <p
+                className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
+              >
+                &ldquo;{testimonials[0].content}&rdquo;
+              </p>
+              <h3 className={`font-poppins text-2xl font-light text-neutral-100`}>
+                <span className={`font-bold`}>
+                  {testimonials[0].author.split(" ")[0]}
+                </span>{" "}
+                {testimonials[0].author.split(" ").slice(1).join(" ")}
+              </h3>
+            </>
+          )}
         </div>
       </section>
 
@@ -215,7 +222,7 @@ export default function WebMaintenancePage() {
           </article>
 
           <PriceButton
-            price={195}
+            price={249}
             frequency={"mo."}
             fromText={"Starting at"}
             includeFrom={true}
@@ -232,7 +239,7 @@ export default function WebMaintenancePage() {
           </div>
 
           <PriceButton
-            price={450}
+            price={495}
             frequency={""}
             link={`/quote?service=oneoff-web-maintenance`}
             callToAction={`One-off maintenance`}

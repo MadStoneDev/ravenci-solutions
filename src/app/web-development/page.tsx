@@ -1,6 +1,7 @@
 ﻿import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
+import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
   title: "Website Development - RAVENCI Solutions",
@@ -9,6 +10,7 @@ export const metadata = {
 };
 
 export default function WebHostingDevelopmentPage() {
+  const testimonials = getTestimonialsForPage("web-development");
   const features = [
     {
       title: "Responsive Design",
@@ -137,18 +139,26 @@ export default function WebHostingDevelopmentPage() {
             Trusted by 50+ businesses across Australia to build websites that
             actually work
           </h3>
-          <p
-            className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
-          >
-            "Richard is the absolute best at what he does. Our brand new startup
-            is launching with the best possible website I could have imagined.
-            He took the time from the very beginning to understand us and our
-            business, and he has made our branding and website reflect that and
-            represent us perfectly."
-          </p>
-          <h3 className={`font-poppins text-2xl font-light text-neutral-100`}>
-            <span className={`font-bold`}>Adam</span> Bisset
-          </h3>
+          {testimonials[0] && (
+            <>
+              <p
+                className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
+              >
+                &ldquo;{testimonials[0].content}&rdquo;
+              </p>
+              <h3 className={`font-poppins text-2xl font-light text-neutral-100`}>
+                <span className={`font-bold`}>
+                  {testimonials[0].author.split(" ")[0]}
+                </span>{" "}
+                {testimonials[0].author.split(" ").slice(1).join(" ")}
+              </h3>
+              {testimonials[0].role && (
+                <p className="mt-1 text-sm text-white/60">
+                  {testimonials[0].role}
+                </p>
+              )}
+            </>
+          )}
         </div>
       </section>
 
@@ -263,7 +273,7 @@ export default function WebHostingDevelopmentPage() {
               to meet your specific needs.
             </p>
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
-              1. The Single Page Starter
+              1. Foundation Website
             </h3>
             <p className={`mb-4 text-neutral-400/90`}>
               This is the most basic option for any business looking to get
@@ -304,12 +314,12 @@ export default function WebHostingDevelopmentPage() {
                 ]}
               />
               <PriceButton
-                price={2240}
-                link={`/quote?service=web-dev-single`}
+                price={"3,490"}
+                link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
-                callToAction={`Single Page Starter`}
-                subCallToAction={`Get your foot in the door`}
+                callToAction={`Foundation Website`}
+                subCallToAction={`Request a proposal`}
               />
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
@@ -322,7 +332,7 @@ export default function WebHostingDevelopmentPage() {
             </div>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
-              2. Professional Development
+              2. Growth Website
             </h3>
             <p className={`mb-4 text-neutral-400/90`}>
               Already have your design sorted? Have your website built just
@@ -370,12 +380,12 @@ export default function WebHostingDevelopmentPage() {
               />
 
               <PriceButton
-                price={7200}
-                link={`/quote?service=web-dev-custom`}
+                price={"7,490"}
+                link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
-                callToAction={`Professional Development`}
-                subCallToAction={`Bring your vision to life`}
+                callToAction={`Growth Website`}
+                subCallToAction={`Request a proposal`}
               />
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
@@ -388,7 +398,7 @@ export default function WebHostingDevelopmentPage() {
             </div>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
-              3. Enterprise Branding & Development
+              3. Premium Brand & Web
             </h3>
             <p className={`mb-4 text-neutral-400/90`}>
               Our Branding & Development option offers a complete transformation
@@ -462,12 +472,12 @@ export default function WebHostingDevelopmentPage() {
               />
 
               <PriceButton
-                price={"12k"}
-                link={`/quote?service=web-dev-branding`}
+                price={"14,990"}
+                link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
-                callToAction={`Branding & Development`}
-                subCallToAction={`Full Service Solution`}
+                callToAction={`Premium Brand & Web`}
+                subCallToAction={`Request a proposal`}
               />
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">

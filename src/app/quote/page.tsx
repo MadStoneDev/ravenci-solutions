@@ -2,9 +2,9 @@
 import QuotingComponent from "@/components/quoting-component";
 
 export const metadata = {
-  title: "Get a Quote - RAVENCI Solutions",
+  title: "Hosting & Maintenance - RAVENCI Solutions",
   description:
-    "Generate your own quote that fits your budget and suits your project's needs.",
+    "Configure your hosting or maintenance plan and check out securely via Stripe. For project work, request a proposal.",
 };
 
 export default function QuotingPage() {

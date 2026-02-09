@@ -1,4 +1,4 @@
-﻿// /components/quoting-component
+// /components/quoting-component
 "use client";
 
 import Link from "next/link";
@@ -8,13 +8,11 @@ import {
   IconMinus,
   IconPlus,
   IconCreditCard,
-  IconCalendar,
   IconArrowLeft,
 } from "@tabler/icons-react";
 
 import { addons } from "@/lib/data/addons";
 import { services } from "@/lib/data/services";
-import { paymentOptions } from "@/lib/data/installments";
 
 interface SelectedAddons {
   [key: string]: number;
@@ -23,19 +21,12 @@ interface SelectedAddons {
 interface CalculatedTotals {
   oneTime: number;
   recurring: number;
-  discounts: Array<{ description: string; amount: number }>;
-  freeItems?: string[];
 }
-
-type PaymentMethod = "now" | "installments";
 
 export default function QuotingComponent() {
   // States
   const [selectedService, setSelectedService] = useState("");
   const [selectedAddons, setSelectedAddons] = useState<SelectedAddons>({});
-  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("now");
-  const [selectedInstallment, setSelectedInstallment] =
-    useState<string>("3-months");
 
   const [comments, setComments] = useState("");
 
@@ -53,14 +44,11 @@ export default function QuotingComponent() {
     window.history.pushState(null, "", window.location.href);
   };
 
-  // Calculate discounts and totals
+  // Calculate totals
   const calculatedTotals = useMemo((): CalculatedTotals => {
-    if (!selectedService) return { oneTime: 0, recurring: 0, discounts: [] };
+    if (!selectedService) return { oneTime: 0, recurring: 0 };
 
     const service = services[selectedService];
-
-    const appliedDiscounts: { description: string; amount: number }[] = [];
-    const freeItems: string[] = [];
 
     let oneTimeTotal = service.isRecurring ? 0 : service.basePrice;
     let recurringTotal = service.isRecurring ? service.basePrice : 0;
@@ -79,100 +67,11 @@ export default function QuotingComponent() {
       }
     });
 
-    // Apply discount rules
-    if (service.discountRules) {
-      service.discountRules.forEach((rule) => {
-        const hasAllTriggers = rule.trigger.every(
-          (triggerId) => (selectedAddons[triggerId] || 0) > 0,
-        );
-
-        if (hasAllTriggers) {
-          if (rule.action.type === "free") {
-            rule.action.items?.forEach((itemId) => {
-              if (!(selectedAddons[itemId] > 0)) {
-                setSelectedAddons((prev) => ({ ...prev, [itemId]: 1 }));
-                freeItems.push(itemId);
-              }
-            });
-          } else if (
-            rule.action.type === "discount" &&
-            rule.action.percentage !== undefined
-          ) {
-            const discountAmount =
-              oneTimeTotal * (rule.action.percentage / 100);
-            oneTimeTotal -= discountAmount;
-            appliedDiscounts.push({
-              description: `${rule.action.percentage}% Bundle Discount`,
-              amount: discountAmount,
-            });
-          } else if (
-            rule.action.type === "quantity_discount" &&
-            rule.action.target_item &&
-            rule.action.quantity_threshold &&
-            rule.action.new_price
-          ) {
-            const targetAddon = rule.action.target_item;
-            const quantity = selectedAddons[targetAddon] || 0;
-
-            if (quantity >= rule.action.quantity_threshold) {
-              const addon = addons[targetAddon];
-              const originalTotal = addon.price * quantity;
-              const discountedTotal = rule.action.new_price * quantity;
-              const savings = originalTotal - discountedTotal;
-
-              // Update the totals
-              if (addon.isRecurring) {
-                recurringTotal =
-                  recurringTotal - originalTotal + discountedTotal;
-              } else {
-                oneTimeTotal = oneTimeTotal - originalTotal + discountedTotal;
-              }
-
-              appliedDiscounts.push({
-                description: `Bulk discount on ${
-                  addon.title
-                } (${quantity} × $${rule.action.new_price.toFixed(2)})`,
-                amount: savings,
-              });
-            }
-          }
-        }
-      });
-    }
-
     return {
       oneTime: oneTimeTotal,
       recurring: recurringTotal,
-      discounts: appliedDiscounts,
-      freeItems,
     };
   }, [selectedService, selectedAddons]);
-
-  // Calculate installment pricing
-  const installmentPricing = useMemo(() => {
-    if (paymentMethod !== "installments") return null;
-
-    const option = paymentOptions[selectedInstallment];
-    const feeAmount = calculatedTotals.oneTime * (option.fee / 100);
-    const totalWithFee = calculatedTotals.oneTime + feeAmount;
-    const installmentAmount = Math.ceil(totalWithFee / option.installments);
-
-    // Ensure first payment covers at least one month of recurring if applicable
-    const minimumFirstPayment =
-      calculatedTotals.recurring > 0 ? calculatedTotals.recurring : 0;
-    const adjustedFirstPayment = Math.max(
-      installmentAmount,
-      minimumFirstPayment,
-    );
-
-    return {
-      feeAmount,
-      totalWithFee,
-      installmentAmount,
-      adjustedFirstPayment,
-      remainingPayments: option.installments - 1,
-    };
-  }, [paymentMethod, selectedInstallment, calculatedTotals]);
 
   const handleAddonChange = (addonId: string, quantity: number) => {
     setSelectedAddons((prev) => ({
@@ -188,13 +87,8 @@ export default function QuotingComponent() {
     const checkoutData = {
       service: services[selectedService],
       addons: selectedAddons,
-      paymentMethod,
-      installmentPlan:
-        paymentMethod === "installments"
-          ? paymentOptions[selectedInstallment]
-          : null,
+      paymentMethod: "now",
       totals: calculatedTotals,
-      installmentPricing,
       comments: comments.trim(),
     };
 
@@ -241,8 +135,6 @@ export default function QuotingComponent() {
         // Clear service selection
         setSelectedService("");
         setSelectedAddons({});
-        setPaymentMethod("now");
-        setSelectedInstallment("3-months");
         setComments("");
 
         setInterceptBack(false);
@@ -259,14 +151,23 @@ export default function QuotingComponent() {
       <main className="pb-10 flex flex-col min-h-screen bg-neutral-50">
         <section className="content-section pt-32 pb-24 px-5 sm:px-20 xl:px-36">
           <h1 className="text-4xl md:text-5xl font-medium mb-8">
-            Get Your Custom Quote
+            Hosting & Maintenance
           </h1>
-          <p className="text-xl text-neutral-600 mb-12 max-w-2xl">
-            Select the service you're interested in to get started with your
-            custom quote.
+          <p className="text-xl text-neutral-600 mb-4 max-w-2xl">
+            Select a hosting or maintenance plan to get started. Configure
+            add-ons and check out securely via Stripe.
+          </p>
+          <p className="text-base text-neutral-500 mb-12 max-w-2xl">
+            Looking for web development, design, SEO, or app projects?{" "}
+            <Link
+              href="/launch-your-vision"
+              className="text-ravenci-primary hover:text-ravenci-primary/70 font-medium transition-all duration-300 ease-in-out"
+            >
+              Request a proposal
+            </Link>
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {Object.values(services).map((service) => (
               <div
                 key={service.id}
@@ -287,7 +188,7 @@ export default function QuotingComponent() {
                   </p>
                 </section>
                 <div className="text-xl font-bold text-ravenci-primary">
-                  From ${service.basePrice.toFixed(2)}
+                  ${service.basePrice.toFixed(2)}
                   {service.isRecurring && (
                     <span className="text-sm font-normal">
                       /{service.recurringPeriod}
@@ -365,26 +266,14 @@ export default function QuotingComponent() {
               <h2 className="text-2xl font-semibold mb-6">Available Add-ons</h2>
               <div className="space-y-4">
                 {availableAddons.map((addon) => {
-                  const isFree = calculatedTotals.freeItems?.includes(addon.id);
                   return (
                     <div
                       key={addon.id}
-                      className={`p-4 border rounded-lg ${
-                        isFree
-                          ? "bg-green-50 border-green-200"
-                          : "border-neutral-200"
-                      }`}
+                      className="p-4 border rounded-lg border-neutral-200"
                     >
                       <div className="flex justify-between items-start mb-2">
                         <div className="flex-1">
-                          <h3 className="font-semibold flex items-center gap-2">
-                            {addon.title}
-                            {isFree && (
-                              <span className="text-green-600 text-sm font-normal">
-                                (FREE)
-                              </span>
-                            )}
-                          </h3>
+                          <h3 className="font-semibold">{addon.title}</h3>
                           <p className="text-neutral-600 text-sm">
                             {addon.description}
                           </p>
@@ -412,7 +301,6 @@ export default function QuotingComponent() {
                                   )
                                 }
                                 className="p-1 rounded bg-neutral-200 hover:bg-neutral-300"
-                                disabled={isFree}
                               >
                                 <IconMinus size={16} />
                               </button>
@@ -430,7 +318,6 @@ export default function QuotingComponent() {
                                   )
                                 }
                                 className="p-1 rounded bg-neutral-200 hover:bg-neutral-300"
-                                disabled={isFree}
                               >
                                 <IconPlus size={16} />
                               </button>
@@ -440,7 +327,7 @@ export default function QuotingComponent() {
                               <input
                                 type="checkbox"
                                 checked={
-                                  (selectedAddons[addon.id] || 0) > 0 || isFree
+                                  (selectedAddons[addon.id] || 0) > 0
                                 }
                                 onChange={(e) =>
                                   handleAddonChange(
@@ -449,7 +336,6 @@ export default function QuotingComponent() {
                                   )
                                 }
                                 className="mr-2"
-                                disabled={isFree}
                               />
                               Add
                             </label>
@@ -499,95 +385,16 @@ export default function QuotingComponent() {
                   </span>
                 </div>
               )}
-              {calculatedTotals.discounts.map((discount, index) => (
-                <div
-                  key={index}
-                  className="flex justify-between text-green-600"
-                >
-                  <span className={`text-sm max-w-[200px]`}>
-                    {discount.description}:
-                  </span>
-                  <span className={`text-sm`}>
-                    -${discount.amount.toFixed(2)}
-                  </span>
-                </div>
-              ))}
             </div>
 
-            {/* Payment Method Selection */}
+            {/* Payment Method */}
             <div className="mb-6">
               <h3 className="font-semibold mb-3">Payment Method</h3>
-              <div className="space-y-2">
-                <label className="flex items-center">
-                  <input
-                    type="radio"
-                    name="payment"
-                    value="now"
-                    checked={paymentMethod === "now"}
-                    onChange={() => setPaymentMethod("now")}
-                    className="mr-2"
-                  />
-                  <IconCreditCard size={18} className="mr-2" />
-                  Pay Now
-                </label>
-
-                {calculatedTotals.oneTime > 0 && (
-                  <label className="flex items-center">
-                    <input
-                      type="radio"
-                      name="payment"
-                      value="installments"
-                      checked={paymentMethod === "installments"}
-                      onChange={() => setPaymentMethod("installments")}
-                      className="mr-2"
-                    />
-                    <IconCalendar size={18} className="mr-2" />
-                    Payment Installments
-                  </label>
-                )}
+              <div className="flex items-center text-neutral-600">
+                <IconCreditCard size={18} className="mr-2" />
+                Secure checkout via Stripe
               </div>
             </div>
-
-            {/* Installment Options */}
-            {paymentMethod === "installments" &&
-              calculatedTotals.oneTime > 0 && (
-                <div className="mb-6">
-                  <h3 className="font-semibold mb-3">Installment Plan</h3>
-                  <select
-                    value={selectedInstallment}
-                    onChange={(e) => setSelectedInstallment(e.target.value)}
-                    className="w-full p-2 border border-neutral-300 rounded"
-                  >
-                    {Object.entries(paymentOptions).map(([key, option]) => (
-                      <option key={key} value={key}>
-                        {option.name} (+{option.fee}% fee)
-                      </option>
-                    ))}
-                  </select>
-
-                  {installmentPricing && (
-                    <div className="mt-3 p-3 bg-neutral-50 rounded text-sm">
-                      <div>
-                        Processing fee: $
-                        {installmentPricing.feeAmount.toFixed(2)}
-                      </div>
-                      <div>
-                        Total with fee: $
-                        {installmentPricing.totalWithFee.toFixed(2)}
-                      </div>
-                      <div className="font-semibold">
-                        First payment: $
-                        {installmentPricing.adjustedFirstPayment.toFixed(2)}
-                      </div>
-                      <div>
-                        Remaining {installmentPricing.remainingPayments}{" "}
-                        payments: $
-                        {installmentPricing.installmentAmount.toFixed(2)} each
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
 
             <div className="mb-6">
               <h3 className="font-semibold mb-3">Additional Comments</h3>
@@ -605,7 +412,7 @@ export default function QuotingComponent() {
               </div>
             )}
 
-            {/* Updated Checkout Button with loading state */}
+            {/* Checkout Button */}
             <button
               onClick={handleCheckout}
               disabled={isLoading}
@@ -616,10 +423,8 @@ export default function QuotingComponent() {
                   <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
                   Processing...
                 </div>
-              ) : paymentMethod === "now" ? (
-                "Pay Now"
               ) : (
-                "Set Up Installments"
+                "Pay Now"
               )}
             </button>
           </div>

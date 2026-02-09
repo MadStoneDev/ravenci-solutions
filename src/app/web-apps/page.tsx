@@ -2,6 +2,7 @@
 import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
 import StickyCTA from "@/components/sticky-cta";
+import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
   title: "Web App Development - RAVENCI Solutions",
@@ -10,6 +11,7 @@ export const metadata = {
 };
 
 export default function WebAppPage() {
+  const testimonials = getTestimonialsForPage("web-apps");
   const features = [
     {
       title: "Custom Workflow Design",
@@ -83,16 +85,20 @@ export default function WebAppPage() {
             Trusted by 30+ Brisbane businesses to build platforms that transform
             operations
           </h3>
-          <p
-            className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
-          >
-            "What used to take days to complete manually, holding back projects
-            and documentation now takes minutes with the app Richard built for
-            us. Best of all, it's user-friendly. Anyone can use it."
-          </p>
-          <h3 className={`font-poppins text-2xl font-light text-neutral-100`}>
-            <span className={`font-bold`}>V Consulting</span>
-          </h3>
+          {testimonials[0] && (
+            <>
+              <p
+                className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
+              >
+                &ldquo;{testimonials[0].content}&rdquo;
+              </p>
+              <h3 className={`font-poppins text-2xl font-light text-neutral-100`}>
+                <span className={`font-bold`}>
+                  {testimonials[0].author}
+                </span>
+              </h3>
+            </>
+          )}
         </div>
       </section>
 
@@ -217,12 +223,12 @@ export default function WebAppPage() {
                 ]}
               />
               <PriceButton
-                price={12900}
-                link={`/quote?service=webapp-automation`}
+                price={"25,000"}
+                link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
                 callToAction={`Process Automation Tool`}
-                subCallToAction={`Eliminate repetitive work forever`}
+                subCallToAction={`Enquire for a tailored proposal`}
               />
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
@@ -278,12 +284,12 @@ export default function WebAppPage() {
               />
 
               <PriceButton
-                price={24900}
-                link={`/quote?service=webapp-platform`}
+                price={"25,000"}
+                link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
                 callToAction={`Business Management Platform`}
-                subCallToAction={`Replace multiple tools with one powerful system`}
+                subCallToAction={`Enquire for a tailored proposal`}
               />
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
@@ -337,12 +343,12 @@ export default function WebAppPage() {
               />
 
               <PriceButton
-                price={49900}
-                link={`/quote?service=webapp-enterprise`}
+                price={"25,000"}
+                link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
                 callToAction={`Enterprise Solution`}
-                subCallToAction={`Build your competitive advantage`}
+                subCallToAction={`Enquire for a tailored proposal`}
               />
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
@@ -393,8 +399,8 @@ export default function WebAppPage() {
 
       {/* Mobile sticky CTA */}
       <StickyCTA
-        link="/quote?service=web-apps"
-        startingPrice={12900}
+        link="/launch-your-vision"
+        startingPrice={25000}
         priceNote=""
       />
 

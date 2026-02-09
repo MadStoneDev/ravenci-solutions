@@ -5,6 +5,7 @@ import {
   IconMailFilled,
   IconPhoneFilled,
 } from "@tabler/icons-react";
+import FooterEmailCapture from "@/components/footer-email-capture";
 
 export default function MainFooter() {
   return (
@@ -170,6 +171,9 @@ export default function MainFooter() {
             Brisbane, Australia
           </div>
         </article>
+
+        {/* Compact email capture */}
+        <FooterEmailCapture />
 
         <article
           className={`mt-16 pt-3 flex flex-col gap-2 border-t border-neutral-600`}
