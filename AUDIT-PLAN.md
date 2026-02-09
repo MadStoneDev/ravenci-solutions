@@ -209,24 +209,24 @@ Appears exactly once on the entire site in a blockquote. Not woven into copy, se
 ### MEDIUM-TERM IMPROVEMENTS (Next Month)
 
 - [x] 1. Create an About page with Richard's story, 20-year journey, team, values, professional photos — `feature/about-page`
-- [ ] 2. Add 3-5 case studies with problem, approach, results (with numbers), testimonial — `feature/case-studies`
-- [ ] 3. Rethink quote page — replace self-serve checkout with "Request a Proposal" flow
+- [ ] 2. Add 3-5 case studies with problem, approach, results (with numbers), testimonial — `feature/case-studies` (in progress)
+- [x] 3. Rethink quote page — replace self-serve checkout with "Request a Proposal" flow for project work; keep Stripe for hosting/maintenance
 - [x] 4. Rewrite homepage copy to focus on outcomes and lead with 20 years experience
-- [x] 5. Add desktop navigation — show key links persistently (Services, Articles, Get Started CTA)
-- [ ] 6. Add multiple testimonials with names, roles, companies, photos
+- [x] 5. Add desktop navigation — show key links persistently (Services dropdown, Articles, Get Started CTA)
+- [x] 6. Add multiple testimonials with names, roles, companies — centralized data, initials avatars, shown across service pages
 - [x] 7. Generate sitemap dynamically via Next.js `app/sitemap.ts`
 - [x] 8. Add FAQ schema markup to all service pages with FAQs
 - [x] 9. Fix homepage video performance — lazy-load with Intersection Observer
-- [ ] 10. Add email capture — newsletter, free guide, or "Website Health Check"
+- [x] 10. Add email capture — "Free AI & Google Visibility Check" lead magnet on homepage + footer CTA, with reCAPTCHA v3
 
 ### STRATEGIC SHIFTS (Bigger Changes)
 
-- [ ] 1. Restructure pricing display — hybrid model (see Section 8 below)
-- [ ] 2. Replace self-serve Stripe checkout for project work — move to consultation-first model
+- [x] 1. Restructure pricing display — hybrid model: exact prices for hosting/maintenance, "From $X" for project work, "Enquire" for apps
+- [x] 2. Replace self-serve Stripe checkout for project work — project services link to /launch-your-vision, Stripe kept for 4 self-serve services only
 - [ ] 3. Shift brand voice from "I/developer" to "we/agency"
 - [ ] 4. Create documented process — "The RAVENCI Method" or similar
 - [ ] 5. Specialize or demonstrate verticals (see Section 10 below)
-- [ ] 6. Remove/hide installment payment option from public site
+- [x] 6. Remove/hide installment payment option from public site — installments removed from quote page
 - [ ] 7. Build proper portfolio section with context and results
 - [ ] 8. Invest in blog/content strategy targeting premium Brisbane web development keywords
 

@@ -6,7 +6,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 import {
+  IconAppWindow,
+  IconChartLine,
+  IconChevronDown,
   IconCloudComputing,
+  IconDeviceMobile,
   IconHammer,
   IconHome,
   IconMail,
@@ -30,12 +34,38 @@ export default function MainNavigation() {
   const [isLogoOnDark, setIsLogoOnDark] = useState(false);
   const [isMenuOnDark, setIsMenuOnDark] = useState(false);
   const [isAtTop, setIsAtTop] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   // Refs
   const logoRef = useRef<HTMLAnchorElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Functions
+  const serviceLinks = [
+    { href: "/web-development", label: "Web Development", icon: IconTerminal2 },
+    { href: "/business-design", label: "Business Design", icon: IconPalette },
+    { href: "/web-apps", label: "Web Apps", icon: IconAppWindow },
+    { href: "/mobile-apps", label: "Mobile Apps", icon: IconDeviceMobile },
+    { href: "/website-maintenance", label: "Maintenance", icon: IconHammer },
+    { href: "/web-hosting", label: "Domains & Hosting", icon: IconCloudComputing },
+    { href: "/seo-and-content", label: "SEO & Content", icon: IconChartLine },
+  ];
+
+  const handleServicesEnter = () => {
+    if (servicesTimeoutRef.current) {
+      clearTimeout(servicesTimeoutRef.current);
+      servicesTimeoutRef.current = null;
+    }
+    setIsServicesOpen(true);
+  };
+
+  const handleServicesLeave = () => {
+    servicesTimeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 150);
+  };
+
   const handleMenuClick = (status: boolean) => {
     if (status) {
       setIsMenuOpen(status);
@@ -307,14 +337,44 @@ export default function MainNavigation() {
             isMenuOpen ? "opacity-0" : "opacity-100"
           } transition-opacity duration-300 ease-in-out`}
         >
-          <Link
-            href={`/web-development`}
-            className={`text-sm font-medium ${
-              isMenuOnDark ? "text-white/80 hover:text-white" : "text-ravenci-dark/70 hover:text-ravenci-dark"
-            } transition-colors duration-300 ease-in-out`}
+          <div
+            className="relative"
+            onMouseEnter={handleServicesEnter}
+            onMouseLeave={handleServicesLeave}
           >
-            Services
-          </Link>
+            <button
+              type="button"
+              className={`flex items-center gap-1 text-sm font-medium ${
+                isMenuOnDark ? "text-white/80 hover:text-white" : "text-ravenci-dark/70 hover:text-ravenci-dark"
+              } transition-colors duration-300 ease-in-out`}
+            >
+              Services
+              <IconChevronDown
+                size={14}
+                className={`${isServicesOpen ? "rotate-180" : ""} transition-transform duration-200`}
+              />
+            </button>
+
+            <div
+              className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 ${
+                isServicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1"
+              } transition-all duration-200 ease-in-out`}
+            >
+              <div className="bg-white rounded-lg shadow-xl border border-neutral-100 py-2 min-w-[220px]">
+                {serviceLinks.map((service) => (
+                  <Link
+                    key={service.href}
+                    href={service.href}
+                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-ravenci-dark/70 hover:text-ravenci-primary hover:bg-neutral-50 transition-colors duration-150"
+                    onClick={() => setIsServicesOpen(false)}
+                  >
+                    <service.icon size={18} className="text-ravenci-primary/60" />
+                    {service.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
           <Link
             href={`/articles`}
             className={`text-sm font-medium ${
