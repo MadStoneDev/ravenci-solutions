@@ -1,9 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { IconSearch, IconCheck } from "@tabler/icons-react";
 
 export default function VisibilityCheckForm() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,32 +16,40 @@ export default function VisibilityCheckForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-    setErrorMessage("");
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+      setStatus("loading");
+      setErrorMessage("");
 
-    try {
-      const response = await fetch("/api/visibility-check", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      try {
+        let recaptchaToken = "";
+        if (executeRecaptcha) {
+          recaptchaToken = await executeRecaptcha("visibility_check");
+        }
 
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.message || "Something went wrong");
+        const response = await fetch("/api/visibility-check", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, recaptchaToken }),
+        });
+
+        if (!response.ok) {
+          const data = await response.json();
+          throw new Error(data.message || "Something went wrong");
+        }
+
+        setStatus("success");
+        setFormData({ name: "", email: "", businessName: "", websiteUrl: "" });
+      } catch (err) {
+        setStatus("error");
+        setErrorMessage(
+          err instanceof Error ? err.message : "Something went wrong. Please try again.",
+        );
       }
-
-      setStatus("success");
-      setFormData({ name: "", email: "", businessName: "", websiteUrl: "" });
-    } catch (err) {
-      setStatus("error");
-      setErrorMessage(
-        err instanceof Error ? err.message : "Something went wrong. Please try again.",
-      );
-    }
-  };
+    },
+    [executeRecaptcha, formData],
+  );
 
   if (status === "success") {
     return (
@@ -141,7 +152,8 @@ export default function VisibilityCheckForm() {
       </button>
 
       <p className="mt-3 text-xs text-neutral-500">
-        No spam, no obligation. We&apos;ll only use your email to send the report.
+        No spam, no obligation. We&apos;ll only use your email to send the
+        report. Protected by reCAPTCHA.
       </p>
     </form>
   );

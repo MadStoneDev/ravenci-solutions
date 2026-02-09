@@ -288,6 +288,7 @@ export default function Home() {
 
       {/* Visibility Check Lead Magnet */}
       <section
+        id="visibility-check"
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-100`}
       >
         <div className="text-center mb-10">

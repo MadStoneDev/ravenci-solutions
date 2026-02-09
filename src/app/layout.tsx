@@ -9,6 +9,7 @@ import { Lexend, Playfair_Display } from "next/font/google";
 import MainFooter from "@/components/main-footer";
 import MainNavigation from "@/components/main-navigation";
 import SpinningCircleText from "@/components/spinning-circle-text";
+import ReCaptchaProvider from "@/components/recaptcha-provider";
 
 const lexend = Lexend({
   variable: "--font-lexend",
@@ -120,11 +121,13 @@ export default function RootLayout({
       <body
         className={`relative ${lexend.variable} ${playfairDisplay.variable} antialiased`}
       >
-        <MainNavigation />
-        {children}
-        <MainFooter />
+        <ReCaptchaProvider>
+          <MainNavigation />
+          {children}
+          <MainFooter />
 
-        <SpinningCircleText text={"Book Now · Free Consultation · "} />
+          <SpinningCircleText text={"Book Now · Free Consultation · "} />
+        </ReCaptchaProvider>
 
         <MicrosoftClarity />
       </body>

@@ -208,8 +208,8 @@ Appears exactly once on the entire site in a blockquote. Not woven into copy, se
 
 ### MEDIUM-TERM IMPROVEMENTS (Next Month)
 
-- [ ] 1. Create an About page with Richard's story, 20-year journey, team, values, professional photos
-- [ ] 2. Add 3-5 case studies with problem, approach, results (with numbers), testimonial
+- [x] 1. Create an About page with Richard's story, 20-year journey, team, values, professional photos — `feature/about-page`
+- [ ] 2. Add 3-5 case studies with problem, approach, results (with numbers), testimonial — `feature/case-studies`
 - [ ] 3. Rethink quote page — replace self-serve checkout with "Request a Proposal" flow
 - [x] 4. Rewrite homepage copy to focus on outcomes and lead with 20 years experience
 - [x] 5. Add desktop navigation — show key links persistently (Services, Articles, Get Started CTA)

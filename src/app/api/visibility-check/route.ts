@@ -4,7 +4,36 @@ import { Recipient, EmailParams, Sender, MailerSend } from "mailersend";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, businessName, websiteUrl } = body;
+    const { name, email, businessName, websiteUrl, recaptchaToken } = body;
+
+    // Verify reCAPTCHA token
+    const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
+    if (recaptchaSecret) {
+      if (!recaptchaToken) {
+        return NextResponse.json(
+          { message: "reCAPTCHA verification failed" },
+          { status: 400 },
+        );
+      }
+
+      const recaptchaResponse = await fetch(
+        "https://www.google.com/recaptcha/api/siteverify",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `secret=${recaptchaSecret}&response=${recaptchaToken}`,
+        },
+      );
+
+      const recaptchaData = await recaptchaResponse.json();
+
+      if (!recaptchaData.success || recaptchaData.score < 0.5) {
+        return NextResponse.json(
+          { message: "reCAPTCHA verification failed" },
+          { status: 400 },
+        );
+      }
+    }
 
     if (!name || !email || !businessName || !websiteUrl) {
       return NextResponse.json(
