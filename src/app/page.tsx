@@ -54,16 +54,17 @@ export default function Home() {
               ></div>
             </Link>
 
-            {/*<button*/}
-            {/*  className={`group relative px-6 py-3 rounded-full text-white transition-all duration-300 ease-in-out`}*/}
-            {/*>*/}
-            {/*  <span className={`z-20`}>Work</span>*/}
+            <Link
+              href={`/case-studies`}
+              className={`group relative px-6 py-3 rounded-full text-white transition-all duration-300 ease-in-out`}
+            >
+              <span className={`z-20`}>Our Work</span>
 
-            {/*  /!* Border *!/*/}
-            {/*  <div*/}
-            {/*    className={`absolute top-0 bottom-0 left-0 right-0 rounded-full border-2 border-transparent group-hover:border-white z-10 transition-all duration-500 ease-in-out`}*/}
-            {/*  ></div>*/}
-            {/*</button>*/}
+              {/* Border */}
+              <div
+                className={`absolute top-0 bottom-0 left-0 right-0 rounded-full border-2 border-transparent group-hover:border-white z-10 transition-all duration-500 ease-in-out`}
+              ></div>
+            </Link>
           </div>
         </article>
 

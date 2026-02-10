@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f457241-9352-4e0c-9ff0-672a555261b5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/case-studies/[slug]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/case-studies/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/case-study-card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/case-study-metrics-bar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/case-study-results-driven.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/case-study-visual-showcase.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/case-studies.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AUDIT-PLAN.md" beforeDir="false" afterPath="$PROJECT_DIR$/AUDIT-PLAN.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/visibility-check/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/visibility-check/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer-email-capture.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer-email-capture.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/visibility-check-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/visibility-check-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sitemap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sitemap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main-footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main-footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main-navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main-navigation.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +46,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/medium-term-remaining",
+    "git-widget-placeholder": "Merging main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
