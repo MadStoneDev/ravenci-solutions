@@ -53,13 +53,21 @@ export default function MainNavigation() {
     { href: "/web-apps", label: "Web Apps", icon: IconAppWindow },
     { href: "/mobile-apps", label: "Mobile Apps", icon: IconDeviceMobile },
     { href: "/website-maintenance", label: "Maintenance", icon: IconHammer },
-    { href: "/web-hosting", label: "Domains & Hosting", icon: IconCloudComputing },
+    {
+      href: "/web-hosting",
+      label: "Domains & Hosting",
+      icon: IconCloudComputing,
+    },
     { href: "/seo-and-content", label: "SEO & Content", icon: IconChartLine },
   ];
 
   const industryLinks = [
     { href: "/healthcare", label: "Healthcare Websites", icon: IconHeartbeat },
-    { href: "/construction", label: "Construction Websites", icon: IconBuildingSkyscraper },
+    {
+      href: "/construction",
+      label: "Construction Websites",
+      icon: IconBuildingSkyscraper,
+    },
   ];
 
   const handleServicesEnter = () => {
@@ -422,8 +430,10 @@ export default function MainNavigation() {
 
       <nav
         id={`menu`}
-        className={`pointer-events-none pl-3 pr-5 md:px-12 ${
-          isAtTop ? "py-8" : "py-4"
+        className={`pl-3 pr-5 md:px-12 ${
+          isAtTop
+            ? "py-8 pointer-events-none"
+            : "py-4 pointer-events-auto bg-white/80 backdrop-blur-sm"
         } fixed top-0 flex justify-between items-center w-full z-50 transition-all duration-300 ease-in-out`}
       >
         {/* Logo */}
@@ -440,9 +450,7 @@ export default function MainNavigation() {
                   ? isLogoOnDark
                     ? `/ravenci-logo.svg`
                     : `/ravenci-logo-dark.svg`
-                  : isLogoOnDark
-                    ? `/ravenci-symbol.svg`
-                    : `/ravenci-symbol-dark.svg`
+                  : `/ravenci-symbol-dark.svg`
             }
             alt={`Welcome to RAVENCI`}
             width={125}
@@ -465,7 +473,9 @@ export default function MainNavigation() {
             <button
               type="button"
               className={`flex items-center gap-1 text-sm font-medium ${
-                isMenuOnDark ? "text-white/80 hover:text-white" : "text-ravenci-dark/70 hover:text-ravenci-dark"
+                isAtTop && isMenuOnDark
+                  ? "text-white/80 hover:text-white"
+                  : "text-ravenci-dark/70 hover:text-ravenci-dark"
               } transition-colors duration-300 ease-in-out`}
             >
               Services
@@ -477,7 +487,9 @@ export default function MainNavigation() {
 
             <div
               className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 ${
-                isServicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1"
+                isServicesOpen
+                  ? "opacity-100 visible translate-y-0"
+                  : "opacity-0 invisible -translate-y-1"
               } transition-all duration-200 ease-in-out`}
             >
               <div className="bg-white rounded-lg shadow-xl border border-neutral-100 py-2 min-w-[220px]">
@@ -488,7 +500,10 @@ export default function MainNavigation() {
                     className="flex items-center gap-3 px-4 py-2.5 text-sm text-ravenci-dark/70 hover:text-ravenci-primary hover:bg-neutral-50 transition-colors duration-150"
                     onClick={() => setIsServicesOpen(false)}
                   >
-                    <service.icon size={18} className="text-ravenci-primary/60" />
+                    <service.icon
+                      size={18}
+                      className="text-ravenci-primary/60"
+                    />
                     {service.label}
                   </Link>
                 ))}
@@ -500,7 +515,10 @@ export default function MainNavigation() {
                     className="flex items-center gap-3 px-4 py-2.5 text-sm text-ravenci-dark/70 hover:text-ravenci-primary hover:bg-neutral-50 transition-colors duration-150"
                     onClick={() => setIsServicesOpen(false)}
                   >
-                    <industry.icon size={18} className="text-ravenci-primary/60" />
+                    <industry.icon
+                      size={18}
+                      className="text-ravenci-primary/60"
+                    />
                     {industry.label}
                   </Link>
                 ))}
@@ -510,7 +528,9 @@ export default function MainNavigation() {
           <Link
             href={`/our-process`}
             className={`text-sm font-medium ${
-              isMenuOnDark ? "text-white/80 hover:text-white" : "text-ravenci-dark/70 hover:text-ravenci-dark"
+              isAtTop && isMenuOnDark
+                ? "text-white/80 hover:text-white"
+                : "text-ravenci-dark/70 hover:text-ravenci-dark"
             } transition-colors duration-300 ease-in-out`}
           >
             Our Process
@@ -518,7 +538,9 @@ export default function MainNavigation() {
           <Link
             href={`/articles`}
             className={`text-sm font-medium ${
-              isMenuOnDark ? "text-white/80 hover:text-white" : "text-ravenci-dark/70 hover:text-ravenci-dark"
+              isAtTop && isMenuOnDark
+                ? "text-white/80 hover:text-white"
+                : "text-ravenci-dark/70 hover:text-ravenci-dark"
             } transition-colors duration-300 ease-in-out`}
           >
             Articles
@@ -526,7 +548,9 @@ export default function MainNavigation() {
           <Link
             href={`/case-studies`}
             className={`text-sm font-medium ${
-              isMenuOnDark ? "text-white/80 hover:text-white" : "text-ravenci-dark/70 hover:text-ravenci-dark"
+              isAtTop && isMenuOnDark
+                ? "text-white/80 hover:text-white"
+                : "text-ravenci-dark/70 hover:text-ravenci-dark"
             } transition-colors duration-300 ease-in-out`}
           >
             Case Studies
@@ -534,7 +558,9 @@ export default function MainNavigation() {
           <Link
             href={`/about`}
             className={`text-sm font-medium ${
-              isMenuOnDark ? "text-white/80 hover:text-white" : "text-ravenci-dark/70 hover:text-ravenci-dark"
+              isAtTop && isMenuOnDark
+                ? "text-white/80 hover:text-white"
+                : "text-ravenci-dark/70 hover:text-ravenci-dark"
             } transition-colors duration-300 ease-in-out`}
           >
             About
@@ -560,10 +586,8 @@ export default function MainNavigation() {
             className={`absolute top-1/2 -translate-y-1/2 right-0 ${
               isMenuOpen ? `opacity-0` : `opacity-100`
             } ${
-              isMenuOnDark
-                ? isMenuOpen
-                  ? `text-ravenci-dark`
-                  : `text-white`
+              isAtTop && isMenuOnDark && !isMenuOpen
+                ? `text-white`
                 : `text-ravenci-dark`
             } transition-all duration-500 ease-in-out`}
           />
@@ -572,10 +596,8 @@ export default function MainNavigation() {
             className={`absolute top-1/2 -translate-y-1/2 right-0 ${
               isMenuOpen ? `opacity-100` : `opacity-0`
             } ${
-              isMenuOnDark
-                ? isMenuOpen
-                  ? `text-ravenci-dark`
-                  : `text-white`
+              isAtTop && isMenuOnDark && !isMenuOpen
+                ? `text-white`
                 : `text-ravenci-dark`
             } transition-all duration-500 ease-in-out`}
           />

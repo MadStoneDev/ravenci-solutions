@@ -127,8 +127,8 @@ export default function Home() {
 
             <p>
               From design and development to hosting and ongoing maintenance,
-              RAVENCI handles every stage of your website's lifecycle so you
-              can focus on running your business.
+              RAVENCI handles every stage of your website's lifecycle so you can
+              focus on running your business.
             </p>
           </div>
 
@@ -280,7 +280,13 @@ export default function Home() {
                   title={title}
                   className={`px-4 py-5 flex justify-center items-center w-1/2 sm:w-1/3 h-24 hover:bg-neutral-200/40 border-b border-r border-neutral-200 transition-all duration-300 ease-in-out`}
                 >
-                  <Image src={logo} alt={title} width={150} height={60} className={`w-full h-full object-contain`} />
+                  <Image
+                    src={logo}
+                    alt={title}
+                    width={150}
+                    height={60}
+                    className={`w-full h-full object-contain`}
+                  />
                 </div>
               );
             })}
@@ -291,7 +297,7 @@ export default function Home() {
       {/* Visibility Check Lead Magnet */}
       <section
         id="visibility-check"
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-100`}
+        className={`content-section pt-20 pb-28 px-5 sm:px-20 xl:px-36 bg-neutral-100`}
       >
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-medium mb-4">

@@ -51,19 +51,16 @@ export default function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
         {/* View link */}
         <div className={`mt-4`}>
           <span
-            className={`group/link relative inline-flex items-center gap-1 px-1 text-sm font-medium text-ravenci-primary`}
+            className={`group/link relative inline-flex items-center gap-1 px-2 text-sm font-medium text-ravenci-primary`}
           >
             <span
               className={`z-10 group-hover:text-white transition-colors duration-300`}
             >
               View Case Study
             </span>
-            <IconArrowRight />
-            <span
-              className={`z-10 group-hover:text-white group-hover:translate-x-1 transition-all duration-300`}
-            >
-              →
-            </span>
+            <IconArrowRight
+              className={`z-10 group-hover:text-white group-hover:translate-x-2 transition-all duration-300`}
+            />{" "}
             <div
               className={`absolute top-0 left-full group-hover:left-0 right-0 bottom-0 bg-ravenci-primary transition-all duration-300 ease-in-out`}
             ></div>

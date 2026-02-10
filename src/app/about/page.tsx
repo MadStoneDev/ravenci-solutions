@@ -1,8 +1,5 @@
 import Link from "next/link";
-import {
-  IconCircleCheckFilled,
-  IconUser,
-} from "@tabler/icons-react";
+import { IconCircleCheckFilled, IconUser } from "@tabler/icons-react";
 
 export const metadata = {
   title: "About - RAVENCI Solutions",
@@ -40,12 +37,13 @@ export default function AboutPage() {
       <section
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
-        <article className={`col-span-12 flex flex-col`}>
+        <article className={`max-w-2xl col-span-12 flex flex-col gap-2`}>
           <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
             Built by an Engineer. Designed to Perform.
           </h1>
           <h2
-            className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
+            className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
+            style={{ lineHeight: "2.25rem" }}
           >
             A different approach to web development — where structure meets
             creativity
@@ -67,7 +65,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>25+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>30+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Australian Businesses Served
             </p>
@@ -79,7 +77,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>85+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>80+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               PageSpeed Guaranteed
             </p>
@@ -94,14 +92,18 @@ export default function AboutPage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 flex items-center justify-center bg-neutral-200/50`}
         >
           <div
-            className={`w-full max-w-sm aspect-[3/4] bg-neutral-300/50 rounded-lg flex flex-col items-center justify-center gap-4`}
+            className={`w-full max-w-sm aspect-[3/4] bg-neutral-300/50 rounded-lg flex flex-col items-center justify-center gap-2`}
           >
             <IconUser size={64} className={`text-neutral-400/60`} />
-            <p className={`text-sm text-neutral-400/80 font-light`}>
-              Richard Stone
+            <p className={`text-sm text-neutral-400 font-light`}>
+              Richard Haddad
             </p>
-            <p className={`text-xs text-neutral-400/60 font-light`}>
+            <p className={`text-xs text-neutral-400/80 font-light`}>
               Founder, RAVENCI Solutions
+            </p>
+
+            <p className={`text-xs text-neutral-400/70 font-light italic`}>
+              A photo is coming soon, I promise
             </p>
           </div>
         </section>
@@ -116,30 +118,31 @@ export default function AboutPage() {
             </h3>
             <div className={`space-y-4 text-neutral-500/80`}>
               <p>
-                RAVENCI was founded by Richard Stone — a structural engineer
-                turned web developer with a multicultural upbringing that
-                spans South Africa, Israel, and Australia.
+                RAVENCI was founded by Richard Haddad — a structural engineer
+                turned web developer with a multicultural upbringing that spans
+                the Middle East and Australia.
               </p>
               <p>
-                With a degree in Structural Engineering and a diploma in
-                Graphic Design, Richard brings a rare combination of
-                analytical precision and creative thinking to every project.
-                That engineering mindset — where every element must serve a
-                purpose and nothing is left to chance — shapes how we approach
-                web development.
+                With a degree in Structural Engineering and a diploma in Graphic
+                Design, Richard brings a rare combination of analytical thinking
+                and creative problem solving to every project. His mantra is
+                that everything must be done to perfection, everything must
+                serve a purpose. It is that which shapes how we approach our
+                work.
               </p>
               <p>
                 After more than two decades in the digital space, Richard
                 founded RAVENCI in Brisbane to offer Australian businesses
-                something different: websites built with the rigour of
-                engineering and the polish of professional design.
+                something different: websites and designs built with the rigour
+                of engineering and the polish of professional design.
               </p>
               <p>
-                Today, RAVENCI operates as a founder-led studio backed by a
+                Today, RAVENCI operates as a founder-led studio supproted by a
                 network of specialist collaborators. This means you get the
-                accountability and personal attention of working directly with
-                the founder, combined with access to specialist expertise when
-                your project requires it.
+                accountability and personal attention of working and
+                communicating directly with the person actually doing the work,
+                combined with access to specialist expertise whenever your
+                project requires it.
               </p>
             </div>
           </article>
@@ -151,28 +154,28 @@ export default function AboutPage() {
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
       >
         <article className={`max-w-3xl mx-auto`}>
-          <h3
-            className={`mb-8 font-serif text-h3 font-bold text-white`}
-          >
+          <h3 className={`mb-8 font-serif text-h3 font-bold text-white`}>
             What Makes Us Different
           </h3>
           <div className={`space-y-6 text-neutral-400/90`}>
             <p>
-              Most web developers come from a purely technical or creative
-              background. Richard's structural engineering career taught him
-              something that translates directly to web development: every
-              decision must be intentional, every structure must be sound, and
-              the final product must perform under real-world conditions.
+              Most web developers and designers come from a purely technical or
+              creative background. Richard's structural engineering career
+              taught him something that sets him apart: every decision must be
+              intentional, every foundation must be sound, and the final product
+              must perform under real-world conditions.
             </p>
             <p>
-              That's why RAVENCI websites aren't just attractive — they're
-              built to a standard. We guarantee 85+ Google PageSpeed scores
-              because we believe performance isn't optional. We build on
-              proven platforms and follow best practices because we've seen
-              what happens when shortcuts are taken.
+              That's why RAVENCI websites and designs aren't just attractive —
+              they're built to a standard. We guarantee 80+ Google PageSpeed
+              scores because we believe performance isn't optional. We build on
+              proven platforms and follow best practices because we've seen what
+              happens when shortcuts are taken.
             </p>
 
-            <h4 className={`mt-10 mb-4 font-serif text-lg font-bold text-white`}>
+            <h4
+              className={`mt-10 mb-4 font-serif text-lg font-bold text-white`}
+            >
               The Qualifications Behind the Work
             </h4>
             <ul className={`flex flex-col gap-3`}>
@@ -185,7 +188,7 @@ export default function AboutPage() {
                   <span className={`font-bold text-white`}>
                     Structural Engineering Degree
                   </span>{" "}
-                  — analytical thinking and precision built into every project
+                  — analytical thinking and problem solving
                 </span>
               </li>
               <li className={`flex items-start gap-2`}>
@@ -197,7 +200,7 @@ export default function AboutPage() {
                   <span className={`font-bold text-white`}>
                     Graphic Design Diploma
                   </span>{" "}
-                  — professional visual design, not just functional layouts
+                  — professional visual design
                 </span>
               </li>
               <li className={`flex items-start gap-2`}>
@@ -215,35 +218,40 @@ export default function AboutPage() {
               </li>
             </ul>
 
-            <h4 className={`mt-10 mb-4 font-serif text-lg font-bold text-white`}>
+            <h4
+              className={`mt-10 mb-4 font-serif text-lg font-bold text-white`}
+            >
               You Own Everything
             </h4>
             <p>
-              When we build your website, it's yours. Your code, your
-              content, your domain — no lock-in contracts, no proprietary
-              systems that hold your business hostage. If you ever want to
-              move on, you take everything with you.
+              When we build your website, it's yours. Your code, your content,
+              your domain — no lock-in contracts, no proprietary systems that
+              hold your business hostage. If you ever want to move on, you take
+              everything with you.
             </p>
 
-            <h4 className={`mt-10 mb-4 font-serif text-lg font-bold text-white`}>
+            <h4
+              className={`mt-10 mb-4 font-serif text-lg font-bold text-white`}
+            >
               We Teach You, Too
             </h4>
             <p>
               Every project includes tailored video tutorials showing you
-              exactly how to manage your website. We don't believe in
-              creating dependency — we want you to feel confident making
-              updates, adding content, and running your site on your own
-              terms.
+              exactly how to manage your website. We don't believe in creating
+              dependency — we want you to feel confident making updates, adding
+              content, and running your site on your own terms.
             </p>
 
-            <h4 className={`mt-10 mb-4 font-serif text-lg font-bold text-white`}>
+            <h4
+              className={`mt-10 mb-4 font-serif text-lg font-bold text-white`}
+            >
               Specialist Network
             </h4>
             <p>
-              As a founder-led studio, we keep things lean — but never at
-              the cost of quality. When your project needs specialist
-              photography, copywriting, or advanced functionality, we bring
-              in trusted collaborators who meet our standards.
+              As a founder-led studio, we keep things lean — but never at the
+              cost of quality. When your project needs specialist photography,
+              copywriting, or specialist design, we bring in trusted
+              collaborators who meet our standards.
             </p>
           </div>
         </article>
@@ -251,10 +259,10 @@ export default function AboutPage() {
 
       {/* Section 5: Values */}
       <section
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-200/50`}
+        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50/80`}
       >
         <h3
-          className={`mb-12 font-serif text-h3 font-bold text-center`}
+          className={`mb-12 font-serif text-h3 font-bold text-center text-ravenci-dark`}
         >
           What We Stand For
         </h3>
@@ -262,10 +270,7 @@ export default function AboutPage() {
           className={`grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto`}
         >
           {values.map((value, index) => (
-            <div
-              key={index}
-              className={`p-6 bg-white rounded-lg`}
-            >
+            <div key={index} className={`p-6 bg-white rounded-lg`}>
               <div className={`flex items-center gap-2 mb-3`}>
                 <IconCircleCheckFilled
                   className="text-ravenci-primary flex-shrink-0"
@@ -281,35 +286,28 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section 6: CTA */}
+      {/* CTA */}
       <section
-        className={`content-section py-16 px-5 sm:px-20 xl:px-36 flex flex-col items-center gap-6 bg-ravenci-primary text-white text-center`}
+        className={`content-section pt-24 pb-28 px-5 sm:px-20 xl:px-36 bg-ravenci-primary text-white`}
       >
-        <h3 className={`font-serif text-2xl md:text-3xl font-bold`}>
-          Ready to Work With Us?
-        </h3>
-        <p className={`max-w-lg text-white/80 font-light`}>
-          Whether you're starting from scratch or need a website that
-          actually performs, we'd love to hear about your project.
-        </p>
-        <Link
-          href={`/launch-your-vision`}
-          className={`group relative px-8 py-3 grid place-content-center bg-white rounded-full text-ravenci-dark hover:text-white transition-all duration-300 ease-in-out`}
-        >
-          <span className={`z-20 font-medium`}>Launch Your Vision</span>
-          <div
-            className={`absolute top-0 bottom-full group-hover:bottom-0 left-0 right-0 bg-ravenci-dark z-0 transition-all duration-500 ease-in-out`}
-          ></div>
-          <div
-            className={`absolute top-0 bottom-0 left-0 right-0 rounded-full border-2 border-white z-10`}
-          ></div>
-        </Link>
+        <div className={`max-w-xl mx-auto text-center`}>
+          <h2 className={`text-3xl md:text-4xl font-medium`}>
+            Ready to work with us?
+          </h2>
+          <p className={`mt-4 text-white/80`}>
+            Whether you&apos;re starting from scratch or need a website that
+            actually performs, we&apos;d love to hear about your project.
+          </p>
+          <div className={`mt-10`}>
+            <Link
+              href={`/launch-your-vision`}
+              className={`inline-block px-8 py-3 bg-white text-ravenci-dark font-medium rounded-full hover:bg-neutral-100 transition-colors duration-300 ease-in-out`}
+            >
+              Launch Your Vision
+            </Link>
+          </div>
+        </div>
       </section>
-
-      {/* Section 7: Spacer */}
-      <section
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
-      ></section>
 
       <script
         type="application/ld+json"
@@ -325,7 +323,7 @@ export default function AboutPage() {
               name: "RAVENCI Solutions",
               founder: {
                 "@type": "Person",
-                name: "Richard Stone",
+                name: "Richard Haddad",
                 jobTitle: "Founder",
               },
               foundingLocation: {
