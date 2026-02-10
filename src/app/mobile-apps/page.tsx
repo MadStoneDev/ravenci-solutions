@@ -290,7 +290,7 @@ export default function MobileAppDevelopmentPage() {
                 ]}
               />
               <PriceButton
-                price={"30,000"}
+                price={"50,000"}
                 link={"/launch-your-vision"}
                 frequency={""}
                 includeFrom={true}
@@ -325,7 +325,7 @@ export default function MobileAppDevelopmentPage() {
                 ]}
               />
               <PriceButton
-                price={"30,000"}
+                price={"75,000"}
                 link={"/launch-your-vision"}
                 frequency={""}
                 includeFrom={true}

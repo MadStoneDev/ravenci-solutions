@@ -88,7 +88,7 @@ function validateInput(body: any) {
     throw new Error("Invalid totals data");
   }
 
-  if (body.totals.oneTime < 0 || body.totals.oneTime > 5000) {
+  if (body.totals.oneTime < 0 || body.totals.oneTime > 10000) {
     throw new Error("One-time amount out of range");
   }
 

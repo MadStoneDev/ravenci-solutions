@@ -6,7 +6,7 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Website Hosting Solutions - RAVENCI Solutions",
   description:
-    "Lightning-fast cloud hosting with servers worldwide. Serve your website to visitors everywhere, backed by 24/7 monitoring and ironclad security.",
+    "Managed cloud hosting from Brisbane. Lightning-fast servers worldwide, 24/7 monitoring, ironclad security, and local support. From $39/mo.",
 };
 
 export default function WebHostingPage() {

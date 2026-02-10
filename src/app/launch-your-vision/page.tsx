@@ -3,7 +3,7 @@
 export const metadata = {
   title: "Launch Your Vision - RAVENCI Solutions",
   description:
-    "Get in touch with us to discuss your vision and have it brought to life.",
+    "Start your project with RAVENCI Solutions in Brisbane. Tell us about your website, app, or branding vision and receive a tailored proposal.",
 };
 
 export default function ContactPage() {

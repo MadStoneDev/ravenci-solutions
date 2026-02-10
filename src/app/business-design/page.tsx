@@ -7,7 +7,7 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Business Design Solutions - RAVENCI Solutions",
   description:
-    "Professional branding and graphic design services. From logos to vehicle wraps, create a cohesive brand identity that stands out.",
+    "Professional branding and graphic design in Brisbane. From logos to vehicle wraps, create a cohesive brand identity that stands out. From $2,490.",
 };
 
 export default function BusinessDesignPage() {
@@ -406,7 +406,7 @@ export default function BusinessDesignPage() {
             <div className={`mb-16 text-white`}>
               <PriceButton
                 price={350}
-                link={`launch-your-vision`}
+                link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
                 callToAction={`Signage & Vehicle Wraps`}
@@ -426,7 +426,7 @@ export default function BusinessDesignPage() {
           items={[
             {
               title: `How long does design work typically take?`,
-              content: `Brand Essentials: 2 weeks. Marketing Materials: 3-4 weeks. Signage & Vehicle Wraps: 4-6 weeks. We provide regular updates and involve you in every decision.`,
+              content: `Brand Essentials: 6 weeks. Marketing Materials: 8 weeks. Signage & Vehicle Wraps: 4-6 weeks. We provide regular updates and involve you in every decision.`,
             },
             {
               title: `What if I don't like the initial concepts?`,
@@ -471,7 +471,7 @@ export default function BusinessDesignPage() {
                 name: "How long does design work typically take?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Brand Essentials: 2 weeks. Marketing Materials: 3-4 weeks. Signage & Vehicle Wraps: 4-6 weeks. We provide regular updates and involve you in every decision.",
+                  text: "Brand Essentials: 6 weeks. Marketing Materials: 8 weeks. Signage & Vehicle Wraps: 4-6 weeks. We provide regular updates and involve you in every decision.",
                 },
               },
               {

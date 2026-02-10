@@ -1,6 +1,12 @@
 ﻿import axios from "axios";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Articles & Insights - RAVENCI Solutions",
+  description:
+    "Expert perspectives on web development, digital strategy, and business growth from Brisbane's RAVENCI Solutions. Tips, guides, and industry insights.",
+};
+
 async function getArticles() {
   const currentDate = new Date().toISOString();
 

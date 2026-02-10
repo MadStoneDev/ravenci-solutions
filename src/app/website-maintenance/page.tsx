@@ -8,7 +8,7 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Website Maintenance Solutions - RAVENCI Solutions",
   description:
-    "Updates, security, backups, and optimization in the one maintenance package. Protect your website investment with RAVENCI.",
+    "Website maintenance in Brisbane. Updates, security, backups, and optimization in one package. Protect your website investment with RAVENCI Solutions.",
 };
 
 export default function WebMaintenancePage() {

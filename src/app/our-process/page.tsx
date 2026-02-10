@@ -15,7 +15,7 @@ import Accordion from "@/components/accordion";
 export const metadata = {
   title: "Our Process — The RAVENCI Method | RAVENCI Solutions",
   description:
-    "Discover how RAVENCI delivers results. Our 6-step process takes your project from discovery to launch and beyond — with 20+ years of experience behind every decision.",
+    "Discover how RAVENCI Solutions in Brisbane delivers results. Our 6-step process takes your project from discovery to launch and beyond — with 20+ years of experience behind every decision.",
 };
 
 const steps = [

@@ -6,7 +6,7 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Website Development - RAVENCI Solutions",
   description:
-    "Custom web development with modern, responsive websites. Built for performance and designed to convert visitors into customers.",
+    "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $3,490.",
 };
 
 export default function WebHostingDevelopmentPage() {
@@ -324,7 +324,7 @@ export default function WebHostingDevelopmentPage() {
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
                 <p className="text-sm text-yellow-200">
-                  ⚡ Limited: We only take on 12 new Single Page Starter
+                  ⚡ Limited: We only take on 12 new Foundation Website
                   projects per quarter to ensure quality and timely delivery
                   while still allowing you time for checking and feedback
                 </p>
@@ -390,7 +390,7 @@ export default function WebHostingDevelopmentPage() {
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
                 <p className="text-sm text-yellow-200">
-                  ⚡ Limited: We only take on 6 new Custom Development projects
+                  ⚡ Limited: We only take on 6 new Growth Website projects
                   per quarter to ensure quality and timely delivery while
                   allowing for feedback and revision rounds
                 </p>
@@ -482,7 +482,7 @@ export default function WebHostingDevelopmentPage() {
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
                 <p className="text-sm text-yellow-200">
-                  ⚡ Limited: We only take on 3 new Branding & Development
+                  ⚡ Limited: We only take on 3 new Premium Brand & Web
                   projects per quarter to ensure quality and timely delivery
                   while allowing for feedback, changes and revisions
                 </p>
@@ -501,7 +501,7 @@ export default function WebHostingDevelopmentPage() {
           items={[
             {
               title: `How long does a typical website take to build?`,
-              content: `Single Page Starter: 3 weeks. Custom Development: 4-6 weeks. Branding & Development: 10-14 weeks total (4 weeks branding + 3-4 weeks design + 4-6 weeks development). We stick to these timelines and provide regular progress updates.`,
+              content: `Foundation Website: 3 weeks. Growth Website: 4-6 weeks. Premium Brand & Web: 10-14 weeks total (4 weeks branding + 3-4 weeks design + 4-6 weeks development). We stick to these timelines and provide regular progress updates.`,
             },
             {
               title: `What if I'm not happy with the result?`,
@@ -539,7 +539,7 @@ export default function WebHostingDevelopmentPage() {
                 name: "How long does a typical website take to build?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Single Page Starter: 3 weeks. Custom Development: 4-6 weeks. Branding & Development: 10-14 weeks total (4 weeks branding + 3-4 weeks design + 4-6 weeks development). We stick to these timelines and provide regular progress updates.",
+                  text: "Foundation Website: 3 weeks. Growth Website: 4-6 weeks. Premium Brand & Web: 10-14 weeks total (4 weeks branding + 3-4 weeks design + 4-6 weeks development). We stick to these timelines and provide regular progress updates.",
                 },
               },
               {

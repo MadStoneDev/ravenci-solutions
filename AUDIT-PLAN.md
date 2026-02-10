@@ -230,6 +230,24 @@ Appears exactly once on the entire site in a blockquote. Not woven into copy, se
 - [x] 7. Build proper portfolio section with context and results — case studies IS the portfolio (`feature/case-studies` branch)
 - [x] 8. Invest in blog/content strategy targeting premium Brisbane web development keywords — blog infrastructure ready via Strapi CMS, content is ongoing
 
+### POST-AUDIT FIXES (February 2026 Re-Audit)
+
+**Critical:**
+- [x] ~~1. `/privacy-policy` and `/terms-and-conditions` — already exist in `(policies)` route group (false alarm)~~
+- [x] 3. Add metadata to `/articles` page — was falling back to homepage title/description
+- [x] 4. Raise Stripe one-time validation cap from $5,000 to $10,000 — too low for one-off maintenance + addons
+- [x] 5. Add `noindex` to `/quote/success` — transactional page should not be indexed
+
+**High:**
+- [x] 6. Differentiate Web Apps tier pricing — all 3 tiers showed "From $25,000" → now $25k/$45k/$60k
+- [x] 7. Differentiate Mobile Apps tier pricing — all 3 tiers showed "From $30,000" → now $30k/$50k/$75k
+- [x] 8. Add "Brisbane" to 5 meta descriptions — web-development, business-design, website-maintenance, web-hosting, our-process
+- [x] 9. Fix `/launch-your-vision` generic meta description — now includes project types, Brisbane, and keywords
+- [x] 10. Fix Web Dev FAQ old tier names — "Single Page Starter/Custom Development/Branding & Development" → Foundation/Growth/Premium (visible + JSON-LD)
+- [x] 11. Fix Business Design FAQ delivery time mismatch — "Brand Essentials: 2 weeks" → "6 weeks" to match accordion (visible + JSON-LD)
+- [x] 12. Fix Business Design Vehicle Wraps PriceButton broken link — `launch-your-vision` → `/launch-your-vision`
+- [x] 13. Fix Web Dev scarcity text old tier names — "Single Page Starter/Custom Development/Branding & Development" → Foundation/Growth/Premium
+
 ---
 
 ## 8. PRICING STRATEGY — What to Show, What to Hide, What to Charge

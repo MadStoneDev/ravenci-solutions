@@ -284,7 +284,7 @@ export default function WebAppPage() {
               />
 
               <PriceButton
-                price={"25,000"}
+                price={"45,000"}
                 link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
@@ -343,7 +343,7 @@ export default function WebAppPage() {
               />
 
               <PriceButton
-                price={"25,000"}
+                price={"60,000"}
                 link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
@@ -401,7 +401,7 @@ export default function WebAppPage() {
       <StickyCTA
         link="/launch-your-vision"
         startingPrice={25000}
-        priceNote=""
+        priceNote="depending on scope"
       />
 
       <script
