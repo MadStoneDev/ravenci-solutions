@@ -97,12 +97,13 @@ export default function ConstructionPage() {
       <section
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
-        <article className={`col-span-12 flex flex-col`}>
+        <article className={`max-w-2xl col-span-12 flex flex-col gap-2`}>
           <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
             Websites Built for Builders
           </h1>
           <h2
-            className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
+            className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
+            style={{ lineHeight: "2.25rem" }}
           >
             Project portfolios, lead generation, and a digital presence that
             wins work — built for construction companies and property developers
@@ -113,28 +114,34 @@ export default function ConstructionPage() {
 
       {/* Social proof bar */}
       <section
-        className={`p-10 flex flex-col items-center gap-3 bg-ravenci-primary text-white text-center`}
+        className={`content-section py-12 px-5 sm:px-20 xl:px-36 bg-ravenci-primary text-white`}
       >
-        <div className={`max-w-2xl`}>
-          <div
-            className={`grid grid-cols-2 md:grid-cols-4 gap-8`}
-          >
-            <div>
-              <p className={`text-3xl font-bold`}>20+</p>
-              <p className={`mt-1 text-sm text-white/70`}>Years Experience</p>
-            </div>
-            <div>
-              <p className={`text-3xl font-bold`}>Construction</p>
-              <p className={`mt-1 text-sm text-white/70`}>Clients Served</p>
-            </div>
-            <div>
-              <p className={`text-3xl font-bold`}>95+</p>
-              <p className={`mt-1 text-sm text-white/70`}>PageSpeed Score</p>
-            </div>
-            <div>
-              <p className={`text-3xl font-bold`}>2032</p>
-              <p className={`mt-1 text-sm text-white/70`}>Olympics Ready</p>
-            </div>
+        <div
+          className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center`}
+        >
+          <div>
+            <p className={`text-4xl md:text-5xl font-bold`}>20+</p>
+            <p className={`mt-2 text-sm text-white/80 font-light`}>
+              Years Experience
+            </p>
+          </div>
+          <div>
+            <p className={`text-4xl md:text-5xl font-bold`}>Construction</p>
+            <p className={`mt-2 text-sm text-white/80 font-light`}>
+              Clients Served
+            </p>
+          </div>
+          <div>
+            <p className={`text-4xl md:text-5xl font-bold`}>95+</p>
+            <p className={`mt-2 text-sm text-white/80 font-light`}>
+              PageSpeed Score
+            </p>
+          </div>
+          <div>
+            <p className={`text-4xl md:text-5xl font-bold`}>2032</p>
+            <p className={`mt-2 text-sm text-white/80 font-light`}>
+              Olympics Ready
+            </p>
           </div>
         </div>
       </section>

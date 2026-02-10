@@ -76,7 +76,7 @@ export default function RetainerPackagesPage() {
         "5 hours of development or design work",
         "Everything in Starter, plus:",
         "Monthly 30-minute strategy call",
-        "1 blog post per month",
+        "Monthly performance audit (speed & Core Web Vitals)",
         "Basic SEO monitoring",
         "24-hour support response",
         "1 month hour rollover",
@@ -94,7 +94,7 @@ export default function RetainerPackagesPage() {
         "12 hours of development or design work",
         "Everything in Growth, plus:",
         "Bi-weekly 30-minute strategy calls",
-        "2 blog posts per month",
+        "Monthly performance audit + analytics review",
         "Full SEO with keyword tracking",
         "Monthly CRO review",
         "Same business day support response",
@@ -113,7 +113,7 @@ export default function RetainerPackagesPage() {
         "25 hours of development or design work",
         "Everything in Partner, plus:",
         "Weekly 30-minute strategy calls",
-        "4 blog posts per month",
+        "Monthly performance audit + comprehensive analytics review",
         "Comprehensive SEO with link building",
         "Full CRO: heatmaps, A/B testing, form optimisation",
         "4-hour support response (1hr for critical issues)",
@@ -161,12 +161,13 @@ export default function RetainerPackagesPage() {
       <section
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
-        <article className={`col-span-12 flex flex-col`}>
+        <article className={`max-w-2xl col-span-12 flex flex-col gap-2`}>
           <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
             Your Dedicated Digital Team
           </h1>
           <h2
-            className={`max-w-3xl text-2xl md:text-3xl lg:text-h2 font-light`}
+            className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
+            style={{ lineHeight: "2.25rem" }}
           >
             Ongoing development, design, and strategy — without the overhead of
             hiring
