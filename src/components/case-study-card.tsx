@@ -2,19 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { CaseStudy } from "@/data/case-studies";
+import { IconArrowRight } from "@tabler/icons-react";
 
-export default function CaseStudyCard({
-  caseStudy,
-}: {
-  caseStudy: CaseStudy;
-}) {
+export default function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <Link
       href={`/case-studies/${caseStudy.slug}`}
       className={`group flex flex-col overflow-hidden`}
     >
       {/* Image */}
-      <div className={`relative w-full aspect-[16/10] overflow-hidden bg-neutral-100`}>
+      <div
+        className={`relative w-full aspect-[16/10] overflow-hidden bg-neutral-100`}
+      >
         <Image
           src={caseStudy.featuredImage}
           alt={`${caseStudy.clientName} project showcase`}
@@ -54,10 +53,15 @@ export default function CaseStudyCard({
           <span
             className={`group/link relative inline-flex items-center gap-1 px-1 text-sm font-medium text-ravenci-primary`}
           >
-            <span className={`z-10 group-hover:text-white transition-colors duration-300`}>
+            <span
+              className={`z-10 group-hover:text-white transition-colors duration-300`}
+            >
               View Case Study
             </span>
-            <span className={`z-10 group-hover:text-white group-hover:translate-x-1 transition-all duration-300`}>
+            <IconArrowRight />
+            <span
+              className={`z-10 group-hover:text-white group-hover:translate-x-1 transition-all duration-300`}
+            >
               →
             </span>
             <div

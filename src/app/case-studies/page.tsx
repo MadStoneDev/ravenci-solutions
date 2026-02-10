@@ -79,7 +79,7 @@ export default function CaseStudiesPage() {
             </span>
           </article>
           <article className={`flex flex-col items-center`}>
-            <span className={`text-3xl md:text-4xl font-bold`}>95+</span>
+            <span className={`text-3xl md:text-4xl font-bold`}>80+</span>
             <span className={`mt-1 text-sm font-light text-white/80`}>
               Avg. PageSpeed Score
             </span>
@@ -115,8 +115,8 @@ export default function CaseStudiesPage() {
             Ready to become our next success story?
           </h2>
           <p className={`mt-4 text-white/80`}>
-            Every project in our portfolio started with a conversation. Let&apos;s
-            start yours.
+            Every project in our portfolio started with a conversation.
+            Let&apos;s start yours.
           </p>
           <div className={`mt-10`}>
             <Link
