@@ -16,7 +16,7 @@ export const testimonials: Testimonial[] = [
       "I could not recommend Richard more highly. His knowledge is remarkable, his professionalism exceptional, and the way he completely sorted my issues, quickly, effortlessly was simply brilliant. Champion bloke, brilliant at what he does.",
     author: "Geoff Beisler",
     image: null,
-    pages: ["homepage"],
+    pages: ["homepage", "retainer-packages"],
   },
   {
     id: "adam-bisset",
@@ -82,17 +82,6 @@ export const testimonials: Testimonial[] = [
     author: "Timothy O'Donnell",
     image: null,
     pages: ["business-design"],
-  },
-  {
-    id: "dr-sarah-chen",
-    content:
-      "RAVENCI built us a site that patients actually find easy to use. Online bookings are up 40% and our admin team spends far less time on the phone. They understood the privacy requirements from day one.",
-    author: "Dr Sarah Chen",
-    role: "Practice Manager",
-    company: "Northside Family Medical",
-    image: null,
-    pages: ["healthcare"],
-    industry: "healthcare",
   },
   {
     id: "mark-thompson",

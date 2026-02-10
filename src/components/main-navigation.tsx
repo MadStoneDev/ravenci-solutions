@@ -23,6 +23,7 @@ import {
   IconPalette,
   IconPresentation,
   IconReceiptDollar,
+  IconRefresh,
   IconTerminal2,
   IconX,
 } from "@tabler/icons-react";
@@ -59,6 +60,7 @@ export default function MainNavigation() {
       icon: IconCloudComputing,
     },
     { href: "/seo-and-content", label: "SEO & Content", icon: IconChartLine },
+    { href: "/retainer-packages", label: "Retainer Packages", icon: IconRefresh },
   ];
 
   const industryLinks = [
@@ -356,6 +358,28 @@ export default function MainNavigation() {
                 className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
               >
                 Web Hosting
+              </span>
+            </Link>
+
+            <Link
+              href={`/retainer-packages`}
+              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
+                showMenu ? "opacity-100" : "opacity-0"
+              } overflow-hidden transition-all duration-500 ease-in-out`}
+              onClick={() => {
+                handleMenuClick(false);
+              }}
+            >
+              <div
+                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
+              ></div>
+              <IconRefresh
+                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
+              />
+              <span
+                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+              >
+                Retainer Packages
               </span>
             </Link>
 
