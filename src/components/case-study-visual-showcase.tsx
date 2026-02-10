@@ -169,7 +169,7 @@ export default function CaseStudyVisualShowcase({
       )}
 
       {/* Metrics bar */}
-      <CaseStudyMetricsBar metrics={caseStudy.results.metrics} />
+      <CaseStudyMetricsBar metrics={caseStudy.results.metrics ?? []} />
 
       {/* Testimonial */}
       {caseStudy.testimonial && (

@@ -5,6 +5,8 @@ export default function CaseStudyMetricsBar({
 }: {
   metrics: CaseStudyMetric[];
 }) {
+  if (!metrics || metrics.length === 0) return null;
+
   return (
     <section
       className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-primary`}

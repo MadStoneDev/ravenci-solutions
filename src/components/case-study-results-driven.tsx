@@ -85,7 +85,7 @@ export default function CaseStudyResultsDriven({
       </section>
 
       {/* Metrics bar */}
-      <CaseStudyMetricsBar metrics={caseStudy.results.metrics} />
+      <CaseStudyMetricsBar metrics={caseStudy.results.metrics ?? []} />
 
       {/* Problem + Approach */}
       <section className={`content-section grid grid-cols-1 lg:grid-cols-2`}>
@@ -131,20 +131,22 @@ export default function CaseStudyResultsDriven({
       </section>
 
       {/* Results */}
-      <section
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
-      >
-        <div className={`max-w-3xl`}>
-          <h2 className={`text-3xl font-medium text-ravenci-dark`}>
-            {caseStudy.results.heading}
-          </h2>
-          <div className={`mt-8 flex flex-col gap-4 text-neutral-600`}>
-            {caseStudy.results.paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
+      {caseStudy.results.paragraphs.length > 0 && (
+        <section
+          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
+        >
+          <div className={`max-w-3xl`}>
+            <h2 className={`text-3xl font-medium text-ravenci-dark`}>
+              {caseStudy.results.heading}
+            </h2>
+            <div className={`mt-8 flex flex-col gap-4 text-neutral-600`}>
+              {caseStudy.results.paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Testimonial */}
       {caseStudy.testimonial && (

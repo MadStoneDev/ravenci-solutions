@@ -43,7 +43,7 @@ export interface CaseStudy {
   heroSubheadline: string;
   problem: { heading: string; paragraphs: string[] };
   approach: { heading: string; paragraphs: string[]; highlights?: string[] };
-  results: { heading: string; paragraphs: string[]; metrics: CaseStudyMetric[] };
+  results: { heading: string; paragraphs: string[]; metrics?: CaseStudyMetric[] };
   testimonial?: { content: string; author: string; role?: string };
   galleryImages?: string[];
   order: number;
@@ -98,18 +98,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "The new website transformed Peninsula Homes' digital presence, becoming a genuine lead generation tool rather than just an online brochure.",
       ],
-      metrics: [
-        { value: "95+", label: "PageSpeed Score" },
-        { value: "3x", label: "Monthly Enquiries" },
-        { value: "<2s", label: "Load Time" },
-        { value: "60%", label: "Bounce Rate Reduction" },
-      ],
-    },
-    testimonial: {
-      content:
-        "RAVENCI completely transformed our online presence. The new website truly represents the quality of work we do, and the increase in enquiries has been remarkable.",
-      author: "Peninsula Homes",
-      role: "Client",
     },
     order: 1,
     featured: true,
@@ -160,18 +148,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "The new platform dramatically improved the recruitment workflow, reducing time-to-hire and increasing both candidate and employer satisfaction.",
       ],
-      metrics: [
-        { value: "200%", label: "Application Increase" },
-        { value: "45%", label: "Faster Time-to-Hire" },
-        { value: "95+", label: "PageSpeed Score" },
-        { value: "500+", label: "Active Candidates" },
-      ],
-    },
-    testimonial: {
-      content:
-        "The platform Richard built for us has completely changed how we operate. Our candidates love the experience and our employers find it so much easier to manage their roles.",
-      author: "Insight Medical Careers",
-      role: "Client",
     },
     order: 2,
     featured: true,
@@ -221,12 +197,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "The Results",
       paragraphs: [
         "The new website established Coast Remedial Solutions as the digital authority in their space, generating consistent organic enquiries from high-value clients.",
-      ],
-      metrics: [
-        { value: "90+", label: "PageSpeed Score" },
-        { value: "4x", label: "Organic Traffic Growth" },
-        { value: "35%", label: "More Enquiries" },
-        { value: "#1", label: "Local Search Ranking" },
       ],
     },
     order: 3,
@@ -278,18 +248,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "The redesigned website became a key part of Intercorp's sales toolkit, impressing stakeholders and generating quality leads from serious buyers and investors.",
       ],
-      metrics: [
-        { value: "95+", label: "PageSpeed Score" },
-        { value: "2.5x", label: "Time on Site" },
-        { value: "40%", label: "Lead Increase" },
-        { value: "<1.5s", label: "Load Time" },
-      ],
-    },
-    testimonial: {
-      content:
-        "Richard understood exactly what we needed. The website perfectly represents our brand and has become an essential tool in our project marketing.",
-      author: "Intercorp Developments",
-      role: "Client",
     },
     order: 4,
     featured: false,
@@ -340,18 +298,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "The new website became a powerful business development tool, helping SAC Consulting win larger contracts and attract higher-value clients.",
       ],
-      metrics: [
-        { value: "95+", label: "PageSpeed Score" },
-        { value: "85%", label: "More Organic Traffic" },
-        { value: "3x", label: "Contact Form Submissions" },
-        { value: "50%", label: "Larger Average Contract" },
-      ],
-    },
-    testimonial: {
-      content:
-        "The website RAVENCI built for us has genuinely changed how potential clients perceive our firm. It's been instrumental in helping us win larger, more complex engagements.",
-      author: "SAC Consulting",
-      role: "Client",
     },
     order: 5,
     featured: true,
@@ -401,11 +347,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "The Results",
       paragraphs: [
         "The new store transformed Nikita Morell's online sales, creating a shopping experience that customers love and return to.",
-      ],
-      metrics: [
-        { value: "150%", label: "Online Sales Increase" },
-        { value: "40%", label: "Higher Average Order" },
-        { value: "3.2x", label: "Return Customer Rate" },
       ],
     },
     galleryImages: [
@@ -461,11 +402,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "The new platform captured the essence of the Cadeaurable brand, resulting in increased sales, higher customer satisfaction, and a growing base of repeat gifters.",
       ],
-      metrics: [
-        { value: "120%", label: "Revenue Growth" },
-        { value: "55%", label: "Repeat Customers" },
-        { value: "4.8★", label: "Customer Rating" },
-      ],
     },
     galleryImages: ["/showcase/Cadeaurable Showcase.png"],
     order: 7,
@@ -517,18 +453,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "The new website positioned Covenant Security Solutions as the professional choice in their market, directly contributing to business growth and client acquisition.",
       ],
-      metrics: [
-        { value: "90+", label: "PageSpeed Score" },
-        { value: "300%", label: "Organic Traffic" },
-        { value: "2x", label: "Monthly Enquiries" },
-        { value: "<2s", label: "Load Time" },
-      ],
-    },
-    testimonial: {
-      content:
-        "Our website finally represents the level of service we provide. RAVENCI understood our industry and delivered a site that builds trust before we even speak with a client.",
-      author: "Covenant Security Solutions",
-      role: "Client",
     },
     order: 8,
     featured: false,
