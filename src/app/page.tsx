@@ -226,13 +226,14 @@ export default function Home() {
           }}
         >
           <p>
-            Throughout 20+ years in digital development, I've mastered more than
-            just the skill of building websites and apps.
+            Throughout 20+ years in digital development, we've learned that
+            building websites and apps is only part of the equation.
           </p>
 
           <p>
-            My experience has taught me how to ensure your digital presence
-            remains stable, scalable, and reliable well beyond launch day.
+            That experience shaped RAVENCI's core commitment: ensuring your
+            digital presence remains stable, scalable, and reliable well beyond
+            launch day.
           </p>
           <footer className={`border-t border-ravenci-dark`}>
             <cite

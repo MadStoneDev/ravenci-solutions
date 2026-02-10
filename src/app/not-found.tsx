@@ -19,7 +19,7 @@ export default function NotFound() {
           </h1>
           <h2 className={`text-2xl text-center`}>Ok, that's embarrassing.</h2>
           <p className={`mt-10 text-lg text-center`}>
-            I have no idea how you got here but let's get you back to where you
+            We have no idea how you got here but let's get you back to where you
             were last!
           </p>
           <button

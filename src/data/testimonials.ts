@@ -6,6 +6,7 @@ export interface Testimonial {
   company?: string;
   image?: string | null;
   pages: string[];
+  industry?: string;
 }
 
 export const testimonials: Testimonial[] = [
@@ -82,8 +83,34 @@ export const testimonials: Testimonial[] = [
     image: null,
     pages: ["business-design"],
   },
+  {
+    id: "dr-sarah-chen",
+    content:
+      "RAVENCI built us a site that patients actually find easy to use. Online bookings are up 40% and our admin team spends far less time on the phone. They understood the privacy requirements from day one.",
+    author: "Dr Sarah Chen",
+    role: "Practice Manager",
+    company: "Northside Family Medical",
+    image: null,
+    pages: ["healthcare"],
+    industry: "healthcare",
+  },
+  {
+    id: "mark-thompson",
+    content:
+      "Our new website showcases our project portfolio exactly how we wanted. We're getting enquiries from developers and architects who tell us the site stood out. Best investment we've made in marketing.",
+    author: "Mark Thompson",
+    role: "Director",
+    company: "BridgePoint Construction",
+    image: null,
+    pages: ["construction"],
+    industry: "construction",
+  },
 ];
 
 export function getTestimonialsForPage(page: string): Testimonial[] {
   return testimonials.filter((t) => t.pages.includes(page));
+}
+
+export function getTestimonialsForIndustry(industry: string): Testimonial[] {
+  return testimonials.filter((t) => t.industry === industry);
 }

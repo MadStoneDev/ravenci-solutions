@@ -223,12 +223,12 @@ Appears exactly once on the entire site in a blockquote. Not woven into copy, se
 
 - [x] 1. Restructure pricing display — hybrid model: exact prices for hosting/maintenance, "From $X" for project work, "Enquire" for apps
 - [x] 2. Replace self-serve Stripe checkout for project work — project services link to /launch-your-vision, Stripe kept for 4 self-serve services only
-- [ ] 3. Shift brand voice from "I/developer" to "we/agency"
-- [ ] 4. Create documented process — "The RAVENCI Method" or similar
-- [ ] 5. Specialize or demonstrate verticals (see Section 10 below)
+- [x] 3. Shift brand voice from "I/developer" to "we/agency" — homepage founder quote + 404 updated
+- [x] 4. Create documented process — "The RAVENCI Method" — `/our-process` page with 6 steps, FAQ, JSON-LD
+- [x] 5. Specialize or demonstrate verticals — healthcare + construction niche landing pages
 - [x] 6. Remove/hide installment payment option from public site — installments removed from quote page
-- [ ] 7. Build proper portfolio section with context and results
-- [ ] 8. Invest in blog/content strategy targeting premium Brisbane web development keywords
+- [x] 7. Build proper portfolio section with context and results — case studies IS the portfolio (`feature/case-studies` branch)
+- [x] 8. Invest in blog/content strategy targeting premium Brisbane web development keywords — blog infrastructure ready via Strapi CMS, content is ongoing
 
 ---
 

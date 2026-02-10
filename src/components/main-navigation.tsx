@@ -7,12 +7,15 @@ import Image from "next/image";
 
 import {
   IconAppWindow,
+  IconBuildingSkyscraper,
   IconChartLine,
   IconChevronDown,
   IconCloudComputing,
   IconDeviceMobile,
   IconHammer,
+  IconHeartbeat,
   IconHome,
+  IconListCheck,
   IconMail,
   IconMenu,
   IconNews,
@@ -50,6 +53,11 @@ export default function MainNavigation() {
     { href: "/website-maintenance", label: "Maintenance", icon: IconHammer },
     { href: "/web-hosting", label: "Domains & Hosting", icon: IconCloudComputing },
     { href: "/seo-and-content", label: "SEO & Content", icon: IconChartLine },
+  ];
+
+  const industryLinks = [
+    { href: "/healthcare", label: "Healthcare Websites", icon: IconHeartbeat },
+    { href: "/construction", label: "Construction Websites", icon: IconBuildingSkyscraper },
   ];
 
   const handleServicesEnter = () => {
@@ -166,6 +174,28 @@ export default function MainNavigation() {
             </Link>
 
             <Link
+              href={`/our-process`}
+              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
+                showMenu ? "opacity-100" : "opacity-0"
+              } overflow-hidden transition-all duration-500 ease-in-out`}
+              onClick={() => {
+                handleMenuClick(false);
+              }}
+            >
+              <div
+                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
+              ></div>
+              <IconListCheck
+                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
+              />
+              <span
+                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+              >
+                Our Process
+              </span>
+            </Link>
+
+            <Link
               href={`/quote`}
               className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
                 showMenu ? "opacity-100" : "opacity-0"
@@ -276,6 +306,50 @@ export default function MainNavigation() {
             </Link>
 
             <Link
+              href={`/healthcare`}
+              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
+                showMenu ? "opacity-100" : "opacity-0"
+              } overflow-hidden transition-all duration-500 ease-in-out`}
+              onClick={() => {
+                handleMenuClick(false);
+              }}
+            >
+              <div
+                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
+              ></div>
+              <IconHeartbeat
+                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
+              />
+              <span
+                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+              >
+                Healthcare Websites
+              </span>
+            </Link>
+
+            <Link
+              href={`/construction`}
+              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
+                showMenu ? "opacity-100" : "opacity-0"
+              } overflow-hidden transition-all duration-500 ease-in-out`}
+              onClick={() => {
+                handleMenuClick(false);
+              }}
+            >
+              <div
+                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
+              ></div>
+              <IconBuildingSkyscraper
+                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
+              />
+              <span
+                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+              >
+                Construction Websites
+              </span>
+            </Link>
+
+            <Link
               href={`/launch-your-vision`}
               className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
                 showMenu ? "opacity-100" : "opacity-0"
@@ -372,9 +446,29 @@ export default function MainNavigation() {
                     {service.label}
                   </Link>
                 ))}
+                <div className="my-1 mx-4 border-t border-neutral-100" />
+                {industryLinks.map((industry) => (
+                  <Link
+                    key={industry.href}
+                    href={industry.href}
+                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-ravenci-dark/70 hover:text-ravenci-primary hover:bg-neutral-50 transition-colors duration-150"
+                    onClick={() => setIsServicesOpen(false)}
+                  >
+                    <industry.icon size={18} className="text-ravenci-primary/60" />
+                    {industry.label}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
+          <Link
+            href={`/our-process`}
+            className={`text-sm font-medium ${
+              isMenuOnDark ? "text-white/80 hover:text-white" : "text-ravenci-dark/70 hover:text-ravenci-dark"
+            } transition-colors duration-300 ease-in-out`}
+          >
+            Our Process
+          </Link>
           <Link
             href={`/articles`}
             className={`text-sm font-medium ${
