@@ -181,10 +181,6 @@ export default function Home() {
 <p class="text-neutral-100">UX Design (User Experience)</p>
 <p class="mb-4 text-neutral-400/90">Accompanying UI Design, the UX design focuses on how users navigate and interact with your platform. By mapping user journeys and optimizing flows, we create experiences that feel natural and keep users engaged, leading to better conversion rates and user satisfaction.</p>`,
               },
-              // {
-              //   title: `Branding`,
-              //   content: `Your brand is more than just a logo. It's the complete digital identity that tells your story. I help shape memorable brand experiences that resonate with your audience and stand out in today's crowded digital landscape.`,
-              // },
               {
                 title: `Maintenance`,
                 content: `<p class="mb-4 text-neutral-400/90">Digital platforms need consistent care to stay secure and perform at their best. Our proactive maintenance approach prevents issues before they arise, keeping your digital presence stable and up-to-date.</p><a href="/website-maintenance" class="relative px-3 py-1 bg-ravenci-primary hover:bg-ravenci-primary/80 text-white rounded-full transition-all duration-300 ease-in-out">Maintain your site with RAVENCI</a><p class="mt-8 mb-4 text-neutral-400/90 text-sm italic">Please note: <span class="text-neutral-100">As of October, 2024</span>, we no longer host websites that are not signed up to reliable ongoing maintenance. This does <span class="font-bold">not</span> have to be through RAVENCI, but it must be from a reputable provider.</p> `,

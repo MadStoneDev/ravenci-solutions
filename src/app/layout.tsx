@@ -180,8 +180,10 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en-AU">
       <head>
+        <link rel="alternate" hrefLang="en-au" href="https://ravenci.solutions" />
+        <link rel="alternate" hrefLang="x-default" href="https://ravenci.solutions" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

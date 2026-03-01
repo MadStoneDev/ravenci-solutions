@@ -93,6 +93,29 @@ export default function ConstructionPage() {
 
   return (
     <main className={`flex flex-col`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://ravenci.solutions",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Construction Websites",
+                item: "https://ravenci.solutions/construction",
+              },
+            ],
+          }),
+        }}
+      />
       {/* Hero */}
       <section
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
@@ -312,6 +335,49 @@ export default function ConstructionPage() {
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
 
+      {/* Service JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: "Construction Website Design",
+            name: "Construction & Property Developer Website Design Brisbane",
+            description:
+              "Websites built for builders. Project portfolios, lead generation, mobile-friendly design for on-site teams — by a Brisbane team with 20+ years experience.",
+            provider: {
+              "@type": "ProfessionalService",
+              name: "RAVENCI Solutions",
+              url: "https://ravenci.solutions",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Brisbane",
+                addressRegion: "QLD",
+                addressCountry: "AU",
+              },
+            },
+            areaServed: {
+              "@type": "Country",
+              name: "Australia",
+            },
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Construction Website Packages",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  name: "Construction Website",
+                  price: "8000",
+                  priceCurrency: "AUD",
+                  description:
+                    "Custom construction website with project portfolio, lead generation, mobile-friendly design, and 80+ PageSpeed score.",
+                },
+              ],
+            },
+          }),
+        }}
+      />
       {/* FAQPage JSON-LD */}
       <script
         type="application/ld+json"

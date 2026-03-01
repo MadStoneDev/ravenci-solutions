@@ -68,8 +68,69 @@ export default async function ArticlePage({
     return <div>Article not found</div>;
   }
 
+  const jsonLdBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://ravenci.solutions",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Articles",
+        item: "https://ravenci.solutions/articles",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.Title,
+        item: `https://ravenci.solutions/articles/${slug}`,
+      },
+    ],
+  };
+
+  const jsonLdArticle = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.Title,
+    description: article.seo?.Meta_Description || article.Excerpt || "",
+    image: article.Featured_Image
+      ? `https://strapi.ravenci.solutions${article.Featured_Image.url}`
+      : undefined,
+    author: {
+      "@type": "Person",
+      name: article.author?.Name || "RAVENCI Solutions",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "RAVENCI Solutions",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://ravenci.solutions/ravenci-logo.svg",
+      },
+    },
+    datePublished: article.publishedAt || article.createdAt,
+    dateModified: article.updatedAt || article.publishedAt,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://ravenci.solutions/articles/${slug}`,
+    },
+  };
+
   return (
     <main className={`flex flex-col`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }}
+      />
       <section
         className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid justify-center min-h-[250px] bg-white`}
       >

@@ -89,6 +89,29 @@ export default function HealthcarePage() {
 
   return (
     <main className={`flex flex-col`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://ravenci.solutions",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Healthcare Websites",
+                item: "https://ravenci.solutions/healthcare",
+              },
+            ],
+          }),
+        }}
+      />
       {/* Hero */}
       <section
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
@@ -304,6 +327,49 @@ export default function HealthcarePage() {
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
 
+      {/* Service JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: "Healthcare Website Design",
+            name: "Medical & Healthcare Website Design Brisbane",
+            description:
+              "Websites for healthcare professionals. Patient portals, online booking, privacy compliance, NDIS-ready — built by a Brisbane team with 20+ years experience.",
+            provider: {
+              "@type": "ProfessionalService",
+              name: "RAVENCI Solutions",
+              url: "https://ravenci.solutions",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Brisbane",
+                addressRegion: "QLD",
+                addressCountry: "AU",
+              },
+            },
+            areaServed: {
+              "@type": "Country",
+              name: "Australia",
+            },
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Healthcare Website Packages",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  name: "Healthcare Website",
+                  price: "5000",
+                  priceCurrency: "AUD",
+                  description:
+                    "Custom healthcare website with online booking integration, patient portal, privacy compliance, NDIS-ready features, and 80+ PageSpeed score.",
+                },
+              ],
+            },
+          }),
+        }}
+      />
       {/* FAQPage JSON-LD */}
       <script
         type="application/ld+json"

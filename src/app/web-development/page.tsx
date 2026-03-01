@@ -114,6 +114,29 @@ export default function WebHostingDevelopmentPage() {
 
   return (
     <main className={`flex flex-col`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://ravenci.solutions",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Web Development",
+                item: "https://ravenci.solutions/web-development",
+              },
+            ],
+          }),
+        }}
+      />
       <section
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
@@ -534,6 +557,61 @@ export default function WebHostingDevelopmentPage() {
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: "Web Development",
+            name: "Website Development",
+            description:
+              "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $3,490.",
+            provider: {
+              "@type": "ProfessionalService",
+              name: "RAVENCI Solutions",
+              url: "https://ravenci.solutions",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Brisbane",
+                addressRegion: "QLD",
+                addressCountry: "AU",
+              },
+            },
+            areaServed: {
+              "@type": "Country",
+              name: "Australia",
+            },
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Web Development Packages",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  name: "Foundation Website",
+                  price: "3490",
+                  priceCurrency: "AUD",
+                  description: "Custom single-page design with CMS setup, SEO, and 80+ PageSpeed score. 3 weeks delivery.",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Growth Website",
+                  price: "7490",
+                  priceCurrency: "AUD",
+                  description: "Multi-page custom website up to 8 pages with advanced CMS, blog setup, and goal tracking. 4-6 weeks delivery.",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Premium Brand & Web",
+                  price: "14990",
+                  priceCurrency: "AUD",
+                  description: "Complete brand identity plus multi-page custom website. Logo, style guide, wireframes, UX design, and full development. 10-14 weeks delivery.",
+                },
+              ],
+            },
+          }),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

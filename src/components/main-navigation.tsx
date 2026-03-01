@@ -102,27 +102,34 @@ export default function MainNavigation() {
     }
   };
 
+  const rafRef = useRef<number | null>(null);
+
   const handleScroll = () => {
-    const results = checkOverlappingElements(
-      [logoRef, menuButtonRef],
-      `content-section`,
-      [`bg-ravenci-dark`, `bg-ravenci-primary`],
-    );
+    if (rafRef.current) return;
+    rafRef.current = requestAnimationFrame(() => {
+      const results = checkOverlappingElements(
+        [logoRef, menuButtonRef],
+        `content-section`,
+        [`bg-ravenci-dark`, `bg-ravenci-primary`],
+      );
 
-    setIsLogoOnDark(results[0]);
-    setIsMenuOnDark(results[1]);
+      setIsLogoOnDark(results[0]);
+      setIsMenuOnDark(results[1]);
 
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    setIsAtTop(scrollTop <= 100);
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      setIsAtTop(scrollTop <= 100);
+      rafRef.current = null;
+    });
   };
 
   // Effects
   useEffect(() => {
     handleScroll();
 
-    window.addEventListener(`scroll`, handleScroll);
+    window.addEventListener(`scroll`, handleScroll, { passive: true });
     return () => {
       window.removeEventListener(`scroll`, handleScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, [pathname]);
 
