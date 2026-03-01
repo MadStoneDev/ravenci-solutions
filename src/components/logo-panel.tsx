@@ -172,7 +172,7 @@ export default function LogosPanel({
           className={`relative -translate-y-1/2 grid place-content-center w-full`}
         >
           <h3
-            className={`px-2 pt-2 pb-1 inline ${theme} font-poppins font-medium text-xs ${headingColour} capitalize z-10`}
+            className={`px-2 pt-2 pb-1 inline ${theme} font-sans font-medium text-xs ${headingColour} capitalize z-10`}
           >
             {heading}
           </h3>
@@ -218,7 +218,7 @@ export default function LogosPanel({
           className={`relative translate-y-1/2 grid place-content-center w-full`}
         >
           <h3
-            className={`px-2 pt-2 pb-1 inline ${theme} font-poppins font-medium text-xs ${headingColour} capitalize z-10`}
+            className={`px-2 pt-2 pb-1 inline ${theme} font-sans font-medium text-xs ${headingColour} capitalize z-10`}
           >
             {heading}
           </h3>

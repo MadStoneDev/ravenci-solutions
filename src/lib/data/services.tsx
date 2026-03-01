@@ -2,9 +2,8 @@
   IconServer,
   IconTool,
   IconServerCog,
+  IconTools,
 } from "@tabler/icons-react";
-
-import { Drill } from "lucide-react";
 
 interface Service {
   id: string;
@@ -47,7 +46,7 @@ export const services: Record<string, Service> = {
   "oneoff-web-maintenance": {
     id: "oneoff-web-maintenance",
     name: "One-Off Web Maintenance",
-    icon: <Drill size={40} />,
+    icon: <IconTools size={40} />,
     basePrice: 495,
     isRecurring: false,
     description:

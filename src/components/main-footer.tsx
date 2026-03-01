@@ -1,6 +1,7 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
 import {
+  IconBrandLinkedin,
   IconDeviceMobileFilled,
   IconMailFilled,
   IconPhoneFilled,
@@ -51,17 +52,21 @@ export default function MainFooter() {
           </div>
 
           <div className={`group/link relative px-2`}>
-            <p className={`relative z-10`}>Web App Development</p>
-            {/*<div*/}
-            {/*  className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}*/}
-            {/*></div>*/}
+            <Link href={`/web-apps`} className={`relative z-10`}>
+              Web App Development
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
           </div>
 
           <div className={`group/link relative px-2`}>
-            <p className={`relative z-10`}>Mobile App Development</p>
-            {/*<div*/}
-            {/*  className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}*/}
-            {/*></div>*/}
+            <Link href={`/mobile-apps`} className={`relative z-10`}>
+              Mobile App Development
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
           </div>
 
           <div className={`group/link relative px-2`}>
@@ -92,10 +97,12 @@ export default function MainFooter() {
           </div>
 
           <div className={`group/link relative px-2`}>
-            <p className={`relative z-10`}>SEO and Content</p>
-            {/*<div*/}
-            {/*  className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}*/}
-            {/*></div>*/}
+            <Link href={`/seo-and-content`} className={`relative z-10`}>
+              SEO and Content
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
           </div>
         </article>
 
@@ -218,6 +225,27 @@ export default function MainFooter() {
             <Link href={`/launch-your-vision`} className={`relative z-10`}>
               Contact Form
             </Link>
+
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-0 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            />
+          </div>
+
+          <div
+            className={`group/link pl-1 pr-2 relative flex items-center gap-1`}
+          >
+            <IconBrandLinkedin
+              size={18}
+              className={`text-ravenci-primary group-hover/link:text-white z-10 transition-all duration-300 ease-in-out`}
+            />
+            <a
+              href={`https://www.linkedin.com/company/91459779/`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`relative z-10`}
+            >
+              LinkedIn
+            </a>
 
             <div
               className={`absolute top-0 left-0 bottom-0 w-0 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}

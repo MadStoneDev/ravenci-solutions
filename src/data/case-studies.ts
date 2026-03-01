@@ -98,6 +98,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "The new website transformed Peninsula Homes' digital presence, becoming a genuine lead generation tool rather than just an online brochure.",
       ],
+      metrics: [
+        { value: "90+", label: "Google PageSpeed Score" },
+        { value: "< 2s", label: "Page Load Time" },
+        { value: "Mobile-First", label: "Responsive Design" },
+      ],
     },
     order: 1,
     featured: true,
@@ -147,6 +152,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "The Results",
       paragraphs: [
         "The new platform dramatically improved the recruitment workflow, reducing time-to-hire and increasing both candidate and employer satisfaction.",
+      ],
+      metrics: [
+        { value: "85+", label: "Google PageSpeed Score" },
+        { value: "Custom", label: "Job Board Platform" },
+        { value: "Automated", label: "Email Notifications" },
       ],
     },
     order: 2,
@@ -198,6 +208,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "The new website established Coast Remedial Solutions as the digital authority in their space, generating consistent organic enquiries from high-value clients.",
       ],
+      metrics: [
+        { value: "90+", label: "Google PageSpeed Score" },
+        { value: "< 2s", label: "Page Load Time" },
+        { value: "SEO-Ready", label: "Local Search Optimised" },
+      ],
     },
     order: 3,
     featured: false,
@@ -247,6 +262,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "The Results",
       paragraphs: [
         "The redesigned website became a key part of Intercorp's sales toolkit, impressing stakeholders and generating quality leads from serious buyers and investors.",
+      ],
+      metrics: [
+        { value: "85+", label: "Google PageSpeed Score" },
+        { value: "Premium", label: "Visual Experience" },
+        { value: "Investor-Ready", label: "Sales Toolkit" },
       ],
     },
     order: 4,
@@ -298,6 +318,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "The new website became a powerful business development tool, helping SAC Consulting win larger contracts and attract higher-value clients.",
       ],
+      metrics: [
+        { value: "90+", label: "Google PageSpeed Score" },
+        { value: "< 2s", label: "Page Load Time" },
+        { value: "Conversion-Led", label: "Contact Flow" },
+      ],
     },
     order: 5,
     featured: true,
@@ -347,6 +372,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "The Results",
       paragraphs: [
         "The new store transformed Nikita Morell's online sales, creating a shopping experience that customers love and return to.",
+      ],
+      metrics: [
+        { value: "85+", label: "Google PageSpeed Score" },
+        { value: "Mobile-First", label: "Shopping Experience" },
+        { value: "Streamlined", label: "Checkout Flow" },
       ],
     },
     galleryImages: [
@@ -402,6 +432,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "The new platform captured the essence of the Cadeaurable brand, resulting in increased sales, higher customer satisfaction, and a growing base of repeat gifters.",
       ],
+      metrics: [
+        { value: "85+", label: "Google PageSpeed Score" },
+        { value: "Gift-Led", label: "Shopping UX" },
+        { value: "Occasion-Based", label: "Filtering System" },
+      ],
     },
     galleryImages: ["/showcase/Cadeaurable Showcase.png"],
     order: 7,
@@ -452,6 +487,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "The Results",
       paragraphs: [
         "The new website positioned Covenant Security Solutions as the professional choice in their market, directly contributing to business growth and client acquisition.",
+      ],
+      metrics: [
+        { value: "90+", label: "Google PageSpeed Score" },
+        { value: "< 2s", label: "Page Load Time" },
+        { value: "Trust-Led", label: "Design Approach" },
       ],
     },
     order: 8,

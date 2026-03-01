@@ -74,7 +74,7 @@ const faqItems = [
   {
     title: "Our project photos are huge. Will that slow the site down?",
     content:
-      "No. We implement advanced image optimisation including automatic compression, responsive image sizing, lazy loading, and modern formats like WebP. Your portfolio will look sharp and load fast — we guarantee 85+ PageSpeed scores.",
+      "No. We implement advanced image optimisation including automatic compression, responsive image sizing, lazy loading, and modern formats like WebP. Your portfolio will look sharp and load fast — we guarantee 80+ PageSpeed scores.",
   },
   {
     title: "Can you integrate with our CRM or project management tools?",
@@ -109,6 +109,13 @@ export default function ConstructionPage() {
             wins work — built for construction companies and property developers
             across Brisbane
           </h2>
+          <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
+            RAVENCI Solutions builds websites for construction companies and
+            property developers in Brisbane. From $8,000, we deliver project
+            portfolio showcases, lead generation forms, heavy image
+            optimisation, and local SEO. 80+ PageSpeed guaranteed with 20+ years
+            of experience.
+          </p>
         </article>
       </section>
 
@@ -126,21 +133,21 @@ export default function ConstructionPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>Construction</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>30+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
-              Clients Served
+              Businesses Served
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>95+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>80+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               PageSpeed Score
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>2032</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>100%</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
-              Olympics Ready
+              Australian Owned
             </p>
           </div>
         </div>
@@ -220,7 +227,7 @@ export default function ConstructionPage() {
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white flex-shrink-0`}
                 />
-                85+ PageSpeed score guaranteed
+                80+ PageSpeed score guaranteed
               </li>
             </ul>
 

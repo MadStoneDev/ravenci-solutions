@@ -14,13 +14,13 @@ import ReCaptchaProvider from "@/components/recaptcha-provider";
 const lexend = Lexend({
   variable: "--font-lexend",
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -28,19 +28,17 @@ export const metadata: Metadata = {
   title:
     "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
   description:
-    "Innovative and expert solutions to a digital tomorrow - RAVENCI is an Australian website and app development" +
-    " agency based in Brisbane, Queensland.",
+    "RAVENCI Solutions is a Brisbane-based web development and design agency with 20+ years of experience. Custom Next.js and WordPress websites from $3,490. Hosting, maintenance, and retainer packages for Australian businesses.",
   openGraph: {
     title:
       "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
     description:
-      "Innovative and expert solutions to a digital tomorrow - RAVENCI is an Australian website and app development" +
-      " agency based in Brisbane, Queensland.",
+      "RAVENCI Solutions is a Brisbane-based web development and design agency with 20+ years of experience. Custom Next.js and WordPress websites from $3,490. Hosting, maintenance, and retainer packages for Australian businesses.",
     url: "https://ravenci.solutions",
     siteName: "RAVENCI Solutions",
     images: [
       {
-        url: "/og-image.jpg", // Replace with your image path once created
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "RAVENCI Solutions - Digital Development & Design Agency Brisbane",
@@ -54,8 +52,7 @@ export const metadata: Metadata = {
     title:
       "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
     description:
-      "Innovative and expert solutions to a digital tomorrow - RAVENCI is an Australian website and app development" +
-      " agency based in Brisbane, Queensland.",
+      "RAVENCI Solutions is a Brisbane-based web development and design agency with 20+ years of experience. Custom websites from $3,490.",
     images: ["/og-image.jpg"],
   },
 };
@@ -65,7 +62,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
+  const jsonLdOrganization = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "RAVENCI Solutions",
@@ -105,6 +102,81 @@ export default function RootLayout({
       "UI/UX Design",
       "SEO",
     ],
+    founder: {
+      "@type": "Person",
+      name: "Richard Haddad",
+      jobTitle: "Founder",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      bestRating: "5",
+      ratingCount: "6",
+    },
+    review: [
+      {
+        "@type": "Review",
+        author: { "@type": "Person", name: "Geoff Beisler" },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+          bestRating: "5",
+        },
+        reviewBody:
+          "I could not recommend Richard more highly. His knowledge is remarkable, his professionalism exceptional, and the way he completely sorted my issues, quickly, effortlessly was simply brilliant.",
+      },
+      {
+        "@type": "Review",
+        author: { "@type": "Person", name: "Adam Bisset" },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+          bestRating: "5",
+        },
+        reviewBody:
+          "Richard is the absolute best at what he does. Our brand new startup is launching with the best possible website I could have imagined.",
+      },
+      {
+        "@type": "Review",
+        author: { "@type": "Person", name: "Danni Green" },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+          bestRating: "5",
+        },
+        reviewBody:
+          "Eleven out of ten for an amazing service! Richard goes above and beyond to ensure all the i's are dotted and t's are crossed.",
+      },
+    ],
+  };
+
+  const jsonLdLocalBusiness = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "RAVENCI Solutions",
+    url: "https://ravenci.solutions",
+    telephone: "+61731061836",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Brisbane",
+      addressRegion: "QLD",
+      postalCode: "4000",
+      addressCountry: "AU",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -27.4698,
+      longitude: 153.0251,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "17:00",
+    },
+    priceRange: "$$$$",
+    image: "https://ravenci.solutions/og-image.jpg",
+    sameAs: ["https://www.linkedin.com/company/91459779/"],
   };
 
   return (
@@ -112,8 +184,18 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdOrganization),
+          }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdLocalBusiness),
+          }}
+        />
+        <meta name="geo.region" content="AU-QLD" />
+        <meta name="geo.placename" content="Brisbane" />
       </head>
       <GoogleAnalytics gaId={`G-8TL2E4F9CH`} />
       <GoogleTagManager gtmId={`GTM-K6S8KCK5`} />

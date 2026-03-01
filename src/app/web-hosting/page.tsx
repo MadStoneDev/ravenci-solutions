@@ -80,13 +80,13 @@ export default function WebHostingPage() {
           {testimonials.map((t) => (
             <p
               key={t.id}
-              className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
+              className={`my-6 font-sans font-light leading-8 text-ravenci-light-gray`}
             >
               &ldquo;{t.content}&rdquo;
             </p>
           ))}
           {testimonials[0] && (
-            <h3 className={`font-poppins text-2xl font-light text-neutral-100`}>
+            <h3 className={`font-sans text-2xl font-light text-neutral-100`}>
               <span className={`font-bold`}>
                 {testimonials[0].author.split(" ")[0]}
               </span>{" "}

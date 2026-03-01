@@ -39,12 +39,12 @@ const TestimonialCarousel = ({
         </div>
 
         <p
-          className={`mb-12 font-poppins font-light leading-8 text-ravenci-light-gray`}
+          className={`mb-12 font-sans font-light leading-8 text-ravenci-light-gray`}
         >
           &ldquo;{testimonial.content}&rdquo;
         </p>
 
-        <h3 className={`font-poppins text-2xl font-light text-neutral-100`}>
+        <h3 className={`font-sans text-2xl font-light text-neutral-100`}>
           <span className={`font-bold`}>{firstName}</span>{" "}
           {lastName}
         </h3>

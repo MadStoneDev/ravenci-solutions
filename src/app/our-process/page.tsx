@@ -66,7 +66,7 @@ const steps = [
       "This is where it all comes together. Clean, performant code built to modern standards. We develop with speed, accessibility, and SEO baked in from the start — not bolted on after.",
     highlights: [
       "Clean, maintainable code",
-      "85+ Google PageSpeed guaranteed",
+      "80+ Google PageSpeed guaranteed",
       "SEO-optimised structure and markup",
       "CMS setup with user training",
     ],
@@ -134,16 +134,24 @@ export default function OurProcessPage() {
       <section
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
-        <article className={`col-span-12 flex flex-col`}>
+        <article className={`max-w-2xl col-span-12 flex flex-col gap-2`}>
           <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
             How We Bring Your Vision to Life
           </h1>
           <h2
-            className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
+            className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
+            style={{ lineHeight: "2.25rem" }}
           >
-            A proven 6-step process refined over 20+ years of delivering digital
-            platforms that work
+            Our proven 6-step process refined over 20+ years of delivering
+            digital products and platforms that work
           </h2>
+          <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
+            RAVENCI's web development process follows six steps: Discovery,
+            Strategy, Design, Development, Testing, and Ongoing Support.
+            Foundation websites take 3 weeks, Growth websites 4-6 weeks, and
+            Premium Brand & Web projects 10-14 weeks. Every project includes
+            revision rounds and 80+ PageSpeed guaranteed.
+          </p>
         </article>
       </section>
 
@@ -152,9 +160,7 @@ export default function OurProcessPage() {
         className={`p-10 flex flex-col items-center gap-3 bg-ravenci-primary text-white text-center`}
       >
         <div className={`max-w-lg`}>
-          <h3
-            className={`font-serif font-medium text-xl`}
-          >
+          <h3 className={`font-serif font-medium text-xl`}>
             Great websites aren't accidents. They're the result of careful
             planning, clear communication, and disciplined execution — every
             single time.
@@ -191,9 +197,7 @@ export default function OurProcessPage() {
                 <h3 className={`mb-4 font-serif text-2xl md:text-h3 font-bold`}>
                   {step.name}
                 </h3>
-                <p className={`mb-6 text-neutral-500/80`}>
-                  {step.description}
-                </p>
+                <p className={`mb-6 text-neutral-500/80`}>{step.description}</p>
                 <ul className={`flex flex-col gap-3`}>
                   {step.highlights.map((highlight, i) => (
                     <li key={i} className={`flex items-start gap-2`}>
@@ -219,11 +223,11 @@ export default function OurProcessPage() {
           <h2 className={`mb-12 text-3xl md:text-4xl font-medium`}>
             Why Process Matters
           </h2>
-          <div
-            className={`grid grid-cols-1 sm:grid-cols-3 gap-10`}
-          >
+          <div className={`grid grid-cols-1 sm:grid-cols-3 gap-10`}>
             <div>
-              <p className={`text-4xl md:text-5xl font-bold text-ravenci-primary`}>
+              <p
+                className={`text-4xl md:text-5xl font-bold text-ravenci-primary`}
+              >
                 20+
               </p>
               <p className={`mt-2 text-neutral-400`}>
@@ -231,20 +235,20 @@ export default function OurProcessPage() {
               </p>
             </div>
             <div>
-              <p className={`text-4xl md:text-5xl font-bold text-ravenci-primary`}>
+              <p
+                className={`text-4xl md:text-5xl font-bold text-ravenci-primary`}
+              >
                 50+
               </p>
-              <p className={`mt-2 text-neutral-400`}>
-                Projects Delivered
-              </p>
+              <p className={`mt-2 text-neutral-400`}>Projects Delivered</p>
             </div>
             <div>
-              <p className={`text-4xl md:text-5xl font-bold text-ravenci-primary`}>
-                95+
+              <p
+                className={`text-4xl md:text-5xl font-bold text-ravenci-primary`}
+              >
+                80+
               </p>
-              <p className={`mt-2 text-neutral-400`}>
-                Average PageSpeed Score
-              </p>
+              <p className={`mt-2 text-neutral-400`}>Average PageSpeed Score</p>
             </div>
           </div>
           <p className={`mt-12 max-w-2xl mx-auto text-neutral-400`}>
@@ -260,10 +264,7 @@ export default function OurProcessPage() {
         className={`content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white`}
       >
         <h2 className={`font-serif text-h3`}>Process Questions Answered</h2>
-        <Accordion
-          titleClassName={`py-6 text-lg`}
-          items={faqItems}
-        />
+        <Accordion titleClassName={`py-6 text-lg`} items={faqItems} />
       </section>
 
       {/* CTA */}

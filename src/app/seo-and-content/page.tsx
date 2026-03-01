@@ -117,21 +117,28 @@ export default function SEOContentPage() {
             SEO & Content in Brisbane that drives high‑intent traffic and
             converts visitors into customers
           </h2>
+          <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
+            RAVENCI Solutions provides SEO and content services in Brisbane,
+            Australia. SEO Foundation audits from $2,490, ongoing Growth SEO from
+            $1,980/month, and copywriting from $390/page. Keyword research,
+            on-page optimisation, local SEO, and conversion-focused content with
+            transparent AUD pricing.
+          </p>
         </article>
       </section>
 
       <section className="p-10 flex flex-col items-center gap-3 bg-ravenci-primary text-white text-center">
         <div className="max-w-lg">
           <h3 className="pb-6 border-b border-white/20 font-serif font-medium text-xl">
-            Trusted by 60+ Australian businesses to win the right searches and
+            Trusted by 30+ Australian businesses to win the right searches and
             convert
           </h3>
           {testimonials[0] && (
             <>
-              <blockquote className="my-6 font-poppins font-light leading-8 text-ravenci-light-gray">
+              <blockquote className="my-6 font-sans font-light leading-8 text-ravenci-light-gray">
                 &ldquo;{testimonials[0].content}&rdquo;
               </blockquote>
-              <p className="font-poppins text-2xl font-light text-neutral-100">
+              <p className="font-sans text-2xl font-light text-neutral-100">
                 <span className="font-bold">
                   {testimonials[0].author.split(" ")[0]}
                 </span>{" "}

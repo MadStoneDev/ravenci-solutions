@@ -1,9 +1,6 @@
 import Link from "next/link";
 
-import {
-  IconCheck,
-  IconCircleCheckFilled,
-} from "@tabler/icons-react";
+import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 
 import Accordion from "@/components/accordion";
 import PriceButton from "@/components/price-button";
@@ -96,43 +93,57 @@ export default function HealthcarePage() {
       <section
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
-        <article className={`col-span-12 flex flex-col`}>
+        <article className={`max-w-2xl col-span-12 flex flex-col gap-2`}>
           <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
             Websites for Healthcare Professionals
           </h1>
           <h2
-            className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
+            className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
+            style={{ lineHeight: "2.25rem" }}
           >
             Patient-focused, privacy-aware digital platforms built for medical
             practices, allied health, and NDIS providers across Brisbane
           </h2>
+          <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
+            RAVENCI Solutions builds websites for healthcare professionals in
+            Brisbane. From $5,000, we deliver online booking integration, patient
+            portals, NDIS-ready features, and privacy-compliant design.
+            Australian Privacy Principles considered from day one. 20+ years of
+            digital experience.
+          </p>
         </article>
       </section>
 
       {/* Social proof bar */}
       <section
-        className={`p-10 flex flex-col items-center gap-3 bg-ravenci-primary text-white text-center`}
+        className={`content-section py-12 px-5 sm:px-20 xl:px-36 bg-ravenci-primary text-white`}
       >
-        <div className={`max-w-2xl`}>
-          <div
-            className={`grid grid-cols-2 md:grid-cols-4 gap-8`}
-          >
-            <div>
-              <p className={`text-3xl font-bold`}>20+</p>
-              <p className={`mt-1 text-sm text-white/70`}>Years Experience</p>
-            </div>
-            <div>
-              <p className={`text-3xl font-bold`}>Healthcare</p>
-              <p className={`mt-1 text-sm text-white/70`}>Clients Served</p>
-            </div>
-            <div>
-              <p className={`text-3xl font-bold`}>95+</p>
-              <p className={`mt-1 text-sm text-white/70`}>PageSpeed Score</p>
-            </div>
-            <div>
-              <p className={`text-3xl font-bold`}>Privacy</p>
-              <p className={`mt-1 text-sm text-white/70`}>Aware Builds</p>
-            </div>
+        <div
+          className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center`}
+        >
+          <div>
+            <p className={`text-4xl md:text-5xl font-bold`}>20+</p>
+            <p className={`mt-2 text-sm text-white/80 font-light`}>
+              Years Experience
+            </p>
+          </div>
+          <div>
+            <p className={`text-4xl md:text-5xl font-bold`}>30+</p>
+            <p className={`mt-2 text-sm text-white/80 font-light`}>
+              Businesses Served
+            </p>
+          </div>
+          <div>
+            <p className={`text-4xl md:text-5xl font-bold`}>80+</p>
+            <p className={`mt-2 text-sm text-white/80 font-light`}>
+              PageSpeed Score
+            </p>
+          </div>
+          <div>
+            <p className={`text-4xl md:text-5xl font-bold`}>100%</p>
+            <p className={`mt-2 text-sm text-white/80 font-light`}>
+              Privacy-Aware Builds
+            </p>
           </div>
         </div>
       </section>
@@ -211,14 +222,14 @@ export default function HealthcarePage() {
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white flex-shrink-0`}
                 />
-                85+ PageSpeed score guaranteed
+                80+ PageSpeed score guaranteed
               </li>
             </ul>
 
             <p className={`mb-4 text-neutral-400/90`}>
-              We understand that healthcare websites aren't just marketing
-              tools — they're how patients find you, book with you, and build
-              trust in your practice before they walk through the door.
+              We understand that healthcare websites aren't just marketing tools
+              — they're how patients find you, book with you, and build trust in
+              your practice before they walk through the door.
             </p>
 
             <p className={`mb-8 text-neutral-400/90`}>
@@ -260,10 +271,7 @@ export default function HealthcarePage() {
         className={`content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white`}
       >
         <h2 className={`font-serif text-h3`}>Healthcare Website FAQs</h2>
-        <Accordion
-          titleClassName={`py-6 text-lg`}
-          items={faqItems}
-        />
+        <Accordion titleClassName={`py-6 text-lg`} items={faqItems} />
       </section>
 
       {/* CTA */}

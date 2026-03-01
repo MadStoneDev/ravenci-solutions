@@ -75,9 +75,9 @@ export default function CaseStudiesPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>50+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>30+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
-              Projects Delivered
+              Businesses Served
             </p>
           </div>
           <div>

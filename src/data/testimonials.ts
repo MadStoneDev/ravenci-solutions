@@ -51,48 +51,12 @@ export const testimonials: Testimonial[] = [
     pages: ["web-hosting"],
   },
   {
-    id: "lisa-parker",
-    content:
-      "RAVENCI's SEO and content work has been transformational. We went from page 3 to ranking #1 for our main keywords. Our organic traffic has increased 300% and leads have tripled.",
-    author: "Lisa Parker",
-    role: "Marketing Manager",
-    image: null,
-    pages: ["seo-and-content"],
-  },
-  {
-    id: "v-consulting",
-    content:
-      "What used to take days to complete manually, holding back projects and documentation now takes minutes with the app Richard built for us. Best of all, it's user-friendly. Anyone can use it.",
-    author: "V Consulting",
-    image: null,
-    pages: ["web-apps"],
-  },
-  {
-    id: "ethan-miles",
-    content:
-      "RAVENCI turned our concept into a polished, store-ready app. Clear communication and on-time delivery.",
-    author: "Ethan Miles",
-    image: null,
-    pages: ["mobile-apps"],
-  },
-  {
     id: "timothy-odonnell",
     content:
       "Richard went ABOVE and beyond for my request. Quality was amazing and his efforts to satisfy my extra needs (he fitted it to a damn guitar!) Pure talent. Thankyou sir",
     author: "Timothy O'Donnell",
     image: null,
     pages: ["business-design"],
-  },
-  {
-    id: "mark-thompson",
-    content:
-      "Our new website showcases our project portfolio exactly how we wanted. We're getting enquiries from developers and architects who tell us the site stood out. Best investment we've made in marketing.",
-    author: "Mark Thompson",
-    role: "Director",
-    company: "BridgePoint Construction",
-    image: null,
-    pages: ["construction"],
-    industry: "construction",
   },
 ];
 

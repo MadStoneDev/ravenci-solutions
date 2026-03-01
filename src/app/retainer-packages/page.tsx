@@ -172,6 +172,13 @@ export default function RetainerPackagesPage() {
             Ongoing development, design, and strategy — without the overhead of
             hiring
           </h2>
+          <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
+            RAVENCI Solutions offers monthly retainer packages from $490/month in
+            Brisbane. Four tiers: Starter (2hrs), Growth (5hrs), Partner
+            (12hrs), and Scale (25hrs). Includes hosting, maintenance, dedicated
+            development hours, and strategy calls. Flexible allocation across
+            dev, design, content, and SEO.
+          </p>
         </article>
       </section>
 
@@ -188,12 +195,12 @@ export default function RetainerPackagesPage() {
           {testimonials[0] && (
             <>
               <p
-                className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
+                className={`my-6 font-sans font-light leading-8 text-ravenci-light-gray`}
               >
                 &ldquo;{testimonials[0].content}&rdquo;
               </p>
               <h3
-                className={`font-poppins text-2xl font-light text-neutral-100`}
+                className={`font-sans text-2xl font-light text-neutral-100`}
               >
                 <span className={`font-bold`}>
                   {testimonials[0].author.split(" ")[0]}

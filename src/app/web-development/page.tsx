@@ -126,6 +126,13 @@ export default function WebHostingDevelopmentPage() {
           >
             Professional websites that convert visitors into customers
           </h2>
+          <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
+            RAVENCI Solutions builds custom websites for Australian businesses
+            using Next.js and WordPress. Prices start from $3,490 for a
+            foundation site to $14,990 for a full brand and web package. Every
+            build includes 80+ PageSpeed scores, CMS setup, SEO, and ongoing
+            support. Based in Brisbane with 20+ years of experience.
+          </p>
         </article>
       </section>
 
@@ -136,17 +143,17 @@ export default function WebHostingDevelopmentPage() {
           <h3
             className={`pb-6 border-b border-white/20 font-serif font-medium text-xl`}
           >
-            Trusted by 50+ businesses across Australia to build websites that
+            Trusted by 30+ businesses across Australia to build websites that
             actually work
           </h3>
           {testimonials[0] && (
             <>
               <p
-                className={`my-6 font-poppins font-light leading-8 text-ravenci-light-gray`}
+                className={`my-6 font-sans font-light leading-8 text-ravenci-light-gray`}
               >
                 &ldquo;{testimonials[0].content}&rdquo;
               </p>
-              <h3 className={`font-poppins text-2xl font-light text-neutral-100`}>
+              <h3 className={`font-sans text-2xl font-light text-neutral-100`}>
                 <span className={`font-bold`}>
                   {testimonials[0].author.split(" ")[0]}
                 </span>{" "}
@@ -259,7 +266,7 @@ export default function WebHostingDevelopmentPage() {
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                85+ PageSpeed guaranteed vs "we'll make it pretty"
+                80+ PageSpeed guaranteed vs "we'll make it pretty"
               </li>
             </ul>
             <p className={`mb-4 text-neutral-400/90`}>
@@ -301,7 +308,7 @@ export default function WebHostingDevelopmentPage() {
     <li>Footer with social media links</li>
     <li>Basic Google Analytics setup</li>
     <li>Basic on-page SEO</li>
-    <li>85+ Google PageSpeed score guaranteed</li>
+    <li>80+ Google PageSpeed score guaranteed</li>
     <li>1 round of revisions</li>
     <li>3 weeks delivery</li>
     <li>Discounted Hosting with RAVENCI</li>
@@ -366,7 +373,7 @@ export default function WebHostingDevelopmentPage() {
     <li>Advanced Google Analytics with goal tracking</li>
     <li>Basic SEO setup (meta tags, sitemap)</li>
     <li>Social media integration</li>
-    <li>85+ Google PageSpeed score guaranteed</li>
+    <li>80+ Google PageSpeed score guaranteed</li>
     <li>2 rounds of revisions</li>
     <li>4-6 weeks delivery</li>
     <li>Discounted Hosting with RAVENCI</li>
@@ -458,7 +465,7 @@ export default function WebHostingDevelopmentPage() {
     <li>Advanced Google Analytics with goal tracking</li>
     <li>Basic SEO setup (meta tags, sitemap)</li>
     <li>Social media integration</li>
-    <li>85+ Google PageSpeed score guaranteed</li>
+    <li>80+ Google PageSpeed score guaranteed</li>
     <li>2 rounds of development revisions</li>
     <li>4-6 weeks delivery</li>
     <li>Discounted Hosting with RAVENCI</li>
@@ -513,7 +520,7 @@ export default function WebHostingDevelopmentPage() {
             },
             {
               title: `What makes your development different from cheaper options?`,
-              content: `We guarantee 85+ PageSpeed scores, provide ongoing support, use professional development practices, and we're local to Brisbane. Cheap developers often create slow, problematic sites that cost more to fix later.`,
+              content: `We guarantee 80+ PageSpeed scores, provide ongoing support, use professional development practices, and we're local to Brisbane. Cheap developers often create slow, problematic sites that cost more to fix later.`,
             },
             {
               title: `Do you handle the domain and hosting setup?`,
@@ -563,7 +570,7 @@ export default function WebHostingDevelopmentPage() {
                 name: "What makes your development different from cheaper options?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "We guarantee 85+ PageSpeed scores, provide ongoing support, use professional development practices, and we're local to Brisbane. Cheap developers often create slow, problematic sites that cost more to fix later.",
+                  text: "We guarantee 80+ PageSpeed scores, provide ongoing support, use professional development practices, and we're local to Brisbane. Cheap developers often create slow, problematic sites that cost more to fix later.",
                 },
               },
               {

@@ -1,4 +1,3 @@
-﻿import axios from "axios";
 import Link from "next/link";
 
 export const metadata = {
@@ -10,16 +9,26 @@ export const metadata = {
 async function getArticles() {
   const currentDate = new Date().toISOString();
 
-  const response = await axios.get(
-    `https://strapi.ravenci.solutions/api/articles?sort[0]=Schedule_Date:desc&populate=*&filters[publishedAt][$notNull]=true&filters[Schedule_Date][$lte]=${currentDate}`, // Only show articles with pub date <= now
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.STRAPI_API_KEY}`,
+  try {
+    const response = await fetch(
+      `https://strapi.ravenci.solutions/api/articles?sort[0]=Schedule_Date:desc&populate=*&filters[publishedAt][$notNull]=true&filters[Schedule_Date][$lte]=${currentDate}`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.STRAPI_API_KEY}`,
+        },
+        next: { revalidate: 3600 },
       },
-    },
-  );
+    );
 
-  return response.data.data;
+    if (!response.ok) {
+      return [];
+    }
+
+    const json = await response.json();
+    return json.data;
+  } catch {
+    return [];
+  }
 }
 
 export default async function ArticlesPage() {

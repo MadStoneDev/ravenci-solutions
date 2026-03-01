@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { IconCircleCheckFilled, IconUser } from "@tabler/icons-react";
+import { IconCircleCheckFilled } from "@tabler/icons-react";
 
 export const metadata = {
   title: "About - RAVENCI Solutions",
@@ -71,9 +71,9 @@ export default function AboutPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>18+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>50+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
-              Years with WordPress
+              Projects Delivered
             </p>
           </div>
           <div>
@@ -92,19 +92,23 @@ export default function AboutPage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 flex items-center justify-center bg-neutral-200/50`}
         >
           <div
-            className={`w-full max-w-sm aspect-[3/4] bg-neutral-300/50 rounded-lg flex flex-col items-center justify-center gap-2`}
+            className={`w-full max-w-sm flex flex-col items-center justify-center gap-4`}
           >
-            <IconUser size={64} className={`text-neutral-400/60`} />
-            <p className={`text-sm text-neutral-400 font-light`}>
-              Richard Haddad
-            </p>
-            <p className={`text-xs text-neutral-400/80 font-light`}>
-              Founder, RAVENCI Solutions
-            </p>
-
-            <p className={`text-xs text-neutral-400/70 font-light italic`}>
-              A photo is coming soon, I promise
-            </p>
+            <div
+              className={`w-28 h-28 rounded-full bg-ravenci-primary/10 flex items-center justify-center`}
+            >
+              <span className={`text-4xl font-serif font-bold text-ravenci-primary`}>
+                RH
+              </span>
+            </div>
+            <div className={`text-center`}>
+              <p className={`text-lg font-medium text-ravenci-dark`}>
+                Richard Haddad
+              </p>
+              <p className={`text-sm text-neutral-500 font-light`}>
+                Founder, RAVENCI Solutions
+              </p>
+            </div>
           </div>
         </section>
 
@@ -137,7 +141,7 @@ export default function AboutPage() {
                 of engineering and the polish of professional design.
               </p>
               <p>
-                Today, RAVENCI operates as a founder-led studio supproted by a
+                Today, RAVENCI operates as a founder-led studio supported by a
                 network of specialist collaborators. This means you get the
                 accountability and personal attention of working and
                 communicating directly with the person actually doing the work,
