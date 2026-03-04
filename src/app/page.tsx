@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import Accordion from "@/components/accordion";
+import ComparisonTable from "@/components/comparison-table";
 import LazyVideo from "@/components/lazy-video";
 import LogosPanel from "@/components/logo-panel";
 import TestimonialsSingle from "@/components/testimonials-single";
@@ -288,6 +289,30 @@ export default function Home() {
             })}
           </section>
         </article>
+      </section>
+
+      {/* Comparison Table */}
+      <section
+        className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white"
+      >
+        <div className="max-w-4xl mx-auto">
+          <h3 className="mb-2 font-serif text-h3 font-bold text-center">
+            Why Businesses Choose RAVENCI
+          </h3>
+          <p className="mb-10 text-center text-neutral-500/80">
+            See how we compare to a typical WordPress agency or DIY website
+            builder.
+          </p>
+          <ComparisonTable />
+          <div className="mt-8 text-center">
+            <Link
+              href="/custom-vs-template"
+              className="text-sm text-ravenci-primary hover:underline"
+            >
+              Read the full comparison breakdown
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* Visibility Check Lead Magnet */}

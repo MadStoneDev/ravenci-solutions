@@ -102,26 +102,36 @@ const steps = [
 const faqItems = [
   {
     title: "How long does the full process take?",
+    summary:
+      "Foundation websites take 3 weeks, Growth websites 4-6 weeks, and Premium Brand & Web projects 10-14 weeks. A detailed timeline is provided during the Strategy & Planning phase.",
     content:
       "Timelines vary by project scope. A Foundation Website typically takes 3 weeks. A Growth Website runs 4-6 weeks. Premium Brand & Web projects take 10-14 weeks. We provide a detailed timeline during the Strategy & Planning phase and keep you updated at every milestone.",
   },
   {
     title: "What do I need to provide to get started?",
+    summary:
+      "At minimum, an understanding of your business goals and target audience. Existing branding, content, or design preferences help but aren't required — RAVENCI can handle content and design from scratch.",
     content:
       "We'll guide you through everything during Discovery. At minimum, we need an understanding of your business goals and target audience. If you have existing branding, content, or design preferences, that helps too — but it's not required. We can handle content and design from scratch.",
   },
   {
     title: "How involved do I need to be during the process?",
+    summary:
+      "As involved as you prefer. Some clients collaborate at every step; others review at key milestones. At minimum, your input is needed during Discovery, design review, and final pre-launch approval.",
     content:
       "As involved as you'd like to be. Some clients prefer detailed collaboration at every step; others prefer to review at key milestones. At minimum, we'll need your input during Discovery, design review, and final approval before launch.",
   },
   {
     title: "What happens if I want changes mid-project?",
+    summary:
+      "Every RAVENCI package includes revision rounds at design and development stages. If requirements change significantly, scope adjustments are discussed transparently with no hidden fees.",
     content:
       "Every package includes revision rounds at the design and development stages. If your requirements change significantly, we'll discuss scope adjustments transparently — no hidden fees or surprises.",
   },
   {
     title: "Do you work with businesses outside Brisbane?",
+    summary:
+      "Yes. While RAVENCI is Brisbane-based, the process works seamlessly for remote clients across Australia and internationally via video calls and screen sharing.",
     content:
       "Absolutely. While we're based in Brisbane and love working with local businesses, our process works seamlessly for remote clients across Australia and internationally. Video calls and screen sharing keep communication clear.",
   },

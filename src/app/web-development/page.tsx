@@ -533,22 +533,27 @@ export default function WebHostingDevelopmentPage() {
           items={[
             {
               title: `How long does a typical website take to build?`,
+              summary: `Foundation websites take 3 weeks, Growth websites 4-6 weeks, and Premium Brand & Web packages 10-14 weeks. RAVENCI provides regular progress updates throughout every project.`,
               content: `Foundation Website: 3 weeks. Growth Website: 4-6 weeks. Premium Brand & Web: 10-14 weeks total (4 weeks branding + 3-4 weeks design + 4-6 weeks development). We stick to these timelines and provide regular progress updates.`,
             },
             {
               title: `What if I'm not happy with the result?`,
+              summary: `Every RAVENCI package includes multiple revision rounds. We guarantee the website matches your vision and won't consider the project complete until you're 100% satisfied.`,
               content: `We guarantee your website will match your vision. Each package includes multiple revision rounds, and we won't consider the project complete until you're 100% satisfied.`,
             },
             {
               title: `Can I update the website myself after it's built?`,
+              summary: `Yes. RAVENCI builds on user-friendly CMS platforms and provides training so you can update content, add blog posts, and make changes without needing a developer.`,
               content: `Absolutely. We build on user-friendly CMS platforms and provide training so you can easily update content, add blog posts, and make basic changes without needing a developer.`,
             },
             {
               title: `What makes your development different from cheaper options?`,
+              summary: `RAVENCI guarantees 80+ PageSpeed scores, provides ongoing support, uses professional development practices, and is Brisbane-based. Cheap developers often create slow, problematic sites that cost more to fix later.`,
               content: `We guarantee 80+ PageSpeed scores, provide ongoing support, use professional development practices, and we're local to Brisbane. Cheap developers often create slow, problematic sites that cost more to fix later.`,
             },
             {
               title: `Do you handle the domain and hosting setup?`,
+              summary: `Yes. All RAVENCI packages include one year of free domain registration and full hosting setup. RAVENCI hosting is recommended for optimal performance, but other quality hosts are supported.`,
               content: `Yes, all packages include 1 year free domain registration and we can handle hosting setup. We recommend our own hosting for optimal performance, but can work with other quality hosts if needed.`,
             },
           ]}
@@ -626,7 +631,7 @@ export default function WebHostingDevelopmentPage() {
                 name: "How long does a typical website take to build?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Foundation Website: 3 weeks. Growth Website: 4-6 weeks. Premium Brand & Web: 10-14 weeks total (4 weeks branding + 3-4 weeks design + 4-6 weeks development). We stick to these timelines and provide regular progress updates.",
+                  text: "Foundation websites take 3 weeks, Growth websites 4-6 weeks, and Premium Brand & Web packages 10-14 weeks. RAVENCI provides regular progress updates throughout every project.",
                 },
               },
               {
@@ -634,7 +639,7 @@ export default function WebHostingDevelopmentPage() {
                 name: "What if I'm not happy with the result?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "We guarantee your website will match your vision. Each package includes multiple revision rounds, and we won't consider the project complete until you're 100% satisfied.",
+                  text: "Every RAVENCI package includes multiple revision rounds. We guarantee the website matches your vision and won't consider the project complete until you're 100% satisfied.",
                 },
               },
               {
@@ -642,7 +647,7 @@ export default function WebHostingDevelopmentPage() {
                 name: "Can I update the website myself after it's built?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Absolutely. We build on user-friendly CMS platforms and provide training so you can easily update content, add blog posts, and make basic changes without needing a developer.",
+                  text: "Yes. RAVENCI builds on user-friendly CMS platforms and provides training so you can update content, add blog posts, and make changes without needing a developer.",
                 },
               },
               {
@@ -650,7 +655,7 @@ export default function WebHostingDevelopmentPage() {
                 name: "What makes your development different from cheaper options?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "We guarantee 80+ PageSpeed scores, provide ongoing support, use professional development practices, and we're local to Brisbane. Cheap developers often create slow, problematic sites that cost more to fix later.",
+                  text: "RAVENCI guarantees 80+ PageSpeed scores, provides ongoing support, uses professional development practices, and is Brisbane-based. Cheap developers often create slow, problematic sites that cost more to fix later.",
                 },
               },
               {
@@ -658,7 +663,7 @@ export default function WebHostingDevelopmentPage() {
                 name: "Do you handle the domain and hosting setup?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes, all packages include 1 year free domain registration and we can handle hosting setup. We recommend our own hosting for optimal performance, but can work with other quality hosts if needed.",
+                  text: "Yes. All RAVENCI packages include one year of free domain registration and full hosting setup. RAVENCI hosting is recommended for optimal performance, but other quality hosts are supported.",
                 },
               },
             ],

@@ -371,22 +371,27 @@ export default function WebAppPage() {
           items={[
             {
               title: `How do you ensure the app actually solves our business problems?`,
+              summary: `RAVENCI begins every project with a comprehensive business process analysis, mapping current workflows and identifying bottlenecks. You see exactly how the app improves operations before any code is written.`,
               content: `We start every project with a comprehensive business process analysis. We map your current workflows, identify bottlenecks, and design solutions that eliminate specific pain points. You'll see exactly how the app will improve your operations before we write a single line of code.`,
             },
             {
               title: `Can the application integrate with our existing systems?`,
+              summary: `Yes. All RAVENCI packages include API integration capabilities. Common integrations include Xero, QuickBooks, Strapi, Prismic, WordPress, and other business tools for seamless operation with your existing tech stack.`,
               content: `Yes. All our packages include API integration capabilities. We commonly integrate with accounting software (Xero, QuickBooks), CRM systems (Strapi, Prismic, WordPress, etc.), and other business tools. We make sure your app works seamlessly with your existing tech stack.`,
             },
             {
               title: `What if our needs change as we grow?`,
+              summary: `All RAVENCI applications are built with scalable architecture that handles increased users, data, and functionality. Ongoing development services are available to add new features as your business evolves.`,
               content: `We build all applications with scalability in mind. The architecture can handle increased users, data, and functionality. We also provide ongoing development services to add new features as your business evolves.`,
             },
             {
               title: `How do you handle data security and backups?`,
+              summary: `RAVENCI uses secure, stable database platforms that protect your privacy and your customers' data. Cloud-based hosting ensures users connect to the nearest servers for optimised performance.`,
               content: `The database platforms we use are secure and stable. Most importantly, they protect your privacy and that of your customers. We prioritise cloud-based hosting to make sure that your customers are connecting to servers and data that is closest to them for optimised performance.`,
             },
             {
               title: `What ROI can we expect from a custom web application?`,
+              summary: `Most clients see ROI within 6-12 months. Common results include 40-60% reduction in manual work, 25-50% faster reporting, and significantly improved customer service response times.`,
               content: `Most clients see ROI within 6-12 months through time savings, reduced errors, and improved decision-making. Common benefits include 40-60% reduction in manual work, 25-50% faster reporting, and significantly improved customer service response times.`,
             },
           ]}

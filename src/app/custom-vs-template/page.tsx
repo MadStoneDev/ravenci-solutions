@@ -79,28 +79,38 @@ const comparisonRows = [
 const faqItems = [
   {
     title: "Is a custom website worth the investment for a small business?",
+    summary:
+      "Yes, if your website drives customer acquisition. Custom websites deliver better search rankings, faster load times, and higher conversion rates. Most businesses outgrow templates within 12-18 months.",
     content:
       "If your website is a core part of how you attract customers, yes. A custom website pays for itself through better search rankings, faster load times, and higher conversion rates. Businesses that rely on foot traffic or word-of-mouth may find a template sufficient initially, but most outgrow it within 12-18 months.",
   },
   {
     title: "Can I move from a template to a custom website later?",
+    summary:
+      "Yes. Many RAVENCI clients come after outgrowing a WordPress theme or Squarespace site. Content is migrated and a custom platform is built that reflects your brand and scales with you.",
     content:
       "Absolutely. Many of our clients come to us after outgrowing a WordPress theme or Squarespace site. We migrate your content and build a custom platform that actually reflects your brand and scales with you.",
   },
   {
     title: "Why not just use WordPress with a premium theme?",
+    summary:
+      "WordPress themes add unnecessary code, rely on plugins that create security vulnerabilities, and make updates risky. A custom build delivers exactly what you need with better performance and security.",
     content:
       "WordPress themes add layers of code you don't need, rely on plugins that create security vulnerabilities, and make updates risky. A custom build gives you exactly what you need — nothing more, nothing less — with better performance and security.",
   },
   {
     title:
       "What technology does RAVENCI use for custom websites?",
+    summary:
+      "RAVENCI builds primarily with Next.js (React) for high-performance sites and WordPress for clients needing familiar CMS management. Both deliver 80+ PageSpeed scores, strong SEO, and clean code.",
     content:
       "We build primarily with Next.js (React) for high-performance sites and WordPress for clients who need familiar CMS management. Both approaches deliver 80+ PageSpeed scores, strong SEO foundations, and clean, maintainable code.",
   },
   {
     title:
       "How much does a custom website cost compared to a template?",
+    summary:
+      "RAVENCI custom websites start from $3,490. A premium WordPress theme costs $50-200 upfront, but plugins ($300-800/yr), developer customisation ($1,000-5,000), and maintenance make total ownership cost comparable with worse results.",
     content:
       "Our custom websites start from $3,490 for a Foundation site. A premium WordPress theme costs $50-200 upfront but factor in plugins ($300-800/yr), developer customisation ($1,000-5,000), and ongoing maintenance — the total cost of ownership is often comparable, with a worse result.",
   },
@@ -376,7 +386,7 @@ export default function CustomVsTemplatePage() {
               name: item.title,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: item.content,
+                text: item.summary || item.content,
               },
             })),
           }),

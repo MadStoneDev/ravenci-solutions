@@ -271,24 +271,28 @@ export default function WebMaintenancePage() {
           items={[
             {
               title: `Can't I just do this myself?`,
+              summary: `Most business owners lack the 5+ hours monthly needed for security monitoring, performance optimisation, and updates. Professional maintenance costs less than one emergency fix and protects against 2 AM breakdowns.`,
               content: `
 You absolutely could, but most business owners don't have 5+ hours monthly for security monitoring, performance optimization, and technical updates. Plus, when something breaks at 2 AM on a weekend, you'll be scrambling to fix it while losing sales. Your time is worth more than $39/hour.
 `,
             },
             {
               title: `What if my site goes down?`,
+              summary: `RAVENCI monitors 24/7 and typically restores sites within 2 hours during business hours. Proactive monitoring catches 95% of issues before they cause any downtime.`,
               content: `
 We monitor 24/7 and typically restore sites within 2 hours during business hours. Our monitoring catches 95% of issues before they cause downtime. Compare this to DIY maintenance where you might not even know your site is down until a customer tells you.
 `,
             },
             {
               title: `Is this really necessary?`,
+              summary: `WordPress sites without maintenance are 70% more likely to be hacked. A single security breach typically costs $5,000-$15,000 to fix. Professional maintenance costs less than one emergency fix per year.`,
               content: `
 WordPress sites without maintenance are 70% more likely to be hacked. One security breach typically costs $5,000-$15,000 to fix, plus the damage to your reputation. Our maintenance costs less than one emergency website fix per year.
 `,
             },
             {
               title: `What makes you different from other providers?`,
+              summary: `RAVENCI is Brisbane-based with local support, not an overseas call centre. You get direct access to your developer, a 2-hour response time during business hours, and proactive monitoring that prevents problems.`,
               content: `
 We're Brisbane-based with local support, not an overseas call center. You get direct access to our team and, if we built your website, you will get direct access to the same developer who built your site. We promise a 2-hour response time during business hours, and proactive monitoring that prevents problems rather than just reacting to them.
 `,

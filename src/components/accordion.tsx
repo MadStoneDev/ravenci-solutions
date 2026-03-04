@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { ReactNode, useState } from "react";
 
@@ -7,6 +7,7 @@ import { IconPlus, IconMinus } from "@tabler/icons-react";
 interface AccordionItem {
   title: string;
   content: string | ReactNode;
+  summary?: string;
 }
 
 const Accordion = ({
@@ -57,6 +58,11 @@ const Accordion = ({
             } transition-all duration-700 ease-in-out overflow-hidden`}
           >
             <div className={`pb-5 font-light`}>
+              {item.summary && (
+                <p className="mb-3 text-ravenci-dark/80 font-normal">
+                  {item.summary}
+                </p>
+              )}
               {typeof item.content === "string" ? (
                 <div dangerouslySetInnerHTML={{ __html: item.content }} />
               ) : (

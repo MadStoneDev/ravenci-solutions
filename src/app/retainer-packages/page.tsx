@@ -129,17 +129,23 @@ export default function RetainerPackagesPage() {
   const faqItems = [
     {
       title: "What kind of work can I use retainer hours for?",
+      summary:
+        "Anything digital: new pages, design tweaks, feature development, content updates, landing pages, email templates, and performance optimisation. Your hours are fully flexible each month.",
       content:
         "Anything digital. New pages, design tweaks, feature development, content updates, landing pages, email templates, performance optimisation — whatever moves the needle for your business that month. Your hours are fully flexible.",
     },
     {
       title: "How do unused hours work?",
+      summary:
+        "Starter hours don't roll over. Growth hours roll over for 1 month, Partner for 2 months, and Scale for 3 months. RAVENCI tracks your balance and helps plan usage.",
       content:
         "It depends on your tier. Starter hours don't roll over. Growth hours roll over for 1 month, Partner for 2 months, and Scale for 3 months. We'll always let you know your balance and help you plan usage.",
     },
     {
       title:
         "What's the difference between a retainer and your maintenance plan?",
+      summary:
+        "Maintenance covers updates, backups, and security monitoring. A retainer includes all of that plus dedicated hours for active development, design, content, and strategy work.",
       content:
         "Maintenance keeps things running — updates, backups, security monitoring. A retainer includes all of that plus dedicated hours for active development, design, content, and strategy. Think of maintenance as protection, and a retainer as progress.",
     },
@@ -150,6 +156,8 @@ export default function RetainerPackagesPage() {
     },
     {
       title: "What if I need more hours in a month?",
+      summary:
+        "Additional hours are billed at your tier's discounted overage rate. RAVENCI always confirms before doing any work beyond your included hours — no surprise charges.",
       content:
         "No problem. Additional hours are billed at your tier's overage rate, which is discounted from our standard rate. We'll always confirm before doing any work beyond your included hours.",
     },

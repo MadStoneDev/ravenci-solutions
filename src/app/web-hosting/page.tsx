@@ -235,22 +235,27 @@ export default function WebHostingPage() {
           items={[
             {
               title: `How is this different from cheap hosting like Bluehost?`,
+              summary: `RAVENCI uses enterprise-grade cloud infrastructure with automatic scaling, dedicated resources, Brisbane-based support, and all-inclusive pricing. SSL, backups, and security are included — no extra charges.`,
               content: `Our hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimization that cheap hosts can't match. Plus everything is included - SSL, backups, security - no extra charges.`,
             },
             {
               title: `What if my traffic suddenly spikes?`,
+              summary: `RAVENCI cloud hosting automatically scales to handle traffic spikes without crashing or downtime. Servers grow with your traffic, unlike shared hosting which can go offline during surges.`,
               content: `Our cloud hosting automatically scales to handle traffic spikes without your site crashing. Our servers grow with your traffic so you never have to worry about any downtime. Compare this to shared hosting where traffic spikes can take your site offline.`,
             },
             {
               title: `Do you migrate my existing website?`,
+              summary: `Yes. RAVENCI handles complete website migration from your current host, though extra charges may apply. Your site will be faster and more secure from day one with zero downtime.`,
               content: `Yes, we handle the complete migration from your current host though extra charges may apply. Your site will be faster and more secure from day one, and we'll make sure nothing breaks in the process.`,
             },
             {
               title: `What's included in the $39/month price?`,
+              summary: `Everything: cloud hosting, SSL certificate, daily backups, security monitoring, automatic scaling, and Brisbane-based support. No hidden fees, no surprise charges, no add-ons required.`,
               content: `Everything: cloud hosting, SSL certificate, daily backups, security monitoring, automatic scaling, and Brisbane-based support. No hidden fees, no surprise charges, no complex add-ons to buy.`,
             },
             {
               title: `Can I host my website elsewhere and still get your other services?`,
+              summary: `Yes, RAVENCI can work with other quality hosts. However, hosting and maintenance bundles offer the best value and performance since everything is optimised to work together.`,
               content: `While we prefer to host sites we maintain to guarantee optimal performance and security, we can work with other quality hosts. However, our hosting + maintenance bundles offer the best value and performance since everything is optimized to work together.`,
             },
           ]}

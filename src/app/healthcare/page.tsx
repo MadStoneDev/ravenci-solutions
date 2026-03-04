@@ -60,26 +60,36 @@ const features = [
 const faqItems = [
   {
     title: "How do you handle patient privacy and compliance?",
+    summary:
+      "RAVENCI builds with Australian Privacy Principles (APPs) in mind. All forms use SSL encryption with secure data handling practices and compliant third-party integrations for patient data storage.",
     content:
       "We build with the Australian Privacy Principles (APPs) in mind. All forms use SSL encryption, we implement secure data handling practices, and we can integrate with compliant third-party systems for patient data storage. While we're not legal advisors, we ensure the technical foundations support your compliance requirements.",
   },
   {
     title: "Can you integrate with our practice management software?",
+    summary:
+      "Yes. RAVENCI integrates with popular practice management systems and booking platforms including Cliniko, Halaxy, HotDoc, and HealthEngine. Any system with an API or embed option can be integrated.",
     content:
       "Yes. We regularly work with popular practice management systems and booking platforms including Cliniko, Halaxy, HotDoc, and HealthEngine. If your system offers an API or embed option, we can integrate it into your website.",
   },
   {
     title: "Do you build NDIS provider websites?",
+    summary:
+      "Yes. RAVENCI builds NDIS provider websites with clear service descriptions, transparent pricing, accessibility compliance, and easy navigation to help participants and plan managers find your services.",
     content:
       "Absolutely. NDIS provider sites need clear service descriptions, transparent pricing, accessibility compliance, and easy navigation. We build sites that help participants and plan managers find and understand your services quickly.",
   },
   {
     title: "Can you handle multi-location practices?",
+    summary:
+      "Yes. RAVENCI builds multi-location sites with individual location pages, embedded maps, separate contact details, and location-specific SEO so patients find their nearest clinic easily.",
     content:
       "Yes. We build multi-location sites with individual location pages, embedded maps, separate contact details, and location-specific SEO. Patients can easily find their nearest clinic and see relevant practitioners.",
   },
   {
     title: "How long does a healthcare website take to build?",
+    summary:
+      "Most healthcare websites take 4-8 weeks. A standard practice site with booking integration runs 4-5 weeks. Sites with patient portals, multiple locations, or custom integrations typically take 6-8 weeks.",
     content:
       "Most healthcare websites take 4-8 weeks depending on complexity. A straightforward practice site with booking integration runs 4-5 weeks. Sites with patient portals, multiple locations, or custom integrations typically take 6-8 weeks. We provide a detailed timeline during our initial consultation.",
   },
@@ -384,7 +394,7 @@ export default function HealthcarePage() {
               name: item.title,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: item.content,
+                text: item.summary || item.content,
               },
             })),
           }),

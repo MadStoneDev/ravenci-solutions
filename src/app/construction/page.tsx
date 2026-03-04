@@ -64,26 +64,36 @@ const features = [
 const faqItems = [
   {
     title: "Can you build a project portfolio that we can update ourselves?",
+    summary:
+      "Yes. RAVENCI sets up an easy-to-use CMS where your team can add projects, upload photos, update progress, and archive completed builds without a developer. Training is included.",
     content:
       "Yes. We set up an easy-to-use content management system where your team can add new projects, upload photos, update progress, and archive completed builds — no developer required. We provide training as part of the handover.",
   },
   {
     title: "Do you work with property developers too?",
+    summary:
+      "Yes. RAVENCI builds property developer websites with off-the-plan sales pages, project timelines, investor information, and real estate platform integration, tailored to the development lifecycle.",
     content:
       "Absolutely. Property developer sites have different needs — off-the-plan sales pages, project timelines, investor information, and integration with real estate platforms. We build sites tailored to the development lifecycle.",
   },
   {
     title: "Our project photos are huge. Will that slow the site down?",
+    summary:
+      "No. RAVENCI uses automatic compression, responsive image sizing, lazy loading, and modern formats like WebP. Your portfolio loads fast with a guaranteed 80+ PageSpeed score.",
     content:
       "No. We implement advanced image optimisation including automatic compression, responsive image sizing, lazy loading, and modern formats like WebP. Your portfolio will look sharp and load fast — we guarantee 80+ PageSpeed scores.",
   },
   {
     title: "Can you integrate with our CRM or project management tools?",
+    summary:
+      "Yes. RAVENCI integrates with most CRM systems offering an API, including HubSpot, Salesforce, and industry-specific tools. Lead form submissions flow directly into your existing pipeline.",
     content:
       "We can integrate with most CRM systems that offer an API — including HubSpot, Salesforce, and industry-specific tools. Lead form submissions can flow directly into your existing pipeline.",
   },
   {
     title: "How long does a construction website take to build?",
+    summary:
+      "Most construction websites take 5-8 weeks. A standard site with portfolio and lead generation runs 5-6 weeks. Sites with extensive databases, CRM integration, or custom features take 6-8 weeks.",
     content:
       "Most construction company websites take 5-8 weeks depending on the scope. A standard site with project portfolio and lead generation runs 5-6 weeks. Sites with extensive project databases, CRM integration, or custom features typically take 6-8 weeks.",
   },
@@ -392,7 +402,7 @@ export default function ConstructionPage() {
               name: item.title,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: item.content,
+                text: item.summary || item.content,
               },
             })),
           }),
