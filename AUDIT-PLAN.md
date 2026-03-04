@@ -248,6 +248,32 @@ Appears exactly once on the entire site in a blockquote. Not woven into copy, se
 - [x] 12. Fix Business Design Vehicle Wraps PriceButton broken link — `launch-your-vision` → `/launch-your-vision`
 - [x] 13. Fix Web Dev scarcity text old tier names — "Single Page Starter/Custom Development/Branding & Development" → Foundation/Growth/Premium
 
+### SEO/AEO/PERFORMANCE IMPROVEMENTS (March 2026)
+
+**Low Effort (all done):**
+- [x] 1. Add hreflang tag — `<link rel="alternate" hrefLang="en-au">` + `x-default` in layout.tsx, set `lang="en-AU"`
+- [x] 2. Throttle scroll handler — wrapped in `requestAnimationFrame` with passive listener
+- [x] 3. Add Service schema to individual service pages (web-dev, healthcare, construction) with OfferCatalog pricing
+- [x] 4. Add Article/BlogPosting schema to article detail pages
+- [x] 5. Add BreadcrumbList schema to service pages and article detail pages
+- [x] 6. Commented-out Branding accordion on homepage — removed
+
+**Medium Effort (all done):**
+- [x] 7. Add loading.tsx and error.tsx — root + article-specific skeleton loaders and branded error boundary
+- [x] 8. Custom 404 page — already existed, skipped
+- [x] 9. Cookie consent banner — accept/decline, localStorage, GA consent opt-out on decline
+- [x] 10. Accessibility statement page — `/accessibility-statement` under `(policies)`, footer + sitemap
+- [x] 11. Comparison content page — `/custom-vs-template` with responsive table, verdict, FAQ, schemas
+- [x] 12. Use Next.js `<Image>` for article featured images — listing + detail, added Strapi to `remotePatterns`
+- [x] 13. Visual breadcrumbs — reusable `<Breadcrumbs>` component with dark mode, added to services, articles, case studies
+
+**Higher Effort / Content Strategy:**
+- [x] 14. Original research — `/brisbane-website-audit` ("We Audited 50 Brisbane Business Websites") with audit stats, category breakdowns, industry scores, key takeaways, FAQ, Article + BreadcrumbList + FAQPage schemas
+- [x] 15. Shorten FAQ answers to 30-50 words for AI citation — added `summary` field to Accordion, updated 59 FAQ items across 12 pages, updated FAQPage JSON-LD to use summaries
+- [ ] 16. Cross-platform presence — Google Business Profile, Clutch, GoodFirms, DesignRush listings (external task, not code)
+- [ ] 17. Video testimonials from existing clients (external task, not code)
+- [x] 18. Comparison table component — reusable `ComparisonTable` (RAVENCI vs WP Agency vs DIY), added to homepage
+
 ---
 
 ## 8. PRICING STRATEGY — What to Show, What to Hide, What to Charge
