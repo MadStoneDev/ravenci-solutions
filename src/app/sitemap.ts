@@ -103,6 +103,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/custom-vs-template`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/privacy-policy`,
       lastModified: new Date(),
       changeFrequency: "yearly",
@@ -110,6 +116,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/terms-and-conditions`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/accessibility-statement`,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.3,

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import Breadcrumbs from "@/components/breadcrumbs";
 import CaseStudyCard from "@/components/case-study-card";
 import { getAllCaseStudies } from "@/data/case-studies";
 
@@ -46,8 +47,9 @@ export default function CaseStudiesPage() {
         className={`content-section pt-32 pb-24 px-5 sm:px-20 xl:px-36 bg-white`}
       >
         <article className={`max-w-2xl col-span-12 flex flex-col gap-2`}>
+          <Breadcrumbs items={[{ label: "Case Studies" }]} />
           <h1
-            className={`text-4xl md:text-5xl lg:text-h1 font-medium text-ravenci-dark`}
+            className={`mt-2 text-4xl md:text-5xl lg:text-h1 font-medium text-ravenci-dark`}
           >
             Our Client Work Speaks for Itself
           </h1>

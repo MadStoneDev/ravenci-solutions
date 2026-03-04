@@ -1,9 +1,9 @@
 ﻿import Link from "next/link";
-
-import { IconArrowLeft } from "@tabler/icons-react";
+import Image from "next/image";
 
 import { getArticleBySlug } from "@/lib/article";
 import { ContentBlock } from "@/lib/markdown-parse";
+import Breadcrumbs from "@/components/breadcrumbs";
 
 export async function generateMetadata({
   params,
@@ -135,18 +135,13 @@ export default async function ArticlePage({
         className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid justify-center min-h-[250px] bg-white`}
       >
         <article className={`col-span-12 flex flex-col max-w-3xl z-10`}>
-          <Link
-            href={`/articles`}
-            className={`group relative mb-4 pl-1 pr-2 py-0.5 inline-flex items-center gap-2 w-fit hover:scale-110 font-bold text-sm text-ravenci-primary hover:text-white transition-all duration-300 ease-in-out`}
-          >
-            <IconArrowLeft size={18} className={`z-10`} />
-            <span className={`z-10`}>Back to Articles</span>
-
-            <div
-              className={`absolute top-0 left-full group-hover:left-0 right-0 bottom-0 bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </Link>
-          <h1 className="text-4xl font-bold">{article.Title}</h1>
+          <Breadcrumbs
+            items={[
+              { label: "Articles", href: "/articles" },
+              { label: article.Title },
+            ]}
+          />
+          <h1 className="mt-4 text-4xl font-bold">{article.Title}</h1>
           <section
             className={`mt-4 w-full flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-sm`}
           >
@@ -172,11 +167,14 @@ export default async function ArticlePage({
 
           {/* Featured Image */}
           {article.Featured_Image && (
-            <section className={`my-6 w-full h-[350px] overflow-hidden`}>
-              <img
+            <section className="relative my-6 w-full h-[350px] overflow-hidden">
+              <Image
                 src={`https://strapi.ravenci.solutions${article.Featured_Image.url}`}
-                alt={article.Title}
-                className={`object-cover object-center w-full h-full`}
+                alt={article.Featured_Image.alternativeText || article.Title}
+                fill
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-cover object-center"
+                priority
               />
             </section>
           )}

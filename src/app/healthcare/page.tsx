@@ -3,6 +3,7 @@ import Link from "next/link";
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 
 import Accordion from "@/components/accordion";
+import Breadcrumbs from "@/components/breadcrumbs";
 import PriceButton from "@/components/price-button";
 import TestimonialsSingle from "@/components/testimonials-single";
 import { getTestimonialsForIndustry } from "@/data/testimonials";
@@ -117,7 +118,8 @@ export default function HealthcarePage() {
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
         <article className={`max-w-2xl col-span-12 flex flex-col gap-2`}>
-          <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
+          <Breadcrumbs items={[{ label: "Healthcare Websites" }]} />
+          <h1 className={`mt-2 text-4xl md:text-5xl lg:text-h1 font-medium`}>
             Websites for Healthcare Professionals
           </h1>
           <h2

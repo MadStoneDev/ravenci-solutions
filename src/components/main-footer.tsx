@@ -170,6 +170,15 @@ export default function MainFooter() {
           </div>
 
           <div className={`group/link relative px-2`}>
+            <Link href={`/custom-vs-template`} className={`relative z-10`}>
+              Custom vs Template
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
             <Link href={`/launch-your-vision`} className={`relative z-10`}>
               Launch Your Vision
             </Link>
@@ -283,6 +292,13 @@ export default function MainFooter() {
               className={`py-0.5 hover:px-1 hover:text-white hover:bg-ravenci-primary transition-all duration-300`}
             >
               Terms of Service
+            </Link>
+            &nbsp;|&nbsp;
+            <Link
+              href={`/accessibility-statement`}
+              className={`py-0.5 hover:px-1 hover:text-white hover:bg-ravenci-primary transition-all duration-300`}
+            >
+              Accessibility
             </Link>
           </div>
         </article>

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import Breadcrumbs from "@/components/breadcrumbs";
 
 export const metadata = {
   title: "Articles & Insights - RAVENCI Solutions",
@@ -40,7 +42,8 @@ export default async function ArticlesPage() {
         className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
         <article className={`col-span-12 flex flex-col`}>
-          <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
+          <Breadcrumbs items={[{ label: "Articles" }]} />
+          <h1 className={`mt-4 text-4xl md:text-5xl lg:text-h1 font-medium`}>
             Code, Create, Transform
           </h1>
           <h2 className={`text-2xl md:text-3xl lg:text-h2 font-light`}>
@@ -72,14 +75,19 @@ export default async function ArticlesPage() {
               return (
                 <article key={id} className={`flex flex-col`}>
                   <div
-                    className={`mb-4 w-full bg-cover bg-center`}
-                    style={{
-                      aspectRatio: `5/6`,
-                      backgroundImage: Featured_Image
-                        ? `url(https://strapi.ravenci.solutions${Featured_Image.url})`
-                        : ``,
-                    }}
-                  ></div>
+                    className="relative mb-4 w-full overflow-hidden"
+                    style={{ aspectRatio: "5/6" }}
+                  >
+                    {Featured_Image && (
+                      <Image
+                        src={`https://strapi.ravenci.solutions${Featured_Image.url}`}
+                        alt={Featured_Image.alternativeText || Title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+                        className="object-cover object-center"
+                      />
+                    )}
+                  </div>
                   <div
                     className={`mb-2 group px-2 py-1 relative flex w-fit hover:scale-105 transition-all duration-300 ease-in-out`}
                   >

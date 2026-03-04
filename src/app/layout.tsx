@@ -10,6 +10,7 @@ import MainFooter from "@/components/main-footer";
 import MainNavigation from "@/components/main-navigation";
 import SpinningCircleText from "@/components/spinning-circle-text";
 import ReCaptchaProvider from "@/components/recaptcha-provider";
+import CookieConsent from "@/components/cookie-consent";
 
 const lexend = Lexend({
   variable: "--font-lexend",
@@ -214,6 +215,7 @@ export default function RootLayout({
         </ReCaptchaProvider>
 
         <MicrosoftClarity />
+        <CookieConsent />
       </body>
     </html>
   );

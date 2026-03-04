@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { IconArrowLeft, IconCircleCheckFilled } from "@tabler/icons-react";
+import { IconCircleCheckFilled } from "@tabler/icons-react";
 
 import type { CaseStudy } from "@/data/case-studies";
+import Breadcrumbs from "@/components/breadcrumbs";
 import CaseStudyMetricsBar from "@/components/case-study-metrics-bar";
 import TestimonialCarousel from "@/components/testimonials-single";
 
@@ -30,16 +31,13 @@ export default function CaseStudyVisualShowcase({
         ></div>
 
         <div className={`relative z-10 pt-32 pb-20 px-5 sm:px-20 xl:px-36 w-full`}>
-          <Link
-            href={`/case-studies`}
-            className={`group relative mb-6 pl-1 pr-2 py-0.5 inline-flex items-center gap-2 w-fit hover:scale-110 font-bold text-sm text-white hover:text-white transition-all duration-300 ease-in-out`}
-          >
-            <IconArrowLeft size={18} className={`z-10`} />
-            <span className={`z-10`}>Back to Case Studies</span>
-            <div
-              className={`absolute top-0 left-full group-hover:left-0 right-0 bottom-0 bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </Link>
+          <Breadcrumbs
+            items={[
+              { label: "Case Studies", href: "/case-studies" },
+              { label: caseStudy.clientName },
+            ]}
+            dark
+          />
 
           <span
             className={`block mb-4 text-xs font-medium tracking-wider uppercase text-ravenci-primary`}

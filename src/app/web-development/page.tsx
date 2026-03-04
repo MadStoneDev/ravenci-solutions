@@ -1,6 +1,7 @@
 ﻿import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
+import Breadcrumbs from "@/components/breadcrumbs";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
@@ -141,7 +142,8 @@ export default function WebHostingDevelopmentPage() {
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
         <article className={`col-span-12 flex flex-col`}>
-          <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
+          <Breadcrumbs items={[{ label: "Web Development" }]} />
+          <h1 className={`mt-4 text-4xl md:text-5xl lg:text-h1 font-medium`}>
             Build it Right From the Get-Go!
           </h1>
           <h2
