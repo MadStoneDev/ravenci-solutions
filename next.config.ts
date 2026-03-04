@@ -1,14 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "strapi.ravenci.solutions",
-      },
-    ],
-  },
   webpack: (config, { dev }) => {
     if (dev) {
       config.watchOptions = {

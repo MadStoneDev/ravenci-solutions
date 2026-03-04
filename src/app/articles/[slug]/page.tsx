@@ -1,16 +1,21 @@
-﻿import Link from "next/link";
 import Image from "next/image";
+import { notFound } from "next/navigation";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
-import { getArticleBySlug } from "@/lib/article";
-import { ContentBlock } from "@/lib/markdown-parse";
+import { getArticleBySlug, getAllSlugs } from "@/lib/articles";
+import { mdxComponents } from "@/lib/mdx-components";
 import Breadcrumbs from "@/components/breadcrumbs";
+
+export function generateStaticParams() {
+  return getAllSlugs().map((slug) => ({ slug }));
+}
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const article = await getArticleBySlug((await params).slug);
+  const article = getArticleBySlug((await params).slug);
 
   if (!article) {
     return {
@@ -20,40 +25,32 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${article.Title} | RAVENCI Solutions`,
-    description: article.seo?.Meta_Description || ``,
-    keywords: article.seo?.Meta_Keywords,
+    title: `${article.title} | RAVENCI Solutions`,
+    description: article.seo?.metaDescription || "",
+    keywords: article.seo?.metaKeywords,
     openGraph: {
-      title: article.seo?.Meta_Title || article.Title,
-      description: article.seo?.Meta_Description || article.Excerpt,
-      images: article.Featured_Image
+      title: article.seo?.metaTitle || article.title,
+      description: article.seo?.metaDescription || article.excerpt,
+      images: article.featuredImage
         ? [
             {
-              url: `https://strapi.ravenci.solutions${article.Featured_Image.url}`,
-              width: article.Featured_Image.width,
-              height: article.Featured_Image.height,
-              alt: article.Featured_Image.alternativeText || article.Title,
+              url: article.featuredImage.src,
+              width: article.featuredImage.width,
+              height: article.featuredImage.height,
+              alt: article.featuredImage.alt || article.title,
             },
           ]
         : [],
       type: "article",
-      authors: article.author?.Name ? [article.author.Name] : undefined,
+      authors: [article.author],
     },
     twitter: {
       card: "summary_large_image",
-      title: article.seo?.metaTitle || article.Title,
-      description: article.seo?.metaDescription || article.Excerpt,
-      images: article.Featured_Image
-        ? [`https://strapi.ravenci.solutions${article.Featured_Image.url}`]
-        : [],
+      title: article.seo?.metaTitle || article.title,
+      description: article.seo?.metaDescription || article.excerpt,
+      images: article.featuredImage ? [article.featuredImage.src] : [],
     },
   };
-}
-
-function formatContent(content: any[]) {
-  return content
-    .map((block, index) => <ContentBlock key={index} block={block} />)
-    .filter(Boolean);
 }
 
 export default async function ArticlePage({
@@ -62,10 +59,10 @@ export default async function ArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = await getArticleBySlug(slug);
+  const article = getArticleBySlug(slug);
 
   if (!article) {
-    return <div>Article not found</div>;
+    notFound();
   }
 
   const jsonLdBreadcrumb = {
@@ -87,7 +84,7 @@ export default async function ArticlePage({
       {
         "@type": "ListItem",
         position: 3,
-        name: article.Title,
+        name: article.title,
         item: `https://ravenci.solutions/articles/${slug}`,
       },
     ],
@@ -96,14 +93,14 @@ export default async function ArticlePage({
   const jsonLdArticle = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: article.Title,
-    description: article.seo?.Meta_Description || article.Excerpt || "",
-    image: article.Featured_Image
-      ? `https://strapi.ravenci.solutions${article.Featured_Image.url}`
+    headline: article.title,
+    description: article.seo?.metaDescription || article.excerpt || "",
+    image: article.featuredImage
+      ? `https://ravenci.solutions${article.featuredImage.src}`
       : undefined,
     author: {
       "@type": "Person",
-      name: article.author?.Name || "RAVENCI Solutions",
+      name: article.author || "RAVENCI Solutions",
     },
     publisher: {
       "@type": "Organization",
@@ -113,7 +110,7 @@ export default async function ArticlePage({
         url: "https://ravenci.solutions/ravenci-logo.svg",
       },
     },
-    datePublished: article.publishedAt || article.createdAt,
+    datePublished: article.publishedAt,
     dateModified: article.updatedAt || article.publishedAt,
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -138,15 +135,15 @@ export default async function ArticlePage({
           <Breadcrumbs
             items={[
               { label: "Articles", href: "/articles" },
-              { label: article.Title },
+              { label: article.title },
             ]}
           />
-          <h1 className="mt-4 text-4xl font-bold">{article.Title}</h1>
+          <h1 className="mt-4 text-4xl font-bold">{article.title}</h1>
           <section
             className={`mt-4 w-full flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-sm`}
           >
             <article className={`text-neutral-400`}>
-              <h3>Written by {article.author.Name}</h3>
+              <h3>Written by {article.author}</h3>
             </article>
 
             <article
@@ -156,7 +153,7 @@ export default async function ArticlePage({
                 className={`text-neutral-400 group-hover:text-white z-10 transition-all duration-300 ease-in-out`}
               >
                 {article.categories.length > 0
-                  ? article.categories[0].Name
+                  ? article.categories[0]
                   : ` `}
               </p>
               <div
@@ -166,11 +163,11 @@ export default async function ArticlePage({
           </section>
 
           {/* Featured Image */}
-          {article.Featured_Image && (
+          {article.featuredImage && (
             <section className="relative my-6 w-full h-[350px] overflow-hidden">
               <Image
-                src={`https://strapi.ravenci.solutions${article.Featured_Image.url}`}
-                alt={article.Featured_Image.alternativeText || article.Title}
+                src={article.featuredImage.src}
+                alt={article.featuredImage.alt || article.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 768px"
                 className="object-cover object-center"
@@ -180,7 +177,7 @@ export default async function ArticlePage({
           )}
 
           <div className="prose lg:prose-xl">
-            {formatContent(article.Content)}
+            <MDXRemote source={article.content} components={mdxComponents} />
           </div>
         </article>
       </section>

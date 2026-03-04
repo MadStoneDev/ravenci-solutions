@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { CASE_STUDIES } from "@/data/case-studies";
+import { getAllArticles } from "@/lib/articles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://ravenci.solutions";
@@ -150,5 +151,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return [...staticPages, ...caseStudyPages];
+  // Article pages
+  const articlePages: MetadataRoute.Sitemap = getAllArticles().map((a) => ({
+    url: `${baseUrl}/articles/${a.slug}`,
+    lastModified: new Date(a.updatedAt || a.publishedAt),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...caseStudyPages, ...articlePages];
 }
