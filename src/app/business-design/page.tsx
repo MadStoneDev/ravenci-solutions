@@ -129,7 +129,7 @@ export default function BusinessDesignPage() {
           <h3
             className={`pb-6 border-b border-white/20 font-serif font-medium text-xl`}
           >
-            Trusted by 40+ Australian businesses to create brands that command
+            Trusted by 100+ Australian businesses to create brands that command
             premium prices
           </h3>
           {testimonials[0] && (

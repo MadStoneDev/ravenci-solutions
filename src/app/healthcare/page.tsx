@@ -163,21 +163,21 @@ export default function HealthcarePage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>30+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>100+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
-              Businesses Served
+              Australian Businesses
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>80+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>450+</p>
+            <p className={`mt-2 text-sm text-white/80 font-light`}>
+              Projects Delivered
+            </p>
+          </div>
+          <div>
+            <p className={`text-4xl md:text-5xl font-bold`}>85+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               PageSpeed Score
-            </p>
-          </div>
-          <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>100%</p>
-            <p className={`mt-2 text-sm text-white/80 font-light`}>
-              Privacy-Aware Builds
             </p>
           </div>
         </div>
@@ -257,7 +257,7 @@ export default function HealthcarePage() {
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white flex-shrink-0`}
                 />
-                80+ PageSpeed score guaranteed
+                85+ PageSpeed score guaranteed
               </li>
             </ul>
 
@@ -375,7 +375,7 @@ export default function HealthcarePage() {
                   price: "5000",
                   priceCurrency: "AUD",
                   description:
-                    "Custom healthcare website with online booking integration, patient portal, privacy compliance, NDIS-ready features, and 80+ PageSpeed score.",
+                    "Custom healthcare website with online booking integration, patient portal, privacy compliance, NDIS-ready features, and 85+ PageSpeed score.",
                 },
               ],
             },

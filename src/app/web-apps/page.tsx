@@ -82,7 +82,7 @@ export default function WebAppPage() {
           <h3
             className={`pb-6 border-b border-white/20 font-serif font-medium text-xl`}
           >
-            Trusted by 30+ Brisbane businesses to build platforms that transform
+            Trusted by 100+ Australian businesses to build platforms that transform
             operations
           </h3>
           {testimonials[0] && (
@@ -231,12 +231,6 @@ export default function WebAppPage() {
                 subCallToAction={`Enquire for a tailored proposal`}
               />
 
-              <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
-                <p className="text-sm text-yellow-200">
-                  ⚡ Limited: We only take on 10 Process Automation projects per
-                  quarter
-                </p>
-              </div>
             </div>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
@@ -292,12 +286,6 @@ export default function WebAppPage() {
                 subCallToAction={`Enquire for a tailored proposal`}
               />
 
-              <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
-                <p className="text-sm text-yellow-200">
-                  ⚡ Limited: We only take on 6 Business Platform projects per
-                  quarter
-                </p>
-              </div>
             </div>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
@@ -351,12 +339,6 @@ export default function WebAppPage() {
                 subCallToAction={`Enquire for a tailored proposal`}
               />
 
-              <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
-                <p className="text-sm text-yellow-200">
-                  ⚡ Exclusive: We only take on 3 Enterprise Solution projects
-                  per quarter
-                </p>
-              </div>
             </div>
           </article>
         </section>

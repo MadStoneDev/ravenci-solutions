@@ -151,6 +151,45 @@ export default function RootLayout({
     ],
   };
 
+  const jsonLdWebSite = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "RAVENCI Solutions",
+    url: "https://ravenci.solutions",
+    publisher: {
+      "@type": "Organization",
+      name: "RAVENCI Solutions",
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate:
+          "https://ravenci.solutions/articles?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const jsonLdVideo = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "RAVENCI Solutions — Digital Development & Design",
+    description:
+      "See how RAVENCI Solutions delivers high-performance custom websites for Australian businesses. 20+ years of experience, 85+ PageSpeed guaranteed.",
+    thumbnailUrl: "https://ravenci.solutions/og-image.jpg",
+    uploadDate: "2024-01-01",
+    contentUrl: "https://ravenci.solutions/ravenci-promo.mp4",
+    publisher: {
+      "@type": "Organization",
+      name: "RAVENCI Solutions",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://ravenci.solutions/ravenci-logo.svg",
+      },
+    },
+  };
+
   const jsonLdLocalBusiness = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -197,6 +236,18 @@ export default function RootLayout({
             __html: JSON.stringify(jsonLdLocalBusiness),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdWebSite),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdVideo),
+          }}
+        />
         <meta name="geo.region" content="AU-QLD" />
         <meta name="geo.placename" content="Brisbane" />
       </head>
@@ -206,9 +257,15 @@ export default function RootLayout({
       <body
         className={`relative ${lexend.variable} ${playfairDisplay.variable} antialiased`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-ravenci-primary focus:text-white focus:rounded-md focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <ReCaptchaProvider>
           <MainNavigation />
-          {children}
+          <div id="main-content">{children}</div>
           <MainFooter />
 
           <SpinningCircleText text={"Book Now · Free Consultation · "} />

@@ -16,6 +16,7 @@ export const metadata = {
   title: "Our Process — The RAVENCI Method | RAVENCI Solutions",
   description:
     "Discover how RAVENCI Solutions in Brisbane delivers results. Our 6-step process takes your project from discovery to launch and beyond — with 20+ years of experience behind every decision.",
+  alternates: { canonical: "/our-process" },
 };
 
 const steps = [
@@ -66,7 +67,7 @@ const steps = [
       "This is where it all comes together. Clean, performant code built to modern standards. We develop with speed, accessibility, and SEO baked in from the start — not bolted on after.",
     highlights: [
       "Clean, maintainable code",
-      "80+ Google PageSpeed guaranteed",
+      "85+ Google PageSpeed guaranteed",
       "SEO-optimised structure and markup",
       "CMS setup with user training",
     ],
@@ -160,7 +161,7 @@ export default function OurProcessPage() {
             Strategy, Design, Development, Testing, and Ongoing Support.
             Foundation websites take 3 weeks, Growth websites 4-6 weeks, and
             Premium Brand & Web projects 10-14 weeks. Every project includes
-            revision rounds and 80+ PageSpeed guaranteed.
+            revision rounds and 85+ PageSpeed guaranteed.
           </p>
         </article>
       </section>
@@ -248,7 +249,7 @@ export default function OurProcessPage() {
               <p
                 className={`text-4xl md:text-5xl font-bold text-ravenci-primary`}
               >
-                50+
+                450+
               </p>
               <p className={`mt-2 text-neutral-400`}>Projects Delivered</p>
             </div>
@@ -256,7 +257,7 @@ export default function OurProcessPage() {
               <p
                 className={`text-4xl md:text-5xl font-bold text-ravenci-primary`}
               >
-                80+
+                85+
               </p>
               <p className={`mt-2 text-neutral-400`}>Average PageSpeed Score</p>
             </div>
@@ -306,6 +307,27 @@ export default function OurProcessPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      {/* HowTo JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How RAVENCI Builds a Custom Website",
+            description:
+              "RAVENCI's proven 6-step web development process: Discovery, Strategy, Design, Development, Testing, and Ongoing Support.",
+            totalTime: "P14W",
+            step: steps.map((step, index) => ({
+              "@type": "HowToStep",
+              position: index + 1,
+              name: step.name,
+              text: step.description,
+            })),
+          }),
+        }}
+      />
 
       {/* FAQPage JSON-LD */}
       <script

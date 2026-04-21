@@ -40,7 +40,7 @@ const rows: ComparisonRow[] = [
     diy: "no",
   },
   {
-    feature: "80+ PageSpeed guaranteed",
+    feature: "85+ PageSpeed guaranteed",
     ravenci: "yes",
     agency: "no",
     diy: "no",
@@ -88,7 +88,7 @@ const rows: ComparisonRow[] = [
     diy: "yes",
   },
   {
-    feature: "No plugin vulnerabilities",
+    feature: "Clean, minimal codebase",
     ravenci: "yes",
     agency: "no",
     diy: "partial",
@@ -108,7 +108,7 @@ export default function ComparisonTable() {
                 RAVENCI
               </th>
               <th className="py-4 px-4 text-center font-bold text-neutral-500 w-1/5">
-                WordPress Agency
+                Typical Agency
               </th>
               <th className="py-4 px-4 text-center font-bold text-neutral-500 w-1/5">
                 DIY Builder
@@ -161,7 +161,7 @@ export default function ComparisonTable() {
               </div>
               <div className="flex flex-col items-center gap-1">
                 <CellIcon value={row.agency} />
-                <span className="text-neutral-400">WP Agency</span>
+                <span className="text-neutral-400">Agency</span>
               </div>
               <div className="flex flex-col items-center gap-1">
                 <CellIcon value={row.diy} />

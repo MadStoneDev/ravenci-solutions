@@ -1,13 +1,16 @@
-﻿import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
-import PriceButton from "@/components/price-button";
+import Image from "next/image";
+import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
+import PricingCards from "@/components/pricing-cards";
+import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
   title: "Website Development - RAVENCI Solutions",
   description:
     "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $3,490.",
+  alternates: { canonical: "/web-development" },
 };
 
 export default function WebHostingDevelopmentPage() {
@@ -138,6 +141,8 @@ export default function WebHostingDevelopmentPage() {
           }),
         }}
       />
+
+      {/* Hero Section */}
       <section
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
@@ -155,12 +160,13 @@ export default function WebHostingDevelopmentPage() {
             RAVENCI Solutions builds custom websites for Australian businesses
             using Next.js and WordPress. Prices start from $3,490 for a
             foundation site to $14,990 for a full brand and web package. Every
-            build includes 80+ PageSpeed scores, CMS setup, SEO, and ongoing
+            build includes 85+ PageSpeed scores, CMS setup, SEO, and ongoing
             support. Based in Brisbane with 20+ years of experience.
           </p>
         </article>
       </section>
 
+      {/* Social Proof Bar */}
       <section
         className={`p-10 flex flex-col items-center gap-3 bg-ravenci-primary text-white text-center`}
       >
@@ -168,7 +174,7 @@ export default function WebHostingDevelopmentPage() {
           <h3
             className={`pb-6 border-b border-white/20 font-serif font-medium text-xl`}
           >
-            Trusted by 30+ businesses across Australia to build websites that
+            Trusted by 100+ Australian businesses to build websites that
             actually work
           </h3>
           {testimonials[0] && (
@@ -194,55 +200,9 @@ export default function WebHostingDevelopmentPage() {
         </div>
       </section>
 
-      <div className={`grid grid-cols-1 lg:grid-cols-2 bg-white`}>
-        <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 space-y-14 bg-neutral-200/50`}
-        >
-          <article className={`max-w-lg`}>
-            <h3 className={`mb-8 font-serif text-h3 font-bold`}>
-              What's Included with Every Build
-            </h3>
-            <ul className={`flex flex-col gap-8`}>
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <IconCircleCheckFilled
-                    className="text-ravenci-primary flex-shrink-0"
-                    size={24}
-                  />
-                  <p className={`text-neutral-500/80`}>
-                    <span className="font-bold text-ravenci-dark">
-                      {feature.title}:
-                    </span>{" "}
-                    {feature.description}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </article>
-
-          <article className={`max-w-lg`}>
-            <h3 className={`mb-8 font-serif text-h3 font-bold`}>
-              Plenty of Add-ons to Suit Your Needs
-            </h3>
-            <ul className={`flex flex-col gap-8`}>
-              {addons.map((addon, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <IconCircleCheckFilled
-                    className="text-ravenci-primary flex-shrink-0"
-                    size={24}
-                  />
-                  <p className={`text-neutral-500/80`}>
-                    <span className="font-bold text-ravenci-dark">
-                      {addon.title}:
-                    </span>{" "}
-                    {addon.description}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </article>
-        </section>
-
+      {/* Two-Column Section (Rebalanced) */}
+      <div className={`grid grid-cols-1 lg:grid-cols-2`}>
+        {/* Left Column — Dark: Pain Points + Why Choose + Intro */}
         <section
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
@@ -261,37 +221,39 @@ export default function WebHostingDevelopmentPage() {
               </ul>
             </div>
 
-            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
+            <h3
+              className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}
+            >
               Why Choose RAVENCI Over Other Developers?
             </h3>
             <ul className={`flex flex-col gap-4 mb-6 text-neutral-400/90`}>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
-                  className={`p-1 bg-ravenci-primary rounded-full text-white`}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
                 Fixed pricing vs endless scope creep
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
-                  className={`p-1 bg-ravenci-primary rounded-full text-white`}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
                 Brisbane-based vs offshore development
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
-                  className={`p-1 bg-ravenci-primary rounded-full text-white`}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
                 Ongoing support vs build-and-abandon
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
-                  className={`p-1 bg-ravenci-primary rounded-full text-white`}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                80+ PageSpeed guaranteed vs "we'll make it pretty"
+                85+ PageSpeed guaranteed vs "we'll make it pretty"
               </li>
             </ul>
             <p className={`mb-4 text-neutral-400/90`}>
@@ -299,28 +261,116 @@ export default function WebHostingDevelopmentPage() {
               It should respect your vision and bring it to life in a way that
               simply gets out of the way.
             </p>
-            <p className={`mb-4 text-neutral-400/90`}>
+            <p className={`text-neutral-400/90`}>
               That's how we approach it at RAVENCI. To make it even simpler for
-              you, we offer three tiers of development services, each designed
-              to meet your specific needs.
+              you, we offer three tiers of development services, each designed to
+              meet your specific needs.
             </p>
-            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
-              1. Foundation Website
+          </article>
+        </section>
+
+        {/* Right Column — Light: Features */}
+        <section
+          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
+        >
+          <article className={`max-w-lg`}>
+            <h3 className={`mb-8 font-serif text-h3 font-bold`}>
+              What's Included with Every Build
             </h3>
-            <p className={`mb-4 text-neutral-400/90`}>
-              This is the most basic option for any business looking to get
-              their foot in the door. It's a simple and quick way to get your
-              website up and running, with a focus on performance and
-              accessibility. Get your business known by search engines like
-              Google and Bing with this affordable option.
-            </p>
-            <div className={`mb-16 text-white`}>
-              <Accordion
-                titleClassName={`py-3 px-3 mb-2 text-lg bg-white text-neutral-900`}
-                items={[
-                  {
-                    title: `What's Included`,
-                    content: `
+            <ul className={`flex flex-col gap-8`}>
+              {features.map((feature, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <IconCircleCheckFilled
+                    className="text-ravenci-primary flex-shrink-0"
+                    size={24}
+                  />
+                  <p className={`text-neutral-600`}>
+                    <span className="font-bold text-ravenci-dark">
+                      {feature.title}:
+                    </span>{" "}
+                    {feature.description}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </section>
+      </div>
+
+      {/* Full-Width Add-ons Section */}
+      <section
+        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
+      >
+        <h3
+          className={`mb-10 font-serif text-h3 font-bold text-center`}
+        >
+          Plenty of Add-ons to Suit Your Needs
+        </h3>
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto`}>
+          {addons.map((addon, index) => (
+            <div key={index} className="flex items-start gap-2">
+              <IconCircleCheckFilled
+                className="text-ravenci-primary flex-shrink-0"
+                size={24}
+              />
+              <p className={`text-neutral-500/80`}>
+                <span className="font-bold text-ravenci-dark">
+                  {addon.title}:
+                </span>{" "}
+                {addon.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Showcase Section */}
+      <section className="py-20 px-5 sm:px-20 xl:px-36 bg-white">
+        <h3 className="mb-10 font-serif text-h3 font-bold text-center">
+          Some of Our Recent Work
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { name: "Peninsula Homes", image: "/showcase-images/Client - Peninsula Homes.png" },
+            { name: "SAC Consulting", image: "/showcase-images/Client - SAC Consulting.png" },
+            { name: "Nikita Morell", image: "/showcase-images/Client - Nikita Morell.png" },
+            { name: "Covenant Security", image: "/showcase-images/Client - Covenant Security.png" },
+            { name: "Coast Remedial Solutions", image: "/showcase-images/Client - Coast Remedial Solutions.png" },
+            { name: "Intercorp Developments", image: "/showcase-images/Client - Intercorp Developments.png" },
+          ].map((project) => (
+            <div key={project.name} className="group relative overflow-hidden rounded-xl">
+              <Image
+                src={project.image}
+                alt={`${project.name} website by RAVENCI`}
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-10">
+                <p className="text-sm font-medium text-white">{project.name}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Full-Width Pricing Section */}
+      <section
+        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
+      >
+        <h3
+          className={`mb-12 font-serif text-h3 font-bold text-white text-center`}
+        >
+          Choose Your Package
+        </h3>
+        <PricingCards
+          tiers={[
+            {
+              name: "1. Foundation Website",
+              price: "3,490",
+              description:
+                "The most basic option for any business looking to get their foot in the door. A simple and quick way to get your website up and running, with a focus on performance and accessibility.",
+              accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Custom single-page design</li>
     <li>Responsive mobile-optimized layout</li>
@@ -333,55 +383,21 @@ export default function WebHostingDevelopmentPage() {
     <li>Footer with social media links</li>
     <li>Basic Google Analytics setup</li>
     <li>Basic on-page SEO</li>
-    <li>80+ Google PageSpeed score guaranteed</li>
+    <li>85+ Google PageSpeed score guaranteed</li>
     <li>1 round of revisions</li>
     <li>3 weeks delivery</li>
     <li>Discounted Hosting with RAVENCI</li>
     <li>Discounted Maintenance with RAVENCI</li>
     <li>1 Year Domain Subscription FREE</li>
     <li>1 Year SSL certificate with RAVENCI Hosting FREE</li>
-</ul>
-`,
-                  },
-                ]}
-              />
-              <PriceButton
-                price={"3,490"}
-                link={`/launch-your-vision`}
-                frequency={""}
-                includeFrom={true}
-                callToAction={`Foundation Website`}
-                subCallToAction={`Request a proposal`}
-              />
-
-              <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
-                <p className="text-sm text-yellow-200">
-                  ⚡ Limited: We only take on 12 new Foundation Website
-                  projects per quarter to ensure quality and timely delivery
-                  while still allowing you time for checking and feedback
-                </p>
-              </div>
-            </div>
-
-            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
-              2. Growth Website
-            </h3>
-            <p className={`mb-4 text-neutral-400/90`}>
-              Already have your design sorted? Have your website built just
-              right. Whether you've worked with a designer, have existing brand
-              guidelines, or know exactly what you want - we will turn your
-              vision into a high-performing, professional website. We guarantee
-              that your final website will be identical to the one you
-              envisioned.
-            </p>
-
-            <div className={`mb-16 text-white`}>
-              <Accordion
-                titleClassName={`py-3 px-3 mb-2 text-lg bg-white text-neutral-900`}
-                items={[
-                  {
-                    title: `What's Included`,
-                    content: `
+</ul>`,
+            },
+            {
+              name: "2. Growth Website",
+              price: "7,490",
+              description:
+                "Already have your design sorted? Have your website built just right. Whether you've worked with a designer, have existing brand guidelines, or know exactly what you want — we will turn your vision into a high-performing, professional website.",
+              accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Professional responsive build</li>
     <li>Multi-page custom website (up to 8 pages)</li>
@@ -398,57 +414,21 @@ export default function WebHostingDevelopmentPage() {
     <li>Advanced Google Analytics with goal tracking</li>
     <li>Basic SEO setup (meta tags, sitemap)</li>
     <li>Social media integration</li>
-    <li>80+ Google PageSpeed score guaranteed</li>
+    <li>85+ Google PageSpeed score guaranteed</li>
     <li>2 rounds of revisions</li>
     <li>4-6 weeks delivery</li>
     <li>Discounted Hosting with RAVENCI</li>
     <li>Discounted Maintenance with RAVENCI</li>
     <li>1 Year Domain Subscription FREE</li>
     <li>1 Year SSL certificate with RAVENCI Hosting FREE</li>
-</ul>
-`,
-                  },
-                ]}
-              />
-
-              <PriceButton
-                price={"7,490"}
-                link={`/launch-your-vision`}
-                frequency={""}
-                includeFrom={true}
-                callToAction={`Growth Website`}
-                subCallToAction={`Request a proposal`}
-              />
-
-              <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
-                <p className="text-sm text-yellow-200">
-                  ⚡ Limited: We only take on 6 new Growth Website projects
-                  per quarter to ensure quality and timely delivery while
-                  allowing for feedback and revision rounds
-                </p>
-              </div>
-            </div>
-
-            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
-              3. Premium Brand & Web
-            </h3>
-            <p className={`mb-4 text-neutral-400/90`}>
-              Our Branding & Development option offers a complete transformation
-              for businesses who want it all. Starting from scratch or need a
-              complete rebrand? This is the perfect solution for you. We will
-              create your entire brand identity from the ground up, then design
-              and build a stunning website that brings it all together. From
-              logo to launch, get everything you need to stand out in the
-              market.
-            </p>
-
-            <div className={`mb-16 text-white`}>
-              <Accordion
-                titleClassName={`py-3 px-3 mb-2 text-lg bg-white text-neutral-900`}
-                items={[
-                  {
-                    title: `What's Included`,
-                    content: `
+</ul>`,
+            },
+            {
+              name: "3. Premium Brand & Web",
+              price: "14,990",
+              description:
+                "A complete transformation for businesses who want it all. Starting from scratch or need a complete rebrand? We will create your entire brand identity from the ground up, then design and build a stunning website that brings it all together.",
+              accordionContent: `
 <p class="mt-3 text-neutral-100">Branding</p>
 <ul class="list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Complete brand identity development</li>
@@ -490,40 +470,20 @@ export default function WebHostingDevelopmentPage() {
     <li>Advanced Google Analytics with goal tracking</li>
     <li>Basic SEO setup (meta tags, sitemap)</li>
     <li>Social media integration</li>
-    <li>80+ Google PageSpeed score guaranteed</li>
+    <li>85+ Google PageSpeed score guaranteed</li>
     <li>2 rounds of development revisions</li>
     <li>4-6 weeks delivery</li>
     <li>Discounted Hosting with RAVENCI</li>
     <li>Discounted Maintenance with RAVENCI</li>
     <li>1 Year Domain Subscription FREE</li>
     <li>1 Year SSL certificate with RAVENCI Hosting FREE</li>
-</ul>
-`,
-                  },
-                ]}
-              />
+</ul>`,
+            },
+          ]}
+        />
+      </section>
 
-              <PriceButton
-                price={"14,990"}
-                link={`/launch-your-vision`}
-                frequency={""}
-                includeFrom={true}
-                callToAction={`Premium Brand & Web`}
-                subCallToAction={`Request a proposal`}
-              />
-
-              <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
-                <p className="text-sm text-yellow-200">
-                  ⚡ Limited: We only take on 3 new Premium Brand & Web
-                  projects per quarter to ensure quality and timely delivery
-                  while allowing for feedback, changes and revisions
-                </p>
-              </div>
-            </div>
-          </article>
-        </section>
-      </div>
-
+      {/* FAQ Section */}
       <section
         className={`content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white`}
       >
@@ -548,8 +508,8 @@ export default function WebHostingDevelopmentPage() {
             },
             {
               title: `What makes your development different from cheaper options?`,
-              summary: `RAVENCI guarantees 80+ PageSpeed scores, provides ongoing support, uses professional development practices, and is Brisbane-based. Cheap developers often create slow, problematic sites that cost more to fix later.`,
-              content: `We guarantee 80+ PageSpeed scores, provide ongoing support, use professional development practices, and we're local to Brisbane. Cheap developers often create slow, problematic sites that cost more to fix later.`,
+              summary: `RAVENCI guarantees 85+ PageSpeed scores, provides ongoing support, uses professional development practices, and is Brisbane-based. Cheap developers often create slow, problematic sites that cost more to fix later.`,
+              content: `We guarantee 85+ PageSpeed scores, provide ongoing support, use professional development practices, and we're local to Brisbane. Cheap developers often create slow, problematic sites that cost more to fix later.`,
             },
             {
               title: `Do you handle the domain and hosting setup?`,
@@ -560,9 +520,17 @@ export default function WebHostingDevelopmentPage() {
         />
       </section>
 
+      {/* Footer Spacer */}
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      {/* Sticky CTA for Mobile */}
+      <StickyCTA
+        link="/launch-your-vision"
+        startingPrice={3490}
+        label="Request a Proposal"
+      />
 
       <script
         type="application/ld+json"
@@ -598,7 +566,7 @@ export default function WebHostingDevelopmentPage() {
                   name: "Foundation Website",
                   price: "3490",
                   priceCurrency: "AUD",
-                  description: "Custom single-page design with CMS setup, SEO, and 80+ PageSpeed score. 3 weeks delivery.",
+                  description: "Custom single-page design with CMS setup, SEO, and 85+ PageSpeed score. 3 weeks delivery.",
                 },
                 {
                   "@type": "Offer",
@@ -655,7 +623,7 @@ export default function WebHostingDevelopmentPage() {
                 name: "What makes your development different from cheaper options?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "RAVENCI guarantees 80+ PageSpeed scores, provides ongoing support, uses professional development practices, and is Brisbane-based. Cheap developers often create slow, problematic sites that cost more to fix later.",
+                  text: "RAVENCI guarantees 85+ PageSpeed scores, provides ongoing support, uses professional development practices, and is Brisbane-based. Cheap developers often create slow, problematic sites that cost more to fix later.",
                 },
               },
               {

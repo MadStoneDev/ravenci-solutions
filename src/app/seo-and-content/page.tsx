@@ -130,7 +130,7 @@ export default function SEOContentPage() {
       <section className="p-10 flex flex-col items-center gap-3 bg-ravenci-primary text-white text-center">
         <div className="max-w-lg">
           <h3 className="pb-6 border-b border-white/20 font-serif font-medium text-xl">
-            Trusted by 30+ Australian businesses to win the right searches and
+            Trusted by 100+ Australian businesses to win the right searches and
             convert
           </h3>
           {testimonials[0] && (

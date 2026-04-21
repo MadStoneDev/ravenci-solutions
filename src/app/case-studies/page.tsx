@@ -15,6 +15,7 @@ export const metadata: Metadata = {
       "Explore real results from real businesses. See how RAVENCI Solutions has helped Australian companies grow.",
     type: "website",
   },
+  alternates: { canonical: "/case-studies" },
 };
 
 export default function CaseStudiesPage() {
@@ -34,12 +35,28 @@ export default function CaseStudiesPage() {
     },
   };
 
+  const jsonLdItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "RAVENCI Case Studies",
+    itemListElement: caseStudies.map((cs, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `https://ravenci.solutions/case-studies/${cs.slug}`,
+      name: cs.clientName,
+    })),
+  };
+
   return (
     <main className={`flex flex-col`}>
       {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdItemList) }}
       />
 
       {/* Hero */}
@@ -77,21 +94,21 @@ export default function CaseStudiesPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>30+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>100+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
-              Businesses Served
+              Australian Businesses
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>80+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>450+</p>
+            <p className={`mt-2 text-sm text-white/80 font-light`}>
+              Projects Delivered
+            </p>
+          </div>
+          <div>
+            <p className={`text-4xl md:text-5xl font-bold`}>85+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Avg. PageSpeed Score
-            </p>
-          </div>
-          <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>100%</p>
-            <p className={`mt-2 text-sm text-white/80 font-light`}>
-              Australian Owned
             </p>
           </div>
         </div>

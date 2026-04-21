@@ -79,9 +79,9 @@ const faqItems = [
   {
     title: "Our project photos are huge. Will that slow the site down?",
     summary:
-      "No. RAVENCI uses automatic compression, responsive image sizing, lazy loading, and modern formats like WebP. Your portfolio loads fast with a guaranteed 80+ PageSpeed score.",
+      "No. RAVENCI uses automatic compression, responsive image sizing, lazy loading, and modern formats like WebP. Your portfolio loads fast with a guaranteed 85+ PageSpeed score.",
     content:
-      "No. We implement advanced image optimisation including automatic compression, responsive image sizing, lazy loading, and modern formats like WebP. Your portfolio will look sharp and load fast — we guarantee 80+ PageSpeed scores.",
+      "No. We implement advanced image optimisation including automatic compression, responsive image sizing, lazy loading, and modern formats like WebP. Your portfolio will look sharp and load fast — we guarantee 85+ PageSpeed scores.",
   },
   {
     title: "Can you integrate with our CRM or project management tools?",
@@ -148,7 +148,7 @@ export default function ConstructionPage() {
             RAVENCI Solutions builds websites for construction companies and
             property developers in Brisbane. From $8,000, we deliver project
             portfolio showcases, lead generation forms, heavy image
-            optimisation, and local SEO. 80+ PageSpeed guaranteed with 20+ years
+            optimisation, and local SEO. 85+ PageSpeed guaranteed with 20+ years
             of experience.
           </p>
         </article>
@@ -168,21 +168,21 @@ export default function ConstructionPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>30+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>100+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
-              Businesses Served
+              Australian Businesses
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>80+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>450+</p>
+            <p className={`mt-2 text-sm text-white/80 font-light`}>
+              Projects Delivered
+            </p>
+          </div>
+          <div>
+            <p className={`text-4xl md:text-5xl font-bold`}>85+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               PageSpeed Score
-            </p>
-          </div>
-          <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>100%</p>
-            <p className={`mt-2 text-sm text-white/80 font-light`}>
-              Australian Owned
             </p>
           </div>
         </div>
@@ -262,7 +262,7 @@ export default function ConstructionPage() {
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white flex-shrink-0`}
                 />
-                80+ PageSpeed score guaranteed
+                85+ PageSpeed score guaranteed
               </li>
             </ul>
 
@@ -383,7 +383,7 @@ export default function ConstructionPage() {
                   price: "8000",
                   priceCurrency: "AUD",
                   description:
-                    "Custom construction website with project portfolio, lead generation, mobile-friendly design, and 80+ PageSpeed score.",
+                    "Custom construction website with project portfolio, lead generation, mobile-friendly design, and 85+ PageSpeed score.",
                 },
               ],
             },

@@ -5,6 +5,7 @@ export const metadata = {
   title: "About - RAVENCI Solutions",
   description:
     "Meet the team behind RAVENCI Solutions. 20+ years of digital experience, an engineering mindset, and a commitment to transparency — building websites that perform for Australian businesses.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
@@ -65,19 +66,19 @@ export default function AboutPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>30+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>100+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
-              Australian Businesses Served
+              Australian Businesses
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>50+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>450+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Projects Delivered
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>80+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>85+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               PageSpeed Guaranteed
             </p>
@@ -171,7 +172,7 @@ export default function AboutPage() {
             </p>
             <p>
               That's why RAVENCI websites and designs aren't just attractive —
-              they're built to a standard. We guarantee 80+ Google PageSpeed
+              they're built to a standard. We guarantee 85+ Google PageSpeed
               scores because we believe performance isn't optional. We build on
               proven platforms and follow best practices because we've seen what
               happens when shortcuts are taken.
@@ -338,6 +339,42 @@ export default function AboutPage() {
               description:
                 "A founder-led web development studio building high-performance websites for Australian businesses.",
             },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Richard Haddad",
+            jobTitle: "Founder",
+            worksFor: {
+              "@type": "Organization",
+              name: "RAVENCI Solutions",
+              url: "https://ravenci.solutions",
+            },
+            knowsAbout: [
+              "Web Development",
+              "Next.js",
+              "React",
+              "WordPress",
+              "UI/UX Design",
+              "Structural Engineering",
+              "SEO",
+            ],
+            alumniOf: [
+              {
+                "@type": "EducationalOrganization",
+                name: "University (Structural Engineering Degree)",
+              },
+              {
+                "@type": "EducationalOrganization",
+                name: "Design College (Graphic Design Diploma)",
+              },
+            ],
+            sameAs: ["https://www.linkedin.com/company/91459779/"],
           }),
         }}
       />

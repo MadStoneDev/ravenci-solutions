@@ -17,6 +17,7 @@ export const metadata: Metadata = {
       "Compare custom-built websites vs templates and DIY builders. Cost, performance, SEO, and scalability breakdown for Australian businesses.",
     type: "article",
   },
+  alternates: { canonical: "/custom-vs-template" },
 };
 
 const comparisonRows = [
@@ -28,22 +29,22 @@ const comparisonRows = [
   },
   {
     feature: "Performance",
-    custom: "80+ PageSpeed scores, optimised code, lazy loading, CDN-ready",
-    template: "Plugin-heavy, often 40-60 PageSpeed scores out of the box",
+    custom: "85+ PageSpeed scores, optimised code, lazy loading, CDN-ready",
+    template: "Often reliant on plugins, resulting in 40-60 PageSpeed scores",
     diy: "Varies wildly — often bloated with unused CSS/JS",
   },
   {
     feature: "SEO",
     custom:
       "Structured data, semantic HTML, meta tags, sitemap, schema markup built in",
-    template: "Basic SEO plugin support, manual configuration required",
+    template: "Relies on third-party SEO plugins rather than building it into the code",
     diy: "Limited control over meta tags, URL structure, and schema",
   },
   {
     feature: "Scalability",
     custom: "Add pages, features, and integrations as your business grows",
     template:
-      "Limited by theme architecture — major changes often require rebuilds",
+      "Limited by off-the-shelf themes — major changes often require rebuilds",
     diy: "Locked into the platform's feature set",
   },
   {
@@ -51,13 +52,13 @@ const comparisonRows = [
     custom:
       "No unnecessary plugins, minimal attack surface, SSL, secure headers",
     template:
-      "Vulnerable to plugin exploits — WordPress sites are a top hacking target",
+      "Stacking plugins for basic tasks creates security vulnerabilities and an expanding attack surface",
     diy: "Platform-managed but you have no control over patches",
   },
   {
     feature: "Ownership",
     custom: "You own everything — code, design, content, hosting choice",
-    template: "You own content but depend on the theme developer for updates",
+    template: "You own content but depend on the agency or theme/plugin developers for updates",
     diy: "Platform owns the infrastructure — you rent access",
   },
   {
@@ -65,7 +66,7 @@ const comparisonRows = [
     custom:
       "Hosting + optional maintenance. No recurring theme/plugin licence fees",
     template:
-      "Hosting + theme updates + premium plugin subscriptions ($300-800/yr)",
+      "Hosting + theme updates + plugin licence renewals ($300-800/yr)",
     diy: "Monthly platform fee ($20-80/mo) plus transaction fees on some",
   },
   {
@@ -87,32 +88,32 @@ const faqItems = [
   {
     title: "Can I move from a template to a custom website later?",
     summary:
-      "Yes. Many RAVENCI clients come after outgrowing a WordPress theme or Squarespace site. Content is migrated and a custom platform is built that reflects your brand and scales with you.",
+      "Yes. Many RAVENCI clients come after outgrowing a template site or DIY builder. Content is migrated and a custom platform is built that reflects your brand and scales with you.",
     content:
-      "Absolutely. Many of our clients come to us after outgrowing a WordPress theme or Squarespace site. We migrate your content and build a custom platform that actually reflects your brand and scales with you.",
+      "Absolutely. Many of our clients come to us after outgrowing a template site or DIY builder. We migrate your content and build a custom platform that actually reflects your brand and scales with you.",
   },
   {
-    title: "Why not just use WordPress with a premium theme?",
+    title: "What's wrong with the way most agencies build websites?",
     summary:
-      "WordPress themes add unnecessary code, rely on plugins that create security vulnerabilities, and make updates risky. A custom build delivers exactly what you need with better performance and security.",
+      "Most agencies rely on pre-built themes and plugins rather than writing clean code. This leads to bloated sites, poor PageSpeed scores, security vulnerabilities from plugin stacking, and dependency on third-party developers for updates.",
     content:
-      "WordPress themes add layers of code you don't need, rely on plugins that create security vulnerabilities, and make updates risky. A custom build gives you exactly what you need — nothing more, nothing less — with better performance and security.",
+      "Most agencies assemble websites from pre-built themes and plugins rather than writing clean, purpose-built code. The result is bloated sites with poor PageSpeed scores, security vulnerabilities from plugin stacking, and long-term dependency on third-party theme and plugin developers for updates. RAVENCI writes code — we understand what every line does, so your site is fast, secure, and fully under your control.",
   },
   {
     title:
       "What technology does RAVENCI use for custom websites?",
     summary:
-      "RAVENCI builds primarily with Next.js (React) for high-performance sites and WordPress for clients needing familiar CMS management. Both deliver 80+ PageSpeed scores, strong SEO, and clean code.",
+      "RAVENCI builds primarily with Next.js (React) for high-performance sites and WordPress for clients needing familiar CMS management. Both deliver 85+ PageSpeed scores, strong SEO, and clean code.",
     content:
-      "We build primarily with Next.js (React) for high-performance sites and WordPress for clients who need familiar CMS management. Both approaches deliver 80+ PageSpeed scores, strong SEO foundations, and clean, maintainable code.",
+      "We build primarily with Next.js (React) for high-performance sites and WordPress for clients who need familiar CMS management. Both approaches deliver 85+ PageSpeed scores, strong SEO foundations, and clean, maintainable code.",
   },
   {
     title:
-      "How much does a custom website cost compared to a template?",
+      "How much does a custom website cost compared to a typical agency build?",
     summary:
-      "RAVENCI custom websites start from $3,490. A premium WordPress theme costs $50-200 upfront, but plugins ($300-800/yr), developer customisation ($1,000-5,000), and maintenance make total ownership cost comparable with worse results.",
+      "RAVENCI custom websites start from $3,490. A typical agency build may look cheaper upfront, but plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance make total ownership cost comparable with worse results.",
     content:
-      "Our custom websites start from $3,490 for a Foundation site. A premium WordPress theme costs $50-200 upfront but factor in plugins ($300-800/yr), developer customisation ($1,000-5,000), and ongoing maintenance — the total cost of ownership is often comparable, with a worse result.",
+      "Our custom websites start from $3,490 for a Foundation site. A typical agency build may look cheaper upfront, but factor in plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance — the total cost of ownership is often comparable, with a worse result.",
   },
 ];
 
@@ -132,33 +133,33 @@ export default function CustomVsTemplatePage() {
           <p className="mt-6 max-w-2xl text-neutral-500/80">
             Every business needs a website, but not every business needs the same
             kind. We break down the real differences between a custom-built
-            website, a WordPress template, and a DIY builder — so you can make an
+            website, a typical agency build, and a DIY builder — so you can make an
             informed decision based on cost, performance, and long-term value.
           </p>
         </article>
       </section>
 
       {/* Comparison Table */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-200/50">
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-white">
         <h3 className="mb-10 font-serif text-h3 font-bold">
           Side-by-Side Comparison
         </h3>
 
         {/* Desktop table */}
-        <div className="hidden lg:block overflow-x-auto">
+        <div className="hidden lg:block overflow-x-auto rounded-xl border border-neutral-200">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b-2 border-ravenci-dark">
-                <th className="py-4 pr-6 text-left font-bold text-ravenci-dark w-1/6">
+              <tr className="bg-neutral-50 border-b border-neutral-200">
+                <th className="py-4 pl-6 pr-4 text-left font-bold text-ravenci-dark w-[14%]">
                   Feature
                 </th>
-                <th className="py-4 px-6 text-left font-bold text-ravenci-primary w-3/12">
-                  Custom Build
+                <th className="py-4 px-4 text-left font-bold text-ravenci-primary w-[30%] bg-ravenci-primary/5">
+                  RAVENCI Custom
                 </th>
-                <th className="py-4 px-6 text-left font-bold text-neutral-600 w-3/12">
-                  WordPress Template
+                <th className="py-4 px-4 text-left font-bold text-neutral-700 w-[28%]">
+                  Typical Agency
                 </th>
-                <th className="py-4 px-6 text-left font-bold text-neutral-600 w-3/12">
+                <th className="py-4 px-4 text-left font-bold text-neutral-700 w-[28%]">
                   DIY Builder
                 </th>
               </tr>
@@ -167,18 +168,18 @@ export default function CustomVsTemplatePage() {
               {comparisonRows.map((row, index) => (
                 <tr
                   key={index}
-                  className="border-b border-neutral-200 last:border-0"
+                  className="border-b border-neutral-100 last:border-0"
                 >
-                  <td className="py-5 pr-6 font-bold text-ravenci-dark align-top">
+                  <td className="py-5 pl-6 pr-4 font-bold text-ravenci-dark align-top">
                     {row.feature}
                   </td>
-                  <td className="py-5 px-6 text-neutral-600 align-top">
+                  <td className="py-5 px-4 text-ravenci-dark align-top bg-ravenci-primary/5">
                     {row.custom}
                   </td>
-                  <td className="py-5 px-6 text-neutral-500 align-top">
+                  <td className="py-5 px-4 text-neutral-700 align-top">
                     {row.template}
                   </td>
-                  <td className="py-5 px-6 text-neutral-500 align-top">
+                  <td className="py-5 px-4 text-neutral-700 align-top">
                     {row.diy}
                   </td>
                 </tr>
@@ -188,30 +189,30 @@ export default function CustomVsTemplatePage() {
         </div>
 
         {/* Mobile cards */}
-        <div className="lg:hidden space-y-8">
+        <div className="lg:hidden space-y-6">
           {comparisonRows.map((row, index) => (
-            <div key={index} className="bg-white p-5 rounded-lg">
+            <div key={index} className="p-5 rounded-xl border border-neutral-200">
               <h4 className="mb-4 font-bold text-ravenci-dark text-lg">
                 {row.feature}
               </h4>
               <div className="space-y-3 text-sm">
-                <div>
-                  <span className="font-medium text-ravenci-primary">
+                <div className="p-3 rounded-lg bg-ravenci-primary/5">
+                  <span className="font-bold text-ravenci-primary">
                     Custom:
                   </span>{" "}
-                  <span className="text-neutral-600">{row.custom}</span>
+                  <span className="text-ravenci-dark">{row.custom}</span>
                 </div>
                 <div>
-                  <span className="font-medium text-neutral-600">
+                  <span className="font-bold text-neutral-700">
                     Template:
                   </span>{" "}
-                  <span className="text-neutral-500">{row.template}</span>
+                  <span className="text-neutral-700">{row.template}</span>
                 </div>
                 <div>
-                  <span className="font-medium text-neutral-600">
+                  <span className="font-bold text-neutral-700">
                     DIY Builder:
                   </span>{" "}
-                  <span className="text-neutral-500">{row.diy}</span>
+                  <span className="text-neutral-700">{row.diy}</span>
                 </div>
               </div>
             </div>
@@ -221,7 +222,7 @@ export default function CustomVsTemplatePage() {
 
       {/* Quick verdict */}
       <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white">
-        <div className="max-w-3xl">
+        <div>
           <h3 className="mb-8 font-serif text-h3 font-bold">
             The Quick Verdict
           </h3>
@@ -263,7 +264,7 @@ export default function CustomVsTemplatePage() {
             </div>
             <div>
               <h4 className="mb-3 text-lg font-bold text-neutral-300">
-                A Template Works If...
+                A Typical Agency Works If...
               </h4>
               <ul className="space-y-2 text-neutral-400/90">
                 <li className="flex gap-2">
