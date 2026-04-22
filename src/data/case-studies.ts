@@ -234,7 +234,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     featuredImage: "/showcase-images/Client - Coast Remedial Solutions.png",
     clientLogo: "/clients/coast-remedial-solutions-logo.svg",
     clientUrl: "https://coastremedialsolutions.com.au",
-    template: "results-driven",
+    template: "premium",
     metaTitle: "Coast Remedial Solutions Case Study | RAVENCI Solutions",
     metaDescription:
       "How RAVENCI built a high-performance website for Coast Remedial Solutions that established their authority in the remedial building industry.",
@@ -298,9 +298,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         "The new website established Coast Remedial Solutions as the digital authority in their space, generating consistent organic enquiries from high-value clients.",
       ],
       metrics: [
-        { value: "90+", label: "Google PageSpeed Score" },
+        { value: "90+", label: "Google PageSpeed" },
         { value: "< 2s", label: "Page Load Time" },
-        { value: "SEO-Ready", label: "Local Search Optimised" },
       ],
     },
     galleryImages: [
@@ -334,7 +333,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     featuredImage: "/showcase-images/Client - Intercorp Developments.png",
     clientLogo: "/clients/intercorp-logo.svg",
     clientUrl: "https://intercorpdevelopments.com.au",
-    template: "results-driven",
+    template: "premium",
     metaTitle: "Intercorp Developments Case Study | RAVENCI Solutions",
     metaDescription:
       "How RAVENCI created a premium digital experience for Intercorp Developments that mirrors the sophistication of their property projects.",
@@ -396,11 +395,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "The redesigned website became a key part of Intercorp's sales toolkit, impressing stakeholders and generating quality leads from serious buyers and investors.",
       ],
-      metrics: [
-        { value: "85+", label: "Google PageSpeed Score" },
-        { value: "Premium", label: "Visual Experience" },
-        { value: "Investor-Ready", label: "Sales Toolkit" },
-      ],
+      metrics: [{ value: "85+", label: "Google PageSpeed" }],
     },
     galleryImages: [
       "/showcase-images/Client - Intercorp Developments.png",
@@ -433,7 +428,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     featuredImage: "/showcase-images/Client - SAC Consulting.png",
     clientLogo: "/clients/sac-consulting-logo.svg",
     clientUrl: "https://sacconsulting.com.au",
-    template: "results-driven",
+    template: "premium",
     metaTitle: "SAC Consulting Case Study | RAVENCI Solutions",
     metaDescription:
       "How RAVENCI built a professional web platform for SAC Consulting that strengthened their brand and attracted enterprise-level clients.",
@@ -496,9 +491,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         "The new website became a powerful business development tool, helping SAC Consulting win larger contracts and attract higher-value clients.",
       ],
       metrics: [
-        { value: "90+", label: "Google PageSpeed Score" },
+        { value: "90+", label: "Google PageSpeed" },
         { value: "< 2s", label: "Page Load Time" },
-        { value: "Conversion-Led", label: "Contact Flow" },
       ],
     },
     galleryImages: [
@@ -522,7 +516,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     featuredImage: "/showcase-images/Client - Nikita Morell.png",
     clientLogo: "/clients/nikita-morell-logo.svg",
     clientUrl: "https://nikitamorell.com",
-    template: "visual-showcase",
+    template: "premium",
     metaTitle: "Nikita Morell Case Study | RAVENCI Solutions",
     metaDescription:
       "How RAVENCI created a visually stunning e-commerce platform for Nikita Morell that elevated their brand and boosted online sales.",
@@ -584,11 +578,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "The new store transformed Nikita Morell's online sales, creating a shopping experience that customers love and return to.",
       ],
-      metrics: [
-        { value: "85+", label: "Google PageSpeed Score" },
-        { value: "Mobile-First", label: "Shopping Experience" },
-        { value: "Streamlined", label: "Checkout Flow" },
-      ],
+      metrics: [{ value: "85+", label: "Google PageSpeed" }],
     },
     galleryImages: [
       "/showcase-images/Client - Nikita Morell.png",
@@ -611,7 +601,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     featuredImage: "/showcase-images/Client - Cadeaurable.png",
     clientLogo: "/clients/cadeaurable-logo.svg",
     clientUrl: "https://cadeaurable.com.au",
-    template: "visual-showcase",
+    template: "premium",
     metaTitle: "Cadeaurable Case Study | RAVENCI Solutions",
     metaDescription:
       "How RAVENCI built a luxury e-commerce experience for Cadeaurable that captures the joy of gift-giving and drives repeat customers.",
@@ -673,11 +663,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "The new platform captured the essence of the Cadeaurable brand, resulting in increased sales, higher customer satisfaction, and a growing base of repeat gifters.",
       ],
-      metrics: [
-        { value: "85+", label: "Google PageSpeed Score" },
-        { value: "Gift-Led", label: "Shopping UX" },
-        { value: "Occasion-Based", label: "Filtering System" },
-      ],
+      metrics: [{ value: "85+", label: "Google PageSpeed" }],
     },
     galleryImages: [
       "/showcase-images/Client - Cadeaurable.png",
@@ -710,7 +696,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     featuredImage: "/showcase-images/Client - Covenant Security.png",
     clientLogo: "/clients/covenant-security-solutions-logo.svg",
     clientUrl: "https://covenantsecuritysolutions.com.au",
-    template: "results-driven",
+    template: "premium",
     metaTitle: "Covenant Security Solutions Case Study | RAVENCI Solutions",
     metaDescription:
       "How RAVENCI built a professional web platform for Covenant Security Solutions that communicates trust and drives business growth.",
@@ -773,9 +759,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         "The new website positioned Covenant Security Solutions as the professional choice in their market, directly contributing to business growth and client acquisition.",
       ],
       metrics: [
-        { value: "90+", label: "Google PageSpeed Score" },
+        { value: "90+", label: "Google PageSpeed" },
         { value: "< 2s", label: "Page Load Time" },
-        { value: "Trust-Led", label: "Design Approach" },
       ],
     },
     galleryImages: [
