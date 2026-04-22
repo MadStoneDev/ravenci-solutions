@@ -80,9 +80,9 @@ export default function PlatformsSection() {
           <Link
             key={platform.name}
             href={platform.href}
-            className="bg-white p-6 md:p-8 flex flex-col items-center justify-center gap-4 min-h-[180px] hover:bg-neutral-50 transition-colors duration-300 group"
+            className="bg-white p-6 md:p-8 flex flex-col items-center justify-center gap-5 min-h-[220px] hover:bg-neutral-50 transition-colors duration-300 group"
           >
-            <div className="h-14 flex items-center justify-center">
+            <div className="h-24 flex items-center justify-center">
               {platform.logo ? (
                 // Using native <img> for SVG logos — Next.js <Image> has
                 // quirks with SVGs (no AVIF/WebP optimisation gain anyway)
@@ -90,7 +90,7 @@ export default function PlatformsSection() {
                 <img
                   src={platform.logo}
                   alt={platform.name}
-                  className="max-h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                  className="h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               ) : (
                 <span className="font-sans text-2xl font-bold tracking-tight text-ravenci-dark group-hover:text-ravenci-primary transition-colors duration-300">
