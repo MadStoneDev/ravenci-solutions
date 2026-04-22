@@ -94,19 +94,225 @@ export interface CaseStudy {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 export const CASE_STUDIES: CaseStudy[] = [
-  // ── 1. Peninsula Homes ──────────────────────────────────────────────────────
+  // ── 1. DIRT (newest) ────────────────────────────────────────────────────────
+  // TODO: Richard to fill in real hero copy, problem/approach/results, screenshots
+  {
+    slug: "dirt",
+    clientName: "DIRT",
+    industry: "other",
+    industryLabel: "Technology",
+    services: ["web-development"],
+    serviceLabels: ["Web Development"],
+    excerpt:
+      "A modern Next.js + Plasmic build with marketing automation and analytics tightly integrated from launch.",
+    featuredImage: "/showcase-images/Client - DIRT.png",
+    clientLogo: "/clients/dirt-logo.svg",
+    // clientUrl: "https://dirt.com.au", // TODO: Richard to confirm
+    template: "premium",
+    metaTitle: "DIRT Case Study | RAVENCI Solutions",
+    metaDescription:
+      "How RAVENCI built a modern Next.js + Plasmic site for DIRT with ActiveCampaign, ClickUp and Google Analytics integration.",
+    heroHeadline: "A Modern Foundation, Built for Growth",
+    heroSubheadline:
+      "Custom Next.js with Plasmic visual editing, plus marketing automation and analytics wired in from day one.",
+
+    year: 2026,
+    timeline: "TBC",
+    techStack: ["Next.js", "Plasmic", "ActiveCampaign", "ClickUp", "Google Analytics"],
+    collaborators: [
+      { role: "Development", name: "RAVENCI Solutions" },
+      { role: "Design", name: "The Other Design Co." },
+    ],
+
+    problem: {
+      heading: "The Challenge",
+      paragraphs: [
+        "TODO: Add the project background — what was DIRT trying to achieve, and what wasn't working before RAVENCI got involved.",
+      ],
+      image: "/showcase-images/Client - DIRT.png",
+    },
+    approach: {
+      heading: "Our Approach",
+      paragraphs: [
+        "TODO: Walk through the build approach — Next.js for performance, Plasmic for in-house content control, and the integration architecture connecting ActiveCampaign, ClickUp and Google Analytics.",
+      ],
+      highlights: [
+        "Custom Next.js for performance",
+        "Plasmic for client-managed content",
+        "ActiveCampaign for marketing automation",
+        "ClickUp project tracking integration",
+        "Google Analytics for measurement",
+      ],
+      image: "/showcase-images/Client - DIRT.png",
+    },
+    features: [
+      {
+        title: "Next.js + Plasmic Architecture",
+        description:
+          "TODO: What this combination unlocks for the client (speed, flexibility, in-house editing).",
+        image: "/showcase-images/Client - DIRT.png",
+      },
+      {
+        title: "Marketing Automation Wired In",
+        description:
+          "TODO: How ActiveCampaign integration drives the lead funnel from form submission through nurture.",
+        image: "/showcase-images/Client - DIRT.png",
+      },
+    ],
+    results: {
+      heading: "The Results",
+      paragraphs: [
+        "TODO: Outcomes for DIRT — performance figures, lead generation, time-to-publish improvements, etc.",
+      ],
+      metrics: [
+        { value: "90+", label: "Google PageSpeed" },
+      ],
+    },
+    galleryImages: [
+      "/showcase-images/Client - DIRT.png",
+    ],
+    order: 1,
+    featured: true,
+  },
+
+  // ── 2. NNAccountability ─────────────────────────────────────────────────────
+  // TODO: Richard to fill in real hero copy, problem/approach/results, screenshots
+  {
+    slug: "nnaccountability",
+    clientName: "NNAccountability",
+    industry: "professional-services",
+    industryLabel: "Professional Services",
+    services: ["web-development", "maintenance"],
+    serviceLabels: ["Web Development", "Web Maintenance"],
+    excerpt:
+      "A WordPress build for an accountability-focused service business, with ongoing maintenance keeping the site sharp.",
+    featuredImage: "/showcase-images/Client - NNAccountability.png",
+    clientLogo: "/clients/nnaccountability-logo.svg",
+    // clientUrl: "https://nnaccountability.com", // TODO: Richard to confirm
+    template: "premium",
+    metaTitle: "NNAccountability Case Study | RAVENCI Solutions",
+    metaDescription:
+      "How RAVENCI built and maintains the NNAccountability WordPress website with custom development and ongoing care.",
+    heroHeadline: "A Trusted Platform for an Accountability Practice",
+    heroSubheadline:
+      "Custom WordPress build with PHP and JavaScript fitted to the business — and an ongoing maintenance plan keeping it healthy.",
+
+    year: 2026,
+    timeline: "TBC",
+    techStack: ["WordPress", "Custom Builder", "JavaScript", "PHP"],
+    collaborators: [
+      { role: "Development", name: "RAVENCI Solutions" },
+      { role: "Design", name: "Studio1 Design" },
+    ],
+
+    problem: {
+      heading: "The Challenge",
+      paragraphs: [
+        "TODO: NNAccountability's project background — the brief, what they needed, where they were starting from.",
+      ],
+      image: "/showcase-images/Client - NNAccountability.png",
+    },
+    approach: {
+      heading: "Our Approach",
+      paragraphs: [
+        "TODO: How RAVENCI approached the build — design partnership with Studio1 Design, WordPress with custom builder for content control, ongoing maintenance for long-term health.",
+      ],
+      highlights: [
+        "Custom WordPress build, no off-the-shelf theme",
+        "Designed in partnership with Studio1 Design",
+        "Ongoing maintenance plan for long-term care",
+      ],
+      image: "/showcase-images/Client - NNAccountability.png",
+    },
+    results: {
+      heading: "The Results",
+      paragraphs: [
+        "TODO: Outcomes — what the new site enabled for the practice.",
+      ],
+      metrics: [
+        { value: "85+", label: "Google PageSpeed" },
+      ],
+    },
+    galleryImages: [
+      "/showcase-images/Client - NNAccountability.png",
+    ],
+    order: 2,
+    featured: true,
+  },
+
+  // ── 3. Going Dark ──────────────────────────────────────────────────────────
+  // TODO: Richard to fill in real hero copy, problem/approach/results, screenshots
+  {
+    slug: "going-dark",
+    clientName: "Going Dark",
+    industry: "ecommerce",
+    industryLabel: "E-commerce",
+    services: ["web-development", "ecommerce", "seo-and-content"],
+    serviceLabels: ["Web Development", "Shopify", "SEO"],
+    excerpt:
+      "A custom Shopify build with Liquid theme work and ongoing SEO to drive qualified organic traffic.",
+    featuredImage: "/showcase-images/Client - Going Dark.png",
+    clientLogo: "/clients/going-dark-logo.svg",
+    // clientUrl: "https://goingdark.com.au", // TODO: Richard to confirm
+    template: "premium",
+    metaTitle: "Going Dark Case Study | RAVENCI Solutions",
+    metaDescription:
+      "How RAVENCI built a custom Shopify storefront for Going Dark with bespoke Liquid theme work and ongoing SEO.",
+    heroHeadline: "A Custom Shopify Build, Engineered for Search",
+    heroSubheadline:
+      "Bespoke Liquid theme, JavaScript-driven interactions, and ongoing SEO designed to compound organic traffic over time.",
+
+    year: 2025,
+    timeline: "TBC",
+    techStack: ["Shopify", "Liquid", "JavaScript", "SEO"],
+    collaborators: [
+      { role: "Design & Development", name: "RAVENCI Solutions" },
+    ],
+
+    problem: {
+      heading: "The Challenge",
+      paragraphs: [
+        "TODO: Going Dark's brief — what they were trying to achieve with the storefront, and why a custom Shopify build was the right call.",
+      ],
+      image: "/showcase-images/Client - Going Dark.png",
+    },
+    approach: {
+      heading: "Our Approach",
+      paragraphs: [
+        "TODO: The build approach — Liquid customisation, JavaScript-driven interactions, and the SEO foundations laid alongside the build.",
+      ],
+      highlights: [
+        "Custom Shopify Liquid theme",
+        "JavaScript-driven product interactions",
+        "SEO foundation built into the architecture",
+        "Performance-tuned for mobile shoppers",
+      ],
+      image: "/showcase-images/Client - Going Dark.png",
+    },
+    results: {
+      heading: "The Results",
+      paragraphs: [
+        "TODO: Outcomes for Going Dark — search rankings, traffic growth, sales metrics where available.",
+      ],
+      metrics: [
+        { value: "85+", label: "Google PageSpeed" },
+      ],
+    },
+    galleryImages: [
+      "/showcase-images/Client - Going Dark.png",
+    ],
+    order: 3,
+    featured: true,
+  },
+
+  // ── 4. Peninsula Homes ──────────────────────────────────────────────────────
   {
     slug: "peninsula-homes",
     clientName: "Peninsula Homes",
     industry: "construction",
     industryLabel: "Construction",
-    services: [
-      "web-development",
-      "business-design",
-      "web-hosting",
-      "maintenance",
-    ],
-    serviceLabels: ["Web Development", "Web Hosting", "Maintenance"],
+    services: ["web-development", "maintenance"],
+    serviceLabels: ["Web Development", "Web Maintenance"],
     excerpt:
       "A complete digital overhaul for one of the Redcliffe Peninsula's leading home builders, delivering a modern web presence that generates qualified leads.",
     featuredImage: "/showcase-images/Client - Peninsula Homes.png",
@@ -123,7 +329,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     // Project metadata
     year: 2024,
     timeline: "6 weeks",
-    techStack: ["WordPress", "Divi Builder", "Cloudways"],
+    techStack: ["WordPress", "Custom Builder", "JavaScript", "PHP"],
     collaborators: [
       { role: "Development", name: "RAVENCI Solutions" },
       { role: "Design", name: "The Design Order" },
@@ -207,95 +413,91 @@ export const CASE_STUDIES: CaseStudy[] = [
       "/showcase-images/Client - Peninsula Homes.png",
       "/showcase-images/Client - Peninsula Homes.png",
     ],
-    order: 1,
+    order: 4,
     featured: true,
   },
 
-  // ── 2. Coast Remedial Solutions ─────────────────────────────────────────────
+  // ── 5. Covenant Security Solutions ──────────────────────────────────────────
   {
-    slug: "coast-remedial-solutions",
-    clientName: "Coast Remedial Solutions",
-    industry: "construction",
-    industryLabel: "Construction",
-    services: [
-      "web-development",
-      "business-design",
-      "web-hosting",
-      "maintenance",
-    ],
+    slug: "covenant-security-solutions",
+    clientName: "Covenant Security Solutions",
+    industry: "security",
+    industryLabel: "Security",
+    services: ["business-design", "web-development", "maintenance"],
     serviceLabels: [
+      "Branding Design",
+      "Stationery Design and Print",
+      "Custom Signage",
       "Web Development",
-      "Business Design",
-      "Web Hosting",
-      "Maintenance",
+      "Web Maintenance",
     ],
     excerpt:
-      "A professional web presence for a specialist remedial building company, positioning them as the go-to experts on the Gold Coast.",
-    featuredImage: "/showcase-images/Client - Coast Remedial Solutions.png",
-    clientLogo: "/clients/coast-remedial-solutions-logo.svg",
-    clientUrl: "https://coastremedialsolutions.com.au",
+      "A full brand and digital build for a security services company — from logo through stationery, signage, website, and ongoing care.",
+    featuredImage: "/showcase-images/Client - Covenant Security.png",
+    clientLogo: "/clients/covenant-security-solutions-logo.svg",
+    clientUrl: "https://covenantsecuritysolutions.com.au",
     template: "premium",
-    metaTitle: "Coast Remedial Solutions Case Study | RAVENCI Solutions",
+    metaTitle: "Covenant Security Solutions Case Study | RAVENCI Solutions",
     metaDescription:
-      "How RAVENCI built a high-performance website for Coast Remedial Solutions that established their authority in the remedial building industry.",
-    heroHeadline:
-      "Establishing Digital Authority for Remedial Building Experts",
+      "Full brand identity, stationery, signage, custom WordPress build, and ongoing maintenance for Covenant Security Solutions.",
+    heroHeadline: "Building Trust Online for a Security Industry Leader",
     heroSubheadline:
-      "Coast Remedial Solutions needed a website that communicated expertise and trust in a specialised industry. We delivered a platform that does both.",
+      "Full brand identity, stationery and signage, plus a custom WordPress site that communicates the same level of professionalism Covenant brings to every job.",
 
     year: 2024,
     timeline: "5 weeks",
-    techStack: ["WordPress", "Elementor", "cPanel", "Cloudflare"],
+    techStack: ["WordPress", "Custom Builder", "JavaScript", "PHP"],
     collaborators: [
-      { role: "Design & Development", name: "RAVENCI Solutions" },
+      { role: "Brand, Design & Development", name: "RAVENCI Solutions" },
     ],
 
     problem: {
       heading: "The Challenge",
       paragraphs: [
-        "Coast Remedial Solutions specialise in concrete cancer repair, waterproofing, and structural remediation — services that require immense trust from potential clients. Their previous online presence didn't convey the level of expertise and professionalism they bring to every project.",
-        "They needed a site that would educate potential clients about remedial building while positioning Coast Remedial as the clear choice for complex structural work.",
+        "In the security industry, trust is everything. Covenant Security Solutions had a basic website that didn't communicate the professionalism and reliability that defines their service. Potential clients had no way to evaluate their credentials or understand the breadth of their offerings.",
+        "They needed a complete brand and digital presence that would build confidence from the first visit and clearly differentiate them from less reputable competitors.",
       ],
-      image: "/showcase-images/Client - Coast Remedial Solutions.png",
+      image: "/showcase-images/Client - Covenant Security.png",
     },
     approach: {
       heading: "Our Approach",
       paragraphs: [
-        "We focused on building trust through content and design. The site structure was planned around the key services, with detailed information that helps property managers and strata committees understand what remedial building involves.",
-        "The visual design uses strong imagery and a professional colour palette that conveys reliability and structural strength — perfectly aligned with their brand.",
+        "We built a full brand system around the pillars of trust: credentials, experience, and social proof. The brand identity, stationery, and signage all use strong, confident visuals; the website extends that same language across digital touchpoints.",
+        "Key service pages were developed with detailed information that helps potential clients understand exactly what Covenant offers, reducing the friction between first impression and enquiry.",
       ],
       highlights: [
-        "Service-focused content architecture",
-        "Before-and-after project galleries",
-        "Strata and property manager focused content",
-        "Mobile-optimised for on-site referrals",
+        "Brand identity from logo through colour and type",
+        "Stationery and print collateral",
+        "Custom signage design",
+        "Trust-focused website with credentials prominent",
+        "Ongoing maintenance plan",
       ],
-      image: "/showcase-images/Client - Coast Remedial Solutions.png",
+      image: "/showcase-images/Client - Covenant Security.png",
     },
     features: [
       {
-        title: "Service-Focused Architecture",
+        title: "Brand Identity System",
         description:
-          "Detailed service pages that educate property managers on remedial building processes, building trust before the first conversation.",
-        image: "/showcase-images/Client - Coast Remedial Solutions.png",
+          "Logo, colour, typography, and imagery system designed to feel reliable and professional from the first glance.",
+        image: "/showcase-images/Client - Covenant Security.png",
       },
       {
-        title: "Before-and-After Galleries",
+        title: "Trust-First Website",
         description:
-          "Visual proof of their expertise through project galleries that show the transformation from damaged structures to restored buildings.",
-        image: "/showcase-images/Client - Coast Remedial Solutions.png",
+          "Credentials, licences, and accreditations are prominently displayed throughout the site, building confidence from the very first page.",
+        image: "/showcase-images/Client - Covenant Security.png",
       },
       {
-        title: "Mobile-Optimised for Site Referrals",
+        title: "Detailed Service Pages",
         description:
-          "Property managers often refer contractors on-site from their phones. The site is optimised for quick access to key information and contact details.",
-        image: "/showcase-images/Client - Coast Remedial Solutions.png",
+          "Each security service has its own comprehensive page with clear information, helping potential clients understand exactly what Covenant offers.",
+        image: "/showcase-images/Client - Covenant Security.png",
       },
     ],
     results: {
       heading: "The Results",
       paragraphs: [
-        "The new website established Coast Remedial Solutions as the digital authority in their space, generating consistent organic enquiries from high-value clients.",
+        "The new brand and website positioned Covenant Security Solutions as the professional choice in their market, directly contributing to business growth and client acquisition.",
       ],
       metrics: [
         { value: "90+", label: "Google PageSpeed" },
@@ -303,126 +505,21 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     galleryImages: [
-      "/showcase-images/Client - Coast Remedial Solutions.png",
-      "/showcase-images/Client - Coast Remedial Solutions.png",
+      "/showcase-images/Client - Covenant Security.png",
+      "/showcase-images/Client - Covenant Security.png",
     ],
-    order: 2,
+    order: 5,
     featured: false,
   },
 
-  // ── 3. Intercorp Developments ───────────────────────────────────────────────
-  {
-    slug: "intercorp-developments",
-    clientName: "Intercorp Developments",
-    industry: "construction",
-    industryLabel: "Construction",
-    services: [
-      "web-development",
-      "business-design",
-      "web-hosting",
-      "maintenance",
-    ],
-    serviceLabels: [
-      "Web Development",
-      "Business Design",
-      "Web Hosting",
-      "Maintenance",
-    ],
-    excerpt:
-      "A premium digital experience for a high-end property development firm, reflecting the quality and sophistication of their projects.",
-    featuredImage: "/showcase-images/Client - Intercorp Developments.png",
-    clientLogo: "/clients/intercorp-logo.svg",
-    clientUrl: "https://intercorpdevelopments.com.au",
-    template: "premium",
-    metaTitle: "Intercorp Developments Case Study | RAVENCI Solutions",
-    metaDescription:
-      "How RAVENCI created a premium digital experience for Intercorp Developments that mirrors the sophistication of their property projects.",
-    heroHeadline: "A Digital Presence as Premium as Their Properties",
-    heroSubheadline:
-      "Intercorp Developments builds luxury properties. They needed a website that communicates that same level of quality and attention to detail.",
-
-    year: 2024,
-    timeline: "6 weeks",
-    techStack: ["WordPress", "Elementor", "cPanel", "Cloudflare"],
-    collaborators: [
-      { role: "Design & Development", name: "RAVENCI Solutions" },
-    ],
-
-    problem: {
-      heading: "The Challenge",
-      paragraphs: [
-        "Intercorp Developments creates high-end residential and commercial properties. Their existing website was functional but didn't reflect the premium nature of their work — a critical issue when your audience expects excellence at every touchpoint.",
-        "They needed a digital experience that would impress investors, attract buyers, and showcase their portfolio with the sophistication it deserves.",
-      ],
-      image: "/showcase-images/Client - Intercorp Developments.png",
-    },
-    approach: {
-      heading: "Our Approach",
-      paragraphs: [
-        "We took a design-led approach, creating an immersive visual experience that lets Intercorp's projects take centre stage. Clean layouts, generous whitespace, and high-impact imagery work together to convey luxury and professionalism.",
-        "The development focused on performance and smooth interactions, ensuring the premium feel extends to every click and scroll.",
-      ],
-      highlights: [
-        "Premium design with cinematic project showcases",
-        "Smooth scroll animations and transitions",
-        "Investor-focused content sections",
-        "High-performance image optimisation",
-      ],
-      image: "/showcase-images/Client - Intercorp Developments.png",
-    },
-    features: [
-      {
-        title: "Cinematic Project Showcases",
-        description:
-          "Full-bleed imagery and smooth transitions create an immersive experience that lets the quality of Intercorp's developments shine through.",
-        image: "/showcase-images/Client - Intercorp Developments.png",
-      },
-      {
-        title: "Investor-Focused Content",
-        description:
-          "Dedicated sections for investors with project details, timelines, and returns — designed to build confidence and drive enquiries from serious buyers.",
-        image: "/showcase-images/Client - Intercorp Developments.png",
-      },
-      {
-        title: "Performance-Optimised Imagery",
-        description:
-          "High-resolution project photos served at optimal sizes for every device, ensuring the premium feel doesn't come at the cost of load times.",
-        image: "/showcase-images/Client - Intercorp Developments.png",
-      },
-    ],
-    results: {
-      heading: "The Results",
-      paragraphs: [
-        "The redesigned website became a key part of Intercorp's sales toolkit, impressing stakeholders and generating quality leads from serious buyers and investors.",
-      ],
-      metrics: [{ value: "85+", label: "Google PageSpeed" }],
-    },
-    galleryImages: [
-      "/showcase-images/Client - Intercorp Developments.png",
-      "/showcase-images/Client - Intercorp Developments.png",
-    ],
-    order: 3,
-    featured: false,
-  },
-
-  // ── 4. SAC Consulting ───────────────────────────────────────────────────────
+  // ── 6. SAC Consulting ───────────────────────────────────────────────────────
   {
     slug: "sac-consulting",
     clientName: "SAC Consulting",
     industry: "professional-services",
     industryLabel: "Professional Services",
-    services: [
-      "web-development",
-      "business-design",
-      "web-hosting",
-      "maintenance",
-    ],
-    serviceLabels: [
-      "Web Development",
-      "Business Design",
-      "Web Hosting",
-      "Maintenance",
-    ],
+    services: ["web-development"],
+    serviceLabels: ["Web Development"],
     excerpt:
       "A modern, professional platform for a growing consulting firm, designed to build credibility and attract enterprise clients.",
     featuredImage: "/showcase-images/Client - SAC Consulting.png",
@@ -438,9 +535,10 @@ export const CASE_STUDIES: CaseStudy[] = [
 
     year: 2023,
     timeline: "8 weeks",
-    techStack: ["WordPress", "Elementor", "cPanel", "Cloudflare"],
+    techStack: ["WordPress", "Custom Builder", "JavaScript", "PHP"],
     collaborators: [
-      { role: "Design & Development", name: "RAVENCI Solutions" },
+      { role: "Development", name: "RAVENCI Solutions" },
+      { role: "Design", name: "The Design Order" },
     ],
 
     problem: {
@@ -499,84 +597,79 @@ export const CASE_STUDIES: CaseStudy[] = [
       "/showcase-images/Client - SAC Consulting.png",
       "/showcase-images/Client - SAC Consulting - Podcast.png",
     ],
-    order: 4,
-    featured: true,
+    order: 6,
+    featured: false,
   },
 
-  // ── 5. Nikita Morell ────────────────────────────────────────────────────────
+  // ── 7. Nikita Morell ────────────────────────────────────────────────────────
   {
     slug: "nikita-morell",
     clientName: "Nikita Morell",
-    industry: "ecommerce",
-    industryLabel: "E-commerce",
-    services: ["web-development", "business-design", "ecommerce"],
-    serviceLabels: ["Web Development", "Business Design", "E-commerce"],
+    industry: "professional-services",
+    industryLabel: "Professional Services",
+    services: ["web-development"],
+    serviceLabels: ["Web Development"],
     excerpt:
-      "A stunning e-commerce experience for an Australian fashion and lifestyle brand, designed to showcase products beautifully and drive sales.",
+      "A custom WordPress build for an architect-focused copywriter, designed to position the brand at the premium end of the market.",
     featuredImage: "/showcase-images/Client - Nikita Morell.png",
     clientLogo: "/clients/nikita-morell-logo.svg",
     clientUrl: "https://nikitamorell.com",
     template: "premium",
     metaTitle: "Nikita Morell Case Study | RAVENCI Solutions",
     metaDescription:
-      "How RAVENCI created a visually stunning e-commerce platform for Nikita Morell that elevated their brand and boosted online sales.",
-    heroHeadline: "Crafting a Digital Storefront as Beautiful as the Brand",
+      "How RAVENCI built a custom WordPress site for Nikita Morell that elevated the brand and reflected its premium positioning.",
+    heroHeadline: "A Custom WordPress Build for a Premium Brand",
     heroSubheadline:
-      "Nikita Morell's products are all about style and sophistication. Their online store needed to match.",
+      "Custom WordPress with Divi Builder, JavaScript, and PHP — designed to put the brand and its work front and centre.",
 
     year: 2023,
     timeline: "10 weeks",
-    techStack: ["Shopify", "Liquid", "Custom Theme", "Cloudflare"],
+    techStack: ["WordPress", "Divi Builder", "JavaScript", "PHP"],
     collaborators: [
-      { role: "Design & Development", name: "RAVENCI Solutions" },
+      { role: "Development", name: "RAVENCI Solutions" },
+      { role: "Design", name: "The Design Order" },
     ],
 
     problem: {
       heading: "The Challenge",
       paragraphs: [
-        "Nikita Morell is a fashion and lifestyle brand with a strong aesthetic identity. Their existing online store was built on a generic template that didn't do justice to their products or brand story.",
-        "They needed an e-commerce platform that would create an immersive shopping experience, showcase their products beautifully, and convert browsers into buyers.",
+        "Nikita Morell's existing online presence didn't reflect the premium positioning of the brand. The previous site was generic and didn't do justice to the quality of work or the strength of the brand identity.",
+        "They needed a custom-built platform that would communicate authority, showcase the work beautifully, and convert browsers into conversations.",
       ],
       image: "/showcase-images/Client - Nikita Morell.png",
     },
     approach: {
       heading: "Our Approach",
       paragraphs: [
-        "We designed a visually rich e-commerce experience that puts the products front and centre. Large imagery, elegant typography, and thoughtful whitespace create a premium shopping environment that reflects the brand's aesthetic.",
-        "The development focused on smooth shopping flows, fast page loads, and a checkout process that minimises friction — because in e-commerce, every extra second costs sales.",
+        "We worked with The Design Order on a design-led approach that puts the brand and its work front and centre. Large imagery, elegant typography, and thoughtful whitespace create a premium environment.",
+        "Development was handled with WordPress and Divi Builder for ongoing in-house content control, with custom PHP and JavaScript where the build needed to break out of theme constraints.",
       ],
       highlights: [
-        "Visually-led product showcase design",
-        "Streamlined checkout experience",
-        "Brand story integration throughout",
-        "Mobile-first shopping optimisation",
+        "Custom WordPress + Divi Builder build",
+        "Custom PHP and JavaScript where needed",
+        "Visually-led showcase design",
+        "Content control handed back to the client",
       ],
       image: "/showcase-images/Client - Nikita Morell - Wordshop.png",
     },
     features: [
       {
-        title: "Product-First Showcase",
+        title: "Editorial Showcase Design",
         description:
-          "Large imagery, elegant typography, and thoughtful whitespace create a premium shopping environment that lets the products shine.",
+          "Large imagery, elegant typography, and thoughtful whitespace create a premium environment that lets the brand's work shine.",
         image: "/showcase-images/Client - Nikita Morell.png",
       },
       {
-        title: "Streamlined Checkout",
+        title: "Custom WordPress Architecture",
         description:
-          "A friction-free checkout process optimised for mobile shoppers, because in e-commerce every extra second costs sales.",
+          "Divi Builder for in-house content control, plus custom PHP and JavaScript where the project needed to break out of theme constraints.",
         image: "/showcase-images/Client - Nikita Morell - Wordshop.png",
-      },
-      {
-        title: "Brand Story Integration",
-        description:
-          "The brand's story is woven throughout the shopping experience, turning casual browsers into loyal customers who connect with the Nikita Morell identity.",
-        image: "/showcase-images/Client - Nikita Morell.png",
       },
     ],
     results: {
       heading: "The Results",
       paragraphs: [
-        "The new store transformed Nikita Morell's online sales, creating a shopping experience that customers love and return to.",
+        "The new site repositioned Nikita Morell at the premium end of the market and gave the team a platform they can grow into for years to come.",
       ],
       metrics: [{ value: "85+", label: "Google PageSpeed" }],
     },
@@ -584,65 +677,70 @@ export const CASE_STUDIES: CaseStudy[] = [
       "/showcase-images/Client - Nikita Morell.png",
       "/showcase-images/Client - Nikita Morell - Wordshop.png",
     ],
-    order: 5,
-    featured: true,
+    order: 7,
+    featured: false,
   },
 
-  // ── 6. Cadeaurable ─────────────────────────────────────────────────────────
+  // ── 8. Cadeaurable ─────────────────────────────────────────────────────────
   {
     slug: "cadeaurable",
     clientName: "Cadeaurable",
     industry: "ecommerce",
     industryLabel: "E-commerce",
-    services: ["web-development", "business-design", "ecommerce"],
-    serviceLabels: ["Web Development", "Business Design", "E-commerce"],
+    services: ["business-design", "web-development", "ecommerce"],
+    serviceLabels: [
+      "Branding Design",
+      "Stationery Design and Print",
+      "Web Development",
+      "eCommerce",
+    ],
     excerpt:
-      "A bespoke e-commerce platform for a luxury gifting brand, designed to make the art of gift-giving feel effortless and special.",
+      "A bespoke brand and BigCommerce build for a luxury gifting business — from identity and stationery through to the storefront.",
     featuredImage: "/showcase-images/Client - Cadeaurable.png",
     clientLogo: "/clients/cadeaurable-logo.svg",
     clientUrl: "https://cadeaurable.com.au",
     template: "premium",
     metaTitle: "Cadeaurable Case Study | RAVENCI Solutions",
     metaDescription:
-      "How RAVENCI built a luxury e-commerce experience for Cadeaurable that captures the joy of gift-giving and drives repeat customers.",
-    heroHeadline: "Turning Gift-Giving into a Digital Experience",
+      "Full brand identity, stationery, and a bespoke BigCommerce build for Cadeaurable — luxury gifting from logo to checkout.",
+    heroHeadline: "A Brand and Storefront for a Luxury Gifting Business",
     heroSubheadline:
-      "Cadeaurable curates luxury gift boxes. Their online store needed to capture the magic of unwrapping something special.",
+      "Brand identity, stationery and print, plus a custom BigCommerce build that captures the warmth of giving something special.",
 
     year: 2022,
     timeline: "8 weeks",
-    techStack: ["Shopify", "Liquid", "Custom Theme"],
+    techStack: ["BigCommerce", "JavaScript", "PHP", "eCommerce"],
     collaborators: [
-      { role: "Design & Development", name: "RAVENCI Solutions" },
+      { role: "Brand, Design & Development", name: "RAVENCI Solutions" },
     ],
 
     problem: {
       heading: "The Challenge",
       paragraphs: [
-        "Cadeaurable is a luxury gifting brand that curates beautiful gift boxes for every occasion. Their brand is built on the emotion of giving — but their previous website felt transactional rather than experiential.",
-        "They needed an online store that would convey the warmth and thoughtfulness of their brand while making it easy for customers to find and customise the perfect gift.",
+        "Cadeaurable is a luxury gifting brand that curates beautiful gift boxes for every occasion. Their brand was built on the emotion of giving — but their previous website felt transactional rather than experiential.",
+        "They needed a complete brand system and an online store that would convey the warmth and thoughtfulness of the brand while making it easy for customers to find and customise the perfect gift.",
       ],
       image: "/showcase-images/Client - Cadeaurable.png",
     },
     approach: {
       heading: "Our Approach",
       paragraphs: [
-        "We designed an experience centred around emotion and discovery. Warm colours, elegant product photography, and storytelling elements guide visitors through the gift selection process, making them feel like they're choosing something truly special.",
+        "We designed a full brand system — logo, colour, typography, packaging, stationery — built around emotion and discovery, then carried that language into a custom BigCommerce storefront.",
         "The platform includes intuitive filtering by occasion, recipient, and price point, making it effortless to find the right gift box.",
       ],
       highlights: [
-        "Emotion-driven design language",
+        "Brand identity and stationery design",
+        "Custom BigCommerce storefront",
         "Occasion and recipient based filtering",
         "Gift customisation workflows",
-        "Storytelling product pages",
       ],
       image: "/showcase-images/Client - Cadeaurable.png",
     },
     features: [
       {
-        title: "Emotion-Driven Design",
+        title: "Brand Identity System",
         description:
-          "Warm colours, elegant photography, and storytelling elements create an experience that captures the joy of giving a thoughtful gift.",
+          "Warm colours, elegant photography, and brand stationery that captures the joy of giving a thoughtful gift.",
         image: "/showcase-images/Client - Cadeaurable.png",
       },
       {
@@ -661,7 +759,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     results: {
       heading: "The Results",
       paragraphs: [
-        "The new platform captured the essence of the Cadeaurable brand, resulting in increased sales, higher customer satisfaction, and a growing base of repeat gifters.",
+        "The new brand and platform captured the essence of Cadeaurable, resulting in increased sales, higher customer satisfaction, and a growing base of repeat gifters.",
       ],
       metrics: [{ value: "85+", label: "Google PageSpeed" }],
     },
@@ -669,94 +767,90 @@ export const CASE_STUDIES: CaseStudy[] = [
       "/showcase-images/Client - Cadeaurable.png",
       "/showcase-images/Client - Cadeaurable.png",
     ],
-    order: 6,
+    order: 8,
     featured: false,
   },
 
-  // ── 7. Covenant Security Solutions ──────────────────────────────────────────
+  // ── 9. Coast Remedial Solutions ─────────────────────────────────────────────
   {
-    slug: "covenant-security-solutions",
-    clientName: "Covenant Security Solutions",
-    industry: "security",
-    industryLabel: "Security",
-    services: [
-      "web-development",
-      "business-design",
-      "web-hosting",
-      "maintenance",
-    ],
+    slug: "coast-remedial-solutions",
+    clientName: "Coast Remedial Solutions",
+    industry: "construction",
+    industryLabel: "Construction",
+    services: ["business-design", "web-development"],
     serviceLabels: [
+      "Branding Design",
+      "Stationery Design and Print",
+      "Digital Design",
       "Web Development",
-      "Business Design",
-      "Web Hosting",
-      "Maintenance",
     ],
     excerpt:
-      "A trust-building digital platform for a security services company, designed to communicate reliability and professionalism.",
-    featuredImage: "/showcase-images/Client - Covenant Security.png",
-    clientLogo: "/clients/covenant-security-solutions-logo.svg",
-    clientUrl: "https://covenantsecuritysolutions.com.au",
+      "A full brand and web build for a specialist remedial building company — brand identity, stationery, digital design and a custom WordPress site.",
+    featuredImage: "/showcase-images/Client - Coast Remedial Solutions.png",
+    clientLogo: "/clients/coast-remedial-solutions-logo.svg",
+    clientUrl: "https://coastremedialsolutions.com.au",
     template: "premium",
-    metaTitle: "Covenant Security Solutions Case Study | RAVENCI Solutions",
+    metaTitle: "Coast Remedial Solutions Case Study | RAVENCI Solutions",
     metaDescription:
-      "How RAVENCI built a professional web platform for Covenant Security Solutions that communicates trust and drives business growth.",
-    heroHeadline: "Building Trust Online for a Security Industry Leader",
+      "Full brand identity, stationery, digital design and a custom WordPress site for Coast Remedial Solutions, the Gold Coast's specialist remedial builders.",
+    heroHeadline: "A Full Brand and Web Build for Remedial Building Experts",
     heroSubheadline:
-      "Covenant Security Solutions protects people and property. Their website needed to inspire the same level of confidence.",
+      "Brand identity, stationery, digital assets and a custom WordPress build — positioning Coast Remedial Solutions as the trusted specialists they are.",
 
     year: 2024,
     timeline: "5 weeks",
-    techStack: ["WordPress", "Elementor", "cPanel", "Cloudflare"],
+    techStack: ["WordPress", "Custom Builder"],
     collaborators: [
-      { role: "Design & Development", name: "RAVENCI Solutions" },
+      { role: "Brand, Design & Development", name: "RAVENCI Solutions" },
     ],
 
     problem: {
       heading: "The Challenge",
       paragraphs: [
-        "In the security industry, trust is everything. Covenant Security Solutions had a basic website that didn't communicate the professionalism and reliability that defines their service. Potential clients had no way to evaluate their credentials or understand the breadth of their offerings.",
-        "They needed a digital presence that would build confidence from the first visit and clearly differentiate them from less reputable competitors.",
+        "Coast Remedial Solutions specialise in concrete cancer repair, waterproofing, and structural remediation — services that require immense trust from potential clients. Their previous brand and online presence didn't convey the level of expertise and professionalism they bring to every project.",
+        "They needed a full brand system plus a website that would educate potential clients about remedial building while positioning Coast Remedial as the clear choice for complex structural work.",
       ],
-      image: "/showcase-images/Client - Covenant Security.png",
+      image: "/showcase-images/Client - Coast Remedial Solutions.png",
     },
     approach: {
       heading: "Our Approach",
       paragraphs: [
-        "We built a site around the pillars of trust: credentials, experience, and social proof. The design uses strong, confident visuals and a structured layout that communicates professionalism and attention to detail.",
-        "Key service pages were developed with detailed information that helps potential clients understand exactly what Covenant offers, reducing the friction between website visit and enquiry.",
+        "We rebuilt the brand from the ground up — identity, stationery, and digital assets all working together to communicate reliability and structural strength. The website then carried that brand language across every page.",
+        "Site structure was planned around the key services, with detailed information that helps property managers and strata committees understand what remedial building involves.",
       ],
       highlights: [
-        "Trust-focused design with credentials prominent",
-        "Detailed service breakdowns for each offering",
-        "Client testimonials and case references",
-        "Quick-response enquiry system",
+        "Brand identity and stationery design",
+        "Digital design assets",
+        "Service-focused content architecture",
+        "Strata and property manager focused content",
+        "Mobile-optimised for on-site referrals",
       ],
-      image: "/showcase-images/Client - Covenant Security.png",
+      image: "/showcase-images/Client - Coast Remedial Solutions.png",
     },
     features: [
       {
-        title: "Trust-First Design",
+        title: "Brand Identity System",
         description:
-          "Credentials, licences, and accreditations are prominently displayed throughout the site, building confidence from the very first page.",
-        image: "/showcase-images/Client - Covenant Security.png",
+          "Logo, colour, typography and stationery designed to communicate reliability and structural strength — perfectly aligned with what the business actually does.",
+        image: "/showcase-images/Client - Coast Remedial Solutions.png",
       },
       {
-        title: "Detailed Service Pages",
+        title: "Service-Focused Architecture",
         description:
-          "Each security service has its own comprehensive page with clear information, helping potential clients understand exactly what Covenant offers.",
-        image: "/showcase-images/Client - Covenant Security.png",
+          "Detailed service pages that educate property managers on remedial building processes, building trust before the first conversation.",
+        image: "/showcase-images/Client - Coast Remedial Solutions.png",
       },
       {
-        title: "Quick-Response Enquiry System",
+        title: "Mobile-Optimised for Site Referrals",
         description:
-          "Streamlined contact forms and prominent call-to-action buttons reduce the friction between interest and enquiry.",
-        image: "/showcase-images/Client - Covenant Security.png",
+          "Property managers often refer contractors on-site from their phones. The site is optimised for quick access to key information and contact details.",
+        image: "/showcase-images/Client - Coast Remedial Solutions.png",
       },
     ],
     results: {
       heading: "The Results",
       paragraphs: [
-        "The new website positioned Covenant Security Solutions as the professional choice in their market, directly contributing to business growth and client acquisition.",
+        "The new brand and website established Coast Remedial Solutions as the digital authority in their space, generating consistent organic enquiries from high-value clients.",
       ],
       metrics: [
         { value: "90+", label: "Google PageSpeed" },
@@ -764,10 +858,10 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     galleryImages: [
-      "/showcase-images/Client - Covenant Security.png",
-      "/showcase-images/Client - Covenant Security.png",
+      "/showcase-images/Client - Coast Remedial Solutions.png",
+      "/showcase-images/Client - Coast Remedial Solutions.png",
     ],
-    order: 7,
+    order: 9,
     featured: false,
   },
 ];
