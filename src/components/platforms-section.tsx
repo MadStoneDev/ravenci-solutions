@@ -39,11 +39,6 @@ const PLATFORMS: Platform[] = [
     logo: "/tech/tech-logos-plasmic.svg",
     href: "/web-development",
   },
-  {
-    name: "GoHighLevel",
-    category: "All-in-One Marketing",
-    href: "/web-development",
-  },
 ];
 
 export default function PlatformsSection() {
