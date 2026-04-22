@@ -32,9 +32,13 @@ export default function Home() {
           className={`col-span-12 lg:col-span-8 pb-16 lg:pb-0 flex flex-col justify-center`}
         >
           <h1
-            className={`max-w-[500px] lg:max-w-[760px] text-4xl md:text-5xl lg:text-h1 font-medium text-white`}
+            className={`max-w-[500px] lg:max-w-[860px] text-4xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-medium text-white leading-[1.05]`}
           >
-            I&apos;m Richard. I build websites that pay for themselves.
+            I&apos;m Richard. I build websites that{" "}
+            <span className="font-serif italic font-normal text-ravenci-primary">
+              pay for themselves
+            </span>
+            .
           </h1>
           <h2
             className={`mt-8 max-w-[600px] text-lg md:text-xl font-light text-neutral-400`}

@@ -67,7 +67,10 @@ export default function VisibilityCheckForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-2xl mx-auto p-6 md:p-8 bg-white brutalist-card rounded-lg"
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
         <div>
           <label htmlFor="vc-name" className="block text-sm font-medium text-neutral-700 mb-1">

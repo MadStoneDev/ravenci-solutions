@@ -77,4 +77,53 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Global focus-visible styles for keyboard navigation */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    @apply outline-2 outline-offset-2 outline-ravenci-primary;
+  }
+}
+
+@layer components {
+  /* Neo-brutalist accent — 1px hard border + hard offset shadow.
+     Used on premium-tier cards and CTAs for the 2026 visual register. */
+  .brutalist-card {
+    @apply border border-ravenci-dark transition-all duration-200;
+    box-shadow: 6px 6px 0 0 #1b1b1b;
+  }
+  .brutalist-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 0 #1b1b1b;
+  }
+  .brutalist-card-primary {
+    @apply border border-ravenci-primary transition-all duration-200;
+    box-shadow: 6px 6px 0 0 #7f1670;
+  }
+  .brutalist-card-primary:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 0 #7f1670;
+  }
+  .brutalist-card-light {
+    @apply border border-white transition-all duration-200;
+    box-shadow: 6px 6px 0 0 #ffffff;
+  }
+
+  /* Scroll-reveal animation — pairs with IntersectionObserver
+     to fade and rise into view on first intersection. */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s ease-out,
+      transform 0.7s ease-out;
+  }
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

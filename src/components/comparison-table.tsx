@@ -99,7 +99,7 @@ export default function ComparisonTable() {
   return (
     <div>
       {/* Desktop */}
-      <div className="hidden md:block overflow-x-auto">
+      <div className="hidden md:block overflow-x-auto brutalist-card bg-white p-6 lg:p-8 rounded-lg">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b-2 border-ravenci-primary/30">
@@ -148,7 +148,7 @@ export default function ComparisonTable() {
       {/* Mobile */}
       <div className="md:hidden space-y-3">
         {rows.map((row, index) => (
-          <div key={index} className="p-4 bg-neutral-50 rounded-lg">
+          <div key={index} className="p-4 bg-white brutalist-card rounded-lg">
             <p className="mb-3 font-medium text-ravenci-dark text-sm">
               {row.feature}
             </p>
