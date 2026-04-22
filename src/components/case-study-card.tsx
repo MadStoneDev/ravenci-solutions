@@ -8,11 +8,11 @@ export default function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <Link
       href={`/case-studies/${caseStudy.slug}`}
-      className={`group flex flex-col overflow-hidden`}
+      className={`group flex flex-col overflow-hidden bg-white brutalist-card rounded-lg`}
     >
       {/* Image */}
       <div
-        className={`relative w-full aspect-[16/10] overflow-hidden bg-neutral-100`}
+        className={`relative w-full aspect-[16/10] overflow-hidden bg-neutral-100 border-b border-ravenci-dark`}
       >
         <Image
           src={caseStudy.featuredImage}
@@ -23,7 +23,7 @@ export default function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
       </div>
 
       {/* Content */}
-      <div className={`pt-5 flex flex-col flex-1`}>
+      <div className={`p-5 flex flex-col flex-1`}>
         <span
           className={`mb-2 text-xs font-medium tracking-wider uppercase text-ravenci-primary`}
         >

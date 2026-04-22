@@ -26,16 +26,21 @@ export default function Home() {
           className={`col-span-12 lg:col-span-8 pb-16 lg:pb-0 flex flex-col justify-center`}
         >
           <h1
-            className={`max-w-[500px] lg:max-w-[660px] text-4xl md:text-5xl lg:text-h1 font-medium text-white`}
+            className={`max-w-[500px] lg:max-w-[860px] text-4xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-medium text-white leading-[1.05]`}
           >
-            Websites that work as hard as you do.
+            I&apos;m Richard. I build websites that{" "}
+            <span className="font-serif italic font-normal text-ravenci-primary">
+              pay for themselves
+            </span>
+            .
           </h1>
           <h2
-            className={`mt-8 max-w-[500px] text-lg md:text-xl font-light text-neutral-400`}
+            className={`mt-8 max-w-[600px] text-lg md:text-xl font-light text-neutral-400`}
           >
-            20+ years of experience building digital platforms for Australian
-            businesses. We handle everything from design and development to
-            hosting and ongoing maintenance.
+            Twenty years and 450+ projects building digital platforms for
+            Australian businesses. RAVENCI is the small Brisbane studio I run,
+            with specialists brought in when the project needs them — built on
+            the right platform for your business, not ours.
           </h2>
 
           <div className={`mt-16 flex gap-6`}>
