@@ -26,16 +26,17 @@ export default function Home() {
           className={`col-span-12 lg:col-span-8 pb-16 lg:pb-0 flex flex-col justify-center`}
         >
           <h1
-            className={`max-w-[500px] lg:max-w-[660px] text-4xl md:text-5xl lg:text-h1 font-medium text-white`}
+            className={`max-w-[500px] lg:max-w-[760px] text-4xl md:text-5xl lg:text-h1 font-medium text-white`}
           >
-            Websites that work as hard as you do.
+            I&apos;m Richard. I build websites that pay for themselves.
           </h1>
           <h2
-            className={`mt-8 max-w-[500px] text-lg md:text-xl font-light text-neutral-400`}
+            className={`mt-8 max-w-[600px] text-lg md:text-xl font-light text-neutral-400`}
           >
-            20+ years of experience building digital platforms for Australian
-            businesses. We handle everything from design and development to
-            hosting and ongoing maintenance.
+            Twenty years and 450+ projects building digital platforms for
+            Australian businesses. RAVENCI is the small Brisbane studio I run,
+            with specialists brought in when the project needs them — built on
+            the right platform for your business, not ours.
           </h2>
 
           <div className={`mt-16 flex gap-6`}>
@@ -224,14 +225,14 @@ export default function Home() {
           }}
         >
           <p>
-            Throughout 20+ years in digital development, we've learned that
-            building websites and apps is only part of the equation.
+            After 20 years building websites for Australian businesses, I&apos;ve
+            learned that the build is the easy part.
           </p>
 
           <p>
-            That experience shaped RAVENCI's core commitment: ensuring your
-            digital presence remains stable, scalable, and reliable well beyond
-            launch day.
+            The real work is making sure your digital presence keeps performing
+            — and keeps paying back the investment — long after launch day.
+            That&apos;s what RAVENCI is built to do.
           </p>
           <footer className={`border-t border-ravenci-dark`}>
             <cite
@@ -240,7 +241,7 @@ export default function Home() {
                 fontStyle: "normal",
               }}
             >
-              - Richard (Founder)
+              — Richard Haddad, Founder
             </cite>
           </footer>
         </blockquote>
