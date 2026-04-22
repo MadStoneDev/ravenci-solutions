@@ -251,7 +251,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceLabels: ["Web Development", "Shopify", "SEO"],
     excerpt:
       "A custom Shopify build with Liquid theme work and ongoing SEO to drive qualified organic traffic.",
-    featuredImage: "/showcase-images/Client - Going Dark.png",
+    featuredImage: "/showcase-images/Client - GoingDark.png",
     clientLogo: "/clients/going-dark-logo.svg",
     // clientUrl: "https://goingdark.com.au", // TODO: Richard to confirm
     template: "premium",
@@ -274,7 +274,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "TODO: Going Dark's brief — what they were trying to achieve with the storefront, and why a custom Shopify build was the right call.",
       ],
-      image: "/showcase-images/Client - Going Dark.png",
+      image: "/showcase-images/Client - GoingDark.png",
     },
     approach: {
       heading: "Our Approach",
@@ -287,7 +287,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         "SEO foundation built into the architecture",
         "Performance-tuned for mobile shoppers",
       ],
-      image: "/showcase-images/Client - Going Dark.png",
+      image: "/showcase-images/Client - GoingDark.png",
     },
     results: {
       heading: "The Results",
@@ -299,7 +299,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     galleryImages: [
-      "/showcase-images/Client - Going Dark.png",
+      "/showcase-images/Client - GoingDark.png",
     ],
     order: 3,
     featured: true,
