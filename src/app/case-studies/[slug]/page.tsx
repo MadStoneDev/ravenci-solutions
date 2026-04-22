@@ -6,6 +6,7 @@ import {
 } from "@/data/case-studies";
 import CaseStudyResultsDriven from "@/components/case-study-results-driven";
 import CaseStudyVisualShowcase from "@/components/case-study-visual-showcase";
+import CaseStudyPremium from "@/components/case-study-premium";
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -46,6 +47,7 @@ export async function generateMetadata({
       description: caseStudy.metaDescription,
       images: [`https://ravenci.solutions${caseStudy.featuredImage}`],
     },
+    alternates: { canonical: `/case-studies/${slug}` },
   };
 }
 
@@ -80,14 +82,45 @@ export default async function CaseStudyPage({
     },
   };
 
+  const jsonLdBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://ravenci.solutions",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Case Studies",
+        item: "https://ravenci.solutions/case-studies",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: caseStudy.clientName,
+        item: `https://ravenci.solutions/case-studies/${caseStudy.slug}`,
+      },
+    ],
+  };
+
   return (
     <main className={`flex flex-col`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
 
-      {caseStudy.template === "visual-showcase" ? (
+      {caseStudy.template === "premium" ? (
+        <CaseStudyPremium caseStudy={caseStudy} />
+      ) : caseStudy.template === "visual-showcase" ? (
         <CaseStudyVisualShowcase caseStudy={caseStudy} />
       ) : (
         <CaseStudyResultsDriven caseStudy={caseStudy} />
