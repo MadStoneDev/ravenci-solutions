@@ -10,14 +10,8 @@ interface Platform {
 
 const PLATFORMS: Platform[] = [
   {
-    name: "Custom Next.js",
-    category: "Performance Build",
-    logo: "/tech/tech-logos-nextjs.svg",
-    href: "/web-development",
-  },
-  {
     name: "WordPress",
-    category: "Content Management",
+    category: "Content CMS",
     logo: "/tech/tech-logos-wordpress.svg",
     href: "/web-development",
   },
@@ -28,15 +22,27 @@ const PLATFORMS: Platform[] = [
     href: "/web-development",
   },
   {
-    name: "BigCommerce",
-    category: "E-commerce",
-    logo: "/tech/tech-logos-bigcommerce.svg",
+    name: "Custom Next.js",
+    category: "Custom Build",
+    logo: "/tech/tech-logos-nextjs.svg",
     href: "/web-development",
   },
   {
-    name: "Plasmic",
-    category: "Visual Builder",
-    logo: "/tech/tech-logos-plasmic.svg",
+    name: "Webflow",
+    category: "Visual Site Builder",
+    logo: "/tech/tech-logos-webflow.svg",
+    href: "/web-development",
+  },
+  {
+    name: "Framer",
+    category: "Design-Led Sites",
+    logo: "/tech/tech-logos-framer.svg",
+    href: "/web-development",
+  },
+  {
+    name: "Sanity",
+    category: "Headless CMS",
+    logo: "/tech/tech-logos-sanity.svg",
     href: "/web-development",
   },
 ];
@@ -64,8 +70,8 @@ export default function PlatformsSection() {
             We&apos;re not platform purists. After 20 years in the industry,
             we&apos;ve learned that the best platform is the one that fits your
             goals, your team, and your budget — then gets built well. We also
-            work with headless CMS solutions like Strapi and Prismic when the
-            project calls for it.
+            build on BigCommerce, Strapi, Plasmic and Astro when the project
+            calls for them.
           </p>
         </article>
       </div>
@@ -87,7 +93,7 @@ export default function PlatformsSection() {
                   className="max-h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               ) : (
-                <span className="font-serif text-2xl font-bold text-ravenci-dark group-hover:text-ravenci-primary transition-colors duration-300">
+                <span className="font-sans text-2xl font-bold tracking-tight text-ravenci-dark group-hover:text-ravenci-primary transition-colors duration-300">
                   {platform.name}
                 </span>
               )}
