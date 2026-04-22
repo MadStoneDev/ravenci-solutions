@@ -8,14 +8,20 @@ import TestimonialsSingle from "@/components/testimonials-single";
 import VisibilityCheckForm from "@/components/visibility-check-form";
 
 import { CLIENT_LOGOS } from "@/lib/our-clients";
-import { getTestimonialsForPage } from "@/data/testimonials";
+import {
+  getTestimonialByID,
+  getTestimonialsForPage,
+} from "@/data/testimonials";
 
 import Image from "next/image";
 import { Route } from "next";
 import ServicesShowcase from "@/components/services-showcase";
+import PlatformsSection from "@/components/platforms-section";
 
 export default function Home() {
   const homepageTestimonials = getTestimonialsForPage("homepage");
+  const adamTestimonial = getTestimonialByID("adam-bisset");
+  const geoffTestimonial = getTestimonialByID("geoff-beisler");
 
   return (
     <main className={`flex flex-col`}>
@@ -79,7 +85,7 @@ export default function Home() {
           backgroundColor: `rgba(255,255,255,0)`,
         }}
       >
-        <article className={`fixed inset-0 w-full h-[750px] -z-10`}>
+        <article className={`absolute inset-0 w-full h-[750px]`}>
           <LazyVideo
             src="ravenci-promo.mp4"
             poster="/og-image.jpg"
@@ -195,23 +201,21 @@ export default function Home() {
         </article>
       </section>
 
-      {/* Client Logos */}
-      <LogosPanel headingColour={`text-white`} speed={`slow`} />
+      {/* Platforms */}
+      <PlatformsSection />
 
-      {/* Testimonials */}
-      {homepageTestimonials.map((testimonial) => (
-        <TestimonialsSingle
-          key={testimonial.id}
-          testimonial={{
-            content: testimonial.content,
-            author: testimonial.author,
-            role: testimonial.role,
-            company: testimonial.company,
-            image: testimonial.image || null,
-          }}
-          extraClassNames={`content-section bg-ravenci-primary`}
-        />
-      ))}
+      {/* Testimonial */}
+      <TestimonialsSingle
+        key={adamTestimonial!.id}
+        testimonial={{
+          content: adamTestimonial!.content,
+          author: adamTestimonial!.author,
+          role: adamTestimonial!.role,
+          company: adamTestimonial!.company,
+          image: adamTestimonial!.image || null,
+        }}
+        extraClassNames={`content-section bg-ravenci-primary`}
+      />
 
       {/* From the Founder */}
       <section
@@ -292,15 +296,13 @@ export default function Home() {
       </section>
 
       {/* Comparison Table */}
-      <section
-        className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white"
-      >
+      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <div className="max-w-4xl mx-auto">
           <h3 className="mb-2 font-serif text-h3 font-bold text-center">
             Why Businesses Choose RAVENCI
           </h3>
           <p className="mb-10 text-center text-neutral-500/80">
-            See how we compare to a typical WordPress agency or DIY website
+            See how we compare to a typical web agency or DIY website
             builder.
           </p>
           <ComparisonTable />
@@ -314,6 +316,19 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <TestimonialsSingle
+        key={geoffTestimonial!.id}
+        testimonial={{
+          content: geoffTestimonial!.content,
+          author: geoffTestimonial!.author,
+          role: geoffTestimonial!.role,
+          company: geoffTestimonial!.company,
+          image: geoffTestimonial!.image || null,
+        }}
+        extraClassNames={`content-section bg-ravenci-primary`}
+      />
 
       {/* Visibility Check Lead Magnet */}
       <section
