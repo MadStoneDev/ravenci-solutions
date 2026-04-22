@@ -6,6 +6,21 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, message, budget } = body;
 
+    // Basic validation
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        { message: "Missing required fields" },
+        { status: 400 },
+      );
+    }
+
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      return NextResponse.json(
+        { message: "Invalid email address" },
+        { status: 400 },
+      );
+    }
+
     const mailerSend = new MailerSend({
       apiKey: process.env.MAILERSEND_API_KEY || "",
     });
@@ -35,7 +50,7 @@ export async function POST(request: Request) {
             {
               name,
               email,
-              budget,
+              budget: budget || "Not specified",
               message,
             },
           ],
@@ -47,7 +62,7 @@ export async function POST(request: Request) {
       .setFrom(sentFrom)
       .setTo(recipients)
       .setReplyTo(noReply)
-      .setSubject("Subject")
+      .setSubject(`New Lead: ${name} — ${budget || "Budget not specified"}`)
       .setTemplateId("zr6ke4nrkn3lon12")
       .setPersonalization(personalization);
 
