@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 interface Platform {
@@ -85,11 +84,12 @@ export default function PlatformsSection() {
           >
             <div className="h-14 flex items-center justify-center">
               {platform.logo ? (
-                <Image
+                // Using native <img> for SVG logos — Next.js <Image> has
+                // quirks with SVGs (no AVIF/WebP optimisation gain anyway)
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
                   src={platform.logo}
                   alt={platform.name}
-                  width={140}
-                  height={56}
                   className="max-h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               ) : (
