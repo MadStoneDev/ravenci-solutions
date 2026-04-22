@@ -188,6 +188,54 @@ export default function MainFooter() {
           </div>
 
           <div className={`group/link relative px-2`}>
+            <Link
+              href={`/cost-of-a-website-in-brisbane`}
+              className={`relative z-10`}
+            >
+              Brisbane Website Costs
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
+            <Link
+              href={`/wordpress-vs-shopify-vs-custom`}
+              className={`relative z-10`}
+            >
+              WordPress vs Shopify vs Custom
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
+            <Link
+              href={`/medical-practice-website-requirements`}
+              className={`relative z-10`}
+            >
+              Medical Practice Websites
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
+            <Link
+              href={`/how-to-choose-a-web-designer-in-brisbane`}
+              className={`relative z-10`}
+            >
+              How to Choose a Web Designer
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
             <Link href={`/launch-your-vision`} className={`relative z-10`}>
               Launch Your Vision
             </Link>

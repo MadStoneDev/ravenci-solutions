@@ -116,6 +116,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/cost-of-a-website-in-brisbane`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/wordpress-vs-shopify-vs-custom`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/medical-practice-website-requirements`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/how-to-choose-a-web-designer-in-brisbane`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/privacy-policy`,
       lastModified: new Date(),
       changeFrequency: "yearly",
