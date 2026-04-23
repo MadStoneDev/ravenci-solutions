@@ -46,8 +46,8 @@ export default function AboutPage() {
             className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
             style={{ lineHeight: "2.25rem" }}
           >
-            A different approach to web development — where structure meets
-            creativity
+            Built by a structural engineer turned developer — for businesses
+            that need their website to last as long as the buildings do.
           </h2>
         </article>
       </section>
@@ -66,7 +66,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>100+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>75+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Australian Businesses
             </p>
@@ -98,7 +98,9 @@ export default function AboutPage() {
             <div
               className={`w-28 h-28 rounded-full bg-ravenci-primary/10 flex items-center justify-center`}
             >
-              <span className={`text-4xl font-serif font-bold text-ravenci-primary`}>
+              <span
+                className={`text-4xl font-serif font-bold text-ravenci-primary`}
+              >
                 RH
               </span>
             </div>

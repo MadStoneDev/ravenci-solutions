@@ -43,10 +43,10 @@ export default function Home() {
           <h2
             className={`mt-8 max-w-[600px] text-lg md:text-xl font-light text-neutral-400`}
           >
-            Twenty years and 450+ projects building digital platforms for
-            Australian businesses. RAVENCI is the small Brisbane studio I run,
-            with specialists brought in when the project needs them — built on
-            the right platform for your business, not ours.
+            For Australian businesses that have outgrown what they have. Twenty
+            years and 450+ projects of building websites properly — still
+            working in five years, with no plugin-clutter and no surprise
+            subscriptions to escape from.
           </h2>
 
           <div className={`mt-16 flex gap-6`}>
@@ -132,15 +132,17 @@ export default function Home() {
 
           <div className={`mt-16 mb-24 flex flex-col gap-8 max-w-[500px]`}>
             <p>
-              We build digital platforms that attract customers, build trust,
-              and grow with your business. No templates. No shortcuts. Just
-              solid engineering backed by two decades of experience.
+              Most websites we replace were built with the right intentions and
+              the wrong approach — drag-and-drop builders, plugin stacks,
+              subscriptions piling up, eventually breaking. We don&apos;t work
+              that way. We build properly, once, so it&apos;s still working
+              five years from now.
             </p>
 
             <p>
-              From design and development to hosting and ongoing maintenance,
-              RAVENCI handles every stage of your website's lifecycle so you can
-              focus on running your business.
+              From design through development, hosting and ongoing maintenance —
+              your site stays sharp without you having to think about it. Tell
+              us what you need. We&apos;ll take it from there.
             </p>
           </div>
 
@@ -234,13 +236,15 @@ export default function Home() {
         >
           <p>
             After 20 years building websites for Australian businesses, I&apos;ve
-            learned that the build is the easy part.
+            learned the easy part is launch day. The hard part is the next five
+            years.
           </p>
 
           <p>
-            The real work is making sure your digital presence keeps performing
-            — and keeps paying back the investment — long after launch day.
-            That&apos;s what RAVENCI is built to do.
+            Most sites are built to look good at launch and quietly fall apart
+            after — plugins clash, subscriptions stack up, the developer who
+            built it stops returning calls. That&apos;s not how we work. We
+            build it right the first time so you can stop thinking about it.
           </p>
           <footer className={`border-t border-ravenci-dark`}>
             <cite
@@ -307,8 +311,9 @@ export default function Home() {
             Why Businesses Choose RAVENCI
           </h3>
           <p className="mb-10 text-center text-neutral-500/80">
-            See how we compare to a typical web agency or DIY website
-            builder.
+            Most agencies build websites to launch. We build them to last.
+            Here&apos;s how we stack up against the typical drag-and-drop crowd
+            and the DIY builders.
           </p>
           <ComparisonTable />
           <div className="mt-8 text-center">
