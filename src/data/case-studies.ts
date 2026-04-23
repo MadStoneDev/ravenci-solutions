@@ -18,7 +18,10 @@ export type ServiceTag =
   | "maintenance"
   | "seo-and-content";
 
-export type CaseStudyTemplate = "results-driven" | "visual-showcase" | "premium";
+export type CaseStudyTemplate =
+  | "results-driven"
+  | "visual-showcase"
+  | "premium";
 
 export interface CaseStudyMetric {
   value: string; // "95+", "300%", "2.1s"
@@ -104,10 +107,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ["web-development"],
     serviceLabels: ["Web Development"],
     excerpt:
-      "A modern Next.js + Plasmic build with marketing automation and analytics tightly integrated from launch.",
-    featuredImage: "/showcase-images/Client - DIRT.png",
+      "A branding agency that helps construction, AEC, and property firms ditch the corporate beige and own a brand identity that reflects what they actually build.",
+    featuredImage: "/showcase-images/Client - The DIRT Agency.png",
     clientLogo: "/clients/dirt-logo.svg",
-    // clientUrl: "https://dirt.com.au", // TODO: Richard to confirm
+    clientUrl: "https://thedirtagency.com",
     template: "premium",
     metaTitle: "DIRT Case Study | RAVENCI Solutions",
     metaDescription:
@@ -118,7 +121,13 @@ export const CASE_STUDIES: CaseStudy[] = [
 
     year: 2026,
     timeline: "TBC",
-    techStack: ["Next.js", "Plasmic", "ActiveCampaign", "ClickUp", "Google Analytics"],
+    techStack: [
+      "Next.js",
+      "Plasmic",
+      "ActiveCampaign",
+      "ClickUp",
+      "Google Analytics",
+    ],
     collaborators: [
       { role: "Development", name: "RAVENCI Solutions" },
       { role: "Design", name: "The Other Design Co." },
@@ -129,7 +138,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "TODO: Add the project background — what was DIRT trying to achieve, and what wasn't working before RAVENCI got involved.",
       ],
-      image: "/showcase-images/Client - DIRT.png",
+      image: "/showcase-images/Client - The DIRT Agency.png",
     },
     approach: {
       heading: "Our Approach",
@@ -143,20 +152,20 @@ export const CASE_STUDIES: CaseStudy[] = [
         "ClickUp project tracking integration",
         "Google Analytics for measurement",
       ],
-      image: "/showcase-images/Client - DIRT.png",
+      image: "/showcase-images/Client - The DIRT Agency.png",
     },
     features: [
       {
         title: "Next.js + Plasmic Architecture",
         description:
           "TODO: What this combination unlocks for the client (speed, flexibility, in-house editing).",
-        image: "/showcase-images/Client - DIRT.png",
+        image: "/showcase-images/Client - The DIRT Agency.png",
       },
       {
         title: "Marketing Automation Wired In",
         description:
           "TODO: How ActiveCampaign integration drives the lead funnel from form submission through nurture.",
-        image: "/showcase-images/Client - DIRT.png",
+        image: "/showcase-images/Client - The DIRT Agency.png",
       },
     ],
     results: {
@@ -164,13 +173,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "TODO: Outcomes for DIRT — performance figures, lead generation, time-to-publish improvements, etc.",
       ],
-      metrics: [
-        { value: "90+", label: "Google PageSpeed" },
-      ],
+      metrics: [{ value: "90+", label: "Google PageSpeed" }],
     },
-    galleryImages: [
-      "/showcase-images/Client - DIRT.png",
-    ],
+    galleryImages: ["/showcase-images/Client - The DIRT Agency.png"],
     order: 1,
     featured: true,
   },
@@ -185,10 +190,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ["web-development", "maintenance"],
     serviceLabels: ["Web Development", "Web Maintenance"],
     excerpt:
-      "A WordPress build for an accountability-focused service business, with ongoing maintenance keeping the site sharp.",
+      "An Australian Xero training and bookkeeping practice helping small businesses across medical, NDIS, ecommerce and startup sectors get on top of their finances and stay there.",
     featuredImage: "/showcase-images/Client - NNAccountability.png",
     clientLogo: "/clients/nnaccountability-logo.svg",
-    // clientUrl: "https://nnaccountability.com", // TODO: Richard to confirm
+    // Currently on temporary subdomain; migrating to nnaccountability.com.au
+    clientUrl: "https://nnaccountability.ravenci.solutions",
     template: "premium",
     metaTitle: "NNAccountability Case Study | RAVENCI Solutions",
     metaDescription:
@@ -229,31 +235,27 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "TODO: Outcomes — what the new site enabled for the practice.",
       ],
-      metrics: [
-        { value: "85+", label: "Google PageSpeed" },
-      ],
+      metrics: [{ value: "85+", label: "Google PageSpeed" }],
     },
-    galleryImages: [
-      "/showcase-images/Client - NNAccountability.png",
-    ],
+    galleryImages: ["/showcase-images/Client - NNAccountability.png"],
     order: 2,
     featured: true,
   },
 
-  // ── 3. Going Dark ──────────────────────────────────────────────────────────
+  // ── 3. GoingDark ───────────────────────────────────────────────────────────
   // TODO: Richard to fill in real hero copy, problem/approach/results, screenshots
   {
-    slug: "going-dark",
-    clientName: "Going Dark",
+    slug: "goingdark",
+    clientName: "GoingDark",
     industry: "ecommerce",
     industryLabel: "E-commerce",
     services: ["web-development", "ecommerce", "seo-and-content"],
     serviceLabels: ["Web Development", "Shopify", "SEO"],
     excerpt:
-      "A custom Shopify build with Liquid theme work and ongoing SEO to drive qualified organic traffic.",
+      "An Australian thermal and night vision retailer for serious hunters — pairing carefully chosen gear from Pulsar, HikMicro, PARD and Nocpix with the kind of expert guidance you can't get from a big-box store.",
     featuredImage: "/showcase-images/Client - GoingDark.png",
     clientLogo: "/clients/going-dark-logo.svg",
-    // clientUrl: "https://goingdark.com.au", // TODO: Richard to confirm
+    clientUrl: "https://goingdark.com.au",
     template: "premium",
     metaTitle: "Going Dark Case Study | RAVENCI Solutions",
     metaDescription:
@@ -294,13 +296,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "TODO: Outcomes for Going Dark — search rankings, traffic growth, sales metrics where available.",
       ],
-      metrics: [
-        { value: "85+", label: "Google PageSpeed" },
-      ],
+      metrics: [{ value: "85+", label: "Google PageSpeed" }],
     },
-    galleryImages: [
-      "/showcase-images/Client - GoingDark.png",
-    ],
+    galleryImages: ["/showcase-images/Client - GoingDark.png"],
     order: 3,
     featured: true,
   },
@@ -314,7 +312,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ["web-development", "maintenance"],
     serviceLabels: ["Web Development", "Web Maintenance"],
     excerpt:
-      "A complete digital overhaul for one of the Redcliffe Peninsula's leading home builders, delivering a modern web presence that generates qualified leads.",
+      "A Sydney Northern Beaches builder specialising in knockdown-rebuild and dual occupancy projects — bespoke homes designed and built around how each family actually lives.",
     featuredImage: "/showcase-images/Client - Peninsula Homes.png",
     clientLogo: "/clients/peninsula-homes-logo.svg",
     clientUrl: "https://peninsulahomes.com.au",
@@ -432,10 +430,10 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Web Maintenance",
     ],
     excerpt:
-      "A full brand and digital build for a security services company — from logo through stationery, signage, website, and ongoing care.",
+      "A family-owned North Lakes security company protecting Brisbane homes and businesses with integrated alarms, CCTV, access control, and intercom systems — designed to work together, not as separate add-ons.",
     featuredImage: "/showcase-images/Client - Covenant Security.png",
     clientLogo: "/clients/covenant-security-solutions-logo.svg",
-    clientUrl: "https://covenantsecuritysolutions.com.au",
+    clientUrl: "https://covenantsecurity.com.au",
     template: "premium",
     metaTitle: "Covenant Security Solutions Case Study | RAVENCI Solutions",
     metaDescription:
@@ -521,7 +519,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ["web-development"],
     serviceLabels: ["Web Development"],
     excerpt:
-      "A modern, professional platform for a growing consulting firm, designed to build credibility and attract enterprise clients.",
+      "A workplace culture consultancy helping Australian government agencies and rural industries shift from cautious to courageous — through tailored training, organisational reviews, and leadership mentoring grounded in discrimination law and gender equity expertise.",
     featuredImage: "/showcase-images/Client - SAC Consulting.png",
     clientLogo: "/clients/sac-consulting-logo.svg",
     clientUrl: "https://sacconsulting.com.au",
@@ -610,7 +608,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ["web-development"],
     serviceLabels: ["Web Development"],
     excerpt:
-      "A custom WordPress build for an architect-focused copywriter, designed to position the brand at the premium end of the market.",
+      "The world's only copywriter writing exclusively for architects — helping practices win the projects they actually want, with positioning and website copy that sounds human, not robot.",
     featuredImage: "/showcase-images/Client - Nikita Morell.png",
     clientLogo: "/clients/nikita-morell-logo.svg",
     clientUrl: "https://nikitamorell.com",
@@ -695,7 +693,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "eCommerce",
     ],
     excerpt:
-      "A bespoke brand and BigCommerce build for a luxury gifting business — from identity and stationery through to the storefront.",
+      "An Australian retailer of personalised laser-cut event décor and bespoke gifts — wedding signage, cake toppers, custom labels, and keepsakes for the moments people actually want to remember.",
     featuredImage: "/showcase-images/Client - Cadeaurable.png",
     clientLogo: "/clients/cadeaurable-logo.svg",
     clientUrl: "https://cadeaurable.com.au",
@@ -785,7 +783,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Web Development",
     ],
     excerpt:
-      "A full brand and web build for a specialist remedial building company — brand identity, stationery, digital design and a custom WordPress site.",
+      "A Gold Coast specialist in remedial building work — diagnosing and fixing concrete cancer, structural defects, and waterproofing failures for residential and commercial properties across Queensland's southeast.",
     featuredImage: "/showcase-images/Client - Coast Remedial Solutions.png",
     clientLogo: "/clients/coast-remedial-solutions-logo.svg",
     clientUrl: "https://coastremedialsolutions.com.au",
