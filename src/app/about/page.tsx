@@ -46,8 +46,8 @@ export default function AboutPage() {
             className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
             style={{ lineHeight: "2.25rem" }}
           >
-            Built by a structural engineer turned developer — for businesses
-            that need their website to last as long as the buildings do.
+            Built properly. Engineered to last. Stays out of your way. We take
+            the long view on what your website needs to do.
           </h2>
         </article>
       </section>

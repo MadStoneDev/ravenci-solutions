@@ -43,10 +43,9 @@ export default function Home() {
           <h2
             className={`mt-8 max-w-[600px] text-lg md:text-xl font-light text-neutral-400`}
           >
-            For Australian businesses that have outgrown what they have. Twenty
-            years and 450+ projects of building websites properly — still
-            working in five years, with no plugin-clutter and no surprise
-            subscriptions to escape from.
+            Twenty years and 450+ projects for established Australian
+            businesses. We build websites the right way the first time —
+            modern, performant, still working in five years.
           </h2>
 
           <div className={`mt-16 flex gap-6`}>
