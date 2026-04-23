@@ -7,49 +7,56 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Mobile App Development - RAVENCI Solutions",
   description:
-    "iOS and Android apps with React Native, Swift, and Kotlin. Store submission to Apple App Store and Google Play. Brisbane-based, AUD pricing.",
+    "iPhone and Android apps your users will actually keep using. Brisbane-based, AUD pricing, built to last well past the next OS update.",
 };
 
 export default function MobileAppDevelopmentPage() {
   const testimonials = getTestimonialsForPage("mobile-apps");
   const features = [
     {
-      title: "Cross-Platform & Native",
+      title: "iPhone and Android, both",
       description:
-        "React Native when it fits, Swift/Kotlin for native performance",
+        "One codebase where it makes sense, fully native where the project demands it. We pick what fits, not what's easiest for us.",
     },
     {
-      title: "App Store Publishing",
+      title: "Published to both app stores",
       description:
-        "Submission and guidance for Apple App Store and Google Play",
+        "We handle submission, review responses, and the back-and-forth with Apple and Google so you don't have to learn either process.",
     },
     {
-      title: "Modern Architecture",
-      description: "TypeScript-first, modular features, clean APIs",
+      title: "Built to last past the next OS update",
+      description:
+        "Clean, maintainable code that survives iOS and Android version changes — not a plugin stack waiting to break.",
     },
     {
-      title: "Authentication & Security",
-      description: "Secure auth, permissions, and best-practice data handling",
+      title: "Login, permissions, and data — done properly",
+      description:
+        "Secure user accounts, permissions handled correctly, and data stored the way your industry actually requires.",
     },
     {
-      title: "Push Notifications",
-      description: "FCM/APNs setup and in-app messaging where required",
+      title: "Push notifications that work",
+      description:
+        "Reliable notifications and in-app messaging — set up so they actually get delivered, not silently swallowed.",
     },
     {
-      title: "Offline-First",
-      description: "Local storage and sync strategies for reliability",
+      title: "Works without internet",
+      description:
+        "Your users can keep using the app offline, and everything syncs back up the moment they reconnect.",
     },
     {
-      title: "Analytics & Crash Reporting",
-      description: "Visibility with metrics and error monitoring",
+      title: "You'll know how it's performing",
+      description:
+        "Usage metrics and crash monitoring built in, so you can see what's working and we can fix problems before users complain.",
     },
     {
-      title: "CI/CD Pipelines",
-      description: "Automated builds, testing, and distribution",
+      title: "Releases without surprises",
+      description:
+        "Automated builds and testing mean every update goes out the same reliable way. No mystery, no rushed midnight deploys.",
     },
     {
-      title: "Scalable Backends",
-      description: "Node/Express and Supabase, or tech suited to the project",
+      title: "Grows with your users",
+      description:
+        "The behind-the-scenes infrastructure handles 100 users or 100,000 — chosen and built for what the app actually needs.",
     },
   ];
 
@@ -104,8 +111,8 @@ export default function MobileAppDevelopmentPage() {
             Mobile apps users love to keep
           </h1>
           <h2 className="max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light">
-            Built with React Native, Swift, and Kotlin—published to Apple and
-            Google stores
+            iPhone and Android apps built to be used every day — and to keep
+            working long after the next OS update.
           </h2>
         </article>
       </section>

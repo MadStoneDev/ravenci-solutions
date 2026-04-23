@@ -23,7 +23,7 @@ const features = [
   {
     title: "Patient Portal Ready",
     description:
-      "Secure patient-facing areas for forms, results, and communication — built with privacy in mind",
+      "Patients can securely access forms, results, and message your team online — without you having to mail or call them",
   },
   {
     title: "Privacy & Compliance",
@@ -141,8 +141,8 @@ export default function HealthcarePage() {
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             RAVENCI Solutions builds websites for healthcare professionals in
-            Brisbane. From $5,000, we deliver online booking integration, patient
-            portals, NDIS-ready features, and privacy-compliant design.
+            Brisbane. From $5,000, we deliver online booking integration,
+            patient portals, NDIS-ready features, and privacy-compliant design.
             Australian Privacy Principles considered from day one. 20+ years of
             digital experience.
           </p>
@@ -163,7 +163,7 @@ export default function HealthcarePage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>100+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>75+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Australian Businesses
             </p>

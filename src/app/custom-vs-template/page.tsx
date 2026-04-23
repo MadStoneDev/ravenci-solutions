@@ -29,16 +29,16 @@ const comparisonRows = [
   },
   {
     feature: "Performance",
-    custom: "85+ PageSpeed scores, optimised code, lazy loading, CDN-ready",
-    template: "Often reliant on plugins, resulting in 40-60 PageSpeed scores",
-    diy: "Varies wildly — often bloated with unused CSS/JS",
+    custom: "Pages load in under 2 seconds. Customers don't wait around to bounce.",
+    template: "Slow load times. Plugin bloat. Customers get tired and leave.",
+    diy: "Wildly inconsistent. Often loads slow on mobile, where it matters most.",
   },
   {
     feature: "SEO",
     custom:
-      "Structured data, semantic HTML, meta tags, sitemap, schema markup built in",
-    template: "Relies on third-party SEO plugins rather than building it into the code",
-    diy: "Limited control over meta tags, URL structure, and schema",
+      "Search engines understand and rank your content properly from day one.",
+    template: "Depends on a plugin to do what should be built in. Usually halfway done.",
+    diy: "You're limited to what the platform lets you control. That's not much.",
   },
   {
     feature: "Scalability",
@@ -50,10 +50,10 @@ const comparisonRows = [
   {
     feature: "Security",
     custom:
-      "No unnecessary plugins, minimal attack surface, SSL, secure headers",
+      "Your site and your customers' data are protected by design — not by hoping a plugin doesn't break.",
     template:
-      "Stacking plugins for basic tasks creates security vulnerabilities and an expanding attack surface",
-    diy: "Platform-managed but you have no control over patches",
+      "Every extra plugin is a new way to get hacked. Most agency-built sites have a stack of them.",
+    diy: "The platform handles security, which is fine — until it doesn't, and you can't do anything about it.",
   },
   {
     feature: "Ownership",
@@ -95,17 +95,17 @@ const faqItems = [
   {
     title: "What's wrong with the way most agencies build websites?",
     summary:
-      "Most agencies rely on pre-built themes and plugins rather than writing clean code. This leads to bloated sites, poor PageSpeed scores, security vulnerabilities from plugin stacking, and dependency on third-party developers for updates.",
+      "Most agencies stack pre-built themes and plugins instead of building properly. The result: slow sites that get hacked, plugin subscriptions that pile up, and a developer you can't reach when something breaks.",
     content:
-      "Most agencies assemble websites from pre-built themes and plugins rather than writing clean, purpose-built code. The result is bloated sites with poor PageSpeed scores, security vulnerabilities from plugin stacking, and long-term dependency on third-party theme and plugin developers for updates. RAVENCI writes code — we understand what every line does, so your site is fast, secure, and fully under your control.",
+      "Most agencies assemble websites from pre-built themes and a stack of plugins instead of building properly. It's faster for them, but it's a problem for you — slow sites, security gaps from plugin stacking, subscriptions piling up for every little feature, and a deep dependency on third-party developers who may stop supporting their plugins next year. We build sites the way they should be built — properly, once, with the long view in mind. So they're still working in five years instead of falling apart in eighteen months.",
   },
   {
     title:
       "What technology does RAVENCI use for custom websites?",
     summary:
-      "RAVENCI builds primarily with Next.js (React) for high-performance sites and WordPress for clients needing familiar CMS management. Both deliver 85+ PageSpeed scores, strong SEO, and clean code.",
+      "We choose the right platform for each project — modern custom builds for performance and flexibility, WordPress for clients who want to manage content themselves. Either way, the result is fast, secure, and built to last.",
     content:
-      "We build primarily with Next.js (React) for high-performance sites and WordPress for clients who need familiar CMS management. Both approaches deliver 85+ PageSpeed scores, strong SEO foundations, and clean, maintainable code.",
+      "We choose the right platform for each project rather than forcing every client onto the same one. For performance-critical sites we build custom from the ground up. For content-led sites where the team wants to manage things themselves, we build on WordPress — but properly, not as a stack of plugins. Either way you get a site that performs, ranks, and is still working five years from now.",
   },
   {
     title:

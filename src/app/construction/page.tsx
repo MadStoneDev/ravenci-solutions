@@ -1,9 +1,6 @@
 import Link from "next/link";
 
-import {
-  IconCheck,
-  IconCircleCheckFilled,
-} from "@tabler/icons-react";
+import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
@@ -40,9 +37,9 @@ const features = [
       "Highlight your team, licences, certifications, and capabilities to build trust with prospective clients",
   },
   {
-    title: "Heavy Image Handling",
+    title: "Your Portfolio Loads Instantly",
     description:
-      "Construction sites generate huge photos. We optimise and compress imagery so your portfolio loads in seconds, not minutes",
+      "Construction work generates massive photos. We make sure those beautiful project shots load in seconds — even on a phone in the field",
   },
   {
     title: "Multi-Project Management",
@@ -168,7 +165,7 @@ export default function ConstructionPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>100+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>75+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Australian Businesses
             </p>
@@ -311,10 +308,7 @@ export default function ConstructionPage() {
         className={`content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white`}
       >
         <h2 className={`font-serif text-h3`}>Construction Website FAQs</h2>
-        <Accordion
-          titleClassName={`py-6 text-lg`}
-          items={faqItems}
-        />
+        <Accordion titleClassName={`py-6 text-lg`} items={faqItems} />
       </section>
 
       {/* CTA */}

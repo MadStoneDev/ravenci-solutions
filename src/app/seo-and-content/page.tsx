@@ -19,9 +19,9 @@ export default function SEOContentPage() {
         "In-depth analysis to find the keywords your customers actually search for",
     },
     {
-      title: "On-Page Optimization",
+      title: "Found by the Right People",
       description:
-        "Technical SEO improvements that help search engines understand your content",
+        "We make sure Google can read your site properly — and the right customers can find what you offer when they go looking",
     },
     {
       title: "Content Strategy",
@@ -85,8 +85,8 @@ export default function SEOContentPage() {
         "Professional press releases for media coverage and backlinks",
     },
     {
-      title: "Technical SEO Audit",
-      description: "Comprehensive technical analysis and prioritized fixes",
+      title: "Why You're Not Ranking Audit",
+      description: "We dig through your site and find the technical issues stopping you from showing up — then prioritise what to fix first",
     },
     {
       title: "Link Building",
@@ -119,8 +119,8 @@ export default function SEOContentPage() {
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             RAVENCI Solutions provides SEO and content services in Brisbane,
-            Australia. SEO Foundation audits from $2,490, ongoing Growth SEO from
-            $1,980/month, and copywriting from $390/page. Keyword research,
+            Australia. SEO Foundation audits from $2,490, ongoing Growth SEO
+            from $1,980/month, and copywriting from $390/page. Keyword research,
             on-page optimisation, local SEO, and conversion-focused content with
             transparent AUD pricing.
           </p>
@@ -130,7 +130,7 @@ export default function SEOContentPage() {
       <section className="p-10 flex flex-col items-center gap-3 bg-ravenci-primary text-white text-center">
         <div className="max-w-lg">
           <h3 className="pb-6 border-b border-white/20 font-serif font-medium text-xl">
-            Trusted by 100+ Australian businesses to win the right searches and
+            Trusted by 75+ Australian businesses to win the right searches and
             convert
           </h3>
           {testimonials[0] && (

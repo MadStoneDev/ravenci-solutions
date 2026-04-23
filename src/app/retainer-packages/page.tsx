@@ -1,15 +1,16 @@
 import Link from "next/link";
-import PriceButton from "@/components/price-button";
 import StickyCTA from "@/components/sticky-cta";
 
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import Accordion from "@/components/accordion";
+import Breadcrumbs from "@/components/breadcrumbs";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
   title: "Retainer Packages — Ongoing Digital Partnership | RAVENCI Solutions",
   description:
     "Monthly retainer packages for ongoing web development, design, and strategy in Brisbane. From $490/mo. Your dedicated digital team without the overhead of hiring.",
+  alternates: { canonical: "/retainer-packages" },
 };
 
 export default function RetainerPackagesPage() {
@@ -66,7 +67,6 @@ export default function RetainerPackagesPage() {
         "Overage rate: $175/hr",
         "No minimum commitment — cancel anytime",
       ],
-      cap: 12,
     },
     {
       name: "Growth",
@@ -84,7 +84,6 @@ export default function RetainerPackagesPage() {
         "Overage rate: $165/hr",
         "3-month minimum commitment",
       ],
-      cap: 8,
     },
     {
       name: "Partner",
@@ -103,7 +102,6 @@ export default function RetainerPackagesPage() {
         "Overage rate: $155/hr",
         "3-month minimum commitment",
       ],
-      cap: 5,
     },
     {
       name: "Scale",
@@ -122,7 +120,6 @@ export default function RetainerPackagesPage() {
         "Overage rate: $145/hr",
         "6-month minimum commitment",
       ],
-      cap: 3,
     },
   ];
 
@@ -165,27 +162,51 @@ export default function RetainerPackagesPage() {
 
   return (
     <main className={`flex flex-col`}>
-      {/* Hero */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://ravenci.solutions",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Retainer Packages",
+                item: "https://ravenci.solutions/retainer-packages",
+              },
+            ],
+          }),
+        }}
+      />
+
+      {/* Hero Section */}
       <section
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
-        <article className={`max-w-2xl col-span-12 flex flex-col gap-2`}>
-          <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
+        <article className={`col-span-12 flex flex-col`}>
+          <Breadcrumbs items={[{ label: "Retainer Packages" }]} />
+          <h1 className={`mt-4 text-4xl md:text-5xl lg:text-h1 font-medium`}>
             Your Dedicated Digital Team
           </h1>
           <h2
-            className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
-            style={{ lineHeight: "2.25rem" }}
+            className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
           >
             Ongoing development, design, and strategy — without the overhead of
             hiring
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
-            RAVENCI Solutions offers monthly retainer packages from $490/month in
-            Brisbane. Four tiers: Starter (2hrs), Growth (5hrs), Partner
-            (12hrs), and Scale (25hrs). Includes hosting, maintenance, dedicated
-            development hours, and strategy calls. Flexible allocation across
-            dev, design, content, and SEO.
+            For Australian businesses that want a digital team without the
+            overhead of hiring one. Monthly packages from $490, with hosting,
+            maintenance, and dedicated time for development, design, content
+            and SEO — used however your business needs it that month. Tell us
+            the priorities. We&apos;ll take it from there.
           </p>
         </article>
       </section>
@@ -207,24 +228,102 @@ export default function RetainerPackagesPage() {
               >
                 &ldquo;{testimonials[0].content}&rdquo;
               </p>
-              <h3
-                className={`font-sans text-2xl font-light text-neutral-100`}
-              >
+              <h3 className={`font-sans text-2xl font-light text-neutral-100`}>
                 <span className={`font-bold`}>
                   {testimonials[0].author.split(" ")[0]}
                 </span>{" "}
                 {testimonials[0].author.split(" ").slice(1).join(" ")}
               </h3>
+              {testimonials[0].role && (
+                <p className="mt-1 text-sm text-white/60">
+                  {testimonials[0].role}
+                </p>
+              )}
             </>
           )}
         </div>
       </section>
 
-      {/* Two-Column Grid */}
-      <div className={`grid grid-cols-1 lg:grid-cols-2 bg-white`}>
-        {/* Left Column — Why Choose a Retainer */}
+      {/* Two-Column Section */}
+      <div className={`grid grid-cols-1 lg:grid-cols-2`}>
+        {/* Left Column — Dark: Pain Points + Why a Retainer Beats Hiring */}
         <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-200/50`}
+          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
+        >
+          <article className={`max-w-lg`}>
+            <h3 className={`font-serif text-h3 font-bold text-white`}>
+              Tired of Digital Growing Pains?
+            </h3>
+            <div className={`my-4 text-neutral-400/90`}>
+              Stop dealing with:
+              <ul className={`mt-4 flex flex-col gap-2`}>
+                <li>- Freelancers who disappear between projects</li>
+                <li>- Websites that sit stagnant for months after launch</li>
+                <li>- Surprise invoices every time you need a small change</li>
+                <li>- Juggling multiple vendors for dev, design, and SEO</li>
+                <li>- Losing momentum because you can&apos;t get things done fast enough</li>
+              </ul>
+            </div>
+
+            <h3
+              className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}
+            >
+              Why a Retainer Beats Hiring In-House
+            </h3>
+            <p className={`mb-6 text-neutral-400/90`}>
+              Our Scale retainer costs{" "}
+              <span className={`text-white font-bold`}>$41,880/year</span> — a
+              full-time hire costs{" "}
+              <span className={`text-white font-bold`}>$80,000–$100,000/year</span>{" "}
+              before super, leave, equipment, and training.
+            </p>
+            <ul className={`flex flex-col gap-4 mb-6 text-neutral-400/90`}>
+              <li className={`flex gap-2`}>
+                <IconCheck
+                  size={24}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                />
+                No recruitment costs, onboarding, or HR overhead
+              </li>
+              <li className={`flex gap-2`}>
+                <IconCheck
+                  size={24}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                />
+                Access to a full team — dev, design, SEO, content — not just one
+                person
+              </li>
+              <li className={`flex gap-2`}>
+                <IconCheck
+                  size={24}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                />
+                Scale up or down as your business needs change
+              </li>
+              <li className={`flex gap-2`}>
+                <IconCheck
+                  size={24}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                />
+                No sick days, no annual leave, no gaps in coverage
+              </li>
+            </ul>
+            <p className={`mb-4 text-neutral-400/90`}>
+              A retainer gives you a dedicated digital team that knows your
+              business inside and out. No onboarding every time, no context
+              switching, no lost momentum.
+            </p>
+            <p className={`text-neutral-400/90`}>
+              That&apos;s how we approach it at RAVENCI. To make it even simpler for
+              you, we offer four tiers of retainer packages, each designed to
+              meet your specific needs.
+            </p>
+          </article>
+        </section>
+
+        {/* Right Column — Light: Features Checklist */}
+        <section
+          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
         >
           <article className={`max-w-lg`}>
             <h3 className={`mb-8 font-serif text-h3 font-bold`}>
@@ -237,7 +336,7 @@ export default function RetainerPackagesPage() {
                     className="text-ravenci-primary flex-shrink-0"
                     size={24}
                   />
-                  <p className={`text-neutral-500/80`}>
+                  <p className={`text-neutral-600`}>
                     <span className="font-bold text-ravenci-dark">
                       {feature.title}:
                     </span>{" "}
@@ -246,137 +345,93 @@ export default function RetainerPackagesPage() {
                 </li>
               ))}
             </ul>
-          </article>
 
-          <Link
-            href={`/launch-your-vision`}
-            className={`mt-12 p-2 flex items-center gap-6 bg-ravenci-primary rounded-xl hover:scale-105 text-center transition-all duration-300 ease-in-out`}
-          >
-            <div className={`flex flex-col items-center w-full`}>
-              <span
-                className={`font-bold text-base text-white text-center uppercase transition-all duration-300 ease-in-out`}
-              >
-                Not sure which tier? Let&apos;s talk
-              </span>
-              <span
-                className={`text-sm text-white/60 text-center transition-all duration-300 ease-in-out`}
-              >
-                Book a free strategy call
-              </span>
-            </div>
-          </Link>
-        </section>
-
-        {/* Right Column — Tiers */}
-        <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
-        >
-          <article className={`max-w-lg flex flex-col gap-12`}>
-            {tiers.map((tier) => (
-              <div key={tier.name}>
-                <h3
-                  className={`font-serif text-h3 font-bold text-white`}
+            <Link
+              href={`/launch-your-vision`}
+              className={`mt-12 p-2 flex items-center gap-6 bg-ravenci-primary rounded-xl hover:scale-105 text-center transition-all duration-300 ease-in-out`}
+            >
+              <div className={`flex flex-col items-center w-full`}>
+                <span
+                  className={`font-bold text-base text-white text-center uppercase transition-all duration-300 ease-in-out`}
                 >
-                  {tier.name}
-                </h3>
-                <p className={`mt-2 text-neutral-400/90`}>
-                  {tier.hours} hours of dedicated work per month
-                </p>
-
-                <Accordion
-                  titleClassName={`py-4 text-sm text-white/80`}
-                  items={[
-                    {
-                      title: "What's Included",
-                      content: (
-                        <ul className="flex flex-col gap-2 text-sm text-neutral-400/90">
-                          {tier.includes.map((item, i) => (
-                            <li key={i} className="flex items-start gap-2">
-                              <IconCheck
-                                size={16}
-                                className="mt-0.5 text-ravenci-primary flex-shrink-0"
-                              />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      ),
-                    },
-                  ]}
-                />
-
-                <PriceButton
-                  price={tier.price}
-                  frequency={"mo."}
-                  fromText={""}
-                  includeFrom={false}
-                  callToAction={`Book a Strategy Call`}
-                  subCallToAction={`Start your ${tier.name} retainer`}
-                  link={`/launch-your-vision`}
-                  className="!mt-4"
-                />
-
-                <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
-                  <p className="text-sm text-yellow-200">
-                    ⚡ Limited to {tier.cap} clients — ensures dedicated
-                    attention for every partner
-                  </p>
-                </div>
+                  Not sure which tier? Let&apos;s talk
+                </span>
+                <span
+                  className={`text-sm text-white/60 text-center transition-all duration-300 ease-in-out`}
+                >
+                  Book a free strategy call
+                </span>
               </div>
-            ))}
+            </Link>
           </article>
         </section>
       </div>
 
-      {/* Comparison Section */}
+      {/* Full-Width Pricing Section */}
       <section
-        className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-primary`}
+        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
       >
-        <article className={`mx-auto max-w-xl`}>
-          <h3
-            className={`mb-6 font-serif text-h3 font-bold text-white text-center`}
-          >
-            Why a Retainer Beats Hiring In-House
-          </h3>
-          <p className={`mb-8 text-center text-neutral-50/70`}>
-            Our Scale retainer costs{" "}
-            <span className={`text-white font-bold`}>$41,880/year</span> — a
-            full-time hire costs{" "}
-            <span className={`text-white font-bold`}>$80,000–$100,000/year</span>{" "}
-            before super, leave, equipment, and training.
-          </p>
-          <ul className={`flex flex-col gap-4`}>
-            <li className={`flex gap-2 text-white`}>
-              <IconCheck
-                size={24}
-                className={`p-1 bg-white rounded-full text-ravenci-primary flex-shrink-0`}
-              />{" "}
-              No recruitment costs, onboarding, or HR overhead
-            </li>
-            <li className={`flex gap-2 text-white`}>
-              <IconCheck
-                size={24}
-                className={`p-1 bg-white rounded-full text-ravenci-primary flex-shrink-0`}
-              />{" "}
-              Access to a full team — dev, design, SEO, content — not just one
-              person
-            </li>
-            <li className={`flex gap-2 text-white`}>
-              <IconCheck
-                size={24}
-                className={`p-1 bg-white rounded-full text-ravenci-primary flex-shrink-0`}
-              />{" "}
-              Scale up or down as your business needs change
-            </li>
-            <li className={`flex gap-2 text-white`}>
-              <IconCheck
-                size={24}
-                className={`p-1 bg-white rounded-full text-ravenci-primary flex-shrink-0`}
-              />{" "}
-              No sick days, no annual leave, no gaps in coverage
-            </li>
-          </ul>
-        </article>
+        <h3
+          className={`mb-12 font-serif text-h3 font-bold text-white text-center`}
+        >
+          Choose Your Retainer
+        </h3>
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6`}
+        >
+          {tiers.map((tier) => (
+            <div
+              key={tier.name}
+              className={`bg-neutral-800/50 rounded-xl p-8 border border-neutral-700`}
+            >
+              <h4 className={`font-serif text-xl font-bold text-white`}>
+                {tier.name}
+              </h4>
+              <p className={`mt-2 text-sm text-neutral-400/90`}>
+                {tier.hours} hours/month
+              </p>
+
+              <Accordion
+                titleClassName={`py-3 px-4 mb-2 text-base rounded-lg border border-neutral-600 bg-neutral-800 text-white hover:border-ravenci-primary hover:bg-ravenci-primary/20 transition-colors`}
+                items={[
+                  {
+                    title: "What's Included",
+                    content: (
+                      <ul className="flex flex-col gap-2 text-sm text-neutral-400/90">
+                        {tier.includes.map((item, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <IconCheck
+                              size={16}
+                              className="mt-0.5 text-ravenci-primary flex-shrink-0"
+                            />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    ),
+                  },
+                ]}
+              />
+
+              <Link
+                href={`/launch-your-vision`}
+                className={`group/cta mt-8 block text-center rounded-xl border border-neutral-600 hover:border-white hover:bg-white p-6 transition-colors`}
+              >
+                <span
+                  className={`text-4xl font-bold text-white group-hover/cta:text-ravenci-dark transition-colors`}
+                >
+                  ${tier.price.toLocaleString()}
+                  <span className={`text-base font-normal`}>/mo.</span>
+                </span>
+                <p
+                  className={`mt-3 text-sm font-medium text-white group-hover/cta:text-ravenci-dark transition-colors`}
+                >
+                  Book a strategy call &rarr;
+                </p>
+              </Link>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* FAQ Section */}
@@ -390,16 +445,48 @@ export default function RetainerPackagesPage() {
         />
       </section>
 
-      {/* Spacer */}
+      {/* Footer Spacer */}
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
 
-      {/* StickyCTA */}
+      {/* Sticky CTA for Mobile */}
       <StickyCTA
         link="/launch-your-vision"
         startingPrice={490}
         label="Book a Strategy Call"
+      />
+
+      {/* Product JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "RAVENCI Retainer Packages",
+            description:
+              "Monthly retainer packages for ongoing web development, design, and strategy. Includes hosting, maintenance, and dedicated development hours.",
+            brand: {
+              "@type": "Organization",
+              name: "RAVENCI Solutions",
+            },
+            offers: tiers.map((tier) => ({
+              "@type": "Offer",
+              name: `${tier.name} Retainer`,
+              price: tier.price,
+              priceCurrency: "AUD",
+              priceSpecification: {
+                "@type": "UnitPriceSpecification",
+                price: tier.price,
+                priceCurrency: "AUD",
+                billingDuration: "P1M",
+              },
+              availability: "https://schema.org/InStock",
+              url: "https://ravenci.solutions/retainer-packages",
+            })),
+          }),
+        }}
       />
 
       {/* FAQ JSON-LD Schema */}

@@ -33,27 +33,27 @@ export default function WebAppPage() {
         "Generate insights automatically instead of manual number crunching",
     },
     {
-      title: "Integration Ready",
+      title: "Talks to Your Existing Tools",
       description:
-        "Connects with your existing tools and grows with your business",
+        "Connects to Xero, your CRM, your booking system — so data flows automatically instead of being re-typed three times",
     },
     {
-      title: "Mobile Responsive",
-      description: "Access your business data from anywhere, any device",
+      title: "Works on Every Device",
+      description: "Your team uses it on the desktop, on the road, on a phone — same data, same experience",
     },
     {
-      title: "Enterprise Security",
+      title: "Your Data, Properly Protected",
       description:
-        "Bank-level security measures protect your sensitive business data",
+        "Encrypted connections, secure logins, and the kind of permissions structure your industry actually expects",
     },
     {
-      title: "Scalable Architecture",
+      title: "Grows With You",
       description:
-        "Built to handle growth from startup to enterprise without breaking",
+        "Handles 10 users or 10,000 without slowing down. You won't outgrow it the year after we ship it",
     },
     {
-      title: "User-Friendly Interface",
-      description: "Intuitive design that your team will actually want to use",
+      title: "Your Team Will Actually Use It",
+      description: "Designed around how the work really happens — not how a generic SaaS thinks it should",
     },
   ];
 
@@ -82,8 +82,8 @@ export default function WebAppPage() {
           <h3
             className={`pb-6 border-b border-white/20 font-serif font-medium text-xl`}
           >
-            Trusted by 100+ Australian businesses to build platforms that transform
-            operations
+            Trusted by 75+ Australian businesses to build platforms that
+            transform operations
           </h3>
           {testimonials[0] && (
             <>
@@ -93,9 +93,7 @@ export default function WebAppPage() {
                 &ldquo;{testimonials[0].content}&rdquo;
               </p>
               <h3 className={`font-sans text-2xl font-light text-neutral-100`}>
-                <span className={`font-bold`}>
-                  {testimonials[0].author}
-                </span>
+                <span className={`font-bold`}>{testimonials[0].author}</span>
               </h3>
             </>
           )}
@@ -230,7 +228,6 @@ export default function WebAppPage() {
                 callToAction={`Process Automation Tool`}
                 subCallToAction={`Enquire for a tailored proposal`}
               />
-
             </div>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
@@ -285,7 +282,6 @@ export default function WebAppPage() {
                 callToAction={`Business Management Platform`}
                 subCallToAction={`Enquire for a tailored proposal`}
               />
-
             </div>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
@@ -338,7 +334,6 @@ export default function WebAppPage() {
                 callToAction={`Enterprise Solution`}
                 subCallToAction={`Enquire for a tailored proposal`}
               />
-
             </div>
           </article>
         </section>

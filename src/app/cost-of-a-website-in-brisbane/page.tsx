@@ -31,7 +31,7 @@ const headlineStats = [
   },
   {
     stat: "$15k+",
-    label: "Premium custom Next.js or branded build for established businesses",
+    label: "Premium custom build for established businesses ready to invest properly",
   },
 ];
 
@@ -86,11 +86,11 @@ const pricingTiers = [
     bestFor:
       "Established small businesses, professional services, growing brands",
     whatYouGet: [
-      "Custom design (not a template)",
-      "Built on WordPress, Shopify, or similar CMS",
-      "10 – 20 pages with strategic content structure",
-      "Proper SEO foundations (schema, meta, sitemap)",
-      "Contact forms, basic integrations (Mailchimp, Calendly)",
+      "Custom design that actually looks like your brand (not a template)",
+      "A platform you or your team can update yourselves",
+      "10 – 20 pages structured around how customers actually move through the site",
+      "Built so search engines understand and rank you from day one",
+      "Contact forms and basic integrations to your CRM, email, or booking tool",
     ],
     hiddenCosts: [
       "Premium theme/plugin licences",

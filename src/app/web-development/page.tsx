@@ -157,11 +157,12 @@ export default function WebHostingDevelopmentPage() {
             Professional websites that convert visitors into customers
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
-            RAVENCI Solutions builds custom websites for Australian businesses
-            using Next.js and WordPress. Prices start from $3,490 for a
-            foundation site to $14,990 for a full brand and web package. Every
-            build includes 85+ PageSpeed scores, CMS setup, SEO, and ongoing
-            support. Based in Brisbane with 20+ years of experience.
+            For Australian businesses ready to replace the site they have with
+            one that actually performs. Built properly the first time so it&apos;s
+            still working in five years — no plugin clutter, no surprise
+            subscriptions, no developer disappearing on you. From $3,490 for a
+            foundation build to $14,990 for a full brand and web package, plus
+            ongoing support. Brisbane-based. 20+ years.
           </p>
         </article>
       </section>
@@ -174,8 +175,8 @@ export default function WebHostingDevelopmentPage() {
           <h3
             className={`pb-6 border-b border-white/20 font-serif font-medium text-xl`}
           >
-            Trusted by 100+ Australian businesses to build websites that
-            actually work
+            Trusted by 75+ Australian businesses to build websites that actually
+            work
           </h3>
           {testimonials[0] && (
             <>
@@ -221,9 +222,7 @@ export default function WebHostingDevelopmentPage() {
               </ul>
             </div>
 
-            <h3
-              className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}
-            >
+            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
               Why Choose RAVENCI Over Other Developers?
             </h3>
             <ul className={`flex flex-col gap-4 mb-6 text-neutral-400/90`}>
@@ -263,8 +262,8 @@ export default function WebHostingDevelopmentPage() {
             </p>
             <p className={`text-neutral-400/90`}>
               That's how we approach it at RAVENCI. To make it even simpler for
-              you, we offer three tiers of development services, each designed to
-              meet your specific needs.
+              you, we offer three tiers of development services, each designed
+              to meet your specific needs.
             </p>
           </article>
         </section>
@@ -301,12 +300,12 @@ export default function WebHostingDevelopmentPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
       >
-        <h3
-          className={`mb-10 font-serif text-h3 font-bold text-center`}
-        >
+        <h3 className={`mb-10 font-serif text-h3 font-bold text-center`}>
           Plenty of Add-ons to Suit Your Needs
         </h3>
-        <div className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto`}>
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto`}
+        >
           {addons.map((addon, index) => (
             <div key={index} className="flex items-start gap-2">
               <IconCircleCheckFilled
@@ -331,14 +330,35 @@ export default function WebHostingDevelopmentPage() {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { name: "Peninsula Homes", image: "/showcase-images/Client - Peninsula Homes.png" },
-            { name: "SAC Consulting", image: "/showcase-images/Client - SAC Consulting.png" },
-            { name: "Nikita Morell", image: "/showcase-images/Client - Nikita Morell.png" },
-            { name: "Covenant Security", image: "/showcase-images/Client - Covenant Security.png" },
-            { name: "Coast Remedial Solutions", image: "/showcase-images/Client - Coast Remedial Solutions.png" },
-            { name: "Intercorp Developments", image: "/showcase-images/Client - Intercorp Developments.png" },
+            {
+              name: "Peninsula Homes",
+              image: "/showcase-images/Client - Peninsula Homes.png",
+            },
+            {
+              name: "SAC Consulting",
+              image: "/showcase-images/Client - SAC Consulting.png",
+            },
+            {
+              name: "Nikita Morell",
+              image: "/showcase-images/Client - Nikita Morell.png",
+            },
+            {
+              name: "Covenant Security",
+              image: "/showcase-images/Client - Covenant Security.png",
+            },
+            {
+              name: "Coast Remedial Solutions",
+              image: "/showcase-images/Client - Coast Remedial Solutions.png",
+            },
+            {
+              name: "Intercorp Developments",
+              image: "/showcase-images/Client - Intercorp Developments.png",
+            },
           ].map((project) => (
-            <div key={project.name} className="group relative overflow-hidden rounded-xl">
+            <div
+              key={project.name}
+              className="group relative overflow-hidden rounded-xl"
+            >
               <Image
                 src={project.image}
                 alt={`${project.name} website by RAVENCI`}
@@ -566,21 +586,24 @@ export default function WebHostingDevelopmentPage() {
                   name: "Foundation Website",
                   price: "3490",
                   priceCurrency: "AUD",
-                  description: "Custom single-page design with CMS setup, SEO, and 85+ PageSpeed score. 3 weeks delivery.",
+                  description:
+                    "Custom single-page design with CMS setup, SEO, and 85+ PageSpeed score. 3 weeks delivery.",
                 },
                 {
                   "@type": "Offer",
                   name: "Growth Website",
                   price: "7490",
                   priceCurrency: "AUD",
-                  description: "Multi-page custom website up to 8 pages with advanced CMS, blog setup, and goal tracking. 4-6 weeks delivery.",
+                  description:
+                    "Multi-page custom website up to 8 pages with advanced CMS, blog setup, and goal tracking. 4-6 weeks delivery.",
                 },
                 {
                   "@type": "Offer",
                   name: "Premium Brand & Web",
                   price: "14990",
                   priceCurrency: "AUD",
-                  description: "Complete brand identity plus multi-page custom website. Logo, style guide, wireframes, UX design, and full development. 10-14 weeks delivery.",
+                  description:
+                    "Complete brand identity plus multi-page custom website. Logo, style guide, wireframes, UX design, and full development. 10-14 weeks delivery.",
                 },
               ],
             },

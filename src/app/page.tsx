@@ -170,29 +170,29 @@ export default function Home() {
             items={[
               {
                 title: `Development`,
-                content: `<p class="mb-4 text-neutral-100">Strategic Digital Development: Engineering Solutions Built to Last</p>
+                content: `<p class="mb-4 text-neutral-100">Built once. Built properly. Still working in five years.</p>
 
-<p class="text-neutral-100">CMS Development</p>
-<p class="mb-4 text-neutral-400/90">Leveraging powerful content management systems like WordPress, Prismic and Strapi, we build flexible platforms that you can easily manage. These solutions combine robust functionality with user-friendly administration, perfect for content-driven websites.</p>
+<p class="text-neutral-100">Content sites your team can manage</p>
+<p class="mb-4 text-neutral-400/90">Sites you can update yourself without calling a developer for every comma. Built so the admin makes sense to a human who isn't us.</p>
 
-<p class="text-neutral-100">Custom Stack Development</p>
-<p class="mb-4 text-neutral-400/90">When projects demand unique solutions, we craft custom applications using modern technologies like React, Node, Laravel and Python. These tailor-made platforms are built to handle your specific business requirements while ensuring scalability.</p>
+<p class="text-neutral-100">Custom builds when off-the-shelf won't cut it</p>
+<p class="mb-4 text-neutral-400/90">When the project genuinely needs something custom, we build it from scratch — properly engineered so it grows with you instead of falling apart at the seams.</p>
 
-<p class="text-neutral-100">E-commerce Development</p>
-<p class="mb-4 text-neutral-400/90">That's right, we even build e-commerce stores and platforms. From product catalogs to secure payment processing, our e-commerce solutions focus drive sales. Whether it's Shopify, BigCommerce, or even custom platforms, your online store will be optimized for both customers and staff.</p>
+<p class="text-neutral-100">E-commerce that actually sells</p>
+<p class="mb-4 text-neutral-400/90">Online stores designed around how your customers buy and how your team fulfils. Whether that's Shopify, BigCommerce, or a custom platform — chosen for what fits, not what's easiest.</p>
 
-<p class="text-neutral-100">API Integration & Development</p>
-<p class="mb-4 text-neutral-400/90">Connect your platform with third-party services or create custom APIs to power your applications. We ensure smooth data flow between systems while maintaining security and performance standards.</p>
+<p class="text-neutral-100">Talks to the rest of your business</p>
+<p class="mb-4 text-neutral-400/90">Your website connected to your CRM, your booking system, your accounting, your email — so data flows automatically and nobody's re-typing it three times.</p>
 `,
               },
               {
                 title: `Design`,
-                content: `<p class="mb-4 text-neutral-100">A Strategic Approach to Digital Development: Building Stable, Scalable, and Reliable Solutions</p><p class="text-neutral-100">Wireframing</p>
-<p class="mb-4 text-neutral-400/90">Wireframing is the structural blueprint which shapes how users will interact with your digital platform. This planning stage ensures we build interfaces that serve your needs while delivering intuitive user experiences.</p>
-<p class="text-neutral-100">UI Design (User Interface)</p>
-<p class="mb-4 text-neutral-400/90">Bringing your wireframes to life is what UI Design is all about. Through carefully crafted visual elements, everything from button styles and color schemes to typography and spacing, our design for your product works together to create a cohesive, engaging interface.</p>
-<p class="text-neutral-100">UX Design (User Experience)</p>
-<p class="mb-4 text-neutral-400/90">Accompanying UI Design, the UX design focuses on how users navigate and interact with your platform. By mapping user journeys and optimizing flows, we create experiences that feel natural and keep users engaged, leading to better conversion rates and user satisfaction.</p>`,
+                content: `<p class="mb-4 text-neutral-100">Design that works for your customers, not for design awards.</p><p class="text-neutral-100">Planning the experience</p>
+<p class="mb-4 text-neutral-400/90">Before any pixel gets pushed, we map out how your customers will actually move through the site — what they need, where they'll click, what makes them act. The design follows from that.</p>
+<p class="text-neutral-100">How it looks</p>
+<p class="mb-4 text-neutral-400/90">A site that visibly belongs to your brand and feels modern without being trend-chasing. Clean type, considered colour, intentional spacing — the kind of polish customers notice without being able to name.</p>
+<p class="text-neutral-100">How it works</p>
+<p class="mb-4 text-neutral-400/90">Every page is built to take a visitor somewhere — to enquire, to buy, to read more. Less guessing, more action. That's what good design actually does.</p>`,
               },
               {
                 title: `Maintenance`,
