@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 interface ScrollingScreenshotProps {
   src: string;
   alt: string;
-  /** Total animation cycle in seconds. Default 30 (ample time to read). */
+  /** Total animation cycle in seconds. Default 60 (slow enough to read comfortably). */
   duration?: number;
   /** Optional className for the outer container — used to control aspect ratio. */
   className?: string;
@@ -20,7 +20,7 @@ interface ScrollingScreenshotProps {
 export default function ScrollingScreenshot({
   src,
   alt,
-  duration = 30,
+  duration = 60,
   className = "relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100 group",
 }: ScrollingScreenshotProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
