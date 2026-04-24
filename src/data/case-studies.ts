@@ -320,10 +320,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceLabels: ["Web Development", "Web Maintenance"],
     excerpt:
       "A Sydney Northern Beaches builder designing and building beautiful, environmentally efficient, bespoke homes — with 80% of work coming through referrals from families who've experienced the difference.",
-    featuredImage: "/showcase-images/Client - Peninsula Homes.png",
-    // When you have the full-length homepage screenshot, swap the path
-    // above to point to it (e.g. "/showcase-images/peninsula-homes/full-page.png")
-    // — the auto-scroll component handles the rest.
+    featuredImage: "/showcase-images/peninsula-homes/full-page.png",
     featuredImageScroll: true,
     clientLogo: "/clients/peninsula-homes-logo.svg",
     clientUrl: "https://peninsulahomes.com.au",
