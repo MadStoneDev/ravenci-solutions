@@ -319,15 +319,20 @@ export const CASE_STUDIES: CaseStudy[] = [
     template: "premium",
     metaTitle: "Peninsula Homes Case Study | RAVENCI Solutions",
     metaDescription:
-      "How RAVENCI helped Peninsula Homes modernise their digital presence and increase qualified leads through strategic web development and design.",
-    heroHeadline: "Building a Digital Foundation for a Leading Home Builder",
+      "Peninsula Homes — a Sydney Northern Beaches builder of bespoke homes — needed a site that matched the quality of their work and held its 90+ PageSpeed score for years. Two years later, it still does.",
+    heroHeadline: "Built to Let the Work Do the Talking",
     heroSubheadline:
-      "Peninsula Homes needed a website that matched the quality of homes they build. We delivered a platform that converts visitors into consultations.",
+      "A Northern Beaches builder of bespoke homes needed their site to do justice to the work — and to keep performing long after launch. Two years on, it scores 90+ on PageSpeed, looks identical to The Design Order's vision, and hasn't missed a step.",
 
     // Project metadata
     year: 2024,
     timeline: "6 weeks",
-    techStack: ["WordPress", "Custom Builder", "JavaScript", "PHP"],
+    techStack: [
+      "WordPress",
+      "Zion Builder (RAVENCI-customised)",
+      "JavaScript",
+      "PHP",
+    ],
     collaborators: [
       { role: "Development", name: "RAVENCI Solutions" },
       { role: "Design", name: "The Design Order" },
@@ -336,74 +341,60 @@ export const CASE_STUDIES: CaseStudy[] = [
     problem: {
       heading: "The Challenge",
       paragraphs: [
-        "Peninsula Homes had an outdated website that didn't reflect the quality of their craftsmanship. The site was slow, difficult to navigate on mobile, and wasn't generating the leads their business needed to grow.",
-        "They needed a complete digital overhaul that would showcase their portfolio, communicate their expertise, and make it easy for potential clients to get in touch.",
+        "Peninsula Homes had outgrown their old website. It was dated, slow, and starting to hurt their search rankings. Their SEO consultant set a hard requirement: any rebuild had to score 75+ on Google PageSpeed, and stay there.",
+        "They'd hired The Design Order to refresh the brand and were choosing between three developers to build it. The design had to be matched faithfully — no compromises on detail. Whoever they picked also had to be someone they could trust to maintain the site for the long run.",
       ],
-      // Drop screenshots into /public/showcase-images/peninsula-homes/ then list here.
-      // Falls back to the single `image` below until populated.
-      // images: [
-      //   "/showcase-images/peninsula-homes/old-site-1.png",
-      //   "/showcase-images/peninsula-homes/old-site-2.png",
-      // ],
       image: "/showcase-images/Client - Peninsula Homes.png",
     },
     approach: {
       heading: "Our Approach",
       paragraphs: [
-        "We started with a thorough discovery phase, understanding Peninsula Homes' ideal clients and the journey from initial enquiry to signed contract. This informed every design and development decision.",
-        "The new site was built on a modern stack with a focus on speed, SEO, and mobile-first design. We created a portfolio showcase system that lets their work speak for itself.",
+        "Peninsula Homes came to us through The Design Order, who'd worked with us on three earlier projects. After a video call we got the nod — they said they felt most comfortable with how we'd handle the build and the long-term care.",
+        "We chose WordPress for content management, but with a RAVENCI-customised version of Zion Builder rather than the heavier Elementor or Divi alternatives. That single decision did most of the heavy lifting on performance — the finished site scored over 90 on PageSpeed, well clear of the 75 their SEO consultant required.",
+        "From there it was a careful pixel-for-pixel build of The Design Order's design, with the more interactive elements (featured projects, the menu, About-page lightboxes) custom-coded so the page weight stayed low and the performance budget intact.",
       ],
       highlights: [
-        "Mobile-first responsive design",
-        "Portfolio showcase with project filtering",
-        "Integrated enquiry forms with CRM connection",
-        "SEO-optimised content structure",
+        "Pixel-for-pixel match to The Design Order's design",
+        "90+ Google PageSpeed (target was 75)",
+        "Custom-coded interactive elements where plugins would have hurt performance",
+        "Built to be maintained without breakage — two years on, still untouched",
       ],
-      // images: [
-      //   "/showcase-images/peninsula-homes/wireframe.png",
-      //   "/showcase-images/peninsula-homes/design-system.png",
-      // ],
       image: "/showcase-images/Client - Peninsula Homes.png",
     },
     features: [
       {
-        title: "Portfolio Showcase System",
+        title: "A Featured-Projects Block That Tells a Story",
         description:
-          "A filterable project gallery that lets Peninsula Homes' craftsmanship speak for itself, with high-resolution imagery and detailed project breakdowns.",
-        // images: [
-        //   "/showcase-images/peninsula-homes/portfolio-grid.png",
-        //   "/showcase-images/peninsula-homes/portfolio-detail.png",
-        // ],
+          "Three most-recent projects on the home page, with a hover interaction that swaps the imagery and styling on the right — visitors get a sense of Peninsula's range without clicking through. Custom-coded as a single block so it loads instantly instead of dragging the page down.",
         image: "/showcase-images/Client - Peninsula Homes.png",
       },
       {
-        title: "Lead Generation Forms",
+        title: "A Menu That Knows What Page It's On",
         description:
-          "Strategically placed enquiry forms connected to their CRM, making it effortless for potential clients to start a conversation.",
-        // images: [
-        //   "/showcase-images/peninsula-homes/contact-form.png",
-        //   "/showcase-images/peninsula-homes/inline-cta.png",
-        // ],
+          "Some pages needed slightly different navigation. Rather than maintain a separate menu for each, the menu reads the current page and adjusts itself automatically. One source of truth, zero per-page configuration to maintain.",
         image: "/showcase-images/Client - Peninsula Homes.png",
       },
       {
-        title: "Mobile-First Experience",
+        title: "Project Pages That Put the Photography First",
         description:
-          "Designed for the way people actually browse — on their phones. Every page is optimised for touch navigation and fast load times on mobile networks.",
-        // images: [
-        //   "/showcase-images/peninsula-homes/mobile-home.png",
-        //   "/showcase-images/peninsula-homes/mobile-portfolio.png",
-        // ],
+          "The old site had small images and long copy that fought for attention. The new project pages flip that — large galleries lead, with carefully placed copy that supports rather than competes. Visitors leave with a clear sense of what Peninsula actually builds.",
+        image: "/showcase-images/Client - Peninsula Homes.png",
+      },
+      {
+        title: "About-Page Lightboxes for a Closer Look",
+        description:
+          "Custom lightbox interactions on the About page let visitors get a closer look at the team and the work without leaving the page. Subtle, fast, and built around the brand's quiet confidence — no off-the-shelf gallery plugin in sight.",
         image: "/showcase-images/Client - Peninsula Homes.png",
       },
     ],
     results: {
       heading: "The Results",
       paragraphs: [
-        "The new website transformed Peninsula Homes' digital presence, becoming a genuine lead generation tool rather than just an online brochure. Performance, mobile experience, and lead-capture mechanics were rebuilt from the ground up.",
+        "The site launched in 2024 and has been running ever since — same shape, same speed, no degradation. The 90+ PageSpeed score sits well above the 75+ benchmark Peninsula's SEO consultant required, and the build is identical to The Design Order's design.",
+        "Peninsula's team adds new projects and updates as required, and the build was engineered so those changes don't break anything. We maintain it monthly. Two years in, it's still doing exactly what it was built to do — letting the work do the talking.",
       ],
       metrics: [
-        { value: "90+", label: "Google PageSpeed" },
+        { value: "90+", label: "Google PageSpeed (target: 75)" },
         { value: "< 2s", label: "Page Load Time" },
       ],
     },
