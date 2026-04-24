@@ -11,10 +11,61 @@ import type { CaseStudy } from "@/data/case-studies";
 import { getRelatedCaseStudies } from "@/data/case-studies";
 import Breadcrumbs from "@/components/breadcrumbs";
 import TestimonialCarousel from "@/components/testimonials-single";
+import ScrollingScreenshot from "@/components/scrolling-screenshot";
+
+const VIDEO_EXTENSIONS = [".mp4", ".webm", ".ogg", ".mov"];
+
+function isVideoFile(src: string): boolean {
+  const lower = src.toLowerCase().split("?")[0];
+  return VIDEO_EXTENSIONS.some((ext) => lower.endsWith(ext));
+}
 
 /**
- * Image gallery helper — renders 1, 2, or 3 columns based on count.
+ * Renders the right element for whatever media file you point at:
+ * - .mp4 / .webm / .ogg / .mov → autoplay-loop-muted <video>
+ * - everything else (including .gif) → next/image
+ *
+ * Lets case studies mix static screenshots, animated GIFs, and video
+ * walkthroughs in the same gallery without per-file configuration.
+ */
+function MediaItem({
+  src,
+  alt,
+  sizes,
+}: {
+  src: string;
+  alt: string;
+  sizes?: string;
+}) {
+  if (isVideoFile(src)) {
+    return (
+      // eslint-disable-next-line jsx-a11y/media-has-caption
+      <video
+        src={src}
+        autoPlay
+        loop
+        muted
+        playsInline
+        aria-label={alt}
+        className="absolute inset-0 w-full h-full object-cover object-top"
+      />
+    );
+  }
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      className="object-cover object-top"
+      sizes={sizes}
+    />
+  );
+}
+
+/**
+ * Image/video gallery helper — renders 1, 2, or 3 columns based on count.
  * Falls back gracefully to a single `image` if `images` array isn't provided.
+ * Each item can be a static image, animated GIF, or video file.
  */
 function SectionGallery({
   images,
@@ -44,11 +95,9 @@ function SectionGallery({
           key={`${src}-${i}`}
           className={`relative w-full ${aspectClass} overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100`}
         >
-          <Image
+          <MediaItem
             src={src}
             alt={`${alt} screenshot ${i + 1}`}
-            fill
-            className="object-cover object-top"
             sizes={
               list.length === 1
                 ? "100vw"
@@ -160,18 +209,24 @@ export default function CaseStudyPremium({
           })()}
       </section>
 
-      {/* Featured image — full-bleed under hero */}
+      {/* Featured image — full-bleed under hero. Auto-scrolling if the
+          case study sets featuredImageScroll; static otherwise. Video files
+          render as autoplay-loop-muted videos. */}
       <section className="content-section bg-white pb-16 md:pb-20 px-5 sm:px-20 xl:px-36">
-        <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100">
-          <Image
+        {caseStudy.featuredImageScroll ? (
+          <ScrollingScreenshot
             src={caseStudy.featuredImage}
             alt={`${caseStudy.clientName} featured project image`}
-            fill
-            className="object-cover object-top"
-            priority
-            sizes="100vw"
           />
-        </div>
+        ) : (
+          <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100">
+            <MediaItem
+              src={caseStudy.featuredImage}
+              alt={`${caseStudy.clientName} featured project image`}
+              sizes="100vw"
+            />
+          </div>
+        )}
       </section>
 
       {/* At-a-glance bar */}
@@ -348,11 +403,9 @@ export default function CaseStudyPremium({
                                 : ""
                             }`}
                           >
-                            <Image
+                            <MediaItem
                               src={img}
                               alt={`${feature.title} screenshot ${j + 1}`}
-                              fill
-                              className="object-cover object-top"
                               sizes="(max-width: 1024px) 100vw, 60vw"
                             />
                           </div>
@@ -447,11 +500,9 @@ export default function CaseStudyPremium({
                 key={`${img}-${i}`}
                 className="relative w-full aspect-[16/10] overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100"
               >
-                <Image
+                <MediaItem
                   src={img}
                   alt={`${caseStudy.clientName} gallery image ${i + 1}`}
-                  fill
-                  className="object-cover object-top"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>

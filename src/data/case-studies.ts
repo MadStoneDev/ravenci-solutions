@@ -50,6 +50,13 @@ export interface CaseStudy {
   serviceLabels: string[];
   excerpt: string;
   featuredImage: string; // path in /public/showcase-images/
+  /**
+   * If true, the featured image is rendered with the ScrollingScreenshot
+   * component — it auto-scrolls top → bottom → top inside the existing
+   * featured-image frame. Use this when `featuredImage` is a full-length
+   * page screenshot rather than a cropped hero shot.
+   */
+  featuredImageScroll?: boolean;
   clientLogo?: string; // path in /public/clients/
   clientUrl?: string;
   template: CaseStudyTemplate;
@@ -314,6 +321,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     excerpt:
       "A Sydney Northern Beaches builder designing and building beautiful, environmentally efficient, bespoke homes — with 80% of work coming through referrals from families who've experienced the difference.",
     featuredImage: "/showcase-images/Client - Peninsula Homes.png",
+    // When you have the full-length homepage screenshot, swap the path
+    // above to point to it (e.g. "/showcase-images/peninsula-homes/full-page.png")
+    // — the auto-scroll component handles the rest.
+    featuredImageScroll: true,
     clientLogo: "/clients/peninsula-homes-logo.svg",
     clientUrl: "https://peninsulahomes.com.au",
     template: "premium",
