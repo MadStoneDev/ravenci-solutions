@@ -107,7 +107,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ["web-development"],
     serviceLabels: ["Web Development"],
     excerpt:
-      "A branding agency that helps construction, AEC, and property firms ditch the corporate beige and own a brand identity that reflects what they actually build.",
+      "A branding agency that builds brands to win bids in construction and property — fresh positioning and \"grounded, gutsy, impossible to ignore\" identity work for an industry where most competitors sound and look the same.",
     featuredImage: "/showcase-images/Client - The DIRT Agency.png",
     clientLogo: "/clients/dirt-logo.svg",
     clientUrl: "https://thedirtagency.com",
@@ -190,7 +190,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ["web-development", "maintenance"],
     serviceLabels: ["Web Development", "Web Maintenance"],
     excerpt:
-      "An Australian Xero training and bookkeeping practice helping small businesses across medical, NDIS, ecommerce and startup sectors get on top of their finances and stay there.",
+      "Not just accountants — trainers, advisors and Xero integration specialists. NNAccountability helps Australian startups, medical practices, NDIS providers and non-profits trade confusion and manual processes for clarity and automation.",
     featuredImage: "/showcase-images/Client - NNAccountability.png",
     clientLogo: "/clients/nnaccountability-logo.svg",
     // Currently on temporary subdomain; migrating to nnaccountability.com.au
@@ -312,7 +312,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ["web-development", "maintenance"],
     serviceLabels: ["Web Development", "Web Maintenance"],
     excerpt:
-      "A Sydney Northern Beaches builder specialising in knockdown-rebuild and dual occupancy projects — bespoke homes designed and built around how each family actually lives.",
+      "A Sydney Northern Beaches builder designing and building beautiful, environmentally efficient, bespoke homes — with 80% of work coming through referrals from families who've experienced the difference.",
     featuredImage: "/showcase-images/Client - Peninsula Homes.png",
     clientLogo: "/clients/peninsula-homes-logo.svg",
     clientUrl: "https://peninsulahomes.com.au",
@@ -430,7 +430,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Web Maintenance",
     ],
     excerpt:
-      "A family-owned North Lakes security company protecting Brisbane homes and businesses with integrated alarms, CCTV, access control, and intercom systems — designed to work together, not as separate add-ons.",
+      "A family-owned Moreton Bay security company that treats every property like their own. Tailored alarms, CCTV, access control and intercoms for Queensland homes and businesses — backed by a hands-on relationship that doesn't end at install.",
     featuredImage: "/showcase-images/Client - Covenant Security.png",
     clientLogo: "/clients/covenant-security-solutions-logo.svg",
     clientUrl: "https://covenantsecurity.com.au",
@@ -519,7 +519,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ["web-development"],
     serviceLabels: ["Web Development"],
     excerpt:
-      "A workplace culture consultancy helping Australian government agencies and rural industries shift from cautious to courageous — through tailored training, organisational reviews, and leadership mentoring grounded in discrimination law and gender equity expertise.",
+      "A workplace culture consulting firm building thriving workplaces in Australia's meat, forestry, agriculture, seafood and mining industries — preserving the mateship and humour that make great teams, while addressing the dysfunction that holds them back.",
     featuredImage: "/showcase-images/Client - SAC Consulting.png",
     clientLogo: "/clients/sac-consulting-logo.svg",
     clientUrl: "https://sacconsulting.com.au",
@@ -608,7 +608,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ["web-development"],
     serviceLabels: ["Web Development"],
     excerpt:
-      "The world's only copywriter writing exclusively for architects — helping practices win the projects they actually want, with positioning and website copy that sounds human, not robot.",
+      "The only copywriter in the world writing exclusively for architects. Ten years and 663+ architecture sites studied — helping architects sound more human, less robot, and win the projects they actually want.",
     featuredImage: "/showcase-images/Client - Nikita Morell.png",
     clientLogo: "/clients/nikita-morell-logo.svg",
     clientUrl: "https://nikitamorell.com",
