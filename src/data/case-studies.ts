@@ -218,6 +218,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     galleryImages: [
+      "/showcase-images/dirt/dirt-home-hero.jpg",
+      "/showcase-images/dirt/dirt-home-framework.jpg",
+      "/showcase-images/dirt/dirt-signs.jpg",
       "/showcase-images/dirt/dirt-about-header.jpg",
       "/showcase-images/dirt/dirt-about-nikita.jpg",
       "/showcase-images/dirt/dirt-footer.jpg",
