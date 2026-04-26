@@ -63,6 +63,12 @@ export interface CaseStudy {
    * page screenshot rather than a cropped hero shot.
    */
   featuredImageScroll?: boolean;
+  /**
+   * Override the default 60-second scroll cycle for this case study.
+   * Taller pages need longer durations to maintain the same visual pace.
+   * Rule of thumb: if the page is 2× as tall as a typical one, double it.
+   */
+  featuredImageScrollDuration?: number;
   clientLogo?: string; // path in /public/clients/
   clientUrl?: string;
   template: CaseStudyTemplate;
@@ -122,6 +128,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "A branding agency that builds brands to win bids in construction and property — fresh positioning and \"grounded, gutsy, impossible to ignore\" identity work for an industry where most competitors sound and look the same.",
     featuredImage: "/showcase-images/dirt/full-page.jpg",
     featuredImageScroll: true,
+    featuredImageScrollDuration: 120, // page is much taller than typical
     clientLogo: "/clients/dirt-logo.svg",
     clientUrl: "https://thedirtagency.com",
     template: "premium",

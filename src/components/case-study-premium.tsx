@@ -217,6 +217,7 @@ export default function CaseStudyPremium({
           <ScrollingScreenshot
             src={caseStudy.featuredImage}
             alt={`${caseStudy.clientName} featured project image`}
+            duration={caseStudy.featuredImageScrollDuration}
           />
         ) : (
           <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100">
