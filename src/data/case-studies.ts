@@ -380,7 +380,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "A Menu That Knows What Page It's On",
         description:
           "Some pages needed slightly different navigation. Rather than maintain a separate menu for each, the menu reads the current page and adjusts itself automatically. One source of truth, zero per-page configuration to maintain.",
-        image: "/showcase-images/Client - Peninsula Homes.png",
+        image: "/showcase-images/peninsula-homes/peninsula-homes-menu.mp4",
       },
       {
         title: "Project Pages That Put the Photography First",
