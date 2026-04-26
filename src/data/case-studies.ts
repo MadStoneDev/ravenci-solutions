@@ -292,7 +292,6 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 
   // ── 3. GoingDark ───────────────────────────────────────────────────────────
-  // TODO: Richard to fill in real hero copy, problem/approach/results, screenshots
   {
     slug: "goingdark",
     clientName: "GoingDark",
@@ -306,16 +305,15 @@ export const CASE_STUDIES: CaseStudy[] = [
     clientLogo: "/clients/going-dark-logo.svg",
     clientUrl: "https://goingdark.com.au",
     template: "premium",
-    metaTitle: "Going Dark Case Study | RAVENCI Solutions",
+    metaTitle: "GoingDark Case Study | RAVENCI Solutions",
     metaDescription:
-      "How RAVENCI built a custom Shopify storefront for Going Dark with bespoke Liquid theme work and ongoing SEO.",
-    heroHeadline: "A Custom Shopify Build, Engineered for Search",
+      "GoingDark inherited a sluggish BigCommerce store from previous owners. We migrated them to a clean Shopify build, fixed the SEO mess, and the trajectory turned around — purchaser rate up 38.5% in three months.",
+    heroHeadline: "An Inherited Store, Rebuilt Properly",
     heroSubheadline:
-      "Bespoke Liquid theme, JavaScript-driven interactions, and ongoing SEO designed to compound organic traffic over time.",
+      "An Australian thermal and night vision retailer inherited a sluggish BigCommerce store from previous owners — and the technical debt that came with it. We migrated them to a clean Shopify build, fixed the SEO foundations, and the numbers turned around within months.",
 
     year: 2025,
-    timeline: "TBC",
-    techStack: ["Shopify", "Liquid", "JavaScript", "SEO"],
+    techStack: ["Shopify", "Liquid", "JavaScript"],
     collaborators: [
       { role: "Design & Development", name: "RAVENCI Solutions" },
     ],
@@ -323,31 +321,54 @@ export const CASE_STUDIES: CaseStudy[] = [
     problem: {
       heading: "The Challenge",
       paragraphs: [
-        "TODO: Going Dark's brief — what they were trying to achieve with the storefront, and why a custom Shopify build was the right call.",
+        "Jo's GoingDark inherited its BigCommerce store from the previous owners — along with years of technical debt that came with it. Multiple developers had each done their own thing over time. The result was the classic mess: clashing implementations, doubled-up work, gaps where there should have been care. Hundreds of links went to 404 pages. Images had no alt text. The blog hadn't been updated in months.",
+        "GoingDark came to us via a few Facebook recommendations, originally for minor fixes. As we started working through the list, the bigger picture came into focus — the SEO foundations were full of loopholes the previous teams hadn't seen or hadn't fixed. The conversation with Jo shifted from \"fix the small stuff\" to \"maybe it's time to rebuild properly\".",
       ],
-      image: "/showcase-images/Client - GoingDark.png",
     },
     approach: {
       heading: "Our Approach",
       paragraphs: [
-        "TODO: The build approach — Liquid customisation, JavaScript-driven interactions, and the SEO foundations laid alongside the build.",
+        "After a long phone call with Jo about the pros and cons, we decided to migrate from BigCommerce to Shopify. BigCommerce has its own strengths — but for the way Jo runs the store day to day, Shopify's user-friendliness was going to make their life easier. Rebuild rather than patch.",
+        "We chose a paid Shopify theme as the foundation — a deliberate decision that saved GoingDark thousands compared to a fully custom build. Then we customised it to suit how they actually sell: niche, expertise-driven, with the kind of personality a generic theme would never have on its own.",
+        "Alongside the rebuild we cleaned up the SEO mess — fixed the 404s, added alt text to every product image, restructured pages so search engines could actually understand what GoingDark sells. The bigger ongoing conversation has been about positioning: helping Jo see that competing in a niche means standing out, not copying what bigger players do.",
       ],
       highlights: [
-        "Custom Shopify Liquid theme",
-        "JavaScript-driven product interactions",
-        "SEO foundation built into the architecture",
-        "Performance-tuned for mobile shoppers",
+        "Migrated from cluttered inherited BigCommerce to a clean Shopify build",
+        "Paid theme customised for GoingDark's expert voice — saved thousands vs full custom",
+        "Hundreds of 404s fixed, missing alt text added, content restructured for search",
+        "Logo refreshed where the inherited files were low-res and rough",
+        "Ongoing strategic input — pushing for differentiation, not imitation",
       ],
-      image: "/showcase-images/Client - GoingDark.png",
     },
+    features: [
+      {
+        title: "A Homepage That Leads With Expertise, Not the Sale",
+        description:
+          "Most thermal and night vision sites push product first and trust second. GoingDark's homepage flips that — making the curated, expert-led approach visible before the catalogue. Visitors get a sense of why they should buy here, not just what's for sale.",
+      },
+      {
+        title: "Category Pages That Help Hunters Find What They Need",
+        description:
+          "Across hundreds of products from Pulsar, HikMicro, PARD and Nocpix, the category pages are designed for buyers who know what they want and don't want to waste time. Filters that work, comparison details visible at a glance, no hunting for the spec sheet.",
+      },
+      {
+        title: "Product Pages Built for Serious Buyers",
+        description:
+          "Detailed specs, multiple angles, comparison information — all the things a hunter making a $4,000 thermal scope decision actually needs to see. Less marketing fluff, more data, more confidence in the click-to-buy.",
+      },
+    ],
     results: {
       heading: "The Results",
       paragraphs: [
-        "TODO: Outcomes for Going Dark — search rankings, traffic growth, sales metrics where available.",
+        "GoingDark relaunched on Shopify on 27 January 2025. By April — three months in — the trajectory had clearly turned around. Purchaser rate grew 38.5%. Organic search traffic grew 12.5%. Average session duration jumped 57% — visitors are spending dramatically more time on the site than they were before.",
+        "The harder shift has been ongoing: pushing back gently when Jo's tempted to copy what bigger competitors are doing. In a niche category like night vision, the brand that stands out wins. We're still working with GoingDark monthly on that, alongside the SEO foundation we rebuilt during migration.",
       ],
-      metrics: [{ value: "85+", label: "Google PageSpeed" }],
+      metrics: [
+        { value: "+38.5%", label: "Purchaser Rate" },
+        { value: "+12.5%", label: "Organic Search" },
+        { value: "+57%", label: "Session Duration" },
+      ],
     },
-    galleryImages: ["/showcase-images/Client - GoingDark.png"],
     order: 3,
     featured: true,
   },
