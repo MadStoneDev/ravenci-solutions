@@ -405,7 +405,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "About-Page Lightboxes for a Closer Look",
         description:
           "Custom lightbox interactions on the About page let visitors get a closer look at the team and the work without leaving the page. Subtle, fast, and built around the brand's quiet confidence — no off-the-shelf gallery plugin in sight.",
-        image: "/showcase-images/Client - Peninsula Homes.png",
+        image: "/showcase-images/peninsula-homes/peninsula-homes-about-us-lightboxes.mp4",
       },
     ],
     results: {
