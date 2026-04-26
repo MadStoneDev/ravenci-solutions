@@ -37,7 +37,13 @@ export interface CaseStudyCollaborator {
 export interface CaseStudyFeature {
   title: string; // "Portfolio Showcase System"
   description: string; // what this feature does and why
-  image?: string; // single screenshot (legacy/results-driven template)
+  image?: string; // single screenshot/video — supports .png/.jpg/.gif/.mp4/.webm
+  /**
+   * If true and `image` is a single full-length screenshot, renders with
+   * the auto-scrolling ScrollingScreenshot component instead of a static
+   * image. Has no effect when `images` (array) is used.
+   */
+  imageScroll?: boolean;
   images?: string[]; // multiple screenshots (premium template)
 }
 
@@ -392,7 +398,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "Project Pages That Put the Photography First",
         description:
           "The old site had small images and long copy that fought for attention. The new project pages flip that — large galleries lead, with carefully placed copy that supports rather than competes. Visitors leave with a clear sense of what Peninsula actually builds.",
-        image: "/showcase-images/Client - Peninsula Homes.png",
+        image: "/showcase-images/peninsula-homes/peninsula-homes-project-pages.png",
+        imageScroll: true,
       },
       {
         title: "About-Page Lightboxes for a Closer Look",

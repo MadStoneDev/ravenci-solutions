@@ -394,22 +394,36 @@ export default function CaseStudyPremium({
                             : "grid-cols-2"
                         } gap-3 md:gap-4`}
                       >
-                        {featureImages.map((img, j) => (
-                          <div
-                            key={`${img}-${j}`}
-                            className={`relative w-full aspect-[16/10] overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100 ${
-                              featureImages.length > 2 && j === 0
-                                ? "col-span-2"
-                                : ""
-                            }`}
-                          >
-                            <MediaItem
-                              src={img}
-                              alt={`${feature.title} screenshot ${j + 1}`}
-                              sizes="(max-width: 1024px) 100vw, 60vw"
-                            />
-                          </div>
-                        ))}
+                        {featureImages.map((img, j) => {
+                          const useScroll =
+                            feature.imageScroll === true &&
+                            !feature.images && // only when single image
+                            !isVideoFile(img);
+                          return (
+                            <div
+                              key={`${img}-${j}`}
+                              className={`relative w-full aspect-[16/10] overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100 group ${
+                                featureImages.length > 2 && j === 0
+                                  ? "col-span-2"
+                                  : ""
+                              }`}
+                            >
+                              {useScroll ? (
+                                <ScrollingScreenshot
+                                  src={img}
+                                  alt={`${feature.title} screenshot ${j + 1}`}
+                                  className="absolute inset-0 w-full h-full overflow-hidden group"
+                                />
+                              ) : (
+                                <MediaItem
+                                  src={img}
+                                  alt={`${feature.title} screenshot ${j + 1}`}
+                                  sizes="(max-width: 1024px) 100vw, 60vw"
+                                />
+                              )}
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
