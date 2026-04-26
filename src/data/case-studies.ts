@@ -179,6 +179,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         "Scroll-reactive interactions that play with the brand metaphor",
         "Five years of trust between RAVENCI and Nikita made the platform decisions easy",
       ],
+      image: "/showcase-images/dirt/dirt-pagespeed.jpg",
     },
     features: [
       {
