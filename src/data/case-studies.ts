@@ -398,6 +398,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         "Custom-coded interactive elements where plugins would have hurt performance",
         "Built to be maintained without breakage — two years on, still untouched",
       ],
+      image: "/showcase-images/peninsula-homes/peninsula-homes-pagespeed.jpg",
     },
     features: [
       {
