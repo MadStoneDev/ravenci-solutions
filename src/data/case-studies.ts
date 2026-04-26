@@ -205,7 +205,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "A Block System Nikita Can Build With",
         description:
           "Every section on the site is a reusable, modular block. Nikita can add, remove, or reorder them on any page without touching code — and the components handle whatever combination she throws at them. The site grows with the business instead of locking it into the launch-day layout.",
-        image: "/showcase-images/dirt/dirt-plasmic-dashboard.png",
+        image: "/showcase-images/dirt/dirt-plasmic-dashboard.jpg",
       },
     ],
     results: {
