@@ -217,6 +217,11 @@ export const CASE_STUDIES: CaseStudy[] = [
         { value: "100", label: "Best Practices" },
       ],
     },
+    galleryImages: [
+      "/showcase-images/dirt/dirt-about-header.jpg",
+      "/showcase-images/dirt/dirt-about-nikita.jpg",
+      "/showcase-images/dirt/dirt-footer.jpg",
+    ],
     order: 1,
     featured: true,
   },
