@@ -210,10 +210,13 @@ export const CASE_STUDIES: CaseStudy[] = [
     results: {
       heading: "The Results",
       paragraphs: [
-        "DIRT launched in April 2026 — recently enough that we don't have full analytics yet (we'll update this in a month). What we do know: traffic is already strong and the responses have been consistently positive. Nikita's getting the kind of attention DIRT was built to attract.",
+        "DIRT launched in April 2026 — recently enough that traffic and conversion analytics are still building (we'll update this in a month with the full picture). The performance side is settled though: 97 on PageSpeed, 100 on best practices, fast on every device. Traffic is strong from day one and the responses have been consistently positive — Nikita's getting the kind of attention DIRT was built to attract.",
         "The bigger story is the foundation underneath. Plasmic at the free tier covers everything Nikita needs. AI features call the model directly, so the only ongoing AI cost is what gets used. The modular component system means as DIRT grows, the site grows with it. No subscription creep, no platform lock-in, no developer required for the everyday changes.",
       ],
-      metrics: [],
+      metrics: [
+        { value: "97", label: "PageSpeed Performance" },
+        { value: "100", label: "Best Practices" },
+      ],
     },
     order: 1,
     featured: true,
