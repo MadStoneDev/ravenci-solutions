@@ -111,7 +111,6 @@ export interface CaseStudy {
 
 export const CASE_STUDIES: CaseStudy[] = [
   // ── 1. DIRT (newest) ────────────────────────────────────────────────────────
-  // TODO: Richard to fill in real hero copy, problem/approach/results, screenshots
   {
     slug: "dirt",
     clientName: "DIRT",
@@ -127,66 +126,87 @@ export const CASE_STUDIES: CaseStudy[] = [
     template: "premium",
     metaTitle: "DIRT Case Study | RAVENCI Solutions",
     metaDescription:
-      "How RAVENCI built a modern Next.js + Plasmic site for DIRT with ActiveCampaign, ClickUp and Google Analytics integration.",
-    heroHeadline: "A Modern Foundation, Built for Growth",
+      "DIRT — a brand-new branding agency for construction, property and AEC firms — needed a site that matched their refusal to be beige. Modern, interactive, custom-coded on Plasmic with no subscription stack.",
+    heroHeadline: "Built to Match a Brand That Doesn't Blend In",
     heroSubheadline:
-      "Custom Next.js with Plasmic visual editing, plus marketing automation and analytics wired in from day one.",
+      "A brand-new construction-and-property branding agency needed a site that matched the attitude — modern, interactive, unmistakably theirs. Built on Plasmic with custom-coded interactions and AI features wired straight to the model, so DIRT pays for what they use, not for another subscription on top.",
 
     year: 2026,
     timeline: "TBC",
     techStack: [
       "Next.js",
       "Plasmic",
+      "Anthropic API",
       "ActiveCampaign",
       "ClickUp",
       "Google Analytics",
     ],
     collaborators: [
       { role: "Development", name: "RAVENCI Solutions" },
-      { role: "Design", name: "The Other Design Co." },
+      {
+        role: "Design",
+        name: "The Other Design Co.",
+        url: "https://www.theotherdesign.co/",
+      },
     ],
 
     problem: {
       heading: "The Challenge",
       paragraphs: [
-        "TODO: Add the project background — what was DIRT trying to achieve, and what wasn't working before RAVENCI got involved.",
+        "Nikita launched DIRT to do branding for an industry where most agencies sound and look the same — construction, AEC software, property and building materials. The work is bold by design: positioning, messaging, identity, websites and sales assets that refuse to be beige.",
+        "The site needed to do for DIRT what DIRT does for its clients — refuse to blend in. Modern, interactive, unmistakably theirs. Plus a CMS Nikita could run herself, and a couple of planned AI features she'd been told she'd need a tool like Lovable to build.",
       ],
       image: "/showcase-images/Client - The DIRT Agency.png",
     },
     approach: {
       heading: "Our Approach",
       paragraphs: [
-        "TODO: Walk through the build approach — Next.js for performance, Plasmic for in-house content control, and the integration architecture connecting ActiveCampaign, ClickUp and Google Analytics.",
+        "Nikita is also the founder of Nikita Morell, the only copywriter writing exclusively for architects — a site we've maintained for her for the better part of five years. When DIRT was ready to launch, she came back to us. The brief was open: modern, unique, intuitive, and the development should make all of that work while staying out of the way.",
+        "Her first instinct was to step away from WordPress and build on Framer, with Lovable layered on for the AI features. Both would have worked, but both came with subscription overhead she didn't actually need. We suggested Plasmic instead — same visual editing freedom, free at the tier she required, and far more room to build the custom components DIRT's design called for. And rather than wrap the AI features in another middleware subscription, we built them ourselves so DIRT pays the AI provider (Anthropic) directly for what they use, full stop.",
+        "From there it was modular components for everything. Every section on the site is a reusable block Nikita can add, remove or reorder herself. The design plays with the brand metaphor — dirt, building, construction — through scroll-reactive interactions that bring the personality to life without slowing the page down.",
       ],
       highlights: [
-        "Custom Next.js for performance",
-        "Plasmic for client-managed content",
-        "ActiveCampaign for marketing automation",
-        "ClickUp project tracking integration",
-        "Google Analytics for measurement",
+        "Custom components on Plasmic — Nikita edits everything herself, no developer needed",
+        "AI features built directly to Anthropic — no middleware subscription on top",
+        "Fully modular layout — every block is reusable on any page",
+        "Scroll-reactive interactions that play with the brand metaphor",
+        "Five years of trust between RAVENCI and Nikita made the platform decisions easy",
       ],
       image: "/showcase-images/Client - The DIRT Agency.png",
     },
     features: [
       {
-        title: "Next.js + Plasmic Architecture",
+        title: "A Header That Rises From the Dirt",
         description:
-          "TODO: What this combination unlocks for the client (speed, flexibility, in-house editing).",
+          "The site's first interaction puts the brand front and centre — the word \"DIRT\" literally rises out of a pile of dirt as the page loads. The kind of touch that signals from the first second that this isn't a typical agency site.",
         image: "/showcase-images/Client - The DIRT Agency.png",
       },
       {
-        title: "Marketing Automation Wired In",
+        title: "A Building That Crumbles With Every Selection",
         description:
-          "TODO: How ActiveCampaign integration drives the lead funnel from form submission through nurture.",
+          "Pick from a checklist of services and an animated building reacts in real time — crumbling more with each item selected, regardless of the order. The count holds steady even as visitors toggle items on and off, so the interaction stays smooth instead of glitching out.",
+        image: "/showcase-images/Client - The DIRT Agency.png",
+      },
+      {
+        title: "A Slider That Fills With Dirt as You Pull",
+        description:
+          "Visitors can drag a slider and watch dirt physically fill in alongside it — turning a normally boring numeric input into something visitors actually play with. Small detail; reflects the brand attitude exactly.",
+        image: "/showcase-images/Client - The DIRT Agency.png",
+      },
+      {
+        title: "A Block System Nikita Can Build With",
+        description:
+          "Every section on the site is a reusable, modular block. Nikita can add, remove, or reorder them on any page without touching code — and the components handle whatever combination she throws at them. The site grows with the business instead of locking it into the launch-day layout.",
         image: "/showcase-images/Client - The DIRT Agency.png",
       },
     ],
     results: {
       heading: "The Results",
       paragraphs: [
-        "TODO: Outcomes for DIRT — performance figures, lead generation, time-to-publish improvements, etc.",
+        "DIRT launched in April 2026 — recently enough that we don't have full analytics yet (we'll update this in a month). What we do know: traffic is already strong and the responses have been consistently positive. Nikita's getting the kind of attention DIRT was built to attract.",
+        "The bigger story is the foundation underneath. Plasmic at the free tier covers everything Nikita needs. AI features call the model directly, so the only ongoing AI cost is what gets used. The modular component system means as DIRT grows, the site grows with it. No subscription creep, no platform lock-in, no developer required for the everyday changes.",
       ],
-      metrics: [{ value: "90+", label: "Google PageSpeed" }],
+      metrics: [],
     },
     galleryImages: ["/showcase-images/Client - The DIRT Agency.png"],
     order: 1,
