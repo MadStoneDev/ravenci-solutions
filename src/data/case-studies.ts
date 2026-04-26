@@ -383,6 +383,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         "Peninsula Homes had outgrown their old website. It was dated, slow, and starting to hurt their search rankings. Their SEO consultant set a hard requirement: any rebuild had to score 75+ on Google PageSpeed, and stay there.",
         "They'd hired The Design Order to refresh the brand and were choosing between three developers to build it. The design had to be matched faithfully — no compromises on detail. Whoever they picked also had to be someone they could trust to maintain the site for the long run.",
       ],
+      image: "/showcase-images/peninsula-homes/peninsula-homes-old-site.jpg",
     },
     approach: {
       heading: "Our Approach",
