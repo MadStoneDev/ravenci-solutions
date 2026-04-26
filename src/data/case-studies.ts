@@ -140,7 +140,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       "A brand-new construction-and-property branding agency needed a site that matched the attitude — modern, interactive, unmistakably theirs. Built on Plasmic with custom-coded interactions and AI features wired straight to the model, so DIRT pays for what they use, not for another subscription on top.",
 
     year: 2026,
-    timeline: "4 months",
     techStack: [
       "Next.js",
       "Plasmic",
