@@ -164,7 +164,6 @@ export const CASE_STUDIES: CaseStudy[] = [
         "Nikita launched DIRT to do branding for an industry where most agencies sound and look the same — construction, AEC software, property and building materials. The work is bold by design: positioning, messaging, identity, websites and sales assets that refuse to be beige.",
         "The site needed to do for DIRT what DIRT does for its clients — refuse to blend in. Modern, interactive, unmistakably theirs. Plus a CMS Nikita could run herself, and a couple of planned AI features she'd been told she'd need a tool like Lovable to build.",
       ],
-      image: "/showcase-images/Client - The DIRT Agency.png",
     },
     approach: {
       heading: "Our Approach",
@@ -180,7 +179,6 @@ export const CASE_STUDIES: CaseStudy[] = [
         "Scroll-reactive interactions that play with the brand metaphor",
         "Five years of trust between RAVENCI and Nikita made the platform decisions easy",
       ],
-      image: "/showcase-images/Client - The DIRT Agency.png",
     },
     features: [
       {
@@ -216,7 +214,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
       metrics: [],
     },
-    galleryImages: ["/showcase-images/Client - The DIRT Agency.png"],
     order: 1,
     featured: true,
   },
@@ -386,7 +383,6 @@ export const CASE_STUDIES: CaseStudy[] = [
         "Peninsula Homes had outgrown their old website. It was dated, slow, and starting to hurt their search rankings. Their SEO consultant set a hard requirement: any rebuild had to score 75+ on Google PageSpeed, and stay there.",
         "They'd hired The Design Order to refresh the brand and were choosing between three developers to build it. The design had to be matched faithfully — no compromises on detail. Whoever they picked also had to be someone they could trust to maintain the site for the long run.",
       ],
-      image: "/showcase-images/Client - Peninsula Homes.png",
     },
     approach: {
       heading: "Our Approach",
@@ -401,7 +397,6 @@ export const CASE_STUDIES: CaseStudy[] = [
         "Custom-coded interactive elements where plugins would have hurt performance",
         "Built to be maintained without breakage — two years on, still untouched",
       ],
-      image: "/showcase-images/Client - Peninsula Homes.png",
     },
     features: [
       {
@@ -447,10 +442,6 @@ export const CASE_STUDIES: CaseStudy[] = [
         { value: "< 2s", label: "Page Load Time" },
       ],
     },
-    galleryImages: [
-      "/showcase-images/Client - Peninsula Homes.png",
-      "/showcase-images/Client - Peninsula Homes.png",
-    ],
     order: 4,
     featured: true,
   },
