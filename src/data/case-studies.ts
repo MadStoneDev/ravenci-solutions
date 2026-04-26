@@ -120,7 +120,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceLabels: ["Web Development"],
     excerpt:
       "A branding agency that builds brands to win bids in construction and property — fresh positioning and \"grounded, gutsy, impossible to ignore\" identity work for an industry where most competitors sound and look the same.",
-    featuredImage: "/showcase-images/dirt/full-page.png",
+    featuredImage: "/showcase-images/dirt/full-page.jpg",
     featuredImageScroll: true,
     clientLogo: "/clients/dirt-logo.svg",
     clientUrl: "https://thedirtagency.com",
