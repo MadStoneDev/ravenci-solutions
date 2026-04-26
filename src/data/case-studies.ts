@@ -371,10 +371,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     features: [
       {
-        title: "A Featured-Projects Block That Tells a Story",
+        title: "A Featured-Articles Block That Brings Each Story Forward",
         description:
-          "Three most-recent projects on the home page, with a hover interaction that swaps the imagery and styling on the right — visitors get a sense of Peninsula's range without clicking through. Custom-coded as a single block so it loads instantly instead of dragging the page down.",
-        image: "/showcase-images/Client - Peninsula Homes.png",
+          "The Design Order wanted the three most-recent blog articles on the home page with a distinctive hover interaction — the featured image and styling on the right swap as visitors move between articles. Rather than reach for a plugin, we built it as a single custom block so it loads instantly without dragging the page down.",
+        image: "/showcase-images/peninsula-homes/peninsula-homes-blog-block.mp4",
       },
       {
         title: "A Menu That Knows What Page It's On",
