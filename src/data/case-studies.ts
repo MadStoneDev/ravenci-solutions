@@ -120,7 +120,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceLabels: ["Web Development"],
     excerpt:
       "A branding agency that builds brands to win bids in construction and property — fresh positioning and \"grounded, gutsy, impossible to ignore\" identity work for an industry where most competitors sound and look the same.",
-    featuredImage: "/showcase-images/Client - The DIRT Agency.png",
+    featuredImage: "/showcase-images/dirt/full-page.png",
+    featuredImageScroll: true,
     clientLogo: "/clients/dirt-logo.svg",
     clientUrl: "https://thedirtagency.com",
     template: "premium",
@@ -132,7 +133,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "A brand-new construction-and-property branding agency needed a site that matched the attitude — modern, interactive, unmistakably theirs. Built on Plasmic with custom-coded interactions and AI features wired straight to the model, so DIRT pays for what they use, not for another subscription on top.",
 
     year: 2026,
-    timeline: "TBC",
+    timeline: "4 months",
     techStack: [
       "Next.js",
       "Plasmic",
@@ -179,25 +180,25 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "A Header That Rises From the Dirt",
         description:
           "The site's first interaction puts the brand front and centre — the word \"DIRT\" literally rises out of a pile of dirt as the page loads. The kind of touch that signals from the first second that this isn't a typical agency site.",
-        image: "/showcase-images/Client - The DIRT Agency.png",
+        image: "/showcase-images/dirt/dirt-header.mp4",
       },
       {
         title: "A Building That Crumbles With Every Selection",
         description:
           "Pick from a checklist of services and an animated building reacts in real time — crumbling more with each item selected, regardless of the order. The count holds steady even as visitors toggle items on and off, so the interaction stays smooth instead of glitching out.",
-        image: "/showcase-images/Client - The DIRT Agency.png",
+        image: "/showcase-images/dirt/dirt-crumbling-building.mp4",
       },
       {
         title: "A Slider That Fills With Dirt as You Pull",
         description:
           "Visitors can drag a slider and watch dirt physically fill in alongside it — turning a normally boring numeric input into something visitors actually play with. Small detail; reflects the brand attitude exactly.",
-        image: "/showcase-images/Client - The DIRT Agency.png",
+        image: "/showcase-images/dirt/dirt-slider.mp4",
       },
       {
         title: "A Block System Nikita Can Build With",
         description:
           "Every section on the site is a reusable, modular block. Nikita can add, remove, or reorder them on any page without touching code — and the components handle whatever combination she throws at them. The site grows with the business instead of locking it into the launch-day layout.",
-        image: "/showcase-images/Client - The DIRT Agency.png",
+        image: "/showcase-images/dirt/dirt-plasmic-dashboard.png",
       },
     ],
     results: {
