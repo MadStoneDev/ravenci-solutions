@@ -377,6 +377,12 @@ export const CASE_STUDIES: CaseStudy[] = [
         image: "/showcase-images/peninsula-homes/peninsula-homes-blog-block.mp4",
       },
       {
+        title: "A Recent-Projects Block Right on the Home Page",
+        description:
+          "Peninsula's most recent builds, surfaced at eye-level on the home page — visitors get a sense of the range and quality of the work before they've scrolled. Custom-coded for performance, no off-the-shelf gallery plugin slowing things down.",
+        image: "/showcase-images/peninsula-homes/peninsula-homes-recent-projects.mp4",
+      },
+      {
         title: "A Menu That Knows What Page It's On",
         description:
           "Some pages needed slightly different navigation. Rather than maintain a separate menu for each, the menu reads the current page and adjusts itself automatically. One source of truth, zero per-page configuration to maintain.",
