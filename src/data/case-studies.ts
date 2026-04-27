@@ -528,7 +528,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     metaTitle: "Covenant Security Solutions Case Study | RAVENCI Solutions",
     metaDescription:
       "Brand, print, signage and website for a new Brisbane security company — delivered in four weeks. Booked a month or two ahead inside their first year of trading.",
-    heroHeadline: "From a name to a booked-out diary",
+    heroHeadline: "Building Trust Online for a Security Industry Leader",
     heroSubheadline:
       "Adam and Jason were starting fresh — no logo, no website, no print, no signage, no time. We delivered the full identity, print run, vehicle stickers, window signage and a custom WordPress site inside four weeks so they could start trading immediately. Within their first year they were booked one to two months in advance.",
 
@@ -561,29 +561,49 @@ export const CASE_STUDIES: CaseStudy[] = [
         "Welcome packages with system-use guides",
         "Ongoing maintenance and updates",
       ],
+      images: [
+        "/showcase-images/covenant-security-solutions/brand-system.jpg",
+        "/showcase-images/covenant-security-solutions/business-cards.jpg",
+        "/showcase-images/covenant-security-solutions/stationery.jpg",
+      ],
     },
     features: [
       {
         title: "A brand that earns the door",
         description:
           "Security is sold on trust, and trust starts with how a company looks before anyone has spoken to you. We built the identity around credibility — confident gold against charcoal, strong typographic hierarchy, photography of the actual work and not stock. The same language carries across every touchpoint: van, jobsite window sticker, business card, website, welcome pack.",
+        images: [
+          "/showcase-images/covenant-security-solutions/brand-vehicle.jpg",
+          "/showcase-images/covenant-security-solutions/brand-window-sticker.jpg",
+        ],
       },
       {
         title: "Service pages that match how people search",
         description:
           "Alarms, CCTV, access control and intercoms each get their own page with their own depth. A homeowner Googling 'alarm system Brisbane' lands on the alarms page; a body corporate researching access control lands on something written for them. No catch-all 'services' page that forces every visitor to wade through everything.",
+        images: [
+          "/showcase-images/covenant-security-solutions/website-alarms.png",
+          "/showcase-images/covenant-security-solutions/website-cctv.png",
+          "/showcase-images/covenant-security-solutions/website-access-control.png",
+        ],
       },
       {
         title: "Welcome packs that finish the job",
         description:
           "Once a system goes in, the customer needs to actually use it. We designed printed welcome guides — system overview, walkthrough, who to call when something needs attention — that get handed over at install. Same brand, same finish as everything else they touch. The handover doesn't feel done until the customer feels confident.",
+        images: [
+          "/showcase-images/covenant-security-solutions/welcome-pack-cover.jpg",
+          "/showcase-images/covenant-security-solutions/welcome-pack-inside.jpg",
+          "/showcase-images/covenant-security-solutions/design-guide.jpg",
+        ],
       },
     ],
     results: {
       heading: "Booked out within a year — without paid ads doing the heavy lifting",
       paragraphs: [
         "Word of mouth and organic search did most of the work. The site ranked early for Brisbane-area security searches across multiple terms — Covenant came back at or near the top for 'best Brisbane security alarm companies' across multiple AI summaries and search results — and friends, family and prospective clients regularly commented on how the site looked next to the competition.",
-        "There was a stretch where Covenant tried Google Ads. I'd advised against it — Ads tend to favour established sites with established conversion data, not new ones — but Google's own rep pushed for it and they ran a campaign that spent a lot for very little return. They shut it off, switched to Facebook Ads where I designed the creative, and started seeing real return. Combined with Adam's account management, Jason's install work and the steady flow of word-of-mouth referrals, they were booked a month or two in advance within their first year of trading.",
+        "There was a stretch where Covenant tried Google Ads. I'd advised against it — Ads tend to favour established sites with established conversion data, not new businesses still finding their rhythm — but their Google rep pushed for it and Covenant ran a campaign that spent a lot for very little return. The honest read is that the rep should've asked the right questions first: what's the budget, what's the business situation, what's the goal, what stage of the business are we in? A more experienced rep would've looked at a brand-new company and given appropriate advice. Instead, Covenant paid for the lesson.",
+        "They shut the campaign off and, on a friend's recommendation that I encouraged, switched to Facebook Ads where I designed the creative — that's where the real return came from. Combined with Adam's account management, Jason's install work and the steady flow of word-of-mouth referrals, they were booked a month or two in advance within their first year of trading.",
         "Two years in, they're still booked deep. Council enquiries are starting to come in. Hervey Bay and Gold Coast jobs sit alongside Brisbane work. The brand and site we built in four weeks is still doing the job.",
       ],
       metrics: [
@@ -591,6 +611,12 @@ export const CASE_STUDIES: CaseStudy[] = [
         { value: "1-2 mo", label: "Lead time, year one" },
       ],
     },
+    galleryImages: [
+      "/showcase-images/covenant-security-solutions/website-home.png",
+      "/showcase-images/covenant-security-solutions/website-services.png",
+      "/showcase-images/covenant-security-solutions/website-about.png",
+      "/showcase-images/covenant-security-solutions/website-contact.png",
+    ],
     order: 5,
     featured: false,
   },
