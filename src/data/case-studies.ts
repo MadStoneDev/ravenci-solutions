@@ -648,7 +648,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceLabels: ["Web Development"],
     excerpt:
       "Australian workplace culture consultancy preventing sexual harassment and transforming how organisations operate. Skye Charry leads the practice — background in law, gender equity and 'boots on the ground' leadership capability — running bespoke workshops for organisations of every size, in-person or online, anywhere in the country.",
-    featuredImage: "/showcase-images/Client - SAC Consulting.png",
+    featuredImage: "/showcase-images/sac-consulting/full-page.jpg",
+    featuredImageScroll: true,
     clientLogo: "/clients/sac-consulting-logo.svg",
     clientUrl: "https://sacconsulting.com.au",
     template: "premium",
@@ -674,6 +675,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         "The rebrand to SAC Consulting was the opportunity to put a website in place that finally matched what she does on the ground: premium, polished, national in feel, and with the podcast pushed to the front so the asset she invests so much energy into actually drives reach.",
         "Zoe at The Design Order brought me in for the build. She'd designed the brand and the site; my job was to translate the design into something interactive, intuitive and fast — without compromising any of the premium feel — and to retire the old domain cleanly the day SAC Consulting went live.",
       ],
+      image: "/showcase-images/sac-consulting/sac-consulting-old-site.jpg",
+      imageLabel: "Old Site",
     },
     approach: {
       heading: "Premium, polished, and built in a month",
@@ -696,10 +699,14 @@ export const CASE_STUDIES: CaseStudy[] = [
         image: "/showcase-images/Client - SAC Consulting - Podcast.png",
       },
       {
-        title: "Swipeable on mobile, gridded on desktop — without a flash",
+        title: "Responsive design and development that actually feels right at every size",
         description:
-          "The feature blocks throughout the site needed to behave differently per screen size: a swipe carousel feels right on phones, a static grid feels right on desktop. Divi doesn't do that natively. We wired Owl Carousel in by hand and added the JavaScript glue to switch cleanly at the breakpoint, so a user resizing the window or rotating their device doesn't see anything jolt or re-render mid-interaction.",
-        image: "coming-soon", // Owl Carousel ↔ grid responsive switch — short mp4 capture
+          "The brief was premium across every device — not just \"works on mobile\". That meant going beyond what Divi handles natively: bespoke breakpoints for the brand layouts, custom JavaScript to switch feature blocks between a desktop grid and a mobile-friendly Owl Carousel without a flash or layout jump, and an auto-scrolling reviews carousel that behaves the same way on a phone as it does on a 27\" screen. A lot of the work the visitor never notices — which is exactly the point.",
+        images: [
+          "/showcase-images/sac-consulting/sac-consulting-responsive-design.jpg",
+          "/showcase-images/sac-consulting/sac-consulting-brands.jpg",
+          "/showcase-images/sac-consulting/sac-consulting-reviews.mp4",
+        ],
       },
     ],
     results: {
@@ -711,9 +718,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     galleryImages: [
       "/showcase-images/Client - SAC Consulting.png",
+      "/showcase-images/sac-consulting/sac-consulting-spirit-of-the-bush-block.jpg",
+      "/showcase-images/sac-consulting/sac-consulting-past-projects.jpg",
+      "/showcase-images/sac-consulting/sac-consulting-newsletter-sign-up.jpg",
       "/showcase-images/Client - SAC Consulting - Podcast.png",
-      "coming-soon", // Workshops page
-      "coming-soon", // About — Skye + Al
     ],
     order: 6,
     featured: false,
