@@ -301,7 +301,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceLabels: ["Web Development", "Shopify", "SEO"],
     excerpt:
       "An Australian thermal and night vision retailer for serious hunters — pairing carefully chosen gear from Pulsar, HikMicro, PARD and Nocpix with the kind of expert guidance you can't get from a big-box store.",
-    featuredImage: "/showcase-images/Client - GoingDark.png",
+    featuredImage: "/showcase-images/goingdark/full-page.png",
+    featuredImageScroll: true,
     clientLogo: "/clients/going-dark-logo.svg",
     clientUrl: "https://goingdark.com.au",
     template: "premium",
@@ -345,16 +346,19 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "A Homepage That Leads With Expertise, Not the Sale",
         description:
           "Most thermal and night vision sites push product first and trust second. GoingDark's homepage flips that — making the curated, expert-led approach visible before the catalogue. Visitors get a sense of why they should buy here, not just what's for sale.",
+        image: "/showcase-images/goingdark/goingdark-home-hero.png",
       },
       {
-        title: "Category Pages That Help Hunters Find What They Need",
+        title: "Brand-Led Browsing for Buyers Who Know What They Want",
         description:
-          "Across hundreds of products from Pulsar, HikMicro, PARD and Nocpix, the category pages are designed for buyers who know what they want and don't want to waste time. Filters that work, comparison details visible at a glance, no hunting for the spec sheet.",
+          "Hunters often shop by brand — they trust Pulsar, they're loyal to HikMicro, they've been told PARD is the right call. The brands section surfaces brand-led navigation right on the home page, so buyers can jump straight to the gear they're after instead of scrolling through a generic catalogue.",
+        image: "/showcase-images/goingdark/goingdark-home-brands.png",
       },
       {
-        title: "Product Pages Built for Serious Buyers",
+        title: "Product Pages Built for Serious Comparison",
         description:
-          "Detailed specs, multiple angles, comparison information — all the things a hunter making a $4,000 thermal scope decision actually needs to see. Less marketing fluff, more data, more confidence in the click-to-buy.",
+          "Hunters spending $4,000 on a thermal scope want to weigh options, not just look at one. The product views are built around comparison — specs, prices and features visible side by side, instead of buried in tabs across multiple pages.",
+        image: "/showcase-images/goingdark/goingdark-product-compare.png",
       },
     ],
     results: {
@@ -369,6 +373,10 @@ export const CASE_STUDIES: CaseStudy[] = [
         { value: "+57%", label: "Session Duration" },
       ],
     },
+    galleryImages: [
+      "/showcase-images/goingdark/goingdark-about-hero.png",
+      "/showcase-images/goingdark/goingdark-about-what-we-stand-for.png",
+    ],
     order: 3,
     featured: true,
   },
