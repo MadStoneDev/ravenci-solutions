@@ -95,27 +95,28 @@ function SectionGallery({
   return (
     <div className={`mt-12 grid ${colsClass} gap-4 md:gap-6`}>
       {list.map((src, i) => (
-        <div
-          key={`${src}-${i}`}
-          className={`relative w-full ${aspectClass} overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100`}
-        >
-          <MediaItem
-            src={src}
-            alt={`${alt} screenshot ${i + 1}`}
-            sizes={
-              list.length === 1
-                ? "100vw"
-                : list.length === 2
-                  ? "(max-width: 768px) 100vw, 50vw"
-                  : "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            }
-          />
+        <div key={`${src}-${i}`} className={`relative w-full ${aspectClass}`}>
+          {/* Image clipped — overflow:hidden lives on this inner container
+              so the sticky label below isn't trapped by it. */}
+          <div className="absolute inset-0 overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100">
+            <MediaItem
+              src={src}
+              alt={`${alt} screenshot ${i + 1}`}
+              sizes={
+                list.length === 1
+                  ? "100vw"
+                  : list.length === 2
+                    ? "(max-width: 768px) 100vw, 50vw"
+                    : "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              }
+            />
+          </div>
           {label && (
-            // Sticky inside the image's overflow:hidden container — the
-            // label stays at top-4 of the viewport as the page scrolls,
-            // until the image's bottom edge reaches it, then it scrolls
-            // off with the image.
-            <div className="sticky top-4 z-10 flex justify-end pr-4 pt-4 pointer-events-none">
+            // Sticky sits in flow at the top of the outer container, so
+            // it sticks at top-24 (clears the fixed nav, ~80px tall when
+            // scrolled) within the image's bounds and scrolls off with
+            // the image once the bottom passes the stick point.
+            <div className="sticky top-24 z-10 flex justify-end pr-4 pt-4 pointer-events-none">
               <span className="px-4 py-2 text-sm font-bold tracking-widest uppercase bg-ravenci-primary text-white rounded shadow-lg pointer-events-auto">
                 {label}
               </span>
