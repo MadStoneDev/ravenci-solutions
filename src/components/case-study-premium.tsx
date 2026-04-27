@@ -116,7 +116,7 @@ function SectionGallery({
             // it sticks at top-24 (clears the fixed nav, ~80px tall when
             // scrolled) within the image's bounds and scrolls off with
             // the image once the bottom passes the stick point.
-            <div className="sticky top-24 z-10 flex justify-end pr-4 pt-4 pointer-events-none">
+            <div className="sticky top-24 z-10 flex justify-end pr-4 pt-4 pb-4 pointer-events-none">
               <span className="px-4 py-2 text-sm font-bold tracking-widest uppercase bg-ravenci-primary text-white rounded shadow-lg pointer-events-auto">
                 {label}
               </span>
