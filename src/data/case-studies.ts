@@ -341,6 +341,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         "Logo refreshed where the inherited files were low-res and rough",
         "Ongoing strategic input — pushing for differentiation, not imitation",
       ],
+      image: "/showcase-images/goingdark/goingdark-shopify-dashboard.png",
     },
     features: [
       {
