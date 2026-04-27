@@ -583,7 +583,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "Real faces on every visit",
         description:
           "Security is a relationship business. The hero on every visit randomly shows either Adam or Jason — the same two faces who'll quote your job, install your system and pick up the phone when something needs attention. No stock photo, no anonymous corporate team page. The actual humans, on the front page, every time.",
-        image: "/showcase-images/covenant-security-solutions/random-hero.mp4",
+        image: "/showcase-images/covenant-security-solutions/covenant-security-solutions-random-hero.mp4",
       },
       {
         title: "Service pages that match how people search",
@@ -600,7 +600,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "On-the-fly camera pricer — without dragging in an ecommerce platform",
         description:
           "Most builders would reach for WooCommerce or Shopify to put a pricer on a service page — and inherit hundreds of kilobytes of cart code, payment integrations and admin overhead the business doesn't actually need. We built a custom pricer for the CCTV page: pick how many cameras you want, see the price update on the fly, send through a quote request in one step. No cart, no checkout, no plugin tax slowing the page down. The right tool for the actual job.",
-        image: "/showcase-images/covenant-security-solutions/cctv-pricer.mp4",
+        image: "/showcase-images/covenant-security-solutions/covenant-security-solutions-cctv-pricer.mp4",
       },
       {
         title: "Welcome packs that finish the job",
