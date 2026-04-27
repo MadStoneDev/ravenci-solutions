@@ -628,9 +628,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     galleryImages: [
       "/showcase-images/covenant-security-solutions/covenant-security-solutions-services-intercoms.jpg",
-      "/showcase-images/covenant-security-solutions/covenant-security-solutions-about-family.jpg",
-      "/showcase-images/covenant-security-solutions/covenant-security-solutions-newsletter-and-footer.jpg",
       "/showcase-images/covenant-security-solutions/covenant-security-solutions-smart-intercoms-block.jpg",
+      "/showcase-images/covenant-security-solutions/covenant-security-solutions-about-family.jpg",
+      "/showcase-images/covenant-security-solutions/covenant-security-solutions-contact-page.jpg",
+      "/showcase-images/covenant-security-solutions/covenant-security-solutions-quote.jpg",
+      "/showcase-images/covenant-security-solutions/covenant-security-solutions-newsletter-and-footer.jpg",
     ],
     order: 5,
     featured: false,
