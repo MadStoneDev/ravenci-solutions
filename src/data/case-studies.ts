@@ -522,7 +522,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     excerpt:
       "Brisbane security specialists installing alarms, CCTV, access control and intercoms for homes and businesses from Hervey Bay down to the Gold Coast. Adam and Jason built Covenant from a list of trusted contacts and a reputation for getting it right — and were booked a month or two in advance within their first year of trading.",
-    featuredImage: "/showcase-images/covenant-security-solutions/full-page.png",
+    featuredImage: "/showcase-images/covenant-security-solutions/full-page-alternative.png",
     featuredImageScroll: true,
     clientLogo: "/clients/covenant-security-solutions-logo.svg",
     clientUrl: "https://covenantsecurity.com.au",
