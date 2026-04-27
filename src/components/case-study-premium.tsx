@@ -111,7 +111,7 @@ function SectionGallery({
             }
           />
           {label && (
-            <span className="absolute top-3 left-3 z-10 px-3 py-1.5 text-xs font-bold tracking-widest uppercase bg-ravenci-dark text-white rounded shadow-lg">
+            <span className="absolute top-4 right-4 z-10 px-4 py-2 text-sm font-bold tracking-widest uppercase bg-ravenci-primary text-white rounded shadow-lg">
               {label}
             </span>
           )}
