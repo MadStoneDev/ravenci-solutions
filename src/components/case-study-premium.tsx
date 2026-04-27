@@ -111,9 +111,15 @@ function SectionGallery({
             }
           />
           {label && (
-            <span className="absolute top-4 right-4 z-10 px-4 py-2 text-sm font-bold tracking-widest uppercase bg-ravenci-primary text-white rounded shadow-lg">
-              {label}
-            </span>
+            // Sticky inside the image's overflow:hidden container — the
+            // label stays at top-4 of the viewport as the page scrolls,
+            // until the image's bottom edge reaches it, then it scrolls
+            // off with the image.
+            <div className="sticky top-4 z-10 flex justify-end pr-4 pt-4 pointer-events-none">
+              <span className="px-4 py-2 text-sm font-bold tracking-widest uppercase bg-ravenci-primary text-white rounded shadow-lg pointer-events-auto">
+                {label}
+              </span>
+            </div>
           )}
         </div>
       ))}
