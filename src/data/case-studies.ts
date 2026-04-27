@@ -325,6 +325,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         "Jo's GoingDark inherited its BigCommerce store from the previous owners — along with years of technical debt that came with it. Multiple developers had each done their own thing over time. The result was the classic mess: clashing implementations, doubled-up work, gaps where there should have been care. Hundreds of links went to 404 pages. Images had no alt text. The blog hadn't been updated in months.",
         "GoingDark came to us via a few Facebook recommendations, originally for minor fixes. As we started working through the list, the bigger picture came into focus — the SEO foundations were full of loopholes the previous teams hadn't seen or hadn't fixed. The conversation with Jo shifted from \"fix the small stuff\" to \"maybe it's time to rebuild properly\".",
       ],
+      image: "/showcase-images/goingdark/goingdark-old-site.png",
     },
     approach: {
       heading: "Our Approach",
