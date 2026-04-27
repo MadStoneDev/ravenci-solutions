@@ -564,8 +564,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         "Ongoing maintenance and updates",
       ],
       images: [
-        "/showcase-images/covenant-security-solutions/brand-system.jpg",
-        "/showcase-images/covenant-security-solutions/business-cards.jpg",
+        "/showcase-images/covenant-security-solutions/covenant-security-solutions-moodboard.jpg",
+        "/showcase-images/covenant-security-solutions/covenant-security-solutions-business-cards.jpg",
         "/showcase-images/covenant-security-solutions/stationery.jpg",
       ],
     },
