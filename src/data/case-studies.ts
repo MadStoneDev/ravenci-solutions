@@ -566,7 +566,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       images: [
         "/showcase-images/covenant-security-solutions/covenant-security-solutions-moodboard.jpg",
         "/showcase-images/covenant-security-solutions/covenant-security-solutions-business-cards.jpg",
-        "/showcase-images/covenant-security-solutions/stationery.jpg",
+        "coming-soon:Stationery",
       ],
     },
     features: [
@@ -575,8 +575,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         description:
           "Security is sold on trust, and trust starts with how a company looks before anyone has spoken to you. We built the identity around credibility — confident gold against charcoal, strong typographic hierarchy, photography of the actual work and not stock. The same language carries across every touchpoint: van, jobsite window sticker, business card, website, welcome pack.",
         images: [
-          "/showcase-images/covenant-security-solutions/brand-vehicle.jpg",
-          "/showcase-images/covenant-security-solutions/brand-window-sticker.jpg",
+          "coming-soon:Vehicle decals",
+          "coming-soon:Window sticker on a finished install",
         ],
       },
       {
@@ -607,9 +607,9 @@ export const CASE_STUDIES: CaseStudy[] = [
         description:
           "Once a system goes in, the customer needs to actually use it. We designed printed welcome guides — system overview, walkthrough, who to call when something needs attention — that get handed over at install. Same brand, same finish as everything else they touch. The handover doesn't feel done until the customer feels confident.",
         images: [
-          "/showcase-images/covenant-security-solutions/welcome-pack-cover.jpg",
-          "/showcase-images/covenant-security-solutions/welcome-pack-inside.jpg",
-          "/showcase-images/covenant-security-solutions/design-guide.jpg",
+          "coming-soon:Welcome pack cover",
+          "coming-soon:Welcome pack interior spread",
+          "coming-soon:Printed design guide",
         ],
       },
     ],
