@@ -66,17 +66,21 @@ function MediaItem({
  * Image/video gallery helper — renders 1, 2, or 3 columns based on count.
  * Falls back gracefully to a single `image` if `images` array isn't provided.
  * Each item can be a static image, animated GIF, or video file.
+ * Optional `label` renders as a small badge overlay on every item — used
+ * to mark images as "Old Site" / "PageSpeed Result" / "Before" etc.
  */
 function SectionGallery({
   images,
   fallback,
   alt,
   aspectClass = "aspect-[16/10]",
+  label,
 }: {
   images?: string[];
   fallback?: string;
   alt: string;
   aspectClass?: string;
+  label?: string;
 }) {
   const list = images && images.length > 0 ? images : fallback ? [fallback] : [];
   if (list.length === 0) return null;
@@ -106,6 +110,11 @@ function SectionGallery({
                   : "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             }
           />
+          {label && (
+            <span className="absolute top-3 left-3 z-10 px-3 py-1.5 text-xs font-bold tracking-widest uppercase bg-ravenci-dark text-white rounded shadow-lg">
+              {label}
+            </span>
+          )}
         </div>
       ))}
     </div>
@@ -294,6 +303,7 @@ export default function CaseStudyPremium({
           images={caseStudy.problem.images}
           fallback={caseStudy.problem.image}
           alt={`${caseStudy.clientName} — the challenge`}
+          label={caseStudy.problem.imageLabel}
         />
       </section>
 
@@ -335,6 +345,7 @@ export default function CaseStudyPremium({
           images={caseStudy.approach.images}
           fallback={caseStudy.approach.image}
           alt={`${caseStudy.clientName} — our approach`}
+          label={caseStudy.approach.imageLabel}
         />
       </section>
 

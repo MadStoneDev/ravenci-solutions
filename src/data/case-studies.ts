@@ -89,6 +89,8 @@ export interface CaseStudy {
     paragraphs: string[];
     image?: string;
     images?: string[]; // multiple screenshots (premium template)
+    /** Optional badge overlaid on the image — e.g. "Old Site" / "Before" */
+    imageLabel?: string;
   };
   approach: {
     heading: string;
@@ -96,6 +98,8 @@ export interface CaseStudy {
     highlights?: string[];
     image?: string;
     images?: string[]; // multiple screenshots (premium template)
+    /** Optional badge overlaid on the image — e.g. "PageSpeed Result" */
+    imageLabel?: string;
   };
   results: {
     heading: string;
@@ -326,6 +330,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         "GoingDark came to us via a few Facebook recommendations, originally for minor fixes. As we started working through the list, the bigger picture came into focus — the SEO foundations were full of loopholes the previous teams hadn't seen or hadn't fixed. The conversation with Jo shifted from \"fix the small stuff\" to \"maybe it's time to rebuild properly\".",
       ],
       image: "/showcase-images/goingdark/goingdark-old-site.png",
+      imageLabel: "Old Site",
     },
     approach: {
       heading: "Our Approach",
@@ -426,6 +431,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         "They'd hired The Design Order to refresh the brand and were choosing between three developers to build it. The design had to be matched faithfully — no compromises on detail. Whoever they picked also had to be someone they could trust to maintain the site for the long run.",
       ],
       image: "/showcase-images/peninsula-homes/peninsula-homes-old-site.jpg",
+      imageLabel: "Old Site",
     },
     approach: {
       heading: "Our Approach",
