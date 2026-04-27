@@ -647,81 +647,73 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ["web-development"],
     serviceLabels: ["Web Development"],
     excerpt:
-      "A workplace culture consulting firm building thriving workplaces in Australia's meat, forestry, agriculture, seafood and mining industries — preserving the mateship and humour that make great teams, while addressing the dysfunction that holds them back.",
+      "Australian workplace culture consultancy specialising in preventing sexual harassment and transforming workplace culture. Husband-and-wife team Skye Charry (background in law and gender equity) and Lieutenant Colonel Al Charry (boots-on-the-ground leadership) travel the country running bespoke workshops for organisations of every size.",
     featuredImage: "/showcase-images/Client - SAC Consulting.png",
     clientLogo: "/clients/sac-consulting-logo.svg",
     clientUrl: "https://sacconsulting.com.au",
     template: "premium",
     metaTitle: "SAC Consulting Case Study | RAVENCI Solutions",
     metaDescription:
-      "How RAVENCI built a professional web platform for SAC Consulting that strengthened their brand and attracted enterprise-level clients.",
-    heroHeadline: "Elevating a Consulting Firm's Digital Credibility",
+      "From solo practice to national husband-and-wife consultancy in one month — WordPress + Divi build for SAC Consulting, in collaboration with The Design Order.",
+    heroHeadline: "From a solo practice to a national consulting firm",
     heroSubheadline:
-      "SAC Consulting needed a website that would open doors with enterprise clients. We built a platform that communicates authority and expertise.",
+      "Skye Charry had built a solid solo practice at skyesaunders.com.au; when she and her husband Al partnered up to launch SAC Consulting, they needed a website that reflected the bigger shape of the business — premium, national, and ready to push Skye's podcast to a much wider audience. Built in one month, in collaboration with The Design Order who handled the brand and design.",
 
     year: 2023,
-    timeline: "8 weeks",
-    techStack: ["WordPress", "Custom Builder", "JavaScript", "PHP"],
+    timeline: "1 month",
+    techStack: ["WordPress", "Divi Builder", "Owl Carousel", "JavaScript", "PHP"],
     collaborators: [
+      { role: "Brand & Design", name: "The Design Order" },
       { role: "Development", name: "RAVENCI Solutions" },
-      { role: "Design", name: "The Design Order" },
     ],
 
     problem: {
-      heading: "The Challenge",
+      heading: "A new chapter — under one cohesive brand",
       paragraphs: [
-        "SAC Consulting was growing rapidly but their online presence hadn't kept pace. In the competitive consulting space, enterprise clients often evaluate potential partners based on their digital presence before making contact.",
-        "They needed a professional, polished website that would establish credibility, clearly communicate their service offerings, and make it easy for potential clients to engage.",
+        "Skye Charry had built a solid solo practice at skyesaunders.com.au, but the business was evolving. She and her husband Al — a Lieutenant Colonel with deep leadership experience — were partnering up to launch SAC Consulting: a national workplace culture firm focused on preventing sexual harassment and rebuilding healthier workplaces. New name, new brand, new domain, new look — and a podcast Skye wanted to push much louder than the solo site had allowed.",
+        "Zoe at The Design Order brought me in for the build. She'd designed the brand and the site; my job was to translate the design into something interactive, intuitive and fast — without compromising any of the premium feel — and to retire the old solo site cleanly the day SAC Consulting went live.",
       ],
-      image: "/showcase-images/Client - SAC Consulting.png",
     },
     approach: {
-      heading: "Our Approach",
+      heading: "Premium, polished, and built in a month",
       paragraphs: [
-        "We designed the site around SAC Consulting's key differentiators, creating clear pathways for different client types to find relevant information. The structure guides visitors from understanding the firm's capabilities to taking action.",
-        "The visual design strikes the right balance between professional authority and approachability — crucial for a consulting firm that prides itself on building genuine partnerships.",
+        "We built on WordPress with Divi Builder. Divi gave Skye and Al the room to keep updating content themselves once the site was live — workshops change, podcast episodes ship every few weeks, blog posts go up — without coming back to me for every tweak. Custom JavaScript handled the bits Divi wouldn't natively, and PHP filled in the rest.",
+        "The site went out the door at the one-month mark. Skyesaunders.com.au was retired the same day. SAC Consulting launched as a single cohesive presence: workshops, podcast, contact and bookings all under the new brand, all on one domain.",
       ],
       highlights: [
-        "Service-led information architecture",
-        "Client-type specific content pathways",
-        "Case study and credibility sections",
-        "Conversion-optimised contact flows",
+        "WordPress + Divi Builder for ongoing content control",
+        "Owl Carousel + grid hybrid for responsive feature blocks",
+        "Skye's podcast given prominence throughout",
+        "One-month build to launch",
+        "Old solo site retired cleanly day-one",
       ],
-      image: "/showcase-images/Client - SAC Consulting.png",
     },
     features: [
       {
-        title: "Service-Led Architecture",
+        title: "Skye's podcast, front and centre",
         description:
-          "Clear pathways for different client types to find relevant information, guiding visitors from understanding capabilities to taking action.",
-        image: "/showcase-images/Client - SAC Consulting.png",
-      },
-      {
-        title: "Credibility Sections",
-        description:
-          "Strategically placed case studies, client logos, and testimonials that build trust before the first conversation happens.",
+          "On the old solo site the podcast was a quiet sidebar. On SAC Consulting it leads. Episodes are highlighted on the homepage, the podcast page is purpose-built for audio discovery, and listening is one click from anywhere on the site. For a consultant whose authority is built on speaking and writing, the podcast is the lead magnet — and it deserved the architecture to show it.",
         image: "/showcase-images/Client - SAC Consulting - Podcast.png",
       },
       {
-        title: "Conversion-Optimised Contact",
+        title: "Swipeable on mobile, gridded on desktop — without a flash",
         description:
-          "Multiple contact pathways tailored to different enquiry types, reducing friction between interest and engagement.",
-        image: "/showcase-images/Client - SAC Consulting.png",
+          "The feature blocks throughout the site needed to behave differently per screen size: a swipe carousel feels right on phones, a static grid feels right on desktop. Divi doesn't do that natively. We wired Owl Carousel in by hand and added the JavaScript glue to switch cleanly at the breakpoint, so a user resizing the window or rotating their device doesn't see anything jolt or re-render mid-interaction.",
+        image: "coming-soon", // Owl Carousel ↔ grid responsive switch — short mp4 capture
       },
     ],
     results: {
-      heading: "The Results",
+      heading: "From solo practice to national presence",
       paragraphs: [
-        "The new website became a powerful business development tool, helping SAC Consulting win larger contracts and attract higher-value clients.",
-      ],
-      metrics: [
-        { value: "90+", label: "Google PageSpeed" },
-        { value: "< 2s", label: "Page Load Time" },
+        "The new site went live and skyesaunders.com.au went dark the same day. SAC Consulting launched as a single cohesive presence, with a brand built for the bigger ambition Skye and Al had set for the business.",
+        "It's a much smoother and more modern site than what came before. It reflects the premium service Skye delivers as someone who travels Australia speaking to organisations of every size — and gives her podcast the prominence it needed to keep building her authority across the country.",
       ],
     },
     galleryImages: [
       "/showcase-images/Client - SAC Consulting.png",
       "/showcase-images/Client - SAC Consulting - Podcast.png",
+      "coming-soon", // Workshops page
+      "coming-soon", // About — Skye + Al
     ],
     order: 6,
     featured: false,
