@@ -718,7 +718,6 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     galleryImages: [
       "/showcase-images/Client - SAC Consulting.png",
-      "/showcase-images/sac-consulting/sac-consulting-spirit-of-the-bush-block.jpg",
       "/showcase-images/sac-consulting/sac-consulting-past-projects.jpg",
       "/showcase-images/sac-consulting/sac-consulting-newsletter-sign-up.jpg",
       "/showcase-images/Client - SAC Consulting - Podcast.png",
