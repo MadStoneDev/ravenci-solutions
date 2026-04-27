@@ -359,7 +359,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "Brand-Led Browsing for Buyers Who Know What They Want",
         description:
           "Hunters often shop by brand — they trust Pulsar, they're loyal to HikMicro, they've been told PARD is the right call. The brands section surfaces brand-led navigation right on the home page, so buyers can jump straight to the gear they're after instead of scrolling through a generic catalogue.",
-        image: "/showcase-images/goingdark/goingdark-home-brands.png",
+        image: "/showcase-images/goingdark/goingdark-brand-pages.mp4",
       },
       {
         title: "Product Pages Built for Serious Comparison",
@@ -381,6 +381,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     galleryImages: [
+      "/showcase-images/goingdark/goingdark-home-brands.png",
       "/showcase-images/goingdark/goingdark-about-hero.png",
       "/showcase-images/goingdark/goingdark-about-what-we-stand-for.png",
     ],
