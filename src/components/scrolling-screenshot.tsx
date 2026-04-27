@@ -21,7 +21,7 @@ export default function ScrollingScreenshot({
   src,
   alt,
   duration = 60,
-  className = "relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100 group",
+  className = "relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100 group",
 }: ScrollingScreenshotProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const imageRef = useRef<HTMLImageElement | null>(null);
