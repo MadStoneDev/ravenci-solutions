@@ -82,7 +82,8 @@ function SectionGallery({
   aspectClass?: string;
   label?: string;
 }) {
-  const list = images && images.length > 0 ? images : fallback ? [fallback] : [];
+  const list =
+    images && images.length > 0 ? images : fallback ? [fallback] : [];
   if (list.length === 0) return null;
 
   const colsClass =
@@ -116,7 +117,7 @@ function SectionGallery({
             // it sticks at top-24 (clears the fixed nav, ~80px tall when
             // scrolled) within the image's bounds and scrolls off with
             // the image once the bottom passes the stick point.
-            <div className="sticky top-24 z-10 flex justify-end pr-4 pt-4 pb-4 pointer-events-none">
+            <div className="sticky top-16 z-10 flex justify-end pr-4 pt-4 pb-4 pointer-events-none">
               <span className="px-4 py-2 text-sm font-bold tracking-widest uppercase bg-ravenci-primary text-white rounded shadow-lg pointer-events-auto">
                 {label}
               </span>
@@ -341,7 +342,9 @@ export default function CaseStudyPremium({
                       size={20}
                       className="mt-0.5 text-ravenci-primary flex-shrink-0"
                     />
-                    <span className="text-sm text-neutral-700">{highlight}</span>
+                    <span className="text-sm text-neutral-700">
+                      {highlight}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -403,7 +406,9 @@ export default function CaseStudyPremium({
                   {featureImages.length > 0 && (
                     <div
                       className={`lg:col-span-7 ${
-                        isReverse ? "lg:order-1 lg:col-start-1" : "lg:col-start-6"
+                        isReverse
+                          ? "lg:order-1 lg:col-start-1"
+                          : "lg:col-start-6"
                       }`}
                     >
                       <div
@@ -415,9 +420,7 @@ export default function CaseStudyPremium({
                       >
                         {featureImages.map((img, j) => {
                           const useScroll =
-                            feature.imageScroll === true &&
-                            !feature.images && // only when single image
-                            !isVideoFile(img);
+                            feature.imageScroll === true && !isVideoFile(img);
                           return (
                             <div
                               key={`${img}-${j}`}
@@ -702,8 +705,8 @@ export default function CaseStudyPremium({
             Ready for results like these?
           </h2>
           <p className="mt-4 text-neutral-400 leading-relaxed">
-            Tell us about your project in 2 minutes. We&apos;ll come back with
-            a tailored proposal — same approach, same standards, your business.
+            Tell us about your project in 2 minutes. We&apos;ll come back with a
+            tailored proposal — same approach, same standards, your business.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <Link

@@ -39,9 +39,10 @@ export interface CaseStudyFeature {
   description: string; // what this feature does and why
   image?: string; // single screenshot/video — supports .png/.jpg/.gif/.mp4/.webm
   /**
-   * If true and `image` is a single full-length screenshot, renders with
-   * the auto-scrolling ScrollingScreenshot component instead of a static
-   * image. Has no effect when `images` (array) is used.
+   * If true, every non-video item in this feature renders with the
+   * auto-scrolling ScrollingScreenshot component instead of a static
+   * image. Use for full-length page screenshots; videos still render
+   * as autoplay-loop-muted regardless.
    */
   imageScroll?: boolean;
   images?: string[]; // multiple screenshots (premium template)
@@ -521,7 +522,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     excerpt:
       "Brisbane security specialists installing alarms, CCTV, access control and intercoms for homes and businesses from Hervey Bay down to the Gold Coast. Adam and Jason built Covenant from a list of trusted contacts and a reputation for getting it right — and were booked a month or two in advance within their first year of trading.",
-    featuredImage: "/showcase-images/Client - Covenant Security.png",
+    featuredImage: "/showcase-images/covenant-security-solutions/full-page.png",
+    featuredImageScroll: true,
     clientLogo: "/clients/covenant-security-solutions-logo.svg",
     clientUrl: "https://covenantsecurity.com.au",
     template: "premium",
@@ -578,14 +580,27 @@ export const CASE_STUDIES: CaseStudy[] = [
         ],
       },
       {
+        title: "Real faces on every visit",
+        description:
+          "Security is a relationship business. The hero on every visit randomly shows either Adam or Jason — the same two faces who'll quote your job, install your system and pick up the phone when something needs attention. No stock photo, no anonymous corporate team page. The actual humans, on the front page, every time.",
+        image: "/showcase-images/covenant-security-solutions/random-hero.mp4",
+      },
+      {
         title: "Service pages that match how people search",
         description:
-          "Alarms, CCTV, access control and intercoms each get their own page with their own depth. A homeowner Googling 'alarm system Brisbane' lands on the alarms page; a body corporate researching access control lands on something written for them. No catch-all 'services' page that forces every visitor to wade through everything.",
+          "Alarms, CCTV, intercoms, access control — each major service gets its own page with its own depth. A homeowner Googling 'alarm system Brisbane' lands on the alarms page; a body corporate researching intercom systems lands on something written for them. No catch-all 'services' page that forces every visitor to wade through everything.",
+        imageScroll: true,
         images: [
-          "/showcase-images/covenant-security-solutions/website-alarms.png",
-          "/showcase-images/covenant-security-solutions/website-cctv.png",
-          "/showcase-images/covenant-security-solutions/website-access-control.png",
+          "/showcase-images/covenant-security-solutions/covenant-security-solutions-alarms.jpg",
+          "/showcase-images/covenant-security-solutions/covenant-security-solutions-cctv.jpg",
+          "/showcase-images/covenant-security-solutions/covenant-security-solutions-intercoms.jpg",
         ],
+      },
+      {
+        title: "On-the-fly camera pricer — without dragging in an ecommerce platform",
+        description:
+          "Most builders would reach for WooCommerce or Shopify to put a pricer on a service page — and inherit hundreds of kilobytes of cart code, payment integrations and admin overhead the business doesn't actually need. We built a custom pricer for the CCTV page: pick how many cameras you want, see the price update on the fly, send through a quote request in one step. No cart, no checkout, no plugin tax slowing the page down. The right tool for the actual job.",
+        image: "/showcase-images/covenant-security-solutions/cctv-pricer.mp4",
       },
       {
         title: "Welcome packs that finish the job",
