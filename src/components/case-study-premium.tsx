@@ -40,19 +40,12 @@ function MediaItem({
   // "coming-soon" sentinel — used when a slot is wired in the data but
   // the asset hasn't arrived yet. Renders a neutral placeholder tile
   // so the layout stays intact without a broken-image icon.
-  // Format: "coming-soon" or "coming-soon:Caption text".
-  if (src === "coming-soon" || src.startsWith("coming-soon:")) {
-    const caption = src.startsWith("coming-soon:")
-      ? src.slice("coming-soon:".length)
-      : null;
+  if (src === "coming-soon") {
     return (
-      <div className="absolute inset-0 flex flex-col items-center justify-center bg-neutral-100 text-neutral-500 p-6 text-center">
+      <div className="absolute inset-0 flex items-center justify-center bg-neutral-100">
         <span className="text-xs font-medium uppercase tracking-widest text-neutral-400">
           Coming soon
         </span>
-        {caption && (
-          <span className="mt-2 text-sm text-neutral-500">{caption}</span>
-        )}
       </div>
     );
   }
