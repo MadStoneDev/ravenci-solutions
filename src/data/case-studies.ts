@@ -599,7 +599,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: "On-the-fly camera pricer — without dragging in an ecommerce platform",
         description:
-          "Most builders would reach for WooCommerce or Shopify to put a pricer on a service page — and inherit hundreds of kilobytes of cart code, payment integrations and admin overhead the business doesn't actually need. We built a custom pricer for the CCTV page: pick how many cameras you want, see the price update on the fly, send through a quote request in one step. No cart, no checkout, no plugin tax slowing the page down. The right tool for the actual job.",
+          "Covenant needed visitors to be able to see roughly what a CCTV install would cost based on how many cameras they wanted, then send through a quote request in the same step. The off-the-shelf path would've been WooCommerce or Shopify — but Covenant doesn't sell cameras online, they install them on-site, and that path would've meant inheriting hundreds of kilobytes of cart code, payment integrations and admin overhead they don't actually need. So we built the pricer custom: pick a camera count, see the price update on the fly, send through a quote request in one click. No cart, no checkout, no plugin tax on page load.",
         image: "/showcase-images/covenant-security-solutions/covenant-security-solutions-cctv-pricer.mp4",
       },
       {
@@ -679,7 +679,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       imageLabel: "Old Site",
     },
     approach: {
-      heading: "Premium, polished, and built in a month",
+      heading: "Built in a month, owned by Skye after that",
       paragraphs: [
         "We built on WordPress with Divi Builder. Divi gave Skye the room to keep updating content herself once the site was live — workshops change, podcast episodes ship every few weeks, blog posts go up — without coming back to me for every tweak. Custom JavaScript handled the bits Divi wouldn't natively, and PHP filled in the rest.",
         "The site went out the door at the one-month mark. SAC Consulting launched as a single cohesive presence: workshops, podcast, contact and bookings all under the new brand, all on one domain.",
@@ -701,7 +701,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: "Responsive design and development that actually feels right at every size",
         description:
-          "The brief was premium across every device — not just \"works on mobile\". That meant going beyond what Divi handles natively: bespoke breakpoints for the brand layouts, custom JavaScript to switch feature blocks between a desktop grid and a mobile-friendly Owl Carousel without a flash or layout jump, and an auto-scrolling reviews carousel that behaves the same way on a phone as it does on a 27\" screen. A lot of the work the visitor never notices — which is exactly the point.",
+          "The brief was a premium experience across every device — not just \"works on mobile\". That meant going beyond what Divi handles natively: bespoke breakpoints for the brand layouts, custom JavaScript to switch feature blocks between a desktop grid and a mobile-friendly Owl Carousel without a flash or layout jump, and an auto-scrolling reviews carousel that behaves the same way on a phone as it does on a 27\" screen. A lot of the work sits underneath what the visitor sees — but it's the part that keeps the design feeling intentional at every size.",
         images: [
           "/showcase-images/sac-consulting/sac-consulting-responsive-design.jpg",
           "/showcase-images/sac-consulting/sac-consulting-brands.jpg",
@@ -712,7 +712,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     results: {
       heading: "A platform that matches how Skye actually works",
       paragraphs: [
-        "Skye is on the road most weeks. The podcast keeps shipping. The workshops keep evolving. The site holds all of it together — premium, polished, and the same standard whether someone lands on it in Perth, Hobart or right next door in Brisbane.",
+        "Skye is on the road most weeks. The podcast keeps shipping. The workshops keep evolving. The site holds all of it together — and reads the same whether someone lands on it in Perth, Hobart or right next door in Brisbane.",
         "It's a much smoother and more modern presence than what came before. It looks the part for the service Skye delivers to organisations across the country, and it gives the podcast — her biggest authority lever — the prominence it needed to keep building reach.",
       ],
     },
@@ -770,7 +770,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "Pixel-perfect to the design — no \"similar to\"",
       paragraphs: [
         "WordPress with Divi Builder. Divi gave Nikita the room to keep updating content herself once the site was live — she ships a lot of writing, and she shouldn't have to come back to me every time a new article goes up. Custom JavaScript and PHP handled anything Divi wouldn't natively do.",
-        "The piece I held the build to most carefully was The Design Order's design. After launch, Zoe from TDO rang me. She said developers always tell her they'll build the design \"similar\" — and there are always differences. She wasn't expecting a fully identical build. She asked if we could work together on more projects. We've now done five-plus, including SAC Consulting.",
+        "The build had to translate The Design Order's design exactly. After launch, Zoe from TDO rang me. She said developers always tell her they'll build a design \"similar\" — and there are always differences. This time the build matched. She asked if we could work together on more projects. We've now done five-plus, SAC Consulting included.",
         "Four weeks from start to live. On budget. On spec.",
       ],
       highlights: [
@@ -785,13 +785,13 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: "Pixel-perfect to the design",
         description:
-          "Most developers will tell you they're going to build something \"close to\" the design. Close-but-not-identical is so common it's expected. I held this build to a different standard: pixel-perfect to The Design Order's spec. Spacing, typography, motion, every detail. The kind of build a designer can hand off and not have to argue with afterwards. Years later, we're still working together because of it.",
+          "Nikita and TDO needed to know the live site would behave the way the design said it would, no surprises after launch. Spacing, typography, motion, every detail — translated from the design comp into the build without drift. Four weeks of careful translation, and the site matched the spec end to end.",
         image: "coming-soon", // Side-by-side: TDO's design comp vs the live site
       },
       {
         title: "\"Watch This\" — videos gated by newsletter, not by login",
         description:
-          "Nikita has a library of free videos she shares — but only with people who've subscribed to her newsletter. The standard plugin approach treats every page load as a fresh prompt: subscribe again, subscribe again, even if you signed up two minutes ago. We built it differently. Subscribe once, the unlock is stored in LocalStorage with an expiry, and the visitor isn't asked again until the expiry runs down. Free access for anyone who's joined the list, no login wall, no annoying re-prompts.",
+          "Nikita has a library of free videos she shares — but only with people who've subscribed to her newsletter. The brief: prompt visitors to subscribe before watching, then leave them alone afterwards. The off-the-shelf plugins kept re-prompting on every page load, even seconds after subscribing. We stored the unlock in LocalStorage with an expiry instead — subscribe once, the prompt doesn't come back until the expiry runs down. Free access for anyone on the list, no login wall, no repeat re-prompts.",
         image: "coming-soon", // Watch This page UI before/after subscribe
       },
       {
@@ -801,7 +801,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         image: "coming-soon", // Divi visual editor in action on a Nikita Morell page
       },
       {
-        title: "A second site for her client library — Next.js, Notion, and a clever ActiveCampaign trick",
+        title: "A second site for her client library — Next.js, Notion, and ActiveCampaign",
         description:
           "Nikita has a deep library of resources she'd built up in Notion over the years and wanted to share with her paying clients — but only with her paying clients. The off-the-shelf options either cost too much or wanted her to migrate her content out of Notion and into a separate platform. So we built her a side site, lightweight by design. Next.js reads her Notion library directly via the API and surfaces it in a clean viewer — no migration, no double-handling, she keeps editing in Notion exactly like she always has. Auth runs through ActiveCampaign: a client signs up, ActiveCampaign subscribes them and stores a generated password in a custom field, encrypted but lightweight. No separate user database, no auth-as-a-service subscription, no plugin tax. Live for over a year. Still humming.",
         image: "/showcase-images/nikita-morell/nikita-morell-library-login.jpg",
