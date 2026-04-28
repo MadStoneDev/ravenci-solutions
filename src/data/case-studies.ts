@@ -220,6 +220,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       metrics: [
         { value: "97", label: "PageSpeed Performance" },
         { value: "100", label: "Best Practices" },
+        { value: "1.2s", label: "Largest Contentful Paint" },
       ],
     },
     galleryImages: [
@@ -373,6 +374,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "The Results",
       paragraphs: [
         "GoingDark relaunched on Shopify on 27 January 2025. By April — three months in — the trajectory had clearly turned around. Purchaser rate grew 38.5%. Organic search traffic grew 12.5%. Average session duration jumped 57% — visitors are spending dramatically more time on the site than they were before.",
+        "The site itself sits at 100 Accessibility, 92 Best Practices and 92 SEO in PageSpeed, with First Contentful Paint at 0.5s and Largest Contentful Paint at 0.8s — fast for any ecommerce site, fast enough on Shopify that the platform overhead doesn't tell on day-to-day shopping.",
         "The harder shift has been ongoing: pushing back gently when Jo's tempted to copy what bigger competitors are doing. In a niche category like night vision, the brand that stands out wins. We're still working with GoingDark monthly on that, alongside the SEO foundation we rebuilt during migration.",
       ],
       metrics: [
@@ -486,12 +488,13 @@ export const CASE_STUDIES: CaseStudy[] = [
     results: {
       heading: "The Results",
       paragraphs: [
-        "The site launched in 2024 and has been running ever since — same shape, same speed, no degradation. The 90+ PageSpeed score sits well above the 75+ benchmark Peninsula's SEO consultant required, and the build is identical to The Design Order's design.",
+        "The site launched in 2024 and has been running ever since — same shape, same speed, no degradation. PageSpeed Performance sits at 94, Best Practices at 96, First Contentful Paint at 0.4s and Largest Contentful Paint at 0.8s — well above the 75+ benchmark Peninsula's SEO consultant required, and the build remains identical to The Design Order's design.",
         "Peninsula's team adds new projects and updates as required, and the build was engineered so those changes don't break anything. We maintain it monthly. Two years in, it's still doing exactly what it was built to do — letting the work do the talking.",
       ],
       metrics: [
-        { value: "90+", label: "Google PageSpeed (target: 75)" },
-        { value: "< 2s", label: "Page Load Time" },
+        { value: "94", label: "PageSpeed Performance" },
+        { value: "96", label: "Best Practices" },
+        { value: "0.8s", label: "Largest Contentful Paint" },
       ],
     },
     galleryImages: [
