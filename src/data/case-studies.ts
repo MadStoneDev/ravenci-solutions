@@ -846,77 +846,80 @@ export const CASE_STUDIES: CaseStudy[] = [
       "eCommerce",
     ],
     excerpt:
-      "An Australian retailer of personalised laser-cut event décor and bespoke gifts — wedding signage, cake toppers, custom labels, and keepsakes for the moments people actually want to remember.",
+      "Personalised laser-cut event decor and custom gifts — engraved wedding signage, cake toppers, tags, keepsakes — designed and made in Brisbane by Micha Haddad. She ships across Australia and to the US and Canada via Etsy, and a lot of her customers won't trust their custom work to anyone else.",
     featuredImage: "/showcase-images/Client - Cadeaurable.png",
     clientLogo: "/clients/cadeaurable-logo.svg",
     clientUrl: "https://cadeaurable.com.au",
     template: "premium",
     metaTitle: "Cadeaurable Case Study | RAVENCI Solutions",
     metaDescription:
-      "Full brand identity, stationery, and a bespoke BigCommerce build for Cadeaurable — luxury gifting from logo to checkout.",
-    heroHeadline: "A Brand and Storefront for a Luxury Gifting Business",
+      "Two weeks from nothing to a live BigCommerce store for Cadeaurable — Micha Haddad's solo Brisbane laser-cutting business. Personalisation built in from day one, no plugin stack required.",
+    heroHeadline: "Two weeks from nothing to a live store — with personalisation built in",
     heroSubheadline:
-      "Brand identity, stationery and print, plus a custom BigCommerce build that captures the warmth of giving something special.",
+      "Cadeaurable is Micha Haddad's solo Brisbane workshop — laser-cut wedding signage, cake toppers, tags, gifts. Every order is custom: choice of material, colour, design and engraving text. We picked BigCommerce because every product needed that level of personalisation out of the gate, and got from nothing to a live store in two weeks.",
 
     year: 2022,
-    timeline: "8 weeks",
+    timeline: "2 weeks",
     techStack: ["BigCommerce", "JavaScript", "PHP", "eCommerce"],
     collaborators: [
       { role: "Brand, Design & Development", name: "RAVENCI Solutions" },
     ],
 
     problem: {
-      heading: "The Challenge",
+      heading: "Brand new business, two weeks, every product needs configuring",
       paragraphs: [
-        "Cadeaurable is a luxury gifting brand that curates beautiful gift boxes for every occasion. Their brand was built on the emotion of giving — but their previous website felt transactional rather than experiential.",
-        "They needed a complete brand system and an online store that would convey the warmth and thoughtfulness of the brand while making it easy for customers to find and customise the perfect gift.",
+        "Cadeaurable is run by Micha Haddad — solo, from a Brisbane workshop, designing and making personalised laser-cut decor and gifts. Wedding signage, cake toppers, name tags, keepsakes — engraved and cut to whatever the customer specifies. Material (wood or acrylic), colour if acrylic, design variant, engraving text. Every single order is custom.",
+        "When Micha decided to launch, the timeline was tight: two weeks from nothing to a live store. (Full disclosure — Micha is also my wife. Cadeaurable was the project where I got to be both husband and developer.) The platform decision had to be right the first time. Deep product personalisation wasn't a nice-to-have we could bolt on later; it was the minimum viable product.",
       ],
-      image: "/showcase-images/Client - Cadeaurable.png",
     },
     approach: {
-      heading: "Our Approach",
+      heading: "BigCommerce, brand and storefront — in two weeks",
       paragraphs: [
-        "We designed a full brand system — logo, colour, typography, packaging, stationery — built around emotion and discovery, then carried that language into a custom BigCommerce storefront.",
-        "The platform includes intuitive filtering by occasion, recipient, and price point, making it effortless to find the right gift box.",
+        "Shopify is the obvious default for a new ecommerce business — and for most stores it's a fine choice. But Shopify's product personalisation is shallow out of the box: anything beyond a colour-and-size variant means buying a paid app, sometimes several. For a store where every product has wood-vs-acrylic, a colour selection, a design variant and engraving text, that quickly becomes three or four monthly subscriptions stacked on top of the platform fee — each with its own admin, its own performance hit on every product page.",
+        "BigCommerce includes deep variants, customer-input fields and custom options natively. We could build the store Micha actually needed without inheriting a subscription tower on top of it.",
+        "Brand identity, stationery, packaging direction and the storefront went out the door at the two-week mark. Australia-only at launch — that was the immediate market and Micha wanted to nail it before opening up. As her Etsy presence grew and US and Canadian orders started coming through, we extended shipping internationally without rebuilding anything underneath.",
       ],
       highlights: [
-        "Brand identity and stationery design",
-        "Custom BigCommerce storefront",
-        "Occasion and recipient based filtering",
-        "Gift customisation workflows",
+        "BigCommerce — deep product personalisation built in, no app stack",
+        "Brand identity, stationery and packaging direction",
+        "Two-week build from nothing to live store",
+        "Australia-only at launch; US + Canada added with Etsy expansion",
+        "Real-human live chat — Micha herself, not an AI",
       ],
-      image: "/showcase-images/Client - Cadeaurable.png",
     },
     features: [
       {
-        title: "Brand Identity System",
+        title: "BigCommerce instead of Shopify — because every product needs configuring",
         description:
-          "Warm colours, elegant photography, and brand stationery that captures the joy of giving a thoughtful gift.",
-        image: "/showcase-images/Client - Cadeaurable.png",
+          "Shopify is the default suggestion for a new store, and for most stores it suits. But its product personalisation is shallow out of the box — anything past a basic colour-and-size variant requires a paid app on top of the platform fee. Personalisation-heavy stores often end up running three or four of them, each with its own subscription and its own performance hit on every product page. BigCommerce includes deep variants, customer-input fields and custom options natively. For Cadeaurable — where every order has wood-vs-acrylic, colour, design variant and engraving text — that meant launching with the right configuration without inheriting a stack of monthly subscriptions before the first sale.",
+        image: "coming-soon", // BigCommerce admin or storefront screenshot
       },
       {
-        title: "Smart Gift Filtering",
+        title: "A product page that asks the right questions in the right order",
         description:
-          "Intuitive filtering by occasion, recipient, and price point makes it effortless for customers to find the perfect gift box.",
-        image: "/showcase-images/Client - Cadeaurable.png",
+          "On a Cadeaurable product page, the customer picks the piece, then walks through the choices that change what actually gets made: material, colour if relevant, design variant, engraving text. Each choice surfaces as the previous one's been made — no overwhelming wall of options, no requirement to fill out fields you don't care about. Built natively on BigCommerce's product variant and custom-field system, no extra plugin.",
+        image: "coming-soon", // Product page personalisation flow — short capture
       },
       {
-        title: "Gift Customisation Workflow",
+        title: "Real-human live chat — Micha herself, not an AI",
         description:
-          "A guided customisation experience that lets customers personalise their gift boxes, adding a personal touch to every order.",
-        image: "/showcase-images/Client - Cadeaurable.png",
+          "Every Cadeaurable order is custom. There's no \"one size fits all\" wedding signage — the customer wants their venue spelled correctly, the right colour to match a flower arrangement, the right material to suit the table setting. Customers ask real questions, often outside business hours. We wired the live chat as a direct line to Micha rather than an AI agent. Slower in the abstract, but for a custom-made-to-order business, a chat that actually understands the product matters more than instant generic answers. Customers regularly note the response time in their reviews.",
+        image: "coming-soon", // Live chat widget on the storefront
       },
     ],
     results: {
-      heading: "The Results",
+      heading: "A store that's still running on its original platform — and growing",
       paragraphs: [
-        "The new brand and platform captured the essence of Cadeaurable, resulting in increased sales, higher customer satisfaction, and a growing base of repeat gifters.",
+        "Cadeaurable launched on schedule: two weeks from brief to live store. Australia-only at first; once Micha's Etsy presence grew and international orders started coming, we extended shipping to the US and Canada without touching the underlying platform.",
+        "The reviews tell the story Micha cares about most. Customers note how quickly she responds in chat, how helpful she is when they're working out what'll suit their event, how much they trust the work. Many of them come back for the next event, the next gift, the next custom piece — the kind of repeat business a custom maker actually depends on.",
+        "The platform choice has paid for itself in what hasn't been spent: no app subscriptions stacked on top of the BigCommerce fee, no plugin tax slowing down product pages, no third-party tools to maintain or migrate off when they get too expensive or get acquired.",
       ],
-      metrics: [{ value: "85+", label: "Google PageSpeed" }],
     },
     galleryImages: [
       "/showcase-images/Client - Cadeaurable.png",
-      "/showcase-images/Client - Cadeaurable.png",
+      "coming-soon", // Storefront homepage
+      "coming-soon", // Product category page
+      "coming-soon", // Product detail page with personalisation flow
     ],
     order: 8,
     featured: false,
