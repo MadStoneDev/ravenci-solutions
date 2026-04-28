@@ -735,72 +735,88 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ["web-development"],
     serviceLabels: ["Web Development"],
     excerpt:
-      "The only copywriter in the world writing exclusively for architects. Ten years and 663+ architecture sites studied — helping architects sound more human, less robot, and win the projects they actually want.",
+      "Solo copywriter writing exclusively for architects — and as far as I'm concerned, no one's better at what she does. Engaging, creative, down-to-earth writing that gets read end-to-end before it gets put down. Architects who want to sound human (and win the projects they actually want) hire Nikita.",
     featuredImage: "/showcase-images/Client - Nikita Morell.png",
     clientLogo: "/clients/nikita-morell-logo.svg",
     clientUrl: "https://nikitamorell.com",
     template: "premium",
     metaTitle: "Nikita Morell Case Study | RAVENCI Solutions",
     metaDescription:
-      "How RAVENCI built a custom WordPress site for Nikita Morell that elevated the brand and reflected its premium positioning.",
-    heroHeadline: "A Custom WordPress Build for a Premium Brand",
+      "Pixel-perfect WordPress build for Nikita Morell — copywriter exclusively for architects. Four-week turnaround, identical to The Design Order's design, and the build that started a long-term partnership with TDO.",
+    heroHeadline: "Built exactly as designed, in four weeks",
     heroSubheadline:
-      "Custom WordPress with Divi Builder, JavaScript, and PHP — designed to put the brand and its work front and centre.",
+      "Nikita Morell writes copy exclusively for architects. She'd had The Design Order rebrand her site; what she needed was a developer who'd build it to spec, on budget, on time. Four weeks later it went live identical to the design — and her designer rang me asking to work on the next project together.",
 
     year: 2023,
-    timeline: "10 weeks",
-    techStack: ["WordPress", "Divi Builder", "JavaScript", "PHP"],
+    timeline: "4 weeks",
+    techStack: ["WordPress", "Divi Builder", "JavaScript", "PHP", "LocalStorage"],
     collaborators: [
+      { role: "Brand & Design", name: "The Design Order" },
       { role: "Development", name: "RAVENCI Solutions" },
-      { role: "Design", name: "The Design Order" },
     ],
 
     problem: {
-      heading: "The Challenge",
+      heading: "A copywriter who needed her website to match her writing",
       paragraphs: [
-        "Nikita Morell's existing online presence didn't reflect the premium positioning of the brand. The previous site was generic and didn't do justice to the quality of work or the strength of the brand identity.",
-        "They needed a custom-built platform that would communicate authority, showcase the work beautifully, and convert browsers into conversations.",
+        "Nikita Morell writes copy exclusively for architects. Just architects. And as far as copywriting goes, I haven't met anyone better — I can't open one of her email newsletters and put it down before I'm finished. Engaging, creative, fun, down-to-earth. The kind of writing that makes architects pick up the phone.",
+        "She'd had her brand and site rebuilt by The Design Order in Brisbane and was searching online for a developer to bring it to life. I was recommended to her. We talked. I quoted — at the high end of what she'd budgeted for. She thought about it and came back with: \"I will bite the bullet.\"",
+        "Four weeks. Build the new site faithfully to the design. Make sure she could keep editing it herself afterwards.",
       ],
-      image: "/showcase-images/Client - Nikita Morell.png",
+      image: "coming-soon", // Old Nikita Morell site, "Old Site" label
+      imageLabel: "Old Site",
     },
     approach: {
-      heading: "Our Approach",
+      heading: "Pixel-perfect to the design — no \"similar to\"",
       paragraphs: [
-        "We worked with The Design Order on a design-led approach that puts the brand and its work front and centre. Large imagery, elegant typography, and thoughtful whitespace create a premium environment.",
-        "Development was handled with WordPress and Divi Builder for ongoing in-house content control, with custom PHP and JavaScript where the build needed to break out of theme constraints.",
+        "WordPress with Divi Builder. Divi gave Nikita the room to keep updating content herself once the site was live — she ships a lot of writing, and she shouldn't have to come back to me every time a new article goes up. Custom JavaScript and PHP handled anything Divi wouldn't natively do.",
+        "The piece I held the build to most carefully was The Design Order's design. After launch, Zoe from TDO rang me. She said developers always tell her they'll build the design \"similar\" — and there are always differences. She wasn't expecting a fully identical build. She asked if we could work together on more projects. We've now done five-plus, including SAC Consulting.",
+        "Four weeks from start to live. On budget. On spec.",
       ],
       highlights: [
-        "Custom WordPress + Divi Builder build",
-        "Custom PHP and JavaScript where needed",
-        "Visually-led showcase design",
-        "Content control handed back to the client",
+        "WordPress + Divi Builder, owner-editable post-launch",
+        "Pixel-perfect translation of The Design Order's design",
+        "Custom JavaScript + PHP for the bits Divi wouldn't do",
+        "Custom \"Watch This\" video gate (LocalStorage with expiry)",
+        "Four-week build to launch",
       ],
-      image: "/showcase-images/Client - Nikita Morell - Wordshop.png",
     },
     features: [
       {
-        title: "Editorial Showcase Design",
+        title: "Pixel-perfect to the design",
         description:
-          "Large imagery, elegant typography, and thoughtful whitespace create a premium environment that lets the brand's work shine.",
-        image: "/showcase-images/Client - Nikita Morell.png",
+          "Most developers will tell you they're going to build something \"close to\" the design. Close-but-not-identical is so common it's expected. I held this build to a different standard: pixel-perfect to The Design Order's spec. Spacing, typography, motion, every detail. The kind of build a designer can hand off and not have to argue with afterwards. Years later, we're still working together because of it.",
+        image: "coming-soon", // Side-by-side: TDO's design comp vs the live site
       },
       {
-        title: "Custom WordPress Architecture",
+        title: "\"Watch This\" — videos gated by newsletter, not by login",
         description:
-          "Divi Builder for in-house content control, plus custom PHP and JavaScript where the project needed to break out of theme constraints.",
-        image: "/showcase-images/Client - Nikita Morell - Wordshop.png",
+          "Nikita has a library of free videos she shares — but only with people who've subscribed to her newsletter. The standard plugin approach treats every page load as a fresh prompt: subscribe again, subscribe again, even if you signed up two minutes ago. We built it differently. Subscribe once, the unlock is stored in LocalStorage with an expiry, and the visitor isn't asked again until the expiry runs down. Free access for anyone who's joined the list, no login wall, no annoying re-prompts.",
+        image: "coming-soon", // Watch This page UI before/after subscribe
+      },
+      {
+        title: "Owned by Nikita, edited by Nikita",
+        description:
+          "Nikita is a writer. She ships words constantly — articles, newsletter previews, course updates, case work. The site had to let her run that without phoning me every time. Divi gives her the visual editor; the structure underneath stays consistent so what she edits doesn't accidentally break what she doesn't. She still edits her own content, years later.",
+        image: "coming-soon", // Divi visual editor in action on a Nikita Morell page
       },
     ],
     results: {
-      heading: "The Results",
+      heading: "Four weeks, on spec, on budget — and a designer asking to work together again",
       paragraphs: [
-        "The new site repositioned Nikita Morell at the premium end of the market and gave the team a platform they can grow into for years to come.",
+        "The site went live in the four weeks Nikita gave me, faithful to the design, within the budget she'd \"bitten the bullet\" on. She was thrilled. We've kept working together since — including a new project we're delivering together right now with DIRT.",
+        "The bigger story for me was The Design Order. Zoe's call after launch — \"I want to work with you on more projects\" — was the start of a long-term partnership. Five-plus projects together since, SAC Consulting among them.",
+        "These days I'm also looking after Nikita's site from an AI-visibility angle — making sure her work shows up in the AI models when architects ask them about copywriters. The site that was built to be discoverable by Google is now being tuned to be discoverable by ChatGPT, Claude, and the rest.",
       ],
-      metrics: [{ value: "85+", label: "Google PageSpeed" }],
+      metrics: [
+        { value: "4 wks", label: "Build to launch" },
+        { value: "5+", label: "Projects with TDO since" },
+      ],
     },
     galleryImages: [
       "/showcase-images/Client - Nikita Morell.png",
       "/showcase-images/Client - Nikita Morell - Wordshop.png",
+      "coming-soon", // Watch This page (subscribed state)
+      "coming-soon", // A representative work / case study page
     ],
     order: 7,
     featured: false,
