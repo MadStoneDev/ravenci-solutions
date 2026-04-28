@@ -245,54 +245,70 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ["web-development", "maintenance"],
     serviceLabels: ["Web Development", "Web Maintenance"],
     excerpt:
-      "Not just accountants — trainers, advisors and Xero integration specialists. NNAccountability helps Australian startups, medical practices, NDIS providers and non-profits trade confusion and manual processes for clarity and automation.",
-    featuredImage: "/showcase-images/Client - NNAccountability.png",
+      "Australian accountants and Xero specialists. NNAccountability helps businesses set up Xero, train their teams on it, integrate the platforms it talks to, and handle the day-to-day BAS, bookkeeping and accounting work underneath.",
+    featuredImage: "/showcase-images/nnaccountability/full-page.png",
+    featuredImageScroll: true,
     clientLogo: "/clients/nnaccountability-logo.svg",
-    // Currently on temporary subdomain; migrating to nnaccountability.com.au
+    // Currently on temporary subdomain; migrating to nnaccountability.com.au at launch
     clientUrl: "https://nnaccountability.ravenci.solutions",
     template: "premium",
     metaTitle: "NNAccountability Case Study | RAVENCI Solutions",
     metaDescription:
-      "How RAVENCI built and maintains the NNAccountability WordPress website with custom development and ongoing care.",
-    heroHeadline: "A Trusted Platform for an Accountability Practice",
+      "A rebuilt WordPress site for NNAccountability — Australian accountants and Xero specialists. Found RAVENCI through AI and search; chose local because reachable matters.",
+    heroHeadline: "A rebuilt website for an Australian accounting and Xero practice",
     heroSubheadline:
-      "Custom WordPress build with PHP and JavaScript fitted to the business — and an ongoing maintenance plan keeping it healthy.",
+      "Nikoletta runs NNAccountability — an Australian accounting and Xero specialist practice helping businesses set up, integrate and train on the software underneath their finance work. She found me through AI search and Google, picked up the phone, and hired me to renew her website. Built on WordPress with a RAVENCI-customised Zion Builder, currently in staging awaiting final feedback before launch.",
 
     year: 2026,
-    timeline: "TBC",
-    techStack: ["WordPress", "Custom Builder", "JavaScript", "PHP"],
+    timeline: "In progress",
+    techStack: ["WordPress", "Zion Builder", "JavaScript", "PHP"],
     collaborators: [
       { role: "Development", name: "RAVENCI Solutions" },
-      { role: "Design", name: "Studio1 Design" },
     ],
 
     problem: {
-      heading: "The Challenge",
+      heading: "A practice that wanted to work with someone local — and reachable",
       paragraphs: [
-        "TODO: NNAccountability's project background — the brief, what they needed, where they were starting from.",
+        "NNAccountability is run by Nikoletta — an Australian accounting and Xero specialist practice. The business helps companies set up their Xero accounts, train their teams on the platform, integrate the various tools that feed into it, and handle the day-to-day BAS prep, bookkeeping and accounting work underneath.",
+        "Her existing site needed renewing. She found RAVENCI online — partly through AI assistants when she was looking for an Australian web developer, partly through Google and Facebook. The criteria she came in with were straightforward: local, Australian-based, no overseas outsourcing, reliable, reachable. Someone she could pick up the phone to.",
+        "We talked, the brief made sense for both sides, and the project was underway.",
       ],
-      image: "/showcase-images/Client - NNAccountability.png",
+      image: "/showcase-images/nnaccountability/nnaccountability-old-site.png",
+      imageLabel: "Old Site",
     },
     approach: {
-      heading: "Our Approach",
+      heading: "WordPress, custom builder, and a staging-first workflow",
       paragraphs: [
-        "TODO: How RAVENCI approached the build — design partnership with Studio1 Design, WordPress with custom builder for content control, ongoing maintenance for long-term health.",
+        "We built on WordPress with a RAVENCI-customised Zion Builder so Nikoletta and her team can keep updating copy themselves once the site is live. PHP and JavaScript handle the parts the builder doesn't natively cover.",
+        "The project runs through a staging site first — every revision visible before anything reaches the live domain. That lets Nikoletta walk through changes at her pace, give feedback in context, and approve each round without surprises. The site is currently in staging awaiting first-round feedback; once that's resolved, it moves to nnaccountability.com.au.",
       ],
       highlights: [
-        "Custom WordPress build, no off-the-shelf theme",
-        "Designed in partnership with Studio1 Design",
-        "Ongoing maintenance plan for long-term care",
+        "WordPress + RAVENCI-customised Zion Builder",
+        "Staging-first workflow — review in context before going live",
+        "Australian-based, no outsourcing",
+        "Direct line to the developer for the life of the project",
       ],
-      image: "/showcase-images/Client - NNAccountability.png",
     },
+    features: [
+      {
+        title: "Xero, from setup to integration to confident day-to-day",
+        description:
+          "NNAccountability's value isn't just doing the books — it's getting clients from \"we just bought Xero\" to \"we run our finances through it without thinking\". The site reflects that journey in how the services are laid out: setup and onboarding for businesses new to Xero, training for teams that need to actually use it, integrations for the platforms that need to talk to it, and the bookkeeping/BAS/accounting work underneath for everything that follows. One practice, one platform, the full arc.",
+        image: "/showcase-images/nnaccountability/nnaccountability-xero-to-hero.png",
+      },
+    ],
     results: {
-      heading: "The Results",
+      heading: "In staging, almost live",
       paragraphs: [
-        "TODO: Outcomes — what the new site enabled for the practice.",
+        "The site is currently live in staging at nnaccountability.ravenci.solutions while Nikoletta and her team work through the first round of feedback. Once that's resolved, it moves to its permanent home at nnaccountability.com.au.",
+        "What Nikoletta got — and what mattered most to her in choosing RAVENCI — was a developer she could actually reach: based in Australia, on the phone when she needs to be, working through revisions with her directly. No tickets disappearing into a queue, no overseas team adding a day to every email, no agency layer between her and the person building the site.",
       ],
-      metrics: [{ value: "85+", label: "Google PageSpeed" }],
     },
-    galleryImages: ["/showcase-images/Client - NNAccountability.png"],
+    galleryImages: [
+      "/showcase-images/Client - NNAccountability.png",
+      "coming-soon", // Services overview / Xero training section
+      "coming-soon", // Contact / About page
+    ],
     order: 2,
     featured: true,
   },
