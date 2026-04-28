@@ -860,7 +860,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 
     year: 2022,
     timeline: "2 weeks",
-    techStack: ["BigCommerce", "JavaScript", "PHP", "eCommerce"],
+    techStack: ["BigCommerce", "Custom Theme", "JavaScript", "PHP", "eCommerce"],
     collaborators: [
       { role: "Brand, Design & Development", name: "RAVENCI Solutions" },
     ],
@@ -877,10 +877,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "Shopify is the obvious default for a new ecommerce business — and for most stores it's a fine choice. But Shopify's product personalisation is shallow out of the box: anything beyond a colour-and-size variant means buying a paid app, sometimes several. For a store where every product has wood-vs-acrylic, a colour selection, a design variant and engraving text, that quickly becomes three or four monthly subscriptions stacked on top of the platform fee — each with its own admin, its own performance hit on every product page.",
         "BigCommerce includes deep variants, customer-input fields and custom options natively. We could build the store Micha actually needed without inheriting a subscription tower on top of it.",
-        "Brand identity, stationery, packaging direction and the storefront went out the door at the two-week mark. Australia-only at launch — that was the immediate market and Micha wanted to nail it before opening up. As her Etsy presence grew and US and Canadian orders started coming through, we extended shipping internationally without rebuilding anything underneath.",
+        "We started on a stock BigCommerce theme and quickly hit its limits — layout decisions baked into the theme that didn't suit the personalisation flow, performance overhead from features Cadeaurable didn't use. With the budget tight, the cleaner path was to build a custom theme from scratch instead of fighting the stock one. That's what shipped: a bespoke theme on BigCommerce, sized to exactly what the store needed and nothing it didn't.",
+        "Brand identity, stationery, packaging direction and the storefront all went out the door at the two-week mark. Australia-only at launch — that was the immediate market and Micha wanted to nail it before opening up. As her Etsy presence grew and US and Canadian orders started coming through, we extended shipping internationally without rebuilding anything underneath.",
       ],
       highlights: [
         "BigCommerce — deep product personalisation built in, no app stack",
+        "Custom theme, built from scratch instead of fighting a stock one",
         "Brand identity, stationery and packaging direction",
         "Two-week build from nothing to live store",
         "Australia-only at launch; US + Canada added with Etsy expansion",
