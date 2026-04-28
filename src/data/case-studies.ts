@@ -943,7 +943,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     excerpt:
       "Gold Coast remedial building specialists — concrete cancer repair, structural defect repair, waterproofing — for residential, commercial and industrial properties across south-east Queensland.",
-    featuredImage: "/showcase-images/Client - Coast Remedial Solutions.png",
+    featuredImage: "/showcase-images/coast-remedial/full-page.jpg",
+    featuredImageScroll: true,
     clientLogo: "/clients/coast-remedial-solutions-logo.svg",
     template: "premium",
     metaTitle: "Coast Remedial Solutions Case Study | RAVENCI Solutions",
@@ -989,7 +990,10 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     galleryImages: [
-      "/showcase-images/Client - Coast Remedial Solutions.png",
+      "/showcase-images/coast-remedial/coast-remedial-promise.jpg",
+      "/showcase-images/coast-remedial/coast-remedial-expertise.jpg",
+      "/showcase-images/coast-remedial/coast-remedial-meet-the-team.jpg",
+      "/showcase-images/coast-remedial/coast-remedial-contact.jpg",
     ],
     order: 9,
     featured: false,
