@@ -915,7 +915,13 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "Cadeaurable launched on schedule: two weeks from brief to live store. Australia-only at first; once Micha's Etsy presence grew and international orders started coming, we extended shipping to the US and Canada without touching the underlying platform.",
         "The reviews tell the story Micha cares about most. Customers note how quickly she responds in chat, how helpful she is when they're working out what'll suit their event, how much they trust the work. Many of them come back for the next event, the next gift, the next custom piece — the kind of repeat business a custom maker actually depends on.",
-        "The platform choice has paid for itself in what hasn't been spent: no app subscriptions stacked on top of the BigCommerce fee, no plugin tax slowing down product pages, no third-party tools to maintain or migrate off when they get too expensive or get acquired.",
+        "Years on, the store still hums. Desktop PageSpeed Performance sits at 89, First Contentful Paint at 0.7s, Largest Contentful Paint at 1.1s — fast for any ecommerce site, and notably so on BigCommerce, where the platform itself ships a fair chunk of code for cart, checkout and inventory before the custom theme even loads.",
+        "The platform choice has paid for itself twice over: in what doesn't load on every product page, and in what hasn't been spent — no app subscriptions stacked on top of the BigCommerce fee, no plugin tax, no third-party tools to maintain or migrate off when they get too expensive or get acquired.",
+      ],
+      metrics: [
+        { value: "89", label: "PageSpeed (Desktop)" },
+        { value: "0.7s", label: "First Contentful Paint" },
+        { value: "1.1s", label: "Largest Contentful Paint" },
       ],
     },
     galleryImages: [
