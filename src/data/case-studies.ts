@@ -799,11 +799,17 @@ export const CASE_STUDIES: CaseStudy[] = [
           "Nikita is a writer. She ships words constantly — articles, newsletter previews, course updates, case work. The site had to let her run that without phoning me every time. Divi gives her the visual editor; the structure underneath stays consistent so what she edits doesn't accidentally break what she doesn't. She still edits her own content, years later.",
         image: "coming-soon", // Divi visual editor in action on a Nikita Morell page
       },
+      {
+        title: "A second site for her client library — Next.js, Notion, and a clever ActiveCampaign trick",
+        description:
+          "Nikita has a deep library of resources she'd built up in Notion over the years and wanted to share with her paying clients — but only with her paying clients. The off-the-shelf options either cost too much or wanted her to migrate her content out of Notion and into a separate platform. So we built her a side site, lightweight by design. Next.js reads her Notion library directly via the API and surfaces it in a clean viewer — no migration, no double-handling, she keeps editing in Notion exactly like she always has. Auth runs through ActiveCampaign: a client signs up, ActiveCampaign subscribes them and stores a generated password in a custom field, encrypted but lightweight. No separate user database, no auth-as-a-service subscription, no plugin tax. Live for over a year. Still humming.",
+        image: "coming-soon", // Library viewer screenshot or short capture of login → Notion content
+      },
     ],
     results: {
       heading: "Four weeks, on spec, on budget — and a designer asking to work together again",
       paragraphs: [
-        "The site went live in the four weeks Nikita gave me, faithful to the design, within the budget she'd \"bitten the bullet\" on. She was thrilled. We've kept working together since — including a new project we're delivering together right now with DIRT.",
+        "The site went live in the four weeks Nikita gave me, faithful to the design, within the budget she'd \"bitten the bullet\" on. She was thrilled. We've kept working together since — a custom client-resource library has been live for over a year on a separate Next.js + Notion + ActiveCampaign stack, and we have a new project together right now with DIRT.",
         "The bigger story for me was The Design Order. Zoe's call after launch — \"I want to work with you on more projects\" — was the start of a long-term partnership. Five-plus projects together since, SAC Consulting among them.",
         "Three years on, the site is still humming. Best Practices and SEO sit at 100 in PageSpeed; First Contentful Paint at 0.8s, Largest Contentful Paint at 1.0s on the dot — fast for a WordPress + Divi site. Performance sits at 85, not 90+ — and that's the honest cost of the platform choice. Divi gives Nikita the visual editor she needs to keep updating the site herself, but it adds weight that no amount of optimisation will fully remove. For a writer whose business depends on shipping content constantly, the trade is the right one.",
         "These days I'm also looking after Nikita's site from an AI-visibility angle — making sure her work shows up in the AI models when architects ask them about copywriters. The site that was built to be discoverable by Google is now being tuned to be discoverable by ChatGPT, Claude, and the rest.",
