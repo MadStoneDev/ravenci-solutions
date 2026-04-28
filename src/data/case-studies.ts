@@ -805,11 +805,13 @@ export const CASE_STUDIES: CaseStudy[] = [
       paragraphs: [
         "The site went live in the four weeks Nikita gave me, faithful to the design, within the budget she'd \"bitten the bullet\" on. She was thrilled. We've kept working together since — including a new project we're delivering together right now with DIRT.",
         "The bigger story for me was The Design Order. Zoe's call after launch — \"I want to work with you on more projects\" — was the start of a long-term partnership. Five-plus projects together since, SAC Consulting among them.",
+        "Three years on, the site is still humming. Best Practices and SEO sit at 100 in PageSpeed; First Contentful Paint at 0.8s, Largest Contentful Paint at 1.0s on the dot — fast for a WordPress + Divi site. Performance sits at 85, not 90+ — and that's the honest cost of the platform choice. Divi gives Nikita the visual editor she needs to keep updating the site herself, but it adds weight that no amount of optimisation will fully remove. For a writer whose business depends on shipping content constantly, the trade is the right one.",
         "These days I'm also looking after Nikita's site from an AI-visibility angle — making sure her work shows up in the AI models when architects ask them about copywriters. The site that was built to be discoverable by Google is now being tuned to be discoverable by ChatGPT, Claude, and the rest.",
       ],
       metrics: [
-        { value: "4 wks", label: "Build to launch" },
-        { value: "5+", label: "Projects with TDO since" },
+        { value: "100", label: "PageSpeed SEO" },
+        { value: "100", label: "Best Practices" },
+        { value: "1.0s", label: "Largest Contentful Paint" },
       ],
     },
     galleryImages: [
