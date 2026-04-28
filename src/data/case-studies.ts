@@ -786,19 +786,19 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "Pixel-perfect to the design",
         description:
           "Nikita and TDO needed to know the live site would behave the way the design said it would, no surprises after launch. Spacing, typography, motion, every detail — translated from the design comp into the build without drift. Four weeks of careful translation, and the site matched the spec end to end.",
-        image: "coming-soon", // Side-by-side: TDO's design comp vs the live site
+        image: "/showcase-images/nikita-morell/nikita-morell-only-high-paid.jpg",
       },
       {
         title: "\"Watch This\" — videos gated by newsletter, not by login",
         description:
           "Nikita has a library of free videos she shares — but only with people who've subscribed to her newsletter. The brief: prompt visitors to subscribe before watching, then leave them alone afterwards. The off-the-shelf plugins kept re-prompting on every page load, even seconds after subscribing. We stored the unlock in LocalStorage with an expiry instead — subscribe once, the prompt doesn't come back until the expiry runs down. Free access for anyone on the list, no login wall, no repeat re-prompts.",
-        image: "coming-soon", // Watch This page UI before/after subscribe
+        image: "/showcase-images/nikita-morell/nikita-morell-watch-this.jpg",
       },
       {
         title: "Owned by Nikita, edited by Nikita",
         description:
           "Nikita is a writer. She ships words constantly — articles, newsletter previews, course updates, case work. The site had to let her run that without phoning me every time. Divi gives her the visual editor; the structure underneath stays consistent so what she edits doesn't accidentally break what she doesn't. She still edits her own content, years later.",
-        image: "coming-soon", // Divi visual editor in action on a Nikita Morell page
+        image: "/showcase-images/nikita-morell/nikita-morell-copywriting.jpg",
       },
       {
         title: "A second site for her client library — Next.js, Notion, and ActiveCampaign",
@@ -824,7 +824,6 @@ export const CASE_STUDIES: CaseStudy[] = [
     galleryImages: [
       "/showcase-images/nikita-morell/nikita-morell-services-block.jpg",
       "/showcase-images/nikita-morell/nikita-morell-word-shop.jpg",
-      "/showcase-images/nikita-morell/nikita-morell-only-high-paid.jpg",
       "/showcase-images/nikita-morell/nikita-morell-site-smart.jpg",
       "/showcase-images/nikita-morell/nikita-morell-reviews.jpg",
       "/showcase-images/nikita-morell/nikita-morell-footer.jpg",
