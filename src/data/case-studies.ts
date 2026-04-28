@@ -942,80 +942,53 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Web Development",
     ],
     excerpt:
-      "A Gold Coast specialist in remedial building work — diagnosing and fixing concrete cancer, structural defects, and waterproofing failures for residential and commercial properties across Queensland's southeast.",
+      "Gold Coast remedial building specialists — concrete cancer repair, structural defect repair, waterproofing — for residential, commercial and industrial properties across south-east Queensland.",
     featuredImage: "/showcase-images/Client - Coast Remedial Solutions.png",
     clientLogo: "/clients/coast-remedial-solutions-logo.svg",
-    clientUrl: "https://coastremedialsolutions.com.au",
     template: "premium",
     metaTitle: "Coast Remedial Solutions Case Study | RAVENCI Solutions",
     metaDescription:
-      "Full brand identity, stationery, digital design and a custom WordPress site for Coast Remedial Solutions, the Gold Coast's specialist remedial builders.",
-    heroHeadline: "A Full Brand and Web Build for Remedial Building Experts",
+      "Brand, business cards and a single-page WordPress launch for Coast Remedial Solutions — a brand-new Gold Coast remedial building business, live and trading inside three weeks.",
+    heroHeadline: "A startup launch in three weeks — brand, print, single-page site",
     heroSubheadline:
-      "Brand identity, stationery, digital assets and a custom WordPress build — positioning Coast Remedial Solutions as the trusted specialists they are.",
+      "The team behind Coast Remedial Solutions came to me to spin up a new business in remedial building — concrete cancer, structural defects, waterproofing for properties across south-east Queensland. They needed brand, print and a live site fast. Three weeks later, they were trading.",
 
     year: 2024,
-    timeline: "5 weeks",
-    techStack: ["WordPress", "Custom Builder"],
+    timeline: "3 weeks",
+    techStack: ["WordPress", "Zion Builder", "JavaScript", "PHP"],
     collaborators: [
       { role: "Brand, Design & Development", name: "RAVENCI Solutions" },
     ],
 
     problem: {
-      heading: "The Challenge",
+      heading: "A new business that needed to start taking enquiries — fast",
       paragraphs: [
-        "Coast Remedial Solutions specialise in concrete cancer repair, waterproofing, and structural remediation — services that require immense trust from potential clients. Their previous brand and online presence didn't convey the level of expertise and professionalism they bring to every project.",
-        "They needed a full brand system plus a website that would educate potential clients about remedial building while positioning Coast Remedial as the clear choice for complex structural work.",
+        "Coast Remedial Solutions launched as a new business in remedial building — concrete cancer repair, structural defect repair, waterproofing — serving residential, commercial and industrial properties across the Gold Coast and south-east Queensland. The founders are people I'd worked with before on Intercorp Developments (still a client of mine). For Coast Remedial, they were standing up something fresh.",
+        "The brief was simple and tight: brand, business cards, a website live as soon as possible. They didn't want a fully fleshed-out marketing site — they wanted a single well-presented page to point enquirers at while they got the business off the ground. Three to four weeks, start to finish.",
       ],
-      image: "/showcase-images/Client - Coast Remedial Solutions.png",
     },
     approach: {
-      heading: "Our Approach",
+      heading: "Brand, print, single-page site — in three weeks",
       paragraphs: [
-        "We rebuilt the brand from the ground up — identity, stationery, and digital assets all working together to communicate reliability and structural strength. The website then carried that brand language across every page.",
-        "Site structure was planned around the key services, with detailed information that helps property managers and strata committees understand what remedial building involves.",
+        "We built the brand identity from scratch — logo, colour palette, typography — and carried it through to business cards and the single-page website. The page covers the essentials: who they are, what they do, who they serve, how to reach them. Built on WordPress with a RAVENCI-customised Zion Builder so the team could update their own copy as the business evolved.",
+        "The whole package — brand, print, web, content, live — went out the door at the three-week mark. Coast Remedial started taking enquiries on schedule.",
       ],
       highlights: [
-        "Brand identity and stationery design",
-        "Digital design assets",
-        "Service-focused content architecture",
-        "Strata and property manager focused content",
-        "Mobile-optimised for on-site referrals",
+        "Brand identity — logo, colour, typography",
+        "Business cards and print collateral",
+        "Single-page WordPress site",
+        "RAVENCI-customised Zion Builder for ongoing edits",
+        "Three weeks from brief to trading",
       ],
-      image: "/showcase-images/Client - Coast Remedial Solutions.png",
     },
-    features: [
-      {
-        title: "Brand Identity System",
-        description:
-          "Logo, colour, typography and stationery designed to communicate reliability and structural strength — perfectly aligned with what the business actually does.",
-        image: "/showcase-images/Client - Coast Remedial Solutions.png",
-      },
-      {
-        title: "Service-Focused Architecture",
-        description:
-          "Detailed service pages that educate property managers on remedial building processes, building trust before the first conversation.",
-        image: "/showcase-images/Client - Coast Remedial Solutions.png",
-      },
-      {
-        title: "Mobile-Optimised for Site Referrals",
-        description:
-          "Property managers often refer contractors on-site from their phones. The site is optimised for quick access to key information and contact details.",
-        image: "/showcase-images/Client - Coast Remedial Solutions.png",
-      },
-    ],
     results: {
-      heading: "The Results",
+      heading: "Live and trading on schedule",
       paragraphs: [
-        "The new brand and website established Coast Remedial Solutions as the digital authority in their space, generating consistent organic enquiries from high-value clients.",
-      ],
-      metrics: [
-        { value: "90+", label: "Google PageSpeed" },
-        { value: "< 2s", label: "Page Load Time" },
+        "Coast Remedial launched on time and started taking enquiries. The single-page brief did what it needed to do: get the business in front of customers quickly while the team focused on the actual remedial work.",
+        "I've stayed connected to the same team through Intercorp Developments, where I'm still their developer.",
       ],
     },
     galleryImages: [
-      "/showcase-images/Client - Coast Remedial Solutions.png",
       "/showcase-images/Client - Coast Remedial Solutions.png",
     ],
     order: 9,
