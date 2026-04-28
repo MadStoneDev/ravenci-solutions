@@ -736,7 +736,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceLabels: ["Web Development"],
     excerpt:
       "Solo copywriter writing exclusively for architects — and as far as I'm concerned, no one's better at what she does. Engaging, creative, down-to-earth writing that gets read end-to-end before it gets put down. Architects who want to sound human (and win the projects they actually want) hire Nikita.",
-    featuredImage: "/showcase-images/Client - Nikita Morell.png",
+    featuredImage: "/showcase-images/nikita-morell/full-page.jpg",
+    featuredImageScroll: true,
     clientLogo: "/clients/nikita-morell-logo.svg",
     clientUrl: "https://nikitamorell.com",
     template: "premium",
@@ -762,7 +763,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         "She'd had her brand and site rebuilt by The Design Order in Brisbane and was searching online for a developer to bring it to life. I was recommended to her. We talked. I quoted — at the high end of what she'd budgeted for. She thought about it and came back with: \"I will bite the bullet.\"",
         "Four weeks. Build the new site faithfully to the design. Make sure she could keep editing it herself afterwards.",
       ],
-      image: "coming-soon", // Old Nikita Morell site, "Old Site" label
+      image: "/showcase-images/nikita-morell/old-site.jpg",
       imageLabel: "Old Site",
     },
     approach: {
@@ -803,7 +804,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "A second site for her client library — Next.js, Notion, and a clever ActiveCampaign trick",
         description:
           "Nikita has a deep library of resources she'd built up in Notion over the years and wanted to share with her paying clients — but only with her paying clients. The off-the-shelf options either cost too much or wanted her to migrate her content out of Notion and into a separate platform. So we built her a side site, lightweight by design. Next.js reads her Notion library directly via the API and surfaces it in a clean viewer — no migration, no double-handling, she keeps editing in Notion exactly like she always has. Auth runs through ActiveCampaign: a client signs up, ActiveCampaign subscribes them and stores a generated password in a custom field, encrypted but lightweight. No separate user database, no auth-as-a-service subscription, no plugin tax. Live for over a year. Still humming.",
-        image: "coming-soon", // Library viewer screenshot or short capture of login → Notion content
+        image: "/showcase-images/nikita-morell/nikita-morell-library-login.jpg",
       },
     ],
     results: {
@@ -821,10 +822,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     galleryImages: [
-      "/showcase-images/Client - Nikita Morell.png",
-      "/showcase-images/Client - Nikita Morell - Wordshop.png",
-      "coming-soon", // Watch This page (subscribed state)
-      "coming-soon", // A representative work / case study page
+      "/showcase-images/nikita-morell/nikita-morell-services-block.jpg",
+      "/showcase-images/nikita-morell/nikita-morell-word-shop.jpg",
+      "/showcase-images/nikita-morell/nikita-morell-only-high-paid.jpg",
+      "/showcase-images/nikita-morell/nikita-morell-site-smart.jpg",
+      "/showcase-images/nikita-morell/nikita-morell-reviews.jpg",
+      "/showcase-images/nikita-morell/nikita-morell-footer.jpg",
     ],
     order: 7,
     featured: false,
