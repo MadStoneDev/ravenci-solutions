@@ -886,27 +886,28 @@ export const CASE_STUDIES: CaseStudy[] = [
         "Brand identity, stationery and packaging direction",
         "Two-week build from nothing to live store",
         "Australia-only at launch; US + Canada added with Etsy expansion",
-        "Real-human live chat — Micha herself, not an AI",
+        "WhatsApp direct to Micha — not a chat widget, not an AI",
       ],
+      image: "/showcase-images/cadeaurable/cadeaurable-custom-theme.jpg",
     },
     features: [
       {
         title: "BigCommerce instead of Shopify — because every product needs configuring",
         description:
           "Shopify is the default suggestion for a new store, and for most stores it suits. But its product personalisation is shallow out of the box — anything past a basic colour-and-size variant requires a paid app on top of the platform fee. Personalisation-heavy stores often end up running three or four of them, each with its own subscription and its own performance hit on every product page. BigCommerce includes deep variants, customer-input fields and custom options natively. For Cadeaurable — where every order has wood-vs-acrylic, colour, design variant and engraving text — that meant launching with the right configuration without inheriting a stack of monthly subscriptions before the first sale.",
-        image: "coming-soon", // BigCommerce admin or storefront screenshot
+        image: "/showcase-images/cadeaurable/cadeaurable-customisations.jpg",
       },
       {
         title: "A product page that asks the right questions in the right order",
         description:
           "On a Cadeaurable product page, the customer picks the piece, then walks through the choices that change what actually gets made: material, colour if relevant, design variant, engraving text. Each choice surfaces as the previous one's been made — no overwhelming wall of options, no requirement to fill out fields you don't care about. Built natively on BigCommerce's product variant and custom-field system, no extra plugin.",
-        image: "coming-soon", // Product page personalisation flow — short capture
+        image: "/showcase-images/cadeaurable/cadeaurable-product-page.jpg",
       },
       {
-        title: "Real-human live chat — Micha herself, not an AI",
+        title: "WhatsApp direct to Micha — not a chat widget, not an AI",
         description:
-          "Every Cadeaurable order is custom. There's no \"one size fits all\" wedding signage — the customer wants their venue spelled correctly, the right colour to match a flower arrangement, the right material to suit the table setting. Customers ask real questions, often outside business hours. We wired the live chat as a direct line to Micha rather than an AI agent. Slower in the abstract, but for a custom-made-to-order business, a chat that actually understands the product matters more than instant generic answers. Customers regularly note the response time in their reviews.",
-        image: "coming-soon", // Live chat widget on the storefront
+          "Every Cadeaurable order is custom — the customer wants their venue spelled correctly, the right colour to match a flower arrangement, the right material to suit the table setting. We wired the storefront's chat through WhatsApp directly to Micha rather than running a generic web chat widget or an AI agent. Slower in the abstract, but the conversation lives on the customer's phone after the order, the answers come from the person actually making the product, and customers regularly note the response time in their reviews.",
+        image: "/showcase-images/cadeaurable/cadeaurable-whatsapp.jpg",
       },
     ],
     results: {
@@ -919,9 +920,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     galleryImages: [
       "/showcase-images/Client - Cadeaurable.png",
-      "coming-soon", // Storefront homepage
-      "coming-soon", // Product category page
-      "coming-soon", // Product detail page with personalisation flow
+      "/showcase-images/cadeaurable/cadeaurable-product-gallery.jpg",
+      "coming-soon", // Category page
+      "coming-soon", // Checkout
     ],
     order: 8,
     featured: false,
