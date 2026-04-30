@@ -124,11 +124,6 @@ export default function BrisbaneWebsiteAuditPage() {
                     title={cat.ravenciSampleNote}
                   >
                     RAVENCI sites: {cat.ravenciAverage}
-                    {cat.ravenciSampleSize && (
-                      <span className="ml-1 font-normal opacity-75">
-                        (n={cat.ravenciSampleSize})
-                      </span>
-                    )}
                   </span>
                 )}
               </div>
