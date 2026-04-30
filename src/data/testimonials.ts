@@ -67,3 +67,7 @@ export function getTestimonialsForPage(page: string): Testimonial[] {
 export function getTestimonialsForIndustry(industry: string): Testimonial[] {
   return testimonials.filter((t) => t.industry === industry);
 }
+
+export function getTestimonialByID(id: string): Testimonial | undefined {
+  return testimonials.find((t) => t.id === id);
+}
