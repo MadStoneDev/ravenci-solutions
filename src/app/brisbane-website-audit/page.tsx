@@ -88,7 +88,7 @@ export default function BrisbaneWebsiteAuditPage() {
       </section>
 
       {/* Category breakdown */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-200/50">
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-100">
         <h3 className="mb-4 font-serif text-h3 font-bold">
           Category-by-Category Breakdown
         </h3>
