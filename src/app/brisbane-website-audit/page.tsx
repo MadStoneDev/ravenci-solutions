@@ -116,12 +116,30 @@ export default function BrisbaneWebsiteAuditPage() {
                         : "bg-green-100 text-green-700"
                   }`}
                 >
-                  Average: {cat.score}
+                  Brisbane average: {cat.score}
                 </span>
+                {cat.ravenciAverage && (
+                  <span
+                    className="px-3 py-1 w-fit text-sm font-bold rounded-full bg-ravenci-primary/10 text-ravenci-primary"
+                    title={cat.ravenciSampleNote}
+                  >
+                    RAVENCI sites: {cat.ravenciAverage}
+                    {cat.ravenciSampleSize && (
+                      <span className="ml-1 font-normal opacity-75">
+                        (n={cat.ravenciSampleSize})
+                      </span>
+                    )}
+                  </span>
+                )}
               </div>
               <p className="mb-4 text-neutral-600 leading-relaxed">
                 {cat.detail}
               </p>
+              {cat.ravenciSampleNote && (
+                <p className="mb-4 text-xs text-neutral-500 italic">
+                  RAVENCI comparison: {cat.ravenciSampleNote}
+                </p>
+              )}
               <div>
                 <p className="mb-2 text-sm font-bold text-ravenci-dark">
                   How to fix it:

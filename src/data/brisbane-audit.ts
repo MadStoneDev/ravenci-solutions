@@ -15,6 +15,12 @@ export interface AuditCategory {
   score: string;
   detail: string;
   recommendations: string[];
+  /** Average score from a sample of RAVENCI case studies, where comparable. */
+  ravenciAverage?: string;
+  /** How many RAVENCI sites that average is calculated from. */
+  ravenciSampleSize?: number;
+  /** Plain-English source line for the sample (which case studies). */
+  ravenciSampleNote?: string;
 }
 
 export interface AuditIndustry {
@@ -94,13 +100,17 @@ export const categoryBreakdown: AuditCategory[] = [
     category: "Performance",
     score: "38/100",
     detail:
-      "Average mobile PageSpeed score across all 50 sites. Only 14% scored 80 or above. The biggest culproot: unoptimised images, render-blocking scripts, and bloated themes and plugin-heavy builds.",
+      "Average mobile PageSpeed score across all 50 sites. Only 14% scored 80 or above. The biggest culprits: unoptimised images, render-blocking scripts, and bloated themes and plugin-heavy builds.",
     recommendations: [
       "Compress and lazy-load images",
       "Remove unused CSS and JavaScript",
       "Use a CDN for static assets",
       "Switch to a modern framework or optimise your theme",
     ],
+    ravenciAverage: "87/100",
+    ravenciSampleSize: 5,
+    ravenciSampleNote:
+      "Average across Peninsula Homes, DIRT, GoingDark, Cadeaurable and Nikita Morell.",
   },
   {
     category: "SEO",
@@ -113,6 +123,10 @@ export const categoryBreakdown: AuditCategory[] = [
       "Set up XML sitemap and submit to Google Search Console",
       "Add Open Graph and Twitter Card meta tags",
     ],
+    ravenciAverage: "92/100",
+    ravenciSampleSize: 3,
+    ravenciSampleNote:
+      "Average across DIRT, GoingDark and Nikita Morell.",
   },
   {
     category: "Mobile Usability",
@@ -149,6 +163,10 @@ export const categoryBreakdown: AuditCategory[] = [
       "Use semantic HTML and ARIA labels",
       "Add an accessibility statement page",
     ],
+    ravenciAverage: "87/100",
+    ravenciSampleSize: 3,
+    ravenciSampleNote:
+      "Average across DIRT, GoingDark and Nikita Morell.",
   },
 ];
 
