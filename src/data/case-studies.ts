@@ -84,6 +84,14 @@ export interface CaseStudy {
   techStack?: string[]; // e.g. ["Next.js", "Tailwind CSS", "Vercel"]
   collaborators?: CaseStudyCollaborator[];
 
+  /**
+   * Excludes the case study from public listings (case studies index,
+   * homepage related, sitemap, related-case-studies on detail pages).
+   * The detail page itself still works on direct URL — useful for
+   * sharing a draft with the client before publishing.
+   */
+  hidden?: boolean;
+
   // Narrative sections
   problem: {
     heading: string;
@@ -311,6 +319,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     order: 2,
     featured: true,
+    hidden: true, // In progress; un-hide once the live site is launched at nnaccountability.com.au
   },
 
   // ── 3. GoingDark ───────────────────────────────────────────────────────────
@@ -779,7 +788,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "A copywriter who needed her website to match her writing",
       paragraphs: [
         "Nikita Morell writes copy exclusively for architects. Just architects. And as far as copywriting goes, I haven't met anyone better — I can't open one of her email newsletters and put it down before I'm finished. Engaging, creative, fun, down-to-earth. The kind of writing that makes architects pick up the phone.",
-        "She'd had her brand and site rebuilt by The Design Order in Brisbane and was searching online for a developer to bring it to life. I was recommended to her. We talked. I quoted — at the high end of what she'd budgeted for. She thought about it and came back with: \"I will bite the bullet.\"",
+        "She'd had her brand and site rebuilt by The Design Order in Brisbane and was searching online for a developer to bring it to life. I was recommended to her. We talked. I quoted — at the high end of what she'd budgeted for — and she trusted me with the work.",
         "Four weeks. Build the new site faithfully to the design. Make sure she could keep editing it herself afterwards.",
       ],
       image: "/showcase-images/nikita-morell/old-site.jpg",
@@ -789,7 +798,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "Pixel-perfect to the design — no \"similar to\"",
       paragraphs: [
         "WordPress with Divi Builder. Divi gave Nikita the room to keep updating content herself once the site was live — she ships a lot of writing, and she shouldn't have to come back to me every time a new article goes up. Custom JavaScript and PHP handled anything Divi wouldn't natively do.",
-        "The build had to translate The Design Order's design exactly. After launch, Zoe from TDO rang me. She said developers always tell her they'll build a design \"similar\" — and there are always differences. This time the build matched. She asked if we could work together on more projects. We've now done five-plus, SAC Consulting included.",
+        "The build had to translate The Design Order's design exactly. After launch, Zoe from TDO got in touch about working together on more projects — the start of a long-term partnership. We've now done five-plus, SAC Consulting included.",
         "Four weeks from start to live. On budget. On spec.",
       ],
       highlights: [
@@ -829,8 +838,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     results: {
       heading: "Four weeks, on spec, on budget — and a designer asking to work together again",
       paragraphs: [
-        "The site went live in the four weeks Nikita gave me, faithful to the design, within the budget she'd \"bitten the bullet\" on. She was thrilled. We've kept working together since — a custom client-resource library has been live for over a year on a separate Next.js + Notion + ActiveCampaign stack, and we have a new project together right now with DIRT.",
-        "The bigger story for me was The Design Order. Zoe's call after launch — \"I want to work with you on more projects\" — was the start of a long-term partnership. Five-plus projects together since, SAC Consulting among them.",
+        "The site went live in the four weeks Nikita gave me, faithful to the design, within the budget she'd set. She was thrilled. We've kept working together since — a custom client-resource library has been live for over a year on a separate Next.js + Notion + ActiveCampaign stack, and we have a new project together right now with DIRT.",
+        "The bigger story for me was The Design Order. Zoe getting in touch after launch was the start of a long-term partnership. Five-plus projects together since, SAC Consulting among them.",
         "Three years on, the site is still humming. Best Practices and SEO sit at 100 in PageSpeed; First Contentful Paint at 0.8s, Largest Contentful Paint at 1.0s on the dot — fast for a WordPress + Divi site. Performance sits at 85, not 90+ — and that's the honest cost of the platform choice. Divi gives Nikita the visual editor she needs to keep updating the site herself, but it adds weight that no amount of optimisation will fully remove. For a writer whose business depends on shipping content constantly, the trade is the right one.",
         "These days I'm also looking after Nikita's site from an AI-visibility angle — making sure her work shows up in the AI models when architects ask them about copywriters. The site that was built to be discoverable by Google is now being tuned to be discoverable by ChatGPT, Claude, and the rest.",
       ],
@@ -888,7 +897,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "Brand new business, two weeks, every product needs configuring",
       paragraphs: [
         "Cadeaurable is run by Micha Haddad — solo, from a Brisbane workshop, designing and making personalised laser-cut decor and gifts. Wedding signage, cake toppers, name tags, keepsakes — engraved and cut to whatever the customer specifies. Material (wood or acrylic), colour if acrylic, design variant, engraving text. Every single order is custom.",
-        "When Micha decided to launch, the timeline was tight: two weeks from nothing to a live store. (Full disclosure — Micha is also my wife. Cadeaurable was the project where I got to be both husband and developer.) The platform decision had to be right the first time. Deep product personalisation wasn't a nice-to-have we could bolt on later; it was the minimum viable product.",
+        "When Micha decided to launch, the timeline was tight: two weeks from nothing to a live store. The platform decision had to be right the first time. Deep product personalisation wasn't a nice-to-have we could bolt on later; it was the minimum viable product.",
       ],
     },
     approach: {
@@ -1022,6 +1031,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     order: 9,
     featured: false,
+    hidden: true, // Live site is no longer the RAVENCI build; case study kept as a record but not publicly listed
   },
 ];
 
@@ -1032,17 +1042,19 @@ export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
 }
 
 export function getAllSlugs(): string[] {
-  return CASE_STUDIES.map((cs) => cs.slug);
+  return CASE_STUDIES.filter((cs) => !cs.hidden).map((cs) => cs.slug);
 }
 
 export function getFeaturedCaseStudies(): CaseStudy[] {
-  return CASE_STUDIES.filter((cs) => cs.featured).sort(
+  return CASE_STUDIES.filter((cs) => cs.featured && !cs.hidden).sort(
     (a, b) => a.order - b.order,
   );
 }
 
 export function getAllCaseStudies(): CaseStudy[] {
-  return [...CASE_STUDIES].sort((a, b) => a.order - b.order);
+  return CASE_STUDIES.filter((cs) => !cs.hidden).sort(
+    (a, b) => a.order - b.order,
+  );
 }
 
 export function getRelatedCaseStudies(
@@ -1052,8 +1064,12 @@ export function getRelatedCaseStudies(
   const current = getCaseStudyBySlug(currentSlug);
   if (!current) return [];
 
-  // Prefer same industry, then same services, then featured
-  const others = CASE_STUDIES.filter((cs) => cs.slug !== currentSlug);
+  // Prefer same industry, then same services, then featured.
+  // Hidden case studies never appear in related — even if the visitor
+  // lands on a hidden case study via direct URL.
+  const others = CASE_STUDIES.filter(
+    (cs) => cs.slug !== currentSlug && !cs.hidden,
+  );
   const scored = others.map((cs) => {
     let score = 0;
     if (cs.industry === current.industry) score += 3;

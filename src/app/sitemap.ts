@@ -173,7 +173,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
-    ...CASE_STUDIES.map((cs) => ({
+    ...CASE_STUDIES.filter((cs) => !cs.hidden).map((cs) => ({
       url: `${baseUrl}/case-studies/${cs.slug}`,
       lastModified: new Date(),
       changeFrequency: "yearly" as const,
