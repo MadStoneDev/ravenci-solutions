@@ -8,6 +8,10 @@ export interface AuditStat {
   stat: string;
   label: string;
   severity: "critical" | "warning";
+  /** Short RAVENCI counterpoint shown below the stat — e.g. "RAVENCI: 100% have SSL". */
+  ravenciCounter?: string;
+  /** Optional plain-English explanation of how RAVENCI achieves the counter. */
+  ravenciCounterNote?: string;
 }
 
 export interface AuditCategory {
@@ -67,6 +71,9 @@ export const auditStats: AuditStat[] = [
     stat: "42%",
     label: "Had no SSL certificate or mixed content warnings",
     severity: "warning",
+    ravenciCounter: "RAVENCI: 100% have SSL",
+    ravenciCounterNote:
+      "We host on Cloudways and Coolify — SSL certificates are provisioned and renewed automatically on every site we build.",
   },
   {
     stat: "38%",
@@ -92,6 +99,9 @@ export const auditStats: AuditStat[] = [
     stat: "18%",
     label: "Had no Google Analytics or any tracking installed",
     severity: "warning",
+    ravenciCounter: "RAVENCI: 100% have analytics",
+    ravenciCounterNote:
+      "Every site we ship has Google Analytics pre-configured — clients walk away with measurement on day one, not as an afterthought.",
   },
 ];
 
@@ -151,6 +161,9 @@ export const categoryBreakdown: AuditCategory[] = [
       "Add security headers (CSP, X-Frame-Options, HSTS)",
       "Use strong passwords and two-factor authentication",
     ],
+    ravenciAverage: "100/100",
+    ravenciSampleNote:
+      "All RAVENCI sites are hosted on Cloudways or Coolify with SSL provisioned and renewed automatically, and we keep CMS, plugins and dependencies up to date as part of our active maintenance.",
   },
   {
     category: "Accessibility",

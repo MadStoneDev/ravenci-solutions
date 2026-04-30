@@ -63,7 +63,7 @@ export default function BrisbaneWebsiteAuditPage() {
           {auditStats.map((item, index) => (
             <div
               key={index}
-              className="p-5 bg-white/5 border border-white/10 rounded-lg"
+              className="p-5 bg-white/5 border border-white/10 rounded-lg flex flex-col"
             >
               <div className="flex items-start gap-2 mb-2">
                 {item.severity === "critical" ? (
@@ -82,6 +82,18 @@ export default function BrisbaneWebsiteAuditPage() {
               <p className="text-sm text-neutral-400 leading-relaxed">
                 {item.label}
               </p>
+              {item.ravenciCounter && (
+                <div
+                  className="mt-auto pt-3 flex items-center gap-2 text-sm font-bold text-green-400"
+                  title={item.ravenciCounterNote}
+                >
+                  <IconCheck
+                    size={16}
+                    className="p-0.5 bg-green-500/30 rounded-full text-green-400 flex-shrink-0"
+                  />
+                  <span>{item.ravenciCounter}</span>
+                </div>
+              )}
             </div>
           ))}
         </div>
