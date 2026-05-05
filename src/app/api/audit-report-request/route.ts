@@ -1,10 +1,32 @@
 import { NextResponse } from "next/server";
 import { Recipient, EmailParams, Sender, MailerSend } from "mailersend";
+import { checkRateLimit, verifyRecaptcha } from "@/lib/api-guards";
 
 export async function POST(request: Request) {
   try {
+    const limit = await checkRateLimit(request, "audit-report-request");
+    if (!limit.ok) {
+      return NextResponse.json(
+        { message: "Too many requests. Please try again shortly." },
+        {
+          status: 429,
+          headers: limit.retryAfter
+            ? { "Retry-After": String(limit.retryAfter) }
+            : undefined,
+        },
+      );
+    }
+
     const body = await request.json();
-    const { name, email } = body;
+    const { name, email, recaptchaToken } = body;
+
+    const recaptcha = await verifyRecaptcha(recaptchaToken);
+    if (!recaptcha.ok) {
+      return NextResponse.json(
+        { message: recaptcha.reason ?? "reCAPTCHA verification failed" },
+        { status: 400 },
+      );
+    }
 
     if (!name || !email) {
       return NextResponse.json(
@@ -47,8 +69,7 @@ export async function POST(request: Request) {
     } catch (adminError) {
       console.error("Failed to notify admin:", adminError);
       // Don't fail the user request if admin notification fails — they
-      // can still access the report. Worst case we lose the lead in the
-      // logs, which is recoverable.
+      // can still access the report.
     }
 
     // 2. Send the lead the report link
@@ -73,17 +94,11 @@ export async function POST(request: Request) {
       await mailerSend.email.send(userParams);
     } catch (userError) {
       console.error("Failed to send report email to user:", userError);
-      // Don't fail — user still sees the report URL in the success state
     }
 
     return NextResponse.json({ message: "Report request received" });
   } catch (error) {
     console.error("Audit report request error:", error);
-    return NextResponse.json(
-      {
-        message: error instanceof Error ? error.message : "Server error",
-      },
-      { status: 500 },
-    );
+    return NextResponse.json({ message: "Server error" }, { status: 500 });
   }
 }

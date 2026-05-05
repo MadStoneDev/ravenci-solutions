@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 import {
   IconDownload,
@@ -11,6 +12,7 @@ import {
 } from "@tabler/icons-react";
 
 export default function AuditReportGate() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle",
   );
@@ -23,10 +25,14 @@ export default function AuditReportGate() {
     setErrorMessage("");
 
     try {
+      const recaptchaToken = executeRecaptcha
+        ? await executeRecaptcha("audit_report_request")
+        : "";
+
       const res = await fetch("/api/audit-report-request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, recaptchaToken }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));

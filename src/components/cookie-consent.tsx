@@ -3,6 +3,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
 
@@ -12,22 +18,37 @@ export default function CookieConsent() {
       const timer = setTimeout(() => setVisible(true), 1500);
       return () => clearTimeout(timer);
     }
+    if (consent === "accepted") {
+      window.gtag?.("consent", "update", {
+        ad_storage: "granted",
+        ad_user_data: "granted",
+        ad_personalization: "granted",
+        analytics_storage: "granted",
+      });
+    }
   }, []);
 
   const handleAccept = () => {
     localStorage.setItem("ravenci-cookie-consent", "accepted");
     setVisible(false);
+    window.gtag?.("consent", "update", {
+      ad_storage: "granted",
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+      analytics_storage: "granted",
+    });
+    window.dispatchEvent(new Event("ravenci:consent-accepted"));
   };
 
   const handleDecline = () => {
     localStorage.setItem("ravenci-cookie-consent", "declined");
     setVisible(false);
-    // Disable GA/GTM by setting opt-out flags
-    if (typeof window !== "undefined" && "gtag" in window) {
-      (window as any).gtag("consent", "update", {
-        analytics_storage: "denied",
-      });
-    }
+    window.gtag?.("consent", "update", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied",
+    });
   };
 
   if (!visible) return null;

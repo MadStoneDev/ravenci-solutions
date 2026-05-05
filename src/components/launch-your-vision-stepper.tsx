@@ -2,6 +2,7 @@
 
 import { sendGTMEvent } from "@next/third-parties/google";
 import { useState } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Link from "next/link";
 
 import {
@@ -98,6 +99,7 @@ const BUDGET_OPTIONS: Budget[] = [
 const TOTAL_STEPS = 6;
 
 export default function LaunchYourVisionStepper() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [step, setStep] = useState(1);
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "loading" | "success" | "error"
@@ -153,10 +155,15 @@ export default function LaunchYourVisionStepper() {
     setErrorMessage("");
 
     try {
+      const recaptchaToken = executeRecaptcha
+        ? await executeRecaptcha("launch_your_vision")
+        : "";
+
       const res = await fetch("/api/launch-your-vision", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          recaptchaToken,
           name: form.name,
           email: form.email,
           phone: form.phone,

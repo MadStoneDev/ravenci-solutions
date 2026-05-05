@@ -1,12 +1,33 @@
 import { NextResponse } from "next/server";
 import { Recipient, EmailParams, Sender, MailerSend } from "mailersend";
+import { checkRateLimit, verifyRecaptcha } from "@/lib/api-guards";
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { name, email, message, budget } = body;
+    const limit = await checkRateLimit(request, "launch-your-vision");
+    if (!limit.ok) {
+      return NextResponse.json(
+        { message: "Too many requests. Please try again shortly." },
+        {
+          status: 429,
+          headers: limit.retryAfter
+            ? { "Retry-After": String(limit.retryAfter) }
+            : undefined,
+        },
+      );
+    }
 
-    // Basic validation
+    const body = await request.json();
+    const { name, email, message, budget, recaptchaToken } = body;
+
+    const recaptcha = await verifyRecaptcha(recaptchaToken);
+    if (!recaptcha.ok) {
+      return NextResponse.json(
+        { message: recaptcha.reason ?? "reCAPTCHA verification failed" },
+        { status: 400 },
+      );
+    }
+
     if (!name || !email || !message) {
       return NextResponse.json(
         { message: "Missing required fields" },
@@ -72,9 +93,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Error sending email:", error);
     return NextResponse.json(
-      {
-        message: error instanceof Error ? error.message : "Error sending email",
-      },
+      { message: "Error sending email" },
       { status: 500 },
     );
   }

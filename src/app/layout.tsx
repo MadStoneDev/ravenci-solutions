@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import MicrosoftClarity from "@/components/metrics-microsoft-clarity";
 
@@ -11,6 +12,9 @@ import MainNavigation from "@/components/main-navigation";
 import SpinningCircleText from "@/components/spinning-circle-text";
 import ReCaptchaProvider from "@/components/recaptcha-provider";
 import CookieConsent from "@/components/cookie-consent";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
 const lexend = Lexend({
   variable: "--font-lexend",
@@ -108,47 +112,6 @@ export default function RootLayout({
       name: "Richard Haddad",
       jobTitle: "Founder",
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      bestRating: "5",
-      ratingCount: "6",
-    },
-    review: [
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "Geoff Beisler" },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-        },
-        reviewBody:
-          "I could not recommend Richard more highly. His knowledge is remarkable, his professionalism exceptional, and the way he completely sorted my issues, quickly, effortlessly was simply brilliant.",
-      },
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "Adam Bisset" },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-        },
-        reviewBody:
-          "Richard is the absolute best at what he does. Our brand new startup is launching with the best possible website I could have imagined.",
-      },
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "Danni Green" },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-        },
-        reviewBody:
-          "Eleven out of ten for an amazing service! Richard goes above and beyond to ensure all the i's are dotted and t's are crossed.",
-      },
-    ],
   };
 
   const jsonLdWebSite = {
@@ -168,25 +131,6 @@ export default function RootLayout({
           "https://ravenci.solutions/articles?q={search_term_string}",
       },
       "query-input": "required name=search_term_string",
-    },
-  };
-
-  const jsonLdVideo = {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    name: "RAVENCI Solutions — Digital Development & Design",
-    description:
-      "See how RAVENCI Solutions delivers high-performance custom websites for Australian businesses. 20+ years of experience, 85+ PageSpeed guaranteed.",
-    thumbnailUrl: "https://ravenci.solutions/og-image.jpg",
-    uploadDate: "2024-01-01",
-    contentUrl: "https://ravenci.solutions/ravenci-promo.mp4",
-    publisher: {
-      "@type": "Organization",
-      name: "RAVENCI Solutions",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://ravenci.solutions/ravenci-logo.svg",
-      },
     },
   };
 
@@ -242,21 +186,20 @@ export default function RootLayout({
             __html: JSON.stringify(jsonLdWebSite),
           }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLdVideo),
-          }}
-        />
         <meta name="geo.region" content="AU-QLD" />
         <meta name="geo.placename" content="Brisbane" />
       </head>
-      <GoogleAnalytics gaId={`G-8TL2E4F9CH`} />
-      <GoogleTagManager gtmId={`GTM-K6S8KCK5`} />
-
       <body
         className={`relative ${lexend.variable} ${playfairDisplay.variable} antialiased`}
       >
+        {/* Consent default — denied until user accepts. Must run before
+            GA/GTM so trackers respect the signal. */}
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});`}
+        </Script>
+        {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
+        {GTM_ID && <GoogleTagManager gtmId={GTM_ID} />}
+
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-ravenci-primary focus:text-white focus:rounded-md focus:outline-none"
