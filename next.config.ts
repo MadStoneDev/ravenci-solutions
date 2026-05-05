@@ -1,6 +1,30 @@
 import type { NextConfig } from "next";
 
+// CSP allowlist for everything this site actually loads. Tightened later
+// is easier than debugging a broken site, so favour explicit hosts over
+// wildcards where practical.
+const csp = [
+  "default-src 'self'",
+  // 'unsafe-inline' is required for Next.js inline hydration scripts and
+  // the JSON-LD blocks. Replace with nonces via middleware later if you
+  // want an A+ on securityheaders.com.
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://www.clarity.ms https://*.clarity.ms https://www.google.com https://www.gstatic.com https://js.stripe.com https://*.stripe.com https://assets.calendly.com",
+  // Tailwind/CSS-in-JS injects inline styles.
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "img-src 'self' data: blob: https:",
+  "font-src 'self' data: https://fonts.gstatic.com",
+  "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com https://www.google.com https://api.stripe.com https://*.upstash.io",
+  "frame-src https://js.stripe.com https://www.google.com https://*.calendly.com",
+  "media-src 'self' blob:",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'self'",
+  "upgrade-insecure-requests",
+].join("; ");
+
 const securityHeaders = [
+  { key: "Content-Security-Policy", value: csp },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   {
