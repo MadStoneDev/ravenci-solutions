@@ -202,7 +202,7 @@ const decisionFramework = [
       "Lowest cost, fastest to launch, easiest for your team to update later. Avoid the temptation to over-engineer.",
   },
   {
-    scenario: "I sell products online — physical or digital",
+    scenario: "I sell products online, physical or digital",
     answer: "Shopify",
     reason:
       "All-in-one solution. Payment, inventory, shipping, security and PCI compliance handled. Build cost recovered within months at most product volumes.",
@@ -242,7 +242,7 @@ const commonMistakes = [
   {
     mistake: "Choosing custom Next.js for a budget under $10,000",
     detail:
-      "Custom builds need 60 – 120 hours of senior developer time. Quotes under $10,000 mean cut corners somewhere — usually on design, testing, or post-launch support. Spend $5,000 on WordPress instead and reinvest the rest in marketing.",
+      "Custom builds need 60 – 120 hours of senior developer time. Quotes under $10,000 mean cut corners somewhere, usually on design, testing, or post-launch support. Spend $5,000 on WordPress instead and reinvest the rest in marketing.",
   },
   {
     mistake: "Choosing WordPress for high-volume e-commerce",
@@ -267,42 +267,42 @@ const faqItems = [
     summary:
       "WordPress is cheapest upfront ($3,500 – $15,000) and lowest in monthly fees. Shopify costs $45 – $645/mo on top of build cost. Custom Next.js has the highest build cost ($10,000+) but lowest long-term running costs and no platform lock-in.",
     content:
-      "WordPress is typically the cheapest upfront option, with build costs of $3,500 to $15,000 and minimal ongoing platform fees beyond hosting and maintenance. Shopify has lower build costs ($5,000 – $20,000) but adds $45 to $645 per month in platform fees plus app subscriptions. Custom Next.js has the highest build cost ($10,000 – $50,000+) but the lowest long-term running costs and no platform lock-in or surprise fee increases. Over 3 years, the total cost differences narrow considerably — for a typical small business site, WordPress costs roughly $15,000 over 36 months, Shopify $30,000+, and Custom Next.js $20,000.",
+      "WordPress is typically the cheapest upfront option, with build costs of $3,500 to $15,000 and minimal ongoing platform fees beyond hosting and maintenance. Shopify has lower build costs ($5,000 – $20,000) but adds $45 to $645 per month in platform fees plus app subscriptions. Custom Next.js has the highest build cost ($10,000 – $50,000+) but the lowest long-term running costs and no platform lock-in or surprise fee increases. Over 3 years, the total cost differences narrow considerably. For a typical small business site, WordPress costs roughly $15,000 over 36 months, Shopify $30,000+, and Custom Next.js $20,000.",
   },
   {
     title: "Can I switch platforms later?",
     summary:
-      "Yes, but it's expensive. Migrating between platforms typically costs $3,000 – $10,000 plus rebuilding designs and integrations. Choose the right platform from day one — the second-best platform you commit to is cheaper than the right one you switch to in year two.",
+      "Yes, but it's expensive. Migrating between platforms typically costs $3,000 – $10,000 plus rebuilding designs and integrations. Choose the right platform from day one. The second-best platform you commit to is cheaper than the right one you switch to in year two.",
     content:
       "Yes, but switching platforms later is rarely cheap. Migrating between WordPress, Shopify and custom platforms typically costs $3,000 to $10,000 in pure migration work, plus rebuilding designs and integrations. SEO authority can also take 3 to 6 months to fully recover after a major platform change if redirects aren't handled properly. The rule of thumb: choose the right platform from day one. The second-best platform you commit to and stick with is cheaper than the perfect platform you switch to in year two.",
   },
   {
     title: "Is custom Next.js really worth the higher cost?",
     summary:
-      "Worth it when performance, custom functionality, brand differentiation or zero vendor lock-in are real business priorities. Not worth it for a standard 5-page brochure site or a small product catalogue — WordPress or Shopify deliver more value at lower cost in those cases.",
+      "Worth it when performance, custom functionality, brand differentiation or zero vendor lock-in are real business priorities. Not worth it for a standard 5-page brochure site or a small product catalogue. WordPress or Shopify deliver more value at lower cost in those cases.",
     content:
-      "Custom Next.js is worth the higher cost when performance is a competitive advantage, when you need bespoke functionality that off-the-shelf platforms don't offer, when brand differentiation drives revenue, or when you genuinely need zero vendor lock-in. It's not worth it for a standard 5-page brochure site or a small product catalogue — WordPress and Shopify deliver more value at lower cost in those cases. The honest test: if your business case for custom can't be summarised in one sentence, you probably don't need it.",
+      "Custom Next.js is worth the higher cost when performance is a competitive advantage, when you need bespoke functionality that off-the-shelf platforms don't offer, when brand differentiation drives revenue, or when you genuinely need zero vendor lock-in. It's not worth it for a standard 5-page brochure site or a small product catalogue. WordPress and Shopify deliver more value at lower cost in those cases. The honest test: if your business case for custom can't be summarised in one sentence, you probably don't need it.",
   },
   {
     title: "What about Webflow, Wix, or Squarespace?",
     summary:
       "These are DIY-friendly visual builders, sitting between WordPress and Shopify in capability. Wix and Squarespace work for very simple sites under $5,000 budget. Webflow is more capable but harder for non-technical users to maintain. Most established Australian businesses outgrow them within 12 – 24 months.",
     content:
-      "Webflow, Wix and Squarespace are DIY-friendly visual builders that sit between WordPress and Shopify in capability. Wix and Squarespace are reasonable for very simple sites under a $5,000 budget where the goal is fast launch with minimal maintenance — but customisation ceilings are low and SEO control is limited. Webflow is more capable, with cleaner code and better performance, but it's harder for non-technical users to maintain and locked to Webflow's hosting (which can be expensive at scale). Most established Australian businesses outgrow these platforms within 12 to 24 months and end up migrating to WordPress, Shopify or custom anyway.",
+      "Webflow, Wix and Squarespace are DIY-friendly visual builders that sit between WordPress and Shopify in capability. Wix and Squarespace are reasonable for very simple sites under a $5,000 budget where the goal is fast launch with minimal maintenance, but customisation ceilings are low and SEO control is limited. Webflow is more capable, with cleaner code and better performance, but it's harder for non-technical users to maintain and locked to Webflow's hosting (which can be expensive at scale). Most established Australian businesses outgrow these platforms within 12 to 24 months and end up migrating to WordPress, Shopify or custom anyway.",
   },
   {
     title: "Should I use BigCommerce instead of Shopify?",
     summary:
-      "BigCommerce is a strong Shopify alternative for businesses with complex catalogues, B2B requirements, or wanting more built-in features without paying for apps. Shopify wins on app ecosystem and brand recognition. RAVENCI is a partner of both — we recommend based on your specific catalogue and feature needs.",
+      "BigCommerce is a strong Shopify alternative for businesses with complex catalogues, B2B requirements, or wanting more built-in features without paying for apps. Shopify wins on app ecosystem and brand recognition. RAVENCI is a partner of both. We recommend based on your specific catalogue and feature needs.",
     content:
-      "BigCommerce is a strong Shopify alternative, particularly for businesses with complex product catalogues, B2B requirements, or that want more functionality built in without paying for separate apps. Shopify wins on app ecosystem breadth, brand recognition, and the cleanest checkout experience. BigCommerce wins on built-in features, lower app dependency, and often lower total cost of ownership at scale. As a Shopify Partner and a BigCommerce Partner, RAVENCI recommends based on your specific catalogue size, integration needs, and B2B/B2C mix — not on what's easier for us to build.",
+      "BigCommerce is a strong Shopify alternative, particularly for businesses with complex product catalogues, B2B requirements, or that want more functionality built in without paying for separate apps. Shopify wins on app ecosystem breadth, brand recognition, and the cleanest checkout experience. BigCommerce wins on built-in features, lower app dependency, and often lower total cost of ownership at scale. As a Shopify Partner and a BigCommerce Partner, RAVENCI recommends based on your specific catalogue size, integration needs, and B2B/B2C mix, not on what's easier for us to build.",
   },
   {
     title: "What about WordPress with WooCommerce vs Shopify?",
     summary:
       "WooCommerce works well for sub-200-product catalogues attached to a content-led business. Shopify wins above 200 products, in checkout reliability, security, and ongoing maintenance simplicity. If e-commerce is the primary business, choose Shopify. If it's a side feature on a content site, WooCommerce is fine.",
     content:
-      "WooCommerce — the e-commerce plugin for WordPress — works well for catalogues under about 200 products attached to a content-led business. It's a sensible choice when most of the site is content (services, blog, about) with e-commerce as a secondary feature. Shopify wins above 200 products, on checkout reliability, on security and PCI compliance handled for you, and on simpler ongoing maintenance. The honest test: if e-commerce is the primary business, choose Shopify. If it's a side feature on a content site, WooCommerce is fine and saves the platform fee.",
+      "WooCommerce, the e-commerce plugin for WordPress, works well for catalogues under about 200 products attached to a content-led business. It's a sensible choice when most of the site is content (services, blog, about) with e-commerce as a secondary feature. Shopify wins above 200 products, on checkout reliability, on security and PCI compliance handled for you, and on simpler ongoing maintenance. The honest test: if e-commerce is the primary business, choose Shopify. If it's a side feature on a content site, WooCommerce is fine and saves the platform fee.",
   },
   {
     title: "How long does each platform take to build?",
@@ -314,9 +314,9 @@ const faqItems = [
   {
     title: "Which platform is best for SEO in Australia?",
     summary:
-      "All three can rank well — the platform matters less than the build quality. Custom Next.js gives the most SEO control and consistently fastest performance. WordPress with proper SEO plugins (Yoast, Rank Math) is highly capable. Shopify works for product SEO but is more constrained for content marketing.",
+      "All three can rank well. The platform matters less than the build quality. Custom Next.js gives the most SEO control and consistently fastest performance. WordPress with proper SEO plugins (Yoast, Rank Math) is highly capable. Shopify works for product SEO but is more constrained for content marketing.",
     content:
-      "All three platforms can rank well in Australian search results — the platform matters less than the build quality. Custom Next.js gives the most SEO control, consistently fastest performance (a known ranking factor), and the cleanest implementation of structured data. WordPress with proper SEO plugins (Yoast, Rank Math) is highly capable for both local and content SEO, and most of Australia's top-ranking small business sites run on it. Shopify works for product-level SEO but is more constrained for content marketing — its blog and CMS features are functional but limited compared to WordPress. The biggest SEO factor across all three is whether the build was done by someone who genuinely understands SEO from day one.",
+      "All three platforms can rank well in Australian search results. The platform matters less than the build quality. Custom Next.js gives the most SEO control, consistently fastest performance (a known ranking factor), and the cleanest implementation of structured data. WordPress with proper SEO plugins (Yoast, Rank Math) is highly capable for both local and content SEO, and most of Australia's top-ranking small business sites run on it. Shopify works for product-level SEO but is more constrained for content marketing. Its blog and CMS features are functional but limited compared to WordPress. The biggest SEO factor across all three is whether the build was done by someone who genuinely understands SEO from day one.",
   },
 ];
 
@@ -330,7 +330,7 @@ export default function PlatformComparisonPage() {
             items={[{ label: "WordPress vs Shopify vs Custom Next.js" }]}
           />
           <span className="mt-2 text-xs font-medium tracking-wider uppercase text-ravenci-primary">
-            Platform Comparison — 2026
+            Platform Comparison, 2026
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
             WordPress vs Shopify vs Custom Next.js
@@ -411,7 +411,7 @@ export default function PlatformComparisonPage() {
           When to Choose Each Platform
         </h3>
         <p className="mb-10 max-w-2xl text-neutral-500/80">
-          The honest case for and against each platform — including when{" "}
+          The honest case for and against each platform, including when{" "}
           <em>not</em> to pick it. Most agencies skip the &quot;avoid&quot;
           section. We don&apos;t.
         </p>
@@ -489,7 +489,7 @@ export default function PlatformComparisonPage() {
         </h3>
         <p className="mb-10 max-w-2xl text-neutral-500/80">
           Six common scenarios and the platform that usually wins. Not absolute
-          — your situation may differ — but a strong starting point.
+          (your situation may differ), but a strong starting point.
         </p>
         <div className="space-y-4 max-w-4xl">
           {decisionFramework.map((item, index) => (
@@ -523,7 +523,7 @@ export default function PlatformComparisonPage() {
           </h3>
           <p className="mb-10 max-w-2xl text-white/85 leading-relaxed">
             Patterns we&apos;ve seen across hundreds of Australian small
-            business projects. Each one costs money to fix later — usually more
+            business projects. Each one costs money to fix later, usually more
             than the original build saved.
           </p>
           <div className="space-y-6">
@@ -552,7 +552,7 @@ export default function PlatformComparisonPage() {
           </h3>
           <div className="space-y-4 text-neutral-600 leading-relaxed">
             <p>
-              We build on all three — Custom Next.js, WordPress, and Shopify —
+              We build on all three (Custom Next.js, WordPress, and Shopify),
               plus BigCommerce, Plasmic, and Strapi when the project calls for
               them. As a <strong>Shopify Partner</strong>, a{" "}
               <strong>BigCommerce Partner</strong>, and a{" "}
@@ -564,7 +564,7 @@ export default function PlatformComparisonPage() {
               the actual business need, look at content volume and update
               cadence, look at e-commerce requirements, look at performance
               and integration needs, and then recommend the platform that fits
-              — not the one that&apos;s easiest for us to build. We&apos;ll
+              not the one that&apos;s easiest for us to build. We&apos;ll
               tell you when WordPress is the right answer even when custom
               would be more profitable for us.
             </p>
@@ -610,7 +610,7 @@ export default function PlatformComparisonPage() {
         </h2>
         <p className="mb-10 max-w-lg text-neutral-500/80">
           Tell us about your business in 2 minutes and we&apos;ll send back a
-          tailored platform recommendation with realistic pricing — no sales
+          tailored platform recommendation with realistic pricing. No sales
           pressure.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">

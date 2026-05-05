@@ -35,11 +35,11 @@ export default function WebAppPage() {
     {
       title: "Talks to Your Existing Tools",
       description:
-        "Connects to Xero, your CRM, your booking system — so data flows automatically instead of being re-typed three times",
+        "Connects to Xero, your CRM, your booking system, so data flows automatically instead of being re-typed three times",
     },
     {
       title: "Works on Every Device",
-      description: "Your team uses it on the desktop, on the road, on a phone — same data, same experience",
+      description: "Your team uses it on the desktop, on the road, on a phone. Same data, same experience",
     },
     {
       title: "Your Data, Properly Protected",
@@ -53,7 +53,7 @@ export default function WebAppPage() {
     },
     {
       title: "Your Team Will Actually Use It",
-      description: "Designed around how the work really happens — not how a generic SaaS thinks it should",
+      description: "Designed around how the work really happens, not how a generic SaaS thinks it should",
     },
   ];
 
@@ -182,7 +182,7 @@ export default function WebAppPage() {
             </ul>
 
             <p className={`mb-4 text-neutral-400/90`}>
-              Custom web applications aren't just about technology—they're about
+              Custom web applications aren't just about technology. They're about
               giving your business a competitive edge through streamlined
               operations and better decision-making.
             </p>

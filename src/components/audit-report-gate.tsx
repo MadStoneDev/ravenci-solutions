@@ -81,7 +81,7 @@ export default function AuditReportGate() {
             Get the Full Report
           </h3>
           <p className="mt-1 text-sm text-neutral-500">
-            All 50 sites, every category, every recommendation — in a printable
+            All 50 sites, every category, every recommendation, in a printable
             PDF you can share with your team.
           </p>
         </div>

@@ -13,9 +13,9 @@ import {
 import Accordion from "@/components/accordion";
 
 export const metadata = {
-  title: "Our Process — The RAVENCI Method | RAVENCI Solutions",
+  title: "Our Process: The RAVENCI Method | RAVENCI Solutions",
   description:
-    "Discover how RAVENCI Solutions in Brisbane delivers results. Our 6-step process takes your project from discovery to launch and beyond — with 20+ years of experience behind every decision.",
+    "Discover how RAVENCI Solutions in Brisbane delivers results. Our 6-step process takes your project from discovery to launch and beyond, with 20+ years of experience behind every decision.",
   alternates: { canonical: "/our-process" },
 };
 
@@ -38,7 +38,7 @@ const steps = [
     name: "Strategy & Planning",
     icon: IconBulb,
     description:
-      "With a solid understanding of your needs, we map out the entire project. Information architecture, user journeys, technology choices, and content strategy — all planned before design begins.",
+      "With a solid understanding of your needs, we map out the entire project. Information architecture, user journeys, technology choices, and content strategy, all planned before design begins.",
     highlights: [
       "Site architecture and user flow mapping",
       "Technology and platform selection",
@@ -51,7 +51,7 @@ const steps = [
     name: "Design & Prototyping",
     icon: IconPalette,
     description:
-      "We create wireframes and visual designs that bring your brand to life. You'll see exactly how your site will look and feel before development starts — no surprises.",
+      "We create wireframes and visual designs that bring your brand to life. You'll see exactly how your site will look and feel before development starts. No surprises.",
     highlights: [
       "Wireframes for layout and structure",
       "High-fidelity visual designs",
@@ -64,7 +64,7 @@ const steps = [
     name: "Development & Build",
     icon: IconCode,
     description:
-      "This is where it all comes together. Clean, performant code built to modern standards. We develop with speed, accessibility, and SEO baked in from the start — not bolted on after.",
+      "This is where it all comes together. Clean, performant code built to modern standards. We develop with speed, accessibility, and SEO baked in from the start, not bolted on after.",
     highlights: [
       "Clean, maintainable code",
       "85+ Google PageSpeed guaranteed",
@@ -111,9 +111,9 @@ const faqItems = [
   {
     title: "What do I need to provide to get started?",
     summary:
-      "At minimum, an understanding of your business goals and target audience. Existing branding, content, or design preferences help but aren't required — RAVENCI can handle content and design from scratch.",
+      "At minimum, an understanding of your business goals and target audience. Existing branding, content, or design preferences help but aren't required. RAVENCI can handle content and design from scratch.",
     content:
-      "We'll guide you through everything during Discovery. At minimum, we need an understanding of your business goals and target audience. If you have existing branding, content, or design preferences, that helps too — but it's not required. We can handle content and design from scratch.",
+      "We'll guide you through everything during Discovery. At minimum, we need an understanding of your business goals and target audience. If you have existing branding, content, or design preferences, that helps too, but it's not required. We can handle content and design from scratch.",
   },
   {
     title: "How involved do I need to be during the process?",
@@ -127,7 +127,7 @@ const faqItems = [
     summary:
       "Every RAVENCI package includes revision rounds at design and development stages. If requirements change significantly, scope adjustments are discussed transparently with no hidden fees.",
     content:
-      "Every package includes revision rounds at the design and development stages. If your requirements change significantly, we'll discuss scope adjustments transparently — no hidden fees or surprises.",
+      "Every package includes revision rounds at the design and development stages. If your requirements change significantly, we'll discuss scope adjustments transparently. No hidden fees or surprises.",
   },
   {
     title: "Do you work with businesses outside Brisbane?",
@@ -173,7 +173,7 @@ export default function OurProcessPage() {
         <div className={`max-w-lg`}>
           <h3 className={`font-serif font-medium text-xl`}>
             Great websites aren't accidents. They're the result of careful
-            planning, clear communication, and disciplined execution — every
+            planning, clear communication, and disciplined execution. Every
             single time.
           </h3>
         </div>
@@ -263,7 +263,7 @@ export default function OurProcessPage() {
             </div>
           </div>
           <p className={`mt-12 max-w-2xl mx-auto text-neutral-400`}>
-            A consistent, proven process is why we deliver results every time —
+            A consistent, proven process is why we deliver results every time.
             not by luck, but by design. Every step exists because two decades of
             experience taught us what works.
           </p>

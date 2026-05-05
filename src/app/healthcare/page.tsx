@@ -11,7 +11,7 @@ import { getTestimonialsForIndustry } from "@/data/testimonials";
 export const metadata = {
   title: "Medical & Healthcare Website Design Brisbane | RAVENCI Solutions",
   description:
-    "Websites for healthcare professionals. Patient portals, online booking, privacy compliance, NDIS-ready — built by a Brisbane team with 20+ years experience.",
+    "Websites for healthcare professionals. Patient portals, online booking, privacy compliance, NDIS-ready, built by a Brisbane team with 20+ years experience.",
 };
 
 const features = [
@@ -23,7 +23,7 @@ const features = [
   {
     title: "Patient Portal Ready",
     description:
-      "Patients can securely access forms, results, and message your team online — without you having to mail or call them",
+      "Patients can securely access forms, results, and message your team online, without you having to mail or call them",
   },
   {
     title: "Privacy & Compliance",
@@ -236,7 +236,7 @@ export default function HealthcarePage() {
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white flex-shrink-0`}
                 />
-                Brisbane-based — local support, local understanding
+                Brisbane-based. Local support, local understanding
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
@@ -263,7 +263,7 @@ export default function HealthcarePage() {
 
             <p className={`mb-4 text-neutral-400/90`}>
               We understand that healthcare websites aren't just marketing tools
-              — they're how patients find you, book with you, and build trust in
+              They're how patients find you, book with you, and build trust in
               your practice before they walk through the door.
             </p>
 
@@ -349,7 +349,7 @@ export default function HealthcarePage() {
             serviceType: "Healthcare Website Design",
             name: "Medical & Healthcare Website Design Brisbane",
             description:
-              "Websites for healthcare professionals. Patient portals, online booking, privacy compliance, NDIS-ready — built by a Brisbane team with 20+ years experience.",
+              "Websites for healthcare professionals. Patient portals, online booking, privacy compliance, NDIS-ready, built by a Brisbane team with 20+ years experience.",
             provider: {
               "@type": "ProfessionalService",
               name: "RAVENCI Solutions",

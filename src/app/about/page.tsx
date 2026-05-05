@@ -4,7 +4,7 @@ import { IconCircleCheckFilled } from "@tabler/icons-react";
 export const metadata = {
   title: "About - RAVENCI Solutions",
   description:
-    "Meet the team behind RAVENCI Solutions. 20+ years of digital experience, an engineering mindset, and a commitment to transparency — building websites that perform for Australian businesses.",
+    "Meet the team behind RAVENCI Solutions. 20+ years of digital experience, an engineering mindset, and a commitment to transparency, building websites that perform for Australian businesses.",
   alternates: { canonical: "/about" },
 };
 
@@ -18,7 +18,7 @@ export default function AboutPage() {
     {
       title: "Client Ownership",
       description:
-        "You own what you pay for — your website, your content, your domain. No lock-in contracts, no proprietary traps.",
+        "You own what you pay for: your website, your content, your domain. No lock-in contracts, no proprietary traps.",
     },
     {
       title: "Education",
@@ -28,7 +28,7 @@ export default function AboutPage() {
     {
       title: "Integrity",
       description:
-        "Honest timelines, honest pricing. If something isn't right for your business, we'll tell you — even if it means recommending a different approach.",
+        "Honest timelines, honest pricing. If something isn't right for your business, we'll tell you, even if it means recommending a different approach.",
     },
   ];
 
@@ -125,7 +125,7 @@ export default function AboutPage() {
             </h3>
             <div className={`space-y-4 text-neutral-500/80`}>
               <p>
-                RAVENCI was founded by Richard Haddad — a structural engineer
+                RAVENCI was founded by Richard Haddad, a structural engineer
                 turned web developer with a multicultural upbringing that spans
                 the Middle East and Australia.
               </p>
@@ -173,8 +173,8 @@ export default function AboutPage() {
               must perform under real-world conditions.
             </p>
             <p>
-              That's why RAVENCI websites and designs aren't just attractive —
-              they're built to a standard. We guarantee 85+ Google PageSpeed
+              That's why RAVENCI websites and designs aren't just attractive.
+              They're built to a standard. We guarantee 85+ Google PageSpeed
               scores because we believe performance isn't optional. We build on
               proven platforms and follow best practices because we've seen what
               happens when shortcuts are taken.
@@ -195,7 +195,7 @@ export default function AboutPage() {
                   <span className={`font-bold text-white`}>
                     Structural Engineering Degree
                   </span>{" "}
-                  — analytical thinking and problem solving
+                  for analytical thinking and problem solving
                 </span>
               </li>
               <li className={`flex items-start gap-2`}>
@@ -207,7 +207,7 @@ export default function AboutPage() {
                   <span className={`font-bold text-white`}>
                     Graphic Design Diploma
                   </span>{" "}
-                  — professional visual design
+                  for professional visual design
                 </span>
               </li>
               <li className={`flex items-start gap-2`}>
@@ -219,7 +219,7 @@ export default function AboutPage() {
                   <span className={`font-bold text-white`}>
                     20+ Years Digital Experience
                   </span>{" "}
-                  — across construction, trades, medical, legal, and retail
+                  across construction, trades, medical, legal, and retail
                   industries
                 </span>
               </li>
@@ -232,7 +232,7 @@ export default function AboutPage() {
             </h4>
             <p>
               When we build your website, it's yours. Your code, your content,
-              your domain — no lock-in contracts, no proprietary systems that
+              your domain. No lock-in contracts, no proprietary systems that
               hold your business hostage. If you ever want to move on, you take
               everything with you.
             </p>
@@ -245,7 +245,7 @@ export default function AboutPage() {
             <p>
               Every project includes tailored video tutorials showing you
               exactly how to manage your website. We don't believe in creating
-              dependency — we want you to feel confident making updates, adding
+              dependency. We want you to feel confident making updates, adding
               content, and running your site on your own terms.
             </p>
 
@@ -255,7 +255,7 @@ export default function AboutPage() {
               Specialist Network
             </h4>
             <p>
-              As a founder-led studio, we keep things lean — but never at the
+              As a founder-led studio, we keep things lean, but never at the
               cost of quality. When your project needs specialist photography,
               copywriting, or specialist design, we bring in trusted
               collaborators who meet our standards.

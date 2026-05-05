@@ -53,7 +53,7 @@ export const LAB_PROJECTS: LabProject[] = [
       {
         title: "Custom collections",
         description:
-          "Build collections by theme, mood, or whatever you like. Share them with anyone — and give people permission to add to them with you.",
+          "Build collections by theme, mood, or whatever you like. Share them with anyone, and give people permission to add to them with you.",
       },
       {
         title: "Friend invites & collaboration",

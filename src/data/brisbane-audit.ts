@@ -73,7 +73,7 @@ export const auditStats: AuditStat[] = [
     severity: "warning",
     ravenciCounter: "RAVENCI: 100% have SSL",
     ravenciCounterNote:
-      "We host on Cloudways and Coolify — SSL certificates are provisioned and renewed automatically on every site we build.",
+      "We host on Cloudways and Coolify. SSL certificates are provisioned and renewed automatically on every site we build.",
   },
   {
     stat: "38%",
@@ -101,7 +101,7 @@ export const auditStats: AuditStat[] = [
     severity: "warning",
     ravenciCounter: "RAVENCI: 100% have analytics",
     ravenciCounterNote:
-      "Every site we ship has Google Analytics pre-configured — clients walk away with measurement on day one, not as an afterthought.",
+      "Every site we ship has Google Analytics pre-configured. Clients walk away with measurement on day one, not as an afterthought.",
   },
 ];
 
@@ -220,7 +220,7 @@ export const auditFaqItems: AuditFAQItem[] = [
     summary:
       "Use Google PageSpeed Insights (free) for a quick score, or request a free RAVENCI Visibility Check for a comprehensive audit covering speed, SEO, mobile usability, security, and accessibility.",
     content:
-      "You can run a quick check using Google PageSpeed Insights (pagespeed.web.dev) for free. For a more comprehensive audit covering speed, SEO, mobile usability, security, and accessibility, we offer a free Visibility Check — just fill out the form on our website.",
+      "You can run a quick check using Google PageSpeed Insights (pagespeed.web.dev) for free. For a more comprehensive audit covering speed, SEO, mobile usability, security, and accessibility, we offer a free Visibility Check. Just fill out the form on our website.",
   },
 ];
 
@@ -228,7 +228,7 @@ export const keyTakeaways = [
   {
     title: "Speed is the biggest problem",
     detail:
-      "72% of Brisbane business websites scored below 50 on mobile PageSpeed. Google uses Core Web Vitals as a ranking factor — slow sites are actively penalised in search results. Every second of load time costs conversions.",
+      "72% of Brisbane business websites scored below 50 on mobile PageSpeed. Google uses Core Web Vitals as a ranking factor: slow sites are actively penalised in search results. Every second of load time costs conversions.",
   },
   {
     title: "Most sites are invisible to AI search",
@@ -243,7 +243,7 @@ export const keyTakeaways = [
   {
     title: "Accessibility is an afterthought",
     detail:
-      "38% failed basic colour contrast checks. 52% had images without alt text. Zero sites had accessibility statements. This isn't just about compliance — it's about excluding potential customers.",
+      "38% failed basic colour contrast checks. 52% had images without alt text. Zero sites had accessibility statements. This isn't just about compliance. It's about excluding potential customers.",
   },
   {
     title: "The bar is surprisingly low",

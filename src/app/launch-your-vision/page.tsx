@@ -3,7 +3,7 @@ import LaunchYourVisionStepper from "@/components/launch-your-vision-stepper";
 export const metadata = {
   title: "Launch Your Vision - RAVENCI Solutions",
   description:
-    "Start your project with RAVENCI Solutions in Brisbane. Two minutes to tell us about your website, e-commerce store, app or branding project — we'll come back with a tailored proposal.",
+    "Start your project with RAVENCI Solutions in Brisbane. Two minutes to tell us about your website, e-commerce store, app or branding project. We'll come back with a tailored proposal.",
   alternates: { canonical: "/launch-your-vision" },
 };
 

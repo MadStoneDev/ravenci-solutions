@@ -7,7 +7,7 @@ import Breadcrumbs from "@/components/breadcrumbs";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
-  title: "Retainer Packages — Ongoing Digital Partnership | RAVENCI Solutions",
+  title: "Retainer Packages: Ongoing Digital Partnership | RAVENCI Solutions",
   description:
     "Monthly retainer packages for ongoing web development, design, and strategy in Brisbane. From $490/mo. Your dedicated digital team without the overhead of hiring.",
   alternates: { canonical: "/retainer-packages" },
@@ -19,7 +19,7 @@ export default function RetainerPackagesPage() {
     {
       title: "Hosting & Maintenance Included",
       description:
-        "Every retainer includes managed cloud hosting, security, backups, and updates — no separate bills",
+        "Every retainer includes managed cloud hosting, security, backups, and updates. No separate bills",
     },
     {
       title: "Dedicated Monthly Hours",
@@ -29,12 +29,12 @@ export default function RetainerPackagesPage() {
     {
       title: "Flexible Allocation",
       description:
-        "Use your hours for dev, design, content, or strategy — whatever you need most that month",
+        "Use your hours for dev, design, content, or strategy, whatever you need most that month",
     },
     {
       title: "Priority Support",
       description:
-        "Retainer clients always come first — faster response times and direct access to your developer",
+        "Retainer clients always come first. Faster response times and direct access to your developer",
     },
     {
       title: "Consistent Progress",
@@ -44,12 +44,12 @@ export default function RetainerPackagesPage() {
     {
       title: "Cost Predictability",
       description:
-        "One monthly invoice covers everything — no surprise quotes or scope negotiations",
+        "One monthly invoice covers everything. No surprise quotes or scope negotiations",
     },
     {
       title: "No Lock-In on Starter",
       description:
-        "Our entry-level tier has no minimum commitment — pay monthly, cancel anytime",
+        "Our entry-level tier has no minimum commitment. Pay monthly, cancel anytime",
     },
   ];
 
@@ -62,10 +62,10 @@ export default function RetainerPackagesPage() {
         "2 hours of development or design work",
         "Managed cloud hosting included",
         "Security monitoring, backups & updates",
-        "Email support — 48-hour response",
+        "Email support, 48-hour response",
         "No hour rollover",
         "Overage rate: $175/hr",
-        "No minimum commitment — cancel anytime",
+        "No minimum commitment, cancel anytime",
       ],
     },
     {
@@ -129,7 +129,7 @@ export default function RetainerPackagesPage() {
       summary:
         "Anything digital: new pages, design tweaks, feature development, content updates, landing pages, email templates, and performance optimisation. Your hours are fully flexible each month.",
       content:
-        "Anything digital. New pages, design tweaks, feature development, content updates, landing pages, email templates, performance optimisation — whatever moves the needle for your business that month. Your hours are fully flexible.",
+        "Anything digital. New pages, design tweaks, feature development, content updates, landing pages, email templates, performance optimisation, whatever moves the needle for your business that month. Your hours are fully flexible.",
     },
     {
       title: "How do unused hours work?",
@@ -144,7 +144,7 @@ export default function RetainerPackagesPage() {
       summary:
         "Maintenance covers updates, backups, and security monitoring. A retainer includes all of that plus dedicated hours for active development, design, content, and strategy work.",
       content:
-        "Maintenance keeps things running — updates, backups, security monitoring. A retainer includes all of that plus dedicated hours for active development, design, content, and strategy. Think of maintenance as protection, and a retainer as progress.",
+        "Maintenance keeps things running: updates, backups, security monitoring. A retainer includes all of that plus dedicated hours for active development, design, content, and strategy. Think of maintenance as protection, and a retainer as progress.",
     },
     {
       title: "Can I change tiers?",
@@ -154,7 +154,7 @@ export default function RetainerPackagesPage() {
     {
       title: "What if I need more hours in a month?",
       summary:
-        "Additional hours are billed at your tier's discounted overage rate. RAVENCI always confirms before doing any work beyond your included hours — no surprise charges.",
+        "Additional hours are billed at your tier's discounted overage rate. RAVENCI always confirms before doing any work beyond your included hours. No surprise charges.",
       content:
         "No problem. Additional hours are billed at your tier's overage rate, which is discounted from our standard rate. We'll always confirm before doing any work beyond your included hours.",
     },
@@ -198,14 +198,14 @@ export default function RetainerPackagesPage() {
           <h2
             className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
           >
-            Ongoing development, design, and strategy — without the overhead of
+            Ongoing development, design, and strategy, without the overhead of
             hiring
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             For Australian businesses that want a digital team without the
             overhead of hiring one. Monthly packages from $490, with hosting,
             maintenance, and dedicated time for development, design, content
-            and SEO — used however your business needs it that month. Tell us
+            and SEO, used however your business needs it that month. Tell us
             the priorities. We&apos;ll take it from there.
           </p>
         </article>
@@ -272,7 +272,7 @@ export default function RetainerPackagesPage() {
             </h3>
             <p className={`mb-6 text-neutral-400/90`}>
               Our Scale retainer costs{" "}
-              <span className={`text-white font-bold`}>$41,880/year</span> — a
+              <span className={`text-white font-bold`}>$41,880/year</span>, a
               full-time hire costs{" "}
               <span className={`text-white font-bold`}>$80,000–$100,000/year</span>{" "}
               before super, leave, equipment, and training.
@@ -290,7 +290,7 @@ export default function RetainerPackagesPage() {
                   size={24}
                   className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                Access to a full team — dev, design, SEO, content — not just one
+                Access to a full team (dev, design, SEO, content), not just one
                 person
               </li>
               <li className={`flex gap-2`}>

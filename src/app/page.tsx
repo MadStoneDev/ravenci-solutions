@@ -44,7 +44,7 @@ export default function Home() {
             className={`mt-8 max-w-[600px] text-lg md:text-xl font-light text-neutral-400`}
           >
             Twenty years and 450+ projects for established Australian
-            businesses. We build websites the right way the first time —
+            businesses. We build websites the right way the first time:
             modern, performant, still working in five years.
           </h2>
 
@@ -132,14 +132,14 @@ export default function Home() {
           <div className={`mt-16 mb-24 flex flex-col gap-8 max-w-[500px]`}>
             <p>
               Most websites we replace were built with the right intentions and
-              the wrong approach — drag-and-drop builders, plugin stacks,
+              the wrong approach: drag-and-drop builders, plugin stacks,
               subscriptions piling up, eventually breaking. We don&apos;t work
               that way. We build properly, once, so it&apos;s still working
               five years from now.
             </p>
 
             <p>
-              From design through development, hosting and ongoing maintenance —
+              From design through development, hosting and ongoing maintenance,
               your site stays sharp without you having to think about it. Tell
               us what you need. We&apos;ll take it from there.
             </p>
@@ -176,23 +176,23 @@ export default function Home() {
 <p class="mb-4 text-neutral-400/90">Sites you can update yourself without calling a developer for every comma. Built so the admin makes sense to a human who isn't us.</p>
 
 <p class="text-neutral-100">Custom builds when off-the-shelf won't cut it</p>
-<p class="mb-4 text-neutral-400/90">When the project genuinely needs something custom, we build it from scratch — properly engineered so it grows with you instead of falling apart at the seams.</p>
+<p class="mb-4 text-neutral-400/90">When the project genuinely needs something custom, we build it from scratch, properly engineered so it grows with you instead of falling apart at the seams.</p>
 
 <p class="text-neutral-100">E-commerce that actually sells</p>
-<p class="mb-4 text-neutral-400/90">Online stores designed around how your customers buy and how your team fulfils. Whether that's Shopify, BigCommerce, or a custom platform — chosen for what fits, not what's easiest.</p>
+<p class="mb-4 text-neutral-400/90">Online stores designed around how your customers buy and how your team fulfils. Whether that's Shopify, BigCommerce, or a custom platform, chosen for what fits, not what's easiest.</p>
 
 <p class="text-neutral-100">Talks to the rest of your business</p>
-<p class="mb-4 text-neutral-400/90">Your website connected to your CRM, your booking system, your accounting, your email — so data flows automatically and nobody's re-typing it three times.</p>
+<p class="mb-4 text-neutral-400/90">Your website connected to your CRM, your booking system, your accounting, your email, so data flows automatically and nobody's re-typing it three times.</p>
 `,
               },
               {
                 title: `Design`,
                 content: `<p class="mb-4 text-neutral-100">Design that works for your customers, not for design awards.</p><p class="text-neutral-100">Planning the experience</p>
-<p class="mb-4 text-neutral-400/90">Before any pixel gets pushed, we map out how your customers will actually move through the site — what they need, where they'll click, what makes them act. The design follows from that.</p>
+<p class="mb-4 text-neutral-400/90">Before any pixel gets pushed, we map out how your customers will actually move through the site: what they need, where they'll click, what makes them act. The design follows from that.</p>
 <p class="text-neutral-100">How it looks</p>
-<p class="mb-4 text-neutral-400/90">A site that visibly belongs to your brand and feels modern without being trend-chasing. Clean type, considered colour, intentional spacing — the kind of polish customers notice without being able to name.</p>
+<p class="mb-4 text-neutral-400/90">A site that visibly belongs to your brand and feels modern without being trend-chasing. Clean type, considered colour, intentional spacing: the kind of polish customers notice without being able to name.</p>
 <p class="text-neutral-100">How it works</p>
-<p class="mb-4 text-neutral-400/90">Every page is built to take a visitor somewhere — to enquire, to buy, to read more. Less guessing, more action. That's what good design actually does.</p>`,
+<p class="mb-4 text-neutral-400/90">Every page is built to take a visitor somewhere: to enquire, to buy, to read more. Less guessing, more action. That's what good design actually does.</p>`,
               },
               {
                 title: `Maintenance`,
@@ -241,7 +241,7 @@ export default function Home() {
 
           <p>
             Most sites are built to look good at launch and quietly fall apart
-            after — plugins clash, subscriptions stack up, the developer who
+            after. Plugins clash, subscriptions stack up, the developer who
             built it stops returning calls. That&apos;s not how we work. We
             build it right the first time so you can stop thinking about it.
           </p>
@@ -252,7 +252,7 @@ export default function Home() {
                 fontStyle: "normal",
               }}
             >
-              — Richard Haddad, Founder
+              Richard Haddad, Founder
             </cite>
           </footer>
         </blockquote>

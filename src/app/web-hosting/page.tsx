@@ -18,12 +18,12 @@ export default function WebHostingPage() {
     {
       title: "Fast for Every Customer",
       description:
-        "Your site loads quickly whether your visitor's in Brisbane, Sydney, London or Tokyo — we serve it from wherever they are",
+        "Your site loads quickly whether your visitor's in Brisbane, Sydney, London or Tokyo. We serve it from wherever they are",
     },
     {
       title: "We Run It So You Don't Have To",
       description:
-        "From migration to launch to the next five years — we handle the boring infrastructure bit so you don't have to think about it",
+        "From migration to launch to the next five years, we handle the boring infrastructure bit so you don't have to think about it",
     },
     {
       title: "Pages That Load Instantly",
@@ -44,12 +44,12 @@ export default function WebHostingPage() {
     },
     {
       title: "Handles Sudden Traffic Spikes",
-      description: "When you get featured, go viral, or run a campaign, the site doesn't fall over — it just handles it",
+      description: "When you get featured, go viral, or run a campaign, the site doesn't fall over. It just handles it",
     },
     {
       title: "Daily Backups, No Drama",
       description:
-        "If anything ever goes wrong, your site can be back the way it was yesterday in minutes — not days, not never",
+        "If anything ever goes wrong, your site can be back the way it was yesterday in minutes. Not days, not never",
     },
   ];
 
@@ -202,7 +202,7 @@ export default function WebHostingPage() {
             <p className={`mb-4 text-neutral-400/90`}>
               Your site loads quickly whether your visitor is around the corner
               or across the world. We handle the boring infrastructure side of
-              that — you just get a site that performs.
+              that. You just get a site that performs.
             </p>
 
             <h3
@@ -265,7 +265,7 @@ export default function WebHostingPage() {
           <p className="mt-2 text-neutral-400/90">
             Everything you need to keep your website fast, secure, and online.
             Cloud hosting, SSL, daily backups, security monitoring, automatic
-            scaling, and Brisbane-based support — all included.
+            scaling, and Brisbane-based support, all included.
           </p>
           <Link
             href="/quote?service=web-hosting"
@@ -309,7 +309,7 @@ export default function WebHostingPage() {
           items={[
             {
               title: `How is this different from cheap hosting like Bluehost?`,
-              summary: `RAVENCI uses enterprise-grade cloud infrastructure with automatic scaling, dedicated resources, Brisbane-based support, and all-inclusive pricing. SSL, backups, and security are included — no extra charges.`,
+              summary: `RAVENCI uses enterprise-grade cloud infrastructure with automatic scaling, dedicated resources, Brisbane-based support, and all-inclusive pricing. SSL, backups, and security are included. No extra charges.`,
               content: `Our hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimization that cheap hosts can't match. Plus everything is included - SSL, backups, security - no extra charges.`,
             },
             {

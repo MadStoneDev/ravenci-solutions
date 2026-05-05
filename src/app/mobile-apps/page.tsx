@@ -26,17 +26,17 @@ export default function MobileAppDevelopmentPage() {
     {
       title: "Built to last past the next OS update",
       description:
-        "Clean, maintainable code that survives iOS and Android version changes — not a plugin stack waiting to break.",
+        "Clean, maintainable code that survives iOS and Android version changes, not a plugin stack waiting to break.",
     },
     {
-      title: "Login, permissions, and data — done properly",
+      title: "Login, permissions, and data, done properly",
       description:
         "Secure user accounts, permissions handled correctly, and data stored the way your industry actually requires.",
     },
     {
       title: "Push notifications that work",
       description:
-        "Reliable notifications and in-app messaging — set up so they actually get delivered, not silently swallowed.",
+        "Reliable notifications and in-app messaging, set up so they actually get delivered, not silently swallowed.",
     },
     {
       title: "Works without internet",
@@ -56,7 +56,7 @@ export default function MobileAppDevelopmentPage() {
     {
       title: "Grows with your users",
       description:
-        "The behind-the-scenes infrastructure handles 100 users or 100,000 — chosen and built for what the app actually needs.",
+        "The behind-the-scenes infrastructure handles 100 users or 100,000, chosen and built for what the app actually needs.",
     },
   ];
 
@@ -111,7 +111,7 @@ export default function MobileAppDevelopmentPage() {
             Mobile apps users love to keep
           </h1>
           <h2 className="max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light">
-            iPhone and Android apps built to be used every day — and to keep
+            iPhone and Android apps built to be used every day, and to keep
             working long after the next OS update.
           </h2>
         </article>
@@ -210,7 +210,7 @@ export default function MobileAppDevelopmentPage() {
                   size={24}
                   className="p-1 bg-ravenci-primary rounded-full text-white"
                 />
-                React Native, Swift, Kotlin—choose what suits the project
+                React Native, Swift, Kotlin: choose what suits the project
               </li>
               <li className="flex gap-2">
                 <IconCheck

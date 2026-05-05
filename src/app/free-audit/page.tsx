@@ -19,7 +19,7 @@ import { auditStats, AUDIT_META } from "@/data/brisbane-audit";
 export const metadata: Metadata = {
   title: "Free Website Audit for Brisbane Businesses | RAVENCI Solutions",
   description:
-    "Free website audit for Brisbane businesses. We check your site's speed, SEO, mobile usability, accessibility and security — and email you a no-obligation report showing exactly where you stand.",
+    "Free website audit for Brisbane businesses. We check your site's speed, SEO, mobile usability, accessibility and security, and email you a no-obligation report showing exactly where you stand.",
   openGraph: {
     title: "Free Website Audit for Brisbane Businesses",
     description:
@@ -46,7 +46,7 @@ const auditCategories = [
     icon: IconDeviceMobile,
     title: "Mobile Usability",
     description:
-      "Tap targets, viewport behaviour, layout shift. Most of your visitors are on a phone — your site needs to behave like it knows that.",
+      "Tap targets, viewport behaviour, layout shift. Most of your visitors are on a phone. Your site needs to behave like it knows that.",
   },
   {
     icon: IconAccessible,
@@ -79,7 +79,7 @@ const howItWorks = [
     step: "03",
     title: "Get the report by email",
     description:
-      "Plain-English findings, what's working, what isn't, and what to prioritise — no upsell, no sales call required. Use the report yourself or send it to whoever maintains your site.",
+      "Plain-English findings, what's working, what isn't, and what to prioritise. No upsell, no sales call required. Use the report yourself or send it to whoever maintains your site.",
   },
 ];
 
@@ -101,9 +101,9 @@ const faqItems = [
   {
     title: "What if I don't have a website yet?",
     summary:
-      "The audit is for live sites. If you're pre-launch, we can have a different conversation — talk to us via the contact form.",
+      "The audit is for live sites. If you're pre-launch, we can have a different conversation. Talk to us via the contact form.",
     content:
-      "The audit is for live sites — there's nothing to test if there's no live URL. If you're pre-launch and figuring out platform, scope, or what \"good\" should look like for your industry, we can have a different conversation. Use the main contact form on the site and tell us where you're at.",
+      "The audit is for live sites. There's nothing to test if there's no live URL. If you're pre-launch and figuring out platform, scope, or what \"good\" should look like for your industry, we can have a different conversation. Use the main contact form on the site and tell us where you're at.",
   },
   {
     title: "Is this just a sales pitch in disguise?",
@@ -115,7 +115,7 @@ const faqItems = [
   {
     title: "Can I share the report with my team or current developer?",
     summary:
-      "Of course. The report is yours. Print it, forward it, paste sections into a brief — whatever's useful.",
+      "Of course. The report is yours. Print it, forward it, paste sections into a brief, whatever's useful.",
     content:
       "Of course. The report is yours to use however you want. Print it, forward it, paste sections into a brief for your current developer or marketing team. We'd rather you act on the findings than sit on them.",
   },
@@ -137,8 +137,8 @@ export default function FreeAuditPage() {
           <p className="mt-6 max-w-2xl text-lg md:text-xl text-neutral-500/90 leading-relaxed">
             We check your site across the same five categories we used on{" "}
             {AUDIT_META.totalSitesAudited} Brisbane businesses in{" "}
-            {AUDIT_META.conductedDate} — speed, SEO, mobile usability,
-            accessibility, and security — and email you a plain-English
+            {AUDIT_META.conductedDate}: speed, SEO, mobile usability,
+            accessibility, and security. We email you a plain-English
             report showing exactly where you stand. No payment details, no
             sales call.
           </p>
@@ -197,7 +197,7 @@ export default function FreeAuditPage() {
           <p className="mt-4 text-neutral-600 leading-relaxed">
             The same framework we used to audit{" "}
             {AUDIT_META.totalSitesAudited} Brisbane business websites for our
-            2026 research. No proprietary scoring magic — just the things
+            2026 research. No proprietary scoring magic, just the things
             that actually matter to whether your site ranks, loads, and
             converts.
           </p>

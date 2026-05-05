@@ -307,7 +307,7 @@ export default function CaseStudyPremium({
       <section className="content-section py-20 md:py-24 px-5 sm:px-20 xl:px-36 bg-white">
         <div className="max-w-3xl">
           <span className="block mb-3 text-xs font-medium tracking-widest uppercase text-ravenci-primary">
-            01 — The Challenge
+            01. The Challenge
           </span>
           <h2 className="text-3xl md:text-4xl font-medium text-ravenci-dark">
             {caseStudy.problem.heading}
@@ -322,7 +322,7 @@ export default function CaseStudyPremium({
         <SectionGallery
           images={caseStudy.problem.images}
           fallback={caseStudy.problem.image}
-          alt={`${caseStudy.clientName} — the challenge`}
+          alt={`${caseStudy.clientName}: the challenge`}
           label={caseStudy.problem.imageLabel}
         />
       </section>
@@ -331,7 +331,7 @@ export default function CaseStudyPremium({
       <section className="content-section py-20 md:py-24 px-5 sm:px-20 xl:px-36 bg-neutral-100">
         <div className="max-w-3xl">
           <span className="block mb-3 text-xs font-medium tracking-widest uppercase text-ravenci-primary">
-            02 — Our Approach
+            02. Our Approach
           </span>
           <h2 className="text-3xl md:text-4xl font-medium text-ravenci-dark">
             {caseStudy.approach.heading}
@@ -366,7 +366,7 @@ export default function CaseStudyPremium({
         <SectionGallery
           images={caseStudy.approach.images}
           fallback={caseStudy.approach.image}
-          alt={`${caseStudy.clientName} — our approach`}
+          alt={`${caseStudy.clientName}: our approach`}
           label={caseStudy.approach.imageLabel}
         />
       </section>
@@ -376,7 +376,7 @@ export default function CaseStudyPremium({
         <section className="content-section py-20 md:py-28 px-5 sm:px-20 xl:px-36 bg-white">
           <div className="max-w-3xl mb-16">
             <span className="block mb-3 text-xs font-medium tracking-widest uppercase text-ravenci-primary">
-              03 — Key Features
+              03. Key Features
             </span>
             <h2 className="text-3xl md:text-4xl font-medium text-ravenci-dark">
               What We Built
@@ -473,7 +473,7 @@ export default function CaseStudyPremium({
         <section className="content-section py-20 md:py-28 px-5 sm:px-20 xl:px-36 bg-ravenci-primary text-white">
           <div className="max-w-3xl">
             <span className="block mb-3 text-xs font-medium tracking-widest uppercase text-white/80">
-              04 — The Results
+              04. The Results
             </span>
             <h2 className="text-3xl md:text-4xl font-medium text-white">
               {caseStudy.results.heading}
@@ -517,7 +517,7 @@ export default function CaseStudyPremium({
           {caseStudy.results.images && caseStudy.results.images.length > 0 && (
             <SectionGallery
               images={caseStudy.results.images}
-              alt={`${caseStudy.clientName} — results`}
+              alt={`${caseStudy.clientName}: results`}
             />
           )}
         </section>
@@ -528,7 +528,7 @@ export default function CaseStudyPremium({
         <section className="content-section py-20 md:py-24 px-5 sm:px-20 xl:px-36 bg-white">
           <div className="max-w-3xl mb-12">
             <span className="block mb-3 text-xs font-medium tracking-widest uppercase text-ravenci-primary">
-              05 — Project Gallery
+              05. Project Gallery
             </span>
             <h2 className="text-3xl md:text-4xl font-medium text-ravenci-dark">
               The Finished Product
@@ -718,7 +718,7 @@ export default function CaseStudyPremium({
           </h2>
           <p className="mt-4 text-neutral-400 leading-relaxed">
             Tell us about your project in 2 minutes. We&apos;ll come back with a
-            tailored proposal — same approach, same standards, your business.
+            tailored proposal: same approach, same standards, your business.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <Link

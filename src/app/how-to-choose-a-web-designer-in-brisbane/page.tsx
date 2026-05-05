@@ -26,7 +26,7 @@ const questions = [
     number: "01",
     question: "Who owns the code, content, domain and hosting at the end?",
     rightAnswer:
-      "You should own everything end-to-end — domain registered in your name, code in a repository you can access, content exportable, and hosting transferable to any provider. Anything less is a long-term lock-in trap.",
+      "You should own everything end-to-end: domain registered in your name, code in a repository you can access, content exportable, and hosting transferable to any provider. Anything less is a long-term lock-in trap.",
   },
   {
     number: "02",
@@ -38,7 +38,7 @@ const questions = [
     number: "03",
     question: "Which platform do you recommend for my business, and why?",
     rightAnswer:
-      "A specific platform recommendation tied to your business needs (content, e-commerce, performance, integrations) — not a one-size-fits-all 'we always use X.' Reputable agencies build on multiple platforms.",
+      "A specific platform recommendation tied to your business needs (content, e-commerce, performance, integrations), not a one-size-fits-all 'we always use X.' Reputable agencies build on multiple platforms.",
   },
   {
     number: "04",
@@ -93,7 +93,7 @@ const redFlags = [
   {
     flag: "Only one platform regardless of your needs",
     detail:
-      "If every quote out of an agency is for the same platform, they're recommending what's easy for them to build — not what's right for your business.",
+      "If every quote out of an agency is for the same platform, they're recommending what's easy for them to build, not what's right for your business.",
   },
   {
     flag: "Vague or no portfolio",
@@ -121,7 +121,7 @@ const greenFlags = [
   {
     flag: "Recommends what's right for you, even if it's less profitable for them",
     detail:
-      "An agency that says 'WordPress is the right answer for your situation, not custom Next.js' even though the latter would be more profitable for them — that's the agency to hire.",
+      "An agency that says 'WordPress is the right answer for your situation, not custom Next.js' even though the latter would be more profitable for them. That's the agency to hire.",
   },
   {
     flag: "Transparent about the 12-month total cost from the start",
@@ -136,7 +136,7 @@ const greenFlags = [
   {
     flag: "Talks about your business, not their tech",
     detail:
-      "The first 30 minutes of the discovery call should be about your customers, your goals, and your team — not about how amazing their stack is.",
+      "The first 30 minutes of the discovery call should be about your customers, your goals, and your team, not about how amazing their stack is.",
   },
   {
     flag: "Provides realistic timelines, not 'we can have it next week'",
@@ -187,12 +187,12 @@ const ravenciScorecard = [
   {
     question: "Who owns everything?",
     answer:
-      "You do. Domain, code, content, hosting — all transferable, no lock-in. We&apos;ve never had a client unable to leave.",
+      "You do. Domain, code, content, hosting: all transferable, no lock-in. We&apos;ve never had a client unable to leave.",
   },
   {
     question: "12-month total cost transparent?",
     answer:
-      "Yes — every proposal includes the 12-month total covering build, hosting, maintenance, and any platform fees. One number.",
+      "Yes. Every proposal includes the 12-month total covering build, hosting, maintenance, and any platform fees. One number.",
   },
   {
     question: "Which platforms?",
@@ -202,7 +202,7 @@ const ravenciScorecard = [
   {
     question: "Case studies?",
     answer:
-      "See our published case studies — Peninsula Homes, Coast Remedial, Intercorp Developments, SAC Consulting and others, with platforms used and results.",
+      "See our published case studies: Peninsula Homes, Coast Remedial, Intercorp Developments, SAC Consulting and others, with platforms used and results.",
   },
   {
     question: "Maintenance details?",
@@ -240,7 +240,7 @@ const faqItems = [
   {
     title: "How do I compare quotes from different Brisbane web designers?",
     summary:
-      "Compare on 12-month total cost (not just build cost), platform recommendation, included revisions, post-launch support terms, ongoing maintenance pricing, and ownership of code/content/domain. Don't compare like-for-like build prices in isolation — they hide most of the actual cost.",
+      "Compare on 12-month total cost (not just build cost), platform recommendation, included revisions, post-launch support terms, ongoing maintenance pricing, and ownership of code/content/domain. Don't compare like-for-like build prices in isolation. They hide most of the actual cost.",
     content:
       "Comparing Brisbane web designer quotes properly means looking past the build price to the 12-month total cost of ownership. Build cost is typically only 50 – 70% of year-one investment. Compare on: build cost, hosting (per month), maintenance (per month), included plugin licences, included revisions, post-launch support window, response time SLAs, ownership of code/content/domain at the end, and platform recommendation logic. Quotes that look identical on build price can differ by $5,000+ in year one once these are factored in. Always ask for quotes to be reformatted to a single 12-month total cost figure for fair comparison.",
   },
@@ -249,21 +249,21 @@ const faqItems = [
     summary:
       "For small business websites under $15,000, a local Brisbane agency typically delivers better outcomes due to time zone overlap, AU-specific SEO and compliance knowledge, and easier communication. For larger projects ($25k+) where pricing pressure matters more, blended or offshore arrangements can work.",
     content:
-      "For most small business websites under about $15,000, a Brisbane or Australian agency typically delivers better outcomes than an offshore alternative. Reasons: time zone overlap (you can actually talk to your developer when something breaks), AU-specific SEO knowledge (Google Business Profile, .com.au domain handling, local schema), AU compliance awareness (Privacy Act, Consumer Law, AHPRA where relevant), and easier communication around scope and revisions. For larger projects ($25k+) where pricing pressure matters more, blended onshore-offshore arrangements can work — typically with a local lead managing offshore developers — but you give up some of the responsiveness of fully-local teams.",
+      "For most small business websites under about $15,000, a Brisbane or Australian agency typically delivers better outcomes than an offshore alternative. Reasons: time zone overlap (you can actually talk to your developer when something breaks), AU-specific SEO knowledge (Google Business Profile, .com.au domain handling, local schema), AU compliance awareness (Privacy Act, Consumer Law, AHPRA where relevant), and easier communication around scope and revisions. For larger projects ($25k+) where pricing pressure matters more, blended onshore-offshore arrangements can work (typically with a local lead managing offshore developers), but you give up some of the responsiveness of fully-local teams.",
   },
   {
     title: "What questions should I ask a web designer before hiring them?",
     summary:
       "The 10 essentials: who owns everything afterwards, 12-month total cost, platform recommendation logic, case studies, maintenance terms, revision rounds, timeline, post-launch support, exit process, and who actually does the work. Vague answers to any of these are a red flag.",
     content:
-      "The ten questions every Brisbane business should ask before signing: 1) Who owns the code, content, domain and hosting at the end? 2) What's the realistic 12-month total cost? 3) Which platform do you recommend for my business and why? 4) Can I see 3 case studies from businesses like mine? 5) What does ongoing maintenance cover and what does it cost? 6) How many revision rounds are included? 7) What's the timeline from kickoff to launch? 8) What support do you offer after launch? 9) What happens if I want to leave, or you stop trading? 10) Who's actually going to be doing the work? Vague answers to any of these are a red flag — the questions exist precisely because each one surfaces a common pattern of bad agency behaviour.",
+      "The ten questions every Brisbane business should ask before signing: 1) Who owns the code, content, domain and hosting at the end? 2) What's the realistic 12-month total cost? 3) Which platform do you recommend for my business and why? 4) Can I see 3 case studies from businesses like mine? 5) What does ongoing maintenance cover and what does it cost? 6) How many revision rounds are included? 7) What's the timeline from kickoff to launch? 8) What support do you offer after launch? 9) What happens if I want to leave, or you stop trading? 10) Who's actually going to be doing the work? Vague answers to any of these are a red flag. The questions exist precisely because each one surfaces a common pattern of bad agency behaviour.",
   },
   {
     title: "How can I tell if a web designer's portfolio is actually their work?",
     summary:
-      "Ask for the live URL of every portfolio piece, the year it was built, and the platform used. Then check the source code — the build pattern usually matches across an agency's real work. If they can't or won't share live URLs, the work isn't theirs.",
+      "Ask for the live URL of every portfolio piece, the year it was built, and the platform used. Then check the source code: the build pattern usually matches across an agency's real work. If they can't or won't share live URLs, the work isn't theirs.",
     content:
-      "Ask for the live URL of every portfolio piece, the year it was built, and the platform used. Cross-check by visiting the live sites and looking at the source code — agencies tend to have recognisable build patterns across their real work (consistent component structure, similar performance profiles, shared technical choices). If they can only show screenshots or refuse to share live URLs, the work likely isn't theirs. Another tell: ask 'who was the lead developer on this project?' If they can't name a person, the work was probably done by an offshore subcontractor or freelancer who has since moved on.",
+      "Ask for the live URL of every portfolio piece, the year it was built, and the platform used. Cross-check by visiting the live sites and looking at the source code: agencies tend to have recognisable build patterns across their real work (consistent component structure, similar performance profiles, shared technical choices). If they can only show screenshots or refuse to share live URLs, the work likely isn't theirs. Another tell: ask 'who was the lead developer on this project?' If they can't name a person, the work was probably done by an offshore subcontractor or freelancer who has since moved on.",
   },
   {
     title: "How long should it take a Brisbane web designer to quote?",
@@ -275,16 +275,16 @@ const faqItems = [
   {
     title: "Is the cheapest Brisbane web design quote always the worst choice?",
     summary:
-      "Not always — but quotes dramatically below the others usually mean a template build, junior developer, offshore work, or corners cut on SEO, performance, or post-launch support. Compare on what's included and the 12-month total cost, not just the build price.",
+      "Not always. But quotes dramatically below the others usually mean a template build, junior developer, offshore work, or corners cut on SEO, performance, or post-launch support. Compare on what's included and the 12-month total cost, not just the build price.",
     content:
       "Not always. Sometimes a cheaper quote is genuinely a better-fit small agency or freelancer with lower overheads. But a quote dramatically below the others typically means one of: a template-based build presented as custom, a junior developer doing the work, offshore subcontracting without disclosure, or corners cut on SEO, performance optimisation, accessibility, or post-launch support. To distinguish, compare on what's actually included rather than just the headline price. Cheapest is fine if the quote includes the same scope as more expensive options. Cheapest is dangerous if the comparison reveals missing pieces that you'll pay for separately later.",
   },
   {
     title: "Should I get a fixed price or hourly quote?",
     summary:
-      "For typical small business websites with defined scope, fixed price is usually better — it transfers the scope-estimation risk to the agency. Hourly arrangements suit ongoing development work where scope is genuinely unknown. Beware fixed-price quotes that exclude common items like content production, integrations, or revisions.",
+      "For typical small business websites with defined scope, fixed price is usually better. It transfers the scope-estimation risk to the agency. Hourly arrangements suit ongoing development work where scope is genuinely unknown. Beware fixed-price quotes that exclude common items like content production, integrations, or revisions.",
     content:
-      "For typical small business websites with defined scope, fixed price is usually the better arrangement — it transfers scope estimation risk from you to the agency. The agency takes the bet that they understand the work; you get certainty about cost. Hourly arrangements suit ongoing development work, web applications where scope is genuinely unknown, or post-launch retainer arrangements. Beware fixed-price quotes that exclude common items like content production, integrations beyond a basic level, or post-launch revisions — those exclusions become out-of-scope invoices later. Read the inclusions and exclusions carefully before signing anything.",
+      "For typical small business websites with defined scope, fixed price is usually the better arrangement. It transfers scope estimation risk from you to the agency. The agency takes the bet that they understand the work; you get certainty about cost. Hourly arrangements suit ongoing development work, web applications where scope is genuinely unknown, or post-launch retainer arrangements. Beware fixed-price quotes that exclude common items like content production, integrations beyond a basic level, or post-launch revisions: those exclusions become out-of-scope invoices later. Read the inclusions and exclusions carefully before signing anything.",
   },
   {
     title: "What's a fair hourly rate for a Brisbane web designer?",
@@ -305,7 +305,7 @@ export default function HowToChooseWebDesignerPage() {
             items={[{ label: "How to Choose a Web Designer in Brisbane" }]}
           />
           <span className="mt-2 text-xs font-medium tracking-wider uppercase text-ravenci-primary">
-            Brisbane Web Designer Guide — 2026
+            Brisbane Web Designer Guide, 2026
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
             How to Choose a Web Designer in Brisbane in 2026
@@ -320,7 +320,7 @@ export default function HowToChooseWebDesignerPage() {
             which platform and why, real case studies, maintenance terms,
             revision rounds, timeline, post-launch support, exit process, and
             who actually does the work. This guide walks through each question
-            with the answer to look for — plus the red and green flags
+            with the answer to look for, plus the red and green flags
             separating reputable agencies from the rest.
           </p>
         </article>
@@ -428,7 +428,7 @@ export default function HowToChooseWebDesignerPage() {
         </h3>
         <p className="mb-10 max-w-2xl text-neutral-500/80">
           Six things a local Brisbane agency typically does better than an
-          interstate or overseas alternative — and that often justify the
+          interstate or overseas alternative, and that often justify the
           local-versus-offshore price difference.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -491,7 +491,7 @@ export default function HowToChooseWebDesignerPage() {
               >
                 How Much Does a Website Cost in Brisbane in 2026?
               </Link>{" "}
-              — Real pricing per tier, what affects cost, and the hidden
+              Real pricing per tier, what affects cost, and the hidden
               ongoing fees most agencies don&apos;t mention in proposals.
             </p>
             <p>
@@ -501,7 +501,7 @@ export default function HowToChooseWebDesignerPage() {
               >
                 WordPress vs Shopify vs Custom Next.js
               </Link>{" "}
-              — Honest comparison from an agency that builds on all three.
+              Honest comparison from an agency that builds on all three.
             </p>
             <p>
               <Link
@@ -510,7 +510,7 @@ export default function HowToChooseWebDesignerPage() {
               >
                 We Audited 50 Brisbane Business Websites
               </Link>{" "}
-              — 72% scored below 50 on Google PageSpeed. See where the typical
+              72% scored below 50 on Google PageSpeed. See where the typical
               Brisbane site falls short.
             </p>
           </div>
@@ -524,7 +524,7 @@ export default function HowToChooseWebDesignerPage() {
         </h2>
         <p className="mb-10 max-w-lg text-neutral-500/80">
           Tell us about your business in 2 minutes. We&apos;ll come back with
-          a tailored proposal — and we&apos;ll happily answer all ten of these
+          a tailored proposal, and we&apos;ll happily answer all ten of these
           questions before you commit to anything.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">

@@ -15,9 +15,9 @@ import PrintButton from "@/components/print-button";
 
 export const metadata: Metadata = {
   title:
-    "Brisbane Business Website Audit 2026 — Full Report | RAVENCI Solutions",
+    "Brisbane Business Website Audit 2026: Full Report | RAVENCI Solutions",
   description:
-    "The full report from RAVENCI's audit of 50 Brisbane business websites — printable, savable as PDF.",
+    "The full report from RAVENCI's audit of 50 Brisbane business websites. Printable, savable as PDF.",
   alternates: { canonical: "/brisbane-website-audit/report" },
   // Don't index the report version — the audit landing page is the canonical
   // public-facing page; the report is the gated downloadable.
@@ -72,7 +72,7 @@ export default function BrisbaneAuditReportPage() {
             We Audited 50 Brisbane Business Websites
           </h1>
           <p className="mt-2 text-xl md:text-2xl font-light text-neutral-600">
-            The full findings — performance, SEO, mobile, security, accessibility.
+            The full findings: performance, SEO, mobile, security, accessibility.
           </p>
           <div className="mt-8 flex flex-wrap items-end justify-between gap-4">
             <div>
@@ -105,7 +105,7 @@ export default function BrisbaneAuditReportPage() {
             The average mobile PageSpeed score was{" "}
             <strong>38 out of 100</strong>. 72% scored below 50. 64% had no
             structured data at all. 42% had SSL issues. The bar for Brisbane
-            business websites in 2026 is surprisingly low — and the
+            business websites in 2026 is surprisingly low, and the
             opportunity to differentiate is correspondingly large.
           </p>
         </section>

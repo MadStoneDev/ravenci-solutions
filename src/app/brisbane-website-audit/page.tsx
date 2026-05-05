@@ -15,11 +15,11 @@ import {
 
 export const metadata: Metadata = {
   title:
-    "We Audited 50 Brisbane Business Websites — Here's What We Found | RAVENCI Solutions",
+    "We Audited 50 Brisbane Business Websites: Here's What We Found | RAVENCI Solutions",
   description:
     "RAVENCI Solutions audited 50 Brisbane business websites for speed, SEO, mobile usability, accessibility, and security. 72% scored below 50 on Google PageSpeed. See the full findings.",
   openGraph: {
-    title: "We Audited 50 Brisbane Business Websites — Here's What We Found",
+    title: "We Audited 50 Brisbane Business Websites: Here's What We Found",
     description:
       "72% of Brisbane business websites scored below 50 on Google PageSpeed. We audited 50 sites for speed, SEO, mobile usability, and security. See the data.",
     type: "article",
@@ -36,7 +36,7 @@ export default function BrisbaneWebsiteAuditPage() {
         <article className="max-w-3xl flex flex-col gap-2">
           <Breadcrumbs items={[{ label: "Brisbane Website Audit" }]} />
           <span className="mt-2 text-xs font-medium tracking-wider uppercase text-ravenci-primary">
-            Original Research — 2026
+            Original Research, 2026
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
             We Audited 50 Brisbane Business Websites
@@ -175,7 +175,7 @@ export default function BrisbaneWebsiteAuditPage() {
         </h3>
         <p className="mb-10 max-w-2xl text-neutral-500/80">
           Trades and construction businesses performed worst, while education
-          and real estate showed comparatively stronger results — though no
+          and real estate showed comparatively stronger results, though no
           industry averaged above 52.
         </p>
         <div className="max-w-2xl space-y-4">
@@ -219,7 +219,7 @@ export default function BrisbaneWebsiteAuditPage() {
               </h4>
               <p>
                 72% of Brisbane business websites scored below 50 on mobile
-                PageSpeed. Google uses Core Web Vitals as a ranking factor — slow
+                PageSpeed. Google uses Core Web Vitals as a ranking factor: slow
                 sites are actively penalised in search results. Every second of
                 load time costs conversions.
               </p>
@@ -252,7 +252,7 @@ export default function BrisbaneWebsiteAuditPage() {
               <p>
                 38% failed basic colour contrast checks. 52% had images without
                 alt text. Zero sites had accessibility statements. This
-                isn&apos;t just about compliance — it&apos;s about excluding
+                isn&apos;t just about compliance. It&apos;s about excluding
                 potential customers.
               </p>
             </div>
@@ -294,7 +294,7 @@ export default function BrisbaneWebsiteAuditPage() {
           How Does Your Website Stack Up?
         </h2>
         <p className="mb-10 max-w-lg text-neutral-400">
-          Get a free Visibility Check — we&apos;ll audit your site across all
+          Get a free Visibility Check. We&apos;ll audit your site across all
           five categories and show you exactly where you stand compared to your
           competitors.
         </p>
@@ -356,7 +356,7 @@ export default function BrisbaneWebsiteAuditPage() {
             "@context": "https://schema.org",
             "@type": "Article",
             headline:
-              "We Audited 50 Brisbane Business Websites — Here's What We Found",
+              "We Audited 50 Brisbane Business Websites: Here's What We Found",
             description:
               "RAVENCI Solutions audited 50 Brisbane business websites for speed, SEO, mobile usability, accessibility, and security. 72% scored below 50 on Google PageSpeed.",
             author: {

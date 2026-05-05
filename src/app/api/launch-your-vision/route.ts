@@ -83,7 +83,7 @@ export async function POST(request: Request) {
       .setFrom(sentFrom)
       .setTo(recipients)
       .setReplyTo(noReply)
-      .setSubject(`New Lead: ${name} — ${budget || "Budget not specified"}`)
+      .setSubject(`New Lead: ${name} (${budget || "Budget not specified"})`)
       .setTemplateId("zr6ke4nrkn3lon12")
       .setPersonalization(personalization);
 

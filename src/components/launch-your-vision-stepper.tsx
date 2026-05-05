@@ -284,7 +284,7 @@ export default function LaunchYourVisionStepper() {
               </h4>
               <p className="text-sm text-neutral-600 mb-4 leading-relaxed">
                 Hosting and maintenance are also available via our self-serve
-                checkout — same pricing, instant setup.
+                checkout. Same pricing, instant setup.
               </p>
               <Link
                 href="/quote"
@@ -365,7 +365,7 @@ export default function LaunchYourVisionStepper() {
         {step === 1 && (
           <Step
             label="What are you looking to build?"
-            sublabel="Pick the closest match — we'll figure out the details together."
+            sublabel="Pick the closest match. We'll figure out the details together."
           >
             <ChoiceGrid
               options={PROJECT_TYPE_OPTIONS}
@@ -407,7 +407,7 @@ export default function LaunchYourVisionStepper() {
         {step === 4 && (
           <Step
             label="What's your budget range?"
-            sublabel="Optional — but it helps us recommend the right approach. No pressure."
+            sublabel="Optional, but it helps us recommend the right approach. No pressure."
           >
             <ChoiceGrid
               options={BUDGET_OPTIONS}

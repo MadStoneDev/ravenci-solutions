@@ -159,7 +159,7 @@ export default function WebHostingDevelopmentPage() {
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             For Australian businesses ready to replace the site they have with
             one that actually performs. Built properly the first time so it&apos;s
-            still working in five years — no plugin clutter, no surprise
+            still working in five years. No plugin clutter, no surprise
             subscriptions, no developer disappearing on you. From $3,490 for a
             foundation build to $14,990 for a full brand and web package, plus
             ongoing support. Brisbane-based. 20+ years.
@@ -416,7 +416,7 @@ export default function WebHostingDevelopmentPage() {
               name: "2. Growth Website",
               price: "7,490",
               description:
-                "Already have your design sorted? Have your website built just right. Whether you've worked with a designer, have existing brand guidelines, or know exactly what you want — we will turn your vision into a high-performing, professional website.",
+                "Already have your design sorted? Have your website built just right. Whether you've worked with a designer, have existing brand guidelines, or know exactly what you want, we will turn your vision into a high-performing, professional website.",
               accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Professional responsive build</li>

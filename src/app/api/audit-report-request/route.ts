@@ -78,7 +78,7 @@ export async function POST(request: Request) {
         .setFrom(noReply)
         .setTo([new Recipient(email, name)])
         .setSubject(
-          "Your Brisbane Business Website Audit 2026 — Full Report",
+          "Your Brisbane Business Website Audit 2026: Full Report",
         )
         .setText(
           `Hi ${name.split(" ")[0]},\n\n` +

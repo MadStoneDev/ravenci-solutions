@@ -44,22 +44,22 @@ const comparisonRows = [
     feature: "Scalability",
     custom: "Add pages, features, and integrations as your business grows",
     template:
-      "Limited by off-the-shelf themes — major changes often require rebuilds",
+      "Limited by off-the-shelf themes. Major changes often require rebuilds",
     diy: "Locked into the platform's feature set",
   },
   {
     feature: "Security",
     custom:
-      "Your site and your customers' data are protected by design — not by hoping a plugin doesn't break.",
+      "Your site and your customers' data are protected by design, not by hoping a plugin doesn't break.",
     template:
       "Every extra plugin is a new way to get hacked. Most agency-built sites have a stack of them.",
-    diy: "The platform handles security, which is fine — until it doesn't, and you can't do anything about it.",
+    diy: "The platform handles security, which is fine, until it doesn't, and you can't do anything about it.",
   },
   {
     feature: "Ownership",
-    custom: "You own everything — code, design, content, hosting choice",
+    custom: "You own everything: code, design, content, hosting choice",
     template: "You own content but depend on the agency or theme/plugin developers for updates",
-    diy: "Platform owns the infrastructure — you rent access",
+    diy: "Platform owns the infrastructure. You rent access",
   },
   {
     feature: "Ongoing Cost",
@@ -97,15 +97,15 @@ const faqItems = [
     summary:
       "Most agencies stack pre-built themes and plugins instead of building properly. The result: slow sites that get hacked, plugin subscriptions that pile up, and a developer you can't reach when something breaks.",
     content:
-      "Most agencies assemble websites from pre-built themes and a stack of plugins instead of building properly. It's faster for them, but it's a problem for you — slow sites, security gaps from plugin stacking, subscriptions piling up for every little feature, and a deep dependency on third-party developers who may stop supporting their plugins next year. We build sites the way they should be built — properly, once, with the long view in mind. So they're still working in five years instead of falling apart in eighteen months.",
+      "Most agencies assemble websites from pre-built themes and a stack of plugins instead of building properly. It's faster for them, but it's a problem for you: slow sites, security gaps from plugin stacking, subscriptions piling up for every little feature, and a deep dependency on third-party developers who may stop supporting their plugins next year. We build sites the way they should be built. Properly, once, with the long view in mind. So they're still working in five years instead of falling apart in eighteen months.",
   },
   {
     title:
       "What technology does RAVENCI use for custom websites?",
     summary:
-      "We choose the right platform for each project — modern custom builds for performance and flexibility, WordPress for clients who want to manage content themselves. Either way, the result is fast, secure, and built to last.",
+      "We choose the right platform for each project: modern custom builds for performance and flexibility, WordPress for clients who want to manage content themselves. Either way, the result is fast, secure, and built to last.",
     content:
-      "We choose the right platform for each project rather than forcing every client onto the same one. For performance-critical sites we build custom from the ground up. For content-led sites where the team wants to manage things themselves, we build on WordPress — but properly, not as a stack of plugins. Either way you get a site that performs, ranks, and is still working five years from now.",
+      "We choose the right platform for each project rather than forcing every client onto the same one. For performance-critical sites we build custom from the ground up. For content-led sites where the team wants to manage things themselves, we build on WordPress, but properly, not as a stack of plugins. Either way you get a site that performs, ranks, and is still working five years from now.",
   },
   {
     title:
@@ -113,7 +113,7 @@ const faqItems = [
     summary:
       "RAVENCI custom websites start from $3,490. A typical agency build may look cheaper upfront, but plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance make total ownership cost comparable with worse results.",
     content:
-      "Our custom websites start from $3,490 for a Foundation site. A typical agency build may look cheaper upfront, but factor in plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance — the total cost of ownership is often comparable, with a worse result.",
+      "Our custom websites start from $3,490 for a Foundation site. A typical agency build may look cheaper upfront, but factor in plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance. The total cost of ownership is often comparable, with a worse result.",
   },
 ];
 
@@ -133,7 +133,7 @@ export default function CustomVsTemplatePage() {
           <p className="mt-6 max-w-2xl text-neutral-500/80">
             Every business needs a website, but not every business needs the same
             kind. We break down the real differences between a custom-built
-            website, a typical agency build, and a DIY builder — so you can make an
+            website, a typical agency build, and a DIY builder, so you can make an
             informed decision based on cost, performance, and long-term value.
           </p>
         </article>

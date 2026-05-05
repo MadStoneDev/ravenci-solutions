@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "How Much Does a Website Cost in Brisbane in 2026?",
     description:
-      "Real Brisbane website pricing for 2026 — from template builds to premium custom Next.js. What's included, what affects cost, and the hidden fees.",
+      "Real Brisbane website pricing for 2026: from template builds to premium custom Next.js. What's included, what affects cost, and the hidden fees.",
     type: "article",
   },
   alternates: { canonical: "/cost-of-a-website-in-brisbane" },
@@ -53,7 +53,7 @@ const pricingTiers = [
       "Premium templates ($60 – $300)",
       "Plugin/app subscriptions ($10 – $50/mo each)",
       "Custom domain (~$20/yr)",
-      "Time cost — typically 30–60 hours of your time",
+      "Time cost: typically 30–60 hours of your time",
     ],
     severity: "low",
   },
@@ -224,7 +224,7 @@ const ongoingCosts = [
   {
     item: "Email marketing platform",
     range: "$0 – $300+/mo",
-    note: "Mailchimp, Klaviyo, ActiveCampaign — pricing scales with subscriber count.",
+    note: "Mailchimp, Klaviyo, ActiveCampaign. Pricing scales with subscriber count.",
   },
 ];
 
@@ -234,42 +234,42 @@ const faqItems = [
     summary:
       "A basic small-business website built by a Brisbane agency typically costs $1,500 to $5,000 for a template-based build, or $5,000 to $10,000 for a properly customised CMS build with strategic SEO and integrations.",
     content:
-      "A basic small-business website built by a Brisbane agency typically costs $1,500 to $5,000 for a template-based build, or $5,000 to $10,000 for a properly customised build on WordPress, Shopify, or a similar CMS. The lower end gets you a functional site with stock components. The higher end gets you a strategic build with proper SEO foundations, real custom design, and integrations that actually work for your business. Sites built by genuine specialists rather than generalist freelancers tend to sit at $7,500 and up — the saving on the cheaper end is usually paid back in lost SEO, bad performance, or rebuild costs within 18 months.",
+      "A basic small-business website built by a Brisbane agency typically costs $1,500 to $5,000 for a template-based build, or $5,000 to $10,000 for a properly customised build on WordPress, Shopify, or a similar CMS. The lower end gets you a functional site with stock components. The higher end gets you a strategic build with proper SEO foundations, real custom design, and integrations that actually work for your business. Sites built by genuine specialists rather than generalist freelancers tend to sit at $7,500 and up. The saving on the cheaper end is usually paid back in lost SEO, bad performance, or rebuild costs within 18 months.",
   },
   {
     title: "Is it cheaper to use Wix or hire a developer?",
     summary:
       "Wix or Squarespace looks cheaper upfront ($30/mo) but typically costs you 30 – 60 hours of your own time and limits future SEO, performance, and customisation. For most businesses, an agency-built site recovers the cost difference within 12 months through better conversions and time saved.",
     content:
-      "Wix, Squarespace, and similar DIY platforms appear cheaper upfront — typically $20 to $50 per month plus your own time. The real cost is in the 30 to 60 hours you'll spend learning the platform and building the site yourself, plus the long-term ceiling on SEO, performance, and customisation. For a one-person hobby or testing an idea, DIY is fine. For a business that wants the website to actually generate leads, an agency-built site usually recovers the price difference within 12 months through better conversions, faster load times, and time you didn't spend fighting templates. Search engines also tend to rank custom-built sites higher than generic templates.",
+      "Wix, Squarespace, and similar DIY platforms appear cheaper upfront, typically $20 to $50 per month plus your own time. The real cost is in the 30 to 60 hours you'll spend learning the platform and building the site yourself, plus the long-term ceiling on SEO, performance, and customisation. For a one-person hobby or testing an idea, DIY is fine. For a business that wants the website to actually generate leads, an agency-built site usually recovers the price difference within 12 months through better conversions, faster load times, and time you didn't spend fighting templates. Search engines also tend to rank custom-built sites higher than generic templates.",
   },
   {
     title: "Why do website costs vary so much in Brisbane?",
     summary:
       "Costs vary because 'a website' covers everything from a $50/mo Wix template to a $50,000 custom platform. The four biggest cost drivers are: custom vs template design, number of pages, integrations needed, and whether you supply finalised content or need it written.",
     content:
-      "Costs vary because 'a website' covers an enormous range — from a $50/month Wix template to a $50,000 custom platform with payments, bookings, and CRM integration. The four biggest variables are custom versus template design, the number of pages, the integrations required (CRM, booking, payments, email), and whether you supply finalised content and imagery or need them produced from scratch. Two quotes that look identical on paper can differ by $5,000 because one includes copywriting, photography, and three integrations while the other expects you to provide all of that yourself.",
+      "Costs vary because 'a website' covers an enormous range, from a $50/month Wix template to a $50,000 custom platform with payments, bookings, and CRM integration. The four biggest variables are custom versus template design, the number of pages, the integrations required (CRM, booking, payments, email), and whether you supply finalised content and imagery or need them produced from scratch. Two quotes that look identical on paper can differ by $5,000 because one includes copywriting, photography, and three integrations while the other expects you to provide all of that yourself.",
   },
   {
     title: "Are there hidden costs after the website launches?",
     summary:
-      "Yes — most websites have ongoing costs of $300 – $800/month covering hosting, maintenance, plugin renewals, domain registration, and email marketing platforms. Reputable agencies disclose these upfront. Cheap quotes often don't.",
+      "Yes. Most websites have ongoing costs of $300 – $800/month covering hosting, maintenance, plugin renewals, domain registration, and email marketing platforms. Reputable agencies disclose these upfront. Cheap quotes often don't.",
     content:
-      "Yes. Most websites carry ongoing costs of $300 to $800 per month covering hosting ($30 – $50/mo), a maintenance plan ($200 – $500/mo for updates and security), domain renewal ($15 – $50/yr), premium plugin licences if applicable ($300 – $800/yr), and any email marketing platform you use. Reputable agencies disclose all of these upfront in proposals. Cheap quotes often hide them — a $2,000 build that needs $400/month to keep running costs $6,800 in year one, not $2,000. Always ask for a 12-month total cost of ownership figure when comparing quotes.",
+      "Yes. Most websites carry ongoing costs of $300 to $800 per month covering hosting ($30 – $50/mo), a maintenance plan ($200 – $500/mo for updates and security), domain renewal ($15 – $50/yr), premium plugin licences if applicable ($300 – $800/yr), and any email marketing platform you use. Reputable agencies disclose all of these upfront in proposals. Cheap quotes often hide them: a $2,000 build that needs $400/month to keep running costs $6,800 in year one, not $2,000. Always ask for a 12-month total cost of ownership figure when comparing quotes.",
   },
   {
     title: "How long does it take to build a Brisbane website?",
     summary:
       "Template builds: 1 – 4 weeks. Standard small business sites: 4 – 8 weeks. Custom premium builds: 8 – 14 weeks. Web apps and large platforms: 12 weeks to 6 months. Rush jobs typically add a 20 – 30% premium.",
     content:
-      "Timelines depend on scope. Template-based builds take 1 to 4 weeks. Standard small business sites with custom design and a CMS run 4 to 8 weeks. Custom premium builds with bespoke design, motion, and integrations take 8 to 14 weeks. Web apps and larger platforms run 12 weeks to 6 months. The biggest delays are rarely on the build side — they're usually content readiness (waiting on copy or imagery) and stakeholder review cycles. Rush projects under 3 weeks typically carry a 20 to 30% premium and reduce design quality, so plan ahead where possible.",
+      "Timelines depend on scope. Template-based builds take 1 to 4 weeks. Standard small business sites with custom design and a CMS run 4 to 8 weeks. Custom premium builds with bespoke design, motion, and integrations take 8 to 14 weeks. Web apps and larger platforms run 12 weeks to 6 months. The biggest delays are rarely on the build side. They're usually content readiness (waiting on copy or imagery) and stakeholder review cycles. Rush projects under 3 weeks typically carry a 20 to 30% premium and reduce design quality, so plan ahead where possible.",
   },
   {
     title: "Do I need to pay for hosting separately?",
     summary:
-      "Yes — hosting is almost always billed separately and ongoing. Expect $30 – $50/month for managed Australian hosting. Some agencies (RAVENCI included) bundle hosting with maintenance for a small discount.",
+      "Yes. Hosting is almost always billed separately and ongoing. Expect $30 – $50/month for managed Australian hosting. Some agencies (RAVENCI included) bundle hosting with maintenance for a small discount.",
     content:
-      "Yes. Hosting is almost always a separate, ongoing cost rather than a one-off fee. Managed hosting on Australian or Australia-region infrastructure runs around $30 to $50 per month for a typical small business site. Cheaper offshore shared hosting exists ($5 to $15/month) but performs noticeably worse and creates support headaches. Many Brisbane agencies (RAVENCI included) bundle hosting with a maintenance plan for a small discount, which is usually the cleanest way to budget — one monthly invoice covers everything.",
+      "Yes. Hosting is almost always a separate, ongoing cost rather than a one-off fee. Managed hosting on Australian or Australia-region infrastructure runs around $30 to $50 per month for a typical small business site. Cheaper offshore shared hosting exists ($5 to $15/month) but performs noticeably worse and creates support headaches. Many Brisbane agencies (RAVENCI included) bundle hosting with a maintenance plan for a small discount, which is usually the cleanest way to budget. One monthly invoice covers everything.",
   },
   {
     title: "What should be included in a Brisbane website quote?",
@@ -283,7 +283,7 @@ const faqItems = [
     summary:
       "Add 15 – 20% to the quoted build price for content production, copywriting, and photography. Add 12 months of hosting and maintenance to get the true year-one cost. Hold back a 10% contingency for changes during build.",
     content:
-      "Three rules of thumb for accurate budgeting. First, add 15 to 20% to the quoted build price to cover content production — copywriting, photography, video, and stock assets. Most build quotes assume you supply this. Second, add 12 months of hosting and maintenance ($300 to $600/month for a typical small business site) to get the true year-one cost. Third, hold back a 10% contingency for in-flight changes — every project surfaces things you didn't think of in the brief. A $10,000 build typically becomes a $14,000 to $16,000 first-year investment when content, hosting, maintenance, and contingency are factored in. Better to know that upfront than to discover it in month three.",
+      "Three rules of thumb for accurate budgeting. First, add 15 to 20% to the quoted build price to cover content production: copywriting, photography, video, and stock assets. Most build quotes assume you supply this. Second, add 12 months of hosting and maintenance ($300 to $600/month for a typical small business site) to get the true year-one cost. Third, hold back a 10% contingency for in-flight changes, since every project surfaces things you didn't think of in the brief. A $10,000 build typically becomes a $14,000 to $16,000 first-year investment when content, hosting, maintenance, and contingency are factored in. Better to know that upfront than to discover it in month three.",
   },
 ];
 
@@ -295,13 +295,13 @@ export default function BrisbaneWebsiteCostPage() {
         <article className="max-w-3xl flex flex-col gap-2">
           <Breadcrumbs items={[{ label: "Cost of a Website in Brisbane" }]} />
           <span className="mt-2 text-xs font-medium tracking-wider uppercase text-ravenci-primary">
-            Brisbane Website Pricing — 2026
+            Brisbane Website Pricing, 2026
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
             How Much Does a Website Cost in Brisbane in 2026?
           </h1>
           <h2 className="max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light">
-            Real pricing for every tier — and the hidden ongoing fees most
+            Real pricing for every tier, and the hidden ongoing fees most
             agencies don&apos;t mention
           </h2>
           <p className="mt-6 max-w-2xl text-neutral-500/80">
@@ -430,7 +430,7 @@ export default function BrisbaneWebsiteCostPage() {
         </h3>
         <p className="mb-10 max-w-2xl text-neutral-500/80">
           Two quotes for the same business can differ by $5,000 or more.
-          Here&apos;s why — and what to ask about when comparing.
+          Here&apos;s why, and what to ask about when comparing.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {costFactors.map((factor, index) => (
@@ -604,7 +604,7 @@ export default function BrisbaneWebsiteCostPage() {
         <p className="mb-10 max-w-lg text-neutral-500/80">
           Tell us about your project in 2 minutes. We&apos;ll send back a
           tailored estimate with the platform, scope and 12-month total cost
-          clearly laid out — no sales calls required.
+          clearly laid out. No sales calls required.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link

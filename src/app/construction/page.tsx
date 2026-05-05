@@ -12,7 +12,7 @@ export const metadata = {
   title:
     "Construction & Property Developer Website Design Brisbane | RAVENCI Solutions",
   description:
-    "Websites built for builders. Project portfolios, lead generation, mobile-friendly design for on-site teams — by a Brisbane team with 20+ years experience.",
+    "Websites built for builders. Project portfolios, lead generation, mobile-friendly design for on-site teams, by a Brisbane team with 20+ years experience.",
 };
 
 const features = [
@@ -39,7 +39,7 @@ const features = [
   {
     title: "Your Portfolio Loads Instantly",
     description:
-      "Construction work generates massive photos. We make sure those beautiful project shots load in seconds — even on a phone in the field",
+      "Construction work generates massive photos. We make sure those beautiful project shots load in seconds, even on a phone in the field",
   },
   {
     title: "Multi-Project Management",
@@ -64,28 +64,28 @@ const faqItems = [
     summary:
       "Yes. RAVENCI sets up an easy-to-use CMS where your team can add projects, upload photos, update progress, and archive completed builds without a developer. Training is included.",
     content:
-      "Yes. We set up an easy-to-use content management system where your team can add new projects, upload photos, update progress, and archive completed builds — no developer required. We provide training as part of the handover.",
+      "Yes. We set up an easy-to-use content management system where your team can add new projects, upload photos, update progress, and archive completed builds. No developer required. We provide training as part of the handover.",
   },
   {
     title: "Do you work with property developers too?",
     summary:
       "Yes. RAVENCI builds property developer websites with off-the-plan sales pages, project timelines, investor information, and real estate platform integration, tailored to the development lifecycle.",
     content:
-      "Absolutely. Property developer sites have different needs — off-the-plan sales pages, project timelines, investor information, and integration with real estate platforms. We build sites tailored to the development lifecycle.",
+      "Absolutely. Property developer sites have different needs: off-the-plan sales pages, project timelines, investor information, and integration with real estate platforms. We build sites tailored to the development lifecycle.",
   },
   {
     title: "Our project photos are huge. Will that slow the site down?",
     summary:
       "No. RAVENCI uses automatic compression, responsive image sizing, lazy loading, and modern formats like WebP. Your portfolio loads fast with a guaranteed 85+ PageSpeed score.",
     content:
-      "No. We implement advanced image optimisation including automatic compression, responsive image sizing, lazy loading, and modern formats like WebP. Your portfolio will look sharp and load fast — we guarantee 85+ PageSpeed scores.",
+      "No. We implement advanced image optimisation including automatic compression, responsive image sizing, lazy loading, and modern formats like WebP. Your portfolio will look sharp and load fast. We guarantee 85+ PageSpeed scores.",
   },
   {
     title: "Can you integrate with our CRM or project management tools?",
     summary:
       "Yes. RAVENCI integrates with most CRM systems offering an API, including HubSpot, Salesforce, and industry-specific tools. Lead form submissions flow directly into your existing pipeline.",
     content:
-      "We can integrate with most CRM systems that offer an API — including HubSpot, Salesforce, and industry-specific tools. Lead form submissions can flow directly into your existing pipeline.",
+      "We can integrate with most CRM systems that offer an API, including HubSpot, Salesforce, and industry-specific tools. Lead form submissions can flow directly into your existing pipeline.",
   },
   {
     title: "How long does a construction website take to build?",
@@ -138,7 +138,7 @@ export default function ConstructionPage() {
             style={{ lineHeight: "2.25rem" }}
           >
             Project portfolios, lead generation, and a digital presence that
-            wins work — built for construction companies and property developers
+            wins work, built for construction companies and property developers
             across Brisbane
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
@@ -238,7 +238,7 @@ export default function ConstructionPage() {
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white flex-shrink-0`}
                 />
-                Brisbane-based — we know the local market
+                Brisbane-based. We know the local market
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
@@ -252,7 +252,7 @@ export default function ConstructionPage() {
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white flex-shrink-0`}
                 />
-                Ongoing support — we don't disappear after launch
+                Ongoing support. We don't disappear after launch
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
@@ -271,8 +271,8 @@ export default function ConstructionPage() {
 
             <p className={`mb-8 text-neutral-400/90`}>
               With Brisbane's construction sector booming ahead of the 2032
-              Olympics, having a professional digital presence isn't optional —
-              it's how you win the next project.
+              Olympics, having a professional digital presence isn't optional.
+              It's how you win the next project.
             </p>
 
             <div className={`text-white`}>
@@ -351,7 +351,7 @@ export default function ConstructionPage() {
             serviceType: "Construction Website Design",
             name: "Construction & Property Developer Website Design Brisbane",
             description:
-              "Websites built for builders. Project portfolios, lead generation, mobile-friendly design for on-site teams — by a Brisbane team with 20+ years experience.",
+              "Websites built for builders. Project portfolios, lead generation, mobile-friendly design for on-site teams, by a Brisbane team with 20+ years experience.",
             provider: {
               "@type": "ProfessionalService",
               name: "RAVENCI Solutions",

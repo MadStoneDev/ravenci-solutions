@@ -21,7 +21,7 @@ export default function SEOContentPage() {
     {
       title: "Found by the Right People",
       description:
-        "We make sure Google can read your site properly — and the right customers can find what you offer when they go looking",
+        "We make sure Google can read your site properly, and the right customers can find what you offer when they go looking",
     },
     {
       title: "Content Strategy",
@@ -86,7 +86,7 @@ export default function SEOContentPage() {
     },
     {
       title: "Why You're Not Ranking Audit",
-      description: "We dig through your site and find the technical issues stopping you from showing up — then prioritise what to fix first",
+      description: "We dig through your site and find the technical issues stopping you from showing up, then prioritise what to fix first",
     },
     {
       title: "Link Building",

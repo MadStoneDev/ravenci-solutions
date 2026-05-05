@@ -9,13 +9,13 @@ import { getAllLabProjects, type LabStatus } from "@/data/lab-projects";
 
 export const metadata: Metadata = {
   title:
-    "RAVENCI Labs — Side Projects, Tools and Experiments | RAVENCI Solutions",
+    "RAVENCI Labs: Side Projects, Tools and Experiments | RAVENCI Solutions",
   description:
-    "Things RAVENCI builds for ourselves — web apps, tools and experiments that show what we love building when nobody's asking us to.",
+    "Things RAVENCI builds for ourselves: web apps, tools and experiments that show what we love building when nobody's asking us to.",
   openGraph: {
-    title: "RAVENCI Labs — Side Projects, Tools and Experiments",
+    title: "RAVENCI Labs: Side Projects, Tools and Experiments",
     description:
-      "Web apps, tools and experiments built by RAVENCI for ourselves — what we love building when nobody's asking.",
+      "Web apps, tools and experiments built by RAVENCI for ourselves: what we love building when nobody's asking.",
     type: "website",
   },
   alternates: { canonical: "/labs" },
@@ -51,7 +51,7 @@ export default function LabsPage() {
             Things we built for ourselves.
           </h1>
           <h2 className="mt-2 max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light text-neutral-500">
-            Web apps, tools and experiments — what we love building when nobody
+            Web apps, tools and experiments: what we love building when nobody
             commissioned it.
           </h2>
           <p className="mt-6 max-w-2xl text-neutral-500/80 leading-relaxed">
@@ -193,7 +193,7 @@ export default function LabsPage() {
           </h3>
           <div className="space-y-4 text-neutral-600 leading-relaxed">
             <p>
-              Most of what we ship is for clients — websites, brand work,
+              Most of what we ship is for clients: websites, brand work,
               e-commerce stores, web apps. The work in Labs is what we build
               when there&apos;s no client brief, just an idea worth chasing.
             </p>
@@ -202,11 +202,11 @@ export default function LabsPage() {
               new tools, push edges, and prove out approaches before suggesting
               them to clients. Some become real products. Some stay personal.
               All of them are built end-to-end the same way as our client work
-              — properly engineered, properly designed.
+              Properly engineered, properly designed.
             </p>
             <p>
-              If you&apos;re thinking about building something custom — a tool,
-              a platform, a web app for your business — these are a useful
+              If you&apos;re thinking about building something custom (a tool,
+              a platform, a web app for your business), these are a useful
               proof point. We&apos;ve built things from scratch, end-to-end,
               including the bits most agencies outsource.
             </p>
@@ -261,7 +261,7 @@ export default function LabsPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            name: "RAVENCI Labs — Side Projects",
+            name: "RAVENCI Labs: Side Projects",
             description:
               "Side projects, tools and experiments built by RAVENCI Solutions.",
             url: "https://ravenci.solutions/labs",
