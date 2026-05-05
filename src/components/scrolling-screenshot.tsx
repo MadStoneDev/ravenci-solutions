@@ -67,7 +67,14 @@ export default function ScrollingScreenshot({
             preserved (next/image with width/height auto-calc requires both
             dimensions known up front). */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img ref={imageRef} src={src} alt={alt} className="block w-full h-auto" />
+        <img
+          ref={imageRef}
+          src={src}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          className="block w-full h-auto"
+        />
       </div>
     </div>
   );

@@ -1,4 +1,13 @@
-﻿export default function TermsAndConditionsPage() {
+﻿import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions | RAVENCI Solutions",
+  description:
+    "Terms of Service governing the use of ravenci.solutions and services provided by RAVENCI Solutions.",
+  alternates: { canonical: "/terms-and-conditions" },
+};
+
+export default function TermsAndConditionsPage() {
   return (
     <section className={``}>
       <article

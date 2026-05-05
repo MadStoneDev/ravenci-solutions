@@ -91,7 +91,7 @@ export default function Home() {
       >
         <article className={`absolute inset-0 w-full h-[750px]`}>
           <LazyVideo
-            src="ravenci-promo.mp4"
+            src="/ravenci-promo.mp4"
             poster="/og-image.jpg"
             className="relative w-full h-screen"
           />

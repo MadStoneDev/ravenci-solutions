@@ -207,7 +207,13 @@ export default function LogosPanel({
               rel={"noreferrer nofollow"}
               className={`py-6 inline-grid place-content-center rounded-xl hover:scale-110 hover:bg-neutral-200 transition-all duration-300 ease-in-out`}
             >
-              <img src={logo} alt={title} className={`mx-6 h-12`} />
+              <img
+                src={logo}
+                alt={title}
+                loading="lazy"
+                decoding="async"
+                className={`mx-6 h-12`}
+              />
             </Link>
           ))}
         </div>

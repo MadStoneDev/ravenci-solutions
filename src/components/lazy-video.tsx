@@ -47,7 +47,7 @@ export default function LazyVideo({ src, poster, className }: LazyVideoProps) {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           poster={poster}
         >
           <source src={src} type="video/mp4" />

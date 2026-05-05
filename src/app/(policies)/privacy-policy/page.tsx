@@ -1,4 +1,13 @@
-﻿export default function PrivacyPolicyPage() {
+﻿import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | RAVENCI Solutions",
+  description:
+    "How RAVENCI Solutions collects, uses, and protects personal information across our website and services.",
+  alternates: { canonical: "/privacy-policy" },
+};
+
+export default function PrivacyPolicyPage() {
   return (
     <section className={``}>
       <article
