@@ -81,6 +81,7 @@ export default function RootLayout({
       "@type": "PostalAddress",
       addressLocality: "Brisbane",
       addressRegion: "QLD",
+      postalCode: "4000",
       addressCountry: "AU",
     },
     telephone: "+61731061836",
