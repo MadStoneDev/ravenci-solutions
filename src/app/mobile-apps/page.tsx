@@ -7,7 +7,7 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Mobile App Development - RAVENCI Solutions",
   description:
-    "iPhone and Android apps your users will actually keep using. Brisbane-based, AUD pricing, built to last well past the next OS update.",
+    "iPhone and Android apps your users will keep using. Brisbane-based, AUD pricing, built to last well past the next OS update.",
 };
 
 export default function MobileAppDevelopmentPage() {
@@ -31,12 +31,12 @@ export default function MobileAppDevelopmentPage() {
     {
       title: "Login, permissions, and data, done properly",
       description:
-        "Secure user accounts, permissions handled correctly, and data stored the way your industry actually requires.",
+        "Secure user accounts, permissions handled correctly, and data stored the way your industry requires.",
     },
     {
       title: "Push notifications that work",
       description:
-        "Reliable notifications and in-app messaging, set up so they actually get delivered, not silently swallowed.",
+        "Reliable notifications and in-app messaging, set up so they get delivered, not silently swallowed.",
     },
     {
       title: "Works without internet",
@@ -56,7 +56,7 @@ export default function MobileAppDevelopmentPage() {
     {
       title: "Grows with your users",
       description:
-        "The behind-the-scenes infrastructure handles 100 users or 100,000, chosen and built for what the app actually needs.",
+        "The behind-the-scenes infrastructure handles 100 users or 100,000, chosen and built for what the app needs.",
     },
   ];
 

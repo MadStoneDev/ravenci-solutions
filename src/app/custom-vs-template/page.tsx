@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title:
     "Custom Website vs Template: Which Is Right for Your Business? | RAVENCI Solutions",
   description:
-    "Compare custom-built websites vs templates and DIY builders. Cost, performance, SEO, and scalability breakdown for Australian businesses. Find out which option actually pays off.",
+    "Compare custom-built websites vs templates and DIY builders. Cost, performance, SEO, and scalability breakdown for Australian businesses. Find out which option pays off.",
   openGraph: {
     title: "Custom Website vs Template: Which Is Right for Your Business?",
     description:
@@ -36,7 +36,7 @@ const comparisonRows = [
   {
     feature: "SEO",
     custom:
-      "Search engines understand and rank your content properly from day one.",
+      "Search engines understand and rank your content from day one.",
     template: "Depends on a plugin to do what should be built in. Usually halfway done.",
     diy: "You're limited to what the platform lets you control. That's not much.",
   },
@@ -90,7 +90,7 @@ const faqItems = [
     summary:
       "Yes. Many RAVENCI clients come after outgrowing a template site or DIY builder. Content is migrated and a custom platform is built that reflects your brand and scales with you.",
     content:
-      "Absolutely. Many of our clients come to us after outgrowing a template site or DIY builder. We migrate your content and build a custom platform that actually reflects your brand and scales with you.",
+      "Absolutely. Many of our clients come to us after outgrowing a template site or DIY builder. We migrate your content and build a custom platform that reflects your brand and scales with you.",
   },
   {
     title: "What's wrong with the way most agencies build websites?",
@@ -128,7 +128,7 @@ export default function CustomVsTemplatePage() {
             Custom Website vs Template
           </h1>
           <h2 className="max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light">
-            Which approach actually pays off for Australian businesses?
+            Which approach pays off for Australian businesses?
           </h2>
           <p className="mt-6 max-w-2xl text-neutral-500/80">
             Every business needs a website, but not every business needs the same

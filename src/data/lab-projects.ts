@@ -33,7 +33,7 @@ export const LAB_PROJECTS: LabProject[] = [
     name: "JustReel",
     tagline: "Track movies and shows. Build collections. Share with friends.",
     description:
-      "A movie and TV show database for tracking what you've watched, building shareable collections, and actually discussing shows with the people you watch them with. Built because the existing options either treat tracking as a chore or treat sharing as an afterthought.",
+      "A movie and TV show database for tracking what you've watched, building shareable collections, and discussing shows with the people you watch them with. Built because the existing options either treat tracking as a chore or treat sharing as an afterthought.",
     status: "in-progress", // TODO: Richard to update to "live" / "beta" once deployed
     category: "Web App",
     // url: "https://justreel.app", // TODO: Richard to add live URL

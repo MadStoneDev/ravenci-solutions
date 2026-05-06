@@ -147,7 +147,7 @@ export default function AboutPage() {
                 Today, RAVENCI operates as a founder-led studio supported by a
                 network of specialist collaborators. This means you get the
                 accountability and personal attention of working and
-                communicating directly with the person actually doing the work,
+                communicating directly with the person doing the work,
                 combined with access to specialist expertise whenever your
                 project requires it.
               </p>
@@ -303,7 +303,7 @@ export default function AboutPage() {
           </h2>
           <p className={`mt-4 text-white/80`}>
             Whether you&apos;re starting from scratch or need a website that
-            actually performs, we&apos;d love to hear about your project.
+            performs, we&apos;d love to hear about your project.
           </p>
           <div className={`mt-10`}>
             <Link

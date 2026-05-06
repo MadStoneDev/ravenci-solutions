@@ -235,7 +235,7 @@ const decisionFramework = [
 
 const commonMistakes = [
   {
-    mistake: "Choosing Shopify when you don't actually sell anything online",
+    mistake: "Choosing Shopify when you don't sell anything online",
     detail:
       "We see this monthly. A consulting business launches on Shopify because the templates look good, then pays $45 – $645/month for a platform they don't use as e-commerce. WordPress (or custom) costs less and serves the use case better.",
   },
@@ -411,7 +411,7 @@ export default function PlatformComparisonPage() {
           When to Choose Each Platform
         </h3>
         <p className="mb-10 max-w-2xl text-neutral-500/80">
-          The honest case for and against each platform, including when{" "}
+          The case for and against each platform, including when{" "}
           <em>not</em> to pick it. Most agencies skip the &quot;avoid&quot;
           section. We don&apos;t.
         </p>

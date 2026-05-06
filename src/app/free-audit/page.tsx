@@ -79,7 +79,7 @@ const howItWorks = [
     step: "03",
     title: "Get the report by email",
     description:
-      "Plain-English findings, what's working, what isn't, and what to prioritise. No upsell, no sales call required. Use the report yourself or send it to whoever maintains your site.",
+      "Plain-English findings: what's working, what isn't, and what to prioritise. Use the report yourself or send it to whoever maintains your site.",
   },
 ];
 
@@ -94,9 +94,9 @@ const faqItems = [
   {
     title: "How long until I get the report?",
     summary:
-      "Usually within 2–3 business days. We do a real audit, not an automated scan, so it takes a beat.",
+      "Usually within 2–3 business days. We do this manually, not via an automated scan, so it takes a beat.",
     content:
-      "Usually within 2–3 business days. We do a real audit, not an automated scan, so it takes a beat. If you need it faster for a specific reason (a board meeting, a pitch, a rebrand decision), tell us in the form and we'll prioritise.",
+      "Usually within 2–3 business days. We do this manually, not via an automated scan, so it takes a beat. If you need it faster for a specific reason (a board meeting, a pitch, a rebrand decision), tell us in the form and we'll prioritise.",
   },
   {
     title: "What if I don't have a website yet?",
@@ -129,7 +129,7 @@ export default function FreeAuditPage() {
         <div className="max-w-3xl">
           <Breadcrumbs items={[{ label: "Free Website Audit" }]} />
           <span className="mt-4 block text-xs font-medium tracking-widest uppercase text-ravenci-primary">
-            Free, no obligation, no spam
+            Five-category website audit
           </span>
           <h1 className="mt-3 text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.05] text-ravenci-dark">
             A free website audit for your Brisbane business
@@ -198,8 +198,7 @@ export default function FreeAuditPage() {
             The same framework we used to audit{" "}
             {AUDIT_META.totalSitesAudited} Brisbane business websites for our
             2026 research. No proprietary scoring magic, just the things
-            that actually matter to whether your site ranks, loads, and
-            converts.
+            that matter to whether your site ranks, loads, and converts.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -311,7 +310,7 @@ export default function FreeAuditPage() {
         </h2>
         <p className="mb-10 max-w-lg text-white/90">
           Submit your details and we&apos;ll come back within 2–3 business
-          days with the full report. No payment, no sales call, no spam.
+          days with the full report.
         </p>
         <Link
           href="#audit-form"

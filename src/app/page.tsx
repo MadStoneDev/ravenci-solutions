@@ -176,9 +176,9 @@ export default function Home() {
 <p class="mb-4 text-neutral-400/90">Sites you can update yourself without calling a developer for every comma. Built so the admin makes sense to a human who isn't us.</p>
 
 <p class="text-neutral-100">Custom builds when off-the-shelf won't cut it</p>
-<p class="mb-4 text-neutral-400/90">When the project genuinely needs something custom, we build it from scratch, properly engineered so it grows with you instead of falling apart at the seams.</p>
+<p class="mb-4 text-neutral-400/90">When the project genuinely needs something custom, we build it from scratch, engineered so it grows with you instead of falling apart at the seams.</p>
 
-<p class="text-neutral-100">E-commerce that actually sells</p>
+<p class="text-neutral-100">E-commerce that sells</p>
 <p class="mb-4 text-neutral-400/90">Online stores designed around how your customers buy and how your team fulfils. Whether that's Shopify, BigCommerce, or a custom platform, chosen for what fits, not what's easiest.</p>
 
 <p class="text-neutral-100">Talks to the rest of your business</p>
@@ -188,11 +188,11 @@ export default function Home() {
               {
                 title: `Design`,
                 content: `<p class="mb-4 text-neutral-100">Design that works for your customers, not for design awards.</p><p class="text-neutral-100">Planning the experience</p>
-<p class="mb-4 text-neutral-400/90">Before any pixel gets pushed, we map out how your customers will actually move through the site: what they need, where they'll click, what makes them act. The design follows from that.</p>
+<p class="mb-4 text-neutral-400/90">Before any pixel gets pushed, we map out how your customers move through the site: what they need, where they'll click, what makes them act. The design follows from that.</p>
 <p class="text-neutral-100">How it looks</p>
 <p class="mb-4 text-neutral-400/90">A site that visibly belongs to your brand and feels modern without being trend-chasing. Clean type, considered colour, intentional spacing: the kind of polish customers notice without being able to name.</p>
 <p class="text-neutral-100">How it works</p>
-<p class="mb-4 text-neutral-400/90">Every page is built to take a visitor somewhere: to enquire, to buy, to read more. Less guessing, more action. That's what good design actually does.</p>`,
+<p class="mb-4 text-neutral-400/90">Every page takes a visitor somewhere: to enquire, to buy, to read more. Less guessing, more action.</p>`,
               },
               {
                 title: `Maintenance`,
@@ -240,10 +240,10 @@ export default function Home() {
           </p>
 
           <p>
-            Most sites are built to look good at launch and quietly fall apart
-            after. Plugins clash, subscriptions stack up, the developer who
-            built it stops returning calls. That&apos;s not how we work. We
-            build it right the first time so you can stop thinking about it.
+            Most sites look great at launch and quietly fall apart after.
+            Plugins clash, subscriptions stack up, the developer who built
+            it stops returning calls. That&apos;s not how we work. We build
+            it right the first time so you can stop thinking about it.
           </p>
           <footer className={`border-t border-ravenci-dark`}>
             <cite
@@ -349,8 +349,8 @@ export default function Home() {
             Is Your Website Visible to Google and AI?
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Get a free visibility report showing how search engines and AI
-            platforms see your business. No obligation, no spam.
+            Get a free report showing how visible your business is to search
+            engines and AI models.
           </p>
         </div>
         <VisibilityCheckForm />

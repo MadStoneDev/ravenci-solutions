@@ -403,7 +403,7 @@ export default function MedicalPracticeRequirementsPage() {
             Patient-Facing Essentials
           </h3>
           <p className="mb-10 max-w-2xl text-white/85 leading-relaxed">
-            What patients actually want when they land on your website on a
+            What patients want when they land on your website on a
             phone, often while feeling unwell. Get these eight right and the
             site does its job.
           </p>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title:
     "How to Choose a Web Designer in Brisbane: 10 Questions to Ask in 2026 | RAVENCI Solutions",
   description:
-    "The 10 questions every Brisbane business should ask before choosing a web designer. Red flags, green flags, how to compare quotes, and what 'good' actually looks like in 2026.",
+    "The 10 questions every Brisbane business should ask before choosing a web designer. Red flags, green flags, how to compare quotes, and what 'good' looks like in 2026.",
   openGraph: {
     title:
       "How to Choose a Web Designer in Brisbane: 10 Questions to Ask in 2026",
@@ -80,7 +80,7 @@ const questions = [
     number: "10",
     question: "Who's actually going to be doing the work?",
     rightAnswer:
-      "A named developer or designer, not 'our team' or an offshore agency. For small businesses, founder-led or small-team agencies typically deliver better than larger ones because the senior person is actually building the site.",
+      "A named developer or designer, not 'our team' or an offshore agency. For small businesses, founder-led or small-team agencies typically deliver better than larger ones because the senior person is the one building the site.",
   },
 ];
 
@@ -249,12 +249,12 @@ const faqItems = [
     summary:
       "For small business websites under $15,000, a local Brisbane agency typically delivers better outcomes due to time zone overlap, AU-specific SEO and compliance knowledge, and easier communication. For larger projects ($25k+) where pricing pressure matters more, blended or offshore arrangements can work.",
     content:
-      "For most small business websites under about $15,000, a Brisbane or Australian agency typically delivers better outcomes than an offshore alternative. Reasons: time zone overlap (you can actually talk to your developer when something breaks), AU-specific SEO knowledge (Google Business Profile, .com.au domain handling, local schema), AU compliance awareness (Privacy Act, Consumer Law, AHPRA where relevant), and easier communication around scope and revisions. For larger projects ($25k+) where pricing pressure matters more, blended onshore-offshore arrangements can work (typically with a local lead managing offshore developers), but you give up some of the responsiveness of fully-local teams.",
+      "For most small business websites under about $15,000, a Brisbane or Australian agency typically delivers better outcomes than an offshore alternative. Reasons: time zone overlap (you can talk to your developer when something breaks), AU-specific SEO knowledge (Google Business Profile, .com.au domain handling, local schema), AU compliance awareness (Privacy Act, Consumer Law, AHPRA where relevant), and easier communication around scope and revisions. For larger projects ($25k+) where pricing pressure matters more, blended onshore-offshore arrangements can work (typically with a local lead managing offshore developers), but you give up some of the responsiveness of fully-local teams.",
   },
   {
     title: "What questions should I ask a web designer before hiring them?",
     summary:
-      "The 10 essentials: who owns everything afterwards, 12-month total cost, platform recommendation logic, case studies, maintenance terms, revision rounds, timeline, post-launch support, exit process, and who actually does the work. Vague answers to any of these are a red flag.",
+      "The 10 essentials: who owns everything afterwards, 12-month total cost, platform recommendation logic, case studies, maintenance terms, revision rounds, timeline, post-launch support, exit process, and who does the work. Vague answers to any of these are a red flag.",
     content:
       "The ten questions every Brisbane business should ask before signing: 1) Who owns the code, content, domain and hosting at the end? 2) What's the realistic 12-month total cost? 3) Which platform do you recommend for my business and why? 4) Can I see 3 case studies from businesses like mine? 5) What does ongoing maintenance cover and what does it cost? 6) How many revision rounds are included? 7) What's the timeline from kickoff to launch? 8) What support do you offer after launch? 9) What happens if I want to leave, or you stop trading? 10) Who's actually going to be doing the work? Vague answers to any of these are a red flag. The questions exist precisely because each one surfaces a common pattern of bad agency behaviour.",
   },
@@ -277,7 +277,7 @@ const faqItems = [
     summary:
       "Not always. But quotes dramatically below the others usually mean a template build, junior developer, offshore work, or corners cut on SEO, performance, or post-launch support. Compare on what's included and the 12-month total cost, not just the build price.",
     content:
-      "Not always. Sometimes a cheaper quote is genuinely a better-fit small agency or freelancer with lower overheads. But a quote dramatically below the others typically means one of: a template-based build presented as custom, a junior developer doing the work, offshore subcontracting without disclosure, or corners cut on SEO, performance optimisation, accessibility, or post-launch support. To distinguish, compare on what's actually included rather than just the headline price. Cheapest is fine if the quote includes the same scope as more expensive options. Cheapest is dangerous if the comparison reveals missing pieces that you'll pay for separately later.",
+      "Not always. Sometimes a cheaper quote is genuinely a better-fit small agency or freelancer with lower overheads. But a quote dramatically below the others typically means one of: a template-based build presented as custom, a junior developer doing the work, offshore subcontracting without disclosure, or corners cut on SEO, performance optimisation, accessibility, or post-launch support. To distinguish, compare on what's included rather than just the headline price. Cheapest is fine if the quote includes the same scope as more expensive options. Cheapest is dangerous if the comparison reveals missing pieces that you'll pay for separately later.",
   },
   {
     title: "Should I get a fixed price or hourly quote?",
@@ -317,9 +317,9 @@ export default function HowToChooseWebDesignerPage() {
           <p className="mt-6 max-w-2xl text-neutral-500/80">
             Choosing a Brisbane web designer in 2026 comes down to ten
             questions: who owns everything afterwards, the 12-month total cost,
-            which platform and why, real case studies, maintenance terms,
+            which platform and why, case studies, maintenance terms,
             revision rounds, timeline, post-launch support, exit process, and
-            who actually does the work. This guide walks through each question
+            who does the work. This guide walks through each question
             with the answer to look for, plus the red and green flags
             separating reputable agencies from the rest.
           </p>
@@ -587,7 +587,7 @@ export default function HowToChooseWebDesignerPage() {
             headline:
               "How to Choose a Web Designer in Brisbane: 10 Questions to Ask in 2026",
             description:
-              "The 10 questions every Brisbane business should ask before choosing a web designer. Red flags, green flags, how to compare quotes, and what 'good' actually looks like.",
+              "The 10 questions every Brisbane business should ask before choosing a web designer. Red flags, green flags, how to compare quotes, and what 'good' looks like.",
             author: {
               "@type": "Organization",
               name: "RAVENCI Solutions",

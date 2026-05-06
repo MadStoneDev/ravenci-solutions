@@ -267,8 +267,8 @@ export default function BusinessDesignPage() {
             </h3>
             <p className={`mb-4 text-neutral-400/90`}>
               Perfect for startups and small businesses who need the
-              fundamentals to look professional. Get the core brand elements
-              that every business needs to compete in today's market.
+              fundamentals to look professional. The core brand elements
+              that every business needs to stand up alongside its competitors.
             </p>
             <div className={`mb-16 text-white`}>
               <Accordion

@@ -31,7 +31,7 @@ const headlineStats = [
   },
   {
     stat: "$15k+",
-    label: "Premium custom build for established businesses ready to invest properly",
+    label: "Premium custom build for established businesses ready to invest",
   },
 ];
 
@@ -86,9 +86,9 @@ const pricingTiers = [
     bestFor:
       "Established small businesses, professional services, growing brands",
     whatYouGet: [
-      "Custom design that actually looks like your brand (not a template)",
+      "Custom design that looks like your brand, not a template",
       "A platform you or your team can update yourselves",
-      "10 – 20 pages structured around how customers actually move through the site",
+      "10 – 20 pages structured around how customers move through the site",
       "Built so search engines understand and rank you from day one",
       "Contact forms and basic integrations to your CRM, email, or booking tool",
     ],
@@ -234,14 +234,14 @@ const faqItems = [
     summary:
       "A basic small-business website built by a Brisbane agency typically costs $1,500 to $5,000 for a template-based build, or $5,000 to $10,000 for a properly customised CMS build with strategic SEO and integrations.",
     content:
-      "A basic small-business website built by a Brisbane agency typically costs $1,500 to $5,000 for a template-based build, or $5,000 to $10,000 for a properly customised build on WordPress, Shopify, or a similar CMS. The lower end gets you a functional site with stock components. The higher end gets you a strategic build with proper SEO foundations, real custom design, and integrations that actually work for your business. Sites built by genuine specialists rather than generalist freelancers tend to sit at $7,500 and up. The saving on the cheaper end is usually paid back in lost SEO, bad performance, or rebuild costs within 18 months.",
+      "A basic small-business website built by a Brisbane agency typically costs $1,500 to $5,000 for a template-based build, or $5,000 to $10,000 for a properly customised build on WordPress, Shopify, or a similar CMS. The lower end gets you a functional site with stock components. The higher end gets you a strategic build with proper SEO foundations, custom design, and integrations that work for your business. Sites built by genuine specialists rather than generalist freelancers tend to sit at $7,500 and up. The saving on the cheaper end is usually paid back in lost SEO, bad performance, or rebuild costs within 18 months.",
   },
   {
     title: "Is it cheaper to use Wix or hire a developer?",
     summary:
       "Wix or Squarespace looks cheaper upfront ($30/mo) but typically costs you 30 – 60 hours of your own time and limits future SEO, performance, and customisation. For most businesses, an agency-built site recovers the cost difference within 12 months through better conversions and time saved.",
     content:
-      "Wix, Squarespace, and similar DIY platforms appear cheaper upfront, typically $20 to $50 per month plus your own time. The real cost is in the 30 to 60 hours you'll spend learning the platform and building the site yourself, plus the long-term ceiling on SEO, performance, and customisation. For a one-person hobby or testing an idea, DIY is fine. For a business that wants the website to actually generate leads, an agency-built site usually recovers the price difference within 12 months through better conversions, faster load times, and time you didn't spend fighting templates. Search engines also tend to rank custom-built sites higher than generic templates.",
+      "Wix, Squarespace, and similar DIY platforms appear cheaper upfront, typically $20 to $50 per month plus your own time. The real cost is in the 30 to 60 hours you'll spend learning the platform and building the site yourself, plus the long-term ceiling on SEO, performance, and customisation. For a one-person hobby or testing an idea, DIY is fine. For a business that wants the website to generate leads, an agency-built site usually recovers the price difference within 12 months through better conversions, faster load times, and time you didn't spend fighting templates. Search engines also tend to rank custom-built sites higher than generic templates.",
   },
   {
     title: "Why do website costs vary so much in Brisbane?",
@@ -311,7 +311,7 @@ export default function BrisbaneWebsiteCostPage() {
             around $1,500. Standard small business sites run $5,000 – $10,000.
             Custom Next.js or premium branded builds reach $15,000 – $25,000+.
             Hosting and maintenance add $300 – $600 per month. This guide breaks
-            down what you actually get at each price point, what affects the
+            down what you get at each price point, what affects the
             quote, and the ongoing costs nobody mentions in the proposal.
           </p>
         </article>

@@ -15,7 +15,7 @@ export default function WebAppPage() {
   const features = [
     {
       title: "Custom Workflow Design",
-      description: "Built specifically for how your business actually operates",
+      description: "Built specifically for how your business operates",
     },
     {
       title: "Real-Time Data",
@@ -44,7 +44,7 @@ export default function WebAppPage() {
     {
       title: "Your Data, Properly Protected",
       description:
-        "Encrypted connections, secure logins, and the kind of permissions structure your industry actually expects",
+        "Encrypted connections, secure logins, and the kind of permissions structure your industry expects",
     },
     {
       title: "Grows With You",
@@ -156,7 +156,7 @@ export default function WebAppPage() {
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                Business-focused solutions that solve real problems
+                Business-focused solutions that solve the problems you actually have
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
@@ -347,7 +347,7 @@ export default function WebAppPage() {
           titleClassName={`py-6 text-lg`}
           items={[
             {
-              title: `How do you ensure the app actually solves our business problems?`,
+              title: `How do you ensure the app solves our business problems?`,
               summary: `RAVENCI begins every project with a comprehensive business process analysis, mapping current workflows and identifying bottlenecks. You see exactly how the app improves operations before any code is written.`,
               content: `We start every project with a comprehensive business process analysis. We map your current workflows, identify bottlenecks, and design solutions that eliminate specific pain points. You'll see exactly how the app will improve your operations before we write a single line of code.`,
             },
@@ -395,7 +395,7 @@ export default function WebAppPage() {
             mainEntity: [
               {
                 "@type": "Question",
-                name: "How do you ensure the app actually solves our business problems?",
+                name: "How do you ensure the app solves our business problems?",
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "We start every project with a comprehensive business process analysis. We map your current workflows, identify bottlenecks, and design solutions that eliminate specific pain points. You'll see exactly how the app will improve your operations before we write a single line of code.",

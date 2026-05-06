@@ -16,7 +16,7 @@ export default function SEOContentPage() {
     {
       title: "Keyword Research",
       description:
-        "In-depth analysis to find the keywords your customers actually search for",
+        "In-depth analysis to find the keywords your customers search for",
     },
     {
       title: "Found by the Right People",

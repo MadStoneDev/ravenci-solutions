@@ -158,7 +158,7 @@ export default function WebHostingDevelopmentPage() {
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             For Australian businesses ready to replace the site they have with
-            one that actually performs. Built properly the first time so it&apos;s
+            one that performs. Built properly the first time so it&apos;s
             still working in five years. No plugin clutter, no surprise
             subscriptions, no developer disappearing on you. From $3,490 for a
             foundation build to $14,990 for a full brand and web package, plus
@@ -175,8 +175,7 @@ export default function WebHostingDevelopmentPage() {
           <h3
             className={`pb-6 border-b border-white/20 font-serif font-medium text-xl`}
           >
-            Trusted by 75+ Australian businesses to build websites that actually
-            work
+            Trusted by 75+ Australian businesses to build websites that work
           </h3>
           {testimonials[0] && (
             <>

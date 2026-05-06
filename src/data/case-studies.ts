@@ -181,7 +181,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "Our Approach",
       paragraphs: [
         "Nikita is also the founder of Nikita Morell, the only copywriter writing exclusively for architects, a site we've maintained for her for the better part of five years. When DIRT was ready to launch, she came back to us. The brief was open: modern, unique, intuitive, and the development should make all of that work while staying out of the way.",
-        "Her first instinct was to step away from WordPress and build on Framer, with Lovable layered on for the AI features. Both would have worked, but both came with subscription overhead she didn't actually need. We suggested Plasmic instead: same visual editing freedom, free at the tier she required, and far more room to build the custom components DIRT's design called for. And rather than wrap the AI features in another middleware subscription, we built them ourselves so DIRT pays the AI provider (Anthropic) directly for what they use, full stop.",
+        "Her first instinct was to step away from WordPress and build on Framer, with Lovable layered on for the AI features. Both would have worked, but both came with subscription overhead she didn't need. We suggested Plasmic instead: same visual editing freedom, free at the tier she required, and far more room to build the custom components DIRT's design called for. And rather than wrap the AI features in another middleware subscription, we built them ourselves so DIRT pays the AI provider (Anthropic) directly for what they use, full stop.",
         "From there it was modular components for everything. Every section on the site is a reusable block Nikita can add, remove or reorder herself. The design plays with the brand metaphor (dirt, building, construction) through scroll-reactive interactions that bring the personality to life without slowing the page down.",
       ],
       highlights: [
@@ -209,7 +209,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: "A Slider That Fills With Dirt as You Pull",
         description:
-          "Visitors can drag a slider and watch dirt physically fill in alongside it, turning a normally boring numeric input into something visitors actually play with. Small detail; reflects the brand attitude exactly.",
+          "Visitors can drag a slider and watch dirt physically fill in alongside it, turning a normally boring numeric input into something visitors play with. Small detail; reflects the brand attitude exactly.",
         image: "/showcase-images/dirt/dirt-slider.mp4",
       },
       {
@@ -301,7 +301,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: "Xero, from setup to integration to confident day-to-day",
         description:
-          "NNAccountability's value isn't just doing the books. It's getting clients from \"we just bought Xero\" to \"we run our finances through it without thinking\". The site reflects that journey in how the services are laid out: setup and onboarding for businesses new to Xero, training for teams that need to actually use it, integrations for the platforms that need to talk to it, and the bookkeeping/BAS/accounting work underneath for everything that follows. One practice, one platform, the full arc.",
+          "NNAccountability's value isn't just doing the books. It's getting clients from \"we just bought Xero\" to \"we run our finances through it without thinking\". The site reflects that journey in how the services are laid out: setup and onboarding for businesses new to Xero, training for teams that need to use it, integrations for the platforms that need to talk to it, and the bookkeeping/BAS/accounting work underneath for everything that follows. One practice, one platform, the full arc.",
         image: "/showcase-images/nnaccountability/nnaccountability-xero-to-hero.png",
       },
     ],
@@ -363,8 +363,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "Our Approach",
       paragraphs: [
         "After a long phone call with Jo about the pros and cons, we decided to migrate from BigCommerce to Shopify. BigCommerce has its own strengths, but for the way Jo runs the store day to day, Shopify's user-friendliness was going to make their life easier. Rebuild rather than patch.",
-        "We chose a paid Shopify theme as the foundation, a deliberate decision that saved GoingDark thousands compared to a fully custom build. Then we customised it to suit how they actually sell: niche, expertise-driven, with the kind of personality a generic theme would never have on its own.",
-        "Alongside the rebuild we cleaned up the SEO mess: fixed the 404s, added alt text to every product image, restructured pages so search engines could actually understand what GoingDark sells. The bigger ongoing conversation has been about positioning: helping Jo see that competing in a niche means standing out, not copying what bigger players do.",
+        "We chose a paid Shopify theme as the foundation, a deliberate decision that saved GoingDark thousands compared to a fully custom build. Then we customised it to suit how they sell: niche, expertise-driven, with the kind of personality a generic theme would never have on its own.",
+        "Alongside the rebuild we cleaned up the SEO mess: fixed the 404s, added alt text to every product image, restructured pages so search engines could understand what GoingDark sells. The bigger ongoing conversation has been about positioning: helping Jo see that competing in a niche means standing out, not copying what bigger players do.",
       ],
       highlights: [
         "Migrated from cluttered inherited BigCommerce to a clean Shopify build",
@@ -499,7 +499,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: "Project Pages That Put the Photography First",
         description:
-          "The old site had small images and long copy that fought for attention. The new project pages flip that: large galleries lead, with carefully placed copy that supports rather than competes. Visitors leave with a clear sense of what Peninsula actually builds.",
+          "The old site had small images and long copy that fought for attention. The new project pages flip that: large galleries lead, with carefully placed copy that supports rather than competes. Visitors leave with a clear sense of what Peninsula builds.",
         image: "/showcase-images/peninsula-homes/peninsula-homes-project-pages.png",
         imageScroll: true,
       },
@@ -580,7 +580,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "Branding, print, signage, website, delivered in four weeks",
       paragraphs: [
         "We started with the brand. They wanted gold, but there are a hundred ways gold can go wrong in security: gaudy, costume-jewellery, cheap. We landed on a confident deep gold against charcoal, with strong typography that signals competence first and warmth second. The same language carried through every customer touchpoint: business cards, letterheads, vehicle decals, the window stickers we'd later install at every job, and the website itself.",
-        "The website is custom WordPress with a dedicated page for each thing they actually do (alarms, CCTV, access control, intercoms), written in language a homeowner or property manager can scan in thirty seconds. Trust signals up front: real photography, real names, accreditations, a real Brisbane phone number that goes to Adam.",
+        "The website is custom WordPress with a dedicated page for each thing they do (alarms, CCTV, access control, intercoms), written in language a homeowner or property manager can scan in thirty seconds. Trust signals up front: real photography, real names, accreditations, a real Brisbane phone number that goes to Adam.",
         "Print and signage went in parallel with development. When the printers quoted five business days on the business cards and vehicle stickers, I drove out and picked them up myself the next day. Everything was on the road and on the wall by the four-week mark.",
       ],
       highlights: [
@@ -627,13 +627,13 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: "On-the-fly camera pricer, without dragging in an ecommerce platform",
         description:
-          "Covenant needed visitors to be able to see roughly what a CCTV install would cost based on how many cameras they wanted, then send through a quote request in the same step. The off-the-shelf path would've been WooCommerce or Shopify, but Covenant doesn't sell cameras online, they install them on-site, and that path would've meant inheriting hundreds of kilobytes of cart code, payment integrations and admin overhead they don't actually need. So we built the pricer custom: pick a camera count, see the price update on the fly, send through a quote request in one click. No cart, no checkout, no plugin tax on page load.",
+          "Covenant needed visitors to be able to see roughly what a CCTV install would cost based on how many cameras they wanted, then send through a quote request in the same step. The off-the-shelf path would've been WooCommerce or Shopify, but Covenant doesn't sell cameras online, they install them on-site, and that path would've meant inheriting hundreds of kilobytes of cart code, payment integrations and admin overhead they don't need. So we built the pricer custom: pick a camera count, see the price update on the fly, send through a quote request in one click. No cart, no checkout, no plugin tax on page load.",
         image: "/showcase-images/covenant-security-solutions/covenant-security-solutions-cctv-pricer.mp4",
       },
       {
         title: "Welcome packs that finish the job",
         description:
-          "Once a system goes in, the customer needs to actually use it. We designed printed welcome guides (system overview, walkthrough, who to call when something needs attention) that get handed over at install. Same brand, same finish as everything else they touch. The handover doesn't feel done until the customer feels confident.",
+          "Once a system goes in, the customer needs to use it. We designed printed welcome guides (system overview, walkthrough, who to call when something needs attention) that get handed over at install. Same brand, same finish as everything else they touch. The handover doesn't feel done until the customer feels confident.",
         images: [
           "coming-soon", // Welcome pack cover — printed pack front
           "coming-soon", // Welcome pack interior spread — open page
@@ -700,7 +700,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "The website needed to keep up with the work",
       paragraphs: [
         "Skye Charry's work is hands-on. She runs tailored workshops for organisations across Australia (from one-off sessions to multi-day programmes, in-person or online), preventing workplace sexual harassment, building healthier cultures, and translating law and policy into something a workforce can actually act on. Her old site, sitting on a previous domain from her solo practice days, wasn't carrying that work anymore.",
-        "The rebrand to SAC Consulting was the opportunity to put a website in place that finally matched what she does on the ground: premium, polished, national in feel, and with the podcast pushed to the front so the asset she invests so much energy into actually drives reach.",
+        "The rebrand to SAC Consulting was the opportunity to put a website in place that finally matched what she does on the ground: premium, polished, national in feel, and with the podcast pushed to the front so the asset she invests so much energy into drives reach.",
         "Zoe at The Design Order brought me in for the build. She'd designed the brand and the site; my job was to translate the design into something interactive, intuitive and fast (without compromising any of the premium feel), and to retire the old domain cleanly the day SAC Consulting went live.",
       ],
       image: "/showcase-images/sac-consulting/sac-consulting-old-site.jpg",
@@ -727,7 +727,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         image: "/showcase-images/Client - SAC Consulting - Podcast.png",
       },
       {
-        title: "Responsive design and development that actually feels right at every size",
+        title: "Responsive design and development that feels right at every size",
         description:
           "The brief was a premium experience across every device, not just \"works on mobile\". That meant going beyond what Divi handles natively: bespoke breakpoints for the brand layouts, custom JavaScript to switch feature blocks between a desktop grid and a mobile-friendly Owl Carousel without a flash or layout jump, and an auto-scrolling reviews carousel that behaves the same way on a phone as it does on a 27\" screen. A lot of the work sits underneath what the visitor sees, but it's the part that keeps the design feeling intentional at every size.",
         images: [
@@ -738,7 +738,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
     results: {
-      heading: "A platform that matches how Skye actually works",
+      heading: "A platform that matches how Skye works",
       paragraphs: [
         "Skye is on the road most weeks. The podcast keeps shipping. The workshops keep evolving. The site holds all of it together, and reads the same whether someone lands on it in Perth, Hobart or right next door in Brisbane.",
         "It's a much smoother and more modern presence than what came before. It looks the part for the service Skye delivers to organisations across the country, and it gives the podcast (her biggest authority lever) the prominence it needed to keep building reach.",
@@ -763,7 +763,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ["web-development"],
     serviceLabels: ["Web Development"],
     excerpt:
-      "Solo copywriter writing exclusively for architects, and as far as I'm concerned, no one's better at what she does. Engaging, creative, down-to-earth writing that gets read end-to-end before it gets put down. Architects who want to sound human (and win the projects they actually want) hire Nikita.",
+      "Solo copywriter writing exclusively for architects, and as far as I'm concerned, no one's better at what she does. Engaging, creative, down-to-earth writing that gets read end-to-end before it gets put down. Architects who want to sound human (and win the projects they want) hire Nikita.",
     featuredImage: "/showcase-images/nikita-morell/full-page.jpg",
     featuredImageScroll: true,
     clientLogo: "/clients/nikita-morell-logo.svg",
@@ -904,7 +904,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "BigCommerce, brand and storefront, in two weeks",
       paragraphs: [
         "Shopify is the obvious default for a new ecommerce business, and for most stores it's a fine choice. But Shopify's product personalisation is shallow out of the box: anything beyond a colour-and-size variant means buying a paid app, sometimes several. For a store where every product has wood-vs-acrylic, a colour selection, a design variant and engraving text, that quickly becomes three or four monthly subscriptions stacked on top of the platform fee, each with its own admin, its own performance hit on every product page.",
-        "BigCommerce includes deep variants, customer-input fields and custom options natively. We could build the store Micha actually needed without inheriting a subscription tower on top of it.",
+        "BigCommerce includes deep variants, customer-input fields and custom options natively. We could build the store Micha needed without inheriting a subscription tower on top of it.",
         "We started on a stock BigCommerce theme and quickly hit its limits: layout decisions baked into the theme that didn't suit the personalisation flow, performance overhead from features Cadeaurable didn't use. With the budget tight, the cleaner path was to build a custom theme from scratch instead of fighting the stock one. That's what shipped: a bespoke theme on BigCommerce, sized to exactly what the store needed and nothing it didn't.",
         "Brand identity, stationery, packaging direction and the storefront all went out the door at the two-week mark. Australia-only at launch: that was the immediate market and Micha wanted to nail it before opening up. As her Etsy presence grew and US and Canadian orders started coming through, we extended shipping internationally without rebuilding anything underneath.",
       ],
@@ -928,13 +928,13 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: "A product page that asks the right questions in the right order",
         description:
-          "On a Cadeaurable product page, the customer picks the piece, then walks through the choices that change what actually gets made: material, colour if relevant, design variant, engraving text. Each choice surfaces as the previous one's been made. No overwhelming wall of options, no requirement to fill out fields you don't care about. Built natively on BigCommerce's product variant and custom-field system, no extra plugin.",
+          "On a Cadeaurable product page, the customer picks the piece, then walks through the choices that change what gets made: material, colour if relevant, design variant, engraving text. Each choice surfaces as the previous one's been made. No overwhelming wall of options, no requirement to fill out fields you don't care about. Built natively on BigCommerce's product variant and custom-field system, no extra plugin.",
         image: "/showcase-images/cadeaurable/cadeaurable-product-page.jpg",
       },
       {
         title: "WhatsApp direct to Micha: not a chat widget, not an AI",
         description:
-          "Every Cadeaurable order is custom: the customer wants their venue spelled correctly, the right colour to match a flower arrangement, the right material to suit the table setting. We wired the storefront's chat through WhatsApp directly to Micha rather than running a generic web chat widget or an AI agent. Slower in the abstract, but the conversation lives on the customer's phone after the order, the answers come from the person actually making the product, and customers regularly note the response time in their reviews.",
+          "Every Cadeaurable order is custom: the customer wants their venue spelled correctly, the right colour to match a flower arrangement, the right material to suit the table setting. We wired the storefront's chat through WhatsApp directly to Micha rather than running a generic web chat widget or an AI agent. Slower in the abstract, but the conversation lives on the customer's phone after the order, the answers come from the person making the product, and customers regularly note the response time in their reviews.",
         image: "/showcase-images/cadeaurable/cadeaurable-whatsapp.jpg",
       },
     ],
@@ -942,7 +942,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "A store that's still running on its original platform, and growing",
       paragraphs: [
         "Cadeaurable launched on schedule: two weeks from brief to live store. Australia-only at first; once Micha's Etsy presence grew and international orders started coming, we extended shipping to the US and Canada without touching the underlying platform.",
-        "The reviews tell the story Micha cares about most. Customers note how quickly she responds in chat, how helpful she is when they're working out what'll suit their event, how much they trust the work. Many of them come back for the next event, the next gift, the next custom piece: the kind of repeat business a custom maker actually depends on.",
+        "The reviews tell the story Micha cares about most. Customers note how quickly she responds in chat, how helpful she is when they're working out what'll suit their event, how much they trust the work. Many of them come back for the next event, the next gift, the next custom piece: the kind of repeat business a custom maker depends on.",
         "Years on, the store still hums. Desktop PageSpeed Performance sits at 89, First Contentful Paint at 0.7s, Largest Contentful Paint at 1.1s. Fast for any ecommerce site, and notably so on BigCommerce, where the platform itself ships a fair chunk of code for cart, checkout and inventory before the custom theme even loads.",
         "The platform choice has paid for itself twice over: in what doesn't load on every product page, and in what hasn't been spent. No app subscriptions stacked on top of the BigCommerce fee, no plugin tax, no third-party tools to maintain or migrate off when they get too expensive or get acquired.",
       ],
