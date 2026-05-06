@@ -12,6 +12,7 @@ export default function VisibilityCheckForm() {
     email: "",
     businessName: "",
     websiteUrl: "",
+    intent: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -40,7 +41,13 @@ export default function VisibilityCheckForm() {
         }
 
         setStatus("success");
-        setFormData({ name: "", email: "", businessName: "", websiteUrl: "" });
+        setFormData({
+          name: "",
+          email: "",
+          businessName: "",
+          websiteUrl: "",
+          intent: "",
+        });
       } catch (err) {
         setStatus("error");
         setErrorMessage(
@@ -128,6 +135,30 @@ export default function VisibilityCheckForm() {
             className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-ravenci-primary focus:border-transparent outline-none transition-all"
           />
         </div>
+      </div>
+
+      <div className="mb-4">
+        <label
+          htmlFor="vc-intent"
+          className="block text-sm font-medium text-neutral-700 mb-1"
+        >
+          What brought you here? <span className="text-neutral-400">(optional)</span>
+        </label>
+        <select
+          id="vc-intent"
+          value={formData.intent}
+          onChange={(e) =>
+            setFormData((prev) => ({ ...prev, intent: e.target.value }))
+          }
+          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-ravenci-primary focus:border-transparent outline-none transition-all bg-white"
+        >
+          <option value="">Pick the closest match (optional)</option>
+          <option value="rebuild">Considering a rebuild</option>
+          <option value="fix-issues">Wanting to fix specific issues</option>
+          <option value="comparing">Comparing agencies for a future project</option>
+          <option value="exploring">Just exploring how my site looks</option>
+          <option value="not-sure">Not sure yet</option>
+        </select>
       </div>
 
       {status === "error" && (

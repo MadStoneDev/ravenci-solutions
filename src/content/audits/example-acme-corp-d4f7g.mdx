@@ -1,0 +1,90 @@
+---
+token: example-acme-corp-d4f7g
+status: draft
+clientName: Sarah Smith
+clientBusiness: Acme Corp
+clientEmail: sarah@example.com
+clientWebsite: https://acmecorp.com.au
+conductedDate: 2026-05-06
+overallScore: 47
+headline: Solid foundation, three issues holding it back
+specialMessage: |
+  Hi Sarah, thanks for the visibility check request. Overall the site
+  is in better shape than most Brisbane SMBs we audit, but three
+  specific issues are dragging the mobile experience and your AI
+  visibility down further than they need to be.
+categories:
+  - id: performance
+    label: Performance
+    score: 38
+    summary: Mobile PageSpeed sits well below benchmarks
+    findings:
+      - LCP at 4.8s on mobile (target is under 2.5s)
+      - Render-blocking JavaScript on the homepage
+      - Hero image is 2.4MB unoptimised
+    recommendations:
+      - Inline critical CSS for the hero section
+      - Lazy-load below-the-fold images
+      - Convert hero image to AVIF/WebP, serve sized variants
+
+  - id: seo
+    label: SEO & AI Visibility
+    score: 52
+    summary: Title/meta basics in place, structured data missing
+    findings:
+      - No Organization or LocalBusiness schema
+      - Three pages missing meta descriptions
+      - Sitemap has 12 entries returning 404
+    recommendations:
+      - Add Organization + LocalBusiness JSON-LD site-wide
+      - Write meta descriptions for the missing pages
+      - Clean up the sitemap; submit fresh to Google Search Console
+
+  - id: mobile
+    label: Mobile Usability
+    score: 61
+    summary: Mostly responsive, two layout issues on phones
+    findings:
+      - Tap targets on the contact form too small
+      - Horizontal scroll on the services page below 380px
+    recommendations:
+      - Increase form button size to minimum 44×44px
+      - Fix the services-page container width breakpoint
+
+  - id: security
+    label: Security
+    score: 70
+    summary: SSL fine, headers missing
+    findings:
+      - No Content-Security-Policy header
+      - HSTS header missing
+    recommendations:
+      - Add CSP and HSTS at the host level (Cloudflare or .htaccess)
+      - Run Mozilla Observatory periodically and address findings
+
+  - id: accessibility
+    label: Accessibility
+    score: 54
+    summary: WCAG basics need work
+    findings:
+      - Insufficient colour contrast on body links (3.2:1)
+      - Three images missing alt text
+      - Form fields missing visible labels on mobile
+    recommendations:
+      - Bump link contrast to minimum 4.5:1
+      - Add alt text to the missing images
+      - Show field labels above inputs on mobile, not just inside
+
+priorityActions:
+  - Fix the LCP issue first — biggest single conversion win
+  - Add structured data markup site-wide (helps both Google and AI models)
+  - Address the link contrast and alt text gaps; quick to fix, important for compliance
+---
+
+This is the optional narrative section. Anything you write here renders below
+the structured data, before the priority actions. Use it for client-specific
+context that doesn't fit cleanly into the category blocks — observations
+about their industry, comparison against competitors you've also reviewed,
+encouragement, etc.
+
+Delete this section entirely if you don't need it.
