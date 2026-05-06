@@ -2,11 +2,11 @@
 // Used by the lead-capture API routes so submissions populate MailerLite as
 // well as triggering the existing transactional emails.
 //
-// Custom fields referenced here (business_name, website_url, source, intent,
-// budget, phone, project_type) need to exist in the MailerLite account — see
-// the README in src/content/audits/ or the MailerLite "Custom fields" UI.
-// Unknown fields are silently ignored by the API, so missing ones don't
-// break the flow.
+// `phone` is a standard MailerLite field (no setup needed). Custom fields
+// — business_name, website_url, lead_source, intent, budget, project_type —
+// need to be created in the MailerLite UI before they capture data. Unknown
+// fields are silently ignored by the API, so missing ones don't break the
+// flow. Don't use `source` as a field key: it's reserved by MailerLite.
 
 const MAILERLITE_API = "https://connect.mailerlite.com/api";
 

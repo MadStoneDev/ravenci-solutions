@@ -111,7 +111,7 @@ export async function POST(request: Request) {
         phone,
         budget: budget || "Not specified",
         project_type: projectType,
-        source: "launch-your-vision",
+        lead_source: "launch-your-vision",
       },
       groups: mlGroup ? [mlGroup] : undefined,
     });

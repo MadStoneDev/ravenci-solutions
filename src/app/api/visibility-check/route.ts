@@ -157,7 +157,7 @@ export async function POST(request: Request) {
       fields: {
         business_name: businessName,
         website_url: websiteUrl,
-        source: "visibility-check",
+        lead_source: "visibility-check",
         intent: intentLabel ?? "",
       },
       groups: mlGroup ? [mlGroup] : undefined,

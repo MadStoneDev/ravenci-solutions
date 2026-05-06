@@ -102,7 +102,7 @@ export async function POST(request: Request) {
     const mlResult = await upsertSubscriber({
       email,
       name,
-      fields: { source: "brisbane-audit-report" },
+      fields: { lead_source: "brisbane-audit-report" },
       groups: mlGroup ? [mlGroup] : undefined,
     });
     if (!mlResult.ok) {
