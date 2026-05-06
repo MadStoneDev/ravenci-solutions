@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Recipient, EmailParams, Sender, MailerSend } from "mailersend";
 import { checkRateLimit, verifyRecaptcha } from "@/lib/api-guards";
+import { upsertSubscriber } from "@/lib/mailerlite";
 
 export async function POST(request: Request) {
   try {
@@ -18,7 +19,17 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
-    const { name, email, message, budget, recaptchaToken } = body;
+    const {
+      name,
+      email,
+      message,
+      budget,
+      phone,
+      businessName,
+      websiteUrl,
+      projectType,
+      recaptchaToken,
+    } = body;
 
     const recaptcha = await verifyRecaptcha(recaptchaToken);
     if (!recaptcha.ok) {
@@ -88,6 +99,25 @@ export async function POST(request: Request) {
       .setPersonalization(personalization);
 
     await mailerSend.email.send(emailParams);
+
+    // Add to MailerLite (best-effort)
+    const mlGroup = process.env.MAILERLITE_GROUP_LAUNCH_YOUR_VISION;
+    const mlResult = await upsertSubscriber({
+      email,
+      name,
+      fields: {
+        business_name: businessName,
+        website_url: websiteUrl,
+        phone,
+        budget: budget || "Not specified",
+        project_type: projectType,
+        source: "launch-your-vision",
+      },
+      groups: mlGroup ? [mlGroup] : undefined,
+    });
+    if (!mlResult.ok) {
+      console.error("MailerLite upsert failed (launch-your-vision):", mlResult.reason);
+    }
 
     return NextResponse.json({ message: "Email sent successfully" });
   } catch (error) {

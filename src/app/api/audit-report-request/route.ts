@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Recipient, EmailParams, Sender, MailerSend } from "mailersend";
 import { checkRateLimit, verifyRecaptcha } from "@/lib/api-guards";
+import { upsertSubscriber } from "@/lib/mailerlite";
 
 export async function POST(request: Request) {
   try {
@@ -94,6 +95,18 @@ export async function POST(request: Request) {
       await mailerSend.email.send(userParams);
     } catch (userError) {
       console.error("Failed to send report email to user:", userError);
+    }
+
+    // Add to MailerLite (best-effort)
+    const mlGroup = process.env.MAILERLITE_GROUP_AUDIT_REPORT;
+    const mlResult = await upsertSubscriber({
+      email,
+      name,
+      fields: { source: "brisbane-audit-report" },
+      groups: mlGroup ? [mlGroup] : undefined,
+    });
+    if (!mlResult.ok) {
+      console.error("MailerLite upsert failed (audit-report-request):", mlResult.reason);
     }
 
     return NextResponse.json({ message: "Report request received" });

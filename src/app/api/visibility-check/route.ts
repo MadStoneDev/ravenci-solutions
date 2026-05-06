@@ -5,6 +5,7 @@ import {
   escapeHtml,
   verifyRecaptcha,
 } from "@/lib/api-guards";
+import { upsertSubscriber } from "@/lib/mailerlite";
 
 const INTENT_LABELS: Record<string, string> = {
   rebuild: "Considering a rebuild",
@@ -146,6 +147,23 @@ export async function POST(request: Request) {
         userError,
       );
       // Don't fail the request — Richard still has the lead in his inbox.
+    }
+
+    // 3. Add to MailerLite (best-effort; never block the response on this)
+    const mlGroup = process.env.MAILERLITE_GROUP_VISIBILITY_CHECK;
+    const mlResult = await upsertSubscriber({
+      email,
+      name,
+      fields: {
+        business_name: businessName,
+        website_url: websiteUrl,
+        source: "visibility-check",
+        intent: intentLabel ?? "",
+      },
+      groups: mlGroup ? [mlGroup] : undefined,
+    });
+    if (!mlResult.ok) {
+      console.error("MailerLite upsert failed (visibility-check):", mlResult.reason);
     }
 
     return NextResponse.json({ message: "Request submitted successfully" });
