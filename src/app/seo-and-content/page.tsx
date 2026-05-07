@@ -119,10 +119,10 @@ export default function SEOContentPage() {
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             RAVENCI Solutions provides SEO and content services in Brisbane,
-            Australia. SEO Foundation audits from $2,490, ongoing Growth SEO
-            from $1,980/month, and copywriting from $390/page. Keyword research,
-            on-page optimisation, local SEO, and conversion-focused content with
-            transparent AUD pricing.
+            Australia. Standard SEO from $1,750/month, eCommerce SEO +
+            Campaigns from $2,250/month, and copywriting from $390/page.
+            Keyword research, on-page optimisation, local SEO, and
+            conversion-focused content with transparent AUD pricing.
           </p>
         </article>
       </section>
@@ -247,61 +247,14 @@ export default function SEOContentPage() {
               </li>
             </ul>
 
-            {/* 1. SEO Foundation (One-off) */}
+            {/* 1. Standard SEO */}
             <h3 className="mt-8 mb-4 font-serif text-h3 font-bold text-white">
-              1. SEO Foundation
+              1. Standard SEO
             </h3>
             <p className="mb-4 text-neutral-400/90">
-              For businesses starting SEO or needing fundamentals fixed. Get the
-              technical groundwork and initial content optimization to start
-              ranking.
-            </p>
-            <div className="mb-16 text-white">
-              <Accordion
-                titleClassName="py-3 px-3 mb-2 text-lg bg-white text-neutral-900"
-                items={[
-                  {
-                    title: "What's Included",
-                    content: `
-<ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
-  <li>Comprehensive audit and prioritized roadmap</li>
-  <li>Keyword research (up to 50 target terms)</li>
-  <li>On-page optimization for up to 10 pages</li>
-  <li>Technical fixes batch (crawlability, indexation, sitemaps)</li>
-  <li>Google Business Profile optimization</li>
-  <li>GA4 and Google Search Console setup</li>
-  <li>Internal linking map</li>
-  <li>Schema markup for key templates</li>
-  <li>Strategy document and handover</li>
-  <li>4–6 weeks delivery</li>
-</ul>
-`,
-                  },
-                ]}
-              />
-              <PriceButton
-                price={"2,490"}
-                link={`/launch-your-vision`}
-                frequency={""}
-                includeFrom={true}
-                callToAction={`SEO Foundation`}
-                subCallToAction={`Request a proposal`}
-              />
-              <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
-                <p className="text-sm text-yellow-200">
-                  ⚡ Limited: up to 10 Foundation projects per quarter
-                </p>
-              </div>
-            </div>
-
-            {/* 2. Growth SEO + Content (Setup + Monthly) */}
-            <h3 className="mt-8 mb-4 font-serif text-h3 font-bold text-white">
-              2. Growth SEO + Content
-            </h3>
-            <p className="mb-4 text-neutral-400/90">
-              Win high‑intent searches and compound gains with consistent
-              content and ongoing optimization. Clear caps keep delivery
-              predictable for a solo operator.
+              Ongoing SEO for businesses that want to rank locally and
+              nationally. Technical fixes, on-page optimisation, content, and
+              monthly reporting with a clear strategy.
             </p>
             <div className="mb-16 text-white">
               <Accordion
@@ -312,15 +265,19 @@ export default function SEOContentPage() {
                     content: `
 <p class="mt-3 text-neutral-100">Setup (one-off)</p>
 <ul class="list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
-  <li>Technical remediation sprint (from Foundation roadmap)</li>
-  <li>Editorial calendar (quarterly)</li>
-  <li>Measurement plan and dashboards</li>
+  <li>Comprehensive audit and prioritised roadmap</li>
+  <li>Keyword research (up to 50 target terms)</li>
+  <li>Technical fixes batch (crawlability, indexation, sitemaps)</li>
+  <li>Google Business Profile optimisation</li>
+  <li>GA4 and Google Search Console setup</li>
+  <li>Schema markup for key templates</li>
 </ul>
 <p class="mt-5 text-neutral-100">Monthly</p>
 <ul class="list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
-  <li>4 articles/posts per month (1,000–1,500 words)</li>
-  <li>2 on‑page refreshes per month</li>
-  <li>Ethical link building (budget as add‑on)</li>
+  <li>On-page optimisation for up to 8 pages/month</li>
+  <li>2 articles/posts per month (1,000-1,500 words)</li>
+  <li>2 on-page content refreshes per month</li>
+  <li>Internal linking improvements</li>
   <li>Monthly reporting and strategy call</li>
 </ul>
 `,
@@ -328,16 +285,68 @@ export default function SEOContentPage() {
                 ]}
               />
               <PriceButton
-                price={"1,980"}
+                price={"1,750"}
                 link={`/launch-your-vision`}
                 frequency={"per month"}
                 includeFrom={true}
-                callToAction={`Growth SEO + Content`}
+                callToAction={`Standard SEO`}
                 subCallToAction={`Request a proposal`}
               />
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
                 <p className="text-sm text-yellow-200">
-                  ⚡ Limited: up to 5 Growth retainers per quarter
+                  ⚡ Limited: up to 8 Standard SEO clients per quarter
+                </p>
+              </div>
+            </div>
+
+            {/* 2. eCommerce SEO + Campaigns */}
+            <h3 className="mt-8 mb-4 font-serif text-h3 font-bold text-white">
+              2. eCommerce SEO + Campaigns
+            </h3>
+            <p className="mb-4 text-neutral-400/90">
+              SEO and campaign strategy built for online stores. Product page
+              optimisation, category structure, shopping feeds, and conversion
+              tracking that ties rankings to revenue.
+            </p>
+            <div className="mb-16 text-white">
+              <Accordion
+                titleClassName="py-3 px-3 mb-2 text-lg bg-white text-neutral-900"
+                items={[
+                  {
+                    title: "What's Included",
+                    content: `
+<p class="mt-3 text-neutral-100">Setup (one-off)</p>
+<ul class="list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
+  <li>eCommerce audit and prioritised roadmap</li>
+  <li>Product and category keyword mapping</li>
+  <li>Technical fixes (structured data, canonical tags, faceted nav)</li>
+  <li>Google Merchant Centre and Shopping feed setup</li>
+  <li>GA4 eCommerce tracking configuration</li>
+</ul>
+<p class="mt-5 text-neutral-100">Monthly</p>
+<ul class="list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
+  <li>Product page optimisation (up to 20 products/month)</li>
+  <li>Category and collection page SEO</li>
+  <li>2 blog articles or buying guides per month</li>
+  <li>Campaign performance review and adjustments</li>
+  <li>Ethical link building (budget as add-on)</li>
+  <li>Monthly reporting and strategy call</li>
+</ul>
+`,
+                  },
+                ]}
+              />
+              <PriceButton
+                price={"2,250"}
+                link={`/launch-your-vision`}
+                frequency={"per month"}
+                includeFrom={true}
+                callToAction={`eCommerce SEO + Campaigns`}
+                subCallToAction={`Request a proposal`}
+              />
+              <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
+                <p className="text-sm text-yellow-200">
+                  ⚡ Limited: up to 5 eCommerce SEO clients per quarter
                 </p>
               </div>
             </div>
@@ -474,7 +483,7 @@ export default function SEOContentPage() {
       />
 
       {/* Mobile sticky CTA */}
-      <StickyCTA link="/launch-your-vision" startingPrice={2490} priceNote="" />
+      <StickyCTA link="/launch-your-vision" startingPrice={1750} priceNote="/mo" />
     </main>
   );
 }

@@ -9,7 +9,7 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Retainer Packages: Ongoing Digital Partnership | RAVENCI Solutions",
   description:
-    "Monthly retainer packages for ongoing web development, design, and strategy in Brisbane. From $490/mo. Your dedicated digital team without the overhead of hiring.",
+    "Monthly retainer packages for ongoing web development, design, and strategy in Brisbane. From $275/mo. Your dedicated digital team without the overhead of hiring.",
   alternates: { canonical: "/retainer-packages" },
 };
 
@@ -55,70 +55,56 @@ export default function RetainerPackagesPage() {
 
   const tiers = [
     {
-      name: "Starter",
-      price: 490,
-      hours: 2,
+      name: "Business Website",
+      price: 275,
+      hours: 1,
       includes: [
-        "2 hours of development or design work",
         "Managed cloud hosting included",
         "Security monitoring, backups & updates",
+        "Plugin and CMS updates",
+        "Uptime monitoring",
         "Email support, 48-hour response",
-        "No hour rollover",
-        "Overage rate: $175/hr",
+        "Minor content edits (text and images)",
+        "Monthly performance check",
         "No minimum commitment, cancel anytime",
+        "Overage rate: $165/hr",
       ],
     },
     {
-      name: "Growth",
-      price: 990,
-      hours: 5,
+      name: "eCommerce",
+      price: 650,
+      hours: 3,
       includes: [
-        "5 hours of development or design work",
-        "Everything in Starter, plus:",
-        "Monthly 30-minute strategy call",
+        "Everything in Business Website, plus:",
+        "3 hours of development or design work",
+        "Product catalog maintenance support",
+        "eCommerce platform updates (Shopify/BigCommerce/WooCommerce)",
+        "Payment gateway and shipping monitoring",
         "Monthly performance audit (speed & Core Web Vitals)",
         "Basic SEO monitoring",
         "24-hour support response",
         "1 month hour rollover",
-        "10% off additional project work",
-        "Overage rate: $165/hr",
         "3-month minimum commitment",
+        "Overage rate: $165/hr",
       ],
     },
     {
-      name: "Partner",
-      price: 1990,
-      hours: 12,
+      name: "SMB Full Service",
+      price: 2800,
+      hours: 15,
       includes: [
-        "12 hours of development or design work",
-        "Everything in Growth, plus:",
+        "Everything in eCommerce, plus:",
+        "15 hours of development and design work",
+        "On-call priority support (same business day)",
         "Bi-weekly 30-minute strategy calls",
         "Monthly performance audit + analytics review",
         "Full SEO with keyword tracking",
         "Monthly CRO review",
-        "Same business day support response",
+        "Content updates and page creation",
         "2 months hour rollover",
         "15% off additional project work",
-        "Overage rate: $155/hr",
         "3-month minimum commitment",
-      ],
-    },
-    {
-      name: "Scale",
-      price: 3490,
-      hours: 25,
-      includes: [
-        "25 hours of development or design work",
-        "Everything in Partner, plus:",
-        "Weekly 30-minute strategy calls",
-        "Monthly performance audit + comprehensive analytics review",
-        "Comprehensive SEO with link building",
-        "Full CRO: heatmaps, A/B testing, form optimisation",
-        "4-hour support response (1hr for critical issues)",
-        "3 months hour rollover",
-        "20% off additional project work",
-        "Overage rate: $145/hr",
-        "6-month minimum commitment",
+        "Overage rate: $155/hr",
       ],
     },
   ];
@@ -134,9 +120,9 @@ export default function RetainerPackagesPage() {
     {
       title: "How do unused hours work?",
       summary:
-        "Starter hours don't roll over. Growth hours roll over for 1 month, Partner for 2 months, and Scale for 3 months. RAVENCI tracks your balance and helps plan usage.",
+        "Business Website tier has no development hours. eCommerce hours roll over for 1 month, SMB Full Service for 2 months. RAVENCI tracks your balance and helps plan usage.",
       content:
-        "It depends on your tier. Starter hours don't roll over. Growth hours roll over for 1 month, Partner for 2 months, and Scale for 3 months. We'll always let you know your balance and help you plan usage.",
+        "It depends on your tier. The Business Website tier covers maintenance only with no dev hours. eCommerce hours roll over for 1 month, and SMB Full Service hours roll over for 2 months. We'll always let you know your balance and help you plan usage.",
     },
     {
       title:
@@ -154,9 +140,9 @@ export default function RetainerPackagesPage() {
     {
       title: "What if I need more hours in a month?",
       summary:
-        "Additional hours are billed at your tier's discounted overage rate. RAVENCI always confirms before doing any work beyond your included hours. No surprise charges.",
+        "Additional hours are billed at your tier's overage rate ($165/hr for Business and eCommerce, $155/hr for SMB Full Service). RAVENCI always confirms before doing any work beyond your included hours.",
       content:
-        "No problem. Additional hours are billed at your tier's overage rate, which is discounted from our standard rate. We'll always confirm before doing any work beyond your included hours.",
+        "No problem. Additional hours are billed at your tier's overage rate ($165/hr for Business and eCommerce, $155/hr for SMB Full Service). We'll always confirm before doing any work beyond your included hours.",
     },
   ];
 
@@ -203,7 +189,7 @@ export default function RetainerPackagesPage() {
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             For Australian businesses that want a digital team without the
-            overhead of hiring one. Monthly packages from $490, with hosting,
+            overhead of hiring one. Monthly packages from $275, with hosting,
             maintenance, and dedicated time for development, design, content
             and SEO, used however your business needs it that month. Tell us
             the priorities. We&apos;ll take it from there.
@@ -271,10 +257,10 @@ export default function RetainerPackagesPage() {
               Why a Retainer Beats Hiring In-House
             </h3>
             <p className={`mb-6 text-neutral-400/90`}>
-              Our Scale retainer costs{" "}
-              <span className={`text-white font-bold`}>$41,880/year</span>, a
+              Our SMB Full Service retainer costs{" "}
+              <span className={`text-white font-bold`}>$33,600/year</span>, a
               full-time hire costs{" "}
-              <span className={`text-white font-bold`}>$80,000–$100,000/year</span>{" "}
+              <span className={`text-white font-bold`}>$80,000-$100,000/year</span>{" "}
               before super, leave, equipment, and training.
             </p>
             <ul className={`flex flex-col gap-4 mb-6 text-neutral-400/90`}>
@@ -315,7 +301,7 @@ export default function RetainerPackagesPage() {
             </p>
             <p className={`text-neutral-400/90`}>
               That&apos;s how we approach it at RAVENCI. To make it even simpler for
-              you, we offer four tiers of retainer packages, each designed to
+              you, we offer three tiers of retainer packages, each designed to
               meet your specific needs.
             </p>
           </article>
@@ -377,7 +363,7 @@ export default function RetainerPackagesPage() {
           Choose Your Retainer
         </h3>
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6`}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6`}
         >
           {tiers.map((tier) => (
             <div
@@ -453,7 +439,7 @@ export default function RetainerPackagesPage() {
       {/* Sticky CTA for Mobile */}
       <StickyCTA
         link="/launch-your-vision"
-        startingPrice={490}
+        startingPrice={275}
         label="Book a Strategy Call"
       />
 

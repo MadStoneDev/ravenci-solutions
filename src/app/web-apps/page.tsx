@@ -221,7 +221,7 @@ export default function WebAppPage() {
                 ]}
               />
               <PriceButton
-                price={"25,000"}
+                price={"35,000"}
                 link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
@@ -275,7 +275,7 @@ export default function WebAppPage() {
               />
 
               <PriceButton
-                price={"45,000"}
+                price={"55,000"}
                 link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
@@ -327,7 +327,7 @@ export default function WebAppPage() {
               />
 
               <PriceButton
-                price={"60,000"}
+                price={"75,000"}
                 link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
@@ -382,7 +382,7 @@ export default function WebAppPage() {
       {/* Mobile sticky CTA */}
       <StickyCTA
         link="/launch-your-vision"
-        startingPrice={25000}
+        startingPrice={35000}
         priceNote="depending on scope"
       />
 

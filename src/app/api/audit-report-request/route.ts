@@ -75,23 +75,49 @@ export async function POST(request: Request) {
 
     // 2. Send the lead the report link
     try {
+      const firstName = name.split(" ")[0];
+      const baseUrl =
+        process.env.NEXT_PUBLIC_BASE_URL ?? "https://ravenci.solutions";
+      const reportUrl = `${baseUrl}/brisbane-website-audit/report`;
+      const visibilityCheckUrl = `${baseUrl}/free-audit`;
+
+      const html = `
+        <p>Hi ${firstName},</p>
+        <p>Here's the full Brisbane Business Website Audit 2026:</p>
+        <p>
+          <a href="${reportUrl}"
+             style="display:inline-block;padding:12px 20px;background:#7f1670;color:#fff;border-radius:9999px;text-decoration:none;font-weight:500;">
+            Open the full report
+          </a>
+        </p>
+        <p>Save it, share it, print to PDF — it's yours.</p>
+        <p><strong>Curious how your own site stacks up?</strong></p>
+        <p>We do free Visibility Checks across the same five categories.</p>
+        <p>
+          <a href="${visibilityCheckUrl}"
+             style="display:inline-block;padding:12px 20px;background:#1b1b1b;color:#fff;border-radius:9999px;text-decoration:none;font-weight:500;">
+            Get a free Visibility Check
+          </a>
+        </p>
+        <p>Cheers,<br/>Richard<br/>RAVENCI Solutions</p>
+      `;
+
+      const text =
+        `Hi ${firstName},\n\n` +
+        `Here's the full Brisbane Business Website Audit 2026:\n` +
+        `${reportUrl}\n\n` +
+        `Save it, share it, print to PDF — it's yours.\n\n` +
+        `Curious how your own site stacks up?\n` +
+        `We do free Visibility Checks across the same five categories.\n` +
+        `${visibilityCheckUrl}\n\n` +
+        `Cheers,\nRichard\nRAVENCI Solutions`;
+
       const userParams = new EmailParams()
         .setFrom(noReply)
         .setTo([new Recipient(email, name)])
-        .setSubject(
-          "Your Brisbane Business Website Audit 2026: Full Report",
-        )
-        .setText(
-          `Hi ${name.split(" ")[0]},\n\n` +
-            `Thanks for requesting the Brisbane Business Website Audit 2026 report.\n\n` +
-            `Open the full report here:\n` +
-            `https://ravenci.solutions/brisbane-website-audit/report\n\n` +
-            `From there you can print it or save it as a PDF directly from your browser.\n\n` +
-            `If you'd like a free Visibility Check on your own website, just reply to this email or visit https://ravenci.solutions.\n\n` +
-            `Cheers,\n` +
-            `Richard at RAVENCI Solutions\n` +
-            `https://ravenci.solutions`,
-        );
+        .setSubject("Your Brisbane Business Website Audit 2026")
+        .setHtml(html)
+        .setText(text);
       await mailerSend.email.send(userParams);
     } catch (userError) {
       console.error("Failed to send report email to user:", userError);

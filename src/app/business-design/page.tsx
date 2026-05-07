@@ -7,7 +7,7 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Business Design Solutions - RAVENCI Solutions",
   description:
-    "Professional branding and graphic design in Brisbane. From logos to vehicle wraps, create a cohesive brand identity that stands out. From $2,490.",
+    "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems, create a cohesive brand that commands premium prices. From $3,500.",
 };
 
 export default function BusinessDesignPage() {
@@ -263,12 +263,12 @@ export default function BusinessDesignPage() {
             </p>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
-              1. Brand Essentials
+              1. Logo + Guidelines
             </h3>
             <p className={`mb-4 text-neutral-400/90`}>
-              Perfect for startups and small businesses who need the
-              fundamentals to look professional. The core brand elements
-              that every business needs to stand up alongside its competitors.
+              The core brand elements every business needs to look
+              professional. Logo, colour palette, typography, and a style
+              guide so everything stays consistent as you grow.
             </p>
             <div className={`mb-16 text-white`}>
               <Accordion
@@ -295,29 +295,29 @@ export default function BusinessDesignPage() {
                 ]}
               />
               <PriceButton
-                price={"2,490"}
+                price={"3,500"}
                 link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
-                callToAction={`Brand Essentials`}
+                callToAction={`Logo + Guidelines`}
                 subCallToAction={`Request a proposal`}
               />
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
                 <p className="text-sm text-yellow-200">
-                  ⚡ Limited: We only take on 8 Brand Essentials projects per
+                  ⚡ Limited: We only take on 8 Logo + Guidelines projects per
                   quarter for personalised attention
                 </p>
               </div>
             </div>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
-              2. Marketing Materials
+              2. Full Brand Identity
             </h3>
             <p className={`mb-4 text-neutral-400/90`}>
-              For established businesses ready to scale their marketing efforts.
-              Get all the professional materials you need to compete with
-              industry leaders and attract premium clients.
+              For businesses ready to look like the premium service they
+              provide. A complete brand system from logo to marketing
+              materials, designed to compete with industry leaders.
             </p>
 
             <div className={`mb-16 text-white`}>
@@ -356,18 +356,18 @@ export default function BusinessDesignPage() {
               />
 
               <PriceButton
-                price={"4,590"}
+                price={"10,000"}
                 link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
-                callToAction={`Marketing Materials Suite`}
+                callToAction={`Full Brand Identity`}
                 subCallToAction={`Request a proposal`}
               />
 
               <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
                 <p className="text-sm text-yellow-200">
-                  ⚡ Limited: We only take on 5 Marketing Suite projects per
-                  quarter
+                  ⚡ Limited: We only take on 5 Full Brand Identity projects
+                  per quarter
                 </p>
               </div>
             </div>
@@ -455,7 +455,7 @@ export default function BusinessDesignPage() {
       {/* Mobile sticky CTA */}
       <StickyCTA
         link="/launch-your-vision"
-        startingPrice={2490}
+        startingPrice={3500}
         priceNote=""
       />
 

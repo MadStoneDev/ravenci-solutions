@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { Recipient, EmailParams, Sender, MailerSend } from "mailersend";
 import { getAuditByToken } from "@/lib/audits";
 import { escapeHtml } from "@/lib/api-guards";
+import { upsertSubscriber } from "@/lib/mailerlite";
 
 // Triggers the report-delivery email for a given audit token. Protected by
 // ADMIN_API_TOKEN so it can't be hit by the public. The eventual admin UI
@@ -67,6 +68,8 @@ export async function POST(request: Request) {
   const safeBusiness = escapeHtml(audit.clientBusiness);
   const safeHeadline = escapeHtml(audit.headline);
 
+  const calendlyUrl = "https://calendly.com/ravenci";
+
   const html = `
     <p>Hi ${safeFirstName},</p>
     <p>Your visibility audit for ${safeBusiness} is ready.</p>
@@ -80,8 +83,8 @@ export async function POST(request: Request) {
     <p>You can read it in the browser, save to PDF, or forward to your team. The link's private to you.</p>
     <p>
       If anything in there's worth fixing and you'd like a hand, reply to this
-      email with your rough timeline and budget. I'll come back with options
-      that fit. No sales call required.
+      email or <a href="${calendlyUrl}">book a quick call</a> and we'll talk
+      through it. No pressure, no pitch deck.
     </p>
     <p>Cheers,<br/>Richard at RAVENCI Solutions<br/>${baseUrl}</p>
   `;
@@ -92,7 +95,8 @@ export async function POST(request: Request) {
     `Headline: ${audit.headline}\n\n` +
     `Open the full report:\n${reportUrl}\n\n` +
     `You can read it in the browser, save to PDF, or forward to your team. The link's private to you.\n\n` +
-    `If anything in there's worth fixing and you'd like a hand, reply to this email with your rough timeline and budget. I'll come back with options that fit. No sales call required.\n\n` +
+    `If anything in there's worth fixing and you'd like a hand, reply to this email or book a quick call: ${calendlyUrl}\n\n` +
+    `No pressure, no pitch deck.\n\n` +
     `Cheers,\nRichard at RAVENCI Solutions\n${baseUrl}`;
 
   const emailParams = new EmailParams()
@@ -113,6 +117,22 @@ export async function POST(request: Request) {
       { message: "Failed to send audit report email" },
       { status: 500 },
     );
+  }
+
+  // Add to "Audit Sent" group so the MailerLite automation triggers
+  const mlGroup = process.env.MAILERLITE_GROUP_AUDIT_SENT ?? "186762321208542657";
+  const mlResult = await upsertSubscriber({
+    email: audit.clientEmail,
+    name: audit.clientName,
+    fields: {
+      business_name: audit.clientBusiness,
+      website_url: audit.clientWebsite ?? "",
+      lead_source: "visibility-check-audit",
+    },
+    groups: [mlGroup],
+  });
+  if (!mlResult.ok) {
+    console.error("MailerLite upsert failed (send-audit-report):", mlResult.reason);
   }
 
   return NextResponse.json({

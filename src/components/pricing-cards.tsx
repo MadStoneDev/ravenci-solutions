@@ -26,7 +26,7 @@ export default function PricingCards({ tiers }: { tiers: PricingTier[] }) {
   const handleToggle = () => setAllOpen((prev) => !prev);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-8 lg:gap-y-0">
+    <div className={`grid grid-cols-1 ${tiers.length === 4 ? "lg:grid-cols-2 xl:grid-cols-4" : "lg:grid-cols-3"} gap-8`}>
       {tiers.map((tier, index) => (
         <div
           key={index}

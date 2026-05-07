@@ -111,9 +111,9 @@ const faqItems = [
     title:
       "How much does a custom website cost compared to a typical agency build?",
     summary:
-      "RAVENCI custom websites start from $3,490. A typical agency build may look cheaper upfront, but plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance make total ownership cost comparable with worse results.",
+      "RAVENCI custom websites start from $4,950. A typical agency build may look cheaper upfront, but plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance make total ownership cost comparable with worse results.",
     content:
-      "Our custom websites start from $3,490 for a Foundation site. A typical agency build may look cheaper upfront, but factor in plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance. The total cost of ownership is often comparable, with a worse result.",
+      "Our custom websites start from $4,950 for a Brochure site with CRM. A typical agency build may look cheaper upfront, but factor in plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance. The total cost of ownership is often comparable, with a worse result.",
   },
 ];
 
@@ -328,7 +328,7 @@ export default function CustomVsTemplatePage() {
           Ready to Build It Right?
         </h2>
         <p className="mb-10 max-w-md text-white/80">
-          Custom websites from $3,490. No templates, no lock-in, no surprises.
+          Custom websites from $4,950. No templates, no lock-in, no surprises.
           Start with a free consultation.
         </p>
         <Link

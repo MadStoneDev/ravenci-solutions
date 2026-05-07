@@ -217,12 +217,12 @@ const ravenciScorecard = [
   {
     question: "Timeline?",
     answer:
-      "Foundation Website: 3 weeks. Growth Website: 4-6 weeks. Premium Brand & Web: 10-14 weeks. Healthcare and Construction sites typically 5-8 weeks.",
+      "Brochure Website: 4 weeks. eCommerce Template: 4-5 weeks. Custom Solution: 6-8 weeks. eCommerce Custom: 8-10 weeks. Healthcare and Construction sites typically 5-8 weeks.",
   },
   {
     question: "Post-launch support?",
     answer:
-      "30 days of post-launch bug fixes included. Ongoing maintenance plan or retainer packages from $490/mo for ongoing dev/design work.",
+      "30 days of post-launch bug fixes included. Ongoing maintenance plan or retainer packages from $275/mo for ongoing support.",
   },
   {
     question: "What if you leave or we stop trading?",

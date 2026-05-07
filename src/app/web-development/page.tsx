@@ -9,7 +9,7 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Website Development - RAVENCI Solutions",
   description:
-    "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $3,490.",
+    "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $4,950.",
   alternates: { canonical: "/web-development" },
 };
 
@@ -160,9 +160,9 @@ export default function WebHostingDevelopmentPage() {
             For Australian businesses ready to replace the site they have with
             one that performs. Built properly the first time so it&apos;s
             still working in five years. No plugin clutter, no surprise
-            subscriptions, no developer disappearing on you. From $3,490 for a
-            foundation build to $14,990 for a full brand and web package, plus
-            ongoing support. Brisbane-based. 20+ years.
+            subscriptions, no developer disappearing on you. From $4,950 for a
+            brochure site with CRM to $11,650 for a fully custom eCommerce
+            build, plus ongoing support. Brisbane-based. 20+ years.
           </p>
         </article>
       </section>
@@ -261,7 +261,7 @@ export default function WebHostingDevelopmentPage() {
             </p>
             <p className={`text-neutral-400/90`}>
               That's how we approach it at RAVENCI. To make it even simpler for
-              you, we offer three tiers of development services, each designed
+              you, we offer four tiers of development services, each designed
               to meet your specific needs.
             </p>
           </article>
@@ -385,121 +385,129 @@ export default function WebHostingDevelopmentPage() {
         <PricingCards
           tiers={[
             {
-              name: "1. Foundation Website",
-              price: "3,490",
+              name: "1. Brochure Website",
+              price: "4,950",
               description:
-                "The most basic option for any business looking to get their foot in the door. A simple and quick way to get your website up and running, with a focus on performance and accessibility.",
+                "A professional online presence with a CRM to manage your leads. Clean, modern, built for performance, and designed to get out of your way.",
               accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
-    <li>Custom single-page design</li>
-    <li>Responsive mobile-optimized layout</li>
-    <li>CMS setup (WordPress/other)</li>
-    <li>Hero section with call-to-action</li>
-    <li>About Us section</li>
-    <li>Services/Products overview section</li>
-    <li>Team/Testimonials section</li>
-    <li>Business Contact details section</li>
-    <li>Footer with social media links</li>
-    <li>Basic Google Analytics setup</li>
+    <li>Custom responsive design (up to 5 pages)</li>
+    <li>CMS setup for easy content management</li>
+    <li>CRM integration (HubSpot, Zoho, or similar)</li>
+    <li>Contact forms with lead capture</li>
+    <li>Google Analytics and Search Console setup</li>
     <li>Basic on-page SEO</li>
     <li>85+ Google PageSpeed score guaranteed</li>
-    <li>1 round of revisions</li>
-    <li>3 weeks delivery</li>
+    <li>Mobile-optimised layout</li>
+    <li>SSL certificate with RAVENCI hosting</li>
+    <li>2 rounds of revisions</li>
+    <li>4 weeks delivery</li>
     <li>Discounted Hosting with RAVENCI</li>
     <li>Discounted Maintenance with RAVENCI</li>
-    <li>1 Year Domain Subscription FREE</li>
-    <li>1 Year SSL certificate with RAVENCI Hosting FREE</li>
 </ul>`,
             },
             {
-              name: "2. Growth Website",
-              price: "7,490",
+              name: "2. eCommerce Template",
+              price: "6,650",
               description:
-                "Already have your design sorted? Have your website built just right. Whether you've worked with a designer, have existing brand guidelines, or know exactly what you want, we will turn your vision into a high-performing, professional website.",
+                "Get selling fast with a professionally configured Shopify or BigCommerce store. Template-based for speed, customised to match your brand.",
               accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
-    <li>Professional responsive build</li>
-    <li>Multi-page custom website (up to 8 pages)</li>
-    <li>Extra Pages purchasable as add-ons</li>
-    <li>Advanced CMS setup with user training</li>
-    <li>Homepage with hero section</li>
-    <li>About Us page</li>
-    <li>Services/Products pages</li>
-    <li>Extra Service/Product Pages purchasable as add-ons</li>
-    <li>Contact page with integrated contact form</li>
-    <li>Basic Blog setup with 3 sample posts</li>
-    <li>Navigation menu and footer</li>
-    <li>Image optimization and compression</li>
-    <li>Advanced Google Analytics with goal tracking</li>
-    <li>Basic SEO setup (meta tags, sitemap)</li>
-    <li>Social media integration</li>
-    <li>85+ Google PageSpeed score guaranteed</li>
+    <li>Shopify or BigCommerce setup</li>
+    <li>Theme selection and brand customisation</li>
+    <li>Product catalog setup (up to 50 products)</li>
+    <li>Payment gateway integration</li>
+    <li>Shipping and tax configuration</li>
+    <li>Basic SEO setup</li>
+    <li>Google Analytics with eCommerce tracking</li>
+    <li>Mobile-optimised storefront</li>
+    <li>Staff training on store management</li>
     <li>2 rounds of revisions</li>
-    <li>4-6 weeks delivery</li>
-    <li>Discounted Hosting with RAVENCI</li>
-    <li>Discounted Maintenance with RAVENCI</li>
-    <li>1 Year Domain Subscription FREE</li>
-    <li>1 Year SSL certificate with RAVENCI Hosting FREE</li>
+    <li>4-5 weeks delivery</li>
 </ul>`,
             },
             {
-              name: "3. Premium Brand & Web",
-              price: "14,990",
+              name: "3. Custom Solution",
+              price: "9,700",
               description:
-                "A complete transformation for businesses who want it all. Starting from scratch or need a complete rebrand? We will create your entire brand identity from the ground up, then design and build a stunning website that brings it all together.",
+                "For businesses with specific requirements that off-the-shelf won't cover. Custom design and development built around how your business actually works.",
               accordionContent: `
-<p class="mt-3 text-neutral-100">Branding</p>
-<ul class="list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
-    <li>Complete brand identity development</li>
-    <li>Custom logo design (3 concepts, 3 revisions)</li>
-    <li>Brand color palette</li>
-    <li>Typography selection</li>
-    <li>Brand style guide document</li>
-    <li>Email signature design</li>
-    <li>4 weeks delivery</li>
-</ul>
-<p class="mt-5 text-neutral-100">Website Design</p>
-<ul class="list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
-    <li>Custom design faithful to your new branding</li>
-    <li>Professional mockups and wireframes</li>
-    <li>User experience (UX) optimization</li>
-    <li>Responsive design layouts on all devices</li>
-    <li>Brand-consistent color schemes and typography</li>
-    <li>Custom graphics and visual elements</li>
-    <li>Strategic layout for conversion optimization</li>
-    <li>2 design concept presentations</li>
-    <li>2 rounds of design revisions</li>
-    <li>3-4 weeks delivery</li>
-    <li>Final design approval before development begins</li>
-</ul>
-<p class="mt-5 text-neutral-100">Website Development</p>
-<ul class="mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
-    <li>Professional responsive build</li>
-    <li>Multi-page custom website (up to 8 pages)</li>
-    <li>Extra Pages purchasable as add-ons</li>
-    <li>Advanced CMS setup with user training</li>
-    <li>Homepage with hero section</li>
-    <li>About Us page</li>
-    <li>Services/Products pages</li>
-    <li>Extra Service/Product Pages purchasable as add-ons</li>
-    <li>Contact page with integrated contact form</li>
-    <li>Basic Blog setup with 3 sample posts</li>
-    <li>Navigation menu and footer</li>
-    <li>Image optimization and compression</li>
-    <li>Advanced Google Analytics with goal tracking</li>
-    <li>Basic SEO setup (meta tags, sitemap)</li>
-    <li>Social media integration</li>
+<ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
+    <li>Fully custom design and development</li>
+    <li>Multi-page website (up to 12 pages)</li>
+    <li>Advanced CMS with content workflows</li>
+    <li>Custom integrations and API connections</li>
+    <li>Advanced SEO with structured data</li>
+    <li>Blog setup with content strategy</li>
+    <li>Analytics with goal and conversion tracking</li>
+    <li>Image optimisation and lazy loading</li>
     <li>85+ Google PageSpeed score guaranteed</li>
-    <li>2 rounds of development revisions</li>
-    <li>4-6 weeks delivery</li>
+    <li>3 rounds of revisions</li>
+    <li>6-8 weeks delivery</li>
     <li>Discounted Hosting with RAVENCI</li>
     <li>Discounted Maintenance with RAVENCI</li>
-    <li>1 Year Domain Subscription FREE</li>
-    <li>1 Year SSL certificate with RAVENCI Hosting FREE</li>
+</ul>`,
+            },
+            {
+              name: "4. eCommerce Custom",
+              price: "11,650",
+              description:
+                "A fully customised Shopify or BigCommerce store. Custom theme, advanced product configurations, and integrations tailored to your operations.",
+              accordionContent: `
+<ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
+    <li>Custom Shopify or BigCommerce theme</li>
+    <li>Product catalog setup (up to 200 products)</li>
+    <li>Custom product filtering and search</li>
+    <li>Advanced payment and shipping rules</li>
+    <li>Inventory management integration</li>
+    <li>Customer account portal</li>
+    <li>Email marketing integration</li>
+    <li>Advanced eCommerce analytics</li>
+    <li>Mobile-first responsive design</li>
+    <li>3 rounds of revisions</li>
+    <li>8-10 weeks delivery</li>
 </ul>`,
             },
           ]}
         />
+      </section>
+
+      {/* What Can Affect Pricing */}
+      <section
+        className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
+      >
+        <h3 className={`mb-8 font-serif text-h3 font-bold text-center`}>
+          What Can Affect Pricing
+        </h3>
+        <p className={`mb-8 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
+          Every project is different. These are the most common factors that
+          can move the price above the starting point for each tier.
+        </p>
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto`}>
+          {[
+            "Additional pages beyond the included count",
+            "Custom integrations (CRMs, ERPs, payment gateways, APIs)",
+            "Multi-language or internationalisation",
+            "Migration from an existing platform (data, SEO redirects, content)",
+            "Advanced animations or interactive elements",
+            "Membership or gated content areas",
+            "Custom reporting dashboards",
+            "Ongoing content creation (copywriting, photography, video)",
+            "Rush timelines (under 4 weeks)",
+            "Third-party platform licensing (not included in build cost)",
+          ].map((item, i) => (
+            <div key={i} className="flex items-start gap-2">
+              <IconCircleCheckFilled
+                className="text-neutral-400 flex-shrink-0 mt-0.5"
+                size={18}
+              />
+              <p className="text-neutral-600 text-sm">{item}</p>
+            </div>
+          ))}
+        </div>
+        <p className={`mt-8 text-center text-sm text-neutral-400`}>
+          Hourly rate for additional work: $165/hr
+        </p>
       </section>
 
       {/* FAQ Section */}
@@ -512,8 +520,8 @@ export default function WebHostingDevelopmentPage() {
           items={[
             {
               title: `How long does a typical website take to build?`,
-              summary: `Foundation websites take 3 weeks, Growth websites 4-6 weeks, and Premium Brand & Web packages 10-14 weeks. RAVENCI provides regular progress updates throughout every project.`,
-              content: `Foundation Website: 3 weeks. Growth Website: 4-6 weeks. Premium Brand & Web: 10-14 weeks total (4 weeks branding + 3-4 weeks design + 4-6 weeks development). We stick to these timelines and provide regular progress updates.`,
+              summary: `Brochure websites take 4 weeks, eCommerce template builds 4-5 weeks, custom solutions 6-8 weeks, and custom eCommerce builds 8-10 weeks. RAVENCI provides regular progress updates throughout every project.`,
+              content: `Brochure Website: 4 weeks. eCommerce Template: 4-5 weeks. Custom Solution: 6-8 weeks. eCommerce Custom: 8-10 weeks. We stick to these timelines and provide regular progress updates.`,
             },
             {
               title: `What if I'm not happy with the result?`,
@@ -547,7 +555,7 @@ export default function WebHostingDevelopmentPage() {
       {/* Sticky CTA for Mobile */}
       <StickyCTA
         link="/launch-your-vision"
-        startingPrice={3490}
+        startingPrice={4950}
         label="Request a Proposal"
       />
 
@@ -560,7 +568,7 @@ export default function WebHostingDevelopmentPage() {
             serviceType: "Web Development",
             name: "Website Development",
             description:
-              "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $3,490.",
+              "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $4,950.",
             provider: {
               "@type": "ProfessionalService",
               name: "RAVENCI Solutions",
@@ -582,27 +590,35 @@ export default function WebHostingDevelopmentPage() {
               itemListElement: [
                 {
                   "@type": "Offer",
-                  name: "Foundation Website",
-                  price: "3490",
+                  name: "Brochure Website",
+                  price: "4950",
                   priceCurrency: "AUD",
                   description:
-                    "Custom single-page design with CMS setup, SEO, and 85+ PageSpeed score. 3 weeks delivery.",
+                    "Custom responsive design up to 5 pages with CRM integration, SEO, and 85+ PageSpeed score. 4 weeks delivery.",
                 },
                 {
                   "@type": "Offer",
-                  name: "Growth Website",
-                  price: "7490",
+                  name: "eCommerce Template",
+                  price: "6650",
                   priceCurrency: "AUD",
                   description:
-                    "Multi-page custom website up to 8 pages with advanced CMS, blog setup, and goal tracking. 4-6 weeks delivery.",
+                    "Shopify or BigCommerce store with theme customisation, product setup, and eCommerce tracking. 4-5 weeks delivery.",
                 },
                 {
                   "@type": "Offer",
-                  name: "Premium Brand & Web",
-                  price: "14990",
+                  name: "Custom Solution",
+                  price: "9700",
                   priceCurrency: "AUD",
                   description:
-                    "Complete brand identity plus multi-page custom website. Logo, style guide, wireframes, UX design, and full development. 10-14 weeks delivery.",
+                    "Fully custom design and development up to 12 pages with advanced CMS, integrations, and structured data. 6-8 weeks delivery.",
+                },
+                {
+                  "@type": "Offer",
+                  name: "eCommerce Custom",
+                  price: "11650",
+                  priceCurrency: "AUD",
+                  description:
+                    "Custom Shopify or BigCommerce theme with advanced product configurations and integrations. 8-10 weeks delivery.",
                 },
               ],
             },
@@ -621,7 +637,7 @@ export default function WebHostingDevelopmentPage() {
                 name: "How long does a typical website take to build?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Foundation websites take 3 weeks, Growth websites 4-6 weeks, and Premium Brand & Web packages 10-14 weeks. RAVENCI provides regular progress updates throughout every project.",
+                  text: "Brochure websites take 4 weeks, eCommerce template builds 4-5 weeks, custom solutions 6-8 weeks, and custom eCommerce builds 8-10 weeks. RAVENCI provides regular progress updates throughout every project.",
                 },
               },
               {

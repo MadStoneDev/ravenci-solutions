@@ -490,14 +490,14 @@ export default function BrisbaneWebsiteCostPage() {
           </h3>
           <div className="space-y-4 text-neutral-600 leading-relaxed">
             <p>
-              RAVENCI Solutions builds custom websites in Brisbane across the
-              standard small business through custom premium tiers. Our
-              Foundation Website starts at <strong>$3,490</strong> for
-              single-page builds, our Growth Website runs from{" "}
-              <strong>$7,490</strong> for 8-page custom CMS builds, and our
-              Premium Brand &amp; Web package starts at{" "}
-              <strong>$14,990</strong> for businesses investing in long-term
-              digital presence.
+              RAVENCI Solutions builds custom websites in Brisbane across
+              brochure sites through to fully custom eCommerce platforms. Our
+              Brochure Website starts at <strong>$4,950</strong> with CRM
+              included, eCommerce template builds from{" "}
+              <strong>$6,650</strong>, Custom Solutions from{" "}
+              <strong>$9,700</strong>, and Custom eCommerce from{" "}
+              <strong>$11,650</strong> for businesses needing a tailored
+              online store.
             </p>
             <p>
               We work primarily with Custom Next.js (for performance-critical
