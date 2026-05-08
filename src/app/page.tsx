@@ -43,7 +43,7 @@ export default function Home() {
           <h2
             className={`mt-8 max-w-[600px] text-lg md:text-xl font-light text-neutral-400`}
           >
-            Twenty years and 450+ projects for established Australian
+            Twenty-five years and 450+ projects for established Australian
             businesses. We build websites the right way the first time:
             modern, performant, still working in five years.
           </h2>
@@ -139,8 +139,8 @@ export default function Home() {
             </p>
 
             <p>
-              From design through development, hosting and ongoing maintenance,
-              your site stays sharp without you having to think about it. Tell
+              From design through to development, hosting and ongoing maintenance,
+              your site remains performant and fresh without you having to think about it. Tell
               us what you need. We&apos;ll take it from there.
             </p>
           </div>
@@ -173,34 +173,34 @@ export default function Home() {
                 content: `<p class="mb-4 text-neutral-100">Built once. Built properly. Still working in five years.</p>
 
 <p class="text-neutral-100">Content sites your team can manage</p>
-<p class="mb-4 text-neutral-400/90">Sites you can update yourself without calling a developer for every comma. Built so the admin makes sense to a human who isn't us.</p>
+<p class="mb-4 text-neutral-400/70">Sites you can update yourself without calling a developer for every little change. Built with a dashboard anyone can understand.</p>
 
 <p class="text-neutral-100">Custom builds when off-the-shelf won't cut it</p>
-<p class="mb-4 text-neutral-400/90">When the project genuinely needs something custom, we build it from scratch, engineered so it grows with you instead of falling apart at the seams.</p>
+<p class="mb-4 text-neutral-400/70">When the project genuinely needs something custom, we build it from scratch, engineered so it grows with you instead of against you.</p>
 
 <p class="text-neutral-100">E-commerce that sells</p>
-<p class="mb-4 text-neutral-400/90">Online stores designed around how your customers buy and how your team fulfils. Whether that's Shopify, BigCommerce, or a custom platform, chosen for what fits, not what's easiest.</p>
+<p class="mb-4 text-neutral-400/70">Online stores designed around how your customers buy and how your team fulfils. Whether that's Shopify, BigCommerce, or a custom platform, chosen for what fits, not what's easiest.</p>
 
 <p class="text-neutral-100">Talks to the rest of your business</p>
-<p class="mb-4 text-neutral-400/90">Your website connected to your CRM, your booking system, your accounting, your email, so data flows automatically and nobody's re-typing it three times.</p>
+<p class="mb-4 text-neutral-400/70">Your website connected to your CRM, your booking system, your accounting, your email, so data flows automatically and nobody's re-typing it three times.</p>
 `,
               },
               {
                 title: `Design`,
                 content: `<p class="mb-4 text-neutral-100">Design that works for your customers, not for design awards.</p><p class="text-neutral-100">Planning the experience</p>
-<p class="mb-4 text-neutral-400/90">Before any pixel gets pushed, we map out how your customers move through the site: what they need, where they'll click, what makes them act. The design follows from that.</p>
+<p class="mb-4 text-neutral-400/70">We start by studying the best user experience for your business: what your customers need, where they'll click, what makes them act. The design follows from that.</p>
 <p class="text-neutral-100">How it looks</p>
-<p class="mb-4 text-neutral-400/90">A site that visibly belongs to your brand and feels modern without being trend-chasing. Clean type, considered colour, intentional spacing: the kind of polish customers notice without being able to name.</p>
-<p class="text-neutral-100">How it works</p>
-<p class="mb-4 text-neutral-400/90">Every page takes a visitor somewhere: to enquire, to buy, to read more. Less guessing, more action.</p>`,
+<p class="mb-4 text-neutral-400/70">A site that looks and feels true to your brand. Modern, clean and complete with the kind of attention to detail your customers will appreciate.</p>
+<p class="text-neutral-100">Driving action</p>
+<p class="mb-4 text-neutral-400/70">Every page is designed with a purpose: to get your visitors to enquire, to buy, or to learn more about your business.</p>`,
               },
               {
                 title: `Maintenance`,
-                content: `<p class="mb-4 text-neutral-400/90">Digital platforms need consistent care to stay secure and perform at their best. Our proactive maintenance approach prevents issues before they arise, keeping your digital presence stable and up-to-date.</p><a href="/website-maintenance" class="relative px-3 py-1 bg-ravenci-primary hover:bg-ravenci-primary/80 text-white rounded-full transition-all duration-300 ease-in-out">Maintain your site with RAVENCI</a><p class="mt-8 mb-4 text-neutral-400/90 text-sm italic">Please note: <span class="text-neutral-100">As of October, 2024</span>, we no longer host websites that are not signed up to reliable ongoing maintenance. This does <span class="font-bold">not</span> have to be through RAVENCI, but it must be from a reputable provider.</p> `,
+                content: `<p class="mb-4 text-neutral-400/70">Websites need looking after. Security updates, performance checks, malware protection, content changes. We handle it so you don't have to chase a developer every time something needs attention. Regular maintenance is what keeps a five-year website going well beyond five years.</p><a href="/website-maintenance" class="relative px-3 py-1 bg-ravenci-primary hover:bg-ravenci-primary/80 text-white rounded-full transition-all duration-300 ease-in-out">Maintain your site with RAVENCI</a><p class="mt-8 mb-4 text-neutral-400/70 text-sm italic">Please note: <span class="text-neutral-100">As of October, 2024</span>, we no longer host websites that are not signed up to reliable ongoing maintenance. This does <span class="font-bold">not</span> have to be through RAVENCI, but it must be from a reputable provider.</p> `,
               },
               {
                 title: `Hosting`,
-                content: `<p class="mb-4 text-neutral-400/90">Reliable hosting is the foundation of your digital success. It protects your site, serves your customers and contributes to better performance on search engines. This is why we have moved to hosting all of our client's products on secure and scalable cloud hosting.</p><a href="/web-hosting" class="relative px-3 py-1 bg-ravenci-primary hover:bg-ravenci-primary/80 text-white rounded-full transition-all duration-300 ease-in-out">Host with RAVENCI</a><p class="mt-8 mb-4 text-neutral-400/90 text-sm italic">Please note: <span class="text-neutral-100">As of October, 2024</span>, we no longer host websites that are not signed up to reliable ongoing maintenance. This does <span class="font-bold">not</span> have to be through RAVENCI, but it must be from a reputable provider.</p>`,
+                content: `<p class="mb-4 text-neutral-400/70">Where your website lives matters. Good hosting means your site loads fast, stays secure, and ranks better on search engines. We host all of our clients on scalable cloud servers located closest to their customers, so your site performs well no matter where your visitors are.</p><a href="/web-hosting" class="relative px-3 py-1 bg-ravenci-primary hover:bg-ravenci-primary/80 text-white rounded-full transition-all duration-300 ease-in-out">Host with RAVENCI</a><p class="mt-8 mb-4 text-neutral-400/70 text-sm italic">Please note: <span class="text-neutral-100">As of October, 2024</span>, we no longer host websites that are not signed up to reliable ongoing maintenance. This does <span class="font-bold">not</span> have to be through RAVENCI, but it must be from a reputable provider.</p>`,
               },
             ]}
           />
@@ -234,8 +234,8 @@ export default function Home() {
           }}
         >
           <p>
-            After 20 years building websites for Australian businesses, I&apos;ve
-            learned the easy part is launch day. The hard part is the next five
+            After 25 years building websites for Australian businesses, I&apos;ve
+            learned that the easy part is launch day. The hard part is the next five
             years.
           </p>
 
@@ -271,9 +271,9 @@ export default function Home() {
 
           <div className={`mt-10 flex flex-col gap-8 max-w-[450px]`}>
             <p>
-              It is always a pleasure to serve such a diverse clientele who,
-              through the products we build for them, go on to serve others as
-              well.
+              We work with businesses across different industries, and the best
+              part is watching what they go on to achieve with the platforms we
+              build for them.
             </p>
           </div>
         </article>

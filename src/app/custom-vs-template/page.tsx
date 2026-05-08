@@ -322,6 +322,75 @@ export default function CustomVsTemplatePage() {
         </div>
       </section>
 
+      {/* Total Cost of Ownership */}
+      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
+        <h3 className="mb-4 font-serif text-h3 font-bold text-center">
+          The Real Cost Is What You Pay Over Five Years
+        </h3>
+        <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
+          Upfront price is only part of the picture. Here&apos;s what each
+          approach actually costs when you account for the full lifecycle.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+          <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5">
+            <h4 className="font-bold text-ravenci-primary mb-3">
+              Custom Website
+            </h4>
+            <ul className="space-y-2 text-sm text-neutral-600">
+              <li>Build: $4,950 - $11,650</li>
+              <li>Plugins & licences: $0/yr</li>
+              <li>Rebuild: None needed</li>
+              <li className="pt-2 border-t border-neutral-200 font-bold text-ravenci-dark">
+                5-year total: $4,950 - $11,650 + hosting
+              </li>
+            </ul>
+          </div>
+          <div className="p-6 rounded-xl border border-neutral-200">
+            <h4 className="font-bold text-neutral-700 mb-3">
+              Typical Agency Build
+            </h4>
+            <ul className="space-y-2 text-sm text-neutral-600">
+              <li>Build: $3,000 - $6,000</li>
+              <li>Plugins & licences: $300 - $800/yr</li>
+              <li>Rebuild at 18-24 months: $3,000 - $6,000</li>
+              <li className="pt-2 border-t border-neutral-200 font-bold text-neutral-700">
+                5-year total: $8,500 - $18,000
+              </li>
+            </ul>
+          </div>
+          <div className="p-6 rounded-xl border border-neutral-200">
+            <h4 className="font-bold text-neutral-700 mb-3">
+              DIY Builder
+            </h4>
+            <ul className="space-y-2 text-sm text-neutral-600">
+              <li>Platform: $20 - $80/mo ($1,200 - $4,800 over 5 yrs)</li>
+              <li>Premium features: $10 - $40/mo</li>
+              <li>Your time: priceless (or billable)</li>
+              <li className="pt-2 border-t border-neutral-200 font-bold text-neutral-700">
+                5-year total: $1,800 - $7,200 + your time
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
+          <p>
+            But cost is only half the equation. A custom site that ranks well
+            and converts visitors into clients pays for itself. At $4,950 over
+            five years, that&apos;s $2.70 a day. If it brings in one extra
+            client a month — even at $500 per job — that&apos;s $6,000 a year
+            from a $990 annual investment. A 6x return. Most businesses see
+            more than that.
+          </p>
+          <p>
+            A template or DIY site might cost less upfront, but if it
+            doesn&apos;t rank, doesn&apos;t convert, and needs replacing in
+            eighteen months, it&apos;s the most expensive option of the three.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="content-section py-20 px-5 sm:px-20 xl:px-36 flex flex-col items-center text-center bg-ravenci-primary text-white">
         <h2 className="mb-4 text-3xl md:text-4xl font-medium">

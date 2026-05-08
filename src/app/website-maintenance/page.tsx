@@ -15,7 +15,7 @@ export default function WebMaintenancePage() {
   const testimonials = getTestimonialsForPage("website-maintenance");
   const features = [
     {
-      title: "Digital Insurance",
+      title: "Software Updates",
       description:
         "We keep your website, plugins, and themes updated to ensure compatibility and security",
     },
@@ -177,28 +177,28 @@ export default function WebMaintenancePage() {
                     size={24}
                     className={`p-1 bg-ravenci-primary rounded-full text-white`}
                   />{" "}
-                  Professional monitoring vs hoping nothing breaks
+                  Professional monitoring and 24/7 alerts
                 </li>
                 <li className={`flex gap-2`}>
                   <IconCheck
                     size={24}
                     className={`p-1 bg-ravenci-primary rounded-full text-white`}
                   />{" "}
-                  2-hour response time vs days of downtime
+                  2-hour response time during business hours
                 </li>
                 <li className={`flex gap-2`}>
                   <IconCheck
                     size={24}
                     className={`p-1 bg-ravenci-primary rounded-full text-white`}
                   />{" "}
-                  Brisbane-based support vs overseas call centers
+                  Brisbane-based support you can reach directly
                 </li>
                 <li className={`flex gap-2`}>
                   <IconCheck
                     size={24}
                     className={`p-1 bg-ravenci-primary rounded-full text-white`}
                   />{" "}
-                  Proactive updates vs reactive emergency fixes
+                  Proactive updates before problems happen
                 </li>
               </ul>
             </p>
@@ -243,7 +243,7 @@ export default function WebMaintenancePage() {
             frequency={""}
             link={`/quote?service=oneoff-web-maintenance`}
             callToAction={`One-off maintenance`}
-            subCallToAction={`Never lose sales to downtime again`}
+            subCallToAction={`One-off service for when you need it`}
           />
         </section>
       </div>

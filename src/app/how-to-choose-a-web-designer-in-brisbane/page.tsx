@@ -232,7 +232,7 @@ const ravenciScorecard = [
   {
     question: "Who actually does the work?",
     answer:
-      "Richard (founder, 20+ years) leads every project, supported by a trusted network of specialists (copywriters, photographers, brand designers, senior developers) brought in when projects need them.",
+      "Richard (founder, 25+ years) leads every project, supported by a trusted network of specialists (copywriters, photographers, brand designers, senior developers) brought in when projects need them.",
   },
 ];
 

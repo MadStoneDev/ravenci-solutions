@@ -13,7 +13,7 @@ export const metadata = {
   title:
     "Construction & Property Developer Website Design Brisbane | RAVENCI Solutions",
   description:
-    "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 20+ years experience. From $4,950.",
+    "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $4,950.",
   alternates: { canonical: "/construction" },
 };
 
@@ -255,7 +255,7 @@ export default function ConstructionPage() {
             portfolio showcases, lead generation systems, heavy image
             optimisation, QBCC licence display, client progress portals, and
             local SEO that targets high-intent searches. 85+ PageSpeed
-            guaranteed with 20+ years of experience.
+            guaranteed with 25+ years of experience.
           </p>
         </article>
       </section>
@@ -340,7 +340,7 @@ export default function ConstructionPage() {
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white flex-shrink-0`}
                 />
-                20+ years building digital platforms for Australian businesses
+                25+ years building digital platforms for Australian businesses
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck

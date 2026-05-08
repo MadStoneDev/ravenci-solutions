@@ -33,12 +33,12 @@ export const metadata: Metadata = {
   title:
     "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
   description:
-    "RAVENCI Solutions is a Brisbane-based web development and design agency with 20+ years of experience. Custom Next.js and WordPress websites from $4,950. Hosting, maintenance, and retainer packages for Australian businesses.",
+    "RAVENCI Solutions is a Brisbane-based web development and design agency with 25+ years of experience. Custom Next.js and WordPress websites from $4,950. Hosting, maintenance, and retainer packages for Australian businesses.",
   openGraph: {
     title:
       "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
     description:
-      "RAVENCI Solutions is a Brisbane-based web development and design agency with 20+ years of experience. Custom Next.js and WordPress websites from $4,950. Hosting, maintenance, and retainer packages for Australian businesses.",
+      "RAVENCI Solutions is a Brisbane-based web development and design agency with 25+ years of experience. Custom Next.js and WordPress websites from $4,950. Hosting, maintenance, and retainer packages for Australian businesses.",
     url: "https://ravenci.solutions",
     siteName: "RAVENCI Solutions",
     images: [
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title:
       "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
     description:
-      "RAVENCI Solutions is a Brisbane-based web development and design agency with 20+ years of experience. Custom websites from $4,950.",
+      "RAVENCI Solutions is a Brisbane-based web development and design agency with 25+ years of experience. Custom websites from $4,950.",
     images: ["/og-image.jpg"],
   },
 };
@@ -76,7 +76,7 @@ export default function RootLayout({
     logo: "https://ravenci.solutions/ravenci-logo.svg",
     image: "https://ravenci.solutions/og-image.jpg",
     description:
-      "Premium web development and digital design agency in Brisbane, Australia. 20+ years of experience building high-performance websites for established businesses.",
+      "Premium web development and digital design agency in Brisbane, Australia. 25+ years of experience building high-performance websites for established businesses.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Brisbane",

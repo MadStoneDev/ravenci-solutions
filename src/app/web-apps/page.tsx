@@ -7,7 +7,7 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Web App Development - RAVENCI Solutions",
   description:
-    "Stop wrestling with spreadsheets! Custom web applications that eliminate manual work and scale with your Brisbane business.",
+    "Replace your spreadsheets with software that works. Custom web applications that eliminate manual work and scale with your Brisbane business.",
 };
 
 export default function WebAppPage() {
@@ -53,7 +53,7 @@ export default function WebAppPage() {
     },
     {
       title: "Your Team Will Actually Use It",
-      description: "Designed around how the work really happens, not how a generic SaaS thinks it should",
+      description: "Designed around how your team actually works, so they'll use it",
     },
   ];
 
@@ -64,7 +64,7 @@ export default function WebAppPage() {
       >
         <article className={`col-span-12 flex flex-col`}>
           <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
-            Stop Wrestling with Spreadsheets!
+            Replace Your Spreadsheets with Software That Works
           </h1>
           <h2
             className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
@@ -83,7 +83,7 @@ export default function WebAppPage() {
             className={`pb-6 border-b border-white/20 font-serif font-medium text-xl`}
           >
             Trusted by 75+ Australian businesses to build platforms that
-            transform operations
+            improve how they work
           </h3>
           {testimonials[0] && (
             <>
@@ -132,9 +132,9 @@ export default function WebAppPage() {
         >
           <article className={`max-w-lg`}>
             <h3 className={`font-serif text-h3 font-bold text-white`}>
-              Tired of Business Processes That Don't Work?
+              Your Business Processes Can Be Better
             </h3>
-            <p className={`my-4 text-neutral-400/90`}>Stop losing money to:</p>
+            <p className={`my-4 text-neutral-400/90`}>Common problems we solve:</p>
             <ul className={`mt-4 flex flex-col gap-2 text-neutral-400/90`}>
               <li>- Hours lost to manual data entry and duplicate systems</li>
               <li>
@@ -182,18 +182,16 @@ export default function WebAppPage() {
             </ul>
 
             <p className={`mb-4 text-neutral-400/90`}>
-              Custom web applications aren't just about technology. They're about
-              giving your business a competitive edge through streamlined
-              operations and better decision-making.
+              Custom web applications are about solving the specific problems
+              your business has with tools built around how you actually work.
             </p>
 
             <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
               1. Process Automation Tool
             </h3>
             <p className={`mb-4 text-neutral-400/90`}>
-              Perfect for businesses ready to eliminate 1-2 major manual
-              processes. Stop the spreadsheet shuffle and data double-entry
-              that's costing you hours every week.
+              For businesses ready to eliminate the manual data entry and
+              duplicate work that costs hours every week.
             </p>
             <div className={`mb-16 text-white`}>
               <Accordion

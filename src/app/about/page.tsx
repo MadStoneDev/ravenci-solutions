@@ -4,7 +4,7 @@ import { IconCircleCheckFilled } from "@tabler/icons-react";
 export const metadata = {
   title: "About - RAVENCI Solutions",
   description:
-    "Meet the team behind RAVENCI Solutions. 20+ years of digital experience, an engineering mindset, and a commitment to transparency, building websites that perform for Australian businesses.",
+    "Meet the team behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency, building websites that perform for Australian businesses.",
   alternates: { canonical: "/about" },
 };
 
@@ -40,14 +40,13 @@ export default function AboutPage() {
       >
         <article className={`max-w-2xl col-span-12 flex flex-col gap-2`}>
           <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
-            Built by an Engineer. Designed to Perform.
+            The Engineering Behind Your Website
           </h1>
           <h2
             className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
             style={{ lineHeight: "2.25rem" }}
           >
-            Built properly. Engineered to last. Stays out of your way. We take
-            the long view on what your website needs to do.
+            We take the long view on what your website needs to do.
           </h2>
         </article>
       </section>
@@ -60,7 +59,7 @@ export default function AboutPage() {
           className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center`}
         >
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>20+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>25+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Years in Digital
             </p>
@@ -131,7 +130,7 @@ export default function AboutPage() {
               </p>
               <p>
                 With a degree in Structural Engineering and a diploma in Graphic
-                Design, Richard brings a rare combination of analytical thinking
+                Design, Richard brings both analytical thinking
                 and creative problem solving to every project. His mantra is
                 that everything must be done to perfection, everything must
                 serve a purpose. It is that which shapes how we approach our
@@ -140,8 +139,8 @@ export default function AboutPage() {
               <p>
                 After more than two decades in the digital space, Richard
                 founded RAVENCI in Brisbane to offer Australian businesses
-                something different: websites and designs built with the rigour
-                of engineering and the polish of professional design.
+                something different: websites and designs built with the same discipline and
+                attention to detail.
               </p>
               <p>
                 Today, RAVENCI operates as a founder-led studio supported by a
@@ -169,12 +168,12 @@ export default function AboutPage() {
               Most web developers and designers come from a purely technical or
               creative background. Richard's structural engineering career
               taught him something that sets him apart: every decision must be
-              intentional, every foundation must be sound, and the final product
+              intentional, every component must be solid, and the final product
               must perform under real-world conditions.
             </p>
             <p>
-              That's why RAVENCI websites and designs aren't just attractive.
-              They're built to a standard. We guarantee 85+ Google PageSpeed
+              That's why RAVENCI websites and designs are built to a
+              standard. We guarantee 85+ Google PageSpeed
               scores because we believe performance isn't optional. We build on
               proven platforms and follow best practices because we've seen what
               happens when shortcuts are taken.
@@ -217,7 +216,7 @@ export default function AboutPage() {
                 />
                 <span>
                   <span className={`font-bold text-white`}>
-                    20+ Years Digital Experience
+                    25+ Years Digital Experience
                   </span>{" "}
                   across construction, trades, medical, legal, and retail
                   industries
@@ -232,8 +231,7 @@ export default function AboutPage() {
             </h4>
             <p>
               When we build your website, it's yours. Your code, your content,
-              your domain. No lock-in contracts, no proprietary systems that
-              hold your business hostage. If you ever want to move on, you take
+              your domain. No lock-in contracts, no proprietary systems locking you in. If you ever want to move on, you take
               everything with you.
             </p>
 
@@ -255,7 +253,7 @@ export default function AboutPage() {
               Specialist Network
             </h4>
             <p>
-              As a founder-led studio, we keep things lean, but never at the
+              As a founder-led studio, we keep the team small, but never at the
               cost of quality. When your project needs specialist photography,
               copywriting, or specialist design, we bring in trusted
               collaborators who meet our standards.
@@ -324,7 +322,7 @@ export default function AboutPage() {
             "@type": "AboutPage",
             name: "About RAVENCI Solutions",
             description:
-              "Meet the team behind RAVENCI Solutions. 20+ years of digital experience, an engineering mindset, and a commitment to transparency.",
+              "Meet the team behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency.",
             mainEntity: {
               "@type": "Organization",
               name: "RAVENCI Solutions",

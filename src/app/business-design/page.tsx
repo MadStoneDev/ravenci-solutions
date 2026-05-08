@@ -7,7 +7,7 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Business Design Solutions - RAVENCI Solutions",
   description:
-    "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems, create a cohesive brand that commands premium prices. From $3,500.",
+    "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems. From $3,500.",
 };
 
 export default function BusinessDesignPage() {
@@ -75,7 +75,7 @@ export default function BusinessDesignPage() {
     },
     {
       title: "Animation Services",
-      description: "Bring your logos and graphics to life with motion design",
+      description: "Add movement to your logos and graphics with motion design",
     },
     {
       title: "Trade Show Materials",
@@ -83,7 +83,7 @@ export default function BusinessDesignPage() {
     },
     {
       title: "Packaging Design",
-      description: "Product packaging that sells and protects your brand",
+      description: "Product packaging that represents your brand",
     },
     {
       title: "Digital Assets",
@@ -96,7 +96,7 @@ export default function BusinessDesignPage() {
     },
     {
       title: "Copywriting Integration",
-      description: "Compelling text that works seamlessly with your designs",
+      description: "Professional copy that complements your designs",
     },
     {
       title: "Brand Training",
@@ -111,7 +111,7 @@ export default function BusinessDesignPage() {
       >
         <article className={`col-span-12 flex flex-col`}>
           <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
-            Design That Sells Your Story!
+            Professional Branding That Builds Trust
           </h1>
           <h2
             className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
@@ -129,8 +129,8 @@ export default function BusinessDesignPage() {
           <h3
             className={`pb-6 border-b border-white/20 font-serif font-medium text-xl`}
           >
-            Trusted by 100+ Australian businesses to create brands that command
-            premium prices
+            Trusted by 100+ Australian businesses to build brands that stand
+            out
           </h3>
           {testimonials[0] && (
             <>
@@ -204,14 +204,14 @@ export default function BusinessDesignPage() {
         >
           <article className={`max-w-lg`}>
             <h3 className={`font-serif text-h3 font-bold text-white`}>
-              Tired of Looking Like Amateur Hour?
+              Your Brand Deserves Better
             </h3>
             <div className={`my-4 text-neutral-400/90`}>
-              Stop losing customers because of:
+              Common problems we see:
               <ul className={`mt-4 flex flex-col gap-2`}>
                 <li>- Generic logos that look like everyone else's</li>
                 <li>- Inconsistent branding across different materials</li>
-                <li>- DIY designs that scream "budget business"</li>
+                <li>- DIY designs that look unprofessional</li>
                 <li>- Marketing materials that fail to convert</li>
                 <li>
                   - Brand identity that doesn't reflect your premium service
@@ -228,34 +228,33 @@ export default function BusinessDesignPage() {
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                Strategic design vs pretty pictures that don't sell
+                Design backed by strategy
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                Complete brand systems vs one-off logo design
+                Complete brand systems from logo to collateral
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                Brisbane-based vs overseas design factories
+                Brisbane-based with local support
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                Business-focused approach vs artistic experimentation
+                Focused on what works for your business
               </li>
             </ul>
             <p className={`mb-4 text-neutral-400/90`}>
-              Great design isn't just about looking good - it's about building
-              trust, commanding premium prices, and making your business look
-              established and professional.
+              Good design builds trust, earns customer confidence, and makes
+              your business look established and professional.
             </p>
             <p className={`mb-4 text-neutral-400/90`}>
               We offer four comprehensive design packages, each tailored to
@@ -315,9 +314,8 @@ export default function BusinessDesignPage() {
               2. Full Brand Identity
             </h3>
             <p className={`mb-4 text-neutral-400/90`}>
-              For businesses ready to look like the premium service they
-              provide. A complete brand system from logo to marketing
-              materials, designed to compete with industry leaders.
+              A complete brand system from logo to marketing materials,
+              designed to represent the quality of your work.
             </p>
 
             <div className={`mb-16 text-white`}>
@@ -410,7 +408,7 @@ export default function BusinessDesignPage() {
                 frequency={""}
                 includeFrom={true}
                 callToAction={`Signage & Vehicle Wraps`}
-                subCallToAction={`Mobile marketing that works 24/7`}
+                subCallToAction={`Your brand on the road, every day`}
               />
             </div>
           </article>

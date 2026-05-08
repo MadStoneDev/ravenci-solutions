@@ -162,7 +162,7 @@ export default function WebHostingDevelopmentPage() {
             still working in five years. No plugin clutter, no surprise
             subscriptions, no developer disappearing on you. From $4,950 for a
             brochure site with CRM to $11,650 for a fully custom eCommerce
-            build, plus ongoing support. Brisbane-based. 20+ years.
+            build, plus ongoing support. Brisbane-based. 25+ years.
           </p>
         </article>
       </section>
@@ -470,6 +470,56 @@ export default function WebHostingDevelopmentPage() {
             },
           ]}
         />
+      </section>
+
+      {/* Investment ROI */}
+      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
+        <h3 className="mb-4 font-serif text-h3 font-bold text-center">
+          Think of It as an Investment, Not an Expense
+        </h3>
+        <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
+          A website isn&apos;t a cost you absorb. It&apos;s infrastructure that
+          earns revenue every month for years.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+          <div className="p-6 rounded-xl border border-neutral-200 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">$2.70</p>
+            <p className="mt-1 text-sm text-neutral-500">per day</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              Brochure site over 5 years
+            </p>
+          </div>
+          <div className="p-6 rounded-xl border border-neutral-200 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">$5.30</p>
+            <p className="mt-1 text-sm text-neutral-500">per day</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              Custom solution over 5 years
+            </p>
+          </div>
+          <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">3-6x</p>
+            <p className="mt-1 text-sm text-neutral-500">return</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              From just one extra client per month
+            </p>
+          </div>
+        </div>
+
+        <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
+          <p>
+            If your website brings in just one extra client a month — even at
+            $500 per job — that&apos;s $6,000 a year in revenue. On a $4,950
+            brochure site, that&apos;s a 6x return. On a $9,700 custom build,
+            it&apos;s still over 3x. Most businesses see far more than one lead
+            a month from a site that actually ranks and converts.
+          </p>
+          <p>
+            The real question isn&apos;t &ldquo;can I afford a proper
+            website?&rdquo; It&apos;s &ldquo;can I afford not to have
+            one?&rdquo;
+          </p>
+        </div>
       </section>
 
       {/* What Can Affect Pricing */}

@@ -8,7 +8,7 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Website Hosting Solutions - RAVENCI Solutions",
   description:
-    "Managed cloud hosting from Brisbane. Lightning-fast servers worldwide, 24/7 monitoring, ironclad security, and local support. From $39/mo.",
+    "Managed cloud hosting from Brisbane. Fast servers worldwide, 24/7 monitoring, reliable security, and local support. From $39/mo.",
   alternates: { canonical: "/web-hosting" },
 };
 
@@ -49,7 +49,7 @@ export default function WebHostingPage() {
     {
       title: "Daily Backups, No Drama",
       description:
-        "If anything ever goes wrong, your site can be back the way it was yesterday in minutes. Not days, not never",
+        "If anything ever goes wrong, your site can be back the way it was yesterday in minutes. In minutes, not days",
     },
   ];
 
@@ -95,8 +95,8 @@ export default function WebHostingPage() {
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             RAVENCI Solutions provides managed cloud hosting for Australian
-            businesses. Lightning-fast servers worldwide, 24/7 monitoring,
-            ironclad security, and Brisbane-based support. All-inclusive pricing
+            businesses. Fast servers worldwide, 24/7 monitoring,
+            reliable security, and Brisbane-based support. All-inclusive pricing
             from $39/mo with no hidden fees, no surprise charges, and no complex
             add-ons to buy.
           </p>
@@ -145,7 +145,7 @@ export default function WebHostingPage() {
         >
           <article className={`max-w-lg`}>
             <h3 className={`font-serif text-h3 font-bold text-white`}>
-              Tired of Hosting Headaches?
+              Hosting Should Be Simple
             </h3>
             <div className={`my-4 text-neutral-400/90`}>
               Stop dealing with:
@@ -169,28 +169,28 @@ export default function WebHostingPage() {
                   size={24}
                   className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                Brisbane-based support vs offshore call centers
+                Brisbane-based support you can reach directly
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
                   className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                All-inclusive pricing vs hidden fees and charges
+                All-inclusive pricing with no hidden fees
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
                   className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                Automatic scaling vs manual upgrades
+                Automatic scaling as your site grows
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
                   className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                Built for business vs hobby-focused hosting
+                Built for business websites
               </li>
             </ul>
 

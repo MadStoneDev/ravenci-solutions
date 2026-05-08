@@ -66,7 +66,7 @@ export default function PlatformsSection() {
         </article>
         <article className="col-span-12 lg:col-span-5 lg:pl-8 lg:pt-2">
           <p className="text-base md:text-lg text-neutral-500/80 leading-relaxed">
-            We&apos;re not platform purists. After 20 years in the industry,
+            We&apos;re not platform purists. After 25 years in the industry,
             we&apos;ve learned that the best platform is the one that fits your
             goals, your team, and your budget, then gets built well. We also
             build on BigCommerce, Strapi, Plasmic and Astro when the project

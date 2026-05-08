@@ -266,7 +266,7 @@ export default function HealthcarePage() {
             Brisbane. From $4,950, we deliver online booking integration,
             patient portals, NDIS-ready features, telehealth capability, and
             privacy-compliant design. Australian Privacy Principles and AHPRA
-            advertising guidelines considered from day one. 20+ years of
+            advertising guidelines considered from day one. 25+ years of
             digital experience. 85+ PageSpeed guaranteed.
           </p>
         </article>
@@ -352,7 +352,7 @@ export default function HealthcarePage() {
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white flex-shrink-0`}
                 />
-                20+ years building digital platforms for Australian businesses
+                25+ years building digital platforms for Australian businesses
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
@@ -664,7 +664,7 @@ export default function HealthcarePage() {
             serviceType: "Healthcare Website Design",
             name: "Medical & Healthcare Website Design Brisbane",
             description:
-              "Websites for healthcare professionals. Patient portals, online booking, privacy compliance, NDIS-ready, telehealth integration, built by a Brisbane team with 20+ years experience. From $4,950.",
+              "Websites for healthcare professionals. Patient portals, online booking, privacy compliance, NDIS-ready, telehealth integration, built by a Brisbane team with 25+ years experience. From $4,950.",
             provider: {
               "@type": "ProfessionalService",
               name: "RAVENCI Solutions",
