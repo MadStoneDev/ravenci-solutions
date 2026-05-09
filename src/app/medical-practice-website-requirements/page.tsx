@@ -11,17 +11,16 @@ import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
-  title:
-    "What Australian Medical Practice Websites Need in 2026 (AHPRA-Aware Guide) | RAVENCI Solutions",
+  title: "Medical Practice Website Guide | RAVENCI Solutions",
   description:
     "AHPRA advertising compliance, Australian Privacy Principles, practice management integrations, and patient-facing essentials. The 2026 guide for Australian medical practice websites.",
   openGraph: {
-    title:
-      "What Australian Medical Practice Websites Need in 2026 (AHPRA-Aware Guide)",
+    title: "Medical Practice Website Guide",
     description:
-      "AHPRA-aware web design for Australian medical practices. Compliance essentials, integrations, patient experience, and the common mistakes practices make.",
+      "AHPRA advertising compliance, Australian Privacy Principles, practice management integrations, and patient-facing essentials. The 2026 guide for Australian medical practice websites.",
     type: "article",
   },
+  twitter: { card: "summary_large_image" },
   alternates: { canonical: "/medical-practice-website-requirements" },
 };
 

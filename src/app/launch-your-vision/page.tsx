@@ -1,9 +1,16 @@
 import LaunchYourVisionStepper from "@/components/launch-your-vision-stepper";
 
 export const metadata = {
-  title: "Launch Your Vision - RAVENCI Solutions",
+  title: "Launch Your Vision | RAVENCI Solutions",
   description:
     "Start your project with RAVENCI Solutions in Brisbane. Two minutes to tell us about your website, e-commerce store, app or branding project. We'll come back with a tailored proposal.",
+  openGraph: {
+    title: "Launch Your Vision",
+    description:
+      "Start your project with RAVENCI Solutions in Brisbane. Two minutes to tell us about your website, e-commerce store, app or branding project. We'll come back with a tailored proposal.",
+    type: "website" as const,
+  },
+  twitter: { card: "summary_large_image" as const },
   alternates: { canonical: "/launch-your-vision" },
 };
 

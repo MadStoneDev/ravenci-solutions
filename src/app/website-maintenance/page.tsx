@@ -3,12 +3,23 @@ import PriceButton from "@/components/price-button";
 
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import Accordion from "@/components/accordion";
+import Breadcrumbs from "@/components/breadcrumbs";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
-  title: "Website Maintenance Solutions - RAVENCI Solutions",
+  title: "Website Maintenance | RAVENCI Solutions",
   description:
     "Website maintenance in Brisbane. Updates, security, backups, and optimization in one package. Protect your website investment with RAVENCI Solutions.",
+  alternates: { canonical: "/website-maintenance" },
+  openGraph: {
+    title: "Website Maintenance",
+    description:
+      "Website maintenance in Brisbane. Updates, security, backups, and optimization in one package. Protect your website investment with RAVENCI Solutions.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function WebMaintenancePage() {
@@ -63,11 +74,36 @@ export default function WebMaintenancePage() {
 
   return (
     <main className={`flex flex-col`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://ravenci.solutions",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Website Maintenance",
+                item: "https://ravenci.solutions/website-maintenance",
+              },
+            ],
+          }),
+        }}
+      />
+
       <section
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
         <article className={`col-span-12 flex flex-col`}>
-          <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
+          <Breadcrumbs items={[{ label: "Website Maintenance" }]} />
+          <h1 className={`mt-4 text-4xl md:text-5xl lg:text-h1 font-medium`}>
             Straight Forward Maintenance
           </h1>
           <h2
@@ -111,9 +147,9 @@ export default function WebMaintenancePage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-200/50`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`mb-8 font-serif text-h3 font-bold`}>
+            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
               How We Protect Your Business
-            </h3>
+            </h2>
             <ul className={`flex flex-col gap-8`}>
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start gap-2">
@@ -154,9 +190,9 @@ export default function WebMaintenancePage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`font-serif text-h3 font-bold text-white`}>
+            <h2 className={`font-serif text-h3 font-bold text-white`}>
               Did You Know
-            </h3>
+            </h2>
             <p className={`my-4 text-neutral-400/90`}>
               Websites face over 40,000 attacks daily and without proper
               maintenance, your website is vulnerable to:
@@ -167,9 +203,9 @@ export default function WebMaintenancePage() {
               <li>- Slow speeds that drive customers to competitors</li>
               <li>- Outdated plugins creating compatibility issues</li>
             </ul>
-            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
+            <h2 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
               Why Businesses Choose RAVENCI Over DIY Maintenance:
-            </h3>
+            </h2>
             <p className={`mb-4 text-neutral-400/90`}>
               <ul className={`flex flex-col gap-4`}>
                 <li className={`flex gap-2`}>
@@ -202,17 +238,17 @@ export default function WebMaintenancePage() {
                 </li>
               </ul>
             </p>
-            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
+            <h2 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
               Proactive Protection
-            </h3>
+            </h2>
             <p className={`mb-4 text-neutral-400/90`}>
               Don't wait for problems to occur. Our maintenance service actively
               monitors your site for security threats, performance issues, and
               needed updates to make sure your website is always available.
             </p>
-            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
+            <h2 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
               Comprehensive Care
-            </h3>
+            </h2>
             <p className={`mb-4 text-neutral-400/90`}>
               Our ongoing maintenance service ensures your website doesn't fall
               behind. Although we offer one-off maintenance options, we highly
@@ -262,6 +298,23 @@ export default function WebMaintenancePage() {
         </article>
       </section>
 
+      {/* Related Services */}
+      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <h2 className="mb-8 font-serif text-h3 font-bold text-center">Related Services</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            { name: "Web Hosting", href: "/web-hosting", description: "Fast, reliable cloud hosting" },
+            { name: "Web Development", href: "/web-development", description: "Custom websites built to perform" },
+            { name: "SEO & Content", href: "/seo-and-content", description: "Get found by the right customers" },
+          ].map((service) => (
+            <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
+              <h3 className="font-bold text-ravenci-dark mb-2">{service.name}</h3>
+              <p className="text-sm text-neutral-500">{service.description}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <section
         className={`content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white`}
       >
@@ -304,6 +357,47 @@ We're Brisbane-based with local support, not an overseas call center. You get di
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "RAVENCI Website Maintenance",
+            description:
+              "Website maintenance in Brisbane. Updates, security, backups, and optimization in one package. Protect your website investment.",
+            brand: {
+              "@type": "Organization",
+              name: "RAVENCI Solutions",
+            },
+            offers: [
+              {
+                "@type": "Offer",
+                name: "Monthly Website Maintenance",
+                price: 249,
+                priceCurrency: "AUD",
+                priceSpecification: {
+                  "@type": "UnitPriceSpecification",
+                  price: 249,
+                  priceCurrency: "AUD",
+                  billingDuration: "P1M",
+                },
+                availability: "https://schema.org/InStock",
+                url: "https://ravenci.solutions/website-maintenance",
+              },
+              {
+                "@type": "Offer",
+                name: "One-Off Website Maintenance",
+                price: 495,
+                priceCurrency: "AUD",
+                availability: "https://schema.org/InStock",
+                url: "https://ravenci.solutions/website-maintenance",
+              },
+            ],
+          }),
+        }}
+      />
 
       <script
         type="application/ld+json"

@@ -10,11 +10,19 @@ import TestimonialsSingle from "@/components/testimonials-single";
 import { getTestimonialsForIndustry } from "@/data/testimonials";
 
 export const metadata = {
-  title:
-    "Medical & Healthcare Website Design Brisbane | RAVENCI Solutions",
+  title: "Healthcare Websites Brisbane | RAVENCI Solutions",
   description:
     "Websites for healthcare professionals in Brisbane. Patient portals, online booking, Australian Privacy Principles compliance, NDIS-ready, Cliniko and HotDoc integration. From $4,950.",
   alternates: { canonical: "/healthcare" },
+  openGraph: {
+    title: "Healthcare Websites Brisbane",
+    description:
+      "Websites for healthcare professionals in Brisbane. Patient portals, online booking, Australian Privacy Principles compliance, NDIS-ready, Cliniko and HotDoc integration. From $4,950.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 const features = [
@@ -280,7 +288,7 @@ export default function HealthcarePage() {
           className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center`}
         >
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>20+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>25+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Years Experience
             </p>
@@ -312,9 +320,9 @@ export default function HealthcarePage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 space-y-14 bg-neutral-200/50`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`mb-8 font-serif text-h3 font-bold`}>
+            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
               What Healthcare Providers Need
-            </h3>
+            </h2>
             <ul className={`flex flex-col gap-8`}>
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start gap-2">
@@ -338,9 +346,9 @@ export default function HealthcarePage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`font-serif text-h3 font-bold text-white`}>
+            <h2 className={`font-serif text-h3 font-bold text-white`}>
               Why Choose RAVENCI for Healthcare?
-            </h3>
+            </h2>
             <div className={`my-4 text-neutral-400/90`}>
               Your patients trust you with their health. They should be able to
               trust your website too.
@@ -421,11 +429,11 @@ export default function HealthcarePage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
       >
-        <h3
+        <h2
           className={`mb-4 font-serif text-h3 font-bold text-center`}
         >
           Built for Every Type of Practice
-        </h3>
+        </h2>
         <p className={`mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
           Whether you&apos;re a solo practitioner or a multi-location group, we
           build websites tailored to how your specific practice type operates.
@@ -449,11 +457,11 @@ export default function HealthcarePage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
       >
-        <h3
+        <h2
           className={`mb-4 font-serif text-h3 font-bold text-center`}
         >
           Integrations We Work With
-        </h3>
+        </h2>
         <p className={`mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
           Your website connects directly to the tools your practice already
           uses. Real-time availability, automated patient flows, and no
@@ -482,11 +490,11 @@ export default function HealthcarePage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
       >
-        <h3
+        <h2
           className={`mb-4 font-serif text-h3 font-bold text-white text-center`}
         >
           Privacy & Compliance Built In
-        </h3>
+        </h2>
         <p
           className={`mb-12 text-center text-neutral-400/90 max-w-2xl mx-auto`}
         >
@@ -532,16 +540,16 @@ export default function HealthcarePage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
       >
-        <h3 className={`mb-12 font-serif text-h3 font-bold text-center`}>
+        <h2 className={`mb-12 font-serif text-h3 font-bold text-center`}>
           How We Work with Healthcare Clients
-        </h3>
+        </h2>
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto`}>
           {[
             {
               step: "01",
               title: "Discovery",
               description:
-                "We learn your practice, your patients, and your compliance requirements. No generic questionnaires.",
+                "We start by understanding your practice and your patients.",
             },
             {
               step: "02",
@@ -579,9 +587,9 @@ export default function HealthcarePage() {
       <section
         className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
       >
-        <h3 className={`mb-8 font-serif text-h3 font-bold text-center`}>
+        <h2 className={`mb-8 font-serif text-h3 font-bold text-center`}>
           What Can Affect Pricing
-        </h3>
+        </h2>
         <div className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto`}>
           {[
             "Number of practitioner profiles and service pages",
@@ -609,6 +617,23 @@ export default function HealthcarePage() {
         </p>
       </section>
 
+      {/* Related Services */}
+      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <h2 className="mb-8 font-serif text-h3 font-bold text-center">Related Services</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            { name: "Web Development", href: "/web-development", description: "Custom websites for any industry" },
+            { name: "Website Maintenance", href: "/website-maintenance", description: "Keep your site secure and compliant" },
+            { name: "SEO & Content", href: "/seo-and-content", description: "Reach more patients online" },
+          ].map((service) => (
+            <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
+              <h3 className="font-bold text-ravenci-dark mb-2">{service.name}</h3>
+              <p className="text-sm text-neutral-500">{service.description}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* FAQ */}
       <section
         className={`content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white`}
@@ -625,8 +650,8 @@ export default function HealthcarePage() {
           Ready to Modernise Your Practice?
         </h2>
         <p className={`mb-10 max-w-md text-white/80`}>
-          Let&apos;s build a website that works as hard as your team does. Start
-          with a free consultation.
+          Let&apos;s build a website your patients will trust from the first
+          click. Start with a free consultation.
         </p>
         <Link
           href={`/launch-your-vision`}

@@ -23,9 +23,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Website Audit for Brisbane Businesses",
     description:
-      "Five-category audit, no obligation, no spam. We email you a report showing how your site performs against the 50 Brisbane businesses we surveyed in 2026.",
+      "Free website audit for Brisbane businesses. We check your site's speed, SEO, mobile usability, accessibility and security, and email you a no-obligation report showing exactly where you stand.",
     type: "website",
   },
+  twitter: { card: "summary_large_image" },
   alternates: { canonical: "/free-audit" },
 };
 

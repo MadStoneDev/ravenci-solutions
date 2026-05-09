@@ -8,16 +8,16 @@ import Breadcrumbs from "@/components/breadcrumbs";
 import { getAllLabProjects, type LabStatus } from "@/data/lab-projects";
 
 export const metadata: Metadata = {
-  title:
-    "RAVENCI Labs: Side Projects, Tools and Experiments | RAVENCI Solutions",
+  title: "RAVENCI Labs | RAVENCI Solutions",
   description:
     "Things RAVENCI builds for ourselves: web apps, tools and experiments that show what we love building when nobody's asking us to.",
   openGraph: {
-    title: "RAVENCI Labs: Side Projects, Tools and Experiments",
+    title: "RAVENCI Labs",
     description:
-      "Web apps, tools and experiments built by RAVENCI for ourselves: what we love building when nobody's asking.",
+      "Things RAVENCI builds for ourselves: web apps, tools and experiments that show what we love building when nobody's asking us to.",
     type: "website",
   },
+  twitter: { card: "summary_large_image" },
   alternates: { canonical: "/labs" },
 };
 

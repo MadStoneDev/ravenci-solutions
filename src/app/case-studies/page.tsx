@@ -10,11 +10,12 @@ export const metadata: Metadata = {
   description:
     "Explore real results from real businesses. See how RAVENCI Solutions has helped Australian companies grow through strategic web development and design.",
   openGraph: {
-    title: "Case Studies | RAVENCI Solutions",
+    title: "Case Studies",
     description:
-      "Explore real results from real businesses. See how RAVENCI Solutions has helped Australian companies grow.",
+      "Explore real results from real businesses. See how RAVENCI Solutions has helped Australian companies grow through strategic web development and design.",
     type: "website",
   },
+  twitter: { card: "summary_large_image" },
   alternates: { canonical: "/case-studies" },
 };
 
@@ -74,8 +75,8 @@ export default function CaseStudiesPage() {
             className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
             style={{ lineHeight: "2.25rem" }}
           >
-            Check out how we&apos;ve helped Australian businesses transform
-            their digital presence and achieve measurable growth.
+            See what we&apos;ve built for Australian businesses and the
+            results they got.
           </h2>
         </article>
       </section>
@@ -88,7 +89,7 @@ export default function CaseStudiesPage() {
           className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center`}
         >
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>20+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>25+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Years in Digital
             </p>
@@ -133,7 +134,7 @@ export default function CaseStudiesPage() {
       >
         <div className={`max-w-3xl mx-auto text-center`}>
           <h2 className={`text-3xl md:text-4xl font-medium`}>
-            Ready to become our next success story?
+            Ready to start your project?
           </h2>
           <p className={`mt-4 text-white/80`}>
             Every project in our portfolio started with a conversation.

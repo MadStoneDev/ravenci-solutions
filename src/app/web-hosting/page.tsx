@@ -6,10 +6,19 @@ import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
-  title: "Website Hosting Solutions - RAVENCI Solutions",
+  title: "Web Hosting | RAVENCI Solutions",
   description:
     "Managed cloud hosting from Brisbane. Fast servers worldwide, 24/7 monitoring, reliable security, and local support. From $39/mo.",
   alternates: { canonical: "/web-hosting" },
+  openGraph: {
+    title: "Web Hosting",
+    description:
+      "Managed cloud hosting from Brisbane. Fast servers worldwide, 24/7 monitoring, reliable security, and local support. From $39/mo.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function WebHostingPage() {
@@ -144,9 +153,9 @@ export default function WebHostingPage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`font-serif text-h3 font-bold text-white`}>
+            <h2 className={`font-serif text-h3 font-bold text-white`}>
               Hosting Should Be Simple
-            </h3>
+            </h2>
             <div className={`my-4 text-neutral-400/90`}>
               Stop dealing with:
               <ul className={`mt-4 flex flex-col gap-2`}>
@@ -158,11 +167,11 @@ export default function WebHostingPage() {
               </ul>
             </div>
 
-            <h3
+            <h2
               className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}
             >
               Why Choose RAVENCI Over Other Hosts?
-            </h3>
+            </h2>
             <ul className={`flex flex-col gap-4 mb-6 text-neutral-400/90`}>
               <li className={`flex gap-2`}>
                 <IconCheck
@@ -194,22 +203,22 @@ export default function WebHostingPage() {
               </li>
             </ul>
 
-            <h3
+            <h2
               className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}
             >
               Fast for Every Customer, Everywhere
-            </h3>
+            </h2>
             <p className={`mb-4 text-neutral-400/90`}>
               Your site loads quickly whether your visitor is around the corner
               or across the world. We handle the boring infrastructure side of
               that. You just get a site that performs.
             </p>
 
-            <h3
+            <h2
               className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}
             >
               Fair, Simple Pricing
-            </h3>
+            </h2>
             <p className={`mb-4 text-neutral-400/90`}>
               Instead of complex tiers, our hosting scales naturally with your
               website's needs. We start with generous resources that work for
@@ -226,9 +235,9 @@ export default function WebHostingPage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`mb-8 font-serif text-h3 font-bold`}>
+            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
               What's Included with Every Hosting
-            </h3>
+            </h2>
             <ul className={`flex flex-col gap-8`}>
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start gap-2">
@@ -253,11 +262,11 @@ export default function WebHostingPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
       >
-        <h3
+        <h2
           className={`mb-12 font-serif text-h3 font-bold text-white text-center`}
         >
           Simple, All-Inclusive Hosting
-        </h3>
+        </h2>
         <div className="bg-neutral-800/50 rounded-xl p-8 border border-neutral-700 max-w-md mx-auto">
           <h4 className="text-xl font-bold text-white">
             Managed Cloud Hosting
@@ -297,6 +306,23 @@ export default function WebHostingPage() {
             be from a reputable provider.
           </p>
         </article>
+      </section>
+
+      {/* Related Services */}
+      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <h2 className="mb-8 font-serif text-h3 font-bold text-center">Related Services</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            { name: "Website Maintenance", href: "/website-maintenance", description: "Keep your site secure and up to date" },
+            { name: "Web Development", href: "/web-development", description: "Custom websites built to perform" },
+            { name: "Retainer Packages", href: "/retainer-packages", description: "Ongoing development and support" },
+          ].map((service) => (
+            <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
+              <h3 className="font-bold text-ravenci-dark mb-2">{service.name}</h3>
+              <p className="text-sm text-neutral-500">{service.description}</p>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* FAQ Section */}

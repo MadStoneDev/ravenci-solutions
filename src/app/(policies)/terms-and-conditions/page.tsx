@@ -4,6 +4,13 @@ export const metadata: Metadata = {
   title: "Terms and Conditions | RAVENCI Solutions",
   description:
     "Terms of Service governing the use of ravenci.solutions and services provided by RAVENCI Solutions.",
+  openGraph: {
+    title: "Terms and Conditions",
+    description:
+      "Terms of Service governing the use of ravenci.solutions and services provided by RAVENCI Solutions.",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
   alternates: { canonical: "/terms-and-conditions" },
 };
 

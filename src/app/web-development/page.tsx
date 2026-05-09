@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
@@ -7,10 +8,17 @@ import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
-  title: "Website Development - RAVENCI Solutions",
+  title: "Web Development | RAVENCI Solutions",
   description:
     "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $4,950.",
   alternates: { canonical: "/web-development" },
+  openGraph: {
+    title: "Web Development",
+    description:
+      "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $4,950.",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function WebHostingDevelopmentPage() {
@@ -207,11 +215,11 @@ export default function WebHostingDevelopmentPage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`font-serif text-h3 font-bold text-white`}>
-              Tired of Web Development Nightmares?
-            </h3>
+            <h2 className={`font-serif text-h3 font-bold text-white`}>
+              Common Problems We Hear About
+            </h2>
             <div className={`my-4 text-neutral-400/90`}>
-              Stop dealing with:
+              Problems businesses come to us with:
               <ul className={`mt-4 flex flex-col gap-2`}>
                 <li>- Developers who disappear after launch</li>
                 <li>- Websites that look nothing like what you wanted</li>
@@ -221,37 +229,37 @@ export default function WebHostingDevelopmentPage() {
               </ul>
             </div>
 
-            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
+            <h2 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
               Why Choose RAVENCI Over Other Developers?
-            </h3>
+            </h2>
             <ul className={`flex flex-col gap-4 mb-6 text-neutral-400/90`}>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
                   className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                Fixed pricing vs endless scope creep
+                Fixed pricing with no scope creep
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
                   className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                Brisbane-based vs offshore development
+                Brisbane-based support you can reach directly
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
                   className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                Ongoing support vs build-and-abandon
+                Ongoing support after launch, not build-and-abandon
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
                   className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                85+ PageSpeed guaranteed vs "we'll make it pretty"
+                85+ PageSpeed guaranteed, not just a nice-looking design
               </li>
             </ul>
             <p className={`mb-4 text-neutral-400/90`}>
@@ -272,9 +280,9 @@ export default function WebHostingDevelopmentPage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`mb-8 font-serif text-h3 font-bold`}>
+            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
               What's Included with Every Build
-            </h3>
+            </h2>
             <ul className={`flex flex-col gap-8`}>
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start gap-2">
@@ -299,9 +307,9 @@ export default function WebHostingDevelopmentPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
       >
-        <h3 className={`mb-10 font-serif text-h3 font-bold text-center`}>
+        <h2 className={`mb-10 font-serif text-h3 font-bold text-center`}>
           Plenty of Add-ons to Suit Your Needs
-        </h3>
+        </h2>
         <div
           className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto`}
         >
@@ -324,9 +332,9 @@ export default function WebHostingDevelopmentPage() {
 
       {/* Showcase Section */}
       <section className="py-20 px-5 sm:px-20 xl:px-36 bg-white">
-        <h3 className="mb-10 font-serif text-h3 font-bold text-center">
+        <h2 className="mb-10 font-serif text-h3 font-bold text-center">
           Some of Our Recent Work
-        </h3>
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
@@ -377,11 +385,11 @@ export default function WebHostingDevelopmentPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
       >
-        <h3
+        <h2
           className={`mb-12 font-serif text-h3 font-bold text-white text-center`}
         >
           Choose Your Package
-        </h3>
+        </h2>
         <PricingCards
           tiers={[
             {
@@ -474,9 +482,9 @@ export default function WebHostingDevelopmentPage() {
 
       {/* Investment ROI */}
       <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
-        <h3 className="mb-4 font-serif text-h3 font-bold text-center">
+        <h2 className="mb-4 font-serif text-h3 font-bold text-center">
           Think of It as an Investment, Not an Expense
-        </h3>
+        </h2>
         <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
           A website isn&apos;t a cost you absorb. It&apos;s infrastructure that
           earns revenue every month for years.
@@ -526,9 +534,9 @@ export default function WebHostingDevelopmentPage() {
       <section
         className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
       >
-        <h3 className={`mb-8 font-serif text-h3 font-bold text-center`}>
+        <h2 className={`mb-8 font-serif text-h3 font-bold text-center`}>
           What Can Affect Pricing
-        </h3>
+        </h2>
         <p className={`mb-8 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
           Every project is different. These are the most common factors that
           can move the price above the starting point for each tier.
@@ -558,6 +566,23 @@ export default function WebHostingDevelopmentPage() {
         <p className={`mt-8 text-center text-sm text-neutral-400`}>
           Hourly rate for additional work: $165/hr
         </p>
+      </section>
+
+      {/* Related Services */}
+      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <h2 className="mb-8 font-serif text-h3 font-bold text-center">Related Services</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            { name: "Web Hosting", href: "/web-hosting", description: "Managed cloud hosting for your site" },
+            { name: "Website Maintenance", href: "/website-maintenance", description: "Keep your site secure and up to date" },
+            { name: "SEO & Content", href: "/seo-and-content", description: "Get found by the right customers" },
+          ].map((service) => (
+            <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
+              <h3 className="font-bold text-ravenci-dark mb-2">{service.name}</h3>
+              <p className="text-sm text-neutral-500">{service.description}</p>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* FAQ Section */}

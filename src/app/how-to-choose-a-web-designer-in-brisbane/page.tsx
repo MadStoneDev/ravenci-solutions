@@ -8,16 +8,16 @@ import Breadcrumbs from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
   title:
-    "How to Choose a Web Designer in Brisbane: 10 Questions to Ask in 2026 | RAVENCI Solutions",
+    "How to Choose a Web Designer in Brisbane | RAVENCI Solutions",
   description:
     "The 10 questions every Brisbane business should ask before choosing a web designer. Red flags, green flags, how to compare quotes, and what 'good' looks like in 2026.",
   openGraph: {
-    title:
-      "How to Choose a Web Designer in Brisbane: 10 Questions to Ask in 2026",
+    title: "How to Choose a Web Designer in Brisbane",
     description:
-      "Brisbane web designer selection guide for 2026. Ten essential questions, red and green flags, and how to compare quotes properly.",
+      "The 10 questions every Brisbane business should ask before choosing a web designer. Red flags, green flags, how to compare quotes, and what 'good' looks like in 2026.",
     type: "article",
   },
+  twitter: { card: "summary_large_image" },
   alternates: { canonical: "/how-to-choose-a-web-designer-in-brisbane" },
 };
 

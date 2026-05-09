@@ -4,9 +4,17 @@ import Breadcrumbs from "@/components/breadcrumbs";
 import { getAllArticles } from "@/lib/articles";
 
 export const metadata = {
-  title: "Articles & Insights - RAVENCI Solutions",
+  title: "Articles & Insights | RAVENCI Solutions",
   description:
     "Expert perspectives on web development, digital strategy, and business growth from Brisbane's RAVENCI Solutions. Tips, guides, and industry insights.",
+  openGraph: {
+    title: "Articles & Insights",
+    description:
+      "Expert perspectives on web development, digital strategy, and business growth from Brisbane's RAVENCI Solutions. Tips, guides, and industry insights.",
+    type: "website" as const,
+  },
+  twitter: { card: "summary_large_image" as const },
+  alternates: { canonical: "/articles" },
 };
 
 export default function ArticlesPage() {
@@ -85,6 +93,42 @@ export default function ArticlesPage() {
       <section
         className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[250px] bg-white`}
       ></section>
+
+      {/* CollectionPage JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Articles & Insights | RAVENCI Solutions",
+            description:
+              "Expert perspectives on web development, digital strategy, and business growth from Brisbane's RAVENCI Solutions.",
+            url: "https://ravenci.solutions/articles",
+            publisher: {
+              "@type": "Organization",
+              name: "RAVENCI Solutions",
+              url: "https://ravenci.solutions",
+            },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "RAVENCI Articles",
+            itemListElement: articles.map((article, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              url: `https://ravenci.solutions/articles/${article.slug}`,
+              name: article.title,
+            })),
+          }),
+        }}
+      />
     </main>
   );
 }

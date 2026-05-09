@@ -13,9 +13,16 @@ import {
 import Accordion from "@/components/accordion";
 
 export const metadata = {
-  title: "Our Process: The RAVENCI Method | RAVENCI Solutions",
+  title: "Our Process | RAVENCI Solutions",
   description:
     "Discover how RAVENCI Solutions in Brisbane delivers results. Our 6-step process takes your project from discovery to launch and beyond, with 25+ years of experience behind every decision.",
+  openGraph: {
+    title: "Our Process",
+    description:
+      "Discover how RAVENCI Solutions in Brisbane delivers results. Our 6-step process takes your project from discovery to launch and beyond, with 25+ years of experience behind every decision.",
+    type: "website" as const,
+  },
+  twitter: { card: "summary_large_image" as const },
   alternates: { canonical: "/our-process" },
 };
 
@@ -64,7 +71,7 @@ const steps = [
     name: "Development & Build",
     icon: IconCode,
     description:
-      "This is where it all comes together. Clean, performant code built to modern standards. We develop with speed, accessibility, and SEO baked in from the start, not bolted on after.",
+      "This is where it all comes together. Clean, performant code built to modern standards. We develop with speed, accessibility, and SEO built in from the start, not bolted on after.",
     highlights: [
       "Clean, maintainable code",
       "85+ Google PageSpeed guaranteed",
@@ -90,7 +97,7 @@ const steps = [
     name: "Ongoing Support & Growth",
     icon: IconHeartHandshake,
     description:
-      "Launch day is just the beginning. We provide ongoing maintenance, security updates, performance monitoring, and strategic guidance to keep your site working as hard as you do.",
+      "Launch day is just the beginning. We provide ongoing maintenance, security updates, performance monitoring, and strategic guidance to keep your site performing and up to date.",
     highlights: [
       "Proactive maintenance and security updates",
       "Performance monitoring and reporting",
@@ -171,11 +178,11 @@ export default function OurProcessPage() {
         className={`p-10 flex flex-col items-center gap-3 bg-ravenci-primary text-white text-center`}
       >
         <div className={`max-w-lg`}>
-          <h3 className={`font-serif font-medium text-xl`}>
+          <h2 className={`font-serif font-medium text-xl`}>
             Great websites aren't accidents. They're the result of careful
             planning, clear communication, and disciplined execution. Every
             single time.
-          </h3>
+          </h2>
         </div>
       </section>
 
@@ -239,7 +246,7 @@ export default function OurProcessPage() {
               <p
                 className={`text-4xl md:text-5xl font-bold text-ravenci-primary`}
               >
-                20+
+                25+
               </p>
               <p className={`mt-2 text-neutral-400`}>
                 Years of Digital Experience

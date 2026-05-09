@@ -7,18 +7,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Core pages with their priorities
   const staticPages: MetadataRoute.Sitemap = [
+    // Homepage
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1.0,
     },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+    // Core service pages (0.9)
     {
       url: `${baseUrl}/web-development`,
       lastModified: new Date(),
@@ -27,6 +23,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/business-design`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/seo-and-content`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/web-hosting`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/website-maintenance`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
@@ -43,36 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}/seo-and-content`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/retainer-packages`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/website-maintenance`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/web-hosting`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/our-process`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+    // Industry pages (0.85)
     {
       url: `${baseUrl}/healthcare`,
       lastModified: new Date(),
@@ -85,72 +70,101 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.85,
     },
+    // Supporting pages (0.8)
     {
-      url: `${baseUrl}/launch-your-vision`,
+      url: `${baseUrl}/about`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/quote`,
+      url: `${baseUrl}/our-process`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/retainer-packages`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    // Content/guide pages (0.75)
+    {
+      url: `${baseUrl}/case-studies`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
     },
     {
       url: `${baseUrl}/articles`,
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.7,
+      priority: 0.75,
     },
     {
       url: `${baseUrl}/custom-vs-template`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/brisbane-website-audit`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/free-audit`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/cost-of-a-website-in-brisbane`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/wordpress-vs-shopify-vs-custom`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/medical-practice-website-requirements`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
+      priority: 0.75,
     },
     {
       url: `${baseUrl}/how-to-choose-a-web-designer-in-brisbane`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.85,
+      priority: 0.75,
     },
     {
-      url: `${baseUrl}/labs`,
+      url: `${baseUrl}/cost-of-a-website-in-brisbane`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/wordpress-vs-shopify-vs-custom`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/brisbane-website-audit`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/medical-practice-website-requirements`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    // Utility pages (0.7)
+    {
+      url: `${baseUrl}/quote`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/launch-your-vision`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/free-audit`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    // Labs (0.5)
+    {
+      url: `${baseUrl}/labs`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    // Policy pages (0.3)
     {
       url: `${baseUrl}/privacy-policy`,
       lastModified: new Date(),
@@ -171,21 +185,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Case studies pages
-  const caseStudyPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/case-studies`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    ...CASE_STUDIES.filter((cs) => !cs.hidden).map((cs) => ({
-      url: `${baseUrl}/case-studies/${cs.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "yearly" as const,
-      priority: 0.7,
-    })),
-  ];
+  // Dynamic case study pages
+  const caseStudyPages: MetadataRoute.Sitemap = CASE_STUDIES.filter(
+    (cs) => !cs.hidden
+  ).map((cs) => ({
+    url: `${baseUrl}/case-studies/${cs.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "yearly" as const,
+    priority: 0.7,
+  }));
 
   // Article pages
   const articlePages: MetadataRoute.Sitemap = getAllArticles().map((a) => ({

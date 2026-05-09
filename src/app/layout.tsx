@@ -30,6 +30,9 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ravenci.solutions"),
+  icons: {
+    icon: "/favicon.ico",
+  },
   title:
     "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
   description:

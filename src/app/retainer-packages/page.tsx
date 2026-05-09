@@ -7,10 +7,19 @@ import Breadcrumbs from "@/components/breadcrumbs";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
-  title: "Retainer Packages: Ongoing Digital Partnership | RAVENCI Solutions",
+  title: "Retainer Packages | RAVENCI Solutions",
   description:
     "Monthly retainer packages for ongoing web development, design, and strategy in Brisbane. From $275/mo. Your dedicated digital team without the overhead of hiring.",
   alternates: { canonical: "/retainer-packages" },
+  openGraph: {
+    title: "Retainer Packages",
+    description:
+      "Monthly retainer packages for ongoing web development, design, and strategy in Brisbane. From $275/mo. Your dedicated digital team without the overhead of hiring.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RetainerPackagesPage() {
@@ -115,7 +124,7 @@ export default function RetainerPackagesPage() {
       summary:
         "Anything digital: new pages, design tweaks, feature development, content updates, landing pages, email templates, and performance optimisation. Your hours are fully flexible each month.",
       content:
-        "Anything digital. New pages, design tweaks, feature development, content updates, landing pages, email templates, performance optimisation, whatever moves the needle for your business that month. Your hours are fully flexible.",
+        "Anything digital. New pages, design tweaks, feature development, content updates, landing pages, email templates, performance optimisation, whatever matters most to your business that month. Your hours are fully flexible.",
     },
     {
       title: "How do unused hours work?",
@@ -130,7 +139,7 @@ export default function RetainerPackagesPage() {
       summary:
         "Maintenance covers updates, backups, and security monitoring. A retainer includes all of that plus dedicated hours for active development, design, content, and strategy work.",
       content:
-        "Maintenance keeps things running: updates, backups, security monitoring. A retainer includes all of that plus dedicated hours for active development, design, content, and strategy. Think of maintenance as protection, and a retainer as progress.",
+        "Maintenance keeps things running: updates, backups, security monitoring. A retainer includes all of that plus dedicated hours for active development, design, content, and strategy. Maintenance keeps things running. A retainer keeps things moving forward.",
     },
     {
       title: "Can I change tiers?",
@@ -237,11 +246,11 @@ export default function RetainerPackagesPage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`font-serif text-h3 font-bold text-white`}>
-              Tired of Digital Growing Pains?
-            </h3>
+            <h2 className={`font-serif text-h3 font-bold text-white`}>
+              The Problem with Project-by-Project Work
+            </h2>
             <div className={`my-4 text-neutral-400/90`}>
-              Stop dealing with:
+              Common frustrations we hear from businesses:
               <ul className={`mt-4 flex flex-col gap-2`}>
                 <li>- Freelancers who disappear between projects</li>
                 <li>- Websites that sit stagnant for months after launch</li>
@@ -251,11 +260,11 @@ export default function RetainerPackagesPage() {
               </ul>
             </div>
 
-            <h3
+            <h2
               className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}
             >
               Why a Retainer Beats Hiring In-House
-            </h3>
+            </h2>
             <p className={`mb-6 text-neutral-400/90`}>
               Our SMB Full Service retainer costs{" "}
               <span className={`text-white font-bold`}>$33,600/year</span>, a
@@ -312,9 +321,9 @@ export default function RetainerPackagesPage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`mb-8 font-serif text-h3 font-bold`}>
+            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
               Why Choose a Retainer
-            </h3>
+            </h2>
             <ul className={`flex flex-col gap-8`}>
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start gap-2">
@@ -357,11 +366,11 @@ export default function RetainerPackagesPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
       >
-        <h3
+        <h2
           className={`mb-12 font-serif text-h3 font-bold text-white text-center`}
         >
           Choose Your Retainer
-        </h3>
+        </h2>
         <div
           className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6`}
         >
@@ -416,6 +425,23 @@ export default function RetainerPackagesPage() {
                 </p>
               </Link>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <h2 className="mb-8 font-serif text-h3 font-bold text-center">Related Services</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            { name: "Web Development", href: "/web-development", description: "Custom websites built to perform" },
+            { name: "Website Maintenance", href: "/website-maintenance", description: "Keep your site secure and up to date" },
+            { name: "SEO & Content", href: "/seo-and-content", description: "Get found by the right customers" },
+          ].map((service) => (
+            <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
+              <h3 className="font-bold text-ravenci-dark mb-2">{service.name}</h3>
+              <p className="text-sm text-neutral-500">{service.description}</p>
+            </Link>
           ))}
         </div>
       </section>

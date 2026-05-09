@@ -14,16 +14,16 @@ import {
 } from "@/data/brisbane-audit";
 
 export const metadata: Metadata = {
-  title:
-    "We Audited 50 Brisbane Business Websites: Here's What We Found | RAVENCI Solutions",
+  title: "Brisbane Website Audit Results | RAVENCI Solutions",
   description:
     "RAVENCI Solutions audited 50 Brisbane business websites for speed, SEO, mobile usability, accessibility, and security. 72% scored below 50 on Google PageSpeed. See the full findings.",
   openGraph: {
-    title: "We Audited 50 Brisbane Business Websites: Here's What We Found",
+    title: "Brisbane Website Audit Results",
     description:
-      "72% of Brisbane business websites scored below 50 on Google PageSpeed. We audited 50 sites for speed, SEO, mobile usability, and security. See the data.",
+      "RAVENCI Solutions audited 50 Brisbane business websites for speed, SEO, mobile usability, accessibility, and security. 72% scored below 50 on Google PageSpeed. See the full findings.",
     type: "article",
   },
+  twitter: { card: "summary_large_image" },
   alternates: { canonical: "/brisbane-website-audit" },
 };
 

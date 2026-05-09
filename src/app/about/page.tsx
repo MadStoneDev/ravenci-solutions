@@ -2,9 +2,16 @@ import Link from "next/link";
 import { IconCircleCheckFilled } from "@tabler/icons-react";
 
 export const metadata = {
-  title: "About - RAVENCI Solutions",
+  title: "About | RAVENCI Solutions",
   description:
     "Meet the team behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency, building websites that perform for Australian businesses.",
+  openGraph: {
+    title: "About",
+    description:
+      "Meet the team behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency, building websites that perform for Australian businesses.",
+    type: "website" as const,
+  },
+  twitter: { card: "summary_large_image" as const },
   alternates: { canonical: "/about" },
 };
 
@@ -119,9 +126,9 @@ export default function AboutPage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`mb-8 font-serif text-h3 font-bold`}>
+            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
               The Story Behind RAVENCI
-            </h3>
+            </h2>
             <div className={`space-y-4 text-neutral-500/80`}>
               <p>
                 RAVENCI was founded by Richard Haddad, a structural engineer
@@ -160,9 +167,9 @@ export default function AboutPage() {
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
       >
         <article className={`max-w-3xl mx-auto`}>
-          <h3 className={`mb-8 font-serif text-h3 font-bold text-white`}>
+          <h2 className={`mb-8 font-serif text-h3 font-bold text-white`}>
             What Makes Us Different
-          </h3>
+          </h2>
           <div className={`space-y-6 text-neutral-400/90`}>
             <p>
               Most web developers and designers come from a purely technical or
@@ -266,11 +273,11 @@ export default function AboutPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50/80`}
       >
-        <h3
+        <h2
           className={`mb-12 font-serif text-h3 font-bold text-center text-ravenci-dark`}
         >
           What We Stand For
-        </h3>
+        </h2>
         <div
           className={`grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto`}
         >

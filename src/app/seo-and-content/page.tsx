@@ -1,13 +1,22 @@
-﻿import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
+﻿import Link from "next/link";
+import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
 import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
-  title: "SEO & Content Services - RAVENCI Solutions",
+  title: "SEO & Content Services | RAVENCI Solutions",
   description:
     "SEO and content in Brisbane, Australia that gets you found and converts. Transparent AUD pricing. On-page SEO, content, and ethical link building.",
+  alternates: { canonical: "/seo-and-content" },
+  openGraph: {
+    title: "SEO & Content Services",
+    description:
+      "SEO and content in Brisbane, Australia that gets you found and converts. Transparent AUD pricing. On-page SEO, content, and ethical link building.",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function SEOContentPage() {
@@ -26,12 +35,12 @@ export default function SEOContentPage() {
     {
       title: "Content Strategy",
       description:
-        "Strategic content planning that attracts your ideal customers and builds authority",
+        "Content planning that brings the right customers to your site",
     },
     {
-      title: "Conversion-Focused Copy",
+      title: "Copy That Sells",
       description:
-        "Persuasive writing that turns website visitors into paying customers",
+        "Website copy written to move visitors towards enquiries and sales",
     },
     {
       title: "Local SEO",
@@ -108,10 +117,24 @@ export default function SEOContentPage() {
 
   return (
     <main className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://ravenci.solutions" },
+              { "@type": "ListItem", position: 2, name: "SEO & Content", item: "https://ravenci.solutions/seo-and-content" },
+            ],
+          }),
+        }}
+      />
+
       <section className="content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white">
         <article className="col-span-12 flex flex-col">
           <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
-            Get Found. Get Customers.
+            SEO & Content That Brings You Customers
           </h1>
           <h2 className="max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light">
             SEO & Content in Brisbane that drives high‑intent traffic and
@@ -153,9 +176,9 @@ export default function SEOContentPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 bg-white">
         <section className="content-section py-20 px-5 sm:px-20 xl:px-36 space-y-14 bg-neutral-200/50">
           <article className="max-w-lg">
-            <h3 className="mb-8 font-serif text-h3 font-bold">
+            <h2 className="mb-8 font-serif text-h3 font-bold">
               What&apos;s Included with Every Project
-            </h3>
+            </h2>
             <ul className="flex flex-col gap-8">
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start gap-2">
@@ -175,9 +198,9 @@ export default function SEOContentPage() {
           </article>
 
           <article className="max-w-lg">
-            <h3 className="mb-8 font-serif text-h3 font-bold">
+            <h2 className="mb-8 font-serif text-h3 font-bold">
               Additional Services Available
-            </h3>
+            </h2>
             <ul className="flex flex-col gap-8">
               {addons.map((addon, index) => (
                 <li key={index} className="flex items-start gap-2">
@@ -199,9 +222,9 @@ export default function SEOContentPage() {
 
         <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark">
           <article className="max-w-lg">
-            <h3 className="font-serif text-h3 font-bold text-white">
-              Tired of Being Invisible Online?
-            </h3>
+            <h2 className="font-serif text-h3 font-bold text-white">
+              Your Customers Are Searching. Can They Find You?
+            </h2>
             <p className="my-4 text-neutral-400/90">
               Stop losing customers to competitors because of:
             </p>
@@ -209,20 +232,20 @@ export default function SEOContentPage() {
               <li>- Website traffic that never converts to sales</li>
               <li>- Being buried on page 2+ of Google search results</li>
               <li>- Thin, off-brand content</li>
-              <li>- SEO agencies that promise results but deliver reports</li>
+              <li>- SEO agencies that don't deliver real results</li>
               <li>- Marketing copy that fails to persuade</li>
             </ul>
 
-            <h3 className="mt-8 mb-4 font-serif text-h3 font-bold text-white">
+            <h2 className="mt-8 mb-4 font-serif text-h3 font-bold text-white">
               Why Choose RAVENCI
-            </h3>
+            </h2>
             <ul className="flex flex-col gap-4 mb-6 text-neutral-400/90">
               <li className="flex gap-2">
                 <IconCheck
                   size={24}
                   className="p-1 bg-ravenci-primary rounded-full text-white"
                 />
-                Results-focused approach vs vanity metrics
+                We focus on leads and sales, not just traffic numbers
               </li>
               <li className="flex gap-2">
                 <IconCheck
@@ -236,7 +259,7 @@ export default function SEOContentPage() {
                   size={24}
                   className="p-1 bg-ravenci-primary rounded-full text-white"
                 />
-                Conversion-focused content, not keyword stuffing
+                Content written for your customers first, search engines second
               </li>
               <li className="flex gap-2">
                 <IconCheck
@@ -356,8 +379,8 @@ export default function SEOContentPage() {
               3. Copywriting Only
             </h3>
             <p className="mb-4 text-neutral-400/90">
-              High‑converting copy without a full SEO engagement. Scoped for
-              fast, focused delivery.
+              Professional website copy as a standalone service. Clear scope,
+              reliable turnaround.
             </p>
             <div className="mb-16 text-white">
               <Accordion
@@ -397,6 +420,23 @@ export default function SEOContentPage() {
         </section>
       </div>
 
+      {/* Related Services */}
+      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <h2 className="mb-8 font-serif text-h3 font-bold text-center">Related Services</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            { name: "Web Development", href: "/web-development", description: "Websites built for search from day one" },
+            { name: "Business Design", href: "/business-design", description: "Branding that builds trust" },
+            { name: "Website Maintenance", href: "/website-maintenance", description: "Keep your site performing" },
+          ].map((service) => (
+            <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
+              <h3 className="font-bold text-ravenci-dark mb-2">{service.name}</h3>
+              <p className="text-sm text-neutral-500">{service.description}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <section className="content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white">
         <h2 className="font-serif text-h3">SEO & Content Questions Answered</h2>
         <Accordion
@@ -412,7 +452,7 @@ export default function SEOContentPage() {
             },
             {
               title: `Can you work with our existing marketing team?`,
-              content: `Yes. We collaborate seamlessly with in‑house teams, provide training/guidelines, and can act as an extension of your team.`,
+              content: `Yes. We work well alongside in-house teams, provide training and guidelines, and fit in wherever you need us.`,
             },
             {
               title: `What industries do you specialize in?`,
@@ -428,6 +468,26 @@ export default function SEOContentPage() {
           }))}
         />
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: "SEO & Content",
+            name: "SEO & Content Services",
+            description:
+              "SEO and content in Brisbane, Australia that gets you found and converts. Transparent AUD pricing. On-page SEO, content, and ethical link building.",
+            provider: {
+              "@type": "ProfessionalService",
+              name: "RAVENCI Solutions",
+              url: "https://ravenci.solutions",
+            },
+            areaServed: { "@type": "Country", name: "Australia" },
+          }),
+        }}
+      />
 
       {/* JSON-LD FAQ Schema for rich results */}
       <script
@@ -458,7 +518,7 @@ export default function SEOContentPage() {
                 name: "Can you work with our existing marketing team?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes. We collaborate seamlessly with in-house teams, provide training/guidelines, and can act as an extension of your team.",
+                  text: "Yes. We work well alongside in-house teams, provide training and guidelines, and fit in wherever you need us.",
                 },
               },
               {

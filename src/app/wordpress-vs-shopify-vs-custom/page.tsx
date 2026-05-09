@@ -7,17 +7,16 @@ import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
-  title:
-    "WordPress vs Shopify vs Custom Next.js: Which Platform for Australian Businesses? | RAVENCI Solutions",
+  title: "WordPress vs Shopify vs Custom | RAVENCI Solutions",
   description:
     "Honest 2026 comparison of WordPress, Shopify and Custom Next.js for Australian businesses. Real costs, when each wins, common mistakes, and how to choose without locking yourself in.",
   openGraph: {
-    title:
-      "WordPress vs Shopify vs Custom Next.js: Which Platform for Australian Businesses?",
+    title: "WordPress vs Shopify vs Custom",
     description:
-      "An honest 2026 comparison for Australian businesses choosing between WordPress, Shopify and Custom Next.js. Costs, trade-offs, and how to choose right.",
+      "Honest 2026 comparison of WordPress, Shopify and Custom Next.js for Australian businesses. Real costs, when each wins, common mistakes, and how to choose without locking yourself in.",
     type: "article",
   },
+  twitter: { card: "summary_large_image" },
   alternates: { canonical: "/wordpress-vs-shopify-vs-custom" },
 };
 

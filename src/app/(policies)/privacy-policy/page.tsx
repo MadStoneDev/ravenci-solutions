@@ -4,6 +4,13 @@ export const metadata: Metadata = {
   title: "Privacy Policy | RAVENCI Solutions",
   description:
     "How RAVENCI Solutions collects, uses, and protects personal information across our website and services.",
+  openGraph: {
+    title: "Privacy Policy",
+    description:
+      "How RAVENCI Solutions collects, uses, and protects personal information across our website and services.",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
   alternates: { canonical: "/privacy-policy" },
 };
 

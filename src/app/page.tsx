@@ -18,6 +18,20 @@ import { Route } from "next";
 import ServicesShowcase from "@/components/services-showcase";
 import PlatformsSection from "@/components/platforms-section";
 
+export const metadata = {
+  title: "Custom Web Development Brisbane | RAVENCI Solutions",
+  description: "Custom websites for Australian businesses. Web development, design, hosting, maintenance, and SEO from $4,950. Brisbane-based, 25+ years experience, 85+ PageSpeed guaranteed.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Custom Web Development Brisbane",
+    description: "Custom websites for Australian businesses. Web development, design, hosting, maintenance, and SEO from $4,950. Brisbane-based, 25+ years experience.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+};
+
 export default function Home() {
   const homepageTestimonials = getTestimonialsForPage("homepage");
   const adamTestimonial = getTestimonialByID("adam-bisset");
@@ -122,12 +136,12 @@ export default function Home() {
         />
 
         <article className={`col-span-12 lg:col-span-6 mb-16 lg:mb-0`}>
-          <h3
+          <h2
             className={`max-w-[500px] text-5xl font-light`}
             style={{ lineHeight: "3.75rem" }}
           >
             Your website should generate results, not headaches.
-          </h3>
+          </h2>
 
           <div className={`mt-16 mb-24 flex flex-col gap-8 max-w-[500px]`}>
             <p>
@@ -262,12 +276,12 @@ export default function Home() {
         className={`content-section pt-40 pb-48 px-5 sm:px-20 xl:px-36 grid grid-cols-12 bg-neutral-100 text-ravenci-dark`}
       >
         <article className={`mb-16 lg:mb-0 col-span-12 lg:col-span-6`}>
-          <h3
+          <h2
             className={`max-w-[500px] text-5xl font-light`}
             style={{ lineHeight: "3.75rem" }}
           >
             Proudly serving clients since 2018.
-          </h3>
+          </h2>
 
           <div className={`mt-10 flex flex-col gap-8 max-w-[450px]`}>
             <p>
@@ -306,9 +320,9 @@ export default function Home() {
       {/* Comparison Table */}
       <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h3 className="mb-2 font-serif text-h3 font-bold text-center">
+          <h2 className="mb-2 font-serif text-h3 font-bold text-center">
             Why Businesses Choose RAVENCI
-          </h3>
+          </h2>
           <p className="mb-10 text-center text-neutral-500/80">
             Most agencies build websites to launch. We build them to last.
             Here&apos;s how we stack up against the typical drag-and-drop crowd
@@ -357,6 +371,26 @@ export default function Home() {
       </section>
 
       <footer className={`bg-ravenci-dark`}></footer>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "RAVENCI Solutions Services",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Web Development", url: "https://ravenci.solutions/web-development" },
+              { "@type": "ListItem", position: 2, name: "Business Design", url: "https://ravenci.solutions/business-design" },
+              { "@type": "ListItem", position: 3, name: "SEO & Content", url: "https://ravenci.solutions/seo-and-content" },
+              { "@type": "ListItem", position: 4, name: "Web Hosting", url: "https://ravenci.solutions/web-hosting" },
+              { "@type": "ListItem", position: 5, name: "Website Maintenance", url: "https://ravenci.solutions/website-maintenance" },
+              { "@type": "ListItem", position: 6, name: "Mobile Apps", url: "https://ravenci.solutions/mobile-apps" },
+              { "@type": "ListItem", position: 7, name: "Web Apps", url: "https://ravenci.solutions/web-apps" },
+            ],
+          }),
+        }}
+      />
     </main>
   );
 }

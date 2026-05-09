@@ -10,11 +10,19 @@ import TestimonialsSingle from "@/components/testimonials-single";
 import { getTestimonialsForIndustry } from "@/data/testimonials";
 
 export const metadata = {
-  title:
-    "Construction & Property Developer Website Design Brisbane | RAVENCI Solutions",
+  title: "Construction Websites Brisbane | RAVENCI Solutions",
   description:
     "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $4,950.",
   alternates: { canonical: "/construction" },
+  openGraph: {
+    title: "Construction Websites Brisbane",
+    description:
+      "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $4,950.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 const features = [
@@ -268,7 +276,7 @@ export default function ConstructionPage() {
           className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center`}
         >
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>20+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>25+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Years Experience
             </p>
@@ -300,9 +308,9 @@ export default function ConstructionPage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 space-y-14 bg-neutral-200/50`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`mb-8 font-serif text-h3 font-bold`}>
+            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
               What Construction Companies Need
-            </h3>
+            </h2>
             <ul className={`flex flex-col gap-8`}>
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start gap-2">
@@ -326,9 +334,9 @@ export default function ConstructionPage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`font-serif text-h3 font-bold text-white`}>
+            <h2 className={`font-serif text-h3 font-bold text-white`}>
               Why Choose RAVENCI for Construction?
-            </h3>
+            </h2>
             <div className={`my-4 text-neutral-400/90`}>
               Your builds speak for themselves on-site. Your website should do
               the same online.
@@ -409,9 +417,9 @@ export default function ConstructionPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
       >
-        <h3 className={`mb-4 font-serif text-h3 font-bold text-center`}>
+        <h2 className={`mb-4 font-serif text-h3 font-bold text-center`}>
           Built for Every Type of Builder
-        </h3>
+        </h2>
         <p className={`mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
           Whether you build custom homes or high-rise towers, we build websites
           tailored to how your specific business wins work.
@@ -435,9 +443,9 @@ export default function ConstructionPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
       >
-        <h3 className={`mb-4 font-serif text-h3 font-bold text-center`}>
+        <h2 className={`mb-4 font-serif text-h3 font-bold text-center`}>
           Integrations We Work With
-        </h3>
+        </h2>
         <p className={`mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
           Your website connects to the project management, CRM, and listing
           platforms you already use. Leads flow in, data stays in sync, and
@@ -466,11 +474,11 @@ export default function ConstructionPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
       >
-        <h3
+        <h2
           className={`mb-4 font-serif text-h3 font-bold text-white text-center`}
         >
           We Target the Searches That Win You Work
-        </h3>
+        </h2>
         <p
           className={`mb-12 text-center text-neutral-400/90 max-w-2xl mx-auto`}
         >
@@ -512,9 +520,9 @@ export default function ConstructionPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
       >
-        <h3 className={`mb-12 font-serif text-h3 font-bold text-center`}>
+        <h2 className={`mb-12 font-serif text-h3 font-bold text-center`}>
           How We Work with Construction Clients
-        </h3>
+        </h2>
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto`}>
           {[
             {
@@ -533,7 +541,7 @@ export default function ConstructionPage() {
               step: "03",
               title: "Build & Optimise",
               description:
-                "Image-heavy pages that still load in under 2 seconds. CRM connected. SEO baked in from day one.",
+                "Image-heavy pages that still load in under 2 seconds. CRM connected. SEO built in from day one.",
             },
             {
               step: "04",
@@ -559,9 +567,9 @@ export default function ConstructionPage() {
       <section
         className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
       >
-        <h3 className={`mb-8 font-serif text-h3 font-bold text-center`}>
+        <h2 className={`mb-8 font-serif text-h3 font-bold text-center`}>
           What Can Affect Pricing
-        </h3>
+        </h2>
         <div className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto`}>
           {[
             "Number of project case studies to set up initially",
@@ -587,6 +595,23 @@ export default function ConstructionPage() {
         <p className={`mt-8 text-center text-sm text-neutral-400`}>
           Hourly rate for additional work: $165/hr
         </p>
+      </section>
+
+      {/* Related Services */}
+      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <h2 className="mb-8 font-serif text-h3 font-bold text-center">Related Services</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            { name: "Web Development", href: "/web-development", description: "Custom websites for any industry" },
+            { name: "Website Maintenance", href: "/website-maintenance", description: "Keep your site secure and up to date" },
+            { name: "SEO & Content", href: "/seo-and-content", description: "Rank for the searches that win work" },
+          ].map((service) => (
+            <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
+              <h3 className="font-bold text-ravenci-dark mb-2">{service.name}</h3>
+              <p className="text-sm text-neutral-500">{service.description}</p>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* FAQ */}

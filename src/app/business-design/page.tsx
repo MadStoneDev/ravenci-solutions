@@ -1,13 +1,22 @@
-﻿import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
+﻿import Link from "next/link";
+import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
 import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
-  title: "Business Design Solutions - RAVENCI Solutions",
+  title: "Business Design | RAVENCI Solutions",
   description:
     "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems. From $3,500.",
+  alternates: { canonical: "/business-design" },
+  openGraph: {
+    title: "Business Design",
+    description:
+      "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems. From $3,500.",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function BusinessDesignPage() {
@@ -106,6 +115,20 @@ export default function BusinessDesignPage() {
 
   return (
     <main className={`flex flex-col`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://ravenci.solutions" },
+              { "@type": "ListItem", position: 2, name: "Business Design", item: "https://ravenci.solutions/business-design" },
+            ],
+          }),
+        }}
+      />
+
       <section
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
@@ -155,9 +178,9 @@ export default function BusinessDesignPage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 space-y-14 bg-neutral-200/50`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`mb-8 font-serif text-h3 font-bold`}>
+            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
               What's Included with Every Design
-            </h3>
+            </h2>
             <ul className={`flex flex-col gap-8`}>
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start gap-2">
@@ -177,9 +200,9 @@ export default function BusinessDesignPage() {
           </article>
 
           <article className={`max-w-lg`}>
-            <h3 className={`mb-8 font-serif text-h3 font-bold`}>
+            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
               Additional Services Available
-            </h3>
+            </h2>
             <ul className={`flex flex-col gap-8`}>
               {addons.map((addon, index) => (
                 <li key={index} className="flex items-start gap-2">
@@ -203,9 +226,9 @@ export default function BusinessDesignPage() {
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
           <article className={`max-w-lg`}>
-            <h3 className={`font-serif text-h3 font-bold text-white`}>
+            <h2 className={`font-serif text-h3 font-bold text-white`}>
               Your Brand Deserves Better
-            </h3>
+            </h2>
             <div className={`my-4 text-neutral-400/90`}>
               Common problems we see:
               <ul className={`mt-4 flex flex-col gap-2`}>
@@ -219,9 +242,9 @@ export default function BusinessDesignPage() {
               </ul>
             </div>
 
-            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
+            <h2 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
               Why Choose RAVENCI Over Other Designers?
-            </h3>
+            </h2>
             <ul className={`flex flex-col gap-4 mb-6 text-neutral-400/90`}>
               <li className={`flex gap-2`}>
                 <IconCheck
@@ -415,6 +438,23 @@ export default function BusinessDesignPage() {
         </section>
       </div>
 
+      {/* Related Services */}
+      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <h2 className="mb-8 font-serif text-h3 font-bold text-center">Related Services</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            { name: "Web Development", href: "/web-development", description: "Bring your brand online" },
+            { name: "SEO & Content", href: "/seo-and-content", description: "Content that matches your brand voice" },
+            { name: "Mobile Apps", href: "/mobile-apps", description: "Your brand in your customers' pockets" },
+          ].map((service) => (
+            <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
+              <h3 className="font-bold text-ravenci-dark mb-2">{service.name}</h3>
+              <p className="text-sm text-neutral-500">{service.description}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <section
         className={`content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white`}
       >
@@ -457,6 +497,25 @@ export default function BusinessDesignPage() {
         priceNote=""
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: "Business Design",
+            name: "Business Design",
+            description:
+              "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems. From $3,500.",
+            provider: {
+              "@type": "ProfessionalService",
+              name: "RAVENCI Solutions",
+              url: "https://ravenci.solutions",
+            },
+            areaServed: { "@type": "Country", name: "Australia" },
+          }),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

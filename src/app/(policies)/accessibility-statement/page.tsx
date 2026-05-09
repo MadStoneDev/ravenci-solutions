@@ -4,6 +4,14 @@ export const metadata: Metadata = {
   title: "Accessibility Statement | RAVENCI Solutions",
   description:
     "RAVENCI Solutions is committed to making our website accessible to everyone, including people with disabilities. Learn about our accessibility efforts.",
+  openGraph: {
+    title: "Accessibility Statement",
+    description:
+      "RAVENCI Solutions is committed to making our website accessible to everyone, including people with disabilities. Learn about our accessibility efforts.",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
+  alternates: { canonical: "/accessibility-statement" },
 };
 
 export default function AccessibilityStatementPage() {

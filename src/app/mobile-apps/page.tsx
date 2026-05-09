@@ -1,13 +1,22 @@
-﻿import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
+﻿import Link from "next/link";
+import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
 import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
-  title: "Mobile App Development - RAVENCI Solutions",
+  title: "Mobile App Development | RAVENCI Solutions",
   description:
     "iPhone and Android apps your users will keep using. Brisbane-based, AUD pricing, built to last well past the next OS update.",
+  alternates: { canonical: "/mobile-apps" },
+  openGraph: {
+    title: "Mobile App Development",
+    description:
+      "iPhone and Android apps your users will keep using. Brisbane-based, AUD pricing, built to last well past the next OS update.",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function MobileAppDevelopmentPage() {
@@ -105,6 +114,20 @@ export default function MobileAppDevelopmentPage() {
 
   return (
     <main className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://ravenci.solutions" },
+              { "@type": "ListItem", position: 2, name: "Mobile Apps", item: "https://ravenci.solutions/mobile-apps" },
+            ],
+          }),
+        }}
+      />
+
       <section className="content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white">
         <article className="col-span-12 flex flex-col">
           <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
@@ -141,9 +164,9 @@ export default function MobileAppDevelopmentPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 bg-white">
         <section className="content-section py-20 px-5 sm:px-20 xl:px-36 space-y-14 bg-neutral-200/50">
           <article className="max-w-lg">
-            <h3 className="mb-8 font-serif text-h3 font-bold">
+            <h2 className="mb-8 font-serif text-h3 font-bold">
               What you get with Mobile App Development
-            </h3>
+            </h2>
             <ul className="flex flex-col gap-8">
               {features.map((f, i) => (
                 <li key={i} className="flex items-start gap-2">
@@ -163,9 +186,9 @@ export default function MobileAppDevelopmentPage() {
           </article>
 
           <article className="max-w-lg">
-            <h3 className="mb-8 font-serif text-h3 font-bold">
+            <h2 className="mb-8 font-serif text-h3 font-bold">
               Popular Add-ons
-            </h3>
+            </h2>
             <ul className="flex flex-col gap-8">
               {addons.map((a, i) => (
                 <li key={i} className="flex items-start gap-2">
@@ -187,11 +210,11 @@ export default function MobileAppDevelopmentPage() {
 
         <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark">
           <article className="max-w-lg">
-            <h3 className="font-serif text-h3 font-bold text-white">
+            <h2 className="font-serif text-h3 font-bold text-white">
               Avoid launch delays and app store rejections
-            </h3>
+            </h2>
             <div className="my-4 text-neutral-400/90">
-              Skip the pain of:
+              Common problems we help you avoid:
               <ul className="mt-4 flex flex-col gap-2">
                 <li>- Unclear roadmaps and missed deadlines</li>
                 <li>- Performance issues on key devices</li>
@@ -201,9 +224,9 @@ export default function MobileAppDevelopmentPage() {
               </ul>
             </div>
 
-            <h3 className="mt-8 mb-4 font-serif text-h3 font-bold text-white">
+            <h2 className="mt-8 mb-4 font-serif text-h3 font-bold text-white">
               Why RAVENCI for mobile
-            </h3>
+            </h2>
             <ul className="flex flex-col gap-4 mb-6 text-neutral-400/90">
               <li className="flex gap-2">
                 <IconCheck
@@ -224,7 +247,7 @@ export default function MobileAppDevelopmentPage() {
                   size={24}
                   className="p-1 bg-ravenci-primary rounded-full text-white"
                 />
-                CI/CD and QA baked in for reliable releases
+                CI/CD and QA built in for reliable releases
               </li>
               <li className="flex gap-2">
                 <IconCheck
@@ -344,6 +367,23 @@ export default function MobileAppDevelopmentPage() {
         </section>
       </div>
 
+      {/* Related Services */}
+      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <h2 className="mb-8 font-serif text-h3 font-bold text-center">Related Services</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            { name: "Web Apps", href: "/web-apps", description: "Custom web applications" },
+            { name: "Web Development", href: "/web-development", description: "Websites and platforms" },
+            { name: "Retainer Packages", href: "/retainer-packages", description: "Ongoing development and support" },
+          ].map((service) => (
+            <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
+              <h3 className="font-bold text-ravenci-dark mb-2">{service.name}</h3>
+              <p className="text-sm text-neutral-500">{service.description}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <section className="content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white">
         <h2 className="font-serif text-h3">Mobile FAQs</h2>
         <Accordion
@@ -385,6 +425,25 @@ export default function MobileAppDevelopmentPage() {
         priceNote=""
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: "Mobile App Development",
+            name: "Mobile App Development",
+            description:
+              "iPhone and Android apps your users will keep using. Brisbane-based, AUD pricing, built to last well past the next OS update.",
+            provider: {
+              "@type": "ProfessionalService",
+              name: "RAVENCI Solutions",
+              url: "https://ravenci.solutions",
+            },
+            areaServed: { "@type": "Country", name: "Australia" },
+          }),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

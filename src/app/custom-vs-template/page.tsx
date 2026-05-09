@@ -7,16 +7,16 @@ import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
-  title:
-    "Custom Website vs Template: Which Is Right for Your Business? | RAVENCI Solutions",
+  title: "Custom Website vs Template | RAVENCI Solutions",
   description:
     "Compare custom-built websites vs templates and DIY builders. Cost, performance, SEO, and scalability breakdown for Australian businesses. Find out which option pays off.",
   openGraph: {
-    title: "Custom Website vs Template: Which Is Right for Your Business?",
+    title: "Custom Website vs Template",
     description:
-      "Compare custom-built websites vs templates and DIY builders. Cost, performance, SEO, and scalability breakdown for Australian businesses.",
+      "Compare custom-built websites vs templates and DIY builders. Cost, performance, SEO, and scalability breakdown for Australian businesses. Find out which option pays off.",
     type: "article",
   },
+  twitter: { card: "summary_large_image" },
   alternates: { canonical: "/custom-vs-template" },
 };
 
