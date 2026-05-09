@@ -25,7 +25,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${article.title} | RAVENCI Solutions`,
+    title: `${article.seo?.metaTitle || article.title} | RAVENCI Solutions`,
     description: article.seo?.metaDescription || "",
     keywords: article.seo?.metaKeywords,
     openGraph: {

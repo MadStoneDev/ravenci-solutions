@@ -367,8 +367,9 @@ We're Brisbane-based with local support, not an overseas call center. You get di
             name: "RAVENCI Website Maintenance",
             description:
               "Website maintenance in Brisbane. Updates, security, backups, and optimization in one package. Protect your website investment.",
+            image: "https://ravenci.solutions/og/website-maintenance.png",
             brand: {
-              "@type": "Organization",
+              "@type": "Brand",
               name: "RAVENCI Solutions",
             },
             offers: [
@@ -385,6 +386,40 @@ We're Brisbane-based with local support, not an overseas call center. You get di
                 },
                 availability: "https://schema.org/InStock",
                 url: "https://ravenci.solutions/website-maintenance",
+                shippingDetails: {
+                  "@type": "OfferShippingDetails",
+                  shippingRate: {
+                    "@type": "MonetaryAmount",
+                    value: 0,
+                    currency: "AUD",
+                  },
+                  deliveryTime: {
+                    "@type": "ShippingDeliveryTime",
+                    handlingTime: {
+                      "@type": "QuantitativeValue",
+                      minValue: 0,
+                      maxValue: 0,
+                      unitCode: "DAY",
+                    },
+                    transitTime: {
+                      "@type": "QuantitativeValue",
+                      minValue: 0,
+                      maxValue: 0,
+                      unitCode: "DAY",
+                    },
+                  },
+                  shippingDestination: {
+                    "@type": "DefinedRegion",
+                    addressCountry: "AU",
+                  },
+                },
+                hasMerchantReturnPolicy: {
+                  "@type": "MerchantReturnPolicy",
+                  applicableCountry: "AU",
+                  returnPolicyCategory:
+                    "https://schema.org/MerchantReturnNotPermitted",
+                  merchantReturnDays: 0,
+                },
               },
               {
                 "@type": "Offer",
@@ -393,6 +428,40 @@ We're Brisbane-based with local support, not an overseas call center. You get di
                 priceCurrency: "AUD",
                 availability: "https://schema.org/InStock",
                 url: "https://ravenci.solutions/website-maintenance",
+                shippingDetails: {
+                  "@type": "OfferShippingDetails",
+                  shippingRate: {
+                    "@type": "MonetaryAmount",
+                    value: 0,
+                    currency: "AUD",
+                  },
+                  deliveryTime: {
+                    "@type": "ShippingDeliveryTime",
+                    handlingTime: {
+                      "@type": "QuantitativeValue",
+                      minValue: 0,
+                      maxValue: 0,
+                      unitCode: "DAY",
+                    },
+                    transitTime: {
+                      "@type": "QuantitativeValue",
+                      minValue: 0,
+                      maxValue: 0,
+                      unitCode: "DAY",
+                    },
+                  },
+                  shippingDestination: {
+                    "@type": "DefinedRegion",
+                    addressCountry: "AU",
+                  },
+                },
+                hasMerchantReturnPolicy: {
+                  "@type": "MerchantReturnPolicy",
+                  applicableCountry: "AU",
+                  returnPolicyCategory:
+                    "https://schema.org/MerchantReturnNotPermitted",
+                  merchantReturnDays: 0,
+                },
               },
             ],
           }),

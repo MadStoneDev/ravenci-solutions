@@ -17,7 +17,7 @@ import Accordion from "@/components/accordion";
 import { auditStats, AUDIT_META } from "@/data/brisbane-audit";
 
 export const metadata: Metadata = {
-  title: "Free Website Audit for Brisbane Businesses | RAVENCI Solutions",
+  title: "Free Website Audit Brisbane | RAVENCI Solutions",
   description:
     "Free website audit for Brisbane businesses. We check your site's speed, SEO, mobile usability, accessibility and security, and email you a no-obligation report showing exactly where you stand.",
   openGraph: {

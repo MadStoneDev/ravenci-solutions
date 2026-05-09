@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  other: {
+    "content-language": "en-AU",
+  },
   title:
     "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
   description:

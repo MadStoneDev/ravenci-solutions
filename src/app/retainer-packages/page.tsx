@@ -479,8 +479,9 @@ export default function RetainerPackagesPage() {
             name: "RAVENCI Retainer Packages",
             description:
               "Monthly retainer packages for ongoing web development, design, and strategy. Includes hosting, maintenance, and dedicated development hours.",
+            image: "https://ravenci.solutions/og/retainer-packages.png",
             brand: {
-              "@type": "Organization",
+              "@type": "Brand",
               name: "RAVENCI Solutions",
             },
             offers: tiers.map((tier) => ({
@@ -496,6 +497,40 @@ export default function RetainerPackagesPage() {
               },
               availability: "https://schema.org/InStock",
               url: "https://ravenci.solutions/retainer-packages",
+              shippingDetails: {
+                "@type": "OfferShippingDetails",
+                shippingRate: {
+                  "@type": "MonetaryAmount",
+                  value: 0,
+                  currency: "AUD",
+                },
+                deliveryTime: {
+                  "@type": "ShippingDeliveryTime",
+                  handlingTime: {
+                    "@type": "QuantitativeValue",
+                    minValue: 0,
+                    maxValue: 0,
+                    unitCode: "DAY",
+                  },
+                  transitTime: {
+                    "@type": "QuantitativeValue",
+                    minValue: 0,
+                    maxValue: 0,
+                    unitCode: "DAY",
+                  },
+                },
+                shippingDestination: {
+                  "@type": "DefinedRegion",
+                  addressCountry: "AU",
+                },
+              },
+              hasMerchantReturnPolicy: {
+                "@type": "MerchantReturnPolicy",
+                applicableCountry: "AU",
+                returnPolicyCategory:
+                  "https://schema.org/MerchantReturnNotPermitted",
+                merchantReturnDays: 0,
+              },
             })),
           }),
         }}

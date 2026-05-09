@@ -384,8 +384,9 @@ export default function WebHostingPage() {
             name: "RAVENCI Managed Cloud Hosting",
             description:
               "Managed cloud hosting with automatic scaling, SSL, daily backups, security monitoring, and Brisbane-based support.",
+            image: "https://ravenci.solutions/og/web-hosting.png",
             brand: {
-              "@type": "Organization",
+              "@type": "Brand",
               name: "RAVENCI Solutions",
             },
             offers: {
@@ -400,6 +401,40 @@ export default function WebHostingPage() {
               },
               availability: "https://schema.org/InStock",
               url: "https://ravenci.solutions/web-hosting",
+              shippingDetails: {
+                "@type": "OfferShippingDetails",
+                shippingRate: {
+                  "@type": "MonetaryAmount",
+                  value: 0,
+                  currency: "AUD",
+                },
+                deliveryTime: {
+                  "@type": "ShippingDeliveryTime",
+                  handlingTime: {
+                    "@type": "QuantitativeValue",
+                    minValue: 0,
+                    maxValue: 0,
+                    unitCode: "DAY",
+                  },
+                  transitTime: {
+                    "@type": "QuantitativeValue",
+                    minValue: 0,
+                    maxValue: 0,
+                    unitCode: "DAY",
+                  },
+                },
+                shippingDestination: {
+                  "@type": "DefinedRegion",
+                  addressCountry: "AU",
+                },
+              },
+              hasMerchantReturnPolicy: {
+                "@type": "MerchantReturnPolicy",
+                applicableCountry: "AU",
+                returnPolicyCategory:
+                  "https://schema.org/MerchantReturnNotPermitted",
+                merchantReturnDays: 0,
+              },
             },
           }),
         }}
