@@ -21,9 +21,10 @@ export const metadata: Metadata = {
   description:
     "Free website audit for Brisbane businesses. We check your site's speed, SEO, mobile usability, accessibility and security, and email you a no-obligation report showing exactly where you stand.",
   openGraph: {
-    title: "Free Website Audit for Brisbane Businesses",
+    title: "Free Website Audit Brisbane | RAVENCI Solutions",
     description:
       "Free website audit for Brisbane businesses. We check your site's speed, SEO, mobile usability, accessibility and security, and email you a no-obligation report showing exactly where you stand.",
+    url: "/free-audit",
     type: "website",
   },
   twitter: { card: "summary_large_image" },

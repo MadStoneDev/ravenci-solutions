@@ -12,9 +12,10 @@ export const metadata = {
     "Monthly retainer packages for ongoing web development, design, and strategy in Brisbane. From $275/mo. Your dedicated digital team without the overhead of hiring.",
   alternates: { canonical: "/retainer-packages" },
   openGraph: {
-    title: "Retainer Packages",
+    title: "Retainer Packages | RAVENCI Solutions",
     description:
       "Monthly retainer packages for ongoing web development, design, and strategy in Brisbane. From $275/mo. Your dedicated digital team without the overhead of hiring.",
+    url: "/retainer-packages",
     type: "website",
   },
   twitter: {

@@ -8,9 +8,10 @@ export const metadata = {
   description:
     "Expert perspectives on web development, digital strategy, and business growth from Brisbane's RAVENCI Solutions. Tips, guides, and industry insights.",
   openGraph: {
-    title: "Articles & Insights",
+    title: "Articles & Insights | RAVENCI Solutions",
     description:
       "Expert perspectives on web development, digital strategy, and business growth from Brisbane's RAVENCI Solutions. Tips, guides, and industry insights.",
+    url: "/articles",
     type: "website" as const,
   },
   twitter: { card: "summary_large_image" as const },
@@ -78,6 +79,19 @@ export default function ArticlesPage() {
                 {article.title}
               </h3>
             </Link>
+
+            {article.publishedAt && (
+              <time
+                dateTime={new Date(article.publishedAt).toISOString()}
+                className="text-xs text-neutral-500 mb-2"
+              >
+                {new Date(article.publishedAt).toLocaleDateString("en-AU", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+            )}
 
             <p
               className={`text-sm text-neutral-400 font-light`}

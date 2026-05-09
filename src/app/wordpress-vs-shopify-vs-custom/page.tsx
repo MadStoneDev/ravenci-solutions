@@ -11,9 +11,10 @@ export const metadata: Metadata = {
   description:
     "Honest 2026 comparison of WordPress, Shopify and Custom Next.js for Australian businesses. Real costs, when each wins, common mistakes, and how to choose without locking yourself in.",
   openGraph: {
-    title: "WordPress vs Shopify vs Custom",
+    title: "WordPress vs Shopify vs Custom | RAVENCI Solutions",
     description:
       "Honest 2026 comparison of WordPress, Shopify and Custom Next.js for Australian businesses. Real costs, when each wins, common mistakes, and how to choose without locking yourself in.",
+    url: "/wordpress-vs-shopify-vs-custom",
     type: "article",
   },
   twitter: { card: "summary_large_image" },

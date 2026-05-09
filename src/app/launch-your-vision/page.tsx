@@ -5,9 +5,10 @@ export const metadata = {
   description:
     "Start your project with RAVENCI Solutions in Brisbane. Two minutes to tell us about your website, e-commerce store, app or branding project. We'll come back with a tailored proposal.",
   openGraph: {
-    title: "Launch Your Vision",
+    title: "Launch Your Vision | RAVENCI Solutions",
     description:
       "Start your project with RAVENCI Solutions in Brisbane. Two minutes to tell us about your website, e-commerce store, app or branding project. We'll come back with a tailored proposal.",
+    url: "/launch-your-vision",
     type: "website" as const,
   },
   twitter: { card: "summary_large_image" as const },

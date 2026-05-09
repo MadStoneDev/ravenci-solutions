@@ -1,0 +1,44 @@
+# RAVENCI Solutions
+
+> Premium web development and digital design agency in Brisbane, Australia.
+
+RAVENCI Solutions is a founder-led digital agency based in Brisbane, Queensland, Australia. Founded by Richard Haddad, the studio has 25+ years of experience building high-performance websites, web applications, mobile apps, and brand identity systems for Australian businesses.
+
+## Services
+
+- Custom Web Development (Next.js, WordPress) from $4,950
+- Web Application Development
+- Mobile App Development (iOS, Android)
+- Business Design (branding, logo, identity systems)
+- SEO & Content Services
+- Managed Cloud Hosting from $39/mo
+- Website Maintenance from $249/mo
+- Monthly Retainer Packages from $275/mo
+
+## Industry Specialisations
+
+- Healthcare (AHPRA-compliant, Cliniko/HotDoc integration)
+- Construction (QBCC licence display, project portfolios)
+
+## Key Facts
+
+- Location: Brisbane, Queensland, Australia
+- Founded by: Richard Haddad
+- Website: https://ravenci.solutions
+- Experience: 25+ years in digital development
+- Guarantee: 85+ Google PageSpeed score
+- Pricing: Transparent AUD pricing, no hidden fees
+
+## Content
+
+- Articles and guides on web development, SEO, and business strategy
+- Case studies showcasing real client results
+- Brisbane Website Audit (50 local businesses audited)
+- Comparison guides: Custom vs Template, WordPress vs Shopify vs Custom
+- Cost breakdowns for website development in Brisbane
+
+## Contact
+
+- Start a project: https://ravenci.solutions/launch-your-vision
+- Free website audit: https://ravenci.solutions/free-audit
+- Get a quote: https://ravenci.solutions/quote

@@ -23,8 +23,9 @@ export const metadata = {
   description: "Custom websites for Australian businesses. Web development, design, hosting, maintenance, and SEO from $4,950. Brisbane-based, 25+ years experience, 85+ PageSpeed guaranteed.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Custom Web Development Brisbane",
+    title: "Custom Web Development Brisbane | RAVENCI Solutions",
     description: "Custom websites for Australian businesses. Web development, design, hosting, maintenance, and SEO from $4,950. Brisbane-based, 25+ years experience.",
+    url: "/",
     type: "website",
   },
   twitter: {

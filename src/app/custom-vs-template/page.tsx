@@ -11,9 +11,10 @@ export const metadata: Metadata = {
   description:
     "Compare custom-built websites vs templates and DIY builders. Cost, performance, SEO, and scalability breakdown for Australian businesses. Find out which option pays off.",
   openGraph: {
-    title: "Custom Website vs Template",
+    title: "Custom Website vs Template | RAVENCI Solutions",
     description:
       "Compare custom-built websites vs templates and DIY builders. Cost, performance, SEO, and scalability breakdown for Australian businesses. Find out which option pays off.",
+    url: "/custom-vs-template",
     type: "article",
   },
   twitter: { card: "summary_large_image" },

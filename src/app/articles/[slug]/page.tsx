@@ -29,8 +29,9 @@ export async function generateMetadata({
     description: article.seo?.metaDescription || "",
     keywords: article.seo?.metaKeywords,
     openGraph: {
-      title: article.seo?.metaTitle || article.title,
+      title: `${article.seo?.metaTitle || article.title} | RAVENCI Solutions`,
       description: article.seo?.metaDescription || article.excerpt,
+      url: `/articles/${(await params).slug}`,
       images: article.featuredImage
         ? [
             {
@@ -43,6 +44,8 @@ export async function generateMetadata({
         : [],
       type: "article",
       authors: [article.author],
+      publishedTime: article.publishedAt,
+      modifiedTime: article.updatedAt || article.publishedAt,
     },
     twitter: {
       card: "summary_large_image",

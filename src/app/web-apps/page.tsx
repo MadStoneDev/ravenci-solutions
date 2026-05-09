@@ -11,9 +11,10 @@ export const metadata = {
     "Replace your spreadsheets with software that works. Custom web applications that eliminate manual work and scale with your Brisbane business.",
   alternates: { canonical: "/web-apps" },
   openGraph: {
-    title: "Web App Development",
+    title: "Web App Development | RAVENCI Solutions",
     description:
       "Replace your spreadsheets with software that works. Custom web applications that eliminate manual work and scale with your Brisbane business.",
+    url: "/web-apps",
     type: "website",
   },
   twitter: { card: "summary_large_image" },

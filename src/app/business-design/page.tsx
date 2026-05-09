@@ -11,9 +11,10 @@ export const metadata = {
     "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems. From $3,500.",
   alternates: { canonical: "/business-design" },
   openGraph: {
-    title: "Business Design",
+    title: "Business Design | RAVENCI Solutions",
     description:
       "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems. From $3,500.",
+    url: "/business-design",
     type: "website",
   },
   twitter: { card: "summary_large_image" },

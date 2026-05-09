@@ -6,9 +6,10 @@ export const metadata = {
   description:
     "Configure your hosting or maintenance plan and check out securely. For project work, request a proposal.",
   openGraph: {
-    title: "Get a Quote",
+    title: "Get a Quote | RAVENCI Solutions",
     description:
       "Configure your hosting or maintenance plan and check out securely. For project work, request a proposal.",
+    url: "/quote",
     type: "website" as const,
   },
   twitter: { card: "summary_large_image" as const },

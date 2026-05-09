@@ -6,9 +6,10 @@ export const metadata = {
   description:
     "Meet the team behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency, building websites that perform for Australian businesses.",
   openGraph: {
-    title: "About",
+    title: "About | RAVENCI Solutions",
     description:
       "Meet the team behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency, building websites that perform for Australian businesses.",
+    url: "/about",
     type: "website" as const,
   },
   twitter: { card: "summary_large_image" as const },
@@ -144,7 +145,7 @@ export default function AboutPage() {
                 work.
               </p>
               <p>
-                After more than two decades in the digital space, Richard
+                After 25+ years in the digital space, Richard
                 founded RAVENCI in Brisbane to offer Australian businesses
                 something different: websites and designs built with the same discipline and
                 attention to detail.

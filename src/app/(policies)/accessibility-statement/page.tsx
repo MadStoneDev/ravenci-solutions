@@ -5,9 +5,10 @@ export const metadata: Metadata = {
   description:
     "RAVENCI Solutions is committed to making our website accessible to everyone, including people with disabilities. Learn about our accessibility efforts.",
   openGraph: {
-    title: "Accessibility Statement",
+    title: "Accessibility Statement | RAVENCI Solutions",
     description:
       "RAVENCI Solutions is committed to making our website accessible to everyone, including people with disabilities. Learn about our accessibility efforts.",
+    url: "/accessibility-statement",
     type: "website",
   },
   twitter: { card: "summary_large_image" },

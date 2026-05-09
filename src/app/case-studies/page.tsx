@@ -10,9 +10,10 @@ export const metadata: Metadata = {
   description:
     "Explore real results from real businesses. See how RAVENCI Solutions has helped Australian companies grow through strategic web development and design.",
   openGraph: {
-    title: "Case Studies",
+    title: "Case Studies | RAVENCI Solutions",
     description:
       "Explore real results from real businesses. See how RAVENCI Solutions has helped Australian companies grow through strategic web development and design.",
+    url: "/case-studies",
     type: "website",
   },
   twitter: { card: "summary_large_image" },

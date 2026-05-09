@@ -60,6 +60,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@ravencigroup",
+    creator: "@ravencigroup",
     title:
       "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
     description:
@@ -167,7 +169,12 @@ export default function RootLayout({
     },
     priceRange: "$$$$",
     image: "https://ravenci.solutions/og-image.jpg",
-    sameAs: ["https://www.linkedin.com/company/91459779/"],
+    sameAs: [
+      "https://www.linkedin.com/company/91459779/",
+      "https://www.instagram.com/ravenci.solutions",
+      "https://facebook.com/ravenci.solutions1",
+      "https://x.com/ravencigroup",
+    ],
   };
 
   return (

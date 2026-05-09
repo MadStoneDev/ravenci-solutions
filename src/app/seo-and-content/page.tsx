@@ -11,9 +11,10 @@ export const metadata = {
     "SEO and content in Brisbane, Australia that gets you found and converts. Transparent AUD pricing. On-page SEO, content, and ethical link building.",
   alternates: { canonical: "/seo-and-content" },
   openGraph: {
-    title: "SEO & Content Services",
+    title: "SEO & Content Services | RAVENCI Solutions",
     description:
       "SEO and content in Brisbane, Australia that gets you found and converts. Transparent AUD pricing. On-page SEO, content, and ethical link building.",
+    url: "/seo-and-content",
     type: "website",
   },
   twitter: { card: "summary_large_image" },

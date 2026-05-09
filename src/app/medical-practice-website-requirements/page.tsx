@@ -15,9 +15,10 @@ export const metadata: Metadata = {
   description:
     "AHPRA advertising compliance, Australian Privacy Principles, practice management integrations, and patient-facing essentials. The 2026 guide for Australian medical practice websites.",
   openGraph: {
-    title: "Medical Practice Website Guide",
+    title: "Medical Practice Website Guide | RAVENCI Solutions",
     description:
       "AHPRA advertising compliance, Australian Privacy Principles, practice management integrations, and patient-facing essentials. The 2026 guide for Australian medical practice websites.",
+    url: "/medical-practice-website-requirements",
     type: "article",
   },
   twitter: { card: "summary_large_image" },

@@ -15,9 +15,10 @@ export const metadata = {
     "Websites for healthcare professionals in Brisbane. Patient portals, online booking, Australian Privacy Principles compliance, NDIS-ready, Cliniko and HotDoc integration. From $4,950.",
   alternates: { canonical: "/healthcare" },
   openGraph: {
-    title: "Healthcare Websites Brisbane",
+    title: "Healthcare Websites Brisbane | RAVENCI Solutions",
     description:
       "Websites for healthcare professionals in Brisbane. Patient portals, online booking, Australian Privacy Principles compliance, NDIS-ready, Cliniko and HotDoc integration. From $4,950.",
+    url: "/healthcare",
     type: "website",
   },
   twitter: {

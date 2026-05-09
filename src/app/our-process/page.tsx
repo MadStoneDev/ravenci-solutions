@@ -17,9 +17,10 @@ export const metadata = {
   description:
     "Discover how RAVENCI Solutions in Brisbane delivers results. Our 6-step process takes your project from discovery to launch and beyond, with 25+ years of experience behind every decision.",
   openGraph: {
-    title: "Our Process",
+    title: "Our Process | RAVENCI Solutions",
     description:
       "Discover how RAVENCI Solutions in Brisbane delivers results. Our 6-step process takes your project from discovery to launch and beyond, with 25+ years of experience behind every decision.",
+    url: "/our-process",
     type: "website" as const,
   },
   twitter: { card: "summary_large_image" as const },

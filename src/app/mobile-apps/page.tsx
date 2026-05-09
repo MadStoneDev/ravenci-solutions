@@ -11,9 +11,10 @@ export const metadata = {
     "iPhone and Android apps your users will keep using. Brisbane-based, AUD pricing, built to last well past the next OS update.",
   alternates: { canonical: "/mobile-apps" },
   openGraph: {
-    title: "Mobile App Development",
+    title: "Mobile App Development | RAVENCI Solutions",
     description:
       "iPhone and Android apps your users will keep using. Brisbane-based, AUD pricing, built to last well past the next OS update.",
+    url: "/mobile-apps",
     type: "website",
   },
   twitter: { card: "summary_large_image" },

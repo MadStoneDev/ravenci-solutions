@@ -13,9 +13,10 @@ export const metadata = {
     "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $4,950.",
   alternates: { canonical: "/web-development" },
   openGraph: {
-    title: "Web Development",
+    title: "Web Development | RAVENCI Solutions",
     description:
       "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $4,950.",
+    url: "/web-development",
     type: "website",
   },
   twitter: { card: "summary_large_image" },

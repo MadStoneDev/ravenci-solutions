@@ -18,7 +18,8 @@ export const metadata: Metadata = {
   description:
     "RAVENCI Solutions audited 50 Brisbane business websites for speed, SEO, mobile usability, accessibility, and security. 72% scored below 50 on Google PageSpeed. See the full findings.",
   openGraph: {
-    title: "Brisbane Website Audit Results",
+    title: "Brisbane Website Audit Results | RAVENCI Solutions",
+    url: "/brisbane-website-audit",
     description:
       "RAVENCI Solutions audited 50 Brisbane business websites for speed, SEO, mobile usability, accessibility, and security. 72% scored below 50 on Google PageSpeed. See the full findings.",
     type: "article",

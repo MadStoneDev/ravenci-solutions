@@ -12,9 +12,10 @@ export const metadata = {
     "Website maintenance in Brisbane. Updates, security, backups, and optimization in one package. Protect your website investment with RAVENCI Solutions.",
   alternates: { canonical: "/website-maintenance" },
   openGraph: {
-    title: "Website Maintenance",
+    title: "Website Maintenance | RAVENCI Solutions",
     description:
       "Website maintenance in Brisbane. Updates, security, backups, and optimization in one package. Protect your website investment with RAVENCI Solutions.",
+    url: "/website-maintenance",
     type: "website",
   },
   twitter: {

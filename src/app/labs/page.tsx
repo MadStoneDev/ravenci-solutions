@@ -12,9 +12,10 @@ export const metadata: Metadata = {
   description:
     "Things RAVENCI builds for ourselves: web apps, tools and experiments that show what we love building when nobody's asking us to.",
   openGraph: {
-    title: "RAVENCI Labs",
+    title: "RAVENCI Labs | RAVENCI Solutions",
     description:
       "Things RAVENCI builds for ourselves: web apps, tools and experiments that show what we love building when nobody's asking us to.",
+    url: "/labs",
     type: "website",
   },
   twitter: { card: "summary_large_image" },

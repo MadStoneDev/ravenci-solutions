@@ -15,9 +15,10 @@ export const metadata = {
     "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $4,950.",
   alternates: { canonical: "/construction" },
   openGraph: {
-    title: "Construction Websites Brisbane",
+    title: "Construction Websites Brisbane | RAVENCI Solutions",
     description:
       "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $4,950.",
+    url: "/construction",
     type: "website",
   },
   twitter: {
