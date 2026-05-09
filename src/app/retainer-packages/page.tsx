@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Link from "next/link";
 import StickyCTA from "@/components/sticky-cta";
 
@@ -12,6 +13,7 @@ export const metadata = {
     "Monthly retainer packages for ongoing web development, design, and strategy in Brisbane. From $275/mo. Your dedicated digital team without the overhead of hiring.",
   alternates: { canonical: "/retainer-packages" },
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Retainer Packages | RAVENCI Solutions",
     description:
       "Monthly retainer packages for ongoing web development, design, and strategy in Brisbane. From $275/mo. Your dedicated digital team without the overhead of hiring.",
@@ -19,7 +21,7 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    ...TWITTER_DEFAULTS,
   },
 };
 

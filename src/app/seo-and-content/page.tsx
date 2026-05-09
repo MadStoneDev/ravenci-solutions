@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 ﻿import Link from "next/link";
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import PriceButton from "@/components/price-button";
@@ -17,7 +18,7 @@ export const metadata = {
     url: "/seo-and-content",
     type: "website",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { ...TWITTER_DEFAULTS },
 };
 
 export default function SEOContentPage() {

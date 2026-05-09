@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 ﻿import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -5,13 +6,14 @@ export const metadata: Metadata = {
   description:
     "Terms of Service governing the use of ravenci.solutions and services provided by RAVENCI Solutions.",
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Terms and Conditions | RAVENCI Solutions",
     description:
       "Terms of Service governing the use of ravenci.solutions and services provided by RAVENCI Solutions.",
     url: "/terms-and-conditions",
     type: "website",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { ...TWITTER_DEFAULTS },
   alternates: { canonical: "/terms-and-conditions" },
 };
 

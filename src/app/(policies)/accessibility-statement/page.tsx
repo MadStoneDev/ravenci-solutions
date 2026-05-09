@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -5,13 +6,14 @@ export const metadata: Metadata = {
   description:
     "RAVENCI Solutions is committed to making our website accessible to everyone, including people with disabilities. Learn about our accessibility efforts.",
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Accessibility Statement | RAVENCI Solutions",
     description:
       "RAVENCI Solutions is committed to making our website accessible to everyone, including people with disabilities. Learn about our accessibility efforts.",
     url: "/accessibility-statement",
     type: "website",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { ...TWITTER_DEFAULTS },
   alternates: { canonical: "/accessibility-statement" },
 };
 

@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 ﻿import Link from "next/link";
 import PriceButton from "@/components/price-button";
 
@@ -12,6 +13,7 @@ export const metadata = {
     "Website maintenance in Brisbane. Updates, security, backups, and optimization in one package. Protect your website investment with RAVENCI Solutions.",
   alternates: { canonical: "/website-maintenance" },
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Website Maintenance | RAVENCI Solutions",
     description:
       "Website maintenance in Brisbane. Updates, security, backups, and optimization in one package. Protect your website investment with RAVENCI Solutions.",
@@ -19,7 +21,7 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    ...TWITTER_DEFAULTS,
   },
 };
 

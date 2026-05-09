@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Link from "next/link";
 import { IconCircleCheckFilled } from "@tabler/icons-react";
 
@@ -6,13 +7,14 @@ export const metadata = {
   description:
     "Meet the team behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency, building websites that perform for Australian businesses.",
   openGraph: {
+    ...OG_DEFAULTS,
     title: "About | RAVENCI Solutions",
     description:
       "Meet the team behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency, building websites that perform for Australian businesses.",
     url: "/about",
     type: "website" as const,
   },
-  twitter: { card: "summary_large_image" as const },
+  twitter: { ...TWITTER_DEFAULTS },
   alternates: { canonical: "/about" },
 };
 

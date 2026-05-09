@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,13 +13,14 @@ export const metadata: Metadata = {
   description:
     "Things RAVENCI builds for ourselves: web apps, tools and experiments that show what we love building when nobody's asking us to.",
   openGraph: {
+    ...OG_DEFAULTS,
     title: "RAVENCI Labs | RAVENCI Solutions",
     description:
       "Things RAVENCI builds for ourselves: web apps, tools and experiments that show what we love building when nobody's asking us to.",
     url: "/labs",
     type: "website",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { ...TWITTER_DEFAULTS },
   alternates: { canonical: "/labs" },
 };
 

@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -11,13 +12,14 @@ export const metadata: Metadata = {
   description:
     "Brisbane website costs in 2026 typically range from $1,500 (template) to $25,000+ (custom premium). Real pricing per tier, what affects cost, and the hidden ongoing fees most agencies don't mention.",
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Website Cost in Brisbane 2026 | RAVENCI Solutions",
     description:
       "Brisbane website costs in 2026 typically range from $1,500 (template) to $25,000+ (custom premium). Real pricing per tier, what affects cost, and the hidden ongoing fees most agencies don't mention.",
     url: "/cost-of-a-website-in-brisbane",
     type: "article",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { ...TWITTER_DEFAULTS },
   alternates: { canonical: "/cost-of-a-website-in-brisbane" },
 };
 

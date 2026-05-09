@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -10,13 +11,14 @@ export const metadata: Metadata = {
   description:
     "Explore real results from real businesses. See how RAVENCI Solutions has helped Australian companies grow through strategic web development and design.",
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Case Studies | RAVENCI Solutions",
     description:
       "Explore real results from real businesses. See how RAVENCI Solutions has helped Australian companies grow through strategic web development and design.",
     url: "/case-studies",
     type: "website",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { ...TWITTER_DEFAULTS },
   alternates: { canonical: "/case-studies" },
 };
 

@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -12,13 +13,14 @@ export const metadata: Metadata = {
   description:
     "The 10 questions every Brisbane business should ask before choosing a web designer. Red flags, green flags, how to compare quotes, and what 'good' looks like in 2026.",
   openGraph: {
+    ...OG_DEFAULTS,
     title: "How to Choose a Web Designer in Brisbane | RAVENCI Solutions",
     description:
       "The 10 questions every Brisbane business should ask before choosing a web designer. Red flags, green flags, how to compare quotes, and what 'good' looks like in 2026.",
     url: "/how-to-choose-a-web-designer-in-brisbane",
     type: "article",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { ...TWITTER_DEFAULTS },
   alternates: { canonical: "/how-to-choose-a-web-designer-in-brisbane" },
 };
 

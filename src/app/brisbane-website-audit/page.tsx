@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -18,13 +19,14 @@ export const metadata: Metadata = {
   description:
     "RAVENCI Solutions audited 50 Brisbane business websites for speed, SEO, mobile usability, accessibility, and security. 72% scored below 50 on Google PageSpeed. See the full findings.",
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Brisbane Website Audit Results | RAVENCI Solutions",
     url: "/brisbane-website-audit",
     description:
       "RAVENCI Solutions audited 50 Brisbane business websites for speed, SEO, mobile usability, accessibility, and security. 72% scored below 50 on Google PageSpeed. See the full findings.",
     type: "article",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { ...TWITTER_DEFAULTS },
   alternates: { canonical: "/brisbane-website-audit" },
 };
 

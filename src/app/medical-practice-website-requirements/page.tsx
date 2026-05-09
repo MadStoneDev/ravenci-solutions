@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -15,13 +16,14 @@ export const metadata: Metadata = {
   description:
     "AHPRA advertising compliance, Australian Privacy Principles, practice management integrations, and patient-facing essentials. The 2026 guide for Australian medical practice websites.",
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Medical Practice Website Guide | RAVENCI Solutions",
     description:
       "AHPRA advertising compliance, Australian Privacy Principles, practice management integrations, and patient-facing essentials. The 2026 guide for Australian medical practice websites.",
     url: "/medical-practice-website-requirements",
     type: "article",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { ...TWITTER_DEFAULTS },
   alternates: { canonical: "/medical-practice-website-requirements" },
 };
 

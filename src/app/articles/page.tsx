@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "@/components/breadcrumbs";
@@ -8,13 +9,14 @@ export const metadata = {
   description:
     "Expert perspectives on web development, digital strategy, and business growth from Brisbane's RAVENCI Solutions. Tips, guides, and industry insights.",
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Articles & Insights | RAVENCI Solutions",
     description:
       "Expert perspectives on web development, digital strategy, and business growth from Brisbane's RAVENCI Solutions. Tips, guides, and industry insights.",
     url: "/articles",
     type: "website" as const,
   },
-  twitter: { card: "summary_large_image" as const },
+  twitter: { ...TWITTER_DEFAULTS },
   alternates: { canonical: "/articles" },
 };
 

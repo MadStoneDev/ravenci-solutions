@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Link from "next/link";
 
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
@@ -15,6 +16,7 @@ export const metadata = {
     "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $4,950.",
   alternates: { canonical: "/construction" },
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Construction Websites Brisbane | RAVENCI Solutions",
     description:
       "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $4,950.",
@@ -22,7 +24,7 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    ...TWITTER_DEFAULTS,
   },
 };
 

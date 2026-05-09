@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -21,13 +22,14 @@ export const metadata: Metadata = {
   description:
     "Free website audit for Brisbane businesses. We check your site's speed, SEO, mobile usability, accessibility and security, and email you a no-obligation report showing exactly where you stand.",
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Free Website Audit Brisbane | RAVENCI Solutions",
     description:
       "Free website audit for Brisbane businesses. We check your site's speed, SEO, mobile usability, accessibility and security, and email you a no-obligation report showing exactly where you stand.",
     url: "/free-audit",
     type: "website",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { ...TWITTER_DEFAULTS },
   alternates: { canonical: "/free-audit" },
 };
 

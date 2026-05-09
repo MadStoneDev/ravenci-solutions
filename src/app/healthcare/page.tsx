@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Link from "next/link";
 
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
@@ -15,6 +16,7 @@ export const metadata = {
     "Websites for healthcare professionals in Brisbane. Patient portals, online booking, Australian Privacy Principles compliance, NDIS-ready, Cliniko and HotDoc integration. From $4,950.",
   alternates: { canonical: "/healthcare" },
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Healthcare Websites Brisbane | RAVENCI Solutions",
     description:
       "Websites for healthcare professionals in Brisbane. Patient portals, online booking, Australian Privacy Principles compliance, NDIS-ready, Cliniko and HotDoc integration. From $4,950.",
@@ -22,7 +24,7 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    ...TWITTER_DEFAULTS,
   },
 };
 

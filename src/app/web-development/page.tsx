@@ -1,3 +1,4 @@
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
@@ -13,13 +14,14 @@ export const metadata = {
     "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $4,950.",
   alternates: { canonical: "/web-development" },
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Web Development | RAVENCI Solutions",
     description:
       "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $4,950.",
     url: "/web-development",
     type: "website",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { ...TWITTER_DEFAULTS },
 };
 
 export default function WebHostingDevelopmentPage() {
