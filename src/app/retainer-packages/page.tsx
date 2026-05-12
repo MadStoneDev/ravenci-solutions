@@ -10,13 +10,13 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Retainer Packages | RAVENCI Solutions",
   description:
-    "Monthly retainer packages for ongoing web development, design, and strategy in Brisbane. From $275/mo. Your dedicated digital team without the overhead of hiring.",
+    "Monthly retainer packages for ongoing web development, eCommerce support, and strategy in Brisbane. Your dedicated digital team without the overhead of hiring.",
   alternates: { canonical: "/retainer-packages" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Retainer Packages | RAVENCI Solutions",
     description:
-      "Monthly retainer packages for ongoing web development, design, and strategy in Brisbane. From $275/mo. Your dedicated digital team without the overhead of hiring.",
+      "Monthly retainer packages for ongoing web development, eCommerce support, and strategy in Brisbane. Your dedicated digital team without the overhead of hiring.",
     url: "/retainer-packages",
     type: "website",
   },
@@ -59,7 +59,7 @@ export default function RetainerPackagesPage() {
         "One monthly invoice covers everything. No surprise quotes or scope negotiations",
     },
     {
-      title: "No Lock-In on Starter",
+      title: "No Lock-In on Website Care",
       description:
         "Our entry-level tier has no minimum commitment. Pay monthly, cancel anytime",
     },
@@ -67,9 +67,10 @@ export default function RetainerPackagesPage() {
 
   const tiers = [
     {
-      name: "Business Website",
-      price: 275,
+      name: "Website Care",
+      price: 350,
       hours: 1,
+      hoursLabel: "Up to 1 hour of edits",
       includes: [
         "Managed cloud hosting included",
         "Security monitoring, backups & updates",
@@ -77,19 +78,20 @@ export default function RetainerPackagesPage() {
         "Uptime monitoring",
         "Email support, 48-hour response",
         "Minor content edits (text and images)",
-        "Monthly performance check",
+        "Monthly performance report",
         "No minimum commitment, cancel anytime",
         "Overage rate: $165/hr",
       ],
     },
     {
-      name: "eCommerce",
-      price: 650,
+      name: "eCommerce Care",
+      price: 750,
       hours: 3,
+      hoursLabel: "3 hours/month",
       includes: [
-        "Everything in Business Website, plus:",
+        "Everything in Website Care, plus:",
         "3 hours of development or design work",
-        "Product catalog maintenance support",
+        "Product catalogue maintenance support",
         "eCommerce platform updates (Shopify/BigCommerce/WooCommerce)",
         "Payment gateway and shipping monitoring",
         "Monthly performance audit (speed & Core Web Vitals)",
@@ -101,18 +103,35 @@ export default function RetainerPackagesPage() {
       ],
     },
     {
-      name: "SMB Full Service",
-      price: 2800,
-      hours: 15,
+      name: "Growth Essentials",
+      price: 1800,
+      hours: 8,
+      hoursLabel: "8 hours/month",
       includes: [
-        "Everything in eCommerce, plus:",
-        "15 hours of development and design work",
+        "Everything in eCommerce Care, plus:",
+        "8 hours of development, design, or SEO work",
+        "SEO foundations and keyword tracking",
+        "Monthly strategy call",
+        "Monthly performance audit + analytics review",
+        "Content updates and page creation",
+        "24-hour support response",
+        "1 month hour rollover",
+        "3-month minimum commitment",
+        "Overage rate: $155/hr",
+      ],
+    },
+    {
+      name: "Growth Partner",
+      price: 3000,
+      hours: 15,
+      hoursLabel: "15 hours/month",
+      includes: [
+        "Everything in Growth Essentials, plus:",
+        "15 hours of development, design, and strategy",
         "On-call priority support (same business day)",
         "Bi-weekly 30-minute strategy calls",
-        "Monthly performance audit + analytics review",
-        "Full SEO with keyword tracking",
+        "Full SEO with keyword tracking and reporting",
         "Monthly CRO review",
-        "Content updates and page creation",
         "2 months hour rollover",
         "15% off additional project work",
         "3-month minimum commitment",
@@ -132,17 +151,17 @@ export default function RetainerPackagesPage() {
     {
       title: "How do unused hours work?",
       summary:
-        "Business Website tier has no development hours. eCommerce hours roll over for 1 month, SMB Full Service for 2 months. RAVENCI tracks your balance and helps plan usage.",
+        "Website Care includes up to 1 hour of edits. eCommerce Care and Growth Essentials hours roll over for 1 month, Growth Partner for 2 months. RAVENCI tracks your balance and helps plan usage.",
       content:
-        "It depends on your tier. The Business Website tier covers maintenance only with no dev hours. eCommerce hours roll over for 1 month, and SMB Full Service hours roll over for 2 months. We'll always let you know your balance and help you plan usage.",
+        "It depends on your tier. Website Care includes up to 1 hour of content edits per month. eCommerce Care and Growth Essentials hours roll over for 1 month, and Growth Partner hours roll over for 2 months. We'll always let you know your balance and help you plan usage.",
     },
     {
       title:
-        "What's the difference between a retainer and your maintenance plan?",
+        "What's the difference between Website Care and the Growth tiers?",
       summary:
-        "Maintenance covers updates, backups, and security monitoring. A retainer includes all of that plus dedicated hours for active development, design, content, and strategy work.",
+        "Website Care keeps things running: hosting, updates, backups, and security monitoring with minor edits. The Growth tiers include all of that plus dedicated hours for active development, design, SEO, and strategy.",
       content:
-        "Maintenance keeps things running: updates, backups, security monitoring. A retainer includes all of that plus dedicated hours for active development, design, content, and strategy. Maintenance keeps things running. A retainer keeps things moving forward.",
+        "Website Care keeps things running: hosting, updates, backups, security monitoring, and minor content edits. The Growth tiers include all of that plus dedicated hours for active development, design, SEO, and strategy. Website Care keeps things running. Growth tiers keep things moving forward.",
     },
     {
       title: "Can I change tiers?",
@@ -152,9 +171,9 @@ export default function RetainerPackagesPage() {
     {
       title: "What if I need more hours in a month?",
       summary:
-        "Additional hours are billed at your tier's overage rate ($165/hr for Business and eCommerce, $155/hr for SMB Full Service). RAVENCI always confirms before doing any work beyond your included hours.",
+        "Additional hours are billed at your tier's overage rate ($165/hr for Website Care and eCommerce Care, $155/hr for Growth Essentials and Growth Partner). RAVENCI always confirms before doing any work beyond your included hours.",
       content:
-        "No problem. Additional hours are billed at your tier's overage rate ($165/hr for Business and eCommerce, $155/hr for SMB Full Service). We'll always confirm before doing any work beyond your included hours.",
+        "No problem. Additional hours are billed at your tier's overage rate ($165/hr for Website Care and eCommerce Care, $155/hr for Growth Essentials and Growth Partner). We'll always confirm before doing any work beyond your included hours.",
     },
   ];
 
@@ -200,11 +219,11 @@ export default function RetainerPackagesPage() {
             hiring
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
-            For Australian businesses that want a digital team without the
-            overhead of hiring one. Monthly packages from $275, with hosting,
-            maintenance, and dedicated time for development, design, content
-            and SEO, used however your business needs it that month. Tell us
-            the priorities. We&apos;ll take it from there.
+            For established Australian businesses that want a digital team
+            without the overhead of hiring one. Hosting, maintenance, and
+            dedicated time for development, design, content and SEO — used
+            however your business needs it that month. Tell us the priorities.
+            We&apos;ll take it from there.
           </p>
         </article>
       </section>
@@ -269,8 +288,8 @@ export default function RetainerPackagesPage() {
               Why a Retainer Beats Hiring In-House
             </h2>
             <p className={`mb-6 text-neutral-400/90`}>
-              Our SMB Full Service retainer costs{" "}
-              <span className={`text-white font-bold`}>$33,600/year</span>, a
+              Our Growth Partner retainer costs{" "}
+              <span className={`text-white font-bold`}>$36,000/year</span>, a
               full-time hire costs{" "}
               <span className={`text-white font-bold`}>$80,000-$100,000/year</span>{" "}
               before super, leave, equipment, and training.
@@ -313,7 +332,7 @@ export default function RetainerPackagesPage() {
             </p>
             <p className={`text-neutral-400/90`}>
               That&apos;s how we approach it at RAVENCI. To make it even simpler for
-              you, we offer three tiers of retainer packages, each designed to
+              you, we offer four tiers of retainer packages, each designed to
               meet your specific needs.
             </p>
           </article>
@@ -375,7 +394,7 @@ export default function RetainerPackagesPage() {
           Choose Your Retainer
         </h2>
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6`}
+          className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6`}
         >
           {tiers.map((tier) => (
             <div
@@ -386,7 +405,7 @@ export default function RetainerPackagesPage() {
                 {tier.name}
               </h4>
               <p className={`mt-2 text-sm text-neutral-400/90`}>
-                {tier.hours} hours/month
+                {tier.hoursLabel}
               </p>
 
               <Accordion
@@ -468,7 +487,7 @@ export default function RetainerPackagesPage() {
       {/* Sticky CTA for Mobile */}
       <StickyCTA
         link="/launch-your-vision"
-        startingPrice={275}
+        startingPrice={350}
         label="Book a Strategy Call"
       />
 

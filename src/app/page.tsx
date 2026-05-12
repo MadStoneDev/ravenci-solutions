@@ -21,12 +21,12 @@ import PlatformsSection from "@/components/platforms-section";
 
 export const metadata = {
   title: "Custom Web Development Brisbane | RAVENCI Solutions",
-  description: "Custom websites for Australian businesses. Web development, design, hosting, maintenance, and SEO from $4,950. Brisbane-based, 25+ years experience, 85+ PageSpeed guaranteed.",
+  description: "Custom websites and eCommerce platforms for established Australian businesses. A structural engineer's approach to web development — built properly, still working in five years. Brisbane-based, 25+ years experience.",
   alternates: { canonical: "/" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Custom Web Development Brisbane | RAVENCI Solutions",
-    description: "Custom websites for Australian businesses. Web development, design, hosting, maintenance, and SEO from $4,950. Brisbane-based, 25+ years experience.",
+    description: "Custom websites and eCommerce platforms for established Australian businesses. A structural engineer's approach to web development — built properly, still working in five years.",
     url: "/",
     type: "website",
   },
@@ -60,9 +60,9 @@ export default function Home() {
           <h2
             className={`mt-8 max-w-[600px] text-lg md:text-xl font-light text-neutral-400`}
           >
-            Twenty-five years and 450+ projects for established Australian
-            businesses. We build websites the right way the first time:
-            modern, performant, still working in five years.
+            Structural engineer by training, web developer for twenty-five
+            years. 450+ projects for established Australian businesses
+            — built properly, still working in five years.
           </h2>
 
           <div className={`mt-16 flex gap-6`}>
@@ -212,12 +212,16 @@ export default function Home() {
 <p class="mb-4 text-neutral-400/70">Every page is designed with a purpose: to get your visitors to enquire, to buy, or to learn more about your business.</p>`,
               },
               {
-                title: `Maintenance`,
-                content: `<p class="mb-4 text-neutral-400/70">Websites need looking after. Security updates, performance checks, malware protection, content changes. We handle it so you don't have to chase a developer every time something needs attention. Regular maintenance is what keeps a five-year website going well beyond five years.</p><a href="/website-maintenance" class="relative px-3 py-1 bg-ravenci-primary hover:bg-ravenci-primary/80 text-white rounded-full transition-all duration-300 ease-in-out">Maintain your site with RAVENCI</a><p class="mt-8 mb-4 text-neutral-400/70 text-sm italic">Please note: <span class="text-neutral-100">As of October, 2024</span>, we no longer host websites that are not signed up to reliable ongoing maintenance. This does <span class="font-bold">not</span> have to be through RAVENCI, but it must be from a reputable provider.</p> `,
-              },
-              {
-                title: `Hosting`,
-                content: `<p class="mb-4 text-neutral-400/70">Where your website lives matters. Good hosting means your site loads fast, stays secure, and ranks better on search engines. We host all of our clients on scalable cloud servers located closest to their customers, so your site performs well no matter where your visitors are.</p><a href="/web-hosting" class="relative px-3 py-1 bg-ravenci-primary hover:bg-ravenci-primary/80 text-white rounded-full transition-all duration-300 ease-in-out">Host with RAVENCI</a><p class="mt-8 mb-4 text-neutral-400/70 text-sm italic">Please note: <span class="text-neutral-100">As of October, 2024</span>, we no longer host websites that are not signed up to reliable ongoing maintenance. This does <span class="font-bold">not</span> have to be through RAVENCI, but it must be from a reputable provider.</p>`,
+                title: `After Launch`,
+                content: `<p class="mb-4 text-neutral-100">We don't hand you a site and disappear.</p>
+
+<p class="text-neutral-100">Hosting that performs</p>
+<p class="mb-4 text-neutral-400/70">Every site we build lives on scalable cloud servers closest to your customers. Fast, secure, and properly maintained — not a shared hosting afterthought.</p>
+
+<p class="text-neutral-100">Ongoing care</p>
+<p class="mb-4 text-neutral-400/70">Security updates, performance checks, backups, content changes. We handle it so you don't have to chase a developer every time something needs attention. Regular care is what keeps a five-year website going well beyond five years.</p>
+
+<a href="/retainer-packages" class="relative px-3 py-1 bg-ravenci-primary hover:bg-ravenci-primary/80 text-white rounded-full transition-all duration-300 ease-in-out">See our care plans</a>`,
               },
             ]}
           />
@@ -288,9 +292,9 @@ export default function Home() {
 
           <div className={`mt-10 flex flex-col gap-8 max-w-[450px]`}>
             <p>
-              We work with businesses across different industries, and the best
-              part is watching what they go on to achieve with the platforms we
-              build for them.
+              From custom business sites to full eCommerce platforms, we build
+              the digital foundation that established businesses run on — and
+              we stick around to keep it running.
             </p>
           </div>
         </article>
@@ -386,10 +390,7 @@ export default function Home() {
               { "@type": "ListItem", position: 1, name: "Web Development", url: "https://ravenci.solutions/web-development" },
               { "@type": "ListItem", position: 2, name: "Business Design", url: "https://ravenci.solutions/business-design" },
               { "@type": "ListItem", position: 3, name: "SEO & Content", url: "https://ravenci.solutions/seo-and-content" },
-              { "@type": "ListItem", position: 4, name: "Web Hosting", url: "https://ravenci.solutions/web-hosting" },
-              { "@type": "ListItem", position: 5, name: "Website Maintenance", url: "https://ravenci.solutions/website-maintenance" },
-              { "@type": "ListItem", position: 6, name: "Mobile Apps", url: "https://ravenci.solutions/mobile-apps" },
-              { "@type": "ListItem", position: 7, name: "Web Apps", url: "https://ravenci.solutions/web-apps" },
+              { "@type": "ListItem", position: 4, name: "Retainer Packages", url: "https://ravenci.solutions/retainer-packages" },
             ],
           }),
         }}

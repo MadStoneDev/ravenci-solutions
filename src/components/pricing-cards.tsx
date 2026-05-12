@@ -57,10 +57,10 @@ export default function PricingCards({ tiers }: { tiers: PricingTier[] }) {
             className="group/cta mt-4 block text-center rounded-xl border border-neutral-600 hover:border-white hover:bg-white p-6 transition-colors"
           >
             <p className="text-sm text-neutral-400 group-hover/cta:text-neutral-500 transition-colors">
-              from
+              {/^\d/.test(tier.price) ? "from" : " "}
             </p>
             <p className="text-4xl font-bold text-white group-hover/cta:text-ravenci-dark transition-colors">
-              ${tier.price}
+              {/^\d/.test(tier.price) ? `$${tier.price}` : tier.price}
             </p>
             <p className="mt-3 text-sm font-medium text-white group-hover/cta:text-ravenci-dark transition-colors">
               Request a proposal &rarr;

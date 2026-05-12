@@ -52,42 +52,6 @@ export default function MainFooter() {
           </div>
 
           <div className={`group/link relative px-2`}>
-            <Link href={`/web-apps`} className={`relative z-10`}>
-              Web App Development
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/mobile-apps`} className={`relative z-10`}>
-              Mobile App Development
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/website-maintenance`} className={`relative z-10`}>
-              Maintenance
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/web-hosting`} className={`relative z-10`}>
-              Domains & Cloud Hosting
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
             <Link href={`/retainer-packages`} className={`relative z-10`}>
               Retainer Packages
             </Link>

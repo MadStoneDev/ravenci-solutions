@@ -11,13 +11,13 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Web Development | RAVENCI Solutions",
   description:
-    "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $4,950.",
+    "Custom web development in Brisbane. Modern, responsive websites and eCommerce platforms built for performance and designed to convert visitors into customers.",
   alternates: { canonical: "/web-development" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Web Development | RAVENCI Solutions",
     description:
-      "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $4,950.",
+      "Custom web development in Brisbane. Modern, responsive websites and eCommerce platforms built for performance and designed to convert visitors into customers.",
     url: "/web-development",
     type: "website",
   },
@@ -168,12 +168,12 @@ export default function WebHostingDevelopmentPage() {
             Professional websites that convert visitors into customers
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
-            For Australian businesses ready to replace the site they have with
-            one that performs. Built properly the first time so it&apos;s
-            still working in five years. No plugin clutter, no surprise
-            subscriptions, no developer disappearing on you. From $4,950 for a
-            brochure site with CRM to $11,650 for a fully custom eCommerce
-            build, plus ongoing support. Brisbane-based. 25+ years.
+            For established Australian businesses ready to replace the site
+            they have with one that performs. Built properly the first time so
+            it&apos;s still working in five years. No plugin clutter, no
+            surprise subscriptions, no developer disappearing on you. Custom
+            websites from $7,500, eCommerce platforms from $12,000, plus
+            ongoing support. Brisbane-based. 25+ years.
           </p>
         </article>
       </section>
@@ -396,10 +396,10 @@ export default function WebHostingDevelopmentPage() {
         <PricingCards
           tiers={[
             {
-              name: "1. Brochure Website",
-              price: "4,950",
+              name: "1. Business Website",
+              price: "7,500",
               description:
-                "A professional online presence with a CRM to manage your leads. Clean, modern, built for performance, and designed to get out of your way.",
+                "A professional online presence with a CMS and CRM to manage your leads. Clean, modern, built for performance, and designed to get out of your way.",
               accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Custom responsive design (up to 5 pages)</li>
@@ -413,70 +413,64 @@ export default function WebHostingDevelopmentPage() {
     <li>SSL certificate with RAVENCI hosting</li>
     <li>2 rounds of revisions</li>
     <li>4 weeks delivery</li>
-    <li>Discounted Hosting with RAVENCI</li>
-    <li>Discounted Maintenance with RAVENCI</li>
 </ul>`,
             },
             {
-              name: "2. eCommerce Template",
-              price: "6,650",
-              description:
-                "Get selling fast with a professionally configured Shopify or BigCommerce store. Template-based for speed, customised to match your brand.",
-              accordionContent: `
-<ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
-    <li>Shopify or BigCommerce setup</li>
-    <li>Theme selection and brand customisation</li>
-    <li>Product catalog setup (up to 50 products)</li>
-    <li>Payment gateway integration</li>
-    <li>Shipping and tax configuration</li>
-    <li>Basic SEO setup</li>
-    <li>Google Analytics with eCommerce tracking</li>
-    <li>Mobile-optimised storefront</li>
-    <li>Staff training on store management</li>
-    <li>2 rounds of revisions</li>
-    <li>4-5 weeks delivery</li>
-</ul>`,
-            },
-            {
-              name: "3. Custom Solution",
-              price: "9,700",
+              name: "2. Custom Website",
+              price: "9,500",
               description:
                 "For businesses with specific requirements that off-the-shelf won't cover. Custom design and development built around how your business actually works.",
               accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Fully custom design and development</li>
     <li>Multi-page website (up to 12 pages)</li>
+    <li>Brand identity and design direction</li>
     <li>Advanced CMS with content workflows</li>
     <li>Custom integrations and API connections</li>
     <li>Advanced SEO with structured data</li>
     <li>Blog setup with content strategy</li>
     <li>Analytics with goal and conversion tracking</li>
-    <li>Image optimisation and lazy loading</li>
     <li>85+ Google PageSpeed score guaranteed</li>
     <li>3 rounds of revisions</li>
     <li>6-8 weeks delivery</li>
-    <li>Discounted Hosting with RAVENCI</li>
-    <li>Discounted Maintenance with RAVENCI</li>
 </ul>`,
             },
             {
-              name: "4. eCommerce Custom",
-              price: "11,650",
+              name: "3. eCommerce",
+              price: "12,000",
               description:
-                "A fully customised Shopify or BigCommerce store. Custom theme, advanced product configurations, and integrations tailored to your operations.",
+                "A professionally built Shopify or BigCommerce store. Custom theme, product catalogue setup, and integrations tailored to your operations.",
               accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
-    <li>Custom Shopify or BigCommerce theme</li>
-    <li>Product catalog setup (up to 200 products)</li>
+    <li>Shopify or BigCommerce setup</li>
+    <li>Custom theme and brand design</li>
+    <li>Product catalogue setup (up to 100 products)</li>
+    <li>Payment gateway integration</li>
+    <li>Shipping and tax configuration</li>
+    <li>Google Analytics with eCommerce tracking</li>
+    <li>Mobile-first responsive design</li>
+    <li>Staff training on store management</li>
+    <li>Basic SEO setup</li>
+    <li>3 rounds of revisions</li>
+    <li>6-8 weeks delivery</li>
+</ul>`,
+            },
+            {
+              name: "4. Custom eCommerce",
+              price: "Scope to fit",
+              description:
+                "For complex eCommerce requirements: large catalogues, custom filtering, multi-channel, ERP integrations, or advanced product configurations.",
+              accordionContent: `
+<ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
+    <li>Everything in eCommerce, plus:</li>
     <li>Custom product filtering and search</li>
     <li>Advanced payment and shipping rules</li>
     <li>Inventory management integration</li>
     <li>Customer account portal</li>
     <li>Email marketing integration</li>
+    <li>Multi-channel sales setup</li>
     <li>Advanced eCommerce analytics</li>
-    <li>Mobile-first responsive design</li>
-    <li>3 rounds of revisions</li>
-    <li>8-10 weeks delivery</li>
+    <li>8-10+ weeks delivery</li>
 </ul>`,
             },
           ]}
@@ -495,17 +489,17 @@ export default function WebHostingDevelopmentPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
           <div className="p-6 rounded-xl border border-neutral-200 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">$2.70</p>
+            <p className="text-3xl font-bold text-ravenci-primary">$4.11</p>
             <p className="mt-1 text-sm text-neutral-500">per day</p>
             <p className="mt-3 text-sm text-neutral-700">
-              Brochure site over 5 years
+              Business website over 5 years
             </p>
           </div>
           <div className="p-6 rounded-xl border border-neutral-200 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">$5.30</p>
+            <p className="text-3xl font-bold text-ravenci-primary">$6.58</p>
             <p className="mt-1 text-sm text-neutral-500">per day</p>
             <p className="mt-3 text-sm text-neutral-700">
-              Custom solution over 5 years
+              eCommerce store over 5 years
             </p>
           </div>
           <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5 text-center">
@@ -520,10 +514,11 @@ export default function WebHostingDevelopmentPage() {
         <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
           <p>
             If your website brings in just one extra client a month — even at
-            $500 per job — that&apos;s $6,000 a year in revenue. On a $4,950
-            brochure site, that&apos;s a 6x return. On a $9,700 custom build,
-            it&apos;s still over 3x. Most businesses see far more than one lead
-            a month from a site that actually ranks and converts.
+            $500 per job — that&apos;s $6,000 a year in revenue. On a $7,500
+            business site, that&apos;s a 4x return in year one alone. On a
+            $12,000 eCommerce build with direct sales, the returns compound
+            from day one. Most businesses see far more than one lead a month
+            from a site that actually ranks and converts.
           </p>
           <p>
             The real question isn&apos;t &ldquo;can I afford a proper
@@ -576,8 +571,8 @@ export default function WebHostingDevelopmentPage() {
         <h2 className="mb-8 font-serif text-h3 font-bold text-center">Related Services</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
-            { name: "Web Hosting", href: "/web-hosting", description: "Managed cloud hosting for your site" },
-            { name: "Website Maintenance", href: "/website-maintenance", description: "Keep your site secure and up to date" },
+            { name: "Retainer Packages", href: "/retainer-packages", description: "Ongoing care, hosting, and development" },
+            { name: "Business Design", href: "/business-design", description: "Brand identity and visual design" },
             { name: "SEO & Content", href: "/seo-and-content", description: "Get found by the right customers" },
           ].map((service) => (
             <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
@@ -633,7 +628,7 @@ export default function WebHostingDevelopmentPage() {
       {/* Sticky CTA for Mobile */}
       <StickyCTA
         link="/launch-your-vision"
-        startingPrice={4950}
+        startingPrice={7500}
         label="Request a Proposal"
       />
 
@@ -646,7 +641,7 @@ export default function WebHostingDevelopmentPage() {
             serviceType: "Web Development",
             name: "Website Development",
             description:
-              "Custom web development in Brisbane. Modern, responsive websites built for performance and designed to convert visitors into customers. From $4,950.",
+              "Custom web development in Brisbane. Modern, responsive websites and eCommerce platforms built for performance and designed to convert visitors into customers.",
             provider: {
               "@type": "ProfessionalService",
               name: "RAVENCI Solutions",
@@ -668,35 +663,27 @@ export default function WebHostingDevelopmentPage() {
               itemListElement: [
                 {
                   "@type": "Offer",
-                  name: "Brochure Website",
-                  price: "4950",
+                  name: "Business Website",
+                  price: "7500",
                   priceCurrency: "AUD",
                   description:
-                    "Custom responsive design up to 5 pages with CRM integration, SEO, and 85+ PageSpeed score. 4 weeks delivery.",
+                    "Custom responsive design up to 5 pages with CMS, CRM integration, SEO, and 85+ PageSpeed score. 4 weeks delivery.",
                 },
                 {
                   "@type": "Offer",
-                  name: "eCommerce Template",
-                  price: "6650",
+                  name: "Custom Website",
+                  price: "9500",
                   priceCurrency: "AUD",
                   description:
-                    "Shopify or BigCommerce store with theme customisation, product setup, and eCommerce tracking. 4-5 weeks delivery.",
+                    "Fully custom design and development up to 12 pages with brand identity, advanced CMS, integrations, and structured data. 6-8 weeks delivery.",
                 },
                 {
                   "@type": "Offer",
-                  name: "Custom Solution",
-                  price: "9700",
+                  name: "eCommerce",
+                  price: "12000",
                   priceCurrency: "AUD",
                   description:
-                    "Fully custom design and development up to 12 pages with advanced CMS, integrations, and structured data. 6-8 weeks delivery.",
-                },
-                {
-                  "@type": "Offer",
-                  name: "eCommerce Custom",
-                  price: "11650",
-                  priceCurrency: "AUD",
-                  description:
-                    "Custom Shopify or BigCommerce theme with advanced product configurations and integrations. 8-10 weeks delivery.",
+                    "Custom Shopify or BigCommerce store with product catalogue setup, payment and shipping integration. 6-8 weeks delivery.",
                 },
               ],
             },

@@ -6,12 +6,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 import {
-  IconAppWindow,
   IconBuildingSkyscraper,
   IconChartLine,
   IconChevronDown,
   IconCloudComputing,
-  IconDeviceMobile,
   IconHammer,
   IconHeartbeat,
   IconHome,
@@ -51,14 +49,6 @@ export default function MainNavigation() {
   const serviceLinks = [
     { href: "/web-development", label: "Web Development", icon: IconTerminal2 },
     { href: "/business-design", label: "Business Design", icon: IconPalette },
-    { href: "/web-apps", label: "Web Apps", icon: IconAppWindow },
-    { href: "/mobile-apps", label: "Mobile Apps", icon: IconDeviceMobile },
-    { href: "/website-maintenance", label: "Maintenance", icon: IconHammer },
-    {
-      href: "/web-hosting",
-      label: "Domains & Hosting",
-      icon: IconCloudComputing,
-    },
     { href: "/seo-and-content", label: "SEO & Content", icon: IconChartLine },
     { href: "/retainer-packages", label: "Retainer Packages", icon: IconRefresh },
   ];

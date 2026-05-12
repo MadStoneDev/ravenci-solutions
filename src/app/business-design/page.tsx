@@ -9,12 +9,12 @@ import { getTestimonialsForPage } from "@/data/testimonials";
 export const metadata = {
   title: "Business Design | RAVENCI Solutions",
   description:
-    "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems. From $3,500.",
+    "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems for established businesses.",
   alternates: { canonical: "/business-design" },
   openGraph: {
     title: "Business Design | RAVENCI Solutions",
     description:
-      "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems. From $3,500.",
+      "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems for established businesses.",
     url: "/business-design",
     type: "website",
   },
@@ -447,7 +447,7 @@ export default function BusinessDesignPage() {
           {[
             { name: "Web Development", href: "/web-development", description: "Bring your brand online" },
             { name: "SEO & Content", href: "/seo-and-content", description: "Content that matches your brand voice" },
-            { name: "Mobile Apps", href: "/mobile-apps", description: "Your brand in your customers' pockets" },
+            { name: "Retainer Packages", href: "/retainer-packages", description: "Ongoing design and development support" },
           ].map((service) => (
             <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
               <h3 className="font-bold text-ravenci-dark mb-2">{service.name}</h3>
@@ -508,7 +508,7 @@ export default function BusinessDesignPage() {
             serviceType: "Business Design",
             name: "Business Design",
             description:
-              "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems. From $3,500.",
+              "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems for established businesses.",
             provider: {
               "@type": "ProfessionalService",
               name: "RAVENCI Solutions",

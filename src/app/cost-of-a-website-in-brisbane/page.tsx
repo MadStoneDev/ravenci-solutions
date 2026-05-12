@@ -494,12 +494,11 @@ export default function BrisbaneWebsiteCostPage() {
           <div className="space-y-4 text-neutral-600 leading-relaxed">
             <p>
               RAVENCI Solutions builds custom websites in Brisbane across
-              brochure sites through to fully custom eCommerce platforms. Our
-              Brochure Website starts at <strong>$4,950</strong> with CRM
-              included, eCommerce template builds from{" "}
-              <strong>$6,650</strong>, Custom Solutions from{" "}
-              <strong>$9,700</strong>, and Custom eCommerce from{" "}
-              <strong>$11,650</strong> for businesses needing a tailored
+              business sites through to fully custom eCommerce platforms. Our
+              Business Website starts at <strong>$7,500</strong> with CMS and
+              CRM included, Custom Websites from{" "}
+              <strong>$9,500</strong>, and eCommerce platforms from{" "}
+              <strong>$12,000</strong> for businesses needing a professional
               online store.
             </p>
             <p>
