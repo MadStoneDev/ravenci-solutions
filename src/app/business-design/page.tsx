@@ -1,8 +1,10 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
-﻿import Link from "next/link";
+import Image from "next/image";
+import Link from "next/link";
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
-import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
+import Breadcrumbs from "@/components/breadcrumbs";
+import PricingCards from "@/components/pricing-cards";
 import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
@@ -12,6 +14,7 @@ export const metadata = {
     "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems for established businesses.",
   alternates: { canonical: "/business-design" },
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Business Design | RAVENCI Solutions",
     description:
       "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems for established businesses.",
@@ -124,18 +127,30 @@ export default function BusinessDesignPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://ravenci.solutions" },
-              { "@type": "ListItem", position: 2, name: "Business Design", item: "https://ravenci.solutions/business-design" },
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://ravenci.solutions",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Business Design",
+                item: "https://ravenci.solutions/business-design",
+              },
             ],
           }),
         }}
       />
 
+      {/* Hero Section */}
       <section
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
         <article className={`col-span-12 flex flex-col`}>
-          <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
+          <Breadcrumbs items={[{ label: "Business Design" }]} />
+          <h1 className={`mt-4 text-4xl md:text-5xl lg:text-h1 font-medium`}>
             Professional Branding That Builds Trust
           </h1>
           <h2
@@ -144,9 +159,16 @@ export default function BusinessDesignPage() {
             Professional branding and graphic design that builds trust and
             drives sales
           </h2>
+          <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
+            Professional branding and graphic design for established Australian
+            businesses. Logo and guidelines from $3,500, full brand identity
+            systems from $10,000, plus signage and vehicle wraps. Brisbane-based.
+            25+ years.
+          </p>
         </article>
       </section>
 
+      {/* Social Proof Bar */}
       <section
         className={`p-10 flex flex-col items-center gap-3 bg-ravenci-primary text-white text-center`}
       >
@@ -170,60 +192,19 @@ export default function BusinessDesignPage() {
                 </span>{" "}
                 {testimonials[0].author.split(" ").slice(1).join(" ")}
               </h3>
+              {testimonials[0].role && (
+                <p className="mt-1 text-sm text-white/60">
+                  {testimonials[0].role}
+                </p>
+              )}
             </>
           )}
         </div>
       </section>
 
-      <div className={`grid grid-cols-1 lg:grid-cols-2 bg-white`}>
-        <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 space-y-14 bg-neutral-200/50`}
-        >
-          <article className={`max-w-lg`}>
-            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
-              What's Included with Every Design
-            </h2>
-            <ul className={`flex flex-col gap-8`}>
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <IconCircleCheckFilled
-                    className="text-ravenci-primary flex-shrink-0"
-                    size={24}
-                  />
-                  <p className={`text-neutral-500/80`}>
-                    <span className="font-bold text-ravenci-dark">
-                      {feature.title}:
-                    </span>{" "}
-                    {feature.description}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </article>
-
-          <article className={`max-w-lg`}>
-            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
-              Additional Services Available
-            </h2>
-            <ul className={`flex flex-col gap-8`}>
-              {addons.map((addon, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <IconCircleCheckFilled
-                    className="text-ravenci-primary flex-shrink-0"
-                    size={24}
-                  />
-                  <p className={`text-neutral-500/80`}>
-                    <span className="font-bold text-ravenci-dark">
-                      {addon.title}:
-                    </span>{" "}
-                    {addon.description}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </article>
-        </section>
-
+      {/* Two-Column Section (Rebalanced) */}
+      <div className={`grid grid-cols-1 lg:grid-cols-2`}>
+        {/* Left Column — Dark: Pain Points + Why Choose + Intro */}
         <section
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
@@ -251,28 +232,28 @@ export default function BusinessDesignPage() {
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
-                  className={`p-1 bg-ravenci-primary rounded-full text-white`}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
                 Design backed by strategy
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
-                  className={`p-1 bg-ravenci-primary rounded-full text-white`}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
                 Complete brand systems from logo to collateral
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
-                  className={`p-1 bg-ravenci-primary rounded-full text-white`}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
                 Brisbane-based with local support
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
                   size={24}
-                  className={`p-1 bg-ravenci-primary rounded-full text-white`}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
                 Focused on what works for your business
               </li>
@@ -281,26 +262,124 @@ export default function BusinessDesignPage() {
               Good design builds trust, earns customer confidence, and makes
               your business look established and professional.
             </p>
-            <p className={`mb-4 text-neutral-400/90`}>
+            <p className={`text-neutral-400/90`}>
               We offer four comprehensive design packages, each tailored to
               different business needs and budgets.
             </p>
+          </article>
+        </section>
 
-            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
-              1. Logo + Guidelines
-            </h3>
-            <p className={`mb-4 text-neutral-400/90`}>
-              The core brand elements every business needs to look
-              professional. Logo, colour palette, typography, and a style
-              guide so everything stays consistent as you grow.
-            </p>
-            <div className={`mb-16 text-white`}>
-              <Accordion
-                titleClassName={`py-3 px-3 mb-2 text-lg bg-white text-neutral-900`}
-                items={[
-                  {
-                    title: `What's Included`,
-                    content: `
+        {/* Right Column — Light: Features */}
+        <section
+          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
+        >
+          <article className={`max-w-lg`}>
+            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
+              What's Included with Every Design
+            </h2>
+            <ul className={`flex flex-col gap-8`}>
+              {features.map((feature, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <IconCircleCheckFilled
+                    className="text-ravenci-primary flex-shrink-0"
+                    size={24}
+                  />
+                  <p className={`text-neutral-600`}>
+                    <span className="font-bold text-ravenci-dark">
+                      {feature.title}:
+                    </span>{" "}
+                    {feature.description}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </section>
+      </div>
+
+      {/* Full-Width Add-ons Section */}
+      <section
+        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
+      >
+        <h2 className={`mb-10 font-serif text-h3 font-bold text-center`}>
+          Additional Services Available
+        </h2>
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto`}
+        >
+          {addons.map((addon, index) => (
+            <div key={index} className="flex items-start gap-2">
+              <IconCircleCheckFilled
+                className="text-ravenci-primary flex-shrink-0"
+                size={24}
+              />
+              <p className={`text-neutral-500/80`}>
+                <span className="font-bold text-ravenci-dark">
+                  {addon.title}:
+                </span>{" "}
+                {addon.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Showcase Section */}
+      <section className="py-20 px-5 sm:px-20 xl:px-36 bg-white">
+        <h2 className="mb-10 font-serif text-h3 font-bold text-center">
+          Some of Our Recent Work
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              name: "Covenant Security",
+              image: "/showcase-images/Client - Covenant Security.png",
+            },
+            {
+              name: "Coast Remedial Solutions",
+              image: "/showcase-images/Client - Coast Remedial Solutions.png",
+            },
+            {
+              name: "Cadeaurable",
+              image: "/showcase-images/Client - Cadeaurable.png",
+            },
+          ].map((project) => (
+            <div
+              key={project.name}
+              className="group relative overflow-hidden rounded-xl"
+            >
+              <Image
+                src={project.image}
+                alt={`${project.name} branding by RAVENCI`}
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-10">
+                <p className="text-sm font-medium text-white">{project.name}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Full-Width Pricing Section */}
+      <section
+        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
+      >
+        <h2
+          className={`mb-12 font-serif text-h3 font-bold text-white text-center`}
+        >
+          Choose Your Package
+        </h2>
+        <PricingCards
+          tiers={[
+            {
+              name: "1. Logo + Guidelines",
+              price: "3,500",
+              description:
+                "The core brand elements every business needs. Logo, colour palette, typography, and a style guide so everything stays consistent as you grow.",
+              accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Custom logo design (3 initial concepts)</li>
     <li>Brand color palette</li>
@@ -313,43 +392,14 @@ export default function BusinessDesignPage() {
     <li>6 weeks delivery</li>
     <li>3 revisions included</li>
     <li>All files in industry standard formats</li>
-</ul>
-`,
-                  },
-                ]}
-              />
-              <PriceButton
-                price={"3,500"}
-                link={`/launch-your-vision`}
-                frequency={""}
-                includeFrom={true}
-                callToAction={`Logo + Guidelines`}
-                subCallToAction={`Request a proposal`}
-              />
-
-              <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
-                <p className="text-sm text-yellow-200">
-                  ⚡ Limited: We only take on 8 Logo + Guidelines projects per
-                  quarter for personalised attention
-                </p>
-              </div>
-            </div>
-
-            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
-              2. Full Brand Identity
-            </h3>
-            <p className={`mb-4 text-neutral-400/90`}>
-              A complete brand system from logo to marketing materials,
-              designed to represent the quality of your work.
-            </p>
-
-            <div className={`mb-16 text-white`}>
-              <Accordion
-                titleClassName={`py-3 px-3 mb-2 text-lg bg-white text-neutral-900`}
-                items={[
-                  {
-                    title: `What's Included`,
-                    content: `
+</ul>`,
+            },
+            {
+              name: "2. Full Brand Identity",
+              price: "10,000",
+              description:
+                "A complete brand system from logo to marketing materials, designed to represent the quality of your work.",
+              accordionContent: `
 <p class="mt-3 text-neutral-100">Brand Foundation</p>
 <ul class="list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Logo design or refinement (if needed)</li>
@@ -372,91 +422,168 @@ export default function BusinessDesignPage() {
     <li>8 weeks delivery</li>
     <li>2 rounds of revisions per item</li>
     <li>All files in industry standard formats</li>
-</ul>
-`,
-                  },
-                ]}
-              />
+</ul>`,
+            },
+            {
+              name: "3. Premium Signage",
+              price: "175",
+              description:
+                "Shopfront signs, reception wall graphics, window graphics, outdoor banners, wayfinding signage, and A-frame signs. Installation support available.",
+              accordionContent: `
+<ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
+    <li>Custom signage design</li>
+    <li>Shopfront and reception wall graphics</li>
+    <li>Window graphics and outdoor banners</li>
+    <li>Wayfinding and directional signage</li>
+    <li>A-frame or sidewalk signs</li>
+    <li>Print-ready files in all required formats</li>
+    <li>Installation coordination available</li>
+</ul>`,
+            },
+            {
+              name: "4. Vehicle Wraps",
+              price: "350",
+              description:
+                "Partial or full vehicle wraps for sedans, utes, vans, and buses. One of the best ongoing marketing tools for your business.",
+              accordionContent: `
+<ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
+    <li>Custom vehicle wrap design</li>
+    <li>Partial or full wrap options</li>
+    <li>Sedans, utes, vans, and buses</li>
+    <li>Print-ready files to specification</li>
+    <li>Installation coordination available</li>
+    <li>Maintenance guidance included</li>
+</ul>`,
+            },
+          ]}
+        />
+      </section>
 
-              <PriceButton
-                price={"10,000"}
-                link={`/launch-your-vision`}
-                frequency={""}
-                includeFrom={true}
-                callToAction={`Full Brand Identity`}
-                subCallToAction={`Request a proposal`}
-              />
-
-              <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
-                <p className="text-sm text-yellow-200">
-                  ⚡ Limited: We only take on 5 Full Brand Identity projects
-                  per quarter
-                </p>
-              </div>
-            </div>
-
-            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
-              3. Signage
-            </h3>
-            <p className={`mb-4 text-neutral-400/90`}>
-              Shopfront signs, reception wall graphics, window graphics, and
-              outdoor banners. Wayfinding signage and directional signage.
-              A-frame or sidewalk signs. We can also help you with installation
-              and maintenance.
+      {/* Investment ROI */}
+      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
+        <h2 className="mb-4 font-serif text-h3 font-bold text-center">
+          Think of It as an Investment, Not an Expense
+        </h2>
+        <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
+          Professional branding isn&apos;t a cost you absorb. It&apos;s the foundation
+          that earns customer trust and drives revenue for years.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+          <div className="p-6 rounded-xl border border-neutral-200 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">$1.92</p>
+            <p className="mt-1 text-sm text-neutral-500">per day</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              Logo + Guidelines over 5 years
             </p>
-
-            <div className={`mb-16 text-white`}>
-              <PriceButton
-                price={175}
-                link={`/launch-your-vision`}
-                frequency={""}
-                includeFrom={true}
-                callToAction={`Premium Signage`}
-                subCallToAction={`Get in touch for a tailored quote`}
-              />
-            </div>
-
-            <h3 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
-              4. Vehicle Wraps
-            </h3>
-            <p className={`mb-4 text-neutral-400/90`}>
-              One of the best marketing tools for your business is vehicle
-              wraps. Whether you need a partial or full vehicle wrap for a
-              sedan, ute, van or buse, get in touch. We can help with
-              installation and maintenance also.
+          </div>
+          <div className="p-6 rounded-xl border border-neutral-200 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">$5.48</p>
+            <p className="mt-1 text-sm text-neutral-500">per day</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              Full Brand Identity over 5 years
             </p>
+          </div>
+          <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">5-10x</p>
+            <p className="mt-1 text-sm text-neutral-500">trust factor</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              Professional branding vs DIY design
+            </p>
+          </div>
+        </div>
+        <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
+          <p>
+            Customers judge your business in seconds. Professional branding
+            signals quality, builds trust, and justifies premium pricing. A
+            $3,500 brand identity that helps you win even one extra client a
+            month at $1,000 per job pays for itself in under four months.
+          </p>
+          <p>
+            The real question isn&apos;t &ldquo;can I afford professional
+            branding?&rdquo; It&apos;s &ldquo;can I afford to look like I
+            don&apos;t take my business seriously?&rdquo;
+          </p>
+        </div>
+      </section>
 
-            <div className={`mb-16 text-white`}>
-              <PriceButton
-                price={350}
-                link={`/launch-your-vision`}
-                frequency={""}
-                includeFrom={true}
-                callToAction={`Signage & Vehicle Wraps`}
-                subCallToAction={`Your brand on the road, every day`}
+      {/* What Can Affect Pricing */}
+      <section
+        className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
+      >
+        <h2 className={`mb-8 font-serif text-h3 font-bold text-center`}>
+          What Can Affect Pricing
+        </h2>
+        <p className={`mb-8 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
+          Every project is different. These are the most common factors that
+          can move the price above the starting point for each tier.
+        </p>
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto`}
+        >
+          {[
+            "Additional logo concepts beyond the included count",
+            "Extended brand guidelines with detailed usage rules",
+            "Large-format signage requiring structural engineering",
+            "Multi-vehicle fleet wrap design and coordination",
+            "Packaging design for product lines",
+            "Photography direction and art direction",
+            "Animation or motion graphics for digital assets",
+            "Rush timelines (under 4 weeks)",
+            "Multilingual brand materials",
+            "Trade show and event material design",
+          ].map((item, i) => (
+            <div key={i} className="flex items-start gap-2">
+              <IconCircleCheckFilled
+                className="text-neutral-400 flex-shrink-0 mt-0.5"
+                size={18}
               />
+              <p className="text-neutral-600 text-sm">{item}</p>
             </div>
-          </article>
-        </section>
-      </div>
+          ))}
+        </div>
+        <p className={`mt-8 text-center text-sm text-neutral-400`}>
+          Hourly rate for additional work: $165/hr
+        </p>
+      </section>
 
       {/* Related Services */}
       <section className="content-section py-12 px-5 sm:px-20 xl:px-36 bg-neutral-50">
-        <h2 className="mb-8 font-serif text-h3 font-bold text-center">Related Services</h2>
+        <h2 className="mb-8 font-serif text-h3 font-bold text-center">
+          Related Services
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
-            { name: "Web Development", href: "/web-development", description: "Bring your brand online" },
-            { name: "SEO & Content", href: "/seo-and-content", description: "Content that matches your brand voice" },
-            { name: "Retainer Packages", href: "/retainer-packages", description: "Ongoing design and development support" },
+            {
+              name: "Web Development",
+              href: "/web-development",
+              description: "Bring your brand online",
+            },
+            {
+              name: "SEO & Content",
+              href: "/seo-and-content",
+              description: "Content that matches your brand voice",
+            },
+            {
+              name: "Retainer Packages",
+              href: "/retainer-packages",
+              description: "Ongoing design and development support",
+            },
           ].map((service) => (
-            <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
-              <h3 className="font-bold text-ravenci-dark mb-2">{service.name}</h3>
+            <Link
+              key={service.href}
+              href={service.href}
+              className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center"
+            >
+              <h3 className="font-bold text-ravenci-dark mb-2">
+                {service.name}
+              </h3>
               <p className="text-sm text-neutral-500">{service.description}</p>
             </Link>
           ))}
         </div>
       </section>
 
+      {/* FAQ Section */}
       <section
         className={`content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white`}
       >
@@ -466,37 +593,43 @@ export default function BusinessDesignPage() {
           items={[
             {
               title: `How long does design work typically take?`,
+              summary: `Logo + Guidelines takes 6 weeks, Full Brand Identity 8 weeks, and Signage or Vehicle Wraps 4-6 weeks. RAVENCI provides regular updates throughout every project.`,
               content: `Brand Essentials: 6 weeks. Marketing Materials: 8 weeks. Signage & Vehicle Wraps: 4-6 weeks. We provide regular updates and involve you in every decision.`,
             },
             {
               title: `What if I don't like the initial concepts?`,
+              summary: `Every RAVENCI package includes multiple revisions. Designs are refined until they perfectly capture your vision and business goals.`,
               content: `We include multiple revisions with every package. Our aim is that our designs perfectly capture your vision and business goals.`,
             },
             {
               title: `Do you handle printing and installation?`,
+              summary: `RAVENCI works closely with trusted local suppliers and installers with near a decade of collaboration for all printing and installation needs.`,
               content: `Though we do not personally handle printing, we do, however, work closely with trusted local suppliers and installers that we have collaborated with for near a decade.`,
             },
             {
               title: `Can you work with our existing brand guidelines?`,
+              summary: `Yes. RAVENCI can work within existing brand guidelines or help evolve and strengthen your current brand identity, assessing what works and what needs improvement.`,
               content: `Absolutely. We can work within existing brand guidelines or help evolve and strengthen your current brand identity. We'll assess what's working and what needs improvement.`,
             },
             {
               title: `What file formats do we receive?`,
+              summary: `RAVENCI delivers all designs in industry standard formats including web-ready PNG and JPG, and print-ready PDF and SVG. Everything is organised and labeled for easy use.`,
               content: `Our designs and print-ready files are provide in industry standard formats. Where applicable, you will receive source web-ready files in PNG and JPG, and print-ready files in PDF and SVG versions. Everything is organised and labeled for easy use.`,
             },
           ]}
         />
       </section>
 
+      {/* Footer Spacer */}
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
 
-      {/* Mobile sticky CTA */}
+      {/* Sticky CTA for Mobile */}
       <StickyCTA
         link="/launch-your-vision"
         startingPrice={3500}
-        priceNote=""
+        label="Request a Proposal"
       />
 
       <script
@@ -513,8 +646,55 @@ export default function BusinessDesignPage() {
               "@type": "ProfessionalService",
               name: "RAVENCI Solutions",
               url: "https://ravenci.solutions",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Brisbane",
+                addressRegion: "QLD",
+                addressCountry: "AU",
+              },
             },
-            areaServed: { "@type": "Country", name: "Australia" },
+            areaServed: {
+              "@type": "Country",
+              name: "Australia",
+            },
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Business Design Packages",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  name: "Logo + Guidelines",
+                  price: "3500",
+                  priceCurrency: "AUD",
+                  description:
+                    "Custom logo design with 3 concepts, brand colour palette, typography, business card, letterhead, email signature, brand guidelines PDF, and social media assets. 6 weeks delivery.",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Full Brand Identity",
+                  price: "10000",
+                  priceCurrency: "AUD",
+                  description:
+                    "Complete brand system including logo, extended guidelines, print materials, business cards with printing, flyer or brochure, invoice templates, and digital assets. 8 weeks delivery.",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Premium Signage",
+                  price: "175",
+                  priceCurrency: "AUD",
+                  description:
+                    "Shopfront signs, reception wall graphics, window graphics, outdoor banners, wayfinding signage, and A-frame signs with installation coordination.",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Vehicle Wraps",
+                  price: "350",
+                  priceCurrency: "AUD",
+                  description:
+                    "Partial or full vehicle wraps for sedans, utes, vans, and buses with print-ready files and installation coordination.",
+                },
+              ],
+            },
           }),
         }}
       />
@@ -530,7 +710,7 @@ export default function BusinessDesignPage() {
                 name: "How long does design work typically take?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Brand Essentials: 6 weeks. Marketing Materials: 8 weeks. Signage & Vehicle Wraps: 4-6 weeks. We provide regular updates and involve you in every decision.",
+                  text: "Logo + Guidelines takes 6 weeks, Full Brand Identity 8 weeks, and Signage or Vehicle Wraps 4-6 weeks. RAVENCI provides regular updates throughout every project.",
                 },
               },
               {
@@ -538,7 +718,7 @@ export default function BusinessDesignPage() {
                 name: "What if I don't like the initial concepts?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "We include multiple revisions with every package. Our aim is that our designs perfectly capture your vision and business goals.",
+                  text: "Every RAVENCI package includes multiple revisions. Designs are refined until they perfectly capture your vision and business goals.",
                 },
               },
               {
@@ -546,7 +726,7 @@ export default function BusinessDesignPage() {
                 name: "Do you handle printing and installation?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Though we do not personally handle printing, we do work closely with trusted local suppliers and installers that we have collaborated with for near a decade.",
+                  text: "RAVENCI works closely with trusted local suppliers and installers with near a decade of collaboration for all printing and installation needs.",
                 },
               },
               {
@@ -554,7 +734,7 @@ export default function BusinessDesignPage() {
                 name: "Can you work with our existing brand guidelines?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Absolutely. We can work within existing brand guidelines or help evolve and strengthen your current brand identity. We'll assess what's working and what needs improvement.",
+                  text: "Yes. RAVENCI can work within existing brand guidelines or help evolve and strengthen your current brand identity, assessing what works and what needs improvement.",
                 },
               },
               {
@@ -562,7 +742,7 @@ export default function BusinessDesignPage() {
                 name: "What file formats do we receive?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Our designs and print-ready files are provided in industry standard formats. Where applicable, you will receive source web-ready files in PNG and JPG, and print-ready files in PDF and SVG versions.",
+                  text: "RAVENCI delivers all designs in industry standard formats including web-ready PNG and JPG, and print-ready PDF and SVG. Everything is organised and labeled for easy use.",
                 },
               },
             ],

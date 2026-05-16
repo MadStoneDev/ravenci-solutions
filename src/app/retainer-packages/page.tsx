@@ -1,10 +1,12 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
+import Image from "next/image";
 import Link from "next/link";
 import StickyCTA from "@/components/sticky-cta";
 
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
+import PricingCards from "@/components/pricing-cards";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
@@ -165,6 +167,8 @@ export default function RetainerPackagesPage() {
     },
     {
       title: "Can I change tiers?",
+      summary:
+        "Yes. You can upgrade at any time effective next billing cycle. Downgrades are available at the end of your current commitment period.",
       content:
         "Yes. You can upgrade at any time and the change takes effect on your next billing cycle. Downgrades are available at the end of your current commitment period.",
     },
@@ -362,27 +366,35 @@ export default function RetainerPackagesPage() {
                 </li>
               ))}
             </ul>
-
-            <Link
-              href={`/launch-your-vision`}
-              className={`mt-12 p-2 flex items-center gap-6 bg-ravenci-primary rounded-xl hover:scale-105 text-center transition-all duration-300 ease-in-out`}
-            >
-              <div className={`flex flex-col items-center w-full`}>
-                <span
-                  className={`font-bold text-base text-white text-center uppercase transition-all duration-300 ease-in-out`}
-                >
-                  Not sure which tier? Let&apos;s talk
-                </span>
-                <span
-                  className={`text-sm text-white/60 text-center transition-all duration-300 ease-in-out`}
-                >
-                  Book a free strategy call
-                </span>
-              </div>
-            </Link>
           </article>
         </section>
       </div>
+
+      {/* Showcase Section */}
+      <section className="py-20 px-5 sm:px-20 xl:px-36 bg-white">
+        <h2 className="mb-10 font-serif text-h3 font-bold text-center">
+          Some of Our Retainer Clients
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          {[
+            { name: "Covenant Security", image: "/showcase-images/Client - Covenant Security.png" },
+            { name: "GoingDark", image: "/showcase-images/Client - GoingDark.png" },
+          ].map((project) => (
+            <div key={project.name} className="group relative overflow-hidden rounded-xl">
+              <Image
+                src={project.image}
+                alt={`${project.name} — RAVENCI retainer client`}
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-10">
+                <p className="text-sm font-medium text-white">{project.name}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Full-Width Pricing Section */}
       <section
@@ -393,59 +405,164 @@ export default function RetainerPackagesPage() {
         >
           Choose Your Retainer
         </h2>
-        <div
-          className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6`}
+        <PricingCards
+          tiers={[
+            {
+              name: "1. Website Care",
+              price: "350",
+              description: "Up to 1 hour of edits. Managed cloud hosting, security, backups, updates, and email support. No minimum commitment. Per month.",
+              accordionContent: `
+<ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
+    <li>Managed cloud hosting included</li>
+    <li>Security monitoring, backups &amp; updates</li>
+    <li>Plugin and CMS updates</li>
+    <li>Uptime monitoring</li>
+    <li>Email support, 48-hour response</li>
+    <li>Minor content edits (text and images)</li>
+    <li>Monthly performance report</li>
+    <li>No minimum commitment, cancel anytime</li>
+    <li>Overage rate: $165/hr</li>
+</ul>`,
+            },
+            {
+              name: "2. eCommerce Care",
+              price: "750",
+              description: "3 hours/month of development or design. Everything in Website Care plus eCommerce support, SEO monitoring, and 24-hour response. Per month.",
+              accordionContent: `
+<ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
+    <li>Everything in Website Care, plus:</li>
+    <li>3 hours of development or design work</li>
+    <li>Product catalogue maintenance support</li>
+    <li>eCommerce platform updates (Shopify/BigCommerce/WooCommerce)</li>
+    <li>Payment gateway and shipping monitoring</li>
+    <li>Monthly performance audit (speed &amp; Core Web Vitals)</li>
+    <li>Basic SEO monitoring</li>
+    <li>24-hour support response</li>
+    <li>1 month hour rollover</li>
+    <li>3-month minimum commitment</li>
+    <li>Overage rate: $165/hr</li>
+</ul>`,
+            },
+            {
+              name: "3. Growth Essentials",
+              price: "1,800",
+              description: "8 hours/month for development, design, or SEO. Monthly strategy call, analytics review, and content creation. Per month.",
+              accordionContent: `
+<ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
+    <li>Everything in eCommerce Care, plus:</li>
+    <li>8 hours of development, design, or SEO work</li>
+    <li>SEO foundations and keyword tracking</li>
+    <li>Monthly strategy call</li>
+    <li>Monthly performance audit + analytics review</li>
+    <li>Content updates and page creation</li>
+    <li>24-hour support response</li>
+    <li>1 month hour rollover</li>
+    <li>3-month minimum commitment</li>
+    <li>Overage rate: $155/hr</li>
+</ul>`,
+            },
+            {
+              name: "4. Growth Partner",
+              price: "3,000",
+              description: "15 hours/month for development, design, and strategy. Same-day priority support, bi-weekly calls, full SEO, and CRO review. Per month.",
+              accordionContent: `
+<ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
+    <li>Everything in Growth Essentials, plus:</li>
+    <li>15 hours of development, design, and strategy</li>
+    <li>On-call priority support (same business day)</li>
+    <li>Bi-weekly 30-minute strategy calls</li>
+    <li>Full SEO with keyword tracking and reporting</li>
+    <li>Monthly CRO review</li>
+    <li>2 months hour rollover</li>
+    <li>15% off additional project work</li>
+    <li>3-month minimum commitment</li>
+    <li>Overage rate: $155/hr</li>
+</ul>`,
+            },
+          ]}
+        />
+      </section>
+
+      {/* Investment ROI */}
+      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
+        <h2 className="mb-4 font-serif text-h3 font-bold text-center">
+          Think of It as an Investment, Not an Expense
+        </h2>
+        <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
+          A retainer isn&apos;t a cost you absorb. It&apos;s a dedicated
+          digital team that costs a fraction of hiring in-house.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+          <div className="p-6 rounded-xl border border-neutral-200 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">$36k</p>
+            <p className="mt-1 text-sm text-neutral-500">per year</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              Growth Partner retainer
+            </p>
+          </div>
+          <div className="p-6 rounded-xl border border-neutral-200 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">$80-100k</p>
+            <p className="mt-1 text-sm text-neutral-500">per year</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              Full-time hire before super and leave
+            </p>
+          </div>
+          <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">Full team</p>
+            <p className="mt-1 text-sm text-neutral-500">not one person</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              Dev, design, SEO, and content
+            </p>
+          </div>
+        </div>
+        <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
+          <p>
+            A full-time developer costs $80,000&ndash;$100,000 a year before
+            super, leave, equipment, and training &mdash; and you get one
+            person with one skill set. Our Growth Partner retainer gives you
+            access to a full team for $36,000 a year, and you use the hours
+            however your business needs them that month.
+          </p>
+          <p>
+            The real question isn&apos;t &ldquo;can I afford a retainer?&rdquo;
+            It&apos;s &ldquo;can I afford to let my website sit stagnant
+            between projects?&rdquo;
+          </p>
+        </div>
+      </section>
+
+      {/* What Can Affect Pricing */}
+      <section
+        className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
+      >
+        <h2 className={`mb-8 font-serif text-h3 font-bold text-center`}>
+          What Can Affect Which Tier You Need
+        </h2>
+        <p
+          className={`mb-8 text-center text-neutral-500/80 max-w-2xl mx-auto`}
         >
-          {tiers.map((tier) => (
-            <div
-              key={tier.name}
-              className={`bg-neutral-800/50 rounded-xl p-8 border border-neutral-700`}
-            >
-              <h4 className={`font-serif text-xl font-bold text-white`}>
-                {tier.name}
-              </h4>
-              <p className={`mt-2 text-sm text-neutral-400/90`}>
-                {tier.hoursLabel}
-              </p>
-
-              <Accordion
-                titleClassName={`py-3 px-4 mb-2 text-base rounded-lg border border-neutral-600 bg-neutral-800 text-white hover:border-ravenci-primary hover:bg-ravenci-primary/20 transition-colors`}
-                items={[
-                  {
-                    title: "What's Included",
-                    content: (
-                      <ul className="flex flex-col gap-2 text-sm text-neutral-400/90">
-                        {tier.includes.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <IconCheck
-                              size={16}
-                              className="mt-0.5 text-ravenci-primary flex-shrink-0"
-                            />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    ),
-                  },
-                ]}
+          Not sure which retainer fits? These factors help determine the
+          right level of support for your business.
+        </p>
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto`}
+        >
+          {[
+            "How often you need content or design changes",
+            "Whether you need active SEO and keyword tracking",
+            "eCommerce platforms requiring product and catalogue work",
+            "Multiple websites or microsites to maintain",
+            "Seasonal campaigns needing landing pages and updates",
+            "Growth goals requiring ongoing development work",
+            "Need for strategy calls and performance reviews",
+            "Priority response time requirements",
+          ].map((item, i) => (
+            <div key={i} className="flex items-start gap-2">
+              <IconCircleCheckFilled
+                className="text-neutral-400 flex-shrink-0 mt-0.5"
+                size={18}
               />
-
-              <Link
-                href={`/launch-your-vision`}
-                className={`group/cta mt-8 block text-center rounded-xl border border-neutral-600 hover:border-white hover:bg-white p-6 transition-colors`}
-              >
-                <span
-                  className={`text-4xl font-bold text-white group-hover/cta:text-ravenci-dark transition-colors`}
-                >
-                  ${tier.price.toLocaleString()}
-                  <span className={`text-base font-normal`}>/mo.</span>
-                </span>
-                <p
-                  className={`mt-3 text-sm font-medium text-white group-hover/cta:text-ravenci-dark transition-colors`}
-                >
-                  Book a strategy call &rarr;
-                </p>
-              </Link>
+              <p className="text-neutral-600 text-sm">{item}</p>
             </div>
           ))}
         </div>

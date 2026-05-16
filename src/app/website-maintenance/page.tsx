@@ -1,6 +1,8 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
-﻿import Link from "next/link";
-import PriceButton from "@/components/price-button";
+import Image from "next/image";
+import Link from "next/link";
+import PricingCards from "@/components/pricing-cards";
+import StickyCTA from "@/components/sticky-cta";
 
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import Accordion from "@/components/accordion";
@@ -77,6 +79,7 @@ export default function WebMaintenancePage() {
 
   return (
     <main className={`flex flex-col`}>
+      {/* BreadcrumbList JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -101,6 +104,7 @@ export default function WebMaintenancePage() {
         }}
       />
 
+      {/* Hero Section */}
       <section
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
@@ -114,9 +118,16 @@ export default function WebMaintenancePage() {
           >
             Protect your website investment
           </h2>
+          <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
+            Website maintenance in Brisbane for businesses that depend on their
+            site. Updates, security, backups, and performance monitoring in one
+            package. Monthly plans from $249/mo, or one-off service for $495.
+            Brisbane-based. 25+ years.
+          </p>
         </article>
       </section>
 
+      {/* Social Proof Bar */}
       <section
         className={`p-10 flex flex-col items-center gap-3 bg-ravenci-primary text-white text-center`}
       >
@@ -140,55 +151,19 @@ export default function WebMaintenancePage() {
                 </span>{" "}
                 {testimonials[0].author.split(" ").slice(1).join(" ")}
               </h3>
+              {testimonials[0].role && (
+                <p className="mt-1 text-sm text-white/60">
+                  {testimonials[0].role}
+                </p>
+              )}
             </>
           )}
         </div>
       </section>
 
-      <div className={`grid grid-cols-1 lg:grid-cols-2 bg-white`}>
-        <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-200/50`}
-        >
-          <article className={`max-w-lg`}>
-            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
-              How We Protect Your Business
-            </h2>
-            <ul className={`flex flex-col gap-8`}>
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <IconCircleCheckFilled
-                    className="text-ravenci-primary flex-shrink-0"
-                    size={24}
-                  />
-                  <p className={`text-neutral-500/80`}>
-                    <span className="font-bold text-ravenci-dark">
-                      {feature.title}:
-                    </span>{" "}
-                    {feature.description}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </article>
-
-          <Link
-            href={`/launch-your-vision`}
-            className={`mt-12 p-2 flex items-center gap-6 bg-ravenci-primary rounded-xl hover:scale-105 text-center transition-all duration-300 ease-in-out`}
-          >
-            <div className={`flex flex-col items-center w-full`}>
-              <span
-                className={`font-bold text-base text-white text-center uppercase transition-all duration-300 ease-in-out`}
-              >
-                Save with Maintenance + Hosting Bundles
-              </span>
-              <span
-                className={`text-sm text-white/60 text-center transition-all duration-300 ease-in-out`}
-              >
-                Ask us for a tailored quote!
-              </span>
-            </div>
-          </Link>
-        </section>
+      {/* Two-Column Section (Rebalanced) */}
+      <div className={`grid grid-cols-1 lg:grid-cols-2`}>
+        {/* Left Column — Dark: Pain Points + Why Choose */}
         <section
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
@@ -209,38 +184,36 @@ export default function WebMaintenancePage() {
             <h2 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
               Why Businesses Choose RAVENCI Over DIY Maintenance:
             </h2>
-            <p className={`mb-4 text-neutral-400/90`}>
-              <ul className={`flex flex-col gap-4`}>
-                <li className={`flex gap-2`}>
-                  <IconCheck
-                    size={24}
-                    className={`p-1 bg-ravenci-primary rounded-full text-white`}
-                  />{" "}
-                  Professional monitoring and 24/7 alerts
-                </li>
-                <li className={`flex gap-2`}>
-                  <IconCheck
-                    size={24}
-                    className={`p-1 bg-ravenci-primary rounded-full text-white`}
-                  />{" "}
-                  2-hour response time during business hours
-                </li>
-                <li className={`flex gap-2`}>
-                  <IconCheck
-                    size={24}
-                    className={`p-1 bg-ravenci-primary rounded-full text-white`}
-                  />{" "}
-                  Brisbane-based support you can reach directly
-                </li>
-                <li className={`flex gap-2`}>
-                  <IconCheck
-                    size={24}
-                    className={`p-1 bg-ravenci-primary rounded-full text-white`}
-                  />{" "}
-                  Proactive updates before problems happen
-                </li>
-              </ul>
-            </p>
+            <ul className={`flex flex-col gap-4 mb-6 text-neutral-400/90`}>
+              <li className={`flex gap-2`}>
+                <IconCheck
+                  size={24}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                />{" "}
+                Professional monitoring and 24/7 alerts
+              </li>
+              <li className={`flex gap-2`}>
+                <IconCheck
+                  size={24}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                />{" "}
+                2-hour response time during business hours
+              </li>
+              <li className={`flex gap-2`}>
+                <IconCheck
+                  size={24}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                />{" "}
+                Brisbane-based support you can reach directly
+              </li>
+              <li className={`flex gap-2`}>
+                <IconCheck
+                  size={24}
+                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                />{" "}
+                Proactive updates before problems happen
+              </li>
+            </ul>
             <h2 className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}>
               Proactive Protection
             </h2>
@@ -259,34 +232,128 @@ export default function WebMaintenancePage() {
               save you time and money in the long run.
             </p>
           </article>
+        </section>
 
-          <PriceButton
-            price={249}
-            frequency={"mo."}
-            fromText={"Starting at"}
-            includeFrom={true}
-            callToAction={`Protect My Website Now`}
-            subCallToAction={`Cheaper than one hour of downtime`}
-            link={`/quote?service=monthly-web-maintenance`}
-          />
-
-          <div className="mt-4 p-3 bg-yellow-100/10 border border-yellow-300/20 rounded-lg">
-            <p className="text-sm text-yellow-200">
-              ⚡ Limited: We only accept 15 new maintenance subscriptions per
-              month to allow for setup and tailored configurations
-            </p>
-          </div>
-
-          <PriceButton
-            price={495}
-            frequency={""}
-            link={`/quote?service=oneoff-web-maintenance`}
-            callToAction={`One-off maintenance`}
-            subCallToAction={`One-off service for when you need it`}
-          />
+        {/* Right Column — Light: Features */}
+        <section
+          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
+        >
+          <article className={`max-w-lg`}>
+            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
+              How We Protect Your Business
+            </h2>
+            <ul className={`flex flex-col gap-8`}>
+              {features.map((feature, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <IconCircleCheckFilled
+                    className="text-ravenci-primary flex-shrink-0"
+                    size={24}
+                  />
+                  <p className={`text-neutral-600`}>
+                    <span className="font-bold text-ravenci-dark">
+                      {feature.title}:
+                    </span>{" "}
+                    {feature.description}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </article>
         </section>
       </div>
 
+      {/* Showcase Section */}
+      <section className="py-20 px-5 sm:px-20 xl:px-36 bg-white">
+        <h2 className="mb-10 font-serif text-h3 font-bold text-center">
+          Some of the Businesses We Maintain
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              name: "Peninsula Homes",
+              image: "/showcase-images/Client - Peninsula Homes.png",
+            },
+            {
+              name: "Nikita Morell",
+              image: "/showcase-images/Client - Nikita Morell.png",
+            },
+            {
+              name: "The DIRT Agency",
+              image: "/showcase-images/Client - The DIRT Agency.png",
+            },
+            {
+              name: "SAC Consulting",
+              image: "/showcase-images/Client - SAC Consulting.png",
+            },
+          ].map((project) => (
+            <div
+              key={project.name}
+              className="group relative overflow-hidden rounded-xl"
+            >
+              <Image
+                src={project.image}
+                alt={`${project.name} maintained by RAVENCI`}
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-10">
+                <p className="text-sm font-medium text-white">{project.name}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Full-Width Pricing Section */}
+      <section
+        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
+      >
+        <h2
+          className={`mb-12 font-serif text-h3 font-bold text-white text-center`}
+        >
+          Choose Your Package
+        </h2>
+        <PricingCards
+          tiers={[
+            {
+              name: "1. Monthly Maintenance",
+              price: "249",
+              description:
+                "Ongoing website maintenance with updates, security monitoring, backups, and performance checks. Per month.",
+              accordionContent: `
+<ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
+    <li>Software, plugin, and theme updates</li>
+    <li>Security monitoring and malware protection</li>
+    <li>Daily backups with quick restore</li>
+    <li>Performance checks and optimisation</li>
+    <li>24/7 uptime monitoring</li>
+    <li>Technical support</li>
+    <li>Content and link checks</li>
+    <li>Cross-browser testing</li>
+    <li>Monthly maintenance report</li>
+</ul>`,
+            },
+            {
+              name: "2. One-Off Maintenance",
+              price: "495",
+              description:
+                "A single comprehensive maintenance pass for when you need it. Updates, security checks, performance optimisation, and a health report.",
+              accordionContent: `
+<ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
+    <li>Full software and plugin update</li>
+    <li>Security audit and malware scan</li>
+    <li>Performance optimisation pass</li>
+    <li>Backup verification</li>
+    <li>Browser compatibility check</li>
+    <li>Detailed health report</li>
+</ul>`,
+            },
+          ]}
+        />
+      </section>
+
+      {/* Maintenance + Hosting Notice */}
       <section
         className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-primary`}
       >
@@ -301,23 +368,128 @@ export default function WebMaintenancePage() {
         </article>
       </section>
 
+      {/* Investment ROI */}
+      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
+        <h2 className="mb-4 font-serif text-h3 font-bold text-center">
+          Think of It as an Investment, Not an Expense
+        </h2>
+        <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
+          Website maintenance isn&apos;t a cost you absorb. It&apos;s insurance
+          that protects the revenue your website generates every month.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+          <div className="p-6 rounded-xl border border-neutral-200 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">$8.30</p>
+            <p className="mt-1 text-sm text-neutral-500">per day</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              Monthly maintenance plan
+            </p>
+          </div>
+          <div className="p-6 rounded-xl border border-neutral-200 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">$2,988</p>
+            <p className="mt-1 text-sm text-neutral-500">per year</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              Total annual maintenance cost
+            </p>
+          </div>
+          <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">$5-15k</p>
+            <p className="mt-1 text-sm text-neutral-500">typical cost</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              Of a single security breach to fix
+            </p>
+          </div>
+        </div>
+        <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
+          <p>
+            A single security breach typically costs $5,000&ndash;$15,000 to
+            fix, plus the damage to your reputation and lost sales while
+            your site is down. Our annual maintenance cost is less than what
+            most businesses spend on one emergency fix.
+          </p>
+          <p>
+            The real question isn&apos;t &ldquo;can I afford website
+            maintenance?&rdquo; It&apos;s &ldquo;can I afford the downtime
+            and recovery costs when something goes wrong?&rdquo;
+          </p>
+        </div>
+      </section>
+
+      {/* What Can Affect Pricing */}
+      <section
+        className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
+      >
+        <h2 className={`mb-8 font-serif text-h3 font-bold text-center`}>
+          What Can Affect Pricing
+        </h2>
+        <p
+          className={`mb-8 text-center text-neutral-500/80 max-w-2xl mx-auto`}
+        >
+          Every website is different. These are the most common factors that
+          can affect maintenance pricing.
+        </p>
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto`}
+        >
+          {[
+            "Complex websites with many plugins or integrations",
+            "eCommerce platforms with payment gateway monitoring",
+            "Sites with high traffic requiring performance tuning",
+            "Legacy platforms requiring specialised update procedures",
+            "Multi-site or multi-domain setups",
+            "Custom application maintenance beyond standard CMS",
+            "Content updates beyond basic text and image changes",
+            "Emergency or after-hours support requirements",
+          ].map((item, i) => (
+            <div key={i} className="flex items-start gap-2">
+              <IconCircleCheckFilled
+                className="text-neutral-400 flex-shrink-0 mt-0.5"
+                size={18}
+              />
+              <p className="text-neutral-600 text-sm">{item}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Related Services */}
       <section className="content-section py-12 px-5 sm:px-20 xl:px-36 bg-neutral-50">
-        <h2 className="mb-8 font-serif text-h3 font-bold text-center">Related Services</h2>
+        <h2 className="mb-8 font-serif text-h3 font-bold text-center">
+          Related Services
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
-            { name: "Web Hosting", href: "/web-hosting", description: "Fast, reliable cloud hosting" },
-            { name: "Web Development", href: "/web-development", description: "Custom websites built to perform" },
-            { name: "SEO & Content", href: "/seo-and-content", description: "Get found by the right customers" },
+            {
+              name: "Web Hosting",
+              href: "/web-hosting",
+              description: "Fast, reliable cloud hosting",
+            },
+            {
+              name: "Web Development",
+              href: "/web-development",
+              description: "Custom websites built to perform",
+            },
+            {
+              name: "SEO & Content",
+              href: "/seo-and-content",
+              description: "Get found by the right customers",
+            },
           ].map((service) => (
-            <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
-              <h3 className="font-bold text-ravenci-dark mb-2">{service.name}</h3>
+            <Link
+              key={service.href}
+              href={service.href}
+              className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center"
+            >
+              <h3 className="font-bold text-ravenci-dark mb-2">
+                {service.name}
+              </h3>
               <p className="text-sm text-neutral-500">{service.description}</p>
             </Link>
           ))}
         </div>
       </section>
 
+      {/* FAQ Section */}
       <section
         className={`content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white`}
       >
@@ -357,10 +529,19 @@ We're Brisbane-based with local support, not an overseas call center. You get di
         />
       </section>
 
+      {/* Footer Spacer */}
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
 
+      {/* Sticky CTA for Mobile */}
+      <StickyCTA
+        link="/launch-your-vision"
+        startingPrice={249}
+        label="Protect My Website"
+      />
+
+      {/* Product JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -471,6 +652,7 @@ We're Brisbane-based with local support, not an overseas call center. You get di
         }}
       />
 
+      {/* FAQPage JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

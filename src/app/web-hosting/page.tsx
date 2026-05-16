@@ -1,5 +1,6 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Link from "next/link";
+import Image from "next/image";
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
@@ -295,6 +296,34 @@ export default function WebHostingPage() {
         </div>
       </section>
 
+      {/* Showcase Section */}
+      <section className="py-20 px-5 sm:px-20 xl:px-36 bg-white">
+        <h2 className="mb-10 font-serif text-h3 font-bold text-center">
+          Some of the Businesses We Host
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { name: "Peninsula Homes", image: "/showcase-images/Client - Peninsula Homes.png" },
+            { name: "SAC Consulting", image: "/showcase-images/Client - SAC Consulting.png" },
+            { name: "Beauty Retreat Bribie Islands", image: "/showcase-images/Client - Beauty Retreat Bribie Islands.png" },
+            { name: "The DIRT Agency", image: "/showcase-images/Client - The DIRT Agency.png" },
+          ].map((project) => (
+            <div key={project.name} className="group relative overflow-hidden rounded-xl">
+              <Image
+                src={project.image}
+                alt={`${project.name} hosted by RAVENCI`}
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-10">
+                <p className="text-sm font-medium text-white">{project.name}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Notice Section */}
       <section
         className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-primary`}
@@ -308,6 +337,84 @@ export default function WebHostingPage() {
             be from a reputable provider.
           </p>
         </article>
+      </section>
+
+      {/* Investment ROI */}
+      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
+        <h2 className="mb-4 font-serif text-h3 font-bold text-center">
+          Think of It as an Investment, Not an Expense
+        </h2>
+        <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
+          Hosting isn&apos;t a cost you absorb. It&apos;s the foundation that
+          keeps your website earning revenue every day.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+          <div className="p-6 rounded-xl border border-neutral-200 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">$1.30</p>
+            <p className="mt-1 text-sm text-neutral-500">per day</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              Managed cloud hosting
+            </p>
+          </div>
+          <div className="p-6 rounded-xl border border-neutral-200 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">$468</p>
+            <p className="mt-1 text-sm text-neutral-500">per year</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              Total annual hosting cost
+            </p>
+          </div>
+          <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5 text-center">
+            <p className="text-3xl font-bold text-ravenci-primary">99.9%</p>
+            <p className="mt-1 text-sm text-neutral-500">uptime</p>
+            <p className="mt-3 text-sm text-neutral-700">
+              Your site stays online and earning
+            </p>
+          </div>
+        </div>
+        <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
+          <p>
+            Every hour your website is down costs you customers. If your site
+            generates even one enquiry a day, a single day of downtime from
+            cheap hosting costs you more than an entire year of managed hosting
+            with RAVENCI.
+          </p>
+          <p>
+            The real question isn&apos;t &ldquo;can I afford proper
+            hosting?&rdquo; It&apos;s &ldquo;can I afford the lost revenue
+            when my $5/month host goes down during a campaign?&rdquo;
+          </p>
+        </div>
+      </section>
+
+      {/* What Can Affect Pricing */}
+      <section className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50`}>
+        <h2 className={`mb-8 font-serif text-h3 font-bold text-center`}>
+          What Can Affect Pricing
+        </h2>
+        <p className={`mb-8 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
+          Our hosting starts at $39/mo for most business websites. These
+          factors can move the price above that starting point.
+        </p>
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto`}>
+          {[
+            "High-traffic websites requiring more server resources",
+            "eCommerce platforms with payment gateway requirements",
+            "Multiple websites or staging environments",
+            "Custom server configurations or specific software needs",
+            "Dedicated IP addresses or advanced SSL setups",
+            "Geographic-specific hosting requirements",
+            "Large file storage (video, high-res images, downloads)",
+            "Migration from complex existing hosting setups",
+          ].map((item, i) => (
+            <div key={i} className="flex items-start gap-2">
+              <IconCircleCheckFilled
+                className="text-neutral-400 flex-shrink-0 mt-0.5"
+                size={18}
+              />
+              <p className="text-neutral-600 text-sm">{item}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Related Services */}
