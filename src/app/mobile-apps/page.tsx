@@ -1,5 +1,5 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
-﻿import Link from "next/link";
+import Link from "next/link";
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";

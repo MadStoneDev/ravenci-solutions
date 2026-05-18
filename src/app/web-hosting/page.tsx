@@ -13,6 +13,7 @@ export const metadata = {
     "Managed cloud hosting from Brisbane. Fast servers worldwide, 24/7 monitoring, reliable security, and local support. From $39/mo.",
   alternates: { canonical: "/web-hosting" },
   openGraph: {
+    ...OG_DEFAULTS,
     title: "Web Hosting | RAVENCI Solutions",
     description:
       "Managed cloud hosting from Brisbane. Fast servers worldwide, 24/7 monitoring, reliable security, and local support. From $39/mo.",
@@ -20,7 +21,7 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    ...TWITTER_DEFAULTS,
   },
 };
 

@@ -635,8 +635,44 @@ export default function SEOContentPage() {
               "@type": "ProfessionalService",
               name: "RAVENCI Solutions",
               url: "https://ravenci.solutions",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Brisbane",
+                addressRegion: "QLD",
+                addressCountry: "AU",
+              },
             },
             areaServed: { "@type": "Country", name: "Australia" },
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "SEO & Content Packages",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  name: "Standard SEO",
+                  price: "1750",
+                  priceCurrency: "AUD",
+                  description:
+                    "Ongoing SEO for businesses that want to rank locally and nationally. Technical fixes, on-page optimisation, content, and monthly reporting.",
+                },
+                {
+                  "@type": "Offer",
+                  name: "eCommerce SEO + Campaigns",
+                  price: "2250",
+                  priceCurrency: "AUD",
+                  description:
+                    "SEO and campaign strategy built for online stores. Product page optimisation, category structure, shopping feeds, and conversion tracking.",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Copywriting Only",
+                  price: "390",
+                  priceCurrency: "AUD",
+                  description:
+                    "Professional website copy as a standalone service. Clear scope, reliable turnaround. Per page.",
+                },
+              ],
+            },
           }),
         }}
       />

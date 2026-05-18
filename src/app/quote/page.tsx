@@ -1,5 +1,5 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
-﻿// /app/quote/page.tsx
+// /app/quote/page.tsx
 import QuotingComponent from "@/components/quoting-component";
 
 export const metadata = {

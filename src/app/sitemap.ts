@@ -77,12 +77,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
-    {
-      url: `${baseUrl}/retainer-packages`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
     // Content/guide pages (0.75)
     {
       url: `${baseUrl}/case-studies`,

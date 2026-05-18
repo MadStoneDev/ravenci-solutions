@@ -1,6 +1,6 @@
-// Enhanced /app/api/create-stripe-checkout/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { Stripe } from "stripe";
+import { checkRateLimit } from "@/lib/api-guards";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
@@ -106,9 +106,16 @@ function validateInput(body: any) {
 
 export async function POST(request: NextRequest) {
   try {
+    const limit = await checkRateLimit(request, "stripe-checkout");
+    if (!limit.ok) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again shortly." },
+        { status: 429, headers: { "Retry-After": String(limit.retryAfter ?? 60) } },
+      );
+    }
+
     const body = await request.json();
 
-    // Validate input
     validateInput(body);
 
     const {

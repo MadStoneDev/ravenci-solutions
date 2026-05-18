@@ -1,5 +1,5 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms and Conditions | RAVENCI Solutions",
