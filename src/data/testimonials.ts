@@ -15,6 +15,7 @@ export const testimonials: Testimonial[] = [
     content:
       "I could not recommend Richard more highly. His knowledge is remarkable, his professionalism exceptional, and the way he completely sorted my issues, quickly, effortlessly was simply brilliant. Champion bloke, brilliant at what he does.",
     author: "Geoff Beisler",
+    company: "Green Earth Trees",
     image: null,
     pages: ["homepage", "retainer-packages"],
   },
@@ -23,6 +24,7 @@ export const testimonials: Testimonial[] = [
     content:
       "Richard is the absolute best at what he does. Our brand new startup is launching with the best possible website I could have imagined. He took the time from the very beginning to understand us and our business, and he has made our branding and website reflect that and represent us perfectly.",
     author: "Adam Bisset",
+    company: "Covenant Security Solutions",
     image: null,
     pages: ["web-development"],
   },
@@ -39,6 +41,7 @@ export const testimonials: Testimonial[] = [
     content:
       "Eleven out of ten for an amazing service! Richard goes above and beyond to ensure all the i's are dotted and t's are crossed.",
     author: "Danni Green",
+    company: "Black Cactus Digital",
     image: null,
     pages: ["web-hosting", "homepage"],
   },
@@ -47,6 +50,7 @@ export const testimonials: Testimonial[] = [
     content:
       "I highly recommend Richard to any business looking for a website or a designer looking to partner with a highly-skilled and experienced developer. You will be in good hands!",
     author: "Danni Green",
+    company: "Black Cactus Digital",
     image: null,
     pages: ["web-hosting"],
   },

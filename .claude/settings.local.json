@@ -80,7 +80,12 @@
       "Bash(grep:*)",
       "Bash(find:*)",
       "Bash(sed:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(npx next *)",
+      "Bash(git *)",
+      "Bash(awk *)",
+      "Bash(xxd \"src/app/quote/page.tsx\")",
+      "Bash(xxd \"src/app/\\(policies\\)/privacy-policy/page.tsx\")"
     ]
   }
 }
