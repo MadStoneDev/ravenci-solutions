@@ -82,10 +82,9 @@
       "Bash(sed:*)",
       "Bash(wc:*)",
       "Bash(npx next *)",
-      "Bash(git *)",
-      "Bash(awk *)",
-      "Bash(xxd \"src/app/quote/page.tsx\")",
-      "Bash(xxd \"src/app/\\(policies\\)/privacy-policy/page.tsx\")"
+      "Bash(git commit *)",
+      "Bash(git pull *)",
+      "Bash(git reset *)"
     ]
   }
 }
