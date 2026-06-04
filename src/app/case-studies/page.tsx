@@ -98,7 +98,7 @@ export default function CaseStudiesPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>100+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>75+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Australian Businesses
             </p>
@@ -125,8 +125,8 @@ export default function CaseStudiesPage() {
         <div
           className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-14`}
         >
-          {caseStudies.map((cs) => (
-            <CaseStudyCard key={cs.slug} caseStudy={cs} />
+          {caseStudies.map((cs, i) => (
+            <CaseStudyCard key={cs.slug} caseStudy={cs} priority={i < 3} />
           ))}
         </div>
       </section>

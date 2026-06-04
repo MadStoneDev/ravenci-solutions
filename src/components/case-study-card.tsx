@@ -4,7 +4,13 @@ import Link from "next/link";
 import type { CaseStudy } from "@/data/case-studies";
 import { IconArrowRight } from "@tabler/icons-react";
 
-export default function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
+export default function CaseStudyCard({
+  caseStudy,
+  priority = false,
+}: {
+  caseStudy: CaseStudy;
+  priority?: boolean;
+}) {
   return (
     <Link
       href={`/case-studies/${caseStudy.slug}`}
@@ -15,10 +21,11 @@ export default function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
         className={`relative w-full aspect-[16/10] overflow-hidden bg-neutral-100 border-b border-ravenci-dark`}
       >
         <Image
-          src={caseStudy.featuredImage}
+          src={caseStudy.cardImage ?? caseStudy.featuredImage}
           alt={`${caseStudy.clientName} project showcase`}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+          priority={priority}
           className={`object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-in-out`}
         />
       </div>

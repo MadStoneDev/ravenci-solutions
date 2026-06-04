@@ -347,6 +347,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SEO & Ongoing Growth */}
+      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl">
+          <div>
+            <span className="text-xs font-medium tracking-widest uppercase text-ravenci-primary">
+              After Launch
+            </span>
+            <h2 className="mt-4 text-3xl md:text-4xl font-medium">
+              A Great Website Earns Its Keep. An Optimised One Earns More Every
+              Month.
+            </h2>
+            <p className="mt-6 text-neutral-400 leading-relaxed">
+              Most agencies hand you a site and disappear. We stick around to
+              make sure it actually gets found. SEO retainers that compound your
+              investment month over month — more visibility, more traffic, more
+              enquiries.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/seo-and-content"
+                className="px-6 py-3 bg-ravenci-primary text-white rounded-full hover:bg-ravenci-primary/85 transition-colors duration-300"
+              >
+                SEO & Content Services
+              </Link>
+              <Link
+                href="/retainer-packages"
+                className="px-6 py-3 rounded-full text-white border-2 border-white/30 hover:bg-white hover:text-ravenci-dark transition-colors duration-300"
+              >
+                Care Plans
+              </Link>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+              <p className="text-2xl font-bold text-ravenci-primary">85+</p>
+              <p className="mt-1 text-sm text-neutral-400">
+                PageSpeed guaranteed on every build
+              </p>
+            </div>
+            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+              <p className="text-2xl font-bold text-ravenci-primary">
+                Monthly
+              </p>
+              <p className="mt-1 text-sm text-neutral-400">
+                Reporting so you see what&apos;s working
+              </p>
+            </div>
+            <div className="p-6 rounded-xl bg-white/5 border border-white/10 col-span-2">
+              <p className="text-sm text-neutral-300">
+                Most clients add an SEO retainer after launch. The website gets
+                them online — the SEO gets them found.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <TestimonialsSingle
         key={geoffTestimonial!.id}
@@ -388,9 +445,10 @@ export default function Home() {
             name: "RAVENCI Solutions Services",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Web Development", url: "https://ravenci.solutions/web-development" },
-              { "@type": "ListItem", position: 2, name: "Business Design", url: "https://ravenci.solutions/business-design" },
-              { "@type": "ListItem", position: 3, name: "SEO & Content", url: "https://ravenci.solutions/seo-and-content" },
-              { "@type": "ListItem", position: 4, name: "Retainer Packages", url: "https://ravenci.solutions/retainer-packages" },
+              { "@type": "ListItem", position: 2, name: "eCommerce", url: "https://ravenci.solutions/ecommerce" },
+              { "@type": "ListItem", position: 3, name: "Business Design", url: "https://ravenci.solutions/business-design" },
+              { "@type": "ListItem", position: 4, name: "SEO & Content", url: "https://ravenci.solutions/seo-and-content" },
+              { "@type": "ListItem", position: 5, name: "Retainer Packages", url: "https://ravenci.solutions/retainer-packages" },
             ],
           }),
         }}

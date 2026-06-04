@@ -1,5 +1,6 @@
 "use client";
 
+import { getImageProps } from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 interface ScrollingScreenshotProps {
@@ -11,12 +12,6 @@ interface ScrollingScreenshotProps {
   className?: string;
 }
 
-/**
- * Renders a full-length screenshot (much taller than its container) inside a
- * fixed-aspect frame, animating from top to bottom and back continuously.
- * Pauses on hover, respects prefers-reduced-motion, and degrades to a static
- * top-of-page image if the script can't measure the image.
- */
 export default function ScrollingScreenshot({
   src,
   alt,
@@ -26,6 +21,15 @@ export default function ScrollingScreenshot({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const imageRef = useRef<HTMLImageElement | null>(null);
   const [scrollDistance, setScrollDistance] = useState(0);
+
+  const { props: imageProps } = getImageProps({
+    src,
+    alt,
+    width: 1920,
+    height: 10800,
+    quality: 75,
+    sizes: "100vw",
+  });
 
   useEffect(() => {
     const measure = () => {
@@ -63,13 +67,12 @@ export default function ScrollingScreenshot({
         className="scrolling-screenshot-track absolute top-0 left-0 right-0 will-change-transform group-hover:[animation-play-state:paused]"
         style={animationStyle}
       >
-        {/* Native <img> rather than next/image so the natural height is
-            preserved (next/image with width/height auto-calc requires both
-            dimensions known up front). */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           ref={imageRef}
-          src={src}
+          src={imageProps.src}
+          srcSet={imageProps.srcSet as string}
+          sizes="100vw"
           alt={alt}
           loading="lazy"
           decoding="async"

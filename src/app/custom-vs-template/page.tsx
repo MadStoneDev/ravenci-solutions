@@ -114,9 +114,9 @@ const faqItems = [
     title:
       "How much does a custom website cost compared to a typical agency build?",
     summary:
-      "RAVENCI custom websites start from $4,950. A typical agency build may look cheaper upfront, but plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance make total ownership cost comparable with worse results.",
+      "RAVENCI custom websites start from $7,500. A typical agency build may look cheaper upfront, but plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance make total ownership cost comparable with worse results.",
     content:
-      "Our custom websites start from $4,950 for a Brochure site with CRM. A typical agency build may look cheaper upfront, but factor in plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance. The total cost of ownership is often comparable, with a worse result.",
+      "Our custom websites start from $7,500 for a Brochure site with CRM. A typical agency build may look cheaper upfront, but factor in plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance. The total cost of ownership is often comparable, with a worse result.",
   },
 ];
 
@@ -341,11 +341,11 @@ export default function CustomVsTemplatePage() {
               Custom Website
             </h4>
             <ul className="space-y-2 text-sm text-neutral-600">
-              <li>Build: $4,950 - $11,650</li>
+              <li>Build: $7,500 - $12,000</li>
               <li>Plugins & licences: $0/yr</li>
               <li>Rebuild: None needed</li>
               <li className="pt-2 border-t border-neutral-200 font-bold text-ravenci-dark">
-                5-year total: $4,950 - $11,650 + hosting
+                5-year total: $7,500 - $12,000 + hosting
               </li>
             </ul>
           </div>
@@ -380,10 +380,10 @@ export default function CustomVsTemplatePage() {
         <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
           <p>
             But cost is only half the equation. A custom site that ranks well
-            and converts visitors into clients pays for itself. At $4,950 over
-            five years, that&apos;s $2.70 a day. If it brings in one extra
+            and converts visitors into clients pays for itself. At $7,500 over
+            five years, that&apos;s $4.10 a day. If it brings in one extra
             client a month — even at $500 per job — that&apos;s $6,000 a year
-            from a $990 annual investment. A 6x return. Most businesses see
+            from a $1,500 annual investment. A 4x return. Most businesses see
             more than that.
           </p>
           <p>
@@ -400,7 +400,7 @@ export default function CustomVsTemplatePage() {
           Ready to Build It Right?
         </h2>
         <p className="mb-10 max-w-md text-white/80">
-          Custom websites from $4,950. No templates, no lock-in, no surprises.
+          Custom websites from $7,500. No templates, no lock-in, no surprises.
           Start with a free consultation.
         </p>
         <Link

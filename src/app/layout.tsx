@@ -39,12 +39,12 @@ export const metadata: Metadata = {
   title:
     "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
   description:
-    "RAVENCI Solutions is a Brisbane-based web development and design agency with 25+ years of experience. Custom Next.js and WordPress websites from $4,950. Hosting, maintenance, and retainer packages for Australian businesses.",
+    "RAVENCI Solutions is a Brisbane-based web development and design agency with 25+ years of experience. Custom Next.js and WordPress websites from $7,500. Hosting, maintenance, and retainer packages for Australian businesses.",
   openGraph: {
     title:
       "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
     description:
-      "RAVENCI Solutions is a Brisbane-based web development and design agency with 25+ years of experience. Custom Next.js and WordPress websites from $4,950. Hosting, maintenance, and retainer packages for Australian businesses.",
+      "RAVENCI Solutions is a Brisbane-based web development and design agency with 25+ years of experience. Custom Next.js and WordPress websites from $7,500. Hosting, maintenance, and retainer packages for Australian businesses.",
     url: "https://ravenci.solutions",
     siteName: "RAVENCI Solutions",
     images: [
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title:
       "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
     description:
-      "RAVENCI Solutions is a Brisbane-based web development and design agency with 25+ years of experience. Custom websites from $4,950.",
+      "RAVENCI Solutions is a Brisbane-based web development and design agency with 25+ years of experience. Custom websites from $7,500.",
     images: ["/og-image.jpg"],
   },
 };

@@ -686,7 +686,7 @@ export default function CaseStudyPremium({
               >
                 <div className="relative w-full aspect-[16/10] overflow-hidden bg-neutral-100">
                   <Image
-                    src={related.featuredImage}
+                    src={related.cardImage ?? related.featuredImage}
                     alt={related.clientName}
                     fill
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"

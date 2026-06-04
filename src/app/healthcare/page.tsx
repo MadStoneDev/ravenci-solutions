@@ -13,13 +13,13 @@ import { getTestimonialsForIndustry } from "@/data/testimonials";
 export const metadata = {
   title: "Healthcare Websites Brisbane | RAVENCI Solutions",
   description:
-    "Websites for healthcare professionals in Brisbane. Patient portals, online booking, Australian Privacy Principles compliance, NDIS-ready, Cliniko and HotDoc integration. From $4,950.",
+    "Websites for healthcare professionals in Brisbane. Patient portals, online booking, Australian Privacy Principles compliance, NDIS-ready, Cliniko and HotDoc integration. From $7,500.",
   alternates: { canonical: "/healthcare" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Healthcare Websites Brisbane | RAVENCI Solutions",
     description:
-      "Websites for healthcare professionals in Brisbane. Patient portals, online booking, Australian Privacy Principles compliance, NDIS-ready, Cliniko and HotDoc integration. From $4,950.",
+      "Websites for healthcare professionals in Brisbane. Patient portals, online booking, Australian Privacy Principles compliance, NDIS-ready, Cliniko and HotDoc integration. From $7,500.",
     url: "/healthcare",
     type: "website",
   },
@@ -274,7 +274,7 @@ export default function HealthcarePage() {
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             RAVENCI Solutions builds websites for healthcare professionals in
-            Brisbane. From $4,950, we deliver online booking integration,
+            Brisbane. From $7,500, we deliver online booking integration,
             patient portals, NDIS-ready features, telehealth capability, and
             privacy-compliant design. Australian Privacy Principles and AHPRA
             advertising guidelines considered from day one. 25+ years of
@@ -416,7 +416,7 @@ export default function HealthcarePage() {
 
             <div className={`text-white`}>
               <PriceButton
-                price={"4,950"}
+                price={"7,500"}
                 link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
@@ -678,7 +678,7 @@ export default function HealthcarePage() {
       {/* Mobile sticky CTA */}
       <StickyCTA
         link="/launch-your-vision"
-        startingPrice={4950}
+        startingPrice={7500}
         label="Request a Proposal"
       />
 
@@ -692,7 +692,7 @@ export default function HealthcarePage() {
             serviceType: "Healthcare Website Design",
             name: "Medical & Healthcare Website Design Brisbane",
             description:
-              "Websites for healthcare professionals. Patient portals, online booking, privacy compliance, NDIS-ready, telehealth integration, built by a Brisbane team with 25+ years experience. From $4,950.",
+              "Websites for healthcare professionals. Patient portals, online booking, privacy compliance, NDIS-ready, telehealth integration, built by a Brisbane team with 25+ years experience. From $7,500.",
             provider: {
               "@type": "ProfessionalService",
               name: "RAVENCI Solutions",
@@ -715,7 +715,7 @@ export default function HealthcarePage() {
                 {
                   "@type": "Offer",
                   name: "Healthcare Website",
-                  price: "4950",
+                  price: "7500",
                   priceCurrency: "AUD",
                   description:
                     "Custom healthcare website with online booking integration, patient portal, privacy compliance, NDIS-ready features, telehealth, and 85+ PageSpeed score.",

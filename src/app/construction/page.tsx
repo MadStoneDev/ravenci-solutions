@@ -13,13 +13,13 @@ import { getTestimonialsForIndustry } from "@/data/testimonials";
 export const metadata = {
   title: "Construction Websites Brisbane | RAVENCI Solutions",
   description:
-    "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $4,950.",
+    "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $7,500.",
   alternates: { canonical: "/construction" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Construction Websites Brisbane | RAVENCI Solutions",
     description:
-      "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $4,950.",
+      "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $7,500.",
     url: "/construction",
     type: "website",
   },
@@ -262,7 +262,7 @@ export default function ConstructionPage() {
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             RAVENCI Solutions builds websites for construction companies and
-            property developers in Brisbane. From $4,950, we deliver project
+            property developers in Brisbane. From $7,500, we deliver project
             portfolio showcases, lead generation systems, heavy image
             optimisation, QBCC licence display, client progress portals, and
             local SEO that targets high-intent searches. 85+ PageSpeed
@@ -404,7 +404,7 @@ export default function ConstructionPage() {
 
             <div className={`text-white`}>
               <PriceButton
-                price={"4,950"}
+                price={"7,500"}
                 link={`/launch-your-vision`}
                 frequency={""}
                 includeFrom={true}
@@ -658,7 +658,7 @@ export default function ConstructionPage() {
       {/* Mobile sticky CTA */}
       <StickyCTA
         link="/launch-your-vision"
-        startingPrice={4950}
+        startingPrice={7500}
         label="Request a Proposal"
       />
 
@@ -672,7 +672,7 @@ export default function ConstructionPage() {
             serviceType: "Construction Website Design",
             name: "Construction & Property Developer Website Design Brisbane",
             description:
-              "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly design for on-site teams, 85+ PageSpeed guaranteed. From $4,950.",
+              "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly design for on-site teams, 85+ PageSpeed guaranteed. From $7,500.",
             provider: {
               "@type": "ProfessionalService",
               name: "RAVENCI Solutions",
@@ -695,7 +695,7 @@ export default function ConstructionPage() {
                 {
                   "@type": "Offer",
                   name: "Construction Website",
-                  price: "4950",
+                  price: "7500",
                   priceCurrency: "AUD",
                   description:
                     "Custom construction website with project portfolio, lead generation, QBCC licence display, image optimisation, and 85+ PageSpeed score.",

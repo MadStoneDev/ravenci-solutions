@@ -22,6 +22,7 @@ import {
   IconPresentation,
   IconReceiptDollar,
   IconRefresh,
+  IconShoppingCart,
   IconTerminal2,
   IconX,
 } from "@tabler/icons-react";
@@ -48,16 +49,17 @@ export default function MainNavigation() {
   // Functions
   const serviceLinks = [
     { href: "/web-development", label: "Web Development", icon: IconTerminal2 },
+    { href: "/ecommerce", label: "eCommerce", icon: IconShoppingCart },
     { href: "/business-design", label: "Business Design", icon: IconPalette },
     { href: "/seo-and-content", label: "SEO & Content", icon: IconChartLine },
     { href: "/retainer-packages", label: "Retainer Packages", icon: IconRefresh },
   ];
 
   const industryLinks = [
-    { href: "/healthcare", label: "Healthcare Websites", icon: IconHeartbeat },
+    { href: "/healthcare", label: "Healthcare", icon: IconHeartbeat },
     {
       href: "/construction",
-      label: "Construction Websites",
+      label: "Construction",
       icon: IconBuildingSkyscraper,
     },
   ];
@@ -381,7 +383,7 @@ export default function MainNavigation() {
             </Link>
 
             <Link
-              href={`/healthcare`}
+              href={`/ecommerce`}
               className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
                 showMenu ? "opacity-100" : "opacity-0"
               } overflow-hidden transition-all duration-500 ease-in-out`}
@@ -392,35 +394,13 @@ export default function MainNavigation() {
               <div
                 className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
               ></div>
-              <IconHeartbeat
+              <IconShoppingCart
                 className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
               />
               <span
                 className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
               >
-                Healthcare Websites
-              </span>
-            </Link>
-
-            <Link
-              href={`/construction`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconBuildingSkyscraper
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                Construction Websites
+                eCommerce
               </span>
             </Link>
 

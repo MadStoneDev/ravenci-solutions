@@ -43,6 +43,15 @@ export default function MainFooter() {
           </div>
 
           <div className={`group/link relative px-2`}>
+            <Link href={`/ecommerce`} className={`relative z-10`}>
+              eCommerce Development
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
             <Link href={`/business-design`} className={`relative z-10`}>
               Business Design
             </Link>
@@ -63,6 +72,24 @@ export default function MainFooter() {
           <div className={`group/link relative px-2`}>
             <Link href={`/seo-and-content`} className={`relative z-10`}>
               SEO and Content
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
+            <Link href={`/web-apps`} className={`relative z-10`}>
+              Web Apps
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
+            <Link href={`/mobile-apps`} className={`relative z-10`}>
+              Mobile Apps
             </Link>
             <div
               className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
