@@ -10,7 +10,10 @@ import { mdxComponents } from "@/lib/mdx-components";
 import PrintButton from "@/components/print-button";
 
 export function generateStaticParams() {
-  return getAllAuditTokens().map((token) => ({ token }));
+  // Only prerender published audits — drafts must not be reachable.
+  return getAllAuditTokens()
+    .filter((token) => getAuditByToken(token)?.status === "published")
+    .map((token) => ({ token }));
 }
 
 export const dynamicParams = true;
@@ -21,7 +24,7 @@ export async function generateMetadata({
   params: Promise<{ token: string }>;
 }): Promise<Metadata> {
   const audit = getAuditByToken((await params).token);
-  if (!audit) {
+  if (!audit || audit.status !== "published") {
     return { title: "Audit Not Found | RAVENCI Solutions" };
   }
   return {
@@ -53,7 +56,8 @@ export default async function AuditReportPage({
   const { token } = await params;
   const audit = getAuditByToken(token);
 
-  if (!audit) {
+  // Drafts are gated: only published audits render, everything else 404s.
+  if (!audit || audit.status !== "published") {
     notFound();
   }
 

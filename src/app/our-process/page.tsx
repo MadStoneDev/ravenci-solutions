@@ -259,7 +259,7 @@ export default function OurProcessPage() {
               <p
                 className={`text-4xl md:text-5xl font-bold text-ravenci-primary`}
               >
-                450+
+                467
               </p>
               <p className={`mt-2 text-neutral-400`}>Projects Delivered</p>
             </div>
@@ -269,12 +269,12 @@ export default function OurProcessPage() {
               >
                 85+
               </p>
-              <p className={`mt-2 text-neutral-400`}>Average PageSpeed Score</p>
+              <p className={`mt-2 text-neutral-400`}>PageSpeed Guaranteed</p>
             </div>
           </div>
           <p className={`mt-12 max-w-2xl mx-auto text-neutral-400`}>
             A consistent, proven process is why we deliver results every time.
-            not by luck, but by design. Every step exists because two decades of
+            not by luck, but by design. Every step exists because 25+ years of
             experience taught us what works.
           </p>
         </div>

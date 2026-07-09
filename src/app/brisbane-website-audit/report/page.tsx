@@ -267,7 +267,7 @@ export default function BrisbaneAuditReportPage() {
           <h2 className="text-2xl font-medium mb-4">About RAVENCI Solutions</h2>
           <p className="text-sm text-neutral-700 leading-relaxed mb-6">
             RAVENCI Solutions is a Brisbane-based web development and design
-            studio. We&apos;ve delivered over 450 projects for Australian
+            studio. We&apos;ve delivered 467 projects for Australian
             businesses since 2018, building on Custom Next.js, WordPress,
             Shopify, BigCommerce, GoHighLevel, Plasmic and Strapi. As a Shopify
             Partner, BigCommerce Partner, and Synergy Wholesale Partner, we

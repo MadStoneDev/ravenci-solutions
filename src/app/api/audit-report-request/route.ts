@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { Recipient, EmailParams, Sender, MailerSend } from "mailersend";
-import { checkRateLimit, verifyRecaptcha } from "@/lib/api-guards";
+import { checkRateLimit, verifyRecaptcha, escapeHtml } from "@/lib/api-guards";
 import { upsertSubscriber } from "@/lib/mailerlite";
 
 export async function POST(request: Request) {
@@ -76,13 +76,14 @@ export async function POST(request: Request) {
     // 2. Send the lead the report link
     try {
       const firstName = name.split(" ")[0];
+      const safeFirstName = escapeHtml(firstName);
       const baseUrl =
         process.env.NEXT_PUBLIC_BASE_URL ?? "https://ravenci.solutions";
       const reportUrl = `${baseUrl}/brisbane-website-audit/report`;
       const visibilityCheckUrl = `${baseUrl}/free-audit`;
 
       const html = `
-        <p>Hi ${firstName},</p>
+        <p>Hi ${safeFirstName},</p>
         <p>Here's the full Brisbane Business Website Audit 2026:</p>
         <p>
           <a href="${reportUrl}"

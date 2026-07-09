@@ -81,7 +81,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>450+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>467</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Projects Delivered
             </p>

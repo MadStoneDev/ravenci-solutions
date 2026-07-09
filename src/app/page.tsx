@@ -60,8 +60,8 @@ export default function Home() {
           <h2
             className={`mt-8 max-w-[600px] text-lg md:text-xl font-light text-neutral-400`}
           >
-            Structural engineer by training, web developer for twenty-five
-            years. 450+ projects for established Australian businesses
+            Structural engineer by training, web developer for 25+ years.
+            467 projects for established Australian businesses
             — built properly, still working in five years.
           </h2>
 
@@ -255,7 +255,7 @@ export default function Home() {
           }}
         >
           <p>
-            After 25 years building websites for Australian businesses, I&apos;ve
+            After 25+ years building websites for Australian businesses, I&apos;ve
             learned that the easy part is launch day. The hard part is the next five
             years.
           </p>

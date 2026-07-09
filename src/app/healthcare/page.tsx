@@ -194,9 +194,9 @@ const faqItems = [
   {
     title: "Do you provide ongoing support after launch?",
     summary:
-      "Yes. All healthcare websites include 30 days of post-launch support. Ongoing maintenance and retainer packages are available from $275/month for continued updates, security monitoring, and content changes.",
+      "Yes. All healthcare websites include 30 days of post-launch support. Ongoing maintenance and retainer packages are available from $350/month for continued updates, security monitoring, and content changes.",
     content:
-      "Every project includes 30 days of post-launch support for bug fixes and adjustments. After that, our retainer packages start at $275/month and cover hosting, security monitoring, CMS updates, and minor content changes. Most healthcare clients opt for ongoing support since compliance requirements and practice information change regularly.",
+      "Every project includes 30 days of post-launch support for bug fixes and adjustments. After that, our retainer packages start at $350/month and cover hosting, security monitoring, CMS updates, and minor content changes. Most healthcare clients opt for ongoing support since compliance requirements and practice information change regularly.",
   },
   {
     title: "Can patients fill out forms online before their appointment?",
@@ -303,7 +303,7 @@ export default function HealthcarePage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>450+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>467</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Projects Delivered
             </p>

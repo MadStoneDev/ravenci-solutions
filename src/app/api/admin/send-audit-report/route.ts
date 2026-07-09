@@ -1,8 +1,17 @@
 import { NextResponse } from "next/server";
+import { timingSafeEqual } from "crypto";
 import { Recipient, EmailParams, Sender, MailerSend } from "mailersend";
 import { getAuditByToken } from "@/lib/audits";
 import { escapeHtml } from "@/lib/api-guards";
 import { upsertSubscriber } from "@/lib/mailerlite";
+
+// Length-safe, constant-time string compare for the admin token.
+function safeEqual(a: string, b: string): boolean {
+  const bufA = Buffer.from(a);
+  const bufB = Buffer.from(b);
+  if (bufA.length !== bufB.length) return false;
+  return timingSafeEqual(bufA, bufB);
+}
 
 // Triggers the report-delivery email for a given audit token. Protected by
 // ADMIN_API_TOKEN so it can't be hit by the public. The eventual admin UI
@@ -16,7 +25,7 @@ import { upsertSubscriber } from "@/lib/mailerlite";
 export async function POST(request: Request) {
   const adminToken = process.env.ADMIN_API_TOKEN;
   const presented = request.headers.get("x-admin-token");
-  if (!adminToken || presented !== adminToken) {
+  if (!adminToken || !presented || !safeEqual(presented, adminToken)) {
     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
   }
 

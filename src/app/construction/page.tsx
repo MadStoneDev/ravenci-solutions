@@ -209,9 +209,9 @@ const faqItems = [
   {
     title: "Do you provide ongoing support after launch?",
     summary:
-      "Yes. All construction websites include 30 days of post-launch support. Ongoing retainer packages from $275/month cover hosting, security, portfolio updates, and SEO.",
+      "Yes. All construction websites include 30 days of post-launch support. Ongoing retainer packages from $350/month cover hosting, security, and portfolio updates.",
     content:
-      "Every project includes 30 days of post-launch support for bug fixes and adjustments. After that, our retainer packages start at $275/month covering hosting, security monitoring, CMS updates, and minor content changes. Most construction clients use the retainer hours for adding new project case studies and seasonal content updates.",
+      "Every project includes 30 days of post-launch support for bug fixes and adjustments. After that, our retainer packages start at $350/month covering hosting, security monitoring, CMS updates, and minor content changes. Most construction clients use the retainer hours for adding new project case studies and seasonal content updates.",
   },
 ];
 
@@ -291,7 +291,7 @@ export default function ConstructionPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>450+</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>467</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Projects Delivered
             </p>
@@ -299,7 +299,7 @@ export default function ConstructionPage() {
           <div>
             <p className={`text-4xl md:text-5xl font-bold`}>85+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
-              PageSpeed Score
+              PageSpeed Guaranteed
             </p>
           </div>
         </div>

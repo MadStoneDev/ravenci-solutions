@@ -55,6 +55,9 @@ export async function upsertSubscriber(
         Accept: "application/json",
       },
       body: JSON.stringify(body),
+      // MailerLite is best-effort and awaited before the route responds — cap
+      // it so a hung MailerLite endpoint can't stall the user's request.
+      signal: AbortSignal.timeout(5000),
     });
 
     if (!res.ok) {
