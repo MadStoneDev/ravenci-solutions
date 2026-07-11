@@ -6,7 +6,8 @@
     "dev": "next dev --port 3377",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "indexnow": "node scripts/indexnow-submit.js"
   },
   "dependencies": {
     "@microsoft/clarity": "^1.0.0",
