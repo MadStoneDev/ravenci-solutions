@@ -9,15 +9,15 @@ import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
-  title: "Web Development | RAVENCI Solutions",
+  title: "Custom Website Design Brisbane, Built to Last | RAVENCI",
   description:
-    "Custom web development in Brisbane. Modern, responsive websites and eCommerce platforms built for performance and designed to convert visitors into customers.",
+    "Custom websites for established Brisbane businesses — fast, owned by you, still working in five years. No templates, no plugin clutter. From $7,500.",
   alternates: { canonical: "/web-development" },
   openGraph: {
     ...OG_DEFAULTS,
-    title: "Web Development | RAVENCI Solutions",
+    title: "Custom Website Design Brisbane, Built to Last | RAVENCI",
     description:
-      "Custom web development in Brisbane. Modern, responsive websites and eCommerce platforms built for performance and designed to convert visitors into customers.",
+      "Custom websites for established Brisbane businesses — fast, owned by you, still working in five years. No templates, no plugin clutter. From $7,500.",
     url: "/web-development",
     type: "website",
   },
@@ -145,7 +145,7 @@ export default function WebHostingDevelopmentPage() {
               {
                 "@type": "ListItem",
                 position: 2,
-                name: "Web Development",
+                name: "Website Design",
                 item: "https://ravenci.solutions/web-development",
               },
             ],
@@ -158,14 +158,15 @@ export default function WebHostingDevelopmentPage() {
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
         <article className={`col-span-12 flex flex-col`}>
-          <Breadcrumbs items={[{ label: "Web Development" }]} />
+          <Breadcrumbs items={[{ label: "Website Design" }]} />
           <h1 className={`mt-4 text-4xl md:text-5xl lg:text-h1 font-medium`}>
-            Build it Right From the Get-Go!
+            Custom websites, designed and built to last
           </h1>
           <h2
             className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
           >
-            Professional websites that convert visitors into customers
+            One senior developer designs it around your business and
+            hand-builds it — the whole website, not just the look.
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             For established Australian businesses ready to replace the site
@@ -175,6 +176,23 @@ export default function WebHostingDevelopmentPage() {
             websites from $7,500, eCommerce platforms from $12,000, plus
             ongoing support. Brisbane-based. 25+ years.
           </p>
+          <div
+            className={`mt-6 max-w-2xl flex flex-col gap-2 text-sm text-neutral-500/80`}
+          >
+            <p>
+              <span className={`font-semibold text-ravenci-dark`}>
+                Design + build
+              </span>{" "}
+              — I handle the whole thing, look and code. Most projects.
+            </p>
+            <p>
+              <span className={`font-semibold text-ravenci-dark`}>
+                Build from your design
+              </span>{" "}
+              — already have a designer or agency? I build it exactly to spec.
+              It&apos;s how I work with studios like The Design Order.
+            </p>
+          </div>
         </article>
       </section>
 
@@ -572,7 +590,7 @@ export default function WebHostingDevelopmentPage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
             { name: "Retainer Packages", href: "/retainer-packages", description: "Ongoing care, hosting, and development" },
-            { name: "Business Design", href: "/business-design", description: "Brand identity and visual design" },
+            { name: "Branding", href: "/business-design", description: "Brand identity and visual design" },
             { name: "SEO & Content", href: "/seo-and-content", description: "Get found by the right customers" },
           ].map((service) => (
             <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
@@ -587,7 +605,7 @@ export default function WebHostingDevelopmentPage() {
       <section
         className={`content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white`}
       >
-        <h2 className={`font-serif text-h3`}>Development Questions Answered</h2>
+        <h2 className={`font-serif text-h3`}>Common Website Questions</h2>
         <Accordion
           titleClassName={`py-6 text-lg`}
           items={[
@@ -638,10 +656,10 @@ export default function WebHostingDevelopmentPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            serviceType: "Web Development",
-            name: "Website Development",
+            serviceType: "Website Design & Development",
+            name: "Custom Website Design & Development",
             description:
-              "Custom web development in Brisbane. Modern, responsive websites and eCommerce platforms built for performance and designed to convert visitors into customers.",
+              "Custom websites for established Brisbane businesses — fast, owned by you, still working in five years. No templates, no plugin clutter. From $7,500.",
             provider: {
               "@type": "ProfessionalService",
               name: "RAVENCI Solutions",
@@ -659,7 +677,7 @@ export default function WebHostingDevelopmentPage() {
             },
             hasOfferCatalog: {
               "@type": "OfferCatalog",
-              name: "Web Development Packages",
+              name: "Website Design Packages",
               itemListElement: [
                 {
                   "@type": "Offer",

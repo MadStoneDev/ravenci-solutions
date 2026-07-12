@@ -35,7 +35,7 @@ export default function MainFooter() {
         >
           <div className={`group/link relative px-2`}>
             <Link href={`/web-development`} className={`relative z-10`}>
-              Business Website Development
+              Website Design
             </Link>
             <div
               className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
@@ -53,7 +53,7 @@ export default function MainFooter() {
 
           <div className={`group/link relative px-2`}>
             <Link href={`/business-design`} className={`relative z-10`}>
-              Business Design
+              Branding
             </Link>
             <div
               className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}

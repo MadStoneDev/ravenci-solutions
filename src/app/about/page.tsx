@@ -347,7 +347,7 @@ export default function AboutPage() {
               },
               areaServed: "Australia",
               description:
-                "A founder-led web development studio building high-performance websites for Australian businesses.",
+                "A founder-led website design and development studio building high-performance websites for Australian businesses.",
             },
           }),
         }}
@@ -366,7 +366,7 @@ export default function AboutPage() {
               url: "https://ravenci.solutions",
             },
             knowsAbout: [
-              "Web Development",
+              "Web Design and Development",
               "Next.js",
               "React",
               "WordPress",

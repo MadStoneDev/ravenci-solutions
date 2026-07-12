@@ -535,12 +535,12 @@ export default function SEOContentPage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
             {
-              name: "Web Development",
+              name: "Website Design",
               href: "/web-development",
               description: "Websites built for search from day one",
             },
             {
-              name: "Business Design",
+              name: "Branding",
               href: "/business-design",
               description: "Branding that builds trust",
             },

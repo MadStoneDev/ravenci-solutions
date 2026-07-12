@@ -424,7 +424,7 @@ export default function WebHostingPage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
             { name: "Website Maintenance", href: "/website-maintenance", description: "Keep your site secure and up to date" },
-            { name: "Web Development", href: "/web-development", description: "Custom websites built to perform" },
+            { name: "Website Design", href: "/web-development", description: "Custom websites built to perform" },
             { name: "Retainer Packages", href: "/retainer-packages", description: "Ongoing development and support" },
           ].map((service) => (
             <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">

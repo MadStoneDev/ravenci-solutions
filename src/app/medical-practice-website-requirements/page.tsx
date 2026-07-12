@@ -502,7 +502,7 @@ export default function MedicalPracticeRequirementsPage() {
               href="/healthcare"
               className="px-6 py-3 grid place-content-center bg-ravenci-dark rounded-full text-white hover:bg-ravenci-primary transition-colors duration-300"
             >
-              See Healthcare Web Development
+              See Healthcare Website Design
             </Link>
             <Link
               href="/launch-your-vision"

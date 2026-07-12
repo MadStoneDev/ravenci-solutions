@@ -599,7 +599,7 @@ export default function PlatformComparisonPage() {
               href="/web-development"
               className="px-6 py-3 grid place-content-center border-2 border-ravenci-dark rounded-full text-ravenci-dark hover:bg-ravenci-dark hover:text-white transition-colors duration-300"
             >
-              See Web Development Packages
+              See Website Design Packages
             </Link>
           </div>
         </div>

@@ -375,7 +375,7 @@ export default function MobileAppDevelopmentPage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
             { name: "Web Apps", href: "/web-apps", description: "Custom web applications" },
-            { name: "Web Development", href: "/web-development", description: "Websites and platforms" },
+            { name: "Website Design", href: "/web-development", description: "Websites and platforms" },
             { name: "Retainer Packages", href: "/retainer-packages", description: "Ongoing development and support" },
           ].map((service) => (
             <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">

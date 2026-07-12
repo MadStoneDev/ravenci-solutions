@@ -465,7 +465,7 @@ export default function WebMaintenancePage() {
               description: "Fast, reliable cloud hosting",
             },
             {
-              name: "Web Development",
+              name: "Website Design",
               href: "/web-development",
               description: "Custom websites built to perform",
             },

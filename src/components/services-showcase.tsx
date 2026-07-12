@@ -23,7 +23,7 @@ interface ServiceItem {
 export default function ServicesShowcase() {
   const ourServices: ServiceItem[] = [
     {
-      title: "Business Website Development",
+      title: "Website Design",
       projectsTopRow: [
         {
           name: "Peninsula Homes",

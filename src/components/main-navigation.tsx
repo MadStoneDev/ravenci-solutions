@@ -48,9 +48,9 @@ export default function MainNavigation() {
 
   // Functions
   const serviceLinks = [
-    { href: "/web-development", label: "Web Development", icon: IconTerminal2 },
+    { href: "/web-development", label: "Website Design", icon: IconTerminal2 },
     { href: "/ecommerce", label: "eCommerce", icon: IconShoppingCart },
-    { href: "/business-design", label: "Business Design", icon: IconPalette },
+    { href: "/business-design", label: "Branding", icon: IconPalette },
     { href: "/seo-and-content", label: "SEO & Content", icon: IconChartLine },
     { href: "/retainer-packages", label: "Retainer Packages", icon: IconRefresh },
   ];
@@ -290,7 +290,7 @@ export default function MainNavigation() {
               <span
                 className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
               >
-                Web Development
+                Website Design
               </span>
             </Link>
 
@@ -312,7 +312,7 @@ export default function MainNavigation() {
               <span
                 className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
               >
-                Business Design
+                Branding
               </span>
             </Link>
 

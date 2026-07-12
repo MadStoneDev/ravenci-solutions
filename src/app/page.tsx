@@ -20,12 +20,12 @@ import ServicesShowcase from "@/components/services-showcase";
 import PlatformsSection from "@/components/platforms-section";
 
 export const metadata = {
-  title: "Custom Web Development Brisbane | RAVENCI Solutions",
+  title: "Custom Website Design Brisbane | RAVENCI Solutions",
   description: "Custom websites and eCommerce platforms for established Australian businesses. A structural engineer's approach to web development — built properly, still working in five years. Brisbane-based, 25+ years experience.",
   alternates: { canonical: "/" },
   openGraph: {
     ...OG_DEFAULTS,
-    title: "Custom Web Development Brisbane | RAVENCI Solutions",
+    title: "Custom Website Design Brisbane | RAVENCI Solutions",
     description: "Custom websites and eCommerce platforms for established Australian businesses. A structural engineer's approach to web development — built properly, still working in five years.",
     url: "/",
     type: "website",
@@ -444,9 +444,9 @@ export default function Home() {
             "@type": "ItemList",
             name: "RAVENCI Solutions Services",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Web Development", url: "https://ravenci.solutions/web-development" },
+              { "@type": "ListItem", position: 1, name: "Website Design", url: "https://ravenci.solutions/web-development" },
               { "@type": "ListItem", position: 2, name: "eCommerce", url: "https://ravenci.solutions/ecommerce" },
-              { "@type": "ListItem", position: 3, name: "Business Design", url: "https://ravenci.solutions/business-design" },
+              { "@type": "ListItem", position: 3, name: "Branding", url: "https://ravenci.solutions/business-design" },
               { "@type": "ListItem", position: 4, name: "SEO & Content", url: "https://ravenci.solutions/seo-and-content" },
               { "@type": "ListItem", position: 5, name: "Retainer Packages", url: "https://ravenci.solutions/retainer-packages" },
             ],

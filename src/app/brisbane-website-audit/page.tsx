@@ -312,7 +312,7 @@ export default function BrisbaneWebsiteAuditPage() {
             href="/web-development"
             className="group relative px-8 py-3 grid place-content-center border border-neutral-600 rounded-full text-neutral-300 hover:text-white hover:border-white transition-all duration-300 ease-in-out"
           >
-            See Our Web Development Packages
+            See Our Website Design Packages
           </Link>
         </div>
       </section>

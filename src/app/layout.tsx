@@ -101,7 +101,7 @@ export default function RootLayout({
     serviceType: [
       "Web Development",
       "Website Design",
-      "Business Design",
+      "Branding",
       "Web Hosting",
       "Website Maintenance",
       "SEO",

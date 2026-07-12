@@ -9,13 +9,13 @@ import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
 
 export const metadata = {
-  title: "Business Design | RAVENCI Solutions",
+  title: "Branding & Brand Identity Brisbane | RAVENCI",
   description:
     "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems for established businesses.",
   alternates: { canonical: "/business-design" },
   openGraph: {
     ...OG_DEFAULTS,
-    title: "Business Design | RAVENCI Solutions",
+    title: "Branding & Brand Identity Brisbane | RAVENCI",
     description:
       "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems for established businesses.",
     url: "/business-design",
@@ -136,7 +136,7 @@ export default function BusinessDesignPage() {
               {
                 "@type": "ListItem",
                 position: 2,
-                name: "Business Design",
+                name: "Branding",
                 item: "https://ravenci.solutions/business-design",
               },
             ],
@@ -149,7 +149,7 @@ export default function BusinessDesignPage() {
         className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
       >
         <article className={`col-span-12 flex flex-col`}>
-          <Breadcrumbs items={[{ label: "Business Design" }]} />
+          <Breadcrumbs items={[{ label: "Branding" }]} />
           <h1 className={`mt-4 text-4xl md:text-5xl lg:text-h1 font-medium`}>
             Professional Branding That Builds Trust
           </h1>
@@ -554,7 +554,7 @@ export default function BusinessDesignPage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
             {
-              name: "Web Development",
+              name: "Website Design",
               href: "/web-development",
               description: "Bring your brand online",
             },
@@ -638,8 +638,8 @@ export default function BusinessDesignPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            serviceType: "Business Design",
-            name: "Business Design",
+            serviceType: "Branding",
+            name: "Branding & Brand Identity",
             description:
               "Professional branding and graphic design in Brisbane. From logo and guidelines to full brand identity systems for established businesses.",
             provider: {
@@ -659,7 +659,7 @@ export default function BusinessDesignPage() {
             },
             hasOfferCatalog: {
               "@type": "OfferCatalog",
-              name: "Business Design Packages",
+              name: "Branding Packages",
               itemListElement: [
                 {
                   "@type": "Offer",
