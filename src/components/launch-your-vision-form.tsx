@@ -4,6 +4,7 @@ import { sendGTMEvent } from "@next/third-parties/google";
 import { useEffect, useRef, useState } from "react";
 
 import { sendContactForm } from "@/lib/send-contact-form";
+import { trackLead } from "@/lib/analytics";
 
 export default function LaunchYourVisionForm() {
   // States
@@ -67,6 +68,7 @@ export default function LaunchYourVisionForm() {
         status: "success",
       });
 
+      trackLead("launch-your-vision");
       setSubmitStatus("success");
       // Handle success (e.g., show success message, reset form)
     } catch (error) {

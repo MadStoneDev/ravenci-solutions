@@ -4,6 +4,8 @@ import { useState, useCallback } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { IconSearch, IconCheck } from "@tabler/icons-react";
 
+import { trackLead } from "@/lib/analytics";
+
 export default function VisibilityCheckForm() {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -40,6 +42,7 @@ export default function VisibilityCheckForm() {
           throw new Error(data.message || "Something went wrong");
         }
 
+        trackLead("visibility-check");
         setStatus("success");
         setFormData({
           name: "",
