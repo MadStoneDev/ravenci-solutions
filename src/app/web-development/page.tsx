@@ -417,7 +417,7 @@ export default function WebHostingDevelopmentPage() {
               name: "1. Business Website",
               price: "7,500",
               description:
-                "A professional online presence with a CMS and CRM to manage your leads. Clean, modern, built for performance, and designed to get out of your way.",
+                "For the established business whose site should look as credible as they are. A custom site that captures enquiries, that you can update yourself, and that's still fast in five years.",
               accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Custom responsive design (up to 5 pages)</li>
@@ -437,7 +437,7 @@ export default function WebHostingDevelopmentPage() {
               name: "2. Custom Website",
               price: "9,500",
               description:
-                "For businesses with specific requirements that off-the-shelf won't cover. Custom design and development built around how your business actually works.",
+                "For businesses that need the site to do something specific — integrations, bespoke flows, features off-the-shelf won't cover — built around how you actually work, without a stack of plugins to maintain.",
               accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Fully custom design and development</li>
@@ -457,7 +457,7 @@ export default function WebHostingDevelopmentPage() {
               name: "3. eCommerce",
               price: "12,000",
               description:
-                "A professionally built Shopify or BigCommerce store. Custom theme, product catalogue setup, and integrations tailored to your operations.",
+                "For product businesses that want a store built to sell and to last. The right platform for your products, a custom theme, and no tower of app subscriptions dragging every page down.",
               accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Shopify or BigCommerce setup</li>
@@ -477,7 +477,7 @@ export default function WebHostingDevelopmentPage() {
               name: "4. Custom eCommerce",
               price: "Scope to fit",
               description:
-                "For complex eCommerce requirements: large catalogues, custom filtering, multi-channel, ERP integrations, or advanced product configurations.",
+                "For stores with real complexity — large catalogues, custom filtering, multi-channel, ERP integrations. We scope it to exactly what the business needs, nothing it doesn't.",
               accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Everything in eCommerce, plus:</li>
@@ -537,6 +537,14 @@ export default function WebHostingDevelopmentPage() {
             $12,000 eCommerce build with direct sales, the returns compound
             from day one. Most businesses see far more than one lead a month
             from a site that actually ranks and converts.
+          </p>
+          <p>
+            The cheaper quote usually isn&apos;t. A budget template built on a
+            stack of plugins tends to slow down, break, or need replacing
+            within a couple of years — so you pay once for the site and again
+            for the rebuild. Built properly the first time, with no plugin
+            clutter to rot, a site is still doing its job in five years.
+            That&apos;s the difference you&apos;re paying for.
           </p>
           <p>
             The real question isn&apos;t &ldquo;can I afford a proper
