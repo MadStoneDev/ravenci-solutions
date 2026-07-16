@@ -435,7 +435,7 @@ export default function WebHostingDevelopmentPage() {
             },
             {
               name: "2. Custom Website",
-              price: "9,500",
+              price: "10,000",
               description:
                 "For businesses that need the site to do something specific — integrations, bespoke flows, features off-the-shelf won't cover — built around how you actually work, without a stack of plugins to maintain.",
               accordionContent: `
@@ -475,7 +475,7 @@ export default function WebHostingDevelopmentPage() {
             },
             {
               name: "4. Custom eCommerce",
-              price: "Scope to fit",
+              price: "18,000",
               description:
                 "For stores with real complexity — large catalogues, custom filtering, multi-channel, ERP integrations. We scope it to exactly what the business needs, nothing it doesn't.",
               accordionContent: `
@@ -698,7 +698,7 @@ export default function WebHostingDevelopmentPage() {
                 {
                   "@type": "Offer",
                   name: "Custom Website",
-                  price: "9500",
+                  price: "10000",
                   priceCurrency: "AUD",
                   description:
                     "Fully custom design and development up to 12 pages with brand identity, advanced CMS, integrations, and structured data. 6-8 weeks delivery.",

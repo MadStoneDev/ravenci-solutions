@@ -282,7 +282,7 @@ export default function EcommercePage() {
             },
             {
               name: "2. Custom eCommerce",
-              price: "Scope to fit",
+              price: "18,000",
               description:
                 "For complex eCommerce requirements: large catalogues, custom filtering, multi-channel, ERP integrations, or advanced product configurations.",
               accordionContent: `

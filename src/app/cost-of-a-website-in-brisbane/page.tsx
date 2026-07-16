@@ -497,7 +497,7 @@ export default function BrisbaneWebsiteCostPage() {
               business sites through to fully custom eCommerce platforms. Our
               Business Website starts at <strong>$7,500</strong> with CMS and
               CRM included, Custom Websites from{" "}
-              <strong>$9,500</strong>, and eCommerce platforms from{" "}
+              <strong>$10,000</strong>, and eCommerce platforms from{" "}
               <strong>$12,000</strong> for businesses needing a professional
               online store.
             </p>
