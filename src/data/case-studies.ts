@@ -522,9 +522,9 @@ export const CASE_STUDIES: CaseStudy[] = [
         "Peninsula's team adds new projects and updates as required, and the build was engineered so those changes don't break anything. We maintain it monthly. Two years in, it's still doing exactly what it was built to do: letting the work do the talking.",
       ],
       metrics: [
-        { value: "94", label: "PageSpeed Performance" },
-        { value: "96", label: "Best Practices" },
-        { value: "0.8s", label: "Largest Contentful Paint" },
+        { value: "2 yrs", label: "Live, zero rebuilds" },
+        { value: "94", label: "PageSpeed, held since launch" },
+        { value: "0.8s", label: "LCP, unchanged" },
       ],
     },
     galleryImages: [
