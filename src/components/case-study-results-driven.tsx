@@ -87,7 +87,7 @@ export default function CaseStudyResultsDriven({
       {/* Problem + Approach */}
       <section className={`content-section grid grid-cols-1 lg:grid-cols-2`}>
         {/* Problem — light */}
-        <div className={`py-20 px-5 sm:px-12 xl:px-20 bg-neutral-200/50`}>
+        <div className={`py-20 px-5 sm:px-12 xl:px-20 bg-neutral-50`}>
           <h2 className={`text-3xl font-medium text-ravenci-dark`}>
             {caseStudy.problem.heading}
           </h2>
@@ -160,7 +160,7 @@ export default function CaseStudyResultsDriven({
       {/* Gallery */}
       {caseStudy.galleryImages && caseStudy.galleryImages.length > 0 && (
         <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-200/50`}
+          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
         >
           <div className={`grid grid-cols-1 md:grid-cols-2 gap-6`}>
             {caseStudy.galleryImages.map((img, i) => (

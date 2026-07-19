@@ -164,7 +164,7 @@ export default function MobileAppDevelopmentPage() {
       </section>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 bg-white">
-        <section className="content-section py-20 px-5 sm:px-20 xl:px-36 space-y-14 bg-neutral-200/50">
+        <section className="content-section py-20 px-5 sm:px-20 xl:px-36 space-y-14 bg-neutral-50">
           <article className="max-w-lg">
             <h2 className="mb-8 font-serif text-h3 font-bold">
               What you get with Mobile App Development

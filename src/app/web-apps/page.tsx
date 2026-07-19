@@ -128,7 +128,7 @@ export default function WebAppPage() {
 
       <div className={`grid grid-cols-1 lg:grid-cols-2 bg-white`}>
         <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-200/50`}
+          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
         >
           <article className={`max-w-lg`}>
             <h2 className={`mb-8 font-serif text-h3 font-bold`}>

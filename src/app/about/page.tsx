@@ -99,7 +99,7 @@ export default function AboutPage() {
       <div className={`grid grid-cols-1 lg:grid-cols-2 bg-white`}>
         {/* Left: Photo Placeholder */}
         <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 flex items-center justify-center bg-neutral-200/50`}
+          className={`content-section py-20 px-5 sm:px-20 xl:px-36 flex items-center justify-center bg-neutral-50`}
         >
           <div
             className={`w-full max-w-sm flex flex-col items-center justify-center gap-4`}

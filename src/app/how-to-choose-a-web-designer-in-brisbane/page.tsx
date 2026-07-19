@@ -362,7 +362,7 @@ export default function HowToChooseWebDesignerPage() {
       </section>
 
       {/* Red flags / Green flags */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-200/50">
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
         <h3 className="mb-10 font-serif text-h3 font-bold">
           Red Flags &amp; Green Flags
         </h3>
@@ -481,7 +481,7 @@ export default function HowToChooseWebDesignerPage() {
       </section>
 
       {/* Cross-link CTAs */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-200/50">
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
         <div className="max-w-3xl">
           <h3 className="mb-6 font-serif text-h3 font-bold">
             Read Next

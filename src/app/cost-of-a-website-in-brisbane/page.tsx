@@ -348,7 +348,7 @@ export default function BrisbaneWebsiteCostPage() {
       </section>
 
       {/* Pricing tiers */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-200/50">
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
         <h3 className="mb-4 font-serif text-h3 font-bold">
           The Five Pricing Tiers, Honestly Compared
         </h3>
@@ -486,7 +486,7 @@ export default function BrisbaneWebsiteCostPage() {
       </section>
 
       {/* RAVENCI positioning */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-200/50">
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
         <div className="max-w-3xl">
           <h3 className="mb-6 font-serif text-h3 font-bold">
             Where RAVENCI Fits in This Market

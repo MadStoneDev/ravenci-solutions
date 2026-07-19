@@ -144,7 +144,7 @@ export default function CaseStudyVisualShowcase({
       {/* Gallery */}
       {caseStudy.galleryImages && caseStudy.galleryImages.length > 0 && (
         <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-200/50`}
+          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
         >
           <div
             className={`grid grid-cols-1 ${caseStudy.galleryImages.length > 1 ? "md:grid-cols-2" : ""} gap-6`}

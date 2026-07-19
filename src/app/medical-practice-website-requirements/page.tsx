@@ -342,7 +342,7 @@ export default function MedicalPracticeRequirementsPage() {
       </section>
 
       {/* Privacy essentials */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-200/50">
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
         <h3 className="mb-4 font-serif text-h3 font-bold">
           Privacy Act &amp; Patient Data Handling
         </h3>
@@ -432,7 +432,7 @@ export default function MedicalPracticeRequirementsPage() {
       </section>
 
       {/* Common mistakes */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-200/50">
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
         <h3 className="mb-4 font-serif text-h3 font-bold">
           Six Common Mistakes on Australian Practice Websites
         </h3>
