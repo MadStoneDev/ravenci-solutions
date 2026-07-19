@@ -8,7 +8,7 @@ export interface AuditStat {
   stat: string;
   label: string;
   severity: "critical" | "warning";
-  /** Short RAVENCI counterpoint shown below the stat — e.g. "RAVENCI: 100% have SSL". */
+  /** Short RAVENCI counterpoint shown below the stat, e.g. "RAVENCI: 100% have SSL". */
   ravenciCounter?: string;
   /** Optional plain-English explanation of how RAVENCI achieves the counter. */
   ravenciCounterNote?: string;

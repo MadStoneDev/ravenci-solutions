@@ -37,7 +37,7 @@ export interface CaseStudyCollaborator {
 export interface CaseStudyFeature {
   title: string; // "Portfolio Showcase System"
   description: string; // what this feature does and why
-  image?: string; // single screenshot/video — supports .png/.jpg/.gif/.mp4/.webm
+  image?: string; // single screenshot/video, supports .png/.jpg/.gif/.mp4/.webm
   /**
    * If true, every non-video item in this feature renders with the
    * auto-scrolling ScrollingScreenshot component instead of a static
@@ -60,7 +60,7 @@ export interface CaseStudy {
   cardImage?: string; // smaller thumbnail for listing grid (falls back to featuredImage)
   /**
    * If true, the featured image is rendered with the ScrollingScreenshot
-   * component — it auto-scrolls top → bottom → top inside the existing
+   * component, it auto-scrolls top → bottom → top inside the existing
    * featured-image frame. Use this when `featuredImage` is a full-length
    * page screenshot rather than a cropped hero shot.
    */
@@ -88,7 +88,7 @@ export interface CaseStudy {
   /**
    * Excludes the case study from public listings (case studies index,
    * homepage related, sitemap, related-case-studies on detail pages).
-   * The detail page itself still works on direct URL — useful for
+   * The detail page itself still works on direct URL, useful for
    * sharing a draft with the client before publishing.
    */
   hidden?: boolean;
@@ -99,7 +99,7 @@ export interface CaseStudy {
     paragraphs: string[];
     image?: string;
     images?: string[]; // multiple screenshots (premium template)
-    /** Optional badge overlaid on the image — e.g. "Old Site" / "Before" */
+    /** Optional badge overlaid on the image, e.g. "Old Site" / "Before" */
     imageLabel?: string;
   };
   approach: {
@@ -108,7 +108,7 @@ export interface CaseStudy {
     highlights?: string[];
     image?: string;
     images?: string[]; // multiple screenshots (premium template)
-    /** Optional badge overlaid on the image — e.g. "PageSpeed Result" */
+    /** Optional badge overlaid on the image, e.g. "PageSpeed Result" */
     imageLabel?: string;
   };
   results: {
@@ -118,7 +118,7 @@ export interface CaseStudy {
     images?: string[]; // optional results screenshots (premium template)
   };
 
-  // Feature spotlights — 2-4 key features called out individually
+  // Feature spotlights, 2-4 key features called out individually
   features?: CaseStudyFeature[];
 
   testimonial?: { content: string; author: string; role?: string };
@@ -600,7 +600,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       images: [
         "/showcase-images/covenant-security-solutions/covenant-security-solutions-moodboard.jpg",
         "/showcase-images/covenant-security-solutions/covenant-security-solutions-business-cards.jpg",
-        "coming-soon", // Stationery — letterhead / invoice / envelope shot
+        "coming-soon", // Stationery, letterhead / invoice / envelope shot
       ],
     },
     features: [
@@ -609,7 +609,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         description:
           "Security is sold on trust, and trust starts with how a company looks before anyone has spoken to you. We built the identity around credibility: confident gold against charcoal, strong typographic hierarchy, photography of the actual work and not stock. The same language carries across every touchpoint: van, jobsite window sticker, business card, website, welcome pack.",
         images: [
-          "coming-soon", // Vehicle decals — van with Covenant decals
+          "coming-soon", // Vehicle decals, van with Covenant decals
           "coming-soon", // Window sticker on a finished install
         ],
       },
@@ -641,8 +641,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         description:
           "Once a system goes in, the customer needs to use it. We designed printed welcome guides (system overview, walkthrough, who to call when something needs attention) that get handed over at install. Same brand, same finish as everything else they touch. The handover doesn't feel done until the customer feels confident.",
         images: [
-          "coming-soon", // Welcome pack cover — printed pack front
-          "coming-soon", // Welcome pack interior spread — open page
+          "coming-soon", // Welcome pack cover, printed pack front
+          "coming-soon", // Welcome pack interior spread, open page
           "coming-soon", // Printed design guide cover or spread
         ],
       },
@@ -1074,7 +1074,7 @@ export function getRelatedCaseStudies(
   if (!current) return [];
 
   // Prefer same industry, then same services, then featured.
-  // Hidden case studies never appear in related — even if the visitor
+  // Hidden case studies never appear in related, even if the visitor
   // lands on a hidden case study via direct URL.
   const others = CASE_STUDIES.filter(
     (cs) => cs.slug !== currentSlug && !cs.hidden,

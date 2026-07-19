@@ -95,7 +95,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section 3: The Story — Two Column */}
+      {/* Section 3: The Story, Two Column */}
       <div className={`grid grid-cols-1 lg:grid-cols-2 bg-white`}>
         {/* Left: Photo Placeholder */}
         <section

@@ -8,7 +8,7 @@ interface ScrollingScreenshotProps {
   alt: string;
   /** Total animation cycle in seconds. Default 60 (slow enough to read comfortably). */
   duration?: number;
-  /** Optional className for the outer container — used to control aspect ratio. */
+  /** Optional className for the outer container, used to control aspect ratio. */
   className?: string;
 }
 

@@ -172,7 +172,7 @@ export default function FreeAuditPage() {
         </div>
       </section>
 
-      {/* Form — pulled high on the page so the action is immediate */}
+      {/* Form, pulled high on the page so the action is immediate */}
       <section
         id="audit-form"
         className="content-section pt-12 pb-20 md:pb-24 px-5 sm:px-20 xl:px-36 bg-neutral-100"
@@ -228,7 +228,7 @@ export default function FreeAuditPage() {
         </div>
       </section>
 
-      {/* Why it matters — the data */}
+      {/* Why it matters, the data */}
       <section className="content-section py-20 md:py-24 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white">
         <div className="max-w-3xl mb-10">
           <span className="block mb-3 text-xs font-medium tracking-widest uppercase text-white/70">

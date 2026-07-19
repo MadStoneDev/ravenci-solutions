@@ -114,7 +114,7 @@ export async function POST(request: Request) {
       await mailerSend.email.send(adminParams);
     } catch (adminError) {
       console.error("Failed to notify admin of visibility check:", adminError);
-      // Don't fail the user request — they can still get the report.
+      // Don't fail the user request, they can still get the report.
     }
 
     // 2. Send acknowledgement to the lead
@@ -146,7 +146,7 @@ export async function POST(request: Request) {
         "Failed to send visibility check acknowledgement to user:",
         userError,
       );
-      // Don't fail the request — Richard still has the lead in his inbox.
+      // Don't fail the request, Richard still has the lead in his inbox.
     }
 
     // 3. Add to MailerLite (best-effort; never block the response on this)

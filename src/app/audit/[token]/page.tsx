@@ -10,7 +10,7 @@ import { mdxComponents } from "@/lib/mdx-components";
 import PrintButton from "@/components/print-button";
 
 export function generateStaticParams() {
-  // Only prerender published audits — drafts must not be reachable.
+  // Only prerender published audits, drafts must not be reachable.
   return getAllAuditTokens()
     .filter((token) => getAuditByToken(token)?.status === "published")
     .map((token) => ({ token }));
@@ -63,7 +63,7 @@ export default async function AuditReportPage({
 
   return (
     <main className="report-page bg-white text-ravenci-dark min-h-screen">
-      {/* Print stylesheet — applies when user prints or saves as PDF */}
+      {/* Print stylesheet, applies when user prints or saves as PDF */}
       <style
         dangerouslySetInnerHTML={{
           __html: `
@@ -87,7 +87,7 @@ export default async function AuditReportPage({
         }}
       />
 
-      {/* Floating action buttons — hidden in print */}
+      {/* Floating action buttons, hidden in print */}
       <div className="no-print fixed top-6 right-6 z-50 flex flex-col gap-2">
         <PrintButton />
       </div>

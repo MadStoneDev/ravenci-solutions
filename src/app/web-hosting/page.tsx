@@ -152,7 +152,7 @@ export default function WebHostingPage() {
 
       {/* Two-Column Section */}
       <div className={`grid grid-cols-1 lg:grid-cols-2`}>
-        {/* Left Column — Dark: Pain Points + Why Choose + Info */}
+        {/* Left Column, Dark: Pain Points + Why Choose + Info */}
         <section
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
@@ -234,7 +234,7 @@ export default function WebHostingPage() {
           </article>
         </section>
 
-        {/* Right Column — Light: Features */}
+        {/* Right Column, Light: Features */}
         <section
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
         >

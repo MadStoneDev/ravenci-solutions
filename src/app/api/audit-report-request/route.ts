@@ -69,7 +69,7 @@ export async function POST(request: Request) {
       await mailerSend.email.send(adminParams);
     } catch (adminError) {
       console.error("Failed to notify admin:", adminError);
-      // Don't fail the user request if admin notification fails — they
+      // Don't fail the user request if admin notification fails, they
       // can still access the report.
     }
 

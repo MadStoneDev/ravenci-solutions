@@ -86,7 +86,7 @@ export default function CaseStudyResultsDriven({
 
       {/* Problem + Approach */}
       <section className={`content-section grid grid-cols-1 lg:grid-cols-2`}>
-        {/* Problem — light */}
+        {/* Problem, light */}
         <div className={`py-20 px-5 sm:px-12 xl:px-20 bg-neutral-50`}>
           <h2 className={`text-3xl font-medium text-ravenci-dark`}>
             {caseStudy.problem.heading}
@@ -98,7 +98,7 @@ export default function CaseStudyResultsDriven({
           </div>
         </div>
 
-        {/* Approach — dark */}
+        {/* Approach, dark */}
         <div
           className={`py-20 px-5 sm:px-12 xl:px-20 bg-ravenci-dark text-white`}
         >

@@ -206,7 +206,7 @@ export default function RootLayout({
       <body
         className={`relative ${lexend.variable} ${playfairDisplay.variable} antialiased`}
       >
-        {/* Consent default — denied until user accepts. Must run before
+        {/* Consent default, denied until user accepts. Must run before
             GA/GTM so trackers respect the signal. */}
         <Script id="consent-default" strategy="beforeInteractive">
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});`}

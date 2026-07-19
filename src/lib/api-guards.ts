@@ -1,7 +1,7 @@
 // Shared guards for public-facing API routes: reCAPTCHA + per-IP rate limit.
 // Rate limit is backed by Upstash Redis so it works correctly across multiple
 // app instances. If Upstash isn't configured we fall back to a per-instance
-// in-memory limiter rather than allowing everything through — this still
+// in-memory limiter rather than allowing everything through, this still
 // throttles a flooding IP and, crucially, doesn't silently disable the limiter
 // in production if the env vars go missing on a deploy.
 
