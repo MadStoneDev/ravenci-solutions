@@ -59,19 +59,19 @@ const questions = [
     number: "06",
     question: "How many revision rounds are included? Beyond that, what's the cost?",
     rightAnswer:
-      "A specific number (typically 2 – 3 rounds for design, 1 – 2 for development) and a clear hourly or per-change rate beyond that. Vague 'we'll work with you until you're happy' usually means scope creep arguments later.",
+      "A specific number (typically 2 to 3 rounds for design, 1 to 2 for development) and a clear hourly or per-change rate beyond that. Vague 'we'll work with you until you're happy' usually means scope creep arguments later.",
   },
   {
     number: "07",
     question: "What's the timeline from kickoff to launch?",
     rightAnswer:
-      "A specific week-by-week schedule with milestones (discovery, design, build, content, QA, launch). Realistic small-business sites take 4 – 14 weeks depending on scope.",
+      "A specific week-by-week schedule with milestones (discovery, design, build, content, QA, launch). Realistic small-business sites take 4 to 14 weeks depending on scope.",
   },
   {
     number: "08",
     question: "What support do you offer after launch, and for how long?",
     rightAnswer:
-      "A defined support window after launch (typically 30 – 90 days for bug fixes), plus an ongoing support arrangement (maintenance plan, retainer, or hourly). 'We're always around' isn't a support contract.",
+      "A defined support window after launch (typically 30 to 90 days for bug fixes), plus an ongoing support arrangement (maintenance plan, retainer, or hourly). 'We're always around' isn't a support contract.",
   },
   {
     number: "09",
@@ -116,7 +116,7 @@ const redFlags = [
   {
     flag: "No discussion of SEO, accessibility or performance up front",
     detail:
-      "These should be in the proposal, not a 'phase 2' add-on. Adding them later costs 3 – 5x what building them in costs.",
+      "These should be in the proposal, not a 'phase 2' add-on. Adding them later costs 3 to 5x what building them in costs.",
   },
 ];
 
@@ -144,7 +144,7 @@ const greenFlags = [
   {
     flag: "Provides realistic timelines, not 'we can have it next week'",
     detail:
-      "Anyone promising a quality custom build in under 3 weeks is either mis-scoping or planning to use a template. Realistic small-business sites take 4 – 14 weeks.",
+      "Anyone promising a quality custom build in under 3 weeks is either mis-scoping or planning to use a template. Realistic small-business sites take 4 to 14 weeks.",
   },
   {
     flag: "Explains trade-offs in plain English",
@@ -215,7 +215,7 @@ const ravenciScorecard = [
   {
     question: "Revision rounds?",
     answer:
-      "2 – 3 design rounds and 1 – 2 development rounds included by default, varying by package. Additional rounds are quoted per scope.",
+      "2 to 3 design rounds and 1 to 2 development rounds included by default, varying by package. Additional rounds are quoted per scope.",
   },
   {
     question: "Timeline?",
@@ -245,7 +245,7 @@ const faqItems = [
     summary:
       "Compare on 12-month total cost (not just build cost), platform recommendation, included revisions, post-launch support terms, ongoing maintenance pricing, and ownership of code/content/domain. Don't compare like-for-like build prices in isolation. They hide most of the actual cost.",
     content:
-      "Comparing Brisbane web designer quotes properly means looking past the build price to the 12-month total cost of ownership. Build cost is typically only 50 – 70% of year-one investment. Compare on: build cost, hosting (per month), maintenance (per month), included plugin licences, included revisions, post-launch support window, response time SLAs, ownership of code/content/domain at the end, and platform recommendation logic. Quotes that look identical on build price can differ by $5,000+ in year one once these are factored in. Always ask for quotes to be reformatted to a single 12-month total cost figure for fair comparison.",
+      "Comparing Brisbane web designer quotes properly means looking past the build price to the 12-month total cost of ownership. Build cost is typically only 50 to 70% of year-one investment. Compare on: build cost, hosting (per month), maintenance (per month), included plugin licences, included revisions, post-launch support window, response time SLAs, ownership of code/content/domain at the end, and platform recommendation logic. Quotes that look identical on build price can differ by $5,000+ in year one once these are factored in. Always ask for quotes to be reformatted to a single 12-month total cost figure for fair comparison.",
   },
   {
     title: "Should I hire a Brisbane web designer or someone overseas?",
@@ -271,7 +271,7 @@ const faqItems = [
   {
     title: "How long should it take a Brisbane web designer to quote?",
     summary:
-      "After a 30 – 60 minute discovery call, a fixed price or tight range should land within 3 – 5 business days for standard small business sites. Custom or complex projects may take 1 – 2 weeks. Anything longer than 2 weeks suggests the agency isn't prioritising your project.",
+      "After a 30 to 60 minute discovery call, a fixed price or tight range should land within 3 to 5 business days for standard small business sites. Custom or complex projects may take 1 to 2 weeks. Anything longer than 2 weeks suggests the agency isn't prioritising your project.",
     content:
       "After a 30 to 60 minute discovery call, a reputable Brisbane agency should provide a fixed price or tight pricing range within 3 to 5 business days for standard small business websites. Custom or complex projects (web apps, multi-location sites, deep integrations) may take 1 to 2 weeks because they need scoping work. Anything longer than 2 weeks usually signals that either the agency isn't prioritising your project, or they're waiting on a freelancer's availability quote rather than knowing the answer themselves. Quotes should always specify what is and isn't included so you're not comparing apples and oranges.",
   },
@@ -292,9 +292,9 @@ const faqItems = [
   {
     title: "What's a fair hourly rate for a Brisbane web designer?",
     summary:
-      "Brisbane freelance designers and developers typically charge $80 – $150/hr in 2026. Small agencies $120 – $180/hr. Larger agencies $180 – $250+/hr. Hourly retainer rates from established agencies are often discounted ($120 – $160/hr) compared to ad-hoc work.",
+      "Brisbane freelance designers and developers typically charge $80 to $150/hr in 2026. Small agencies $120 to $180/hr. Larger agencies $180 to $250+/hr. Hourly retainer rates from established agencies are often discounted ($120 to $160/hr) compared to ad-hoc work.",
     content:
-      "Fair hourly rates for Brisbane web designers and developers in 2026: freelance designers and developers typically charge $80 to $150/hr depending on experience and specialisation. Small agencies (1 – 5 people) charge $120 to $180/hr. Larger Brisbane agencies (10+ people) charge $180 to $250+/hr. Senior specialists in high-demand niches (Next.js performance, headless commerce, conversion optimisation) command the higher end of these ranges. Hourly retainer rates from established agencies are often discounted ($120 to $160/hr) compared to ad-hoc work, because the agency gets predictable revenue and you get priority scheduling. Anything dramatically below $80/hr in 2026 signals either junior, offshore, or stretched-too-thin work.",
+      "Fair hourly rates for Brisbane web designers and developers in 2026: freelance designers and developers typically charge $80 to $150/hr depending on experience and specialisation. Small agencies (1 to 5 people) charge $120 to $180/hr. Larger Brisbane agencies (10+ people) charge $180 to $250+/hr. Senior specialists in high-demand niches (Next.js performance, headless commerce, conversion optimisation) command the higher end of these ranges. Hourly retainer rates from established agencies are often discounted ($120 to $160/hr) compared to ad-hoc work, because the agency gets predictable revenue and you get priority scheduling. Anything dramatically below $80/hr in 2026 signals either junior, offshore, or stretched-too-thin work.",
   },
 ];
 

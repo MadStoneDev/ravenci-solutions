@@ -28,7 +28,7 @@ export async function generateMetadata({
     return { title: "Audit Not Found | RAVENCI Solutions" };
   }
   return {
-    title: `${audit.clientBusiness} — Visibility Audit | RAVENCI Solutions`,
+    title: `${audit.clientBusiness}, Visibility Audit | RAVENCI Solutions`,
     description: `Visibility audit for ${audit.clientBusiness}, conducted ${audit.conductedDate}.`,
     robots: { index: false, follow: false },
   };

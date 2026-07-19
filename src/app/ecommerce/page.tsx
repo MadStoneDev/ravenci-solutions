@@ -70,7 +70,7 @@ export default function EcommercePage() {
           <p className="mt-6 max-w-2xl text-neutral-500/80">
             Most eCommerce builds focus on how the store looks. We focus on how
             it sells. Product discovery, checkout flow, shipping logic, inventory
-            sync — the operational detail that turns a good-looking store into a
+            sync, the operational detail that turns a good-looking store into a
             revenue engine. Certified Shopify and BigCommerce partner. Brisbane-based.
             25+ years.
           </p>
@@ -277,7 +277,7 @@ export default function EcommercePage() {
     <li>Staff training on store management</li>
     <li>Basic SEO setup</li>
     <li>3 rounds of revisions</li>
-    <li>6-8 weeks delivery</li>
+    <li>6 to 8 weeks delivery</li>
 </ul>`,
             },
             {
@@ -295,7 +295,7 @@ export default function EcommercePage() {
     <li>Email marketing integration</li>
     <li>Multi-channel sales setup</li>
     <li>Advanced eCommerce analytics</li>
-    <li>8-10+ weeks delivery</li>
+    <li>8 to 10+ weeks delivery</li>
 </ul>`,
             },
           ]}
@@ -323,11 +323,11 @@ export default function EcommercePage() {
           titleClassName="py-6 text-lg"
           items={[
             {
-              title: "Which platform should I choose — Shopify or BigCommerce?",
+              title: "Which platform should I choose, Shopify or BigCommerce?",
               summary:
                 "Most product businesses under 5,000 SKUs do best on Shopify. BigCommerce suits larger catalogues, B2B, or multi-storefront needs. We recommend based on your operations, not our preference.",
               content:
-                "Most product businesses under 5,000 SKUs do best on Shopify. BigCommerce suits larger catalogues, B2B requirements, or businesses that need multi-storefront from a single dashboard. We recommend based on your operations, catalogue size, and growth plans — not our preference.",
+                "Most product businesses under 5,000 SKUs do best on Shopify. BigCommerce suits larger catalogues, B2B requirements, or businesses that need multi-storefront from a single dashboard. We recommend based on your operations, catalogue size, and growth plans, not our preference.",
             },
             {
               title: "Can you migrate my existing store?",
@@ -339,16 +339,16 @@ export default function EcommercePage() {
             {
               title: "How long does an eCommerce build take?",
               summary:
-                "Standard eCommerce builds take 6-8 weeks. Custom eCommerce with advanced integrations takes 8-10+ weeks. We provide regular progress updates throughout.",
+                "Standard eCommerce builds take 6 to 8 weeks. Custom eCommerce with advanced integrations takes 8 to 10+ weeks. We provide regular progress updates throughout.",
               content:
-                "Standard eCommerce builds take 6-8 weeks. Custom eCommerce with advanced integrations (ERP, multi-channel, custom filtering) takes 8-10+ weeks. We provide regular progress updates and stick to the agreed timeline.",
+                "Standard eCommerce builds take 6 to 8 weeks. Custom eCommerce with advanced integrations (ERP, multi-channel, custom filtering) takes 8 to 10+ weeks. We provide regular progress updates and stick to the agreed timeline.",
             },
             {
               title: "Do you handle ongoing store management?",
               summary:
                 "We train your team to manage daily operations. For ongoing support, our retainer packages cover product updates, platform maintenance, and performance monitoring.",
               content:
-                "We train your team to handle daily operations — orders, product updates, promotions. For ongoing platform support, our retainer packages cover maintenance, updates, and performance monitoring. Most eCommerce clients add a retainer after launch.",
+                "We train your team to handle daily operations: orders, product updates, promotions. For ongoing platform support, our retainer packages cover maintenance, updates, and performance monitoring. Most eCommerce clients add a retainer after launch.",
             },
             {
               title:
@@ -370,7 +370,7 @@ export default function EcommercePage() {
           </h2>
           <p className="mt-4 text-white/80 leading-relaxed">
             Tell us about your products and how you operate. We&apos;ll come
-            back with a tailored proposal — the right platform, realistic
+            back with a tailored proposal: the right platform, realistic
             timeline, and a fixed price.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
@@ -436,7 +436,7 @@ export default function EcommercePage() {
                   price: "12000",
                   priceCurrency: "AUD",
                   description:
-                    "Custom Shopify or BigCommerce store with theme design, product catalogue setup, payment and shipping integration. 6-8 weeks delivery.",
+                    "Custom Shopify or BigCommerce store with theme design, product catalogue setup, payment and shipping integration. 6 to 8 weeks delivery.",
                 },
               ],
             },
@@ -452,7 +452,7 @@ export default function EcommercePage() {
             mainEntity: [
               {
                 "@type": "Question",
-                name: "Which platform should I choose — Shopify or BigCommerce?",
+                name: "Which platform should I choose, Shopify or BigCommerce?",
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "Most product businesses under 5,000 SKUs do best on Shopify. BigCommerce suits larger catalogues, B2B requirements, or businesses that need multi-storefront from a single dashboard.",
@@ -471,7 +471,7 @@ export default function EcommercePage() {
                 name: "How long does an eCommerce build take?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Standard eCommerce builds take 6-8 weeks. Custom eCommerce with advanced integrations takes 8-10+ weeks.",
+                  text: "Standard eCommerce builds take 6 to 8 weeks. Custom eCommerce with advanced integrations takes 8 to 10+ weeks.",
                 },
               },
             ],

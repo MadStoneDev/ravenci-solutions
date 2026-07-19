@@ -657,7 +657,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
       metrics: [
         { value: "4 wks", label: "Brand to launch" },
-        { value: "1-2 mo", label: "Lead time, year one" },
+        { value: "1 to 2 mo", label: "Lead time, year one" },
       ],
     },
     galleryImages: [

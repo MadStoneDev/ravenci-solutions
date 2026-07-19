@@ -19,7 +19,7 @@ const CALENDLY_URL =
   process.env.NEXT_PUBLIC_CALENDLY_URL ||
   "https://calendly.com/ravenci-solutions/discovery-call";
 
-const HIGH_BUDGET_VALUES = ["$10k – $25k", "$25k – $50k", "$50k+"];
+const HIGH_BUDGET_VALUES = ["$10k to $25k", "$25k to $50k", "$50k+"];
 
 type ProjectType =
   | "Business website"
@@ -38,15 +38,15 @@ type Stage =
 
 type Timeline =
   | "ASAP (within 1 month)"
-  | "1 – 3 months"
-  | "3 – 6 months"
+  | "1 to 3 months"
+  | "3 to 6 months"
   | "Just researching for now";
 
 type Budget =
   | "Under $5k"
-  | "$5k – $10k"
-  | "$10k – $25k"
-  | "$25k – $50k"
+  | "$5k to $10k"
+  | "$10k to $25k"
+  | "$25k to $50k"
   | "$50k+"
   | "Prefer not to say";
 
@@ -82,16 +82,16 @@ const STAGE_OPTIONS: Stage[] = [
 
 const TIMELINE_OPTIONS: Timeline[] = [
   "ASAP (within 1 month)",
-  "1 – 3 months",
-  "3 – 6 months",
+  "1 to 3 months",
+  "3 to 6 months",
   "Just researching for now",
 ];
 
 const BUDGET_OPTIONS: Budget[] = [
   "Under $5k",
-  "$5k – $10k",
-  "$10k – $25k",
-  "$25k – $50k",
+  "$5k to $10k",
+  "$10k to $25k",
+  "$25k to $50k",
   "$50k+",
   "Prefer not to say",
 ];

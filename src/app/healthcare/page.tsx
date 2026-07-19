@@ -129,17 +129,17 @@ const integrations = [
 
 const compliancePoints = [
   {
-    title: "APP 1 - Open and Transparent Management",
+    title: "APP 1: Open and Transparent Management",
     description:
       "Clear privacy policy explaining what data you collect via forms, how it's stored, and who has access",
   },
   {
-    title: "APP 6 - Use or Disclosure",
+    title: "APP 6: Use or Disclosure",
     description:
       "Form data is only sent to your practice email or integrated system. No third-party data sharing without consent",
   },
   {
-    title: "APP 11 - Security of Personal Information",
+    title: "APP 11: Security of Personal Information",
     description:
       "SSL encryption on all pages, secure form submissions, and integration with compliant storage systems",
   },
@@ -187,9 +187,9 @@ const faqItems = [
   {
     title: "How long does a healthcare website take to build?",
     summary:
-      "Most healthcare websites take 4-8 weeks. A standard practice site with booking integration runs 4-5 weeks. Sites with patient portals, multiple locations, or custom integrations typically take 6-8 weeks.",
+      "Most healthcare websites take 4 to 8 weeks. A standard practice site with booking integration runs 4 to 5 weeks. Sites with patient portals, multiple locations, or custom integrations typically take 6 to 8 weeks.",
     content:
-      "Most healthcare websites take 4-8 weeks depending on complexity. A straightforward practice site with booking integration runs 4-5 weeks. Sites with patient portals, multiple locations, or custom integrations typically take 6-8 weeks. We provide a detailed timeline during our initial consultation and keep you updated throughout.",
+      "Most healthcare websites take 4 to 8 weeks depending on complexity. A straightforward practice site with booking integration runs 4 to 5 weeks. Sites with patient portals, multiple locations, or custom integrations typically take 6 to 8 weeks. We provide a detailed timeline during our initial consultation and keep you updated throughout.",
   },
   {
     title: "Do you provide ongoing support after launch?",
@@ -217,7 +217,7 @@ const faqItems = [
     summary:
       "RAVENCI targets high-intent local searches like 'GP near me' or 'physio Brisbane CBD'. We optimise Google Business Profile, build condition and service pages that rank, and implement medical schema markup for rich results.",
     content:
-      "Healthcare SEO targets high-intent local searches: 'GP near me', 'physio Brisbane CBD', 'bulk billing doctor Northside'. We optimise your Google Business Profile, build condition-specific and service-specific pages that rank, implement medical practice schema markup, and ensure your site loads fast enough to satisfy Google's Core Web Vitals. Most practices see improvement within 3-6 months.",
+      "Healthcare SEO targets high-intent local searches: 'GP near me', 'physio Brisbane CBD', 'bulk billing doctor Northside'. We optimise your Google Business Profile, build condition-specific and service-specific pages that rank, implement medical practice schema markup, and ensure your site loads fast enough to satisfy Google's Core Web Vitals. Most practices see improvement within 3 to 6 months.",
   },
   {
     title: "Do you work with medical marketing compliance?",

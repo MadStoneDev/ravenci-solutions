@@ -227,7 +227,7 @@ export default function WebHostingPage() {
               Instead of complex tiers, our hosting scales naturally with your
               website's needs. We start with generous resources that work for
               most businesses, and as your site grows, your hosting grows with
-              it – no complicated decisions required. You'll never pay for
+              it, no complicated decisions required. You'll never pay for
               resources you don't need, and we'll proactively let you know if we
               spot opportunities to optimize your site's performance.
             </p>
@@ -447,7 +447,7 @@ export default function WebHostingPage() {
             {
               title: `How is this different from cheap hosting like Bluehost?`,
               summary: `RAVENCI uses enterprise-grade cloud infrastructure with automatic scaling, dedicated resources, Brisbane-based support, and all-inclusive pricing. SSL, backups, and security are included. No extra charges.`,
-              content: `Our hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimization that cheap hosts can't match. Plus everything is included - SSL, backups, security - no extra charges.`,
+              content: `Our hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimization that cheap hosts can't match. Plus everything is included: SSL, backups, security. No extra charges.`,
             },
             {
               title: `What if my traffic suddenly spikes?`,
@@ -563,7 +563,7 @@ export default function WebHostingPage() {
                 name: "How is this different from cheap hosting like Bluehost?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Our hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimization that cheap hosts can't match. Plus everything is included - SSL, backups, security - no extra charges.",
+                  text: "Our hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimization that cheap hosts can't match. Plus everything is included: SSL, backups, security. No extra charges.",
                 },
               },
               {

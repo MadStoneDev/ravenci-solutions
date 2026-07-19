@@ -41,7 +41,7 @@ export interface AuditFAQItem {
 
 export const AUDIT_META = {
   totalSitesAudited: 50,
-  conductedDate: "January – February 2026",
+  conductedDate: "January to February 2026",
   publishedDate: "2026-03-04",
   industries: 7,
 };

@@ -128,14 +128,14 @@ export async function POST(request: Request) {
         .setSubject(`Got your visibility check request, ${firstName}`)
         .setHtml(
           `<p>Hi ${safeFirst},</p>
-          <p>Thanks for the visibility check request for <strong>${safeBusiness}</strong>. I&apos;ve got your details and I&apos;ll get to your audit within 2&ndash;3 business days.</p>
+          <p>Thanks for the visibility check request for <strong>${safeBusiness}</strong>. I&apos;ve got your details and I&apos;ll get to your audit within 2 to 3 business days.</p>
           <p>You&apos;ll receive a follow-up email with the full report (a private link plus the option to save as PDF) when it&apos;s ready.</p>
           <p>If anything comes up in the meantime or you want to add context I should know, just reply to this email.</p>
           <p>Cheers,<br/>Richard at RAVENCI Solutions<br/>https://ravenci.solutions</p>`,
         )
         .setText(
           `Hi ${firstName},\n\n` +
-            `Thanks for the visibility check request for ${businessName}. I've got your details and I'll get to your audit within 2-3 business days.\n\n` +
+            `Thanks for the visibility check request for ${businessName}. I've got your details and I'll get to your audit within 2 to 3 business days.\n\n` +
             `You'll receive a follow-up email with the full report (a private link plus the option to save as PDF) when it's ready.\n\n` +
             `If anything comes up in the meantime or you want to add context I should know, just reply to this email.\n\n` +
             `Cheers,\nRichard at RAVENCI Solutions\nhttps://ravenci.solutions`,

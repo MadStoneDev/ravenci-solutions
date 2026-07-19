@@ -39,27 +39,27 @@ const matrixRows: {
   },
   {
     feature: "Typical build cost (AU)",
-    wordpress: "$3,500 – $15,000",
-    shopify: "$5,000 – $20,000",
-    custom: "$10,000 – $50,000+",
+    wordpress: "$3,500 to $15,000",
+    shopify: "$5,000 to $20,000",
+    custom: "$10,000 to $50,000+",
   },
   {
     feature: "Build timeline",
-    wordpress: "3 – 8 weeks",
-    shopify: "3 – 6 weeks",
-    custom: "8 – 14 weeks",
+    wordpress: "3 to 8 weeks",
+    shopify: "3 to 6 weeks",
+    custom: "8 to 14 weeks",
   },
   {
     feature: "Monthly platform fee",
     wordpress: "$0 (self-hosted)",
-    shopify: "$45 – $645/mo",
+    shopify: "$45 to $645/mo",
     custom: "$0 (self-hosted)",
   },
   {
     feature: "Hosting cost (AU)",
-    wordpress: "$30 – $50/mo",
+    wordpress: "$30 to $50/mo",
     shopify: "Included",
-    custom: "$30 – $80/mo",
+    custom: "$30 to $80/mo",
   },
   {
     feature: "Performance (PageSpeed)",
@@ -146,7 +146,7 @@ const platforms = [
       "You don't want to maintain plugin updates yourself or pay someone to",
     ],
     costs:
-      "Build: $3,500 – $15,000. Hosting: $30 – $50/mo. Maintenance: $200 – $500/mo. Premium plugin licences: $300 – $800/yr.",
+      "Build: $3,500 to $15,000. Hosting: $30 to $50/mo. Maintenance: $200 to $500/mo. Premium plugin licences: $300 to $800/yr.",
     examples:
       "Professional services sites, healthcare practices, news and media, education, charity and not-for-profit, multi-location businesses with location pages.",
   },
@@ -168,7 +168,7 @@ const platforms = [
       "You're primarily a content site with a small product range (consider WooCommerce on WordPress)",
     ],
     costs:
-      "Build: $5,000 – $20,000. Platform: $45 – $645/mo. Apps: $50 – $300/mo typical. Transaction fees: 0.5 – 2% if not using Shopify Payments.",
+      "Build: $5,000 to $20,000. Platform: $45 to $645/mo. Apps: $50 to $300/mo typical. Transaction fees: 0.5 to 2% if not using Shopify Payments.",
     examples:
       "Retail e-commerce, fashion and apparel, beauty and cosmetics, consumer goods, drop-shipping, multi-channel sellers (Shopify + Amazon + eBay).",
   },
@@ -187,10 +187,10 @@ const platforms = [
       "You need a CMS your in-house team can update without developer help (use WordPress)",
       "You're running a standard product catalogue (Shopify is faster to launch)",
       "Budget under $10,000 (template-based platforms give better value at the low end)",
-      "You need to launch in under 4 weeks (custom takes 8 – 14 weeks)",
+      "You need to launch in under 4 weeks (custom takes 8 to 14 weeks)",
     ],
     costs:
-      "Build: $10,000 – $50,000+. Hosting: $30 – $80/mo. Maintenance: $250 – $500/mo. No platform fees, no plugin renewals.",
+      "Build: $10,000 to $50,000+. Hosting: $30 to $80/mo. Maintenance: $250 to $500/mo. No platform fees, no plugin renewals.",
     examples:
       "High-traffic marketing sites, web applications, multi-brand portfolios, performance-critical businesses, design-led brands, headless CMS setups for editorial control.",
   },
@@ -198,7 +198,7 @@ const platforms = [
 
 const decisionFramework = [
   {
-    scenario: "I'm a small business with 5 – 15 pages, no e-commerce",
+    scenario: "I'm a small business with 5 to 15 pages, no e-commerce",
     answer: "WordPress",
     reason:
       "Lowest cost, fastest to launch, easiest for your team to update later. Avoid the temptation to over-engineer.",
@@ -239,17 +239,17 @@ const commonMistakes = [
   {
     mistake: "Choosing Shopify when you don't sell anything online",
     detail:
-      "We see this monthly. A consulting business launches on Shopify because the templates look good, then pays $45 – $645/month for a platform they don't use as e-commerce. WordPress (or custom) costs less and serves the use case better.",
+      "We see this monthly. A consulting business launches on Shopify because the templates look good, then pays $45 to $645/month for a platform they don't use as e-commerce. WordPress (or custom) costs less and serves the use case better.",
   },
   {
     mistake: "Choosing custom Next.js for a budget under $10,000",
     detail:
-      "Custom builds need 60 – 120 hours of senior developer time. Quotes under $10,000 mean cut corners somewhere, usually on design, testing, or post-launch support. Spend $5,000 on WordPress instead and reinvest the rest in marketing.",
+      "Custom builds need 60 to 120 hours of senior developer time. Quotes under $10,000 mean cut corners somewhere, usually on design, testing, or post-launch support. Spend $5,000 on WordPress instead and reinvest the rest in marketing.",
   },
   {
     mistake: "Choosing WordPress for high-volume e-commerce",
     detail:
-      "WooCommerce works for 20 – 200 products. Beyond that, performance, security, and PCI compliance all become harder than they need to be. Migrate to Shopify or BigCommerce before the pain hits.",
+      "WooCommerce works for 20 to 200 products. Beyond that, performance, security, and PCI compliance all become harder than they need to be. Migrate to Shopify or BigCommerce before the pain hits.",
   },
   {
     mistake: "Believing 'cheap WordPress' is the same product as 'agency WordPress'",
@@ -267,14 +267,14 @@ const faqItems = [
   {
     title: "Which is cheapest: WordPress, Shopify or Custom Next.js?",
     summary:
-      "WordPress is cheapest upfront ($3,500 – $15,000) and lowest in monthly fees. Shopify costs $45 – $645/mo on top of build cost. Custom Next.js has the highest build cost ($10,000+) but lowest long-term running costs and no platform lock-in.",
+      "WordPress is cheapest upfront ($3,500 to $15,000) and lowest in monthly fees. Shopify costs $45 to $645/mo on top of build cost. Custom Next.js has the highest build cost ($10,000+) but lowest long-term running costs and no platform lock-in.",
     content:
-      "WordPress is typically the cheapest upfront option, with build costs of $3,500 to $15,000 and minimal ongoing platform fees beyond hosting and maintenance. Shopify has lower build costs ($5,000 – $20,000) but adds $45 to $645 per month in platform fees plus app subscriptions. Custom Next.js has the highest build cost ($10,000 – $50,000+) but the lowest long-term running costs and no platform lock-in or surprise fee increases. Over 3 years, the total cost differences narrow considerably. For a typical small business site, WordPress costs roughly $15,000 over 36 months, Shopify $30,000+, and Custom Next.js $20,000.",
+      "WordPress is typically the cheapest upfront option, with build costs of $3,500 to $15,000 and minimal ongoing platform fees beyond hosting and maintenance. Shopify has lower build costs ($5,000 to $20,000) but adds $45 to $645 per month in platform fees plus app subscriptions. Custom Next.js has the highest build cost ($10,000 to $50,000+) but the lowest long-term running costs and no platform lock-in or surprise fee increases. Over 3 years, the total cost differences narrow considerably. For a typical small business site, WordPress costs roughly $15,000 over 36 months, Shopify $30,000+, and Custom Next.js $20,000.",
   },
   {
     title: "Can I switch platforms later?",
     summary:
-      "Yes, but it's expensive. Migrating between platforms typically costs $3,000 – $10,000 plus rebuilding designs and integrations. Choose the right platform from day one. The second-best platform you commit to is cheaper than the right one you switch to in year two.",
+      "Yes, but it's expensive. Migrating between platforms typically costs $3,000 to $10,000 plus rebuilding designs and integrations. Choose the right platform from day one. The second-best platform you commit to is cheaper than the right one you switch to in year two.",
     content:
       "Yes, but switching platforms later is rarely cheap. Migrating between WordPress, Shopify and custom platforms typically costs $3,000 to $10,000 in pure migration work, plus rebuilding designs and integrations. SEO authority can also take 3 to 6 months to fully recover after a major platform change if redirects aren't handled properly. The rule of thumb: choose the right platform from day one. The second-best platform you commit to and stick with is cheaper than the perfect platform you switch to in year two.",
   },
@@ -288,7 +288,7 @@ const faqItems = [
   {
     title: "What about Webflow, Wix, or Squarespace?",
     summary:
-      "These are DIY-friendly visual builders, sitting between WordPress and Shopify in capability. Wix and Squarespace work for very simple sites under $5,000 budget. Webflow is more capable but harder for non-technical users to maintain. Most established Australian businesses outgrow them within 12 – 24 months.",
+      "These are DIY-friendly visual builders, sitting between WordPress and Shopify in capability. Wix and Squarespace work for very simple sites under $5,000 budget. Webflow is more capable but harder for non-technical users to maintain. Most established Australian businesses outgrow them within 12 to 24 months.",
     content:
       "Webflow, Wix and Squarespace are DIY-friendly visual builders that sit between WordPress and Shopify in capability. Wix and Squarespace are reasonable for very simple sites under a $5,000 budget where the goal is fast launch with minimal maintenance, but customisation ceilings are low and SEO control is limited. Webflow is more capable, with cleaner code and better performance, but it's harder for non-technical users to maintain and locked to Webflow's hosting (which can be expensive at scale). Most established Australian businesses outgrow these platforms within 12 to 24 months and end up migrating to WordPress, Shopify or custom anyway.",
   },
@@ -309,7 +309,7 @@ const faqItems = [
   {
     title: "How long does each platform take to build?",
     summary:
-      "WordPress: 3 – 8 weeks for most small business sites. Shopify: 3 – 6 weeks for standard stores. Custom Next.js: 8 – 14 weeks for typical builds, longer for web apps. Add 2 – 4 weeks if you need content production or branding work alongside development.",
+      "WordPress: 3 to 8 weeks for most small business sites. Shopify: 3 to 6 weeks for standard stores. Custom Next.js: 8 to 14 weeks for typical builds, longer for web apps. Add 2 to 4 weeks if you need content production or branding work alongside development.",
     content:
       "Build timelines depend on scope but typical ranges look like this. WordPress: 3 to 8 weeks for most small business sites, longer for multi-site setups or heavy plugin customisation. Shopify: 3 to 6 weeks for standard stores, longer for theme customisation or migrating large catalogues. Custom Next.js: 8 to 14 weeks for typical builds, longer for web applications. Add 2 to 4 weeks across any platform if you also need content production (copywriting, photography) or branding work alongside development. Rush projects under 3 weeks usually carry a 20 to 30% premium.",
   },
@@ -348,7 +348,7 @@ export default function PlatformComparisonPage() {
             standard e-commerce, and{" "}
             <strong className="text-ravenci-dark">Custom Next.js</strong> wins
             where performance, custom functionality or differentiation matter
-            most. Choosing the wrong platform can cost $5,000 – $15,000 to fix
+            most. Choosing the wrong platform can cost $5,000 to $15,000 to fix
             within 18 months. Here&apos;s an honest comparison from an agency
             that builds on all three.
           </p>

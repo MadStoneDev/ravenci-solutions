@@ -21,12 +21,12 @@ import PlatformsSection from "@/components/platforms-section";
 
 export const metadata = {
   title: "Custom Website Design Brisbane | RAVENCI Solutions",
-  description: "Custom websites and eCommerce platforms for established Australian businesses. A structural engineer's approach to web development — built properly, still working in five years. Brisbane-based, 25+ years experience.",
+  description: "Custom websites and eCommerce platforms for established Australian businesses. A structural engineer's approach to web development, built properly, still working in five years. Brisbane-based, 25+ years experience.",
   alternates: { canonical: "/" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Custom Website Design Brisbane | RAVENCI Solutions",
-    description: "Custom websites and eCommerce platforms for established Australian businesses. A structural engineer's approach to web development — built properly, still working in five years.",
+    description: "Custom websites and eCommerce platforms for established Australian businesses. A structural engineer's approach to web development, built properly, still working in five years.",
     url: "/",
     type: "website",
   },
@@ -61,8 +61,8 @@ export default function Home() {
             className={`mt-8 max-w-[600px] text-lg md:text-xl font-light text-neutral-400`}
           >
             Structural engineer by training, web developer for 25+ years.
-            467 projects for established Australian businesses
-            — built properly, still working in five years.
+            467 projects for established Australian businesses,
+            built properly, still working in five years.
           </h2>
 
           <div className={`mt-16 flex gap-6`}>
@@ -216,7 +216,7 @@ export default function Home() {
                 content: `<p class="mb-4 text-neutral-100">We don't hand you a site and disappear.</p>
 
 <p class="text-neutral-100">Hosting that performs</p>
-<p class="mb-4 text-neutral-400/70">Every site we build lives on scalable cloud servers closest to your customers. Fast, secure, and properly maintained — not a shared hosting afterthought.</p>
+<p class="mb-4 text-neutral-400/70">Every site we build lives on scalable cloud servers closest to your customers. Fast, secure, and properly maintained, not a shared hosting afterthought.</p>
 
 <p class="text-neutral-100">Ongoing care</p>
 <p class="mb-4 text-neutral-400/70">Security updates, performance checks, backups, content changes. We handle it so you don't have to chase a developer every time something needs attention. Regular care is what keeps a five-year website going well beyond five years.</p>
@@ -293,7 +293,7 @@ export default function Home() {
           <div className={`mt-10 flex flex-col gap-8 max-w-[450px]`}>
             <p>
               From custom business sites to full eCommerce platforms, we build
-              the digital foundation that established businesses run on — and
+              the digital foundation that established businesses run on, and
               we stick around to keep it running.
             </p>
           </div>
@@ -361,7 +361,7 @@ export default function Home() {
             <p className="mt-6 text-neutral-400 leading-relaxed">
               Most agencies hand you a site and disappear. We stick around to
               make sure it actually gets found. SEO retainers that compound your
-              investment month over month — more visibility, more traffic, more
+              investment month over month: more visibility, more traffic, more
               enquiries.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
@@ -397,7 +397,7 @@ export default function Home() {
             <div className="p-6 rounded-xl bg-white/5 border border-white/10 col-span-2">
               <p className="text-sm text-neutral-300">
                 Most clients add an SEO retainer after launch. The website gets
-                them online — the SEO gets them found.
+                them online. The SEO gets them found.
               </p>
             </div>
           </div>

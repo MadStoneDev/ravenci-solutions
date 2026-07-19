@@ -69,13 +69,13 @@ const comparisonRows = [
     custom:
       "Hosting + optional maintenance. No recurring theme/plugin licence fees",
     template:
-      "Hosting + theme updates + plugin licence renewals ($300-800/yr)",
-    diy: "Monthly platform fee ($20-80/mo) plus transaction fees on some",
+      "Hosting + theme updates + plugin licence renewals ($300 to 800/yr)",
+    diy: "Monthly platform fee ($20 to 80/mo) plus transaction fees on some",
   },
   {
     feature: "Time to Launch",
-    custom: "3-14 weeks depending on scope",
-    template: "1-4 weeks with customisation",
+    custom: "3 to 14 weeks depending on scope",
+    template: "1 to 4 weeks with customisation",
     diy: "Hours to days for a basic site",
   },
 ];
@@ -84,9 +84,9 @@ const faqItems = [
   {
     title: "Is a custom website worth the investment for a small business?",
     summary:
-      "Yes, if your website drives customer acquisition. Custom websites deliver better search rankings, faster load times, and higher conversion rates. Most businesses outgrow templates within 12-18 months.",
+      "Yes, if your website drives customer acquisition. Custom websites deliver better search rankings, faster load times, and higher conversion rates. Most businesses outgrow templates within 12 to 18 months.",
     content:
-      "If your website is a core part of how you attract customers, yes. A custom website pays for itself through better search rankings, faster load times, and higher conversion rates. Businesses that rely on foot traffic or word-of-mouth may find a template sufficient initially, but most outgrow it within 12-18 months.",
+      "If your website is a core part of how you attract customers, yes. A custom website pays for itself through better search rankings, faster load times, and higher conversion rates. Businesses that rely on foot traffic or word-of-mouth may find a template sufficient initially, but most outgrow it within 12 to 18 months.",
   },
   {
     title: "Can I move from a template to a custom website later?",
@@ -114,9 +114,9 @@ const faqItems = [
     title:
       "How much does a custom website cost compared to a typical agency build?",
     summary:
-      "RAVENCI custom websites start from $7,500. A typical agency build may look cheaper upfront, but plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance make total ownership cost comparable with worse results.",
+      "RAVENCI custom websites start from $7,500. A typical agency build may look cheaper upfront, but plugin licence renewals ($300 to 800/yr), customisation fees ($1,000 to 5,000), and ongoing maintenance make total ownership cost comparable with worse results.",
     content:
-      "Our custom websites start from $7,500 for a Brochure site with CRM. A typical agency build may look cheaper upfront, but factor in plugin licence renewals ($300-800/yr), customisation fees ($1,000-5,000), and ongoing maintenance. The total cost of ownership is often comparable, with a worse result.",
+      "Our custom websites start from $7,500 for a Brochure site with CRM. A typical agency build may look cheaper upfront, but factor in plugin licence renewals ($300 to 800/yr), customisation fees ($1,000 to 5,000), and ongoing maintenance. The total cost of ownership is often comparable, with a worse result.",
   },
 ];
 
@@ -341,11 +341,11 @@ export default function CustomVsTemplatePage() {
               Custom Website
             </h4>
             <ul className="space-y-2 text-sm text-neutral-600">
-              <li>Build: $7,500 - $12,000</li>
+              <li>Build: $7,500 to $12,000</li>
               <li>Plugins & licences: $0/yr</li>
               <li>Rebuild: None needed</li>
               <li className="pt-2 border-t border-neutral-200 font-bold text-ravenci-dark">
-                5-year total: $7,500 - $12,000 + hosting
+                5-year total: $7,500 to $12,000 + hosting
               </li>
             </ul>
           </div>
@@ -354,11 +354,11 @@ export default function CustomVsTemplatePage() {
               Typical Agency Build
             </h4>
             <ul className="space-y-2 text-sm text-neutral-600">
-              <li>Build: $3,000 - $6,000</li>
-              <li>Plugins & licences: $300 - $800/yr</li>
-              <li>Rebuild at 18-24 months: $3,000 - $6,000</li>
+              <li>Build: $3,000 to $6,000</li>
+              <li>Plugins & licences: $300 to $800/yr</li>
+              <li>Rebuild at 18 to 24 months: $3,000 to $6,000</li>
               <li className="pt-2 border-t border-neutral-200 font-bold text-neutral-700">
-                5-year total: $8,500 - $18,000
+                5-year total: $8,500 to $18,000
               </li>
             </ul>
           </div>
@@ -367,11 +367,11 @@ export default function CustomVsTemplatePage() {
               DIY Builder
             </h4>
             <ul className="space-y-2 text-sm text-neutral-600">
-              <li>Platform: $20 - $80/mo ($1,200 - $4,800 over 5 yrs)</li>
-              <li>Premium features: $10 - $40/mo</li>
+              <li>Platform: $20 to $80/mo ($1,200 to $4,800 over 5 yrs)</li>
+              <li>Premium features: $10 to $40/mo</li>
               <li>Your time: priceless (or billable)</li>
               <li className="pt-2 border-t border-neutral-200 font-bold text-neutral-700">
-                5-year total: $1,800 - $7,200 + your time
+                5-year total: $1,800 to $7,200 + your time
               </li>
             </ul>
           </div>
@@ -382,7 +382,7 @@ export default function CustomVsTemplatePage() {
             But cost is only half the equation. A custom site that ranks well
             and converts visitors into clients pays for itself. At $7,500 over
             five years, that&apos;s $4.10 a day. If it brings in one extra
-            client a month — even at $500 per job — that&apos;s $6,000 a year
+            client a month, even at $500 per job, that&apos;s $6,000 a year
             from a $1,500 annual investment. A 4x return. Most businesses see
             more than that.
           </p>

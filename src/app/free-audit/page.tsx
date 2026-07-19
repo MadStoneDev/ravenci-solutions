@@ -98,9 +98,9 @@ const faqItems = [
   {
     title: "How long until I get the report?",
     summary:
-      "Usually within 2–3 business days. We do this manually, not via an automated scan, so it takes a beat.",
+      "Usually within 2 to 3 business days. We do this manually, not via an automated scan, so it takes a beat.",
     content:
-      "Usually within 2–3 business days. We do this manually, not via an automated scan, so it takes a beat. If you need it faster for a specific reason (a board meeting, a pitch, a rebrand decision), tell us in the form and we'll prioritise.",
+      "Usually within 2 to 3 business days. We do this manually, not via an automated scan, so it takes a beat. If you need it faster for a specific reason (a board meeting, a pitch, a rebrand decision), tell us in the form and we'll prioritise.",
   },
   {
     title: "What if I don't have a website yet?",
@@ -166,7 +166,7 @@ export default function FreeAuditPage() {
                 size={18}
                 className="p-0.5 bg-ravenci-primary rounded-full text-white"
               />
-              <span>2–3 business days</span>
+              <span>2 to 3 business days</span>
             </div>
           </div>
         </div>
@@ -183,7 +183,7 @@ export default function FreeAuditPage() {
           </h2>
           <p className="max-w-2xl mx-auto text-neutral-600">
             Four fields, thirty seconds. We&apos;ll come back to you within
-            2–3 business days with the full report.
+            2 to 3 business days with the full report.
           </p>
         </div>
         <VisibilityCheckForm />

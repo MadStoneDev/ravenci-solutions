@@ -41,8 +41,8 @@ const headlineStats = [
 const pricingTiers = [
   {
     tier: "DIY Builders",
-    price: "$0 – $50/mo",
-    annual: "≈ $360 – $600/yr",
+    price: "$0 to $50/mo",
+    annual: "≈ $360 to $600/yr",
     timeline: "Weekend",
     bestFor:
       "Hobby sites, personal portfolios, ultra-early-stage testing of an idea",
@@ -53,61 +53,61 @@ const pricingTiers = [
       "Limited SEO control, locked into platform",
     ],
     hiddenCosts: [
-      "Premium templates ($60 – $300)",
-      "Plugin/app subscriptions ($10 – $50/mo each)",
+      "Premium templates ($60 to $300)",
+      "Plugin/app subscriptions ($10 to $50/mo each)",
       "Custom domain (~$20/yr)",
-      "Time cost: typically 30–60 hours of your time",
+      "Time cost: typically 30 to 60 hours of your time",
     ],
     severity: "low",
   },
   {
     tier: "Template-Based Agency",
-    price: "$1,500 – $5,000",
-    annual: "Plus $300 – $600/yr",
-    timeline: "1 – 4 weeks",
+    price: "$1,500 to $5,000",
+    annual: "Plus $300 to $600/yr",
+    timeline: "1 to 4 weeks",
     bestFor:
       "Sole traders, micro-businesses, tradies who need a presence fast",
     whatYouGet: [
       "Pre-made theme customised with your branding",
-      "5 – 10 pages of standard content",
+      "5 to 10 pages of standard content",
       "Basic on-page SEO setup",
       "Mobile-responsive design",
     ],
     hiddenCosts: [
-      "Theme licence renewals ($60 – $200/yr)",
-      "Premium plugins ($300 – $800/yr)",
-      "Stock photography ($150 – $500)",
+      "Theme licence renewals ($60 to $200/yr)",
+      "Premium plugins ($300 to $800/yr)",
+      "Stock photography ($150 to $500)",
       "Customisation requests post-launch",
     ],
     severity: "low",
   },
   {
     tier: "Standard Small Business",
-    price: "$5,000 – $10,000",
-    annual: "Plus $300 – $600/yr",
-    timeline: "4 – 8 weeks",
+    price: "$5,000 to $10,000",
+    annual: "Plus $300 to $600/yr",
+    timeline: "4 to 8 weeks",
     bestFor:
       "Established small businesses, professional services, growing brands",
     whatYouGet: [
       "Custom design that looks like your brand, not a template",
       "A platform you or your team can update yourselves",
-      "10 – 20 pages structured around how customers move through the site",
+      "10 to 20 pages structured around how customers move through the site",
       "Built so search engines understand and rank you from day one",
       "Contact forms and basic integrations to your CRM, email, or booking tool",
     ],
     hiddenCosts: [
       "Premium theme/plugin licences",
-      "Copywriting if not provided ($200 – $500/page)",
-      "Professional photography ($800 – $2,500)",
-      "Ongoing maintenance plan ($200 – $400/mo)",
+      "Copywriting if not provided ($200 to $500/page)",
+      "Professional photography ($800 to $2,500)",
+      "Ongoing maintenance plan ($200 to $400/mo)",
     ],
     severity: "medium",
   },
   {
     tier: "Custom Premium Build",
-    price: "$10,000 – $25,000",
-    annual: "Plus $400 – $800/yr",
-    timeline: "8 – 14 weeks",
+    price: "$10,000 to $25,000",
+    annual: "Plus $400 to $800/yr",
+    timeline: "8 to 14 weeks",
     bestFor:
       "Established businesses ready to invest in performance, brand and conversions",
     whatYouGet: [
@@ -119,18 +119,18 @@ const pricingTiers = [
       "Bespoke imagery and brand alignment",
     ],
     hiddenCosts: [
-      "Brand identity work if needed ($2,500 – $7,500)",
+      "Brand identity work if needed ($2,500 to $7,500)",
       "Custom photography or illustration",
-      "Ongoing maintenance + hosting ($300 – $600/mo)",
+      "Ongoing maintenance + hosting ($300 to $600/mo)",
       "Future feature additions",
     ],
     severity: "premium",
   },
   {
     tier: "Enterprise & Web Apps",
-    price: "$25,000 – $100,000+",
+    price: "$25,000 to $100,000+",
     annual: "Custom infrastructure",
-    timeline: "12 weeks – 6+ months",
+    timeline: "12 weeks to 6+ months",
     bestFor:
       "Mid-to-large businesses, multi-brand portfolios, custom platforms, web applications",
     whatYouGet: [
@@ -141,7 +141,7 @@ const pricingTiers = [
       "Dedicated project team",
     ],
     hiddenCosts: [
-      "Cloud infrastructure ($200 – $2,000/mo+)",
+      "Cloud infrastructure ($200 to $2,000/mo+)",
       "Third-party API costs",
       "Ongoing development retainer",
       "Compliance audits and reviews",
@@ -169,64 +169,64 @@ const costFactors = [
   {
     factor: "Third-party integrations",
     detail:
-      "CRM (HubSpot, Pipedrive), booking systems (Calendly, Cliniko), email (Mailchimp, Klaviyo), and payment platforms each add setup time. Allow $300 – $1,500 per integration.",
+      "CRM (HubSpot, Pipedrive), booking systems (Calendly, Cliniko), email (Mailchimp, Klaviyo), and payment platforms each add setup time. Allow $300 to $1,500 per integration.",
   },
   {
     factor: "Content readiness",
     detail:
-      "If you supply finalised copy and imagery, you save thousands. Professional copywriting runs $200 – $500 per page. Photography $800 – $2,500 per shoot.",
+      "If you supply finalised copy and imagery, you save thousands. Professional copywriting runs $200 to $500 per page. Photography $800 to $2,500 per shoot.",
   },
   {
     factor: "Animation, motion and interactions",
     detail:
-      "Scroll-triggered animations, kinetic typography and 3D elements add 20 – 40% to design budgets but lift perceived value substantially.",
+      "Scroll-triggered animations, kinetic typography and 3D elements add 20 to 40% to design budgets but lift perceived value substantially.",
   },
   {
     factor: "SEO and structured data setup",
     detail:
-      "A site built without proper SEO foundations costs $2,000 – $5,000 to retrofit. Done at build, it's hours not weeks.",
+      "A site built without proper SEO foundations costs $2,000 to $5,000 to retrofit. Done at build, it's hours not weeks.",
   },
   {
     factor: "Migration from an existing site",
     detail:
-      "Moving 50+ pages of content, redirecting old URLs, and preserving SEO authority typically adds $1,500 – $5,000 to a project.",
+      "Moving 50+ pages of content, redirecting old URLs, and preserving SEO authority typically adds $1,500 to $5,000 to a project.",
   },
   {
     factor: "Timeline pressure",
     detail:
-      "Rush projects (under 3 weeks) often carry a 20 – 30% premium. Standard 6 – 8 week timelines run cleanest.",
+      "Rush projects (under 3 weeks) often carry a 20 to 30% premium. Standard 6 to 8 week timelines run cleanest.",
   },
 ];
 
 const ongoingCosts = [
   {
     item: "Hosting",
-    range: "$30 – $50/mo",
-    note: "Managed hosting with SSL, backups, and Australian-based support. Cheaper shared hosting exists ($5 – $15/mo) but performs poorly.",
+    range: "$30 to $50/mo",
+    note: "Managed hosting with SSL, backups, and Australian-based support. Cheaper shared hosting exists ($5 to $15/mo) but performs poorly.",
   },
   {
     item: "Maintenance plan",
-    range: "$200 – $500/mo",
-    note: "Updates, security patches, content edits, performance monitoring. Without this, sites drift into vulnerability and bitrot within 6 – 12 months.",
+    range: "$200 to $500/mo",
+    note: "Updates, security patches, content edits, performance monitoring. Without this, sites drift into vulnerability and bitrot within 6 to 12 months.",
   },
   {
     item: "Domain renewal",
-    range: "$15 – $50/yr",
+    range: "$15 to $50/yr",
     note: ".com.au domains, registered through reputable Australian registrars.",
   },
   {
     item: "SSL certificate",
-    range: "Free – $200/yr",
+    range: "Free to $200/yr",
     note: "Most hosts now bundle Let's Encrypt SSL free. Premium SSL only needed for specific compliance scenarios.",
   },
   {
     item: "Premium WordPress plugins",
-    range: "$300 – $800/yr",
+    range: "$300 to $800/yr",
     note: "If your build uses WordPress with paid plugins (forms, SEO, security, page builder), licence renewals stack up.",
   },
   {
     item: "Email marketing platform",
-    range: "$0 – $300+/mo",
+    range: "$0 to $300+/mo",
     note: "Mailchimp, Klaviyo, ActiveCampaign. Pricing scales with subscriber count.",
   },
 ];
@@ -242,7 +242,7 @@ const faqItems = [
   {
     title: "Is it cheaper to use Wix or hire a developer?",
     summary:
-      "Wix or Squarespace looks cheaper upfront ($30/mo) but typically costs you 30 – 60 hours of your own time and limits future SEO, performance, and customisation. For most businesses, an agency-built site recovers the cost difference within 12 months through better conversions and time saved.",
+      "Wix or Squarespace looks cheaper upfront ($30/mo) but typically costs you 30 to 60 hours of your own time and limits future SEO, performance, and customisation. For most businesses, an agency-built site recovers the cost difference within 12 months through better conversions and time saved.",
     content:
       "Wix, Squarespace, and similar DIY platforms appear cheaper upfront, typically $20 to $50 per month plus your own time. The real cost is in the 30 to 60 hours you'll spend learning the platform and building the site yourself, plus the long-term ceiling on SEO, performance, and customisation. For a one-person hobby or testing an idea, DIY is fine. For a business that wants the website to generate leads, an agency-built site usually recovers the price difference within 12 months through better conversions, faster load times, and time you didn't spend fighting templates. Search engines also tend to rank custom-built sites higher than generic templates.",
   },
@@ -256,21 +256,21 @@ const faqItems = [
   {
     title: "Are there hidden costs after the website launches?",
     summary:
-      "Yes. Most websites have ongoing costs of $300 – $800/month covering hosting, maintenance, plugin renewals, domain registration, and email marketing platforms. Reputable agencies disclose these upfront. Cheap quotes often don't.",
+      "Yes. Most websites have ongoing costs of $300 to $800/month covering hosting, maintenance, plugin renewals, domain registration, and email marketing platforms. Reputable agencies disclose these upfront. Cheap quotes often don't.",
     content:
-      "Yes. Most websites carry ongoing costs of $300 to $800 per month covering hosting ($30 – $50/mo), a maintenance plan ($200 – $500/mo for updates and security), domain renewal ($15 – $50/yr), premium plugin licences if applicable ($300 – $800/yr), and any email marketing platform you use. Reputable agencies disclose all of these upfront in proposals. Cheap quotes often hide them: a $2,000 build that needs $400/month to keep running costs $6,800 in year one, not $2,000. Always ask for a 12-month total cost of ownership figure when comparing quotes.",
+      "Yes. Most websites carry ongoing costs of $300 to $800 per month covering hosting ($30 to $50/mo), a maintenance plan ($200 to $500/mo for updates and security), domain renewal ($15 to $50/yr), premium plugin licences if applicable ($300 to $800/yr), and any email marketing platform you use. Reputable agencies disclose all of these upfront in proposals. Cheap quotes often hide them: a $2,000 build that needs $400/month to keep running costs $6,800 in year one, not $2,000. Always ask for a 12-month total cost of ownership figure when comparing quotes.",
   },
   {
     title: "How long does it take to build a Brisbane website?",
     summary:
-      "Template builds: 1 – 4 weeks. Standard small business sites: 4 – 8 weeks. Custom premium builds: 8 – 14 weeks. Web apps and large platforms: 12 weeks to 6 months. Rush jobs typically add a 20 – 30% premium.",
+      "Template builds: 1 to 4 weeks. Standard small business sites: 4 to 8 weeks. Custom premium builds: 8 to 14 weeks. Web apps and large platforms: 12 weeks to 6 months. Rush jobs typically add a 20 to 30% premium.",
     content:
       "Timelines depend on scope. Template-based builds take 1 to 4 weeks. Standard small business sites with custom design and a CMS run 4 to 8 weeks. Custom premium builds with bespoke design, motion, and integrations take 8 to 14 weeks. Web apps and larger platforms run 12 weeks to 6 months. The biggest delays are rarely on the build side. They're usually content readiness (waiting on copy or imagery) and stakeholder review cycles. Rush projects under 3 weeks typically carry a 20 to 30% premium and reduce design quality, so plan ahead where possible.",
   },
   {
     title: "Do I need to pay for hosting separately?",
     summary:
-      "Yes. Hosting is almost always billed separately and ongoing. Expect $30 – $50/month for managed Australian hosting. Some agencies (RAVENCI included) bundle hosting with maintenance for a small discount.",
+      "Yes. Hosting is almost always billed separately and ongoing. Expect $30 to $50/month for managed Australian hosting. Some agencies (RAVENCI included) bundle hosting with maintenance for a small discount.",
     content:
       "Yes. Hosting is almost always a separate, ongoing cost rather than a one-off fee. Managed hosting on Australian or Australia-region infrastructure runs around $30 to $50 per month for a typical small business site. Cheaper offshore shared hosting exists ($5 to $15/month) but performs noticeably worse and creates support headaches. Many Brisbane agencies (RAVENCI included) bundle hosting with a maintenance plan for a small discount, which is usually the cleanest way to budget. One monthly invoice covers everything.",
   },
@@ -284,7 +284,7 @@ const faqItems = [
   {
     title: "How do I budget for a website project?",
     summary:
-      "Add 15 – 20% to the quoted build price for content production, copywriting, and photography. Add 12 months of hosting and maintenance to get the true year-one cost. Hold back a 10% contingency for changes during build.",
+      "Add 15 to 20% to the quoted build price for content production, copywriting, and photography. Add 12 months of hosting and maintenance to get the true year-one cost. Hold back a 10% contingency for changes during build.",
     content:
       "Three rules of thumb for accurate budgeting. First, add 15 to 20% to the quoted build price to cover content production: copywriting, photography, video, and stock assets. Most build quotes assume you supply this. Second, add 12 months of hosting and maintenance ($300 to $600/month for a typical small business site) to get the true year-one cost. Third, hold back a 10% contingency for in-flight changes, since every project surfaces things you didn't think of in the brief. A $10,000 build typically becomes a $14,000 to $16,000 first-year investment when content, hosting, maintenance, and contingency are factored in. Better to know that upfront than to discover it in month three.",
   },
@@ -311,9 +311,9 @@ export default function BrisbaneWebsiteCostPage() {
             A custom website in Brisbane typically costs between{" "}
             <strong className="text-ravenci-dark">$1,500 and $25,000</strong> in
             2026 depending on complexity. Template-based agency builds start
-            around $1,500. Standard small business sites run $5,000 – $10,000.
-            Custom Next.js or premium branded builds reach $15,000 – $25,000+.
-            Hosting and maintenance add $300 – $600 per month. This guide breaks
+            around $1,500. Standard small business sites run $5,000 to $10,000.
+            Custom Next.js or premium branded builds reach $15,000 to $25,000+.
+            Hosting and maintenance add $300 to $600 per month. This guide breaks
             down what you get at each price point, what affects the
             quote, and the ongoing costs nobody mentions in the proposal.
           </p>
@@ -540,7 +540,7 @@ export default function BrisbaneWebsiteCostPage() {
           <div className="space-y-6 text-white/90 leading-relaxed">
             <div>
               <h4 className="mb-2 text-lg font-bold text-white">
-                1. Most Brisbane SMB websites should budget $5,000 – $15,000
+                1. Most Brisbane SMB websites should budget $5,000 to $15,000
               </h4>
               <p>
                 The sweet spot for an established small business is the standard
@@ -552,11 +552,11 @@ export default function BrisbaneWebsiteCostPage() {
             </div>
             <div>
               <h4 className="mb-2 text-lg font-bold text-white">
-                2. Year-one cost is 1.5 – 2x the build quote
+                2. Year-one cost is 1.5 to 2x the build quote
               </h4>
               <p>
                 A $10,000 build with content production, hosting, maintenance,
-                and a 10% contingency lands at $14,000 – $16,000 in year one.
+                and a 10% contingency lands at $14,000 to $16,000 in year one.
                 Budget accordingly so you&apos;re not surprised in month three.
               </p>
             </div>
@@ -566,7 +566,7 @@ export default function BrisbaneWebsiteCostPage() {
               </h4>
               <p>
                 Sites built without proper SEO, performance, and maintenance
-                foundations typically need a $3,000 – $7,000 fix or rebuild
+                foundations typically need a $3,000 to $7,000 fix or rebuild
                 within 18 months. The cheapest quote in your inbox is rarely the
                 cheapest quote over 24 months.
               </p>

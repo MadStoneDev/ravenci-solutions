@@ -394,7 +394,7 @@ export default function WebMaintenancePage() {
             </p>
           </div>
           <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">$5-15k</p>
+            <p className="text-3xl font-bold text-ravenci-primary">$5 to 15k</p>
             <p className="mt-1 text-sm text-neutral-500">typical cost</p>
             <p className="mt-3 text-sm text-neutral-700">
               Of a single security breach to fix
@@ -403,7 +403,7 @@ export default function WebMaintenancePage() {
         </div>
         <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
           <p>
-            A single security breach typically costs $5,000&ndash;$15,000 to
+            A single security breach typically costs $5,000 to $15,000 to
             fix, plus the damage to your reputation and lost sales while
             your site is down. Our annual maintenance cost is less than what
             most businesses spend on one emergency fix.
@@ -514,9 +514,9 @@ We monitor 24/7 and typically restore sites within 2 hours during business hours
             },
             {
               title: `Is this really necessary?`,
-              summary: `WordPress sites without maintenance are 70% more likely to be hacked. A single security breach typically costs $5,000-$15,000 to fix. Professional maintenance costs less than one emergency fix per year.`,
+              summary: `WordPress sites without maintenance are 70% more likely to be hacked. A single security breach typically costs $5,000 to $15,000 to fix. Professional maintenance costs less than one emergency fix per year.`,
               content: `
-WordPress sites without maintenance are 70% more likely to be hacked. One security breach typically costs $5,000-$15,000 to fix, plus the damage to your reputation. Our maintenance costs less than one emergency website fix per year.
+WordPress sites without maintenance are 70% more likely to be hacked. One security breach typically costs $5,000 to $15,000 to fix, plus the damage to your reputation. Our maintenance costs less than one emergency website fix per year.
 `,
             },
             {
@@ -682,7 +682,7 @@ We're Brisbane-based with local support, not an overseas call center. You get di
                 name: "Is website maintenance really necessary?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "WordPress sites without maintenance are 70% more likely to be hacked. One security breach typically costs $5,000-$15,000 to fix, plus the damage to your reputation. Our maintenance costs less than one emergency website fix per year.",
+                  text: "WordPress sites without maintenance are 70% more likely to be hacked. One security breach typically costs $5,000 to $15,000 to fix, plus the damage to your reputation. Our maintenance costs less than one emergency website fix per year.",
                 },
               },
               {

@@ -225,7 +225,7 @@ export default function RetainerPackagesPage() {
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             For established Australian businesses that want a digital team
             without the overhead of hiring one. Hosting, maintenance, and
-            dedicated time for development, design, content and SEO — used
+            dedicated time for development, design, content and SEO, used
             however your business needs it that month. Tell us the priorities.
             We&apos;ll take it from there.
           </p>
@@ -295,7 +295,7 @@ export default function RetainerPackagesPage() {
               Our Growth Partner retainer costs{" "}
               <span className={`text-white font-bold`}>$36,000/year</span>, a
               full-time hire costs{" "}
-              <span className={`text-white font-bold`}>$80,000-$100,000/year</span>{" "}
+              <span className={`text-white font-bold`}>$80,000 to $100,000/year</span>{" "}
               before super, leave, equipment, and training.
             </p>
             <ul className={`flex flex-col gap-4 mb-6 text-neutral-400/90`}>
@@ -383,7 +383,7 @@ export default function RetainerPackagesPage() {
             <div key={project.name} className="group relative overflow-hidden rounded-xl">
               <Image
                 src={project.image}
-                alt={`${project.name} — RAVENCI retainer client`}
+                alt={`${project.name}, RAVENCI retainer client`}
                 width={600}
                 height={400}
                 className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
@@ -501,7 +501,7 @@ export default function RetainerPackagesPage() {
             </p>
           </div>
           <div className="p-6 rounded-xl border border-neutral-200 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">$80-100k</p>
+            <p className="text-3xl font-bold text-ravenci-primary">$80 to 100k</p>
             <p className="mt-1 text-sm text-neutral-500">per year</p>
             <p className="mt-3 text-sm text-neutral-700">
               Full-time hire before super and leave
@@ -517,8 +517,8 @@ export default function RetainerPackagesPage() {
         </div>
         <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
           <p>
-            A full-time developer costs $80,000&ndash;$100,000 a year before
-            super, leave, equipment, and training &mdash; and you get one
+            A full-time developer costs $80,000 to $100,000 a year before
+            super, leave, equipment, and training, and you get one
             person with one skill set. Our Growth Partner retainer gives you
             access to a full team for $36,000 a year, and you use the hours
             however your business needs them that month.

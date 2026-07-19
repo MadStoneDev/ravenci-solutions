@@ -91,7 +91,7 @@ export async function POST(request: Request) {
             Open the full report
           </a>
         </p>
-        <p>Save it, share it, print to PDF — it's yours.</p>
+        <p>Save it, share it, print to PDF. It's yours.</p>
         <p><strong>Curious how your own site stacks up?</strong></p>
         <p>We do free Visibility Checks across the same five categories.</p>
         <p>
@@ -107,7 +107,7 @@ export async function POST(request: Request) {
         `Hi ${firstName},\n\n` +
         `Here's the full Brisbane Business Website Audit 2026:\n` +
         `${reportUrl}\n\n` +
-        `Save it, share it, print to PDF — it's yours.\n\n` +
+        `Save it, share it, print to PDF. It's yours.\n\n` +
         `Curious how your own site stacks up?\n` +
         `We do free Visibility Checks across the same five categories.\n` +
         `${visibilityCheckUrl}\n\n` +

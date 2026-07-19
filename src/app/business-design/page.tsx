@@ -485,7 +485,7 @@ export default function BusinessDesignPage() {
             </p>
           </div>
           <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">5-10x</p>
+            <p className="text-3xl font-bold text-ravenci-primary">5 to 10x</p>
             <p className="mt-1 text-sm text-neutral-500">trust factor</p>
             <p className="mt-3 text-sm text-neutral-700">
               Professional branding vs DIY design
@@ -594,8 +594,8 @@ export default function BusinessDesignPage() {
           items={[
             {
               title: `How long does design work typically take?`,
-              summary: `Logo + Guidelines takes 6 weeks, Full Brand Identity 8 weeks, and Signage or Vehicle Wraps 4-6 weeks. RAVENCI provides regular updates throughout every project.`,
-              content: `Brand Essentials: 6 weeks. Marketing Materials: 8 weeks. Signage & Vehicle Wraps: 4-6 weeks. We provide regular updates and involve you in every decision.`,
+              summary: `Logo + Guidelines takes 6 weeks, Full Brand Identity 8 weeks, and Signage or Vehicle Wraps 4 to 6 weeks. RAVENCI provides regular updates throughout every project.`,
+              content: `Brand Essentials: 6 weeks. Marketing Materials: 8 weeks. Signage & Vehicle Wraps: 4 to 6 weeks. We provide regular updates and involve you in every decision.`,
             },
             {
               title: `What if I don't like the initial concepts?`,
@@ -711,7 +711,7 @@ export default function BusinessDesignPage() {
                 name: "How long does design work typically take?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Logo + Guidelines takes 6 weeks, Full Brand Identity 8 weeks, and Signage or Vehicle Wraps 4-6 weeks. RAVENCI provides regular updates throughout every project.",
+                  text: "Logo + Guidelines takes 6 weeks, Full Brand Identity 8 weeks, and Signage or Vehicle Wraps 4 to 6 weeks. RAVENCI provides regular updates throughout every project.",
                 },
               },
               {

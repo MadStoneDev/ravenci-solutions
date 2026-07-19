@@ -68,7 +68,7 @@ export async function checkRateLimit(
     if (process.env.NODE_ENV === "production" && !warnedNoUpstash) {
       warnedNoUpstash = true;
       console.error(
-        "Rate limiting: Upstash not configured in production — using per-instance in-memory fallback.",
+        "Rate limiting: Upstash not configured in production, using per-instance in-memory fallback.",
       );
     }
     return memoryRateLimit(key);

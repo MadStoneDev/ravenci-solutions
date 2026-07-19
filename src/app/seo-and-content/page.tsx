@@ -431,7 +431,7 @@ export default function SEOContentPage() {
   <li>Conversion‑focused CTAs</li>
   <li>Optional add‑ons: sales/landing pages, email sequences</li>
   <li>2 rounds of revisions</li>
-  <li>4–6 weeks delivery</li>
+  <li>4 to 6 weeks delivery</li>
 </ul>`,
             },
           ]}
@@ -463,7 +463,7 @@ export default function SEOContentPage() {
             </p>
           </div>
           <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">3-6x</p>
+            <p className="text-3xl font-bold text-ravenci-primary">3 to 6x</p>
             <p className="mt-1 text-sm text-neutral-500">return</p>
             <p className="mt-3 text-sm text-neutral-700">
               From organic traffic that converts
@@ -472,8 +472,8 @@ export default function SEOContentPage() {
         </div>
         <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
           <p>
-            If your SEO brings in just two extra enquiries a month &mdash; even
-            at $500 per job &mdash; that&apos;s $12,000 a year in revenue from
+            If your SEO brings in just two extra enquiries a month, even
+            at $500 per job, that&apos;s $12,000 a year in revenue from
             a $1,750/month investment. Most businesses that rank well see far
             more than two leads a month from organic search.
           </p>
@@ -577,8 +577,8 @@ export default function SEOContentPage() {
             {
               title: "How long does it take to see SEO results?",
               summary:
-                "Most businesses see SEO improvements in 3-6 months, with significant gains within 6-12 months. Results depend on competition, domain authority, and strategy execution.",
-              content: `<p class="pt-3 text-neutral-500/90">Most businesses start seeing improvements in 3–6 months, with significant gains typically within 6–12 months.</p>`,
+                "Most businesses see SEO improvements in 3 to 6 months, with significant gains within 6 to 12 months. Results depend on competition, domain authority, and strategy execution.",
+              content: `<p class="pt-3 text-neutral-500/90">Most businesses start seeing improvements in 3 to 6 months, with significant gains typically within 6 to 12 months.</p>`,
             },
             {
               title:
@@ -690,7 +690,7 @@ export default function SEOContentPage() {
                 name: "How long does it take to see SEO results?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Most businesses see SEO improvements in 3-6 months, with significant gains within 6-12 months. Results depend on competition, domain authority, and strategy execution.",
+                  text: "Most businesses see SEO improvements in 3 to 6 months, with significant gains within 6 to 12 months. Results depend on competition, domain authority, and strategy execution.",
                 },
               },
               {
