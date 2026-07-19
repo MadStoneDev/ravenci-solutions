@@ -486,11 +486,11 @@ export default function RetainerPackagesPage() {
       {/* Investment ROI */}
       <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <h2 className="mb-4 font-serif text-h3 font-bold text-center">
-          Think of It as an Investment, Not an Expense
+          A Retainer That Pays for Itself
         </h2>
         <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
-          A retainer isn&apos;t a cost you absorb. It&apos;s a dedicated
-          digital team that costs a fraction of hiring in-house.
+          A retainer gives you a dedicated digital team for a fraction of what
+          hiring in-house would cost. No salaries, no super, no drawn-out hiring.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
           <div className="p-6 rounded-xl border border-neutral-200 text-center">

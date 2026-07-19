@@ -498,11 +498,11 @@ export default function WebHostingDevelopmentPage() {
       {/* Investment ROI */}
       <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <h2 className="mb-4 font-serif text-h3 font-bold text-center">
-          Think of It as an Investment, Not an Expense
+          What a Website Actually Returns
         </h2>
         <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
-          A website isn&apos;t a cost you absorb. It&apos;s infrastructure that
-          earns revenue every month for years.
+          A website that&apos;s built properly earns its keep every month for
+          years, quietly bringing in enquiries while you get on with the work.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">

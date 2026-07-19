@@ -142,9 +142,9 @@ const faqItems = [
   {
     title: "Do you work with businesses outside Brisbane?",
     summary:
-      "Yes. While RAVENCI is Brisbane-based, the process works seamlessly for remote clients across Australia and internationally via video calls and screen sharing.",
+      "Yes. While RAVENCI is Brisbane-based, the process works just as well for remote clients across Australia and internationally via video calls and screen sharing.",
     content:
-      "Absolutely. While we're based in Brisbane and love working with local businesses, our process works seamlessly for remote clients across Australia and internationally. Video calls and screen sharing keep communication clear.",
+      "Absolutely. While we're based in Brisbane and love working with local businesses, our process works just as well for remote clients across Australia and internationally. Video calls and screen sharing keep communication clear.",
   },
 ];
 

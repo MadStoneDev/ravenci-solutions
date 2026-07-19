@@ -304,7 +304,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: "Xero, from setup to integration to confident day-to-day",
         description:
-          "NNAccountability's value isn't just doing the books. It's getting clients from \"we just bought Xero\" to \"we run our finances through it without thinking\". The site reflects that journey in how the services are laid out: setup and onboarding for businesses new to Xero, training for teams that need to use it, integrations for the platforms that need to talk to it, and the bookkeeping/BAS/accounting work underneath for everything that follows. One practice, one platform, the full arc.",
+          "NNAccountability's real value shows up after the books are done: getting clients from \"we just bought Xero\" to \"we run our finances through it without thinking\". The site reflects that journey in how the services are laid out: setup and onboarding for businesses new to Xero, training for teams that need to use it, integrations for the platforms that need to talk to it, and the bookkeeping/BAS/accounting work underneath for everything that follows. One practice, one platform, the full arc.",
         image: "/showcase-images/nnaccountability/nnaccountability-xero-to-hero.png",
       },
     ],

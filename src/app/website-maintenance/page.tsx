@@ -371,11 +371,12 @@ export default function WebMaintenancePage() {
       {/* Investment ROI */}
       <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <h2 className="mb-4 font-serif text-h3 font-bold text-center">
-          Think of It as an Investment, Not an Expense
+          Maintenance Costs Less Than a Rebuild
         </h2>
         <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
-          Website maintenance isn&apos;t a cost you absorb. It&apos;s insurance
-          that protects the revenue your website generates every month.
+          Maintenance is insurance for the revenue your website brings in. A
+          little care each month costs far less than fixing a site that&apos;s
+          broken, hacked, or slid down the rankings.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
           <div className="p-6 rounded-xl border border-neutral-200 text-center">

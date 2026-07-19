@@ -343,11 +343,12 @@ export default function WebHostingPage() {
       {/* Investment ROI */}
       <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <h2 className="mb-4 font-serif text-h3 font-bold text-center">
-          Think of It as an Investment, Not an Expense
+          Cheap Hosting Has a Real Price
         </h2>
         <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
-          Hosting isn&apos;t a cost you absorb. It&apos;s the foundation that
-          keeps your website earning revenue every day.
+          Hosting is the foundation everything else sits on. Get it right and
+          your site stays fast and online every day. Get it wrong and you feel
+          it in lost customers.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
           <div className="p-6 rounded-xl border border-neutral-200 text-center">
