@@ -28,6 +28,9 @@ export async function generateMetadata({
     title: `${article.seo?.metaTitle || article.title} | RAVENCI Solutions`,
     description: article.seo?.metaDescription || article.excerpt || "",
     keywords: article.seo?.metaKeywords,
+    alternates: {
+      canonical: `/articles/${(await params).slug}`,
+    },
     openGraph: {
       title: `${article.seo?.metaTitle || article.title} | RAVENCI Solutions`,
       description: article.seo?.metaDescription || article.excerpt,
