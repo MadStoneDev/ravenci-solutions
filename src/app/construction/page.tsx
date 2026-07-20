@@ -14,13 +14,13 @@ import ProofCluster from "@/components/proof-cluster";
 export const metadata = {
   title: "Construction Websites Brisbane | RAVENCI Solutions",
   description:
-    "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $7,500.",
+    "Websites for Brisbane builders and property developers. Project portfolios, lead generation, QBCC licence display, 85+ PageSpeed guaranteed. From $7,500.",
   alternates: { canonical: "/construction" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Construction Websites Brisbane | RAVENCI Solutions",
     description:
-      "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $7,500.",
+      "Websites for Brisbane builders and property developers. Project portfolios, lead generation, QBCC licence display, 85+ PageSpeed guaranteed. From $7,500.",
     url: "/construction",
     type: "website",
   },

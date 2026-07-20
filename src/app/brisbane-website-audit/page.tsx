@@ -17,13 +17,13 @@ import {
 export const metadata: Metadata = {
   title: "Brisbane Website Audit Results | RAVENCI Solutions",
   description:
-    "RAVENCI Solutions audited 50 Brisbane business websites for speed, SEO, mobile usability, accessibility, and security. 72% scored below 50 on Google PageSpeed. See the full findings.",
+    "We audited 50 Brisbane business websites for speed, SEO, mobile, accessibility and security. 72% scored below 50 on Google PageSpeed. See the findings.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Brisbane Website Audit Results | RAVENCI Solutions",
     url: "/brisbane-website-audit",
     description:
-      "RAVENCI Solutions audited 50 Brisbane business websites for speed, SEO, mobile usability, accessibility, and security. 72% scored below 50 on Google PageSpeed. See the full findings.",
+      "We audited 50 Brisbane business websites for speed, SEO, mobile, accessibility and security. 72% scored below 50 on Google PageSpeed. See the findings.",
     type: "article",
   },
   twitter: { ...TWITTER_DEFAULTS },

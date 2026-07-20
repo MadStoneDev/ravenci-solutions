@@ -39,12 +39,12 @@ export const metadata: Metadata = {
   title:
     "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
   description:
-    "RAVENCI Solutions is a Brisbane-based web development and design agency with 25+ years of experience. Custom Next.js and WordPress websites from $7,500. Hosting, maintenance, and retainer packages for Australian businesses.",
+    "Brisbane-based web design and development, 25+ years of experience. Custom Next.js and WordPress websites from $7,500, plus hosting and maintenance.",
   openGraph: {
     title:
       "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
     description:
-      "RAVENCI Solutions is a Brisbane-based web development and design agency with 25+ years of experience. Custom Next.js and WordPress websites from $7,500. Hosting, maintenance, and retainer packages for Australian businesses.",
+      "Brisbane-based web design and development, 25+ years of experience. Custom Next.js and WordPress websites from $7,500, plus hosting and maintenance.",
     url: "https://ravenci.solutions",
     siteName: "RAVENCI Solutions",
     images: [

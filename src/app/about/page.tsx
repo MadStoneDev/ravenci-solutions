@@ -7,12 +7,12 @@ import ProofCluster from "@/components/proof-cluster";
 export const metadata = {
   title: "About | RAVENCI Solutions",
   description:
-    "Meet the team behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency, building websites that perform for Australian businesses.",
+    "Meet RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency and websites that genuinely perform.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "About | RAVENCI Solutions",
     description:
-      "Meet the team behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency, building websites that perform for Australian businesses.",
+      "Meet RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency and websites that genuinely perform.",
     url: "/about",
     type: "website" as const,
   },

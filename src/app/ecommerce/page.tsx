@@ -14,7 +14,7 @@ export const metadata = {
   title:
     "eCommerce Website Development Brisbane | Shopify & BigCommerce | RAVENCI",
   description:
-    "Custom Shopify and BigCommerce stores for Australian product businesses. Certified partner, 25+ years experience. eCommerce builds from $12,000. Brisbane-based.",
+    "Custom Shopify and BigCommerce stores for Australian product businesses. Certified partner, 25+ years. eCommerce builds from $12,000. Brisbane-based.",
   alternates: { canonical: "/ecommerce" },
   openGraph: {
     ...OG_DEFAULTS,
@@ -416,7 +416,7 @@ export default function EcommercePage() {
             serviceType: "eCommerce Website Development",
             name: "eCommerce Website Development Brisbane",
             description:
-              "Custom Shopify and BigCommerce stores for Australian product businesses. Certified partner, 25+ years experience. eCommerce builds from $12,000. Brisbane-based.",
+              "Custom Shopify and BigCommerce stores for Australian product businesses. Certified partner, 25+ years. eCommerce builds from $12,000. Brisbane-based.",
             provider: {
               "@type": "ProfessionalService",
               name: "RAVENCI Solutions",

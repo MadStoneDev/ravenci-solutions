@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title:
     "How to Choose a Web Designer in Brisbane | RAVENCI Solutions",
   description:
-    "The 10 questions every Brisbane business should ask before choosing a web designer. Red flags, green flags, how to compare quotes, and what 'good' looks like in 2026.",
+    "The 10 questions to ask before choosing a Brisbane web designer. Red flags, green flags, comparing quotes, and what 'good' looks like in 2026.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "How to Choose a Web Designer in Brisbane | RAVENCI Solutions",
     description:
-      "The 10 questions every Brisbane business should ask before choosing a web designer. Red flags, green flags, how to compare quotes, and what 'good' looks like in 2026.",
+      "The 10 questions to ask before choosing a Brisbane web designer. Red flags, green flags, comparing quotes, and what 'good' looks like in 2026.",
     url: "/how-to-choose-a-web-designer-in-brisbane",
     type: "article",
   },

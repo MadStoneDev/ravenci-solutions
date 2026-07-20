@@ -14,13 +14,13 @@ import ProofCluster from "@/components/proof-cluster";
 export const metadata = {
   title: "Professional Services Website Design Brisbane | RAVENCI",
   description:
-    "Website design for Brisbane accountants, bookkeepers, lawyers, financial advisers, and consultants. Look as established as you already are, keep your rankings through a rebuild, and stay compliant. From $7,500.",
+    "Website design for Brisbane accountants, lawyers and advisers. Look as established as you are, protect your rankings, and stay compliant. From $7,500.",
   alternates: { canonical: "/professional-services" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Professional Services Website Design Brisbane | RAVENCI",
     description:
-      "Website design for Brisbane accountants, bookkeepers, lawyers, financial advisers, and consultants. Look as established as you already are, keep your rankings through a rebuild, and stay compliant. From $7,500.",
+      "Website design for Brisbane accountants, lawyers and advisers. Look as established as you are, protect your rankings, and stay compliant. From $7,500.",
     url: "/professional-services",
     type: "website",
   },

@@ -10,12 +10,12 @@ import Breadcrumbs from "@/components/breadcrumbs";
 export const metadata: Metadata = {
   title: "Custom Website vs Template | RAVENCI Solutions",
   description:
-    "Compare custom-built websites vs templates and DIY builders. Cost, performance, SEO, and scalability breakdown for Australian businesses. Find out which option pays off.",
+    "Compare custom-built websites vs templates and DIY builders. Cost, performance, SEO and scalability, and which option actually pays off.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Custom Website vs Template | RAVENCI Solutions",
     description:
-      "Compare custom-built websites vs templates and DIY builders. Cost, performance, SEO, and scalability breakdown for Australian businesses. Find out which option pays off.",
+      "Compare custom-built websites vs templates and DIY builders. Cost, performance, SEO and scalability, and which option actually pays off.",
     url: "/custom-vs-template",
     type: "article",
   },

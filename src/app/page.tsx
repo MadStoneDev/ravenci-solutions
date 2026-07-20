@@ -22,12 +22,12 @@ import PlatformsSection from "@/components/platforms-section";
 
 export const metadata = {
   title: "Custom Website Design Brisbane | RAVENCI Solutions",
-  description: "Custom websites and eCommerce platforms for established Australian businesses. A structural engineer's approach to web development, built properly, still working in five years. Brisbane-based, 25+ years experience.",
+  description: "Custom websites and eCommerce for established Australian businesses. A structural engineer's approach, built properly, still working in five years.",
   alternates: { canonical: "/" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Custom Website Design Brisbane | RAVENCI Solutions",
-    description: "Custom websites and eCommerce platforms for established Australian businesses. A structural engineer's approach to web development, built properly, still working in five years.",
+    description: "Custom websites and eCommerce for established Australian businesses. A structural engineer's approach, built properly, still working in five years.",
     url: "/",
     type: "website",
   },

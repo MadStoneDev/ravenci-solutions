@@ -10,12 +10,12 @@ import Breadcrumbs from "@/components/breadcrumbs";
 export const metadata: Metadata = {
   title: "WordPress vs Shopify vs Custom | RAVENCI Solutions",
   description:
-    "Honest 2026 comparison of WordPress, Shopify and Custom Next.js for Australian businesses. Real costs, when each wins, common mistakes, and how to choose without locking yourself in.",
+    "Honest 2026 comparison of WordPress, Shopify and custom Next.js for Australian businesses. Real costs, when each wins, and how to choose without lock-in.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "WordPress vs Shopify vs Custom | RAVENCI Solutions",
     description:
-      "Honest 2026 comparison of WordPress, Shopify and Custom Next.js for Australian businesses. Real costs, when each wins, common mistakes, and how to choose without locking yourself in.",
+      "Honest 2026 comparison of WordPress, Shopify and custom Next.js for Australian businesses. Real costs, when each wins, and how to choose without lock-in.",
     url: "/wordpress-vs-shopify-vs-custom",
     type: "article",
   },

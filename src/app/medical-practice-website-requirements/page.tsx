@@ -14,12 +14,12 @@ import Breadcrumbs from "@/components/breadcrumbs";
 export const metadata: Metadata = {
   title: "Medical Practice Website Guide | RAVENCI Solutions",
   description:
-    "AHPRA advertising compliance, Australian Privacy Principles, practice management integrations, and patient-facing essentials. The 2026 guide for Australian medical practice websites.",
+    "AHPRA advertising, patient privacy, practice integrations and patient-facing essentials. The 2026 guide for Australian medical practice websites.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Medical Practice Website Guide | RAVENCI Solutions",
     description:
-      "AHPRA advertising compliance, Australian Privacy Principles, practice management integrations, and patient-facing essentials. The 2026 guide for Australian medical practice websites.",
+      "AHPRA advertising, patient privacy, practice integrations and patient-facing essentials. The 2026 guide for Australian medical practice websites.",
     url: "/medical-practice-website-requirements",
     type: "article",
   },

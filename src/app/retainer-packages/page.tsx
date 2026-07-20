@@ -13,13 +13,13 @@ import ProofCluster from "@/components/proof-cluster";
 export const metadata = {
   title: "Retainer Packages | RAVENCI Solutions",
   description:
-    "Monthly retainer packages for ongoing web development, eCommerce support, and strategy in Brisbane. Your dedicated digital team without the overhead of hiring.",
+    "Monthly retainer packages for ongoing web support, eCommerce and strategy in Brisbane. A dedicated digital team without the overhead of hiring.",
   alternates: { canonical: "/retainer-packages" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Retainer Packages | RAVENCI Solutions",
     description:
-      "Monthly retainer packages for ongoing web development, eCommerce support, and strategy in Brisbane. Your dedicated digital team without the overhead of hiring.",
+      "Monthly retainer packages for ongoing web support, eCommerce and strategy in Brisbane. A dedicated digital team without the overhead of hiring.",
     url: "/retainer-packages",
     type: "website",
   },

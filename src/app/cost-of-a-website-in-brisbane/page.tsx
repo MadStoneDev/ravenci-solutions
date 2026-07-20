@@ -10,12 +10,12 @@ import Breadcrumbs from "@/components/breadcrumbs";
 export const metadata: Metadata = {
   title: "Website Cost in Brisbane 2026 | RAVENCI Solutions",
   description:
-    "Brisbane website costs in 2026 typically range from $1,500 (template) to $25,000+ (custom premium). Real pricing per tier, what affects cost, and the hidden ongoing fees most agencies don't mention.",
+    "Brisbane website costs in 2026, from $1,500 (template) to $25,000+ (custom). Real pricing per tier, what affects cost, and the fees most agencies skip.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Website Cost in Brisbane 2026 | RAVENCI Solutions",
     description:
-      "Brisbane website costs in 2026 typically range from $1,500 (template) to $25,000+ (custom premium). Real pricing per tier, what affects cost, and the hidden ongoing fees most agencies don't mention.",
+      "Brisbane website costs in 2026, from $1,500 (template) to $25,000+ (custom). Real pricing per tier, what affects cost, and the fees most agencies skip.",
     url: "/cost-of-a-website-in-brisbane",
     type: "article",
   },
@@ -667,7 +667,7 @@ export default function BrisbaneWebsiteCostPage() {
             "@type": "Article",
             headline: "How Much Does a Website Cost in Brisbane in 2026?",
             description:
-              "Brisbane website costs in 2026 typically range from $1,500 (template) to $25,000+ (custom premium). Real pricing per tier, what affects cost, and the hidden ongoing fees most agencies don't mention.",
+              "Brisbane website costs in 2026, from $1,500 (template) to $25,000+ (custom). Real pricing per tier, what affects cost, and the fees most agencies skip.",
             author: {
               "@type": "Organization",
               name: "RAVENCI Solutions",

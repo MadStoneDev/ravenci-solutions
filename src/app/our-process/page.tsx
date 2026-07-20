@@ -16,12 +16,12 @@ import Accordion from "@/components/accordion";
 export const metadata = {
   title: "Our Process | RAVENCI Solutions",
   description:
-    "Discover how RAVENCI Solutions in Brisbane delivers results. Our 6-step process takes your project from discovery to launch and beyond, with 25+ years of experience behind every decision.",
+    "How RAVENCI in Brisbane delivers results: our 6-step process from discovery to launch and beyond, with 25+ years of experience behind every decision.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Our Process | RAVENCI Solutions",
     description:
-      "Discover how RAVENCI Solutions in Brisbane delivers results. Our 6-step process takes your project from discovery to launch and beyond, with 25+ years of experience behind every decision.",
+      "How RAVENCI in Brisbane delivers results: our 6-step process from discovery to launch and beyond, with 25+ years of experience behind every decision.",
     url: "/our-process",
     type: "website" as const,
   },

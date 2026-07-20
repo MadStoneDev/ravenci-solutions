@@ -14,13 +14,13 @@ import ProofCluster from "@/components/proof-cluster";
 export const metadata = {
   title: "Healthcare Websites Brisbane | RAVENCI Solutions",
   description:
-    "Websites for healthcare professionals in Brisbane. Patient portals, online booking, Australian Privacy Principles compliance, NDIS-ready, Cliniko and HotDoc integration. From $7,500.",
+    "Websites for Brisbane healthcare practices. Online booking, patient privacy, NDIS-ready, Cliniko and HotDoc integration, AHPRA-aware. From $7,500.",
   alternates: { canonical: "/healthcare" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Healthcare Websites Brisbane | RAVENCI Solutions",
     description:
-      "Websites for healthcare professionals in Brisbane. Patient portals, online booking, Australian Privacy Principles compliance, NDIS-ready, Cliniko and HotDoc integration. From $7,500.",
+      "Websites for Brisbane healthcare practices. Online booking, patient privacy, NDIS-ready, Cliniko and HotDoc integration, AHPRA-aware. From $7,500.",
     url: "/healthcare",
     type: "website",
   },

@@ -10,13 +10,13 @@ import { getTestimonialByID } from "@/data/testimonials";
 export const metadata = {
   title: "Pricing | RAVENCI Solutions",
   description:
-    "What it costs to work with RAVENCI. Custom websites from $7,500, eCommerce from $12,000, branding from $3,500, SEO from $1,750/mo, care plans from $350/mo, hosting from $39/mo. Clear starting prices, scoped up front.",
+    "What it costs to work with RAVENCI. Websites from $7,500, eCommerce from $12,000, branding from $3,500, hosting from $39/mo. Clear pricing.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Pricing | RAVENCI Solutions",
     description:
-      "What it costs to work with RAVENCI. Custom websites from $7,500, eCommerce from $12,000, branding, SEO, care plans, and hosting. Clear starting prices, scoped up front.",
+      "What it costs to work with RAVENCI. Websites from $7,500, eCommerce from $12,000, branding from $3,500, hosting from $39/mo. Clear pricing.",
     url: "/pricing",
     type: "website",
   },
