@@ -228,14 +228,20 @@ export default function Home() {
         </div>
 
         <p className="mt-8 text-center text-sm text-neutral-500">
-          Not sure what a website should cost?{" "}
+          <Link
+            href="/pricing"
+            className="font-medium text-ravenci-primary underline underline-offset-4 hover:no-underline"
+          >
+            See full pricing
+          </Link>
+          , or{" "}
           <Link
             href="/cost-of-a-website-in-brisbane"
             className="font-medium text-ravenci-primary underline underline-offset-4 hover:no-underline"
           >
-            Read the Brisbane website cost guide
-          </Link>
-          .
+            read the Brisbane website cost guide
+          </Link>{" "}
+          if you&apos;re not sure what your project needs.
         </p>
 
         {/* 85+ Guarantee */}
