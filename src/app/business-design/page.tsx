@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/breadcrumbs";
 import PricingCards from "@/components/pricing-cards";
 import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
+import ProofCluster from "@/components/proof-cluster";
 
 export const metadata = {
   title: "Branding & Brand Identity Brisbane | RAVENCI",
@@ -625,6 +626,11 @@ export default function BusinessDesignPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      {/* Proof near the CTA */}
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <ProofCluster testimonial={testimonials[0]} />
+      </section>
 
       {/* Sticky CTA for Mobile */}
       <StickyCTA

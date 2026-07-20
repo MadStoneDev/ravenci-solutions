@@ -8,6 +8,7 @@ import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
 import { getTestimonialsForPage } from "@/data/testimonials";
+import ProofCluster from "@/components/proof-cluster";
 
 export const metadata = {
   title: "Website Maintenance | RAVENCI Solutions",
@@ -534,6 +535,11 @@ We're Brisbane-based with local support, not an overseas call center. You get di
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      {/* Proof near the CTA */}
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <ProofCluster testimonial={testimonials[0]} />
+      </section>
 
       {/* Sticky CTA for Mobile */}
       <StickyCTA
