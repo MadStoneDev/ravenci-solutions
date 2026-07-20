@@ -7,6 +7,8 @@ const PARTNERS = [
   "Synergy Wholesale Partner",
 ];
 
+const GOOGLE_REVIEWS_URL = "https://g.page/r/CTttHG3mMzZ_EAI/review";
+
 /**
  * Reusable trust block for placing next to CTAs: Google rating, one short
  * client quote, the 85+ PageSpeed guarantee, and partner badges. Pass the
@@ -27,18 +29,27 @@ export default function ProofCluster({
         dark ? "border-white/15 bg-white/5" : "border-neutral-200 bg-white"
       }`}
     >
-      <div className="flex items-center gap-2">
+      <a
+        href={GOOGLE_REVIEWS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+      >
         <div className="flex text-ravenci-primary">
           {[0, 1, 2, 3, 4].map((i) => (
             <IconStarFilled key={i} size={16} />
           ))}
         </div>
         <span
-          className={`text-sm ${dark ? "text-neutral-300" : "text-neutral-500"}`}
+          className={`text-sm underline underline-offset-2 ${
+            dark
+              ? "text-neutral-300 decoration-neutral-600"
+              : "text-neutral-500 decoration-neutral-300"
+          }`}
         >
           5.0 from 11 Google reviews
         </span>
-      </div>
+      </a>
 
       {testimonial && (
         <>

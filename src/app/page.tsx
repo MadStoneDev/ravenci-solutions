@@ -141,16 +141,21 @@ export default function Home() {
             </p>
           </div>
           <div className="lg:w-2/3 lg:border-l lg:border-neutral-200 lg:pl-10">
-            <div className="flex items-center justify-center lg:justify-start gap-2 mb-3">
+            <a
+              href="https://g.page/r/CTttHG3mMzZ_EAI/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center lg:justify-start gap-2 mb-3 hover:opacity-80 transition-opacity"
+            >
               <div className="flex text-ravenci-primary">
                 {[0, 1, 2, 3, 4].map((i) => (
                   <IconStarFilled key={i} size={18} />
                 ))}
               </div>
-              <span className="text-sm text-neutral-500">
+              <span className="text-sm text-neutral-500 underline underline-offset-2 decoration-neutral-300">
                 5.0 from 11 Google reviews
               </span>
-            </div>
+            </a>
             <p className="text-lg font-light leading-relaxed text-neutral-700">
               &ldquo;Our brand new startup is launching with the best possible
               website I could have imagined. He took the time from the very
