@@ -16,7 +16,7 @@ import {
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Image from "next/image";
 import { Route } from "next";
-import { IconStarFilled } from "@tabler/icons-react";
+import { IconStarFilled, IconCheck } from "@tabler/icons-react";
 import ServicesShowcase from "@/components/services-showcase";
 import PlatformsSection from "@/components/platforms-section";
 
@@ -545,12 +545,29 @@ export default function Home() {
       >
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-medium mb-4">
-            Is Your Website Visible to Google and AI?
+            Can Google and AI actually find you?
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Get a free report showing how visible your business is to search
-            engines and AI models.
+            A free report on how your business shows up in Google and the AI
+            tools people now search with. I go through your site myself, not an
+            automated scan, and send it back within two business days. No sales
+            call.
           </p>
+          <ul className="mt-6 flex flex-col sm:flex-row sm:flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-neutral-600 max-w-3xl mx-auto">
+            {[
+              "Your visibility score, Google and AI",
+              "The specific issues holding you back",
+              "The quick wins worth doing first",
+            ].map((item) => (
+              <li key={item} className="flex items-center gap-2">
+                <IconCheck
+                  size={16}
+                  className="text-ravenci-primary flex-shrink-0"
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
         <VisibilityCheckForm />
       </section>
