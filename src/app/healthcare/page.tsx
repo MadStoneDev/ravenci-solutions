@@ -274,12 +274,13 @@ export default function HealthcarePage() {
             practices, allied health, and NDIS providers across Brisbane
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
-            RAVENCI Solutions builds websites for healthcare professionals in
-            Brisbane. From $7,500, we deliver online booking integration,
-            patient portals, NDIS-ready features, telehealth capability, and
-            privacy-compliant design. Australian Privacy Principles and AHPRA
-            advertising guidelines considered from day one. 25+ years of
-            digital experience. 85+ PageSpeed guaranteed.
+            Your patients look you up before they book, and a slow or dated
+            site quietly tells them the practice is behind. It shouldn't. I
+            build websites for Brisbane medical practices, allied health, and
+            NDIS providers that load fast on a phone, take bookings through the
+            tools you already run (HotDoc, Cliniko, and the like), and handle
+            AHPRA advertising rules and patient privacy properly from day one.
+            From $7,500, 85+ PageSpeed guaranteed, and 25+ years behind it.
           </p>
         </article>
       </section>

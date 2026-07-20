@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import {
+  IconBriefcase,
   IconBuildingSkyscraper,
   IconChartLine,
   IconChevronDown,
@@ -62,6 +63,11 @@ export default function MainNavigation() {
       href: "/construction",
       label: "Construction",
       icon: IconBuildingSkyscraper,
+    },
+    {
+      href: "/professional-services",
+      label: "Professional Services",
+      icon: IconBriefcase,
     },
   ];
 

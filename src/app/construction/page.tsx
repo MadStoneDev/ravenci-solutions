@@ -262,12 +262,14 @@ export default function ConstructionPage() {
             across Brisbane and Southeast Queensland
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
-            RAVENCI Solutions builds websites for construction companies and
-            property developers in Brisbane. From $7,500, we deliver project
-            portfolio showcases, lead generation systems, heavy image
-            optimisation, QBCC licence display, client progress portals, and
-            local SEO that targets high-intent searches. 85+ PageSpeed
-            guaranteed with 25+ years of experience.
+            The work you're winning now is bigger than the work your website is
+            selling. Builders moving upmarket get judged on their last
+            projects, and a slow, dated site makes premium work look ordinary. I
+            build websites for Brisbane and Southeast Queensland builders and
+            property developers that show the work at its best, stay fast even
+            with heavy project galleries, display your QBCC licence, and rank
+            for the searches that actually turn into jobs. From $7,500, 85+
+            PageSpeed guaranteed, and 25+ years behind it.
           </p>
         </article>
       </section>
