@@ -147,6 +147,19 @@ export default function CaseStudyPremium({
   caseStudy: CaseStudy;
 }) {
   const relatedStudies = getRelatedCaseStudies(caseStudy.slug, 3);
+  const serviceHrefs: Record<string, string> = {
+    "Web Development": "/web-development",
+    "Web Maintenance": "/website-maintenance",
+    eCommerce: "/ecommerce",
+    Shopify: "/ecommerce",
+    SEO: "/seo-and-content",
+    "Branding Design": "/business-design",
+    "Brand Identity": "/business-design",
+    "Digital Design": "/business-design",
+    "Print & Stationery": "/business-design",
+    "Stationery Design and Print": "/business-design",
+    "Vehicle & Window Signage": "/business-design",
+  };
   const hasMetrics =
     caseStudy.results.metrics && caseStudy.results.metrics.length > 0;
 
@@ -631,9 +644,20 @@ export default function CaseStudyPremium({
                   Services Provided
                 </h4>
                 <div className="flex flex-col gap-1 text-sm text-neutral-700">
-                  {caseStudy.serviceLabels.map((s) => (
-                    <span key={s}>· {s}</span>
-                  ))}
+                  {caseStudy.serviceLabels.map((s) => {
+                    const href = serviceHrefs[s];
+                    return href ? (
+                      <Link
+                        key={s}
+                        href={href}
+                        className="hover:text-ravenci-primary hover:underline"
+                      >
+                        · {s}
+                      </Link>
+                    ) : (
+                      <span key={s}>· {s}</span>
+                    );
+                  })}
                 </div>
               </div>
             )}

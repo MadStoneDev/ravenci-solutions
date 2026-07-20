@@ -1,8 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
-import { getArticleBySlug, getAllSlugs } from "@/lib/articles";
+import {
+  getArticleBySlug,
+  getAllSlugs,
+  getRelatedArticles,
+} from "@/lib/articles";
 import { mdxComponents } from "@/lib/mdx-components";
 import Breadcrumbs from "@/components/breadcrumbs";
 
@@ -66,6 +71,7 @@ export default async function ArticlePage({
 }) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
+  const relatedArticles = getRelatedArticles(slug, 2);
 
   if (!article) {
     notFound();
@@ -185,6 +191,33 @@ export default async function ArticlePage({
           <div className="prose lg:prose-xl">
             <MDXRemote source={article.content} components={mdxComponents} />
           </div>
+
+          {relatedArticles.length > 0 && (
+            <aside className="mt-16 pt-10 border-t border-neutral-200">
+              <h2 className="mb-6 font-serif text-2xl font-bold">
+                Related reading
+              </h2>
+              <ul className="flex flex-col gap-5">
+                {relatedArticles.map((related) => (
+                  <li key={related.slug}>
+                    <Link
+                      href={`/articles/${related.slug}`}
+                      className="group flex flex-col"
+                    >
+                      <span className="font-medium group-hover:text-ravenci-primary transition-colors">
+                        {related.title}
+                      </span>
+                      {related.excerpt && (
+                        <span className="mt-1 text-sm text-neutral-500">
+                          {related.excerpt}
+                        </span>
+                      )}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )}
         </article>
       </section>
     </main>
