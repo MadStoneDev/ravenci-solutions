@@ -1,0 +1,93 @@
+---
+token: sample-visibility-report
+status: published
+clientName: Sample
+clientBusiness: Riverbend Physio (Sample Report)
+clientEmail: sample@ravenci.solutions
+clientWebsite: www.riverbendphysio-sample.com.au
+conductedDate: 2026-07-08
+overallScore: 57
+headline: A solid site with three fixes that would lift it fast
+specialMessage: |
+  This is a sample of the visibility report you'll receive. The business
+  below is made up, but the format, the depth, and the kind of findings are
+  exactly what I send after reviewing a real site by hand. I go through
+  performance, how you show up in Google and AI search, mobile, security and
+  accessibility, then I tell you the handful of things worth doing first.
+categories:
+  - id: performance
+    label: Performance
+    score: 44
+    summary: Mobile is the biggest drag, and most of your patients are on phones.
+    findings:
+      - LCP at 4.2s on mobile, where the target is under 2.5s
+      - Homepage hero image is 3.1MB and unoptimised
+      - The booking widget script blocks the page from rendering
+    recommendations:
+      - Serve the hero as a sized AVIF or WebP image
+      - Lazy-load everything below the fold
+      - Defer the booking widget until someone actually interacts with it
+
+  - id: seo
+    label: SEO & AI Visibility
+    score: 49
+    summary: The basics are there, but nothing tells Google or AI tools what you do or where.
+    findings:
+      - No LocalBusiness or MedicalClinic schema anywhere on the site
+      - Three service pages share the same meta description
+      - Your suburbs never appear in plain text, so AI answers skip you for "physio near me" searches
+    recommendations:
+      - Add LocalBusiness and MedicalClinic JSON-LD with your address and services
+      - Write a unique meta description for each service page
+      - State your suburbs and services in plain text so Google and AI models can read them
+  - id: mobile
+    label: Mobile Usability
+    score: 63
+    summary: Mostly fine on a phone, two spots trip people up.
+    findings:
+      - The "Book Now" button sits well below the fold on mobile
+      - Footer links are too close together to tap cleanly
+    recommendations:
+      - Put a "Book Now" button in the mobile header
+      - Space footer tap targets to at least 44px
+
+  - id: security
+    label: Security
+    score: 72
+    summary: SSL is fine, a couple of headers are missing.
+    findings:
+      - No Content-Security-Policy header
+      - WordPress core and three plugins are a version behind
+    recommendations:
+      - Add CSP and HSTS at the host level
+      - Update core and plugins, then keep them on a monthly cycle
+
+  - id: accessibility
+    label: Accessibility
+    score: 58
+    summary: Some patients will struggle with contrast and unlabelled fields.
+    findings:
+      - Body link contrast is 3.1:1, where 4.5:1 is the minimum
+      - The contact form fields have no visible labels
+      - Two images are missing alt text
+    recommendations:
+      - Darken the link colour to pass 4.5:1
+      - Show labels above the form fields, not just placeholder text inside them
+      - Add alt text to the two images
+
+priorityActions:
+  - Fix the mobile LCP first. It is the single biggest win for bookings.
+  - Add LocalBusiness schema and put your suburbs in plain text. This is what gets you into Google and AI results locally.
+  - Sort the link contrast and form labels. Quick to do, and they matter for patients and for compliance.
+---
+
+A quick note on the AI part, since it is new to most people. When someone
+asks ChatGPT or a Google AI overview for a "good physio in Bulimba", those
+tools read the plain text and the structured data on your site to decide
+whether to mention you. Right now your suburbs and services are mostly locked
+inside images and the booking widget, so the AI has very little to go on. The
+schema and plain-text fixes above are what change that.
+
+None of this is a rebuild. It is a focused half-day of work on the things
+patients actually notice: how fast the site loads, and whether they can find
+you in the first place.

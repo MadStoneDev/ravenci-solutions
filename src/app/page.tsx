@@ -227,6 +227,17 @@ export default function Home() {
           ))}
         </div>
 
+        <p className="mt-8 text-center text-sm text-neutral-500">
+          Not sure what a website should cost?{" "}
+          <Link
+            href="/cost-of-a-website-in-brisbane"
+            className="font-medium text-ravenci-primary underline underline-offset-4 hover:no-underline"
+          >
+            Read the Brisbane website cost guide
+          </Link>
+          .
+        </p>
+
         {/* 85+ Guarantee */}
         <div className="mt-16 max-w-4xl mx-auto p-8 rounded-xl bg-ravenci-dark text-white flex flex-col md:flex-row md:items-center gap-6">
           <div className="flex-shrink-0 flex items-center gap-3">
