@@ -16,6 +16,7 @@ import {
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Image from "next/image";
 import { Route } from "next";
+import { IconStarFilled } from "@tabler/icons-react";
 import ServicesShowcase from "@/components/services-showcase";
 import PlatformsSection from "@/components/platforms-section";
 
@@ -125,6 +126,126 @@ export default function Home() {
         headingSide={`bottom`}
         speed={`slow`}
       />
+
+      {/* Proof + Pricing + Guarantee */}
+      <section className="content-section py-24 px-5 sm:px-20 xl:px-36 bg-white">
+        {/* Proof band */}
+        <div className="flex flex-col lg:flex-row lg:items-center gap-10 mb-16 max-w-5xl mx-auto">
+          <div className="lg:w-1/3 text-center lg:text-left">
+            <p className="font-serif text-5xl font-bold text-ravenci-primary">
+              +38.5%
+            </p>
+            <p className="mt-2 text-neutral-500/80">
+              more customers buying after GoingDark&apos;s relaunch, three
+              months in.
+            </p>
+          </div>
+          <div className="lg:w-2/3 lg:border-l lg:border-neutral-200 lg:pl-10">
+            <div className="flex items-center justify-center lg:justify-start gap-2 mb-3">
+              <div className="flex text-ravenci-primary">
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <IconStarFilled key={i} size={18} />
+                ))}
+              </div>
+              <span className="text-sm text-neutral-500">
+                5.0 from 11 Google reviews
+              </span>
+            </div>
+            <p className="text-lg font-light leading-relaxed text-neutral-700">
+              &ldquo;Our brand new startup is launching with the best possible
+              website I could have imagined. He took the time from the very
+              beginning to understand us and our business, and he has made our
+              branding and website reflect that and represent us
+              perfectly.&rdquo;
+            </p>
+            <p className="mt-3 text-sm text-neutral-500">
+              <span className="font-bold">Adam Bisset</span>, Covenant Security
+              Solutions
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {[
+                "Shopify Partner",
+                "BigCommerce Partner",
+                "Synergy Wholesale Partner",
+              ].map((b) => (
+                <span
+                  key={b}
+                  className="px-3 py-1 rounded-full border border-neutral-200 text-xs text-neutral-500"
+                >
+                  {b}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Pricing snapshot */}
+        <h2 className="mb-2 font-serif text-h3 font-bold text-center">
+          Clear pricing, scoped up front
+        </h2>
+        <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
+          No surprises. You know the starting point before we ever get on a
+          call.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          {[
+            {
+              name: "Custom Websites",
+              price: "from $7,500",
+              line: "A custom site that captures enquiries and still performs in five years.",
+              href: "/web-development",
+            },
+            {
+              name: "eCommerce",
+              price: "from $12,000",
+              line: "A store built to sell and to last, on the right platform for your products.",
+              href: "/ecommerce",
+            },
+            {
+              name: "Website Care Plans",
+              price: "from $249/mo",
+              line: "Updates, security, backups, and someone who answers when it matters.",
+              href: "/website-maintenance",
+            },
+          ].map((t) => (
+            <Link
+              key={t.name}
+              href={t.href as Route}
+              className="group p-6 rounded-xl border border-neutral-200 hover:border-ravenci-primary transition-colors duration-300 flex flex-col"
+            >
+              <p className="font-serif text-xl font-bold">{t.name}</p>
+              <p className="mt-1 text-2xl font-bold text-ravenci-primary">
+                {t.price}
+              </p>
+              <p className="mt-3 text-sm text-neutral-500/90 flex-grow">
+                {t.line}
+              </p>
+              <span className="mt-4 text-sm font-medium text-ravenci-dark group-hover:text-ravenci-primary transition-colors">
+                See what&apos;s included
+              </span>
+            </Link>
+          ))}
+        </div>
+
+        {/* 85+ Guarantee */}
+        <div className="mt-16 max-w-4xl mx-auto p-8 rounded-xl bg-ravenci-dark text-white flex flex-col md:flex-row md:items-center gap-6">
+          <div className="flex-shrink-0 flex items-center gap-3">
+            <span className="font-serif text-4xl font-bold text-ravenci-primary">
+              85+
+            </span>
+            <span className="font-serif text-xl font-bold leading-tight">
+              The RAVENCI
+              <br />
+              Guarantee
+            </span>
+          </div>
+          <p className="text-neutral-300 font-light md:border-l md:border-white/20 md:pl-6">
+            Every site I build ships at 85 or higher on Google PageSpeed. If it
+            doesn&apos;t, I keep working until it does, at no extra cost. None of
+            my competitors put that in writing.
+          </p>
+        </div>
+      </section>
 
       {/* Services Section */}
       <section
