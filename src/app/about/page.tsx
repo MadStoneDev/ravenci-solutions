@@ -1,6 +1,8 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Link from "next/link";
 import { IconCircleCheckFilled } from "@tabler/icons-react";
+import { getTestimonialByID } from "@/data/testimonials";
+import ProofCluster from "@/components/proof-cluster";
 
 export const metadata = {
   title: "About | RAVENCI Solutions",
@@ -19,6 +21,8 @@ export const metadata = {
 };
 
 export default function AboutPage() {
+  const proofTestimonial = getTestimonialByID("geoff-beisler");
+
   const values = [
     {
       title: "Transparency",
@@ -321,6 +325,9 @@ export default function AboutPage() {
               Launch Your Vision
             </Link>
           </div>
+        </div>
+        <div className="mt-12">
+          <ProofCluster testimonial={proofTestimonial} theme="dark" />
         </div>
       </section>
 
