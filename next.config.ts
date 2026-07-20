@@ -50,6 +50,20 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/contact",
+        destination: "/launch-your-vision",
+        permanent: true,
+      },
+      {
+        source: "/get-started",
+        destination: "/launch-your-vision",
+        permanent: true,
+      },
+    ];
+  },
   webpack: (config, { dev }) => {
     if (dev) {
       config.watchOptions = {
