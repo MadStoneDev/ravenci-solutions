@@ -16,12 +16,12 @@ import Accordion from "@/components/accordion";
 export const metadata = {
   title: "Our Process | RAVENCI Solutions",
   description:
-    "Discover how RAVENCI Solutions in Brisbane delivers results. Our 6-step process takes your project from discovery to launch and beyond, with 25+ years of experience behind every decision.",
+    "How RAVENCI in Brisbane delivers results: our 6-step process from discovery to launch and beyond, with 25+ years of experience behind every decision.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Our Process | RAVENCI Solutions",
     description:
-      "Discover how RAVENCI Solutions in Brisbane delivers results. Our 6-step process takes your project from discovery to launch and beyond, with 25+ years of experience behind every decision.",
+      "How RAVENCI in Brisbane delivers results: our 6-step process from discovery to launch and beyond, with 25+ years of experience behind every decision.",
     url: "/our-process",
     type: "website" as const,
   },
@@ -142,9 +142,9 @@ const faqItems = [
   {
     title: "Do you work with businesses outside Brisbane?",
     summary:
-      "Yes. While RAVENCI is Brisbane-based, the process works seamlessly for remote clients across Australia and internationally via video calls and screen sharing.",
+      "Yes. While RAVENCI is Brisbane-based, the process works just as well for remote clients across Australia and internationally via video calls and screen sharing.",
     content:
-      "Absolutely. While we're based in Brisbane and love working with local businesses, our process works seamlessly for remote clients across Australia and internationally. Video calls and screen sharing keep communication clear.",
+      "Absolutely. While we're based in Brisbane and love working with local businesses, our process works just as well for remote clients across Australia and internationally. Video calls and screen sharing keep communication clear.",
   },
 ];
 

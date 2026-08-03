@@ -1,16 +1,18 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Link from "next/link";
 import { IconCircleCheckFilled } from "@tabler/icons-react";
+import { getTestimonialByID } from "@/data/testimonials";
+import ProofCluster from "@/components/proof-cluster";
 
 export const metadata = {
   title: "About | RAVENCI Solutions",
   description:
-    "Meet the team behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency, building websites that perform for Australian businesses.",
+    "Meet RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency and websites that genuinely perform.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "About | RAVENCI Solutions",
     description:
-      "Meet the team behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency, building websites that perform for Australian businesses.",
+      "Meet RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency and websites that genuinely perform.",
     url: "/about",
     type: "website" as const,
   },
@@ -19,6 +21,8 @@ export const metadata = {
 };
 
 export default function AboutPage() {
+  const proofTestimonial = getTestimonialByID("geoff-beisler");
+
   const values = [
     {
       title: "Transparency",
@@ -95,11 +99,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section 3: The Story — Two Column */}
+      {/* Section 3: The Story, Two Column */}
       <div className={`grid grid-cols-1 lg:grid-cols-2 bg-white`}>
         {/* Left: Photo Placeholder */}
         <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 flex items-center justify-center bg-neutral-200/50`}
+          className={`content-section py-20 px-5 sm:px-20 xl:px-36 flex items-center justify-center bg-neutral-50`}
         >
           <div
             className={`w-full max-w-sm flex flex-col items-center justify-center gap-4`}
@@ -321,6 +325,9 @@ export default function AboutPage() {
               Launch Your Vision
             </Link>
           </div>
+        </div>
+        <div className="mt-12">
+          <ProofCluster testimonial={proofTestimonial} theme="dark" />
         </div>
       </section>
 

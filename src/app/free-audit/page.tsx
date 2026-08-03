@@ -20,12 +20,12 @@ import { auditStats, AUDIT_META } from "@/data/brisbane-audit";
 export const metadata: Metadata = {
   title: "Free Website Audit Brisbane | RAVENCI Solutions",
   description:
-    "Free website audit for Brisbane businesses. We check your site's speed, SEO, mobile usability, accessibility and security, and email you a no-obligation report showing exactly where you stand.",
+    "Free website audit for Brisbane businesses. We check speed, SEO, mobile usability, accessibility and security, then email you a no-obligation report.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Free Website Audit Brisbane | RAVENCI Solutions",
     description:
-      "Free website audit for Brisbane businesses. We check your site's speed, SEO, mobile usability, accessibility and security, and email you a no-obligation report showing exactly where you stand.",
+      "Free website audit for Brisbane businesses. We check speed, SEO, mobile usability, accessibility and security, then email you a no-obligation report.",
     url: "/free-audit",
     type: "website",
   },
@@ -98,9 +98,9 @@ const faqItems = [
   {
     title: "How long until I get the report?",
     summary:
-      "Usually within 2–3 business days. We do this manually, not via an automated scan, so it takes a beat.",
+      "Usually within 2 to 3 business days. We do this manually, not via an automated scan, so it takes a beat.",
     content:
-      "Usually within 2–3 business days. We do this manually, not via an automated scan, so it takes a beat. If you need it faster for a specific reason (a board meeting, a pitch, a rebrand decision), tell us in the form and we'll prioritise.",
+      "Usually within 2 to 3 business days. We do this manually, not via an automated scan, so it takes a beat. If you need it faster for a specific reason (a board meeting, a pitch, a rebrand decision), tell us in the form and we'll prioritise.",
   },
   {
     title: "What if I don't have a website yet?",
@@ -166,13 +166,13 @@ export default function FreeAuditPage() {
                 size={18}
                 className="p-0.5 bg-ravenci-primary rounded-full text-white"
               />
-              <span>2–3 business days</span>
+              <span>2 to 3 business days</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Form — pulled high on the page so the action is immediate */}
+      {/* Form, pulled high on the page so the action is immediate */}
       <section
         id="audit-form"
         className="content-section pt-12 pb-20 md:pb-24 px-5 sm:px-20 xl:px-36 bg-neutral-100"
@@ -183,7 +183,7 @@ export default function FreeAuditPage() {
           </h2>
           <p className="max-w-2xl mx-auto text-neutral-600">
             Four fields, thirty seconds. We&apos;ll come back to you within
-            2–3 business days with the full report.
+            2 to 3 business days with the full report.
           </p>
         </div>
         <VisibilityCheckForm />
@@ -228,7 +228,7 @@ export default function FreeAuditPage() {
         </div>
       </section>
 
-      {/* Why it matters — the data */}
+      {/* Why it matters, the data */}
       <section className="content-section py-20 md:py-24 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white">
         <div className="max-w-3xl mb-10">
           <span className="block mb-3 text-xs font-medium tracking-widest uppercase text-white/70">

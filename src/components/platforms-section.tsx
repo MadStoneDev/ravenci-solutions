@@ -84,7 +84,7 @@ export default function PlatformsSection() {
           >
             <div className="h-24 flex items-center justify-center">
               {platform.logo ? (
-                // Using native <img> for SVG logos — Next.js <Image> has
+                // Using native <img> for SVG logos, Next.js <Image> has
                 // quirks with SVGs (no AVIF/WebP optimisation gain anyway)
                 // eslint-disable-next-line @next/next/no-img-element
                 <img

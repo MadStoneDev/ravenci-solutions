@@ -182,7 +182,7 @@ export async function POST(request: NextRequest) {
         price_data: {
           currency: "aud",
           product_data: {
-            name: `${service.name} - Complete Package`,
+            name: `${service.name}, Complete Package`,
             description: description,
           },
           unit_amount: Math.round(totals.oneTime * 100),
@@ -197,7 +197,7 @@ export async function POST(request: NextRequest) {
         price_data: {
           currency: "aud",
           product_data: {
-            name: `${service.name} - Monthly Services`,
+            name: `${service.name}, Monthly Services`,
             description: `Recurring services: hosting, maintenance, etc.`,
           },
           unit_amount: Math.round(totals.recurring * 100),

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description:
     "The full report from RAVENCI's audit of 50 Brisbane business websites. Printable, savable as PDF.",
   alternates: { canonical: "/brisbane-website-audit/report" },
-  // Don't index the report version — the audit landing page is the canonical
+  // Don't index the report version, the audit landing page is the canonical
   // public-facing page; the report is the gated downloadable.
   robots: { index: false, follow: false },
 };
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default function BrisbaneAuditReportPage() {
   return (
     <main className="report-page bg-white text-ravenci-dark min-h-screen">
-      {/* Print stylesheet — applies when user prints or saves as PDF */}
+      {/* Print stylesheet, applies when user prints or saves as PDF */}
       <style
         dangerouslySetInnerHTML={{
           __html: `
@@ -51,7 +51,7 @@ export default function BrisbaneAuditReportPage() {
         }}
       />
 
-      {/* Floating print button — hidden in print */}
+      {/* Floating print button, hidden in print */}
       <div className="no-print fixed top-6 right-6 z-50 flex flex-col gap-2">
         <PrintButton />
         <Link

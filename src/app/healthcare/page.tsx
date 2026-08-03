@@ -9,17 +9,18 @@ import PriceButton from "@/components/price-button";
 import StickyCTA from "@/components/sticky-cta";
 import TestimonialsSingle from "@/components/testimonials-single";
 import { getTestimonialsForIndustry } from "@/data/testimonials";
+import ProofCluster from "@/components/proof-cluster";
 
 export const metadata = {
   title: "Healthcare Websites Brisbane | RAVENCI Solutions",
   description:
-    "Websites for healthcare professionals in Brisbane. Patient portals, online booking, Australian Privacy Principles compliance, NDIS-ready, Cliniko and HotDoc integration. From $7,500.",
+    "Websites for Brisbane healthcare practices. Online booking, patient privacy, NDIS-ready, Cliniko and HotDoc integration, AHPRA-aware. From $7,500.",
   alternates: { canonical: "/healthcare" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Healthcare Websites Brisbane | RAVENCI Solutions",
     description:
-      "Websites for healthcare professionals in Brisbane. Patient portals, online booking, Australian Privacy Principles compliance, NDIS-ready, Cliniko and HotDoc integration. From $7,500.",
+      "Websites for Brisbane healthcare practices. Online booking, patient privacy, NDIS-ready, Cliniko and HotDoc integration, AHPRA-aware. From $7,500.",
     url: "/healthcare",
     type: "website",
   },
@@ -129,17 +130,17 @@ const integrations = [
 
 const compliancePoints = [
   {
-    title: "APP 1 - Open and Transparent Management",
+    title: "APP 1: Open and Transparent Management",
     description:
       "Clear privacy policy explaining what data you collect via forms, how it's stored, and who has access",
   },
   {
-    title: "APP 6 - Use or Disclosure",
+    title: "APP 6: Use or Disclosure",
     description:
       "Form data is only sent to your practice email or integrated system. No third-party data sharing without consent",
   },
   {
-    title: "APP 11 - Security of Personal Information",
+    title: "APP 11: Security of Personal Information",
     description:
       "SSL encryption on all pages, secure form submissions, and integration with compliant storage systems",
   },
@@ -187,9 +188,9 @@ const faqItems = [
   {
     title: "How long does a healthcare website take to build?",
     summary:
-      "Most healthcare websites take 4-8 weeks. A standard practice site with booking integration runs 4-5 weeks. Sites with patient portals, multiple locations, or custom integrations typically take 6-8 weeks.",
+      "Most healthcare websites take 4 to 8 weeks. A standard practice site with booking integration runs 4 to 5 weeks. Sites with patient portals, multiple locations, or custom integrations typically take 6 to 8 weeks.",
     content:
-      "Most healthcare websites take 4-8 weeks depending on complexity. A straightforward practice site with booking integration runs 4-5 weeks. Sites with patient portals, multiple locations, or custom integrations typically take 6-8 weeks. We provide a detailed timeline during our initial consultation and keep you updated throughout.",
+      "Most healthcare websites take 4 to 8 weeks depending on complexity. A straightforward practice site with booking integration runs 4 to 5 weeks. Sites with patient portals, multiple locations, or custom integrations typically take 6 to 8 weeks. We provide a detailed timeline during our initial consultation and keep you updated throughout.",
   },
   {
     title: "Do you provide ongoing support after launch?",
@@ -217,7 +218,7 @@ const faqItems = [
     summary:
       "RAVENCI targets high-intent local searches like 'GP near me' or 'physio Brisbane CBD'. We optimise Google Business Profile, build condition and service pages that rank, and implement medical schema markup for rich results.",
     content:
-      "Healthcare SEO targets high-intent local searches: 'GP near me', 'physio Brisbane CBD', 'bulk billing doctor Northside'. We optimise your Google Business Profile, build condition-specific and service-specific pages that rank, implement medical practice schema markup, and ensure your site loads fast enough to satisfy Google's Core Web Vitals. Most practices see improvement within 3-6 months.",
+      "Healthcare SEO targets high-intent local searches: 'GP near me', 'physio Brisbane CBD', 'bulk billing doctor Northside'. We optimise your Google Business Profile, build condition-specific and service-specific pages that rank, implement medical practice schema markup, and ensure your site loads fast enough to satisfy Google's Core Web Vitals. Most practices see improvement within 3 to 6 months.",
   },
   {
     title: "Do you work with medical marketing compliance?",
@@ -273,12 +274,13 @@ export default function HealthcarePage() {
             practices, allied health, and NDIS providers across Brisbane
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
-            RAVENCI Solutions builds websites for healthcare professionals in
-            Brisbane. From $7,500, we deliver online booking integration,
-            patient portals, NDIS-ready features, telehealth capability, and
-            privacy-compliant design. Australian Privacy Principles and AHPRA
-            advertising guidelines considered from day one. 25+ years of
-            digital experience. 85+ PageSpeed guaranteed.
+            Your patients look you up before they book, and a slow or dated
+            site quietly tells them the practice is behind. It shouldn't. I
+            build websites for Brisbane medical practices, allied health, and
+            NDIS providers that load fast on a phone, take bookings through the
+            tools you already run (HotDoc, Cliniko, and the like), and handle
+            AHPRA advertising rules and patient privacy properly from day one.
+            From $7,500, 85+ PageSpeed guaranteed, and 25+ years behind it.
           </p>
         </article>
       </section>
@@ -320,7 +322,7 @@ export default function HealthcarePage() {
       {/* Two-column features */}
       <div className={`grid grid-cols-1 lg:grid-cols-2 bg-white`}>
         <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 space-y-14 bg-neutral-200/50`}
+          className={`content-section py-20 px-5 sm:px-20 xl:px-36 space-y-14 bg-neutral-50`}
         >
           <article className={`max-w-lg`}>
             <h2 className={`mb-8 font-serif text-h3 font-bold`}>
@@ -674,6 +676,11 @@ export default function HealthcarePage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      {/* Proof near the CTA */}
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <ProofCluster testimonial={industryTestimonials[0]} />
+      </section>
 
       {/* Mobile sticky CTA */}
       <StickyCTA

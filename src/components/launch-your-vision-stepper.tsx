@@ -19,7 +19,7 @@ const CALENDLY_URL =
   process.env.NEXT_PUBLIC_CALENDLY_URL ||
   "https://calendly.com/ravenci-solutions/discovery-call";
 
-const HIGH_BUDGET_VALUES = ["$10k – $25k", "$25k – $50k", "$50k+"];
+const HIGH_BUDGET_VALUES = ["$10k to $25k", "$25k to $50k", "$50k+"];
 
 type ProjectType =
   | "Business website"
@@ -38,15 +38,15 @@ type Stage =
 
 type Timeline =
   | "ASAP (within 1 month)"
-  | "1 – 3 months"
-  | "3 – 6 months"
+  | "1 to 3 months"
+  | "3 to 6 months"
   | "Just researching for now";
 
 type Budget =
   | "Under $5k"
-  | "$5k – $10k"
-  | "$10k – $25k"
-  | "$25k – $50k"
+  | "$5k to $10k"
+  | "$10k to $25k"
+  | "$25k to $50k"
   | "$50k+"
   | "Prefer not to say";
 
@@ -82,16 +82,16 @@ const STAGE_OPTIONS: Stage[] = [
 
 const TIMELINE_OPTIONS: Timeline[] = [
   "ASAP (within 1 month)",
-  "1 – 3 months",
-  "3 – 6 months",
+  "1 to 3 months",
+  "3 to 6 months",
   "Just researching for now",
 ];
 
 const BUDGET_OPTIONS: Budget[] = [
   "Under $5k",
-  "$5k – $10k",
-  "$10k – $25k",
-  "$25k – $50k",
+  "$5k to $10k",
+  "$10k to $25k",
+  "$25k to $50k",
   "$50k+",
   "Prefer not to say",
 ];
@@ -361,7 +361,7 @@ export default function LaunchYourVisionStepper() {
 
       {/* Step content */}
       <div className="min-h-[400px]">
-        {/* Step 1 — Project type */}
+        {/* Step 1, Project type */}
         {step === 1 && (
           <Step
             label="What are you looking to build?"
@@ -375,7 +375,7 @@ export default function LaunchYourVisionStepper() {
           </Step>
         )}
 
-        {/* Step 2 — Stage */}
+        {/* Step 2, Stage */}
         {step === 2 && (
           <Step
             label="What stage are you at?"
@@ -389,7 +389,7 @@ export default function LaunchYourVisionStepper() {
           </Step>
         )}
 
-        {/* Step 3 — Timeline */}
+        {/* Step 3, Timeline */}
         {step === 3 && (
           <Step
             label="When do you need it?"
@@ -403,7 +403,7 @@ export default function LaunchYourVisionStepper() {
           </Step>
         )}
 
-        {/* Step 4 — Budget (optional) */}
+        {/* Step 4, Budget (optional) */}
         {step === 4 && (
           <Step
             label="What's your budget range?"
@@ -427,7 +427,7 @@ export default function LaunchYourVisionStepper() {
           </Step>
         )}
 
-        {/* Step 5 — Business info */}
+        {/* Step 5, Business info */}
         {step === 5 && (
           <Step
             label="Tell us about your business"
@@ -458,7 +458,7 @@ export default function LaunchYourVisionStepper() {
           </Step>
         )}
 
-        {/* Step 6 — Contact */}
+        {/* Step 6, Contact */}
         {step === 6 && (
           <Step
             label="How can we reach you?"

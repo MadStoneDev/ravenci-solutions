@@ -14,12 +14,12 @@ import Breadcrumbs from "@/components/breadcrumbs";
 export const metadata: Metadata = {
   title: "Medical Practice Website Guide | RAVENCI Solutions",
   description:
-    "AHPRA advertising compliance, Australian Privacy Principles, practice management integrations, and patient-facing essentials. The 2026 guide for Australian medical practice websites.",
+    "AHPRA advertising, patient privacy, practice integrations and patient-facing essentials. The 2026 guide for Australian medical practice websites.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Medical Practice Website Guide | RAVENCI Solutions",
     description:
-      "AHPRA advertising compliance, Australian Privacy Principles, practice management integrations, and patient-facing essentials. The 2026 guide for Australian medical practice websites.",
+      "AHPRA advertising, patient privacy, practice integrations and patient-facing essentials. The 2026 guide for Australian medical practice websites.",
     url: "/medical-practice-website-requirements",
     type: "article",
   },
@@ -213,7 +213,7 @@ const faqItems = [
   {
     title: "How much does a medical practice website cost in Australia?",
     summary:
-      "Typical Australian medical practice websites cost $5,000 – $15,000 for a properly built site with online booking integration, AHPRA-aware content structure, privacy compliance, and accessibility. Practice management integration setup adds $500 – $2,000 depending on the system.",
+      "Typical Australian medical practice websites cost $5,000 to $15,000 for a properly built site with online booking integration, AHPRA-aware content structure, privacy compliance, and accessibility. Practice management integration setup adds $500 to $2,000 depending on the system.",
     content:
       "Typical Australian medical practice websites cost $5,000 to $15,000 for a properly built site with online booking integration (HotDoc, HealthEngine, or Cliniko), AHPRA-aware content structure, Privacy Act compliance, and basic accessibility. Practice management integration setup typically adds $500 to $2,000 depending on the system and the depth of integration. Multi-location practices, specialist clinics with patient portals, or sites needing custom telehealth flows can run $15,000 to $30,000+. Add ongoing hosting and maintenance ($300 to $600/month) and the realistic year-one investment is $8,000 to $20,000.",
   },
@@ -234,7 +234,7 @@ const faqItems = [
   {
     title: "How long does it take to build a medical practice website?",
     summary:
-      "A standard practice site with online booking integration, AHPRA-aware content, and privacy compliance typically takes 4 – 6 weeks. Sites with patient portals, multiple locations, or custom telehealth flows take 6 – 10 weeks. Compliance review adds 1 – 2 weeks.",
+      "A standard practice site with online booking integration, AHPRA-aware content, and privacy compliance typically takes 4 to 6 weeks. Sites with patient portals, multiple locations, or custom telehealth flows take 6 to 10 weeks. Compliance review adds 1 to 2 weeks.",
     content:
       "A standard medical practice website with online booking integration, AHPRA-aware content structure, and privacy compliance typically takes 4 to 6 weeks from kickoff to launch. Sites with patient portals, multi-location handling, or custom telehealth flows take 6 to 10 weeks. AHPRA compliance review (which we strongly recommend) typically adds 1 to 2 weeks at the end of the project. The biggest delay is usually content readiness: practitioner bios, photography, and condition pages tend to be where projects sit waiting on the practice rather than the developer.",
   },
@@ -342,7 +342,7 @@ export default function MedicalPracticeRequirementsPage() {
       </section>
 
       {/* Privacy essentials */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-200/50">
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
         <h3 className="mb-4 font-serif text-h3 font-bold">
           Privacy Act &amp; Patient Data Handling
         </h3>
@@ -432,7 +432,7 @@ export default function MedicalPracticeRequirementsPage() {
       </section>
 
       {/* Common mistakes */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-200/50">
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
         <h3 className="mb-4 font-serif text-h3 font-bold">
           Six Common Mistakes on Australian Practice Websites
         </h3>

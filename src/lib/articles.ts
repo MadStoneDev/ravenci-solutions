@@ -59,3 +59,23 @@ export function getAllSlugs(): string[] {
     .filter((f) => f.endsWith(".mdx"))
     .map((f) => f.replace(/\.mdx$/, ""));
 }
+
+// Related articles for cross-linking: most shared categories first, then recency.
+export function getRelatedArticles(
+  slug: string,
+  count: number,
+): ArticleFrontmatter[] {
+  const all = getAllArticles();
+  const current = all.find((a) => a.slug === slug);
+  const others = all.filter((a) => a.slug !== slug);
+  if (!current) return others.slice(0, count);
+
+  return others
+    .map((a) => ({
+      article: a,
+      shared: a.categories.filter((c) => current.categories.includes(c)).length,
+    }))
+    .sort((x, y) => y.shared - x.shared)
+    .slice(0, count)
+    .map((s) => s.article);
+}

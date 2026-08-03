@@ -7,17 +7,18 @@ import Breadcrumbs from "@/components/breadcrumbs";
 import PricingCards from "@/components/pricing-cards";
 import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
+import ProofCluster from "@/components/proof-cluster";
 
 export const metadata = {
   title: "Custom Website Design Brisbane, Built to Last | RAVENCI",
   description:
-    "Custom websites for established Brisbane businesses — fast, owned by you, still working in five years. No templates, no plugin clutter. From $7,500.",
+    "Custom websites for established Brisbane businesses. Fast, owned by you, still working in five years. No templates, no plugin clutter. From $7,500.",
   alternates: { canonical: "/web-development" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Custom Website Design Brisbane, Built to Last | RAVENCI",
     description:
-      "Custom websites for established Brisbane businesses — fast, owned by you, still working in five years. No templates, no plugin clutter. From $7,500.",
+      "Custom websites for established Brisbane businesses. Fast, owned by you, still working in five years. No templates, no plugin clutter. From $7,500.",
     url: "/web-development",
     type: "website",
   },
@@ -166,7 +167,7 @@ export default function WebHostingDevelopmentPage() {
             className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
           >
             One senior developer designs it around your business and
-            hand-builds it — the whole website, not just the look.
+            hand-builds it, the whole website, not just the look.
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             For established Australian businesses ready to replace the site
@@ -182,14 +183,14 @@ export default function WebHostingDevelopmentPage() {
             <p>
               <span className={`font-semibold text-ravenci-dark`}>
                 Design + build
-              </span>{" "}
-              — I handle the whole thing, look and code. Most projects.
+              </span>
+              . I handle the whole thing, look and code. Most projects.
             </p>
             <p>
               <span className={`font-semibold text-ravenci-dark`}>
                 Build from your design
-              </span>{" "}
-              — already have a designer or agency? I build it exactly to spec.
+              </span>
+              . Already have a designer or agency? I build it exactly to spec.
               It&apos;s how I work with studios like The Design Order.
             </p>
           </div>
@@ -231,7 +232,7 @@ export default function WebHostingDevelopmentPage() {
 
       {/* Two-Column Section (Rebalanced) */}
       <div className={`grid grid-cols-1 lg:grid-cols-2`}>
-        {/* Left Column — Dark: Pain Points + Why Choose + Intro */}
+        {/* Left Column, Dark: Pain Points + Why Choose + Intro */}
         <section
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
@@ -296,7 +297,7 @@ export default function WebHostingDevelopmentPage() {
           </article>
         </section>
 
-        {/* Right Column — Light: Features */}
+        {/* Right Column, Light: Features */}
         <section
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
         >
@@ -435,9 +436,9 @@ export default function WebHostingDevelopmentPage() {
             },
             {
               name: "2. Custom Website",
-              price: "9,500",
+              price: "10,000",
               description:
-                "For businesses that need the site to do something specific — integrations, bespoke flows, features off-the-shelf won't cover — built around how you actually work, without a stack of plugins to maintain.",
+                "For businesses that need the site to do something specific, integrations, bespoke flows, features off-the-shelf won't cover, built around how you actually work, without a stack of plugins to maintain.",
               accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Fully custom design and development</li>
@@ -450,7 +451,7 @@ export default function WebHostingDevelopmentPage() {
     <li>Analytics with goal and conversion tracking</li>
     <li>85+ Google PageSpeed score guaranteed</li>
     <li>3 rounds of revisions</li>
-    <li>6-8 weeks delivery</li>
+    <li>6 to 8 weeks delivery</li>
 </ul>`,
             },
             {
@@ -470,14 +471,14 @@ export default function WebHostingDevelopmentPage() {
     <li>Staff training on store management</li>
     <li>Basic SEO setup</li>
     <li>3 rounds of revisions</li>
-    <li>6-8 weeks delivery</li>
+    <li>6 to 8 weeks delivery</li>
 </ul>`,
             },
             {
               name: "4. Custom eCommerce",
-              price: "Scope to fit",
+              price: "18,000",
               description:
-                "For stores with real complexity — large catalogues, custom filtering, multi-channel, ERP integrations. We scope it to exactly what the business needs, nothing it doesn't.",
+                "For stores with real complexity: large catalogues, custom filtering, multi-channel, ERP integrations. We scope it to exactly what the business needs, nothing it doesn't.",
               accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Everything in eCommerce, plus:</li>
@@ -488,7 +489,7 @@ export default function WebHostingDevelopmentPage() {
     <li>Email marketing integration</li>
     <li>Multi-channel sales setup</li>
     <li>Advanced eCommerce analytics</li>
-    <li>8-10+ weeks delivery</li>
+    <li>8 to 10+ weeks delivery</li>
 </ul>`,
             },
           ]}
@@ -498,11 +499,11 @@ export default function WebHostingDevelopmentPage() {
       {/* Investment ROI */}
       <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <h2 className="mb-4 font-serif text-h3 font-bold text-center">
-          Think of It as an Investment, Not an Expense
+          What a Website Actually Returns
         </h2>
         <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
-          A website isn&apos;t a cost you absorb. It&apos;s infrastructure that
-          earns revenue every month for years.
+          A website that&apos;s built properly earns its keep every month for
+          years, quietly bringing in enquiries while you get on with the work.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
@@ -521,7 +522,7 @@ export default function WebHostingDevelopmentPage() {
             </p>
           </div>
           <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">3-6x</p>
+            <p className="text-3xl font-bold text-ravenci-primary">3 to 6x</p>
             <p className="mt-1 text-sm text-neutral-500">return</p>
             <p className="mt-3 text-sm text-neutral-700">
               From just one extra client per month
@@ -531,8 +532,8 @@ export default function WebHostingDevelopmentPage() {
 
         <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
           <p>
-            If your website brings in just one extra client a month — even at
-            $500 per job — that&apos;s $6,000 a year in revenue. On a $7,500
+            If your website brings in just one extra client a month, even at
+            $500 per job, that&apos;s $6,000 a year in revenue. On a $7,500
             business site, that&apos;s a 4x return in year one alone. On a
             $12,000 eCommerce build with direct sales, the returns compound
             from day one. Most businesses see far more than one lead a month
@@ -541,7 +542,7 @@ export default function WebHostingDevelopmentPage() {
           <p>
             The cheaper quote usually isn&apos;t. A budget template built on a
             stack of plugins tends to slow down, break, or need replacing
-            within a couple of years — so you pay once for the site and again
+            within a couple of years, so you pay once for the site and again
             for the rebuild. Built properly the first time, with no plugin
             clutter to rot, a site is still doing its job in five years.
             That&apos;s the difference you&apos;re paying for.
@@ -619,8 +620,8 @@ export default function WebHostingDevelopmentPage() {
           items={[
             {
               title: `How long does a typical website take to build?`,
-              summary: `Brochure websites take 4 weeks, eCommerce template builds 4-5 weeks, custom solutions 6-8 weeks, and custom eCommerce builds 8-10 weeks. RAVENCI provides regular progress updates throughout every project.`,
-              content: `Brochure Website: 4 weeks. eCommerce Template: 4-5 weeks. Custom Solution: 6-8 weeks. eCommerce Custom: 8-10 weeks. We stick to these timelines and provide regular progress updates.`,
+              summary: `Brochure websites take 4 weeks, eCommerce template builds 4 to 5 weeks, custom solutions 6 to 8 weeks, and custom eCommerce builds 8 to 10 weeks. RAVENCI provides regular progress updates throughout every project.`,
+              content: `Brochure Website: 4 weeks. eCommerce Template: 4 to 5 weeks. Custom Solution: 6 to 8 weeks. eCommerce Custom: 8 to 10 weeks. We stick to these timelines and provide regular progress updates.`,
             },
             {
               title: `What if I'm not happy with the result?`,
@@ -651,6 +652,11 @@ export default function WebHostingDevelopmentPage() {
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
 
+      {/* Proof near the CTA */}
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <ProofCluster testimonial={testimonials[0]} />
+      </section>
+
       {/* Sticky CTA for Mobile */}
       <StickyCTA
         link="/launch-your-vision"
@@ -667,7 +673,7 @@ export default function WebHostingDevelopmentPage() {
             serviceType: "Website Design & Development",
             name: "Custom Website Design & Development",
             description:
-              "Custom websites for established Brisbane businesses — fast, owned by you, still working in five years. No templates, no plugin clutter. From $7,500.",
+              "Custom websites for established Brisbane businesses. Fast, owned by you, still working in five years. No templates, no plugin clutter. From $7,500.",
             provider: {
               "@type": "ProfessionalService",
               name: "RAVENCI Solutions",
@@ -698,10 +704,10 @@ export default function WebHostingDevelopmentPage() {
                 {
                   "@type": "Offer",
                   name: "Custom Website",
-                  price: "9500",
+                  price: "10000",
                   priceCurrency: "AUD",
                   description:
-                    "Fully custom design and development up to 12 pages with brand identity, advanced CMS, integrations, and structured data. 6-8 weeks delivery.",
+                    "Fully custom design and development up to 12 pages with brand identity, advanced CMS, integrations, and structured data. 6 to 8 weeks delivery.",
                 },
                 {
                   "@type": "Offer",
@@ -709,7 +715,7 @@ export default function WebHostingDevelopmentPage() {
                   price: "12000",
                   priceCurrency: "AUD",
                   description:
-                    "Custom Shopify or BigCommerce store with product catalogue setup, payment and shipping integration. 6-8 weeks delivery.",
+                    "Custom Shopify or BigCommerce store with product catalogue setup, payment and shipping integration. 6 to 8 weeks delivery.",
                 },
               ],
             },
@@ -728,7 +734,7 @@ export default function WebHostingDevelopmentPage() {
                 name: "How long does a typical website take to build?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Brochure websites take 4 weeks, eCommerce template builds 4-5 weeks, custom solutions 6-8 weeks, and custom eCommerce builds 8-10 weeks. RAVENCI provides regular progress updates throughout every project.",
+                  text: "Brochure websites take 4 weeks, eCommerce template builds 4 to 5 weeks, custom solutions 6 to 8 weeks, and custom eCommerce builds 8 to 10 weeks. RAVENCI provides regular progress updates throughout every project.",
                 },
               },
               {

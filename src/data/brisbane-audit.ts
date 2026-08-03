@@ -8,7 +8,7 @@ export interface AuditStat {
   stat: string;
   label: string;
   severity: "critical" | "warning";
-  /** Short RAVENCI counterpoint shown below the stat — e.g. "RAVENCI: 100% have SSL". */
+  /** Short RAVENCI counterpoint shown below the stat, e.g. "RAVENCI: 100% have SSL". */
   ravenciCounter?: string;
   /** Optional plain-English explanation of how RAVENCI achieves the counter. */
   ravenciCounterNote?: string;
@@ -41,7 +41,7 @@ export interface AuditFAQItem {
 
 export const AUDIT_META = {
   totalSitesAudited: 50,
-  conductedDate: "January – February 2026",
+  conductedDate: "January to February 2026",
   publishedDate: "2026-03-04",
   industries: 7,
 };
@@ -243,7 +243,7 @@ export const keyTakeaways = [
   {
     title: "Accessibility is an afterthought",
     detail:
-      "38% failed basic colour contrast checks. 52% had images without alt text. Zero sites had accessibility statements. This isn't just about compliance. It's about excluding potential customers.",
+      "38% failed basic colour contrast checks. 52% had images without alt text. Zero sites had an accessibility statement. Every one of those is a customer who can't read the page properly, or can't use the site at all.",
   },
   {
     title: "The bar is surprisingly low",

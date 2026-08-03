@@ -3,7 +3,7 @@
 // well as triggering the existing transactional emails.
 //
 // `phone` is a standard MailerLite field (no setup needed). Custom fields
-// — business_name, website_url, lead_source, intent, budget, project_type —
+// (business_name, website_url, lead_source, intent, budget, project_type)
 // need to be created in the MailerLite UI before they capture data. Unknown
 // fields are silently ignored by the API, so missing ones don't break the
 // flow. Don't use `source` as a field key: it's reserved by MailerLite.
@@ -55,7 +55,7 @@ export async function upsertSubscriber(
         Accept: "application/json",
       },
       body: JSON.stringify(body),
-      // MailerLite is best-effort and awaited before the route responds — cap
+      // MailerLite is best-effort and awaited before the route responds, cap
       // it so a hung MailerLite endpoint can't stall the user's request.
       signal: AbortSignal.timeout(5000),
     });

@@ -79,6 +79,15 @@ export default function MainFooter() {
           </div>
 
           <div className={`group/link relative px-2`}>
+            <Link href={`/pricing`} className={`relative z-10`}>
+              Pricing
+            </Link>
+            <div
+              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+            ></div>
+          </div>
+
+          <div className={`group/link relative px-2`}>
             <Link href={`/web-apps`} className={`relative z-10`}>
               Web Apps
             </Link>

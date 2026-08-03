@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/breadcrumbs";
 import PricingCards from "@/components/pricing-cards";
 import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
+import ProofCluster from "@/components/proof-cluster";
 
 export const metadata = {
   title: "Branding & Brand Identity Brisbane | RAVENCI",
@@ -204,7 +205,7 @@ export default function BusinessDesignPage() {
 
       {/* Two-Column Section (Rebalanced) */}
       <div className={`grid grid-cols-1 lg:grid-cols-2`}>
-        {/* Left Column — Dark: Pain Points + Why Choose + Intro */}
+        {/* Left Column, Dark: Pain Points + Why Choose + Intro */}
         <section
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
@@ -269,7 +270,7 @@ export default function BusinessDesignPage() {
           </article>
         </section>
 
-        {/* Right Column — Light: Features */}
+        {/* Right Column, Light: Features */}
         <section
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
         >
@@ -462,11 +463,12 @@ export default function BusinessDesignPage() {
       {/* Investment ROI */}
       <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <h2 className="mb-4 font-serif text-h3 font-bold text-center">
-          Think of It as an Investment, Not an Expense
+          Good Branding Earns Its Keep
         </h2>
         <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
-          Professional branding isn&apos;t a cost you absorb. It&apos;s the foundation
-          that earns customer trust and drives revenue for years.
+          Professional branding pays back for years. It&apos;s what makes a
+          customer trust you before you&apos;ve said a word, and keep choosing you
+          over a cheaper name they don&apos;t recognise.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
           <div className="p-6 rounded-xl border border-neutral-200 text-center">
@@ -484,7 +486,7 @@ export default function BusinessDesignPage() {
             </p>
           </div>
           <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">5-10x</p>
+            <p className="text-3xl font-bold text-ravenci-primary">5 to 10x</p>
             <p className="mt-1 text-sm text-neutral-500">trust factor</p>
             <p className="mt-3 text-sm text-neutral-700">
               Professional branding vs DIY design
@@ -593,8 +595,8 @@ export default function BusinessDesignPage() {
           items={[
             {
               title: `How long does design work typically take?`,
-              summary: `Logo + Guidelines takes 6 weeks, Full Brand Identity 8 weeks, and Signage or Vehicle Wraps 4-6 weeks. RAVENCI provides regular updates throughout every project.`,
-              content: `Brand Essentials: 6 weeks. Marketing Materials: 8 weeks. Signage & Vehicle Wraps: 4-6 weeks. We provide regular updates and involve you in every decision.`,
+              summary: `Logo + Guidelines takes 6 weeks, Full Brand Identity 8 weeks, and Signage or Vehicle Wraps 4 to 6 weeks. RAVENCI provides regular updates throughout every project.`,
+              content: `Brand Essentials: 6 weeks. Marketing Materials: 8 weeks. Signage & Vehicle Wraps: 4 to 6 weeks. We provide regular updates and involve you in every decision.`,
             },
             {
               title: `What if I don't like the initial concepts?`,
@@ -624,6 +626,11 @@ export default function BusinessDesignPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      {/* Proof near the CTA */}
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <ProofCluster testimonial={testimonials[0]} />
+      </section>
 
       {/* Sticky CTA for Mobile */}
       <StickyCTA
@@ -710,7 +717,7 @@ export default function BusinessDesignPage() {
                 name: "How long does design work typically take?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Logo + Guidelines takes 6 weeks, Full Brand Identity 8 weeks, and Signage or Vehicle Wraps 4-6 weeks. RAVENCI provides regular updates throughout every project.",
+                  text: "Logo + Guidelines takes 6 weeks, Full Brand Identity 8 weeks, and Signage or Vehicle Wraps 4 to 6 weeks. RAVENCI provides regular updates throughout every project.",
                 },
               },
               {

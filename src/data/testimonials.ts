@@ -29,6 +29,15 @@ export const testimonials: Testimonial[] = [
     pages: ["web-development"],
   },
   {
+    id: "jason-morgan",
+    content:
+      "Richard from Ravenci is so easy to work with, very professional and willing to accommodate your wants and requirements. His amazing work stands for itself. Highly recommend Ravenci for all your Website needs!",
+    author: "Jason Morgan",
+    company: "Covenant Security Solutions",
+    image: null,
+    pages: ["homepage", "web-development"],
+  },
+  {
     id: "viv-luhrs",
     content:
       "Richard is amazing! He really cares about his work, his customers and people in general. The work that he has done for me goes above and beyond. Definitely recommend Richard to anyone!",

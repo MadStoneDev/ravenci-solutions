@@ -5,6 +5,7 @@ import PriceButton from "@/components/price-button";
 import Accordion from "@/components/accordion";
 import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
+import ProofCluster from "@/components/proof-cluster";
 
 export const metadata = {
   title: "Web App Development | RAVENCI Solutions",
@@ -128,7 +129,7 @@ export default function WebAppPage() {
 
       <div className={`grid grid-cols-1 lg:grid-cols-2 bg-white`}>
         <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-200/50`}
+          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
         >
           <article className={`max-w-lg`}>
             <h2 className={`mb-8 font-serif text-h3 font-bold`}>
@@ -394,8 +395,8 @@ export default function WebAppPage() {
             },
             {
               title: `Can the application integrate with our existing systems?`,
-              summary: `Yes. All RAVENCI packages include API integration capabilities. Common integrations include Xero, QuickBooks, Strapi, Prismic, WordPress, and other business tools for seamless operation with your existing tech stack.`,
-              content: `Yes. All our packages include API integration capabilities. We commonly integrate with accounting software (Xero, QuickBooks), CRM systems (Strapi, Prismic, WordPress, etc.), and other business tools. We make sure your app works seamlessly with your existing tech stack.`,
+              summary: `Yes. All RAVENCI packages include API integration capabilities. Common integrations include Xero, QuickBooks, Strapi, Prismic, WordPress, and other business tools, so the app fits the systems you already run.`,
+              content: `Yes. All our packages include API integration capabilities. We commonly integrate with accounting software (Xero, QuickBooks), CRM systems (Strapi, Prismic, WordPress, etc.), and other business tools. We make sure your app plays nicely with the tools you already use.`,
             },
             {
               title: `What if our needs change as we grow?`,
@@ -419,6 +420,11 @@ export default function WebAppPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      {/* Proof near the CTA */}
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <ProofCluster testimonial={testimonials[0]} />
+      </section>
 
       {/* Mobile sticky CTA */}
       <StickyCTA
@@ -466,7 +472,7 @@ export default function WebAppPage() {
                 name: "Can the application integrate with our existing systems?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes. All our packages include API integration capabilities. We commonly integrate with accounting software, CRM systems, and other business tools. We make sure your app works seamlessly with your existing tech stack.",
+                  text: "Yes. All our packages include API integration capabilities. We commonly integrate with accounting software, CRM systems, and other business tools. We make sure your app plays nicely with the tools you already use.",
                 },
               },
               {

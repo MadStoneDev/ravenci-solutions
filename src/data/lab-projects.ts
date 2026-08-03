@@ -14,7 +14,7 @@ export interface LabProject {
   description: string; // 2-3 sentence intro
   status: LabStatus;
   category: string; // e.g. "Web App", "Tool", "Game"
-  url?: string; // live URL (optional — in-progress projects may not have one)
+  url?: string; // live URL (optional, in-progress projects may not have one)
   githubUrl?: string;
   featuredImage: string; // path in /public/showcase-images/
   techStack: string[];

@@ -9,17 +9,18 @@ import PriceButton from "@/components/price-button";
 import StickyCTA from "@/components/sticky-cta";
 import TestimonialsSingle from "@/components/testimonials-single";
 import { getTestimonialsForIndustry } from "@/data/testimonials";
+import ProofCluster from "@/components/proof-cluster";
 
 export const metadata = {
   title: "Construction Websites Brisbane | RAVENCI Solutions",
   description:
-    "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $7,500.",
+    "Websites for Brisbane builders and property developers. Project portfolios, lead generation, QBCC licence display, 85+ PageSpeed guaranteed. From $7,500.",
   alternates: { canonical: "/construction" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Construction Websites Brisbane | RAVENCI Solutions",
     description:
-      "Websites built for builders. Project portfolios, lead generation, QBCC licence display, mobile-friendly for on-site teams, 85+ PageSpeed guaranteed. Brisbane team, 25+ years experience. From $7,500.",
+      "Websites for Brisbane builders and property developers. Project portfolios, lead generation, QBCC licence display, 85+ PageSpeed guaranteed. From $7,500.",
     url: "/construction",
     type: "website",
   },
@@ -261,12 +262,14 @@ export default function ConstructionPage() {
             across Brisbane and Southeast Queensland
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
-            RAVENCI Solutions builds websites for construction companies and
-            property developers in Brisbane. From $7,500, we deliver project
-            portfolio showcases, lead generation systems, heavy image
-            optimisation, QBCC licence display, client progress portals, and
-            local SEO that targets high-intent searches. 85+ PageSpeed
-            guaranteed with 25+ years of experience.
+            The work you're winning now is bigger than the work your website is
+            selling. Builders moving upmarket get judged on their last
+            projects, and a slow, dated site makes premium work look ordinary. I
+            build websites for Brisbane and Southeast Queensland builders and
+            property developers that show the work at its best, stay fast even
+            with heavy project galleries, display your QBCC licence, and rank
+            for the searches that actually turn into jobs. From $7,500, 85+
+            PageSpeed guaranteed, and 25+ years behind it.
           </p>
         </article>
       </section>
@@ -308,7 +311,7 @@ export default function ConstructionPage() {
       {/* Two-column features */}
       <div className={`grid grid-cols-1 lg:grid-cols-2 bg-white`}>
         <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 space-y-14 bg-neutral-200/50`}
+          className={`content-section py-20 px-5 sm:px-20 xl:px-36 space-y-14 bg-neutral-50`}
         >
           <article className={`max-w-lg`}>
             <h2 className={`mb-8 font-serif text-h3 font-bold`}>
@@ -654,6 +657,11 @@ export default function ConstructionPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      {/* Proof near the CTA */}
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <ProofCluster testimonial={industryTestimonials[0]} />
+      </section>
 
       {/* Mobile sticky CTA */}
       <StickyCTA

@@ -37,7 +37,7 @@ function MediaItem({
   alt: string;
   sizes?: string;
 }) {
-  // "coming-soon" sentinel — used when a slot is wired in the data but
+  // "coming-soon" sentinel, used when a slot is wired in the data but
   // the asset hasn't arrived yet. Renders a neutral placeholder tile
   // so the layout stays intact without a broken-image icon.
   if (src === "coming-soon") {
@@ -75,10 +75,10 @@ function MediaItem({
 }
 
 /**
- * Image/video gallery helper — renders 1, 2, or 3 columns based on count.
+ * Image/video gallery helper, renders 1, 2, or 3 columns based on count.
  * Falls back gracefully to a single `image` if `images` array isn't provided.
  * Each item can be a static image, animated GIF, or video file.
- * Optional `label` renders as a small badge overlay on every item — used
+ * Optional `label` renders as a small badge overlay on every item, used
  * to mark images as "Old Site" / "PageSpeed Result" / "Before" etc.
  */
 function SectionGallery({
@@ -109,7 +109,7 @@ function SectionGallery({
     <div className={`mt-12 grid ${colsClass} gap-4 md:gap-6`}>
       {list.map((src, i) => (
         <div key={`${src}-${i}`} className={`relative w-full ${aspectClass}`}>
-          {/* Image clipped — overflow:hidden lives on this inner container
+          {/* Image clipped, overflow:hidden lives on this inner container
               so the sticky label below isn't trapped by it. */}
           <div className="absolute inset-0 overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100">
             <MediaItem
@@ -147,12 +147,25 @@ export default function CaseStudyPremium({
   caseStudy: CaseStudy;
 }) {
   const relatedStudies = getRelatedCaseStudies(caseStudy.slug, 3);
+  const serviceHrefs: Record<string, string> = {
+    "Web Development": "/web-development",
+    "Web Maintenance": "/website-maintenance",
+    eCommerce: "/ecommerce",
+    Shopify: "/ecommerce",
+    SEO: "/seo-and-content",
+    "Branding Design": "/business-design",
+    "Brand Identity": "/business-design",
+    "Digital Design": "/business-design",
+    "Print & Stationery": "/business-design",
+    "Stationery Design and Print": "/business-design",
+    "Vehicle & Window Signage": "/business-design",
+  };
   const hasMetrics =
     caseStudy.results.metrics && caseStudy.results.metrics.length > 0;
 
   return (
     <>
-      {/* Hero — text left, big metric strip below, full-bleed image */}
+      {/* Hero, text left, big metric strip below, full-bleed image */}
       <section className="content-section pt-32 pb-12 md:pb-16 px-5 sm:px-20 xl:px-36 bg-white">
         <div className="max-w-5xl">
           <Breadcrumbs
@@ -193,7 +206,7 @@ export default function CaseStudyPremium({
           )}
         </div>
 
-        {/* Hero metric strip — adapts to metric count */}
+        {/* Hero metric strip, adapts to metric count */}
         {hasMetrics &&
           (() => {
             const metricsCount = caseStudy.results.metrics!.length;
@@ -238,7 +251,7 @@ export default function CaseStudyPremium({
           })()}
       </section>
 
-      {/* Featured image — full-bleed under hero. Auto-scrolling if the
+      {/* Featured image, full-bleed under hero. Auto-scrolling if the
           case study sets featuredImageScroll; static otherwise. Video files
           render as autoplay-loop-muted videos. */}
       <section className="content-section bg-white pb-16 md:pb-20 px-5 sm:px-20 xl:px-36">
@@ -468,7 +481,7 @@ export default function CaseStudyPremium({
         </section>
       )}
 
-      {/* The Results — metrics first, narrative second */}
+      {/* The Results, metrics first, narrative second */}
       {(hasMetrics || caseStudy.results.paragraphs.length > 0) && (
         <section className="content-section py-20 md:py-28 px-5 sm:px-20 xl:px-36 bg-ravenci-primary text-white">
           <div className="max-w-3xl">
@@ -571,7 +584,7 @@ export default function CaseStudyPremium({
         />
       )}
 
-      {/* Project info block — replaces the sidebar from the old template */}
+      {/* Project info block, replaces the sidebar from the old template */}
       <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-100">
         <div className="max-w-5xl">
           <h3 className="mb-8 font-serif text-2xl font-bold text-ravenci-dark">
@@ -631,9 +644,20 @@ export default function CaseStudyPremium({
                   Services Provided
                 </h4>
                 <div className="flex flex-col gap-1 text-sm text-neutral-700">
-                  {caseStudy.serviceLabels.map((s) => (
-                    <span key={s}>· {s}</span>
-                  ))}
+                  {caseStudy.serviceLabels.map((s) => {
+                    const href = serviceHrefs[s];
+                    return href ? (
+                      <Link
+                        key={s}
+                        href={href}
+                        className="hover:text-ravenci-primary hover:underline"
+                      >
+                        · {s}
+                      </Link>
+                    ) : (
+                      <span key={s}>· {s}</span>
+                    );
+                  })}
                 </div>
               </div>
             )}

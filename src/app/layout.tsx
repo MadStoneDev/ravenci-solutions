@@ -39,12 +39,12 @@ export const metadata: Metadata = {
   title:
     "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
   description:
-    "RAVENCI Solutions is a Brisbane-based web development and design agency with 25+ years of experience. Custom Next.js and WordPress websites from $7,500. Hosting, maintenance, and retainer packages for Australian businesses.",
+    "Brisbane-based web design and development, 25+ years of experience. Custom Next.js and WordPress websites from $7,500, plus hosting and maintenance.",
   openGraph: {
     title:
       "RAVENCI Solutions | Digital Development & Design | Brisbane, Australia",
     description:
-      "RAVENCI Solutions is a Brisbane-based web development and design agency with 25+ years of experience. Custom Next.js and WordPress websites from $7,500. Hosting, maintenance, and retainer packages for Australian businesses.",
+      "Brisbane-based web design and development, 25+ years of experience. Custom Next.js and WordPress websites from $7,500, plus hosting and maintenance.",
     url: "https://ravenci.solutions",
     siteName: "RAVENCI Solutions",
     images: [
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "RAVENCI Solutions - Digital Development & Design Agency Brisbane",
+        alt: "RAVENCI Solutions, Digital Development & Design Agency Brisbane",
       },
     ],
     locale: "en_AU",
@@ -180,8 +180,6 @@ export default function RootLayout({
   return (
     <html lang="en-AU">
       <head>
-        <link rel="alternate" hrefLang="en-au" href="https://ravenci.solutions" />
-        <link rel="alternate" hrefLang="x-default" href="https://ravenci.solutions" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -206,7 +204,7 @@ export default function RootLayout({
       <body
         className={`relative ${lexend.variable} ${playfairDisplay.variable} antialiased`}
       >
-        {/* Consent default — denied until user accepts. Must run before
+        {/* Consent default, denied until user accepts. Must run before
             GA/GTM so trackers respect the signal. */}
         <Script id="consent-default" strategy="beforeInteractive">
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});`}

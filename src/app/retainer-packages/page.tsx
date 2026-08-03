@@ -8,17 +8,18 @@ import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
 import PricingCards from "@/components/pricing-cards";
 import { getTestimonialsForPage } from "@/data/testimonials";
+import ProofCluster from "@/components/proof-cluster";
 
 export const metadata = {
   title: "Retainer Packages | RAVENCI Solutions",
   description:
-    "Monthly retainer packages for ongoing web development, eCommerce support, and strategy in Brisbane. Your dedicated digital team without the overhead of hiring.",
+    "Monthly retainer packages for ongoing web support, eCommerce and strategy in Brisbane. A dedicated digital team without the overhead of hiring.",
   alternates: { canonical: "/retainer-packages" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Retainer Packages | RAVENCI Solutions",
     description:
-      "Monthly retainer packages for ongoing web development, eCommerce support, and strategy in Brisbane. Your dedicated digital team without the overhead of hiring.",
+      "Monthly retainer packages for ongoing web support, eCommerce and strategy in Brisbane. A dedicated digital team without the overhead of hiring.",
     url: "/retainer-packages",
     type: "website",
   },
@@ -225,7 +226,7 @@ export default function RetainerPackagesPage() {
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             For established Australian businesses that want a digital team
             without the overhead of hiring one. Hosting, maintenance, and
-            dedicated time for development, design, content and SEO — used
+            dedicated time for development, design, content and SEO, used
             however your business needs it that month. Tell us the priorities.
             We&apos;ll take it from there.
           </p>
@@ -267,7 +268,7 @@ export default function RetainerPackagesPage() {
 
       {/* Two-Column Section */}
       <div className={`grid grid-cols-1 lg:grid-cols-2`}>
-        {/* Left Column — Dark: Pain Points + Why a Retainer Beats Hiring */}
+        {/* Left Column, Dark: Pain Points + Why a Retainer Beats Hiring */}
         <section
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
@@ -295,7 +296,7 @@ export default function RetainerPackagesPage() {
               Our Growth Partner retainer costs{" "}
               <span className={`text-white font-bold`}>$36,000/year</span>, a
               full-time hire costs{" "}
-              <span className={`text-white font-bold`}>$80,000-$100,000/year</span>{" "}
+              <span className={`text-white font-bold`}>$80,000 to $100,000/year</span>{" "}
               before super, leave, equipment, and training.
             </p>
             <ul className={`flex flex-col gap-4 mb-6 text-neutral-400/90`}>
@@ -342,7 +343,7 @@ export default function RetainerPackagesPage() {
           </article>
         </section>
 
-        {/* Right Column — Light: Features Checklist */}
+        {/* Right Column, Light: Features Checklist */}
         <section
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
         >
@@ -383,7 +384,7 @@ export default function RetainerPackagesPage() {
             <div key={project.name} className="group relative overflow-hidden rounded-xl">
               <Image
                 src={project.image}
-                alt={`${project.name} — RAVENCI retainer client`}
+                alt={`${project.name}, RAVENCI retainer client`}
                 width={600}
                 height={400}
                 className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
@@ -486,11 +487,11 @@ export default function RetainerPackagesPage() {
       {/* Investment ROI */}
       <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <h2 className="mb-4 font-serif text-h3 font-bold text-center">
-          Think of It as an Investment, Not an Expense
+          A Retainer That Pays for Itself
         </h2>
         <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
-          A retainer isn&apos;t a cost you absorb. It&apos;s a dedicated
-          digital team that costs a fraction of hiring in-house.
+          A retainer gives you a dedicated digital team for a fraction of what
+          hiring in-house would cost. No salaries, no super, no drawn-out hiring.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
           <div className="p-6 rounded-xl border border-neutral-200 text-center">
@@ -501,7 +502,7 @@ export default function RetainerPackagesPage() {
             </p>
           </div>
           <div className="p-6 rounded-xl border border-neutral-200 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">$80-100k</p>
+            <p className="text-3xl font-bold text-ravenci-primary">$80 to 100k</p>
             <p className="mt-1 text-sm text-neutral-500">per year</p>
             <p className="mt-3 text-sm text-neutral-700">
               Full-time hire before super and leave
@@ -517,8 +518,8 @@ export default function RetainerPackagesPage() {
         </div>
         <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
           <p>
-            A full-time developer costs $80,000&ndash;$100,000 a year before
-            super, leave, equipment, and training &mdash; and you get one
+            A full-time developer costs $80,000 to $100,000 a year before
+            super, leave, equipment, and training, and you get one
             person with one skill set. Our Growth Partner retainer gives you
             access to a full team for $36,000 a year, and you use the hours
             however your business needs them that month.
@@ -600,6 +601,11 @@ export default function RetainerPackagesPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      {/* Proof near the CTA */}
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <ProofCluster testimonial={testimonials[0]} />
+      </section>
 
       {/* Sticky CTA for Mobile */}
       <StickyCTA

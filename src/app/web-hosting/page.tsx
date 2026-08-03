@@ -6,6 +6,7 @@ import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
 import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
+import ProofCluster from "@/components/proof-cluster";
 
 export const metadata = {
   title: "Web Hosting | RAVENCI Solutions",
@@ -152,7 +153,7 @@ export default function WebHostingPage() {
 
       {/* Two-Column Section */}
       <div className={`grid grid-cols-1 lg:grid-cols-2`}>
-        {/* Left Column — Dark: Pain Points + Why Choose + Info */}
+        {/* Left Column, Dark: Pain Points + Why Choose + Info */}
         <section
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
         >
@@ -227,14 +228,14 @@ export default function WebHostingPage() {
               Instead of complex tiers, our hosting scales naturally with your
               website's needs. We start with generous resources that work for
               most businesses, and as your site grows, your hosting grows with
-              it – no complicated decisions required. You'll never pay for
+              it, no complicated decisions required. You'll never pay for
               resources you don't need, and we'll proactively let you know if we
               spot opportunities to optimize your site's performance.
             </p>
           </article>
         </section>
 
-        {/* Right Column — Light: Features */}
+        {/* Right Column, Light: Features */}
         <section
           className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
         >
@@ -343,11 +344,12 @@ export default function WebHostingPage() {
       {/* Investment ROI */}
       <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <h2 className="mb-4 font-serif text-h3 font-bold text-center">
-          Think of It as an Investment, Not an Expense
+          Cheap Hosting Has a Real Price
         </h2>
         <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
-          Hosting isn&apos;t a cost you absorb. It&apos;s the foundation that
-          keeps your website earning revenue every day.
+          Hosting is the foundation everything else sits on. Get it right and
+          your site stays fast and online every day. Get it wrong and you feel
+          it in lost customers.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
           <div className="p-6 rounded-xl border border-neutral-200 text-center">
@@ -446,7 +448,7 @@ export default function WebHostingPage() {
             {
               title: `How is this different from cheap hosting like Bluehost?`,
               summary: `RAVENCI uses enterprise-grade cloud infrastructure with automatic scaling, dedicated resources, Brisbane-based support, and all-inclusive pricing. SSL, backups, and security are included. No extra charges.`,
-              content: `Our hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimization that cheap hosts can't match. Plus everything is included - SSL, backups, security - no extra charges.`,
+              content: `Our hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimization that cheap hosts can't match. Plus everything is included: SSL, backups, security. No extra charges.`,
             },
             {
               title: `What if my traffic suddenly spikes?`,
@@ -476,6 +478,11 @@ export default function WebHostingPage() {
       <section
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
       ></section>
+
+      {/* Proof near the CTA */}
+      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+        <ProofCluster testimonial={testimonials[0]} />
+      </section>
 
       {/* Sticky CTA for Mobile */}
       <StickyCTA
@@ -562,7 +569,7 @@ export default function WebHostingPage() {
                 name: "How is this different from cheap hosting like Bluehost?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Our hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimization that cheap hosts can't match. Plus everything is included - SSL, backups, security - no extra charges.",
+                  text: "Our hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimization that cheap hosts can't match. Plus everything is included: SSL, backups, security. No extra charges.",
                 },
               },
               {
