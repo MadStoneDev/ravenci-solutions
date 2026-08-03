@@ -380,22 +380,22 @@ export default function Home() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+            <div className="p-6 rounded-xl bg-white shadow-lg">
               <p className="text-2xl font-bold text-ravenci-primary">85+</p>
-              <p className="mt-1 text-sm text-neutral-400">
+              <p className="mt-1 text-sm text-neutral-600">
                 PageSpeed guaranteed on every build
               </p>
             </div>
-            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+            <div className="p-6 rounded-xl bg-white shadow-lg">
               <p className="text-2xl font-bold text-ravenci-primary">
                 Monthly
               </p>
-              <p className="mt-1 text-sm text-neutral-400">
+              <p className="mt-1 text-sm text-neutral-600">
                 Reporting so you see what&apos;s working
               </p>
             </div>
-            <div className="p-6 rounded-xl bg-white/5 border border-white/10 col-span-2">
-              <p className="text-sm text-neutral-300">
+            <div className="p-6 rounded-xl bg-white shadow-lg col-span-2">
+              <p className="text-sm text-neutral-600">
                 Most clients add an SEO retainer after launch. The website gets
                 them online — the SEO gets them found.
               </p>

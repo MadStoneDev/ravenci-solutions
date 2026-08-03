@@ -304,18 +304,27 @@ export default function BrisbaneWebsiteCostPage() {
             How Much Does a Website Cost in Brisbane in 2026?
           </h1>
           <h2 className="max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light">
-            Real pricing for every tier, and the hidden ongoing fees most
-            agencies don&apos;t mention
+            Straight numbers from someone who&apos;s been quoting Brisbane
+            websites for 25 years — including the ongoing costs that never make
+            it into the proposal.
           </h2>
           <p className="mt-6 max-w-2xl text-neutral-500/80">
-            A custom website in Brisbane typically costs between{" "}
-            <strong className="text-ravenci-dark">$1,500 and $25,000</strong> in
-            2026 depending on complexity. Template-based agency builds start
-            around $1,500. Standard small business sites run $5,000 – $10,000.
-            Custom Next.js or premium branded builds reach $15,000 – $25,000+.
-            Hosting and maintenance add $300 – $600 per month. This guide breaks
-            down what you get at each price point, what affects the
-            quote, and the ongoing costs nobody mentions in the proposal.
+            I&apos;m Richard. I&apos;ve been building websites for Brisbane
+            businesses for 25 years, so I&apos;ve quoted a lot of them — and
+            watched plenty of people get burned by a number that looked cheap
+            until the invoices started arriving.
+          </p>
+          <p className="mt-4 max-w-2xl text-neutral-500/80">
+            So here&apos;s the straight version. In 2026, a custom website in
+            Brisbane runs roughly{" "}
+            <strong className="text-ravenci-dark">$1,500 to $25,000</strong>,
+            depending on how much site you actually need. Template builds start
+            near $1,500. A proper small-business site sits around $7,500.
+            Premium custom builds reach $15,000 – $25,000+. Then hosting and
+            maintenance add $300 – $600 a month on top — and that last part is
+            where most quotes go quiet. Below, I break down what you get at each
+            price, what moves the number, and the costs nobody puts in the
+            proposal.
           </p>
         </article>
       </section>
@@ -329,12 +338,12 @@ export default function BrisbaneWebsiteCostPage() {
           {headlineStats.map((item, index) => (
             <div
               key={index}
-              className="p-6 bg-white/5 border border-white/10 rounded-lg"
+              className="p-6 bg-white rounded-xl shadow-lg"
             >
               <p className="text-4xl md:text-5xl font-bold text-ravenci-primary mb-3">
                 {item.stat}
               </p>
-              <p className="text-sm text-neutral-300 leading-relaxed">
+              <p className="text-sm text-neutral-600 leading-relaxed">
                 {item.label}
               </p>
             </div>
@@ -350,12 +359,14 @@ export default function BrisbaneWebsiteCostPage() {
       {/* Pricing tiers */}
       <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-200/50">
         <h3 className="mb-4 font-serif text-h3 font-bold">
-          The Five Pricing Tiers, Honestly Compared
+          What each price point actually buys you
         </h3>
         <p className="mb-10 max-w-2xl text-neutral-500/80">
-          Most Brisbane websites fall into one of five tiers. Here&apos;s
-          what&apos;s included at each price point, what&apos;s typically
-          missing, and the ongoing costs to factor in.
+          Nearly every Brisbane website I&apos;ve seen quoted falls into one of
+          five bands. The sticker price isn&apos;t the useful part — what
+          matters is what&apos;s quietly left out of the cheap end, because
+          that&apos;s the bit you end up paying for later. Here&apos;s each
+          band, what&apos;s genuinely included, and what to watch for.
         </p>
         <div className="space-y-6">
           {pricingTiers.map((tier, index) => (
@@ -429,11 +440,13 @@ export default function BrisbaneWebsiteCostPage() {
       {/* What affects cost */}
       <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-white">
         <h3 className="mb-4 font-serif text-h3 font-bold">
-          The Nine Factors That Affect a Brisbane Website Quote
+          What moves the number on a Brisbane website quote
         </h3>
         <p className="mb-10 max-w-2xl text-neutral-500/80">
-          Two quotes for the same business can differ by $5,000 or more.
-          Here&apos;s why, and what to ask about when comparing.
+          I&apos;ve seen two quotes for the same business come in $5,000 apart.
+          It&apos;s almost never one of them ripping you off — it&apos;s that
+          they scoped different things. These are the factors that move the
+          price, so you know what to ask about when you compare.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {costFactors.map((factor, index) => (
@@ -456,13 +469,14 @@ export default function BrisbaneWebsiteCostPage() {
       <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-primary text-white">
         <div className="max-w-4xl">
           <h3 className="mb-4 font-serif text-h3 font-bold">
-            The Ongoing Costs Nobody Mentions in the Proposal
+            The costs that don&apos;t show up in the proposal
           </h3>
           <p className="mb-10 text-white/85 max-w-2xl leading-relaxed">
-            Most build quotes describe the one-off project cost. The 12-month
-            total cost of ownership is usually 1.5 to 2 times higher once you
-            factor in hosting, maintenance, plugins, and platforms. Here&apos;s
-            what to budget for.
+            Most build quotes only show the one-off project cost. The real
+            year-one figure is usually 1.5 to 2 times higher once hosting,
+            maintenance, plugins, and platform fees are in — and that&apos;s the
+            part I&apos;d want to know before signing anything. Here&apos;s what
+            to budget for.
           </p>
           <div className="space-y-4">
             {ongoingCosts.map((cost, index) => (
@@ -489,31 +503,30 @@ export default function BrisbaneWebsiteCostPage() {
       <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-200/50">
         <div className="max-w-3xl">
           <h3 className="mb-6 font-serif text-h3 font-bold">
-            Where RAVENCI Fits in This Market
+            Where I fit in all this
           </h3>
           <div className="space-y-4 text-neutral-600 leading-relaxed">
             <p>
-              RAVENCI Solutions builds custom websites in Brisbane across
-              business sites through to fully custom eCommerce platforms. Our
+              I build custom websites for Brisbane businesses, from a solid
+              business site through to a fully custom eCommerce platform. My
               Business Website starts at <strong>$7,500</strong> with CMS and
-              CRM included, Custom Websites from{" "}
-              <strong>$9,500</strong>, and eCommerce platforms from{" "}
-              <strong>$12,000</strong> for businesses needing a professional
-              online store.
+              CRM included, Custom Websites from <strong>$9,500</strong>, and
+              eCommerce platforms from <strong>$12,000</strong> when you need a
+              proper online store.
             </p>
             <p>
-              We work primarily with Custom Next.js (for performance-critical
-              builds), WordPress (for content-heavy sites), Shopify and
-              BigCommerce (for e-commerce), and Plasmic and Strapi when the
-              project needs a visual builder or headless CMS. As Shopify,
-              BigCommerce, and Synergy Wholesale Partners we get better pricing
-              on platforms and infrastructure that we pass through to clients.
+              I work mainly in custom Next.js (for performance-critical builds),
+              WordPress (for content-heavy sites), and Shopify or BigCommerce
+              for e-commerce — plus Plasmic and Strapi when a project needs a
+              visual builder or headless CMS. Being a Shopify, BigCommerce, and
+              Synergy Wholesale partner means I get better rates on platforms
+              and infrastructure, and I pass those through to you.
             </p>
             <p>
-              Hosting runs <strong>$39/mo</strong>, maintenance{" "}
-              <strong>$249/mo</strong>, with a bundled discount when you take
-              both. There are no hidden plugin renewal surprises and no
-              lock-in.
+              Hosting runs <strong>$39/mo</strong> and maintenance{" "}
+              <strong>$249/mo</strong>, with a discount when you take both. No
+              hidden plugin-renewal surprises, and no lock-in — you own
+              everything.
             </p>
           </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -540,58 +553,60 @@ export default function BrisbaneWebsiteCostPage() {
           <div className="space-y-6 text-white/90 leading-relaxed">
             <div>
               <h4 className="mb-2 text-lg font-bold text-white">
-                1. Most Brisbane SMB websites should budget $5,000 – $15,000
+                1. Most established Brisbane businesses land at $7,500 – $15,000
               </h4>
               <p>
-                The sweet spot for an established small business is the standard
-                small business or custom premium tier. Below $5,000 you&apos;re
-                in template territory with limited future flexibility. Above
-                $25,000 you&apos;re paying for things most SMBs don&apos;t need
-                yet.
+                For an established small business, that&apos;s the honest sweet
+                spot. Below about $7,500 you&apos;re in template territory with
+                little room to grow. Above $25,000 you&apos;re usually paying for
+                things most small businesses don&apos;t need yet.
               </p>
             </div>
             <div>
               <h4 className="mb-2 text-lg font-bold text-white">
-                2. Year-one cost is 1.5 – 2x the build quote
+                2. Year-one costs 1.5 – 2× the build quote
               </h4>
               <p>
-                A $10,000 build with content production, hosting, maintenance,
-                and a 10% contingency lands at $14,000 – $16,000 in year one.
-                Budget accordingly so you&apos;re not surprised in month three.
+                A $10,000 build, once you add content, hosting, maintenance and a
+                10% contingency, lands around $14,000 – $16,000 in the first
+                year. I&apos;d rather you know that now than find out in month
+                three.
               </p>
             </div>
             <div>
               <h4 className="mb-2 text-lg font-bold text-white">
-                3. Cheap quotes are usually expensive within 18 months
+                3. The cheap quote is usually the expensive one
               </h4>
               <p>
-                Sites built without proper SEO, performance, and maintenance
-                foundations typically need a $3,000 – $7,000 fix or rebuild
-                within 18 months. The cheapest quote in your inbox is rarely the
-                cheapest quote over 24 months.
+                Sites built without proper SEO, performance and maintenance
+                foundations tend to need a $3,000 – $7,000 fix or a rebuild
+                inside 18 months. The cheapest quote in your inbox is rarely the
+                cheapest site once you count the next two years — you pay for it
+                twice.
               </p>
             </div>
             <div>
               <h4 className="mb-2 text-lg font-bold text-white">
-                4. The platform should match the business, not the agency
+                4. The platform should match your business, not the builder
               </h4>
               <p>
-                If an agency only quotes one platform regardless of your needs,
-                that&apos;s a red flag. WordPress suits content-heavy sites.
-                Shopify and BigCommerce suit e-commerce. Custom Next.js suits
-                performance-critical builds. The right answer depends on your
-                business, not the agency&apos;s comfort zone.
+                If someone only ever quotes one platform no matter what you
+                need, treat it as a red flag. WordPress suits content-heavy
+                sites, Shopify and BigCommerce suit e-commerce, custom Next.js
+                suits performance-critical builds. The right answer depends on
+                your business — not on what the builder happens to be
+                comfortable with.
               </p>
             </div>
             <div>
               <h4 className="mb-2 text-lg font-bold text-white">
-                5. Always get a 12-month total cost figure
+                5. Always ask for the 12-month total
               </h4>
               <p>
-                Reputable Brisbane agencies will give you a clear year-one
-                figure including hosting, maintenance, and any platform fees.
-                If a quote can&apos;t be reduced to a single annual number, the
-                fees are probably hidden in fine print.
+                Anyone reputable will give you a clear year-one figure — hosting,
+                maintenance and platform fees included. If a quote can&apos;t be
+                boiled down to a single annual number, the fees are probably
+                hiding in the fine print.
               </p>
             </div>
           </div>
@@ -604,9 +619,9 @@ export default function BrisbaneWebsiteCostPage() {
           Get a Real Quote, Not a Guess
         </h2>
         <p className="mb-10 max-w-lg text-neutral-500/80">
-          Tell us about your project in 2 minutes. We&apos;ll send back a
-          tailored estimate with the platform, scope and 12-month total cost
-          clearly laid out. No sales calls required.
+          Tell me about your project — takes about 2 minutes. I&apos;ll send back
+          a tailored estimate with the platform, scope and 12-month total cost
+          laid out clearly. No sales calls.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link

@@ -342,18 +342,18 @@ export default function HowToChooseWebDesignerPage() {
           {questions.map((q, index) => (
             <div
               key={index}
-              className="p-5 md:p-6 bg-white/5 border border-white/10 rounded-lg"
+              className="p-5 md:p-6 bg-white rounded-xl shadow-lg"
             >
               <div className="flex items-start gap-4 mb-3">
                 <span className="font-serif text-2xl md:text-3xl font-bold text-ravenci-primary">
                   {q.number}
                 </span>
-                <h4 className="text-lg md:text-xl font-bold text-white pt-1">
+                <h4 className="text-lg md:text-xl font-bold text-ravenci-dark pt-1">
                   {q.question}
                 </h4>
               </div>
-              <p className="ml-12 text-sm text-neutral-300 leading-relaxed">
-                <span className="font-bold text-white">What to listen for:</span>{" "}
+              <p className="ml-12 text-sm text-neutral-600 leading-relaxed">
+                <span className="font-bold text-ravenci-dark">What to listen for:</span>{" "}
                 {q.rightAnswer}
               </p>
             </div>

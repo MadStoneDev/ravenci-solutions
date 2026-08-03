@@ -310,16 +310,16 @@ export default function MedicalPracticeRequirementsPage() {
           {ahpraEssentials.map((item, index) => (
             <div
               key={index}
-              className="p-5 md:p-6 bg-white/5 border border-white/10 rounded-lg"
+              className="p-5 md:p-6 bg-white rounded-xl shadow-lg"
             >
               <div className="flex items-start gap-3 mb-2">
                 <IconAlertTriangle
                   size={22}
-                  className="text-yellow-400 flex-shrink-0 mt-0.5"
+                  className="text-amber-500 flex-shrink-0 mt-0.5"
                 />
-                <h4 className="font-bold text-white">{item.item}</h4>
+                <h4 className="font-bold text-ravenci-dark">{item.item}</h4>
               </div>
-              <p className="ml-9 text-sm text-neutral-300 leading-relaxed">
+              <p className="ml-9 text-sm text-neutral-600 leading-relaxed">
                 {item.detail}
               </p>
             </div>
