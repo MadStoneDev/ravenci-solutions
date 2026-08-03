@@ -328,7 +328,7 @@ export default function MainFooter() {
           </div>
 
           <div
-            className={`group/link pl-1 pr-2 relative flex items-center gap-1`}
+            className={`group/link basis-full pl-1 pr-2 relative flex items-center gap-1`}
           >
             <a
               href={`https://www.designrush.com/agency/website-design-development`}
@@ -345,7 +345,7 @@ export default function MainFooter() {
           </div>
 
           <div
-            className={`group/link pl-1 pr-2 relative flex items-center gap-1 opacity-50`}
+            className={`group/link basis-full pl-1 pr-2 relative flex items-center gap-1 opacity-50`}
           >
             Brisbane, Australia
           </div>
