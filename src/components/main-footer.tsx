@@ -327,27 +327,31 @@ export default function MainFooter() {
             />
           </div>
 
-          <div
-            className={`group/link basis-full pl-1 pr-2 relative flex items-center gap-1`}
-          >
-            <a
-              href={`https://www.designrush.com/agency/website-design-development`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`relative z-10`}
-            >
-              As seen on DesignRush
-            </a>
-
+          <div className={`basis-full`}>
             <div
-              className={`absolute top-0 left-0 bottom-0 w-0 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            />
+              className={`group/link inline-flex pl-1 pr-2 relative items-center gap-1`}
+            >
+              <a
+                href={`https://www.designrush.com/agency/website-design-development`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`relative z-10`}
+              >
+                As seen on DesignRush
+              </a>
+
+              <div
+                className={`absolute top-0 left-0 bottom-0 w-0 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
+              />
+            </div>
           </div>
 
-          <div
-            className={`group/link basis-full pl-1 pr-2 relative flex items-center gap-1 opacity-50`}
-          >
-            Brisbane, Australia
+          <div className={`basis-full`}>
+            <div
+              className={`inline-flex pl-1 pr-2 relative items-center gap-1 opacity-50`}
+            >
+              Brisbane, Australia
+            </div>
           </div>
         </article>
 

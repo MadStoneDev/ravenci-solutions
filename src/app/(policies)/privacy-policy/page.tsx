@@ -165,7 +165,7 @@ export default function PrivacyPolicyPage() {
               to provide you with our platform's core features and services
             </li>
             <li className="mb-1 list-disc">
-              to enable you to customize or personalize your experience of our
+              to enable you to customise or personalise your experience of our
               website
             </li>
             <li className="mb-1 list-disc">

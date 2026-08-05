@@ -58,7 +58,7 @@ const features = [
   {
     title: "Multi-Location Support",
     description:
-      "Multiple clinics or practices? We build sites that handle multiple locations with individual pages, maps, and contact details",
+      "Multiple clinics or practices? I build sites that handle multiple locations with individual pages, maps, and contact details",
   },
   {
     title: "Practitioner Profiles",
@@ -162,70 +162,70 @@ const faqItems = [
     summary:
       "RAVENCI builds with Australian Privacy Principles (APPs) in mind. All forms use SSL encryption with secure data handling practices and compliant third-party integrations for patient data storage.",
     content:
-      "We build with the Australian Privacy Principles (APPs) in mind from the start. All forms use SSL encryption, we implement secure data handling practices, and we integrate with compliant third-party systems for patient data storage. We never store patient health information on the website itself. Contact forms capture only what's needed and route directly to your secure practice management system. While we're not legal advisors, we ensure the technical foundations support your compliance requirements.",
+      "I build with the Australian Privacy Principles (APPs) in mind from the start. All forms use SSL encryption, I implement secure data handling practices, and I integrate with compliant third-party systems for patient data storage. I never store patient health information on the website itself. Contact forms capture only what's needed and route directly to your secure practice management system. While I'm not a legal advisor, I ensure the technical foundations support your compliance requirements.",
   },
   {
     title: "Can you integrate with our practice management software?",
     summary:
       "Yes. RAVENCI integrates with popular practice management systems including Cliniko, Halaxy, HotDoc, HealthEngine, Nookal, Best Practice, and Medical Director. Any system with an API or embed option can be integrated.",
     content:
-      "Yes. We regularly work with Cliniko, Halaxy, HotDoc, HealthEngine, Nookal, Best Practice, and Medical Director. If your system offers an API or embed option, we can integrate it. The most common setup is a booking widget embedded on your site that connects directly to your practice calendar, so availability is always real-time.",
+      "Yes. I regularly work with Cliniko, Halaxy, HotDoc, HealthEngine, Nookal, Best Practice, and Medical Director. If your system offers an API or embed option, I can integrate it. The most common setup is a booking widget embedded on your site that connects directly to your practice calendar, so availability is always real-time.",
   },
   {
     title: "Do you build NDIS provider websites?",
     summary:
       "Yes. RAVENCI builds NDIS provider websites with clear service descriptions, transparent pricing tables, accessibility compliance, service area maps, and easy navigation for participants, plan managers, and support coordinators.",
     content:
-      "Absolutely. NDIS provider sites have specific requirements: transparent pricing tables aligned to NDIS price guides, clear service descriptions with outcomes focus, service area maps, plan manager and support coordinator information, and accessibility compliance so participants with diverse abilities can use the site. We also build easy-read versions of key content where needed.",
+      "Absolutely. NDIS provider sites have specific requirements: transparent pricing tables aligned to NDIS price guides, clear service descriptions with outcomes focus, service area maps, plan manager and support coordinator information, and accessibility compliance so participants with diverse abilities can use the site. I also build easy-read versions of key content where needed.",
   },
   {
     title: "Can you handle multi-location practices?",
     summary:
       "Yes. RAVENCI builds multi-location sites with individual location pages, embedded maps, separate contact details, practitioner filtering by location, and location-specific SEO.",
     content:
-      "Yes. We build multi-location sites with individual location pages, embedded maps, separate contact details, and location-specific SEO. Patients can filter practitioners by location, see location-specific services, and book at their preferred clinic. Each location page gets its own structured data for Google Maps visibility.",
+      "Yes. I build multi-location sites with individual location pages, embedded maps, separate contact details, and location-specific SEO. Patients can filter practitioners by location, see location-specific services, and book at their preferred clinic. Each location page gets its own structured data for Google Maps visibility.",
   },
   {
     title: "How long does a healthcare website take to build?",
     summary:
       "Most healthcare websites take 4 to 8 weeks. A standard practice site with booking integration runs 4 to 5 weeks. Sites with patient portals, multiple locations, or custom integrations typically take 6 to 8 weeks.",
     content:
-      "Most healthcare websites take 4 to 8 weeks depending on complexity. A straightforward practice site with booking integration runs 4 to 5 weeks. Sites with patient portals, multiple locations, or custom integrations typically take 6 to 8 weeks. We provide a detailed timeline during our initial consultation and keep you updated throughout.",
+      "Most healthcare websites take 4 to 8 weeks depending on complexity. A straightforward practice site with booking integration runs 4 to 5 weeks. Sites with patient portals, multiple locations, or custom integrations typically take 6 to 8 weeks. I provide a detailed timeline during my initial consultation and keep you updated throughout.",
   },
   {
     title: "Do you provide ongoing support after launch?",
     summary:
       "Yes. All healthcare websites include 30 days of post-launch support. Ongoing maintenance and retainer packages are available from $350/month for continued updates, security monitoring, and content changes.",
     content:
-      "Every project includes 30 days of post-launch support for bug fixes and adjustments. After that, our retainer packages start at $350/month and cover hosting, security monitoring, CMS updates, and minor content changes. Most healthcare clients opt for ongoing support since compliance requirements and practice information change regularly.",
+      "Every project includes 30 days of post-launch support for bug fixes and adjustments. After that, my retainer packages start at $350/month and cover hosting, security monitoring, CMS updates, and minor content changes. Most healthcare clients opt for ongoing support since compliance requirements and practice information change regularly.",
   },
   {
     title: "Can patients fill out forms online before their appointment?",
     summary:
       "Yes. RAVENCI builds secure patient intake forms, new patient registration forms, health questionnaires, and consent forms that can be completed online and sent directly to your practice management system.",
     content:
-      "Yes. We build secure patient intake forms, new patient registration forms, health questionnaires, and consent forms. These can be sent to patients via email before their appointment or accessed from your website. Submissions go directly to your practice management system or a secure inbox, not stored on the website.",
+      "Yes. I build secure patient intake forms, new patient registration forms, health questionnaires, and consent forms. These can be sent to patients via email before their appointment or accessed from your website. Submissions go directly to your practice management system or a secure inbox, not stored on the website.",
   },
   {
     title: "What about telehealth and video consultations?",
     summary:
       "RAVENCI integrates telehealth platforms like Coviu directly into your website. Patients can book telehealth appointments and access video consultations from their browser without downloading extra software.",
     content:
-      "We integrate telehealth platforms like Coviu directly into your website. Patients can book telehealth-specific appointments through your normal booking system, then access the video consultation from their browser. No extra apps to download. The booking flow handles consent and pre-consultation questionnaires automatically.",
+      "I integrate telehealth platforms like Coviu directly into your website. Patients can book telehealth-specific appointments through your normal booking system, then access the video consultation from their browser. No extra apps to download. The booking flow handles consent and pre-consultation questionnaires automatically.",
   },
   {
     title: "How do you handle SEO for healthcare practices?",
     summary:
-      "RAVENCI targets high-intent local searches like 'GP near me' or 'physio Brisbane CBD'. We optimise Google Business Profile, build condition and service pages that rank, and implement medical schema markup for rich results.",
+      "RAVENCI targets high-intent local searches like 'GP near me' or 'physio Brisbane CBD'. I optimise Google Business Profile, build condition and service pages that rank, and implement medical schema markup for rich results.",
     content:
-      "Healthcare SEO targets high-intent local searches: 'GP near me', 'physio Brisbane CBD', 'bulk billing doctor Northside'. We optimise your Google Business Profile, build condition-specific and service-specific pages that rank, implement medical practice schema markup, and ensure your site loads fast enough to satisfy Google's Core Web Vitals. Most practices see improvement within 3 to 6 months.",
+      "Healthcare SEO targets high-intent local searches: 'GP near me', 'physio Brisbane CBD', 'bulk billing doctor Northside'. I optimise your Google Business Profile, build condition-specific and service-specific pages that rank, implement medical practice schema markup, and ensure your site loads fast enough to satisfy Google's Core Web Vitals. Most practices see improvement within 3 to 6 months.",
   },
   {
     title: "Do you work with medical marketing compliance?",
     summary:
-      "Yes. RAVENCI understands AHPRA advertising guidelines for regulated health professions. We avoid prohibited testimonials, unsubstantiated claims, and ensure all content meets advertising standards for your profession.",
+      "Yes. RAVENCI understands AHPRA advertising guidelines for regulated health professions. I avoid prohibited testimonials, unsubstantiated claims, and ensure all content meets advertising standards for your profession.",
     content:
-      "Yes. We understand that regulated health professions have specific advertising rules under AHPRA guidelines. We avoid prohibited testimonials, unsubstantiated claims, and 'before and after' imagery where restricted. Content is written to inform rather than create unreasonable expectations. We work with your compliance team to ensure everything meets your profession's advertising standards.",
+      "Yes. I understand that regulated health professions have specific advertising rules under AHPRA guidelines. I avoid prohibited testimonials, unsubstantiated claims, and 'before and after' imagery where restricted. Content is written to inform rather than create unreasonable expectations. I work with your compliance team to ensure everything meets your profession's advertising standards.",
   },
 ];
 
@@ -305,7 +305,7 @@ export default function HealthcarePage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>467</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>350+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Projects Delivered
             </p>
@@ -405,13 +405,13 @@ export default function HealthcarePage() {
             </ul>
 
             <p className={`mb-4 text-neutral-400/90`}>
-              We understand that healthcare websites aren&apos;t just marketing
+              I understand that healthcare websites aren&apos;t just marketing
               tools. They&apos;re how patients find you, book with you, and
               build trust in your practice before they walk through the door.
             </p>
 
             <p className={`mb-8 text-neutral-400/90`}>
-              That&apos;s why every healthcare site we build prioritises
+              That&apos;s why every healthcare site I build prioritises
               clarity, speed, and privacy alongside a professional design that
               reflects the quality of care you provide.
             </p>
@@ -440,7 +440,7 @@ export default function HealthcarePage() {
           Built for Every Type of Practice
         </h2>
         <p className={`mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
-          Whether you&apos;re a solo practitioner or a multi-location group, we
+          Whether you&apos;re a solo practitioner or a multi-location group, I
           build websites tailored to how your specific practice type operates.
         </p>
         <div
@@ -465,7 +465,7 @@ export default function HealthcarePage() {
         <h2
           className={`mb-4 font-serif text-h3 font-bold text-center`}
         >
-          Integrations We Work With
+          Integrations I Work With
         </h2>
         <p className={`mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
           Your website connects directly to the tools your practice already
@@ -503,7 +503,7 @@ export default function HealthcarePage() {
         <p
           className={`mb-12 text-center text-neutral-400/90 max-w-2xl mx-auto`}
         >
-          Healthcare websites handle sensitive information. We build with
+          Healthcare websites handle sensitive information. I build with
           Australian Privacy Principles in mind from day one, not bolted on as
           an afterthought.
         </p>
@@ -521,7 +521,7 @@ export default function HealthcarePage() {
           ))}
         </div>
         <p className={`mt-8 text-center text-sm text-neutral-500`}>
-          We are not legal advisors. We provide technical implementation that
+          I am not a legal advisor. I provide technical implementation that
           supports your compliance requirements. Consult your privacy officer
           or legal team for compliance sign-off.
         </p>
@@ -546,7 +546,7 @@ export default function HealthcarePage() {
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
       >
         <h2 className={`mb-12 font-serif text-h3 font-bold text-center`}>
-          How We Work with Healthcare Clients
+          How I Work with Healthcare Clients
         </h2>
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto`}>
           {[
@@ -554,7 +554,7 @@ export default function HealthcarePage() {
               step: "01",
               title: "Discovery",
               description:
-                "We start by understanding your practice and your patients.",
+                "I start by understanding your practice and your patients.",
             },
             {
               step: "02",
@@ -699,7 +699,7 @@ export default function HealthcarePage() {
             serviceType: "Healthcare Website Design",
             name: "Medical & Healthcare Website Design Brisbane",
             description:
-              "Websites for healthcare professionals. Patient portals, online booking, privacy compliance, NDIS-ready, telehealth integration, built by a Brisbane team with 25+ years experience. From $7,500.",
+              "Websites for healthcare professionals. Patient portals, online booking, privacy compliance, NDIS-ready, telehealth integration, built by a Brisbane developer with 25+ years experience. From $7,500.",
             provider: {
               "@type": "ProfessionalService",
               name: "RAVENCI Solutions",

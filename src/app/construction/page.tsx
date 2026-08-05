@@ -53,7 +53,7 @@ const features = [
   {
     title: "Your Portfolio Loads Instantly",
     description:
-      "Construction work generates massive photos. We make sure those beautiful project shots load in seconds, even on a phone in the field",
+      "Construction work generates massive photos. I make sure those beautiful project shots load in seconds, even on a phone in the field",
   },
   {
     title: "Multi-Project Management",
@@ -149,7 +149,7 @@ const faqItems = [
     summary:
       "Yes. RAVENCI sets up an easy-to-use CMS where your team can add projects, upload photos, update progress, and archive completed builds without a developer. Training is included.",
     content:
-      "Yes. We set up an easy-to-use content management system where your team can add new projects, upload photos, update progress details, and archive completed builds. No developer required for day-to-day updates. We provide hands-on training as part of the handover, and most teams are confident adding projects within a day.",
+      "Yes. I set up an easy-to-use content management system where your team can add new projects, upload photos, update progress details, and archive completed builds. No developer required for day-to-day updates. I provide hands-on training as part of the handover, and most teams are confident adding projects within a day.",
   },
   {
     title: "Do you work with property developers too?",
@@ -163,42 +163,42 @@ const faqItems = [
     summary:
       "No. RAVENCI uses automatic compression, responsive image sizing, lazy loading, and modern formats like WebP and AVIF. Your portfolio loads fast with a guaranteed 85+ PageSpeed score.",
     content:
-      "No. We implement automatic compression, responsive image sizing (serving smaller files on mobile), lazy loading so images only download as visitors scroll, and modern formats like WebP and AVIF that are 30-50% smaller than JPEG. Your portfolio will look sharp and load fast. We guarantee 85+ PageSpeed scores even with image-heavy project pages.",
+      "No. I implement automatic compression, responsive image sizing (serving smaller files on mobile), lazy loading so images only download as visitors scroll, and modern formats like WebP and AVIF that are 30-50% smaller than JPEG. Your portfolio will look sharp and load fast. I guarantee 85+ PageSpeed scores even with image-heavy project pages.",
   },
   {
     title: "Can you integrate with our CRM or project management tools?",
     summary:
       "Yes. RAVENCI integrates with Procore, CoConstruct, Buildertrend, HubSpot, Salesforce, and most CRM systems with an API. Lead form submissions flow directly into your existing pipeline.",
     content:
-      "We integrate with Procore, CoConstruct, Buildertrend, HubSpot, Salesforce, and most systems that offer an API. The most common setup: lead form submissions flow directly into your CRM with the enquiry type, budget range, and project details attached. No manual data entry.",
+      "I integrate with Procore, CoConstruct, Buildertrend, HubSpot, Salesforce, and most systems that offer an API. The most common setup: lead form submissions flow directly into your CRM with the enquiry type, budget range, and project details attached. No manual data entry.",
   },
   {
     title: "How long does a construction website take to build?",
     summary:
       "Most construction websites take 5-8 weeks. A standard site with portfolio and lead generation runs 5-6 weeks. Sites with project databases, CRM integration, or property developer features take 6-8 weeks.",
     content:
-      "Most construction company websites take 5-8 weeks depending on scope. A standard site with project portfolio and lead generation runs 5-6 weeks. Sites with extensive project databases, CRM integration, investor portals, or off-the-plan sales features typically take 6-8 weeks. We provide a detailed timeline during our initial consultation.",
+      "Most construction company websites take 5-8 weeks depending on scope. A standard site with project portfolio and lead generation runs 5-6 weeks. Sites with extensive project databases, CRM integration, investor portals, or off-the-plan sales features typically take 6-8 weeks. I provide a detailed timeline during my initial consultation.",
   },
   {
     title: "Can we show project progress to existing clients?",
     summary:
       "Yes. RAVENCI builds password-protected client portals where homeowners or investors can view construction progress photos, milestone updates, and project timelines specific to their build.",
     content:
-      "Yes. We can build password-protected client portals where homeowners or investors see construction progress photos, milestone updates, and project timelines specific to their build. You upload progress photos through the CMS and the client gets notified. It builds trust and reduces 'how is my build going?' phone calls.",
+      "Yes. I can build password-protected client portals where homeowners or investors see construction progress photos, milestone updates, and project timelines specific to their build. You upload progress photos through the CMS and the client gets notified. It builds trust and reduces 'how is my build going?' phone calls.",
   },
   {
     title: "Do you help with Google Maps and local search visibility?",
     summary:
       "Yes. RAVENCI optimises your Google Business Profile, builds suburb-specific landing pages, implements construction schema markup, and targets high-intent local searches like 'builder near me' and 'custom home builder brisbane'.",
     content:
-      "Yes. We optimise your Google Business Profile with the right categories and service areas, build suburb-specific landing pages that target local searches, implement construction business schema markup, and target high-intent keywords like 'builder near me', 'custom home builder brisbane', and 'renovation specialist [suburb]'. Most construction clients see local visibility improvements within 3-4 months.",
+      "Yes. I optimise your Google Business Profile with the right categories and service areas, build suburb-specific landing pages that target local searches, implement construction business schema markup, and target high-intent keywords like 'builder near me', 'custom home builder brisbane', and 'renovation specialist [suburb]'. Most construction clients see local visibility improvements within 3-4 months.",
   },
   {
     title: "Can you display our QBCC licence and insurance details?",
     summary:
       "Yes. RAVENCI prominently displays your QBCC licence number, insurance details, certifications, and safety records. These trust signals are critical for Queensland construction businesses.",
     content:
-      "Absolutely. We prominently display your QBCC licence number with a verification link, public liability and professional indemnity details, WorkCover information, and any specialist certifications. These trust signals are critical in Queensland's construction industry and we position them where prospects look for them.",
+      "Absolutely. I prominently display your QBCC licence number with a verification link, public liability and professional indemnity details, WorkCover information, and any specialist certifications. These trust signals are critical in Queensland's construction industry and I position them where prospects look for them.",
   },
   {
     title: "What about the 2032 Olympics opportunity?",
@@ -212,7 +212,7 @@ const faqItems = [
     summary:
       "Yes. All construction websites include 30 days of post-launch support. Ongoing retainer packages from $350/month cover hosting, security, and portfolio updates.",
     content:
-      "Every project includes 30 days of post-launch support for bug fixes and adjustments. After that, our retainer packages start at $350/month covering hosting, security monitoring, CMS updates, and minor content changes. Most construction clients use the retainer hours for adding new project case studies and seasonal content updates.",
+      "Every project includes 30 days of post-launch support for bug fixes and adjustments. After that, my retainer packages start at $350/month covering hosting, security monitoring, CMS updates, and minor content changes. Most construction clients use the retainer hours for adding new project case studies and seasonal content updates.",
   },
 ];
 
@@ -294,7 +294,7 @@ export default function ConstructionPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>467</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>350+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Projects Delivered
             </p>
@@ -361,7 +361,7 @@ export default function ConstructionPage() {
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white flex-shrink-0`}
                 />
-                Brisbane-based. We know the local market and the 2032 opportunity
+                Brisbane-based. I know the local market and the 2032 opportunity
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
@@ -382,7 +382,7 @@ export default function ConstructionPage() {
                   size={24}
                   className={`p-1 bg-ravenci-primary rounded-full text-white flex-shrink-0`}
                 />
-                Ongoing support. We don&apos;t disappear after launch
+                Ongoing support. I don&apos;t disappear after launch
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
@@ -427,7 +427,7 @@ export default function ConstructionPage() {
           Built for Every Type of Builder
         </h2>
         <p className={`mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
-          Whether you build custom homes or high-rise towers, we build websites
+          Whether you build custom homes or high-rise towers, I build websites
           tailored to how your specific business wins work.
         </p>
         <div
@@ -450,7 +450,7 @@ export default function ConstructionPage() {
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
       >
         <h2 className={`mb-4 font-serif text-h3 font-bold text-center`}>
-          Integrations We Work With
+          Integrations I Work With
         </h2>
         <p className={`mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
           Your website connects to the project management, CRM, and listing
@@ -483,13 +483,13 @@ export default function ConstructionPage() {
         <h2
           className={`mb-4 font-serif text-h3 font-bold text-white text-center`}
         >
-          We Target the Searches That Win You Work
+          I Target the Searches That Win You Work
         </h2>
         <p
           className={`mb-12 text-center text-neutral-400/90 max-w-2xl mx-auto`}
         >
           Construction businesses get found through specific, high-intent local
-          searches. We build pages and content targeting the exact terms your
+          searches. I build pages and content targeting the exact terms your
           ideal clients type into Google.
         </p>
         <div className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto`}>
@@ -503,7 +503,7 @@ export default function ConstructionPage() {
           ))}
         </div>
         <p className={`mt-8 text-center text-sm text-neutral-500`}>
-          These are examples. We research the specific terms your competitors
+          These are examples. I research the specific terms your competitors
           rank for and build a strategy to outperform them.
         </p>
       </section>
@@ -527,7 +527,7 @@ export default function ConstructionPage() {
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
       >
         <h2 className={`mb-12 font-serif text-h3 font-bold text-center`}>
-          How We Work with Construction Clients
+          How I Work with Construction Clients
         </h2>
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto`}>
           {[
@@ -535,7 +535,7 @@ export default function ConstructionPage() {
               step: "01",
               title: "Discovery",
               description:
-                "We learn your business, your target clients, and how you currently win work. Site visits welcome.",
+                "I learn your business, your target clients, and how you currently win work. Site visits welcome.",
             },
             {
               step: "02",

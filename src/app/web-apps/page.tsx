@@ -62,7 +62,7 @@ export default function WebAppPage() {
     {
       title: "Grows With You",
       description:
-        "Handles 10 users or 10,000 without slowing down. You won't outgrow it the year after we ship it",
+        "Handles 10 users or 10,000 without slowing down. You won't outgrow it the year after I ship it",
     },
     {
       title: "Your Team Will Actually Use It",
@@ -161,7 +161,7 @@ export default function WebAppPage() {
             <h2 className={`font-serif text-h3 font-bold text-white`}>
               Your Business Processes Can Be Better
             </h2>
-            <p className={`my-4 text-neutral-400/90`}>Common problems we solve:</p>
+            <p className={`my-4 text-neutral-400/90`}>Common problems I solve:</p>
             <ul className={`mt-4 flex flex-col gap-2 text-neutral-400/90`}>
               <li>- Hours lost to manual data entry and duplicate systems</li>
               <li>
@@ -259,7 +259,7 @@ export default function WebAppPage() {
               2. Business Management Platform
             </h3>
             <p className={`mb-4 text-neutral-400/90`}>
-              For businesses ready to centralize operations with a comprehensive
+              For businesses ready to centralise operations with a comprehensive
               system that handles customer management, project tracking, and
               business intelligence.
             </p>
@@ -338,7 +338,7 @@ export default function WebAppPage() {
 </ul>
 <p class="mt-5 text-neutral-100">Infrastructure & Support</p>
 <ul class="list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
-    <li>Performance optimization and scaling</li>
+    <li>Performance optimisation and scaling</li>
     <li>Legacy system integrations</li>
     <li>Dedicated project management</li>
     <li>20-26 weeks delivery</li>
@@ -391,22 +391,22 @@ export default function WebAppPage() {
             {
               title: `How do you ensure the app solves our business problems?`,
               summary: `RAVENCI begins every project with a comprehensive business process analysis, mapping current workflows and identifying bottlenecks. You see exactly how the app improves operations before any code is written.`,
-              content: `We start every project with a comprehensive business process analysis. We map your current workflows, identify bottlenecks, and design solutions that eliminate specific pain points. You'll see exactly how the app will improve your operations before we write a single line of code.`,
+              content: `I start every project with a comprehensive business process analysis. I map your current workflows, identify bottlenecks, and design solutions that eliminate specific pain points. You'll see exactly how the app will improve your operations before I write a single line of code.`,
             },
             {
               title: `Can the application integrate with our existing systems?`,
               summary: `Yes. All RAVENCI packages include API integration capabilities. Common integrations include Xero, QuickBooks, Strapi, Prismic, WordPress, and other business tools, so the app fits the systems you already run.`,
-              content: `Yes. All our packages include API integration capabilities. We commonly integrate with accounting software (Xero, QuickBooks), CRM systems (Strapi, Prismic, WordPress, etc.), and other business tools. We make sure your app plays nicely with the tools you already use.`,
+              content: `Yes. All my packages include API integration capabilities. I commonly integrate with accounting software (Xero, QuickBooks), CRM systems (Strapi, Prismic, WordPress, etc.), and other business tools. I make sure your app plays nicely with the tools you already use.`,
             },
             {
               title: `What if our needs change as we grow?`,
               summary: `All RAVENCI applications are built with scalable architecture that handles increased users, data, and functionality. Ongoing development services are available to add new features as your business evolves.`,
-              content: `We build all applications with scalability in mind. The architecture can handle increased users, data, and functionality. We also provide ongoing development services to add new features as your business evolves.`,
+              content: `I build all applications with scalability in mind. The architecture can handle increased users, data, and functionality. I also provide ongoing development services to add new features as your business evolves.`,
             },
             {
               title: `How do you handle data security and backups?`,
               summary: `RAVENCI uses secure, stable database platforms that protect your privacy and your customers' data. Cloud-based hosting ensures users connect to the nearest servers for optimised performance.`,
-              content: `The database platforms we use are secure and stable. Most importantly, they protect your privacy and that of your customers. We prioritise cloud-based hosting to make sure that your customers are connecting to servers and data that is closest to them for optimised performance.`,
+              content: `The database platforms I use are secure and stable. Most importantly, they protect your privacy and that of your customers. I prioritise cloud-based hosting to make sure that your customers are connecting to servers and data that is closest to them for optimised performance.`,
             },
             {
               title: `What ROI can we expect from a custom web application?`,
@@ -464,7 +464,7 @@ export default function WebAppPage() {
                 name: "How do you ensure the app solves our business problems?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "We start every project with a comprehensive business process analysis. We map your current workflows, identify bottlenecks, and design solutions that eliminate specific pain points. You'll see exactly how the app will improve your operations before we write a single line of code.",
+                  text: "I start every project with a comprehensive business process analysis. I map your current workflows, identify bottlenecks, and design solutions that eliminate specific pain points. You'll see exactly how the app will improve your operations before I write a single line of code.",
                 },
               },
               {
@@ -472,7 +472,7 @@ export default function WebAppPage() {
                 name: "Can the application integrate with our existing systems?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes. All our packages include API integration capabilities. We commonly integrate with accounting software, CRM systems, and other business tools. We make sure your app plays nicely with the tools you already use.",
+                  text: "Yes. All my packages include API integration capabilities. I commonly integrate with accounting software, CRM systems, and other business tools. I make sure your app plays nicely with the tools you already use.",
                 },
               },
               {
@@ -480,7 +480,7 @@ export default function WebAppPage() {
                 name: "What if our needs change as we grow?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "We build all applications with scalability in mind. The architecture can handle increased users, data, and functionality. We also provide ongoing development services to add new features as your business evolves.",
+                  text: "I build all applications with scalability in mind. The architecture can handle increased users, data, and functionality. I also provide ongoing development services to add new features as your business evolves.",
                 },
               },
               {
@@ -488,7 +488,7 @@ export default function WebAppPage() {
                 name: "How do you handle data security and backups?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "The database platforms we use are secure and stable. We prioritise cloud-based hosting to make sure that your customers are connecting to servers and data that is closest to them for optimised performance.",
+                  text: "The database platforms I use are secure and stable. I prioritise cloud-based hosting to make sure that your customers are connecting to servers and data that is closest to them for optimised performance.",
                 },
               },
               {

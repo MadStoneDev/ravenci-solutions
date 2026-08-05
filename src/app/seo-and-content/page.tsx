@@ -36,7 +36,7 @@ export default function SEOContentPage() {
     {
       title: "Found by the Right People",
       description:
-        "We make sure Google can read your site properly, and the right customers can find what you offer when they go looking",
+        "I make sure Google can read your site properly, and the right customers can find what you offer when they go looking",
     },
     {
       title: "Content Strategy",
@@ -51,7 +51,7 @@ export default function SEOContentPage() {
     {
       title: "Local SEO",
       description:
-        "Optimization for local searches to win in Brisbane and your service areas",
+        "Optimisation for local searches to win in Brisbane and your service areas",
     },
     {
       title: "Performance Tracking",
@@ -102,7 +102,7 @@ export default function SEOContentPage() {
     {
       title: "Why You're Not Ranking Audit",
       description:
-        "We dig through your site and find the technical issues stopping you from showing up, then prioritise what to fix first",
+        "I dig through your site and find the technical issues stopping you from showing up, then prioritise what to fix first",
     },
     {
       title: "Link Building",
@@ -118,7 +118,7 @@ export default function SEOContentPage() {
     },
     {
       title: "E-commerce SEO",
-      description: "Specialized optimization for online stores",
+      description: "Specialised optimisation for online stores",
     },
   ];
 
@@ -237,7 +237,7 @@ export default function SEOContentPage() {
                   size={24}
                   className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                We focus on leads and sales, not just traffic numbers
+                I focus on leads and sales, not just traffic numbers
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
@@ -322,7 +322,7 @@ export default function SEOContentPage() {
       {/* Showcase Section */}
       <section className="py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <h2 className="mb-10 font-serif text-h3 font-bold text-center">
-          Some of Our Recent Work
+          Some of My Recent Work
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
@@ -586,25 +586,25 @@ export default function SEOContentPage() {
                 "Do you guarantee specific rankings or traffic increases?",
               summary:
                 "No ethical SEO provider guarantees rankings. RAVENCI guarantees disciplined execution and measurable improvements in visibility, traffic quality, and conversions.",
-              content: `<p class="pt-3 text-neutral-500/90">No ethical SEO provider can guarantee rankings. We guarantee disciplined execution and measurable improvements in visibility, traffic quality, and conversions.</p>`,
+              content: `<p class="pt-3 text-neutral-500/90">No ethical SEO provider can guarantee rankings. I guarantee disciplined execution and measurable improvements in visibility, traffic quality, and conversions.</p>`,
             },
             {
               title: "Can you work with our existing marketing team?",
               summary:
                 "Yes. RAVENCI works alongside in-house marketing teams, provides training and guidelines, and integrates wherever needed.",
-              content: `<p class="pt-3 text-neutral-500/90">Yes. We work well alongside in-house teams, provide training and guidelines, and fit in wherever you need us.</p>`,
+              content: `<p class="pt-3 text-neutral-500/90">Yes. I work well alongside in-house teams, provide training and guidelines, and fit in wherever you need me.</p>`,
             },
             {
-              title: "What industries do you specialize in?",
+              title: "What industries do you specialise in?",
               summary:
                 "RAVENCI works across industries with strong experience in professional services, healthcare, retail, and B2B.",
-              content: `<p class="pt-3 text-neutral-500/90">We work across industries, with strong experience in professional services, healthcare, retail, and B2B.</p>`,
+              content: `<p class="pt-3 text-neutral-500/90">I work across industries, with strong experience in professional services, healthcare, retail, and B2B.</p>`,
             },
             {
               title: "How do you measure success and ROI?",
               summary:
                 "RAVENCI tracks organic traffic growth, keyword rankings, conversions, and revenue attribution from organic search channels.",
-              content: `<p class="pt-3 text-neutral-500/90">We track organic traffic growth, rankings, conversions, and revenue attribution from organic channels.</p>`,
+              content: `<p class="pt-3 text-neutral-500/90">I track organic traffic growth, rankings, conversions, and revenue attribution from organic channels.</p>`,
             },
           ]}
         />
@@ -717,7 +717,7 @@ export default function SEOContentPage() {
               },
               {
                 "@type": "Question",
-                name: "What industries do you specialize in?",
+                name: "What industries do you specialise in?",
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "RAVENCI works across industries with strong experience in professional services, healthcare, retail, and B2B.",

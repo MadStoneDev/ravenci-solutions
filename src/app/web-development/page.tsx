@@ -44,12 +44,12 @@ export default function WebHostingDevelopmentPage() {
         "Tailored to look and function as per your brand's and business's needs",
     },
     {
-      title: "Performance Optimization",
+      title: "Performance Optimisation",
       description:
-        "Fast-loading pages that are optimized for speed and user experience",
+        "Fast-loading pages that are optimised for speed and user experience",
     },
     {
-      title: "SEO Optimization",
+      title: "SEO Optimisation",
       description:
         "Built-in SEO best practices to help your site rank in search results",
     },
@@ -83,7 +83,7 @@ export default function WebHostingDevelopmentPage() {
     {
       title: "Extra Pages",
       description:
-        "If our service offering doesn't fit the vision for your website, customise it by adding extra pages",
+        "If my service offering doesn't fit the vision for your website, customise it by adding extra pages",
     },
     {
       title: "Portfolio / Gallery",
@@ -238,10 +238,10 @@ export default function WebHostingDevelopmentPage() {
         >
           <article className={`max-w-lg`}>
             <h2 className={`font-serif text-h3 font-bold text-white`}>
-              Common Problems We Hear About
+              Common Problems I Hear About
             </h2>
             <div className={`my-4 text-neutral-400/90`}>
-              Problems businesses come to us with:
+              Problems businesses come to me with:
               <ul className={`mt-4 flex flex-col gap-2`}>
                 <li>- Developers who disappear after launch</li>
                 <li>- Websites that look nothing like what you wanted</li>
@@ -290,8 +290,8 @@ export default function WebHostingDevelopmentPage() {
               simply gets out of the way.
             </p>
             <p className={`text-neutral-400/90`}>
-              That's how we approach it at RAVENCI. To make it even simpler for
-              you, we offer four tiers of development services, each designed
+              That's how I approach it at RAVENCI. To make it even simpler for
+              you, I offer four tiers of development services, each designed
               to meet your specific needs.
             </p>
           </article>
@@ -355,7 +355,7 @@ export default function WebHostingDevelopmentPage() {
       {/* Showcase Section */}
       <section className="py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <h2 className="mb-10 font-serif text-h3 font-bold text-center">
-          Some of Our Recent Work
+          Some of My Recent Work
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
@@ -478,7 +478,7 @@ export default function WebHostingDevelopmentPage() {
               name: "4. Custom eCommerce",
               price: "18,000",
               description:
-                "For stores with real complexity: large catalogues, custom filtering, multi-channel, ERP integrations. We scope it to exactly what the business needs, nothing it doesn't.",
+                "For stores with real complexity: large catalogues, custom filtering, multi-channel, ERP integrations. I scope it to exactly what the business needs, nothing it doesn't.",
               accordionContent: `
 <ul class="pt-3 mb-1 list-disc list-inside indent-3 text-neutral-400/90 space-y-1.5">
     <li>Everything in eCommerce, plus:</li>
@@ -621,27 +621,27 @@ export default function WebHostingDevelopmentPage() {
             {
               title: `How long does a typical website take to build?`,
               summary: `Brochure websites take 4 weeks, eCommerce template builds 4 to 5 weeks, custom solutions 6 to 8 weeks, and custom eCommerce builds 8 to 10 weeks. RAVENCI provides regular progress updates throughout every project.`,
-              content: `Brochure Website: 4 weeks. eCommerce Template: 4 to 5 weeks. Custom Solution: 6 to 8 weeks. eCommerce Custom: 8 to 10 weeks. We stick to these timelines and provide regular progress updates.`,
+              content: `Brochure Website: 4 weeks. eCommerce Template: 4 to 5 weeks. Custom Solution: 6 to 8 weeks. eCommerce Custom: 8 to 10 weeks. I stick to these timelines and provide regular progress updates.`,
             },
             {
               title: `What if I'm not happy with the result?`,
-              summary: `Every RAVENCI package includes multiple revision rounds. We guarantee the website matches your vision and won't consider the project complete until you're 100% satisfied.`,
-              content: `We guarantee your website will match your vision. Each package includes multiple revision rounds, and we won't consider the project complete until you're 100% satisfied.`,
+              summary: `Every RAVENCI package includes multiple revision rounds. I guarantee the website matches your vision and won't consider the project complete until you're 100% satisfied.`,
+              content: `I guarantee your website will match your vision. Each package includes multiple revision rounds, and I won't consider the project complete until you're 100% satisfied.`,
             },
             {
               title: `Can I update the website myself after it's built?`,
               summary: `Yes. RAVENCI builds on user-friendly CMS platforms and provides training so you can update content, add blog posts, and make changes without needing a developer.`,
-              content: `Absolutely. We build on user-friendly CMS platforms and provide training so you can easily update content, add blog posts, and make basic changes without needing a developer.`,
+              content: `Absolutely. I build on user-friendly CMS platforms and provide training so you can easily update content, add blog posts, and make basic changes without needing a developer.`,
             },
             {
               title: `What makes your development different from cheaper options?`,
               summary: `RAVENCI guarantees 85+ PageSpeed scores, provides ongoing support, uses professional development practices, and is Brisbane-based. Cheap developers often create slow, problematic sites that cost more to fix later.`,
-              content: `We guarantee 85+ PageSpeed scores, provide ongoing support, use professional development practices, and we're local to Brisbane. Cheap developers often create slow, problematic sites that cost more to fix later.`,
+              content: `I guarantee 85+ PageSpeed scores, provide ongoing support, use professional development practices, and I'm local to Brisbane. Cheap developers often create slow, problematic sites that cost more to fix later.`,
             },
             {
               title: `Do you handle the domain and hosting setup?`,
               summary: `Yes. All RAVENCI packages include one year of free domain registration and full hosting setup. RAVENCI hosting is recommended for optimal performance, but other quality hosts are supported.`,
-              content: `Yes, all packages include 1 year free domain registration and we can handle hosting setup. We recommend our own hosting for optimal performance, but can work with other quality hosts if needed.`,
+              content: `Yes, all packages include 1 year free domain registration and I can handle hosting setup. I recommend my own hosting for optimal performance, but can work with other quality hosts if needed.`,
             },
           ]}
         />
@@ -742,7 +742,7 @@ export default function WebHostingDevelopmentPage() {
                 name: "What if I'm not happy with the result?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Every RAVENCI package includes multiple revision rounds. We guarantee the website matches your vision and won't consider the project complete until you're 100% satisfied.",
+                  text: "Every RAVENCI package includes multiple revision rounds. I guarantee the website matches your vision and won't consider the project complete until you're 100% satisfied.",
                 },
               },
               {

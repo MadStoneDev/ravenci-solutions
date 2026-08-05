@@ -11,12 +11,12 @@ import { getAllLabProjects, type LabStatus } from "@/data/lab-projects";
 export const metadata: Metadata = {
   title: "RAVENCI Labs | RAVENCI Solutions",
   description:
-    "Things RAVENCI builds for ourselves: web apps, tools and experiments that show what we love building when nobody's asking us to.",
+    "Things RAVENCI builds for myself: web apps, tools and experiments that show what I love building when nobody's asking me to.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "RAVENCI Labs | RAVENCI Solutions",
     description:
-      "Things RAVENCI builds for ourselves: web apps, tools and experiments that show what we love building when nobody's asking us to.",
+      "Things RAVENCI builds for myself: web apps, tools and experiments that show what I love building when nobody's asking me to.",
     url: "/labs",
     type: "website",
   },
@@ -51,17 +51,17 @@ export default function LabsPage() {
             RAVENCI Labs
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
-            Things we built for ourselves.
+            Things I built for myself.
           </h1>
           <h2 className="mt-2 max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light text-neutral-500">
-            Web apps, tools and experiments: what we love building when nobody
+            Web apps, tools and experiments: what I love building when nobody
             commissioned it.
           </h2>
           <p className="mt-6 max-w-2xl text-neutral-500/80 leading-relaxed">
             Client work pays the bills. Side projects keep the craft sharp.
             Some of these become real products, some stay personal tools, some
             quietly fade away. They&apos;re here because they&apos;re proof of
-            what we like building when we&apos;re the only stakeholder.
+            what I like building when I&apos;m the only stakeholder.
           </p>
         </article>
       </section>
@@ -192,25 +192,25 @@ export default function LabsPage() {
       <section className="content-section py-20 md:py-24 px-5 sm:px-20 xl:px-36 bg-white">
         <div className="max-w-3xl">
           <h3 className="font-serif text-h3 font-bold mb-6 text-ravenci-dark">
-            Why we have a Labs section
+            Why I have a Labs section
           </h3>
           <div className="space-y-4 text-neutral-600 leading-relaxed">
             <p>
-              Most of what we ship is for clients: websites, brand work,
-              e-commerce stores, web apps. The work in Labs is what we build
+              Most of what I ship is for clients: websites, brand work,
+              e-commerce stores, web apps. The work in Labs is what I build
               when there&apos;s no client brief, just an idea worth chasing.
             </p>
             <p>
-              These projects keep the craft sharp. They&apos;re where we try
+              These projects keep the craft sharp. They&apos;re where I try
               new tools, push edges, and prove out approaches before suggesting
               them to clients. Some become real products. Some stay personal.
-              All of them are built end-to-end the same way as our client work
+              All of them are built end-to-end the same way as my client work
               Properly engineered, properly designed.
             </p>
             <p>
               If you&apos;re thinking about building something custom (a tool,
               a platform, a web app for your business), these are a useful
-              proof point. We&apos;ve built things from scratch, end-to-end,
+              proof point. I&apos;ve built things from scratch, end-to-end,
               including the bits most agencies outsource.
             </p>
           </div>
@@ -219,14 +219,14 @@ export default function LabsPage() {
               href="/web-apps"
               className="inline-flex items-center gap-2 px-6 py-3 bg-ravenci-dark text-white rounded-full hover:bg-ravenci-primary transition-colors"
             >
-              See Our Web App Services
+              See My Web App Services
               <IconArrowRight size={16} />
             </Link>
             <Link
               href="/launch-your-vision"
               className="inline-flex items-center gap-2 px-6 py-3 border-2 border-ravenci-dark text-ravenci-dark rounded-full hover:bg-ravenci-dark hover:text-white transition-colors"
             >
-              Talk to Us About Your Project
+              Talk to Me About Your Project
             </Link>
           </div>
         </div>

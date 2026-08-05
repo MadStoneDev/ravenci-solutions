@@ -29,7 +29,7 @@ export const metadata = {
 };
 
 export default function EcommercePage() {
-  const testimonials = getTestimonialsForPage("web-development");
+  const testimonials = getTestimonialsForPage("ecommerce");
 
   return (
     <main className={`flex flex-col`}>
@@ -69,7 +69,7 @@ export default function EcommercePage() {
             and how your team fulfils
           </h2>
           <p className="mt-6 max-w-2xl text-neutral-500/80">
-            Most eCommerce builds focus on how the store looks. We focus on how
+            Most eCommerce builds focus on how the store looks. I focus on how
             it sells. Product discovery, checkout flow, shipping logic, inventory
             sync, the operational detail that turns a good-looking store into a
             revenue engine. Certified Shopify and BigCommerce partner. Brisbane-based.
@@ -116,7 +116,7 @@ export default function EcommercePage() {
           </h2>
           <p className="mt-6 text-neutral-600 leading-relaxed">
             An online store is not a website with a cart bolted on. It&apos;s a
-            sales channel with its own operational requirements. We build stores
+            sales channel with its own operational requirements. I build stores
             that handle real-world complexity: product variants, shipping zones,
             tax rules, inventory that syncs with your warehouse or POS. The kind
             of detail that template installs skip and you discover six weeks
@@ -177,7 +177,7 @@ export default function EcommercePage() {
             Right Platform for the Business
           </h2>
           <p className="mt-6 text-neutral-600 leading-relaxed">
-            We don&apos;t push one platform because it&apos;s easier for us. We
+            I don&apos;t push one platform because it&apos;s easier for me. I
             recommend the one that fits your operations, catalogue size, and
             growth plans.
           </p>
@@ -326,38 +326,38 @@ export default function EcommercePage() {
             {
               title: "Which platform should I choose, Shopify or BigCommerce?",
               summary:
-                "Most product businesses under 5,000 SKUs do best on Shopify. BigCommerce suits larger catalogues, B2B, or multi-storefront needs. We recommend based on your operations, not our preference.",
+                "Most product businesses under 5,000 SKUs do best on Shopify. BigCommerce suits larger catalogues, B2B, or multi-storefront needs. I recommend based on your operations, not my preference.",
               content:
-                "Most product businesses under 5,000 SKUs do best on Shopify. BigCommerce suits larger catalogues, B2B requirements, or businesses that need multi-storefront from a single dashboard. We recommend based on your operations, catalogue size, and growth plans, not our preference.",
+                "Most product businesses under 5,000 SKUs do best on Shopify. BigCommerce suits larger catalogues, B2B requirements, or businesses that need multi-storefront from a single dashboard. I recommend based on your operations, catalogue size, and growth plans, not my preference.",
             },
             {
               title: "Can you migrate my existing store?",
               summary:
-                "Yes. We migrate products, customers, order history, and SEO (URL redirects, meta data). Migrations are scoped and quoted separately based on catalogue size and complexity.",
+                "Yes. I migrate products, customers, order history, and SEO (URL redirects, meta data). Migrations are scoped and quoted separately based on catalogue size and complexity.",
               content:
-                "Yes. We migrate products, customers, order history, and SEO equity (URL redirects, meta data, structured data). Migrations are scoped and quoted separately based on your catalogue size, platform, and integration complexity.",
+                "Yes. I migrate products, customers, order history, and SEO equity (URL redirects, meta data, structured data). Migrations are scoped and quoted separately based on your catalogue size, platform, and integration complexity.",
             },
             {
               title: "How long does an eCommerce build take?",
               summary:
-                "Standard eCommerce builds take 6 to 8 weeks. Custom eCommerce with advanced integrations takes 8 to 10+ weeks. We provide regular progress updates throughout.",
+                "Standard eCommerce builds take 6 to 8 weeks. Custom eCommerce with advanced integrations takes 8 to 10+ weeks. I provide regular progress updates throughout.",
               content:
-                "Standard eCommerce builds take 6 to 8 weeks. Custom eCommerce with advanced integrations (ERP, multi-channel, custom filtering) takes 8 to 10+ weeks. We provide regular progress updates and stick to the agreed timeline.",
+                "Standard eCommerce builds take 6 to 8 weeks. Custom eCommerce with advanced integrations (ERP, multi-channel, custom filtering) takes 8 to 10+ weeks. I provide regular progress updates and stick to the agreed timeline.",
             },
             {
               title: "Do you handle ongoing store management?",
               summary:
-                "We train your team to manage daily operations. For ongoing support, our retainer packages cover product updates, platform maintenance, and performance monitoring.",
+                "I train your team to manage daily operations. For ongoing support, my retainer packages cover product updates, platform maintenance, and performance monitoring.",
               content:
-                "We train your team to handle daily operations: orders, product updates, promotions. For ongoing platform support, our retainer packages cover maintenance, updates, and performance monitoring. Most eCommerce clients add a retainer after launch.",
+                "I train your team to handle daily operations: orders, product updates, promotions. For ongoing platform support, my retainer packages cover maintenance, updates, and performance monitoring. Most eCommerce clients add a retainer after launch.",
             },
             {
               title:
                 "What about payment gateways and shipping for Australian businesses?",
               summary:
-                "We configure Australian payment gateways (Shopify Payments, Stripe, PayPal, Afterpay), GST settings, and shipping zones for domestic and international delivery.",
+                "I configure Australian payment gateways (Shopify Payments, Stripe, PayPal, Afterpay), GST settings, and shipping zones for domestic and international delivery.",
               content:
-                "We configure Australian payment gateways (Shopify Payments, Stripe, PayPal, Afterpay/Zip), GST calculation, and shipping zones for domestic and international delivery. We also set up Australia Post, Sendle, or your preferred carrier for real-time shipping rates.",
+                "I configure Australian payment gateways (Shopify Payments, Stripe, PayPal, Afterpay/Zip), GST calculation, and shipping zones for domestic and international delivery. I also set up Australia Post, Sendle, or your preferred carrier for real-time shipping rates.",
             },
           ]}
         />
@@ -370,7 +370,7 @@ export default function EcommercePage() {
             Ready to Sell Online?
           </h2>
           <p className="mt-4 text-white/80 leading-relaxed">
-            Tell us about your products and how you operate. We&apos;ll come
+            Tell me about your products and how you operate. I&apos;ll come
             back with a tailored proposal: the right platform, realistic
             timeline, and a fixed price.
           </p>
@@ -385,7 +385,7 @@ export default function EcommercePage() {
               href="/case-studies/goingdark"
               className="px-8 py-3 grid place-content-center rounded-full text-white border-2 border-white/30 hover:bg-white hover:text-ravenci-dark transition-colors duration-300"
             >
-              See Our eCommerce Work
+              See My eCommerce Work
             </Link>
           </div>
         </div>
@@ -469,7 +469,7 @@ export default function EcommercePage() {
                 name: "Can you migrate my existing store?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes. We migrate products, customers, order history, and SEO equity (URL redirects, meta data, structured data). Migrations are scoped and quoted separately.",
+                  text: "Yes. I migrate products, customers, order history, and SEO equity (URL redirects, meta data, structured data). Migrations are scoped and quoted separately.",
                 },
               },
               {

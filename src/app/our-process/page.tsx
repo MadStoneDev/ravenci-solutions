@@ -14,14 +14,14 @@ import {
 import Accordion from "@/components/accordion";
 
 export const metadata = {
-  title: "Our Process | RAVENCI Solutions",
+  title: "My Process | RAVENCI Solutions",
   description:
-    "How RAVENCI in Brisbane delivers results: our 6-step process from discovery to launch and beyond, with 25+ years of experience behind every decision.",
+    "How RAVENCI in Brisbane delivers results: my 6-step process from discovery to launch and beyond, with 25+ years of experience behind every decision.",
   openGraph: {
     ...OG_DEFAULTS,
-    title: "Our Process | RAVENCI Solutions",
+    title: "My Process | RAVENCI Solutions",
     description:
-      "How RAVENCI in Brisbane delivers results: our 6-step process from discovery to launch and beyond, with 25+ years of experience behind every decision.",
+      "How RAVENCI in Brisbane delivers results: my 6-step process from discovery to launch and beyond, with 25+ years of experience behind every decision.",
     url: "/our-process",
     type: "website" as const,
   },
@@ -35,7 +35,7 @@ const steps = [
     name: "Discovery & Consultation",
     icon: IconSearch,
     description:
-      "Every great project starts with understanding. We dig into your business goals, target audience, competitors, and existing digital presence to build a complete picture before writing a single line of code.",
+      "Every great project starts with understanding. I dig into your business goals, target audience, competitors, and existing digital presence to build a complete picture before writing a single line of code.",
     highlights: [
       "In-depth business and audience analysis",
       "Competitor and market research",
@@ -48,7 +48,7 @@ const steps = [
     name: "Strategy & Planning",
     icon: IconBulb,
     description:
-      "With a solid understanding of your needs, we map out the entire project. Information architecture, user journeys, technology choices, and content strategy, all planned before design begins.",
+      "With a solid understanding of your needs, I map out the entire project. Information architecture, user journeys, technology choices, and content strategy, all planned before design begins.",
     highlights: [
       "Site architecture and user flow mapping",
       "Technology and platform selection",
@@ -61,7 +61,7 @@ const steps = [
     name: "Design & Prototyping",
     icon: IconPalette,
     description:
-      "We create wireframes and visual designs that bring your brand to life. You'll see exactly how your site will look and feel before development starts. No surprises.",
+      "I create wireframes and visual designs that bring your brand to life. You'll see exactly how your site will look and feel before development starts. No surprises.",
     highlights: [
       "Wireframes for layout and structure",
       "High-fidelity visual designs",
@@ -74,7 +74,7 @@ const steps = [
     name: "Development & Build",
     icon: IconCode,
     description:
-      "This is where it all comes together. Clean, performant code built to modern standards. We develop with speed, accessibility, and SEO built in from the start, not bolted on after.",
+      "This is where it all comes together. Clean, performant code built to modern standards. I develop with speed, accessibility, and SEO built in from the start, not bolted on after.",
     highlights: [
       "Clean, maintainable code",
       "85+ Google PageSpeed guaranteed",
@@ -87,7 +87,7 @@ const steps = [
     name: "Testing & Launch",
     icon: IconRocket,
     description:
-      "Before anything goes live, we test across devices, browsers, and screen sizes. Performance audits, accessibility checks, and final client review ensure a flawless launch.",
+      "Before anything goes live, I test across devices, browsers, and screen sizes. Performance audits, accessibility checks, and final client review ensure a flawless launch.",
     highlights: [
       "Cross-browser and device testing",
       "Performance and speed audits",
@@ -100,7 +100,7 @@ const steps = [
     name: "Ongoing Support & Growth",
     icon: IconHeartHandshake,
     description:
-      "Launch day is just the beginning. We provide ongoing maintenance, security updates, performance monitoring, and strategic guidance to keep your site performing and up to date.",
+      "Launch day is just the beginning. I provide ongoing maintenance, security updates, performance monitoring, and strategic guidance to keep your site performing and up to date.",
     highlights: [
       "Proactive maintenance and security updates",
       "Performance monitoring and reporting",
@@ -116,35 +116,35 @@ const faqItems = [
     summary:
       "Foundation websites take 3 weeks, Growth websites 4-6 weeks, and Premium Brand & Web projects 10-14 weeks. A detailed timeline is provided during the Strategy & Planning phase.",
     content:
-      "Timelines vary by project scope. A Foundation Website typically takes 3 weeks. A Growth Website runs 4-6 weeks. Premium Brand & Web projects take 10-14 weeks. We provide a detailed timeline during the Strategy & Planning phase and keep you updated at every milestone.",
+      "Timelines vary by project scope. A Foundation Website typically takes 3 weeks. A Growth Website runs 4-6 weeks. Premium Brand & Web projects take 10-14 weeks. I provide a detailed timeline during the Strategy & Planning phase and keep you updated at every milestone.",
   },
   {
     title: "What do I need to provide to get started?",
     summary:
       "At minimum, an understanding of your business goals and target audience. Existing branding, content, or design preferences help but aren't required. RAVENCI can handle content and design from scratch.",
     content:
-      "We'll guide you through everything during Discovery. At minimum, we need an understanding of your business goals and target audience. If you have existing branding, content, or design preferences, that helps too, but it's not required. We can handle content and design from scratch.",
+      "I'll guide you through everything during Discovery. At minimum, I need an understanding of your business goals and target audience. If you have existing branding, content, or design preferences, that helps too, but it's not required. I can handle content and design from scratch.",
   },
   {
     title: "How involved do I need to be during the process?",
     summary:
       "As involved as you prefer. Some clients collaborate at every step; others review at key milestones. At minimum, your input is needed during Discovery, design review, and final pre-launch approval.",
     content:
-      "As involved as you'd like to be. Some clients prefer detailed collaboration at every step; others prefer to review at key milestones. At minimum, we'll need your input during Discovery, design review, and final approval before launch.",
+      "As involved as you'd like to be. Some clients prefer detailed collaboration at every step; others prefer to review at key milestones. At minimum, I'll need your input during Discovery, design review, and final approval before launch.",
   },
   {
     title: "What happens if I want changes mid-project?",
     summary:
       "Every RAVENCI package includes revision rounds at design and development stages. If requirements change significantly, scope adjustments are discussed transparently with no hidden fees.",
     content:
-      "Every package includes revision rounds at the design and development stages. If your requirements change significantly, we'll discuss scope adjustments transparently. No hidden fees or surprises.",
+      "Every package includes revision rounds at the design and development stages. If your requirements change significantly, I'll discuss scope adjustments transparently. No hidden fees or surprises.",
   },
   {
     title: "Do you work with businesses outside Brisbane?",
     summary:
       "Yes. While RAVENCI is Brisbane-based, the process works just as well for remote clients across Australia and internationally via video calls and screen sharing.",
     content:
-      "Absolutely. While we're based in Brisbane and love working with local businesses, our process works just as well for remote clients across Australia and internationally. Video calls and screen sharing keep communication clear.",
+      "Absolutely. While I'm based in Brisbane and love working with local businesses, my process works just as well for remote clients across Australia and internationally. Video calls and screen sharing keep communication clear.",
   },
 ];
 
@@ -157,13 +157,13 @@ export default function OurProcessPage() {
       >
         <article className={`max-w-2xl col-span-12 flex flex-col gap-2`}>
           <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
-            How We Bring Your Vision to Life
+            How I Bring Your Vision to Life
           </h1>
           <h2
             className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
             style={{ lineHeight: "2.25rem" }}
           >
-            Our proven 6-step process refined over 25+ years of delivering
+            My proven 6-step process refined over 25+ years of delivering
             digital products and platforms that work
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
@@ -259,7 +259,7 @@ export default function OurProcessPage() {
               <p
                 className={`text-4xl md:text-5xl font-bold text-ravenci-primary`}
               >
-                467
+                350+
               </p>
               <p className={`mt-2 text-neutral-400`}>Projects Delivered</p>
             </div>
@@ -273,9 +273,9 @@ export default function OurProcessPage() {
             </div>
           </div>
           <p className={`mt-12 max-w-2xl mx-auto text-neutral-400`}>
-            A consistent, proven process is why we deliver results every time.
+            A consistent, proven process is why I deliver results every time.
             not by luck, but by design. Every step exists because 25+ years of
-            experience taught us what works.
+            experience taught me what works.
           </p>
         </div>
       </section>

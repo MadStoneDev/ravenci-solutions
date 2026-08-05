@@ -28,12 +28,12 @@ export default function MobileAppDevelopmentPage() {
     {
       title: "iPhone and Android, both",
       description:
-        "One codebase where it makes sense, fully native where the project demands it. We pick what fits, not what's easiest for us.",
+        "One codebase where it makes sense, fully native where the project demands it. I pick what fits, not what's easiest for me.",
     },
     {
       title: "Published to both app stores",
       description:
-        "We handle submission, review responses, and the back-and-forth with Apple and Google so you don't have to learn either process.",
+        "I handle submission, review responses, and the back-and-forth with Apple and Google so you don't have to learn either process.",
     },
     {
       title: "Built to last past the next OS update",
@@ -58,7 +58,7 @@ export default function MobileAppDevelopmentPage() {
     {
       title: "You'll know how it's performing",
       description:
-        "Usage metrics and crash monitoring built in, so you can see what's working and we can fix problems before users complain.",
+        "Usage metrics and crash monitoring built in, so you can see what's working and I can fix problems before users complain.",
     },
     {
       title: "Releases without surprises",
@@ -94,7 +94,7 @@ export default function MobileAppDevelopmentPage() {
       description: "Pre-release distribution and feedback cycles",
     },
     {
-      title: "Localization",
+      title: "Localisation",
       description: "Multi-language support and right-to-left layouts",
     },
     {
@@ -217,7 +217,7 @@ export default function MobileAppDevelopmentPage() {
               Avoid launch delays and app store rejections
             </h2>
             <div className="my-4 text-neutral-400/90">
-              Common problems we help you avoid:
+              Common problems I help you avoid:
               <ul className="mt-4 flex flex-col gap-2">
                 <li>- Unclear roadmaps and missed deadlines</li>
                 <li>- Performance issues on key devices</li>
@@ -395,22 +395,22 @@ export default function MobileAppDevelopmentPage() {
             {
               title: "Can you publish on both Apple and Google stores?",
               content:
-                "Yes. We handle submissions, guidelines, and resubmissions if needed.",
+                "Yes. I handle submissions, guidelines, and resubmissions if needed.",
             },
             {
               title: "React Native or fully native?",
               content:
-                "We use React Native when it’s a great fit and drop to Swift or Kotlin where native performance is required.",
+                "I use React Native when it’s a great fit and drop to Swift or Kotlin where native performance is required.",
             },
             {
               title: "Do you build the backend too?",
               content:
-                "Yes. We frequently use Node/Express and Supabase, but we’ll choose what best suits your project.",
+                "Yes. I frequently use Node/Express and Supabase, but I’ll choose what best suits your project.",
             },
             {
               title: "Will the app be maintained after launch?",
               content:
-                "We offer support plans for OS changes, library updates, and new features.",
+                "I offer support plans for OS changes, library updates, and new features.",
             },
           ].map((i) => ({
             ...i,
@@ -464,7 +464,7 @@ export default function MobileAppDevelopmentPage() {
                 name: "Can you publish on both Apple and Google stores?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes. We handle submissions, guidelines, and resubmissions if needed.",
+                  text: "Yes. I handle submissions, guidelines, and resubmissions if needed.",
                 },
               },
               {
@@ -472,7 +472,7 @@ export default function MobileAppDevelopmentPage() {
                 name: "React Native or fully native?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "We use React Native when it's a great fit and drop to Swift or Kotlin where native performance is required.",
+                  text: "I use React Native when it's a great fit and drop to Swift or Kotlin where native performance is required.",
                 },
               },
               {
@@ -480,7 +480,7 @@ export default function MobileAppDevelopmentPage() {
                 name: "Do you build the backend too?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes. We frequently use Node/Express and Supabase, but we'll choose what best suits your project.",
+                  text: "Yes. I frequently use Node/Express and Supabase, but I'll choose what best suits your project.",
                 },
               },
               {
@@ -488,7 +488,7 @@ export default function MobileAppDevelopmentPage() {
                 name: "Will the app be maintained after launch?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "We offer support plans for OS changes, library updates, and new features.",
+                  text: "I offer support plans for OS changes, library updates, and new features.",
                 },
               },
             ],

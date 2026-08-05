@@ -32,12 +32,12 @@ export default function WebHostingPage() {
     {
       title: "Fast for Every Customer",
       description:
-        "Your site loads quickly whether your visitor's in Brisbane, Sydney, London or Tokyo. We serve it from wherever they are",
+        "Your site loads quickly whether your visitor's in Brisbane, Sydney, London or Tokyo. I serve it from wherever they are",
     },
     {
-      title: "We Run It So You Don't Have To",
+      title: "I Run It So You Don't Have To",
       description:
-        "From migration to launch to the next five years, we handle the boring infrastructure bit so you don't have to think about it",
+        "From migration to launch to the next five years, I handle the boring infrastructure bit so you don't have to think about it",
     },
     {
       title: "Pages That Load Instantly",
@@ -54,7 +54,7 @@ export default function WebHostingPage() {
     },
     {
       title: "Watched Around the Clock",
-      description: "If something goes wrong at 3am, we know about it before your customers do",
+      description: "If something goes wrong at 3am, I know about it before your customers do",
     },
     {
       title: "Handles Sudden Traffic Spikes",
@@ -100,7 +100,7 @@ export default function WebHostingPage() {
         <article className={`col-span-12 flex flex-col`}>
           <Breadcrumbs items={[{ label: "Web Hosting" }]} />
           <h1 className={`mt-4 text-4xl md:text-5xl lg:text-h1 font-medium`}>
-            Host With Us!
+            Host With Me!
           </h1>
           <h2
             className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
@@ -215,7 +215,7 @@ export default function WebHostingPage() {
             </h2>
             <p className={`mb-4 text-neutral-400/90`}>
               Your site loads quickly whether your visitor is around the corner
-              or across the world. We handle the boring infrastructure side of
+              or across the world. I handle the boring infrastructure side of
               that. You just get a site that performs.
             </p>
 
@@ -225,12 +225,12 @@ export default function WebHostingPage() {
               Fair, Simple Pricing
             </h2>
             <p className={`mb-4 text-neutral-400/90`}>
-              Instead of complex tiers, our hosting scales naturally with your
-              website's needs. We start with generous resources that work for
+              Instead of complex tiers, my hosting scales naturally with your
+              website's needs. I start with generous resources that work for
               most businesses, and as your site grows, your hosting grows with
               it, no complicated decisions required. You'll never pay for
-              resources you don't need, and we'll proactively let you know if we
-              spot opportunities to optimize your site's performance.
+              resources you don't need, and I'll proactively let you know if I
+              spot opportunities to optimise your site's performance.
             </p>
           </article>
         </section>
@@ -301,7 +301,7 @@ export default function WebHostingPage() {
       {/* Showcase Section */}
       <section className="py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <h2 className="mb-10 font-serif text-h3 font-bold text-center">
-          Some of the Businesses We Host
+          Some of the Businesses I Host
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
@@ -333,7 +333,7 @@ export default function WebHostingPage() {
         <article className={`mx-auto max-w-xl`}>
           <p className={`text-center text-neutral-50/70`}>
             Please note:{" "}
-            <span className={`text-white`}>As of October, 2024</span>, we no
+            <span className={`text-white`}>As of October, 2024</span>, I no
             longer host websites that are not signed up to reliable ongoing
             maintenance. This does not have to be through RAVENCI, but it must
             be from a reputable provider.
@@ -395,7 +395,7 @@ export default function WebHostingPage() {
           What Can Affect Pricing
         </h2>
         <p className={`mb-8 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
-          Our hosting starts at $39/mo for most business websites. These
+          My hosting starts at $39/mo for most business websites. These
           factors can move the price above that starting point.
         </p>
         <div className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto`}>
@@ -448,17 +448,17 @@ export default function WebHostingPage() {
             {
               title: `How is this different from cheap hosting like Bluehost?`,
               summary: `RAVENCI uses enterprise-grade cloud infrastructure with automatic scaling, dedicated resources, Brisbane-based support, and all-inclusive pricing. SSL, backups, and security are included. No extra charges.`,
-              content: `Our hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimization that cheap hosts can't match. Plus everything is included: SSL, backups, security. No extra charges.`,
+              content: `My hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimisation that cheap hosts can't match. Plus everything is included: SSL, backups, security. No extra charges.`,
             },
             {
               title: `What if my traffic suddenly spikes?`,
               summary: `RAVENCI cloud hosting automatically scales to handle traffic spikes without crashing or downtime. Servers grow with your traffic, unlike shared hosting which can go offline during surges.`,
-              content: `Our cloud hosting automatically scales to handle traffic spikes without your site crashing. Our servers grow with your traffic so you never have to worry about any downtime. Compare this to shared hosting where traffic spikes can take your site offline.`,
+              content: `My cloud hosting automatically scales to handle traffic spikes without your site crashing. My servers grow with your traffic so you never have to worry about any downtime. Compare this to shared hosting where traffic spikes can take your site offline.`,
             },
             {
               title: `Do you migrate my existing website?`,
               summary: `Yes. RAVENCI handles complete website migration from your current host, though extra charges may apply. Your site will be faster and more secure from day one with zero downtime.`,
-              content: `Yes, we handle the complete migration from your current host though extra charges may apply. Your site will be faster and more secure from day one, and we'll make sure nothing breaks in the process.`,
+              content: `Yes, I handle the complete migration from your current host though extra charges may apply. Your site will be faster and more secure from day one, and I'll make sure nothing breaks in the process.`,
             },
             {
               title: `What's included in the $39/month price?`,
@@ -468,7 +468,7 @@ export default function WebHostingPage() {
             {
               title: `Can I host my website elsewhere and still get your other services?`,
               summary: `Yes, RAVENCI can work with other quality hosts. However, hosting and maintenance bundles offer the best value and performance since everything is optimised to work together.`,
-              content: `While we prefer to host sites we maintain to guarantee optimal performance and security, we can work with other quality hosts. However, our hosting + maintenance bundles offer the best value and performance since everything is optimized to work together.`,
+              content: `While I prefer to host sites I maintain to guarantee optimal performance and security, I can work with other quality hosts. However, my hosting + maintenance bundles offer the best value and performance since everything is optimised to work together.`,
             },
           ]}
         />
@@ -569,7 +569,7 @@ export default function WebHostingPage() {
                 name: "How is this different from cheap hosting like Bluehost?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Our hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimization that cheap hosts can't match. Plus everything is included: SSL, backups, security. No extra charges.",
+                  text: "My hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimisation that cheap hosts can't match. Plus everything is included: SSL, backups, security. No extra charges.",
                 },
               },
               {
@@ -577,7 +577,7 @@ export default function WebHostingPage() {
                 name: "What if my traffic suddenly spikes?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Our cloud hosting automatically scales to handle traffic spikes without your site crashing. Our servers grow with your traffic so you never have to worry about any downtime. Compare this to shared hosting where traffic spikes can take your site offline.",
+                  text: "My cloud hosting automatically scales to handle traffic spikes without your site crashing. My servers grow with your traffic so you never have to worry about any downtime. Compare this to shared hosting where traffic spikes can take your site offline.",
                 },
               },
               {
@@ -585,7 +585,7 @@ export default function WebHostingPage() {
                 name: "Do you migrate my existing website?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes, we handle the complete migration from your current host though extra charges may apply. Your site will be faster and more secure from day one, and we'll make sure nothing breaks in the process.",
+                  text: "Yes, I handle the complete migration from your current host though extra charges may apply. Your site will be faster and more secure from day one, and I'll make sure nothing breaks in the process.",
                 },
               },
               {
@@ -601,7 +601,7 @@ export default function WebHostingPage() {
                 name: "Can I host my website elsewhere and still get your other services?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "While we prefer to host sites we maintain to guarantee optimal performance and security, we can work with other quality hosts. However, our hosting + maintenance bundles offer the best value and performance since everything is optimized to work together.",
+                  text: "While I prefer to host sites I maintain to guarantee optimal performance and security, I can work with other quality hosts. However, my hosting + maintenance bundles offer the best value and performance since everything is optimised to work together.",
                 },
               },
             ],

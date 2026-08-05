@@ -73,7 +73,7 @@ const features = [
   {
     title: "You Own It, No Lock-In",
     description:
-      "The site, the domain, the hosting, and the code are yours. Leave whenever you like. We earn the relationship, we do not trap it",
+      "The site, the domain, the hosting, and the code are yours. Leave whenever you like. I earn the relationship, I do not trap it",
   },
   {
     title: "One Senior Developer",
@@ -132,7 +132,7 @@ const compliancePoints = [
   {
     title: "TPB Advertising Rules",
     description:
-      "For registered tax and BAS agents, we structure claims and service descriptions so your marketing sits within the Tax Practitioners Board Code of Conduct",
+      "For registered tax and BAS agents, I structure claims and service descriptions so your marketing sits within the Tax Practitioners Board Code of Conduct",
   },
   {
     title: "ASIC RG 234",
@@ -147,7 +147,7 @@ const compliancePoints = [
   {
     title: "Law Society Advertising Conduct",
     description:
-      "For legal practices, we keep testimonials, comparative claims, and specialist wording aligned with the advertising conduct rules that apply to solicitors",
+      "For legal practices, I keep testimonials, comparative claims, and specialist wording aligned with the advertising conduct rules that apply to solicitors",
   },
   {
     title: "Testimonials and Reviews",
@@ -167,70 +167,70 @@ const faqItems = [
     summary:
       "Not when it is done properly. RAVENCI maps every existing URL to its new location, preserves the content Google already values, and migrates carefully so the rankings you have built up carry across to the new site.",
     content:
-      "This is the most common fear among established firms, and it is a fair one. A careless rebuild can wipe out years of search visibility. We prevent that by auditing your current pages, mapping every existing URL to its new location with proper redirects, preserving the content Google already ranks, and keeping your site structure sound. The goal is a site that looks and performs better while holding onto the search positions you have earned. Where there is room, we aim to improve them.",
+      "This is the most common fear among established firms, and it is a fair one. A careless rebuild can wipe out years of search visibility. I prevent that by auditing your current pages, mapping every existing URL to its new location with proper redirects, preserving the content Google already ranks, and keeping your site structure sound. The goal is a site that looks and performs better while holding onto the search positions you have earned. Where there is room, I aim to improve them.",
   },
   {
     title: "Do you understand the advertising rules for our profession?",
     summary:
-      "Yes. We build with the relevant frameworks in mind, including Tax Practitioners Board rules for registered tax and BAS agents, ASIC RG 234 and section 923A for financial advisers, and Law Society advertising conduct rules for legal firms. We are not your legal advisers, but compliance is considered from day one.",
+      "Yes. I build with the relevant frameworks in mind, including Tax Practitioners Board rules for registered tax and BAS agents, ASIC RG 234 and section 923A for financial advisers, and Law Society advertising conduct rules for legal firms. I am not your legal adviser, but compliance is considered from day one.",
     content:
-      "Yes. Professional services carry advertising obligations that most web studios never think about. We build with them in mind: Tax Practitioners Board rules for registered tax and BAS agents, ASIC Regulatory Guide 234 and the restricted terms under Corporations Act section 923A for financial advisers, and Law Society advertising conduct rules for solicitors. We treat compliance as risk reduction, structuring claims, testimonials, and terminology so your marketing supports your standing rather than threatening it. We are not your legal or compliance advisers, so final sign-off stays with you, but you will not be starting from a site that ignores the rules.",
+      "Yes. Professional services carry advertising obligations that most web studios never think about. I build with them in mind: Tax Practitioners Board rules for registered tax and BAS agents, ASIC Regulatory Guide 234 and the restricted terms under Corporations Act section 923A for financial advisers, and Law Society advertising conduct rules for solicitors. I treat compliance as risk reduction, structuring claims, testimonials, and terminology so your marketing supports your standing rather than threatening it. I am not your legal or compliance adviser, so final sign-off stays with you, but you will not be starting from a site that ignores the rules.",
   },
   {
     title: "Can you make an established firm look as credible as it actually is?",
     summary:
-      "Yes. That is the point of the work. We design for peer firms, not startups, so the finished site reads as senior, considered, and trustworthy to the clients and referrers you want, matching the reputation you have already built.",
+      "Yes. That is the point of the work. I design for peer firms, not startups, so the finished site reads as senior, considered, and trustworthy to the clients and referrers you want, matching the reputation you have already built.",
     content:
-      "Yes, and it is the core of what we do here. Many firms come to us because their site makes them look smaller or less established than they are, which quietly costs them the better enquiries. We design for the standard your peers set, not the loud startup look. The result is measured, professional, and confident, so a prospect who arrives from a referral or a search sees a firm that matches the reputation that sent them there.",
+      "Yes, and it is the core of what I do here. Many firms come to me because their site makes them look smaller or less established than they are, which quietly costs them the better enquiries. I design for the standard your peers set, not the loud startup look. The result is measured, professional, and confident, so a prospect who arrives from a referral or a search sees a firm that matches the reputation that sent them there.",
   },
   {
     title: "Do we own the website, or are we locked in?",
     summary:
       "You own everything. The domain, the hosting account, the content, and the code are all yours. There is no proprietary platform you cannot leave and no lock-in. If you ever move on, you take the site with you.",
     content:
-      "You own all of it. The domain stays in your name, the hosting account is yours, and the code and content belong to you. We do not build on a closed platform that holds you hostage, and we do not bury your site in a system only we can touch. If you ever decide to work with someone else, you can take everything with you. We would rather keep your business by doing good work than by making it hard to leave.",
+      "You own all of it. The domain stays in your name, the hosting account is yours, and the code and content belong to you. I do not build on a closed platform that holds you hostage, and I do not bury your site in a system only I can touch. If you ever decide to work with someone else, you can take everything with you. I would rather keep your business by doing good work than by making it hard to leave.",
   },
   {
     title: "Who actually does the work?",
     summary:
       "One senior developer with more than 25 years of experience. You deal directly with the person building your site and owning the outcome. No account managers in between and no offshore handoffs.",
     content:
-      "One senior developer, start to finish. You talk directly to the person who designs, builds, and is accountable for your site, someone with more than 25 years of experience. There is no account manager relaying messages, no junior learning on your project, and no offshore team you never meet. When something needs attention, you speak to the person who can actually fix it. That continuity is why professional firms tend to stay with us for years.",
+      "One senior developer, start to finish. You talk directly to the person who designs, builds, and is accountable for your site, someone with more than 25 years of experience. There is no account manager relaying messages, no junior learning on your project, and no offshore team you never meet. When something needs attention, you speak to the person who can actually fix it. That continuity is why professional firms tend to stay with me for years.",
   },
   {
     title: "Can you integrate our practice management and booking tools?",
     summary:
       "Yes. RAVENCI can integrate the tools professional firms rely on, such as Xero, MYOB, Ignition, Calendly, HubSpot, XPLAN, LEAP, Actionstep, and DocuSign. Any system with an API or embed option can be connected.",
     content:
-      "Yes. We can connect your site to the tools professional firms run, such as Xero, MYOB, Ignition, Calendly, HubSpot, XPLAN, LEAP, Actionstep, and DocuSign. The usual setup is a booking or enquiry flow on your site that feeds straight into your calendar, CRM, or practice system, so nothing gets rekeyed by hand. If a platform offers an API or an embed, we can almost always integrate it.",
+      "Yes. I can connect your site to the tools professional firms run, such as Xero, MYOB, Ignition, Calendly, HubSpot, XPLAN, LEAP, Actionstep, and DocuSign. The usual setup is a booking or enquiry flow on your site that feeds straight into your calendar, CRM, or practice system, so nothing gets rekeyed by hand. If a platform offers an API or an embed, I can almost always integrate it.",
   },
   {
     title: "How long does a professional services website take to build?",
     summary:
-      "Most professional services sites take 6 to 8 weeks. A focused firm site runs closer to 6 weeks, while sites with heavier content, migrations, or integrations take toward 8 weeks. You get a clear timeline before we start.",
+      "Most professional services sites take 6 to 8 weeks. A focused firm site runs closer to 6 weeks, while sites with heavier content, migrations, or integrations take toward 8 weeks. You get a clear timeline before I start.",
     content:
-      "Most professional services websites take 6 to 8 weeks depending on scope. A focused firm site with a handful of service pages and profiles runs closer to 6 weeks. Sites with substantial content, a careful migration from an existing site, or several integrations run toward 8 weeks. We give you a clear timeline at the start and keep you updated as we go, so there are no surprises.",
+      "Most professional services websites take 6 to 8 weeks depending on scope. A focused firm site with a handful of service pages and profiles runs closer to 6 weeks. Sites with substantial content, a careful migration from an existing site, or several integrations run toward 8 weeks. I give you a clear timeline at the start and keep you updated as I go, so there are no surprises.",
   },
   {
     title: "Can you migrate content from our existing site?",
     summary:
-      "Yes. We migrate your existing content, restructure it where it helps, and preserve the pages Google already ranks while redirecting old URLs to their new homes so nothing gets lost.",
+      "Yes. I migrate your existing content, restructure it where it helps, and preserve the pages Google already ranks while redirecting old URLs to their new homes so nothing gets lost.",
     content:
-      "Yes. We move your existing content across, tidy and restructure it where that improves clarity, and keep the pages that already earn you search traffic. Old URLs are redirected to their new locations so visitors and Google both land in the right place. If your current content needs a refresh, we can rewrite it with your compliance obligations in mind as part of the project.",
+      "Yes. I move your existing content across, tidy and restructure it where that improves clarity, and keep the pages that already earn you search traffic. Old URLs are redirected to their new locations so visitors and Google both land in the right place. If your current content needs a refresh, I can rewrite it with your compliance obligations in mind as part of the project.",
   },
   {
     title: "Do you provide ongoing support after launch?",
     summary:
       "Yes. Every project includes 30 days of post-launch support. After that, retainer packages from $350 per month cover hosting, security, updates, and content changes, so your site stays fast and current for years.",
     content:
-      "Every project includes 30 days of post-launch support for adjustments and fixes. After that, our retainer packages start at $350 per month and cover hosting, security monitoring, updates, and content changes. Because our sites are built to stay fast and keep ranking, most firms use their retainer hours for new service pages, adviser or partner updates, and seasonal content rather than for firefighting.",
+      "Every project includes 30 days of post-launch support for adjustments and fixes. After that, my retainer packages start at $350 per month and cover hosting, security monitoring, updates, and content changes. Because my sites are built to stay fast and keep ranking, most firms use their retainer hours for new service pages, adviser or partner updates, and seasonal content rather than for firefighting.",
   },
   {
     title: "Is price the main thing that sets you apart?",
     summary:
-      "No. Firms choose us for reputation, senior ownership of the work, compliance fluency, and sites that stay fast and ranking for years. Price matters, but it is rarely the deciding factor for the clients we work best with.",
+      "No. Firms choose me for reputation, senior ownership of the work, compliance fluency, and sites that stay fast and ranking for years. Price matters, but it is rarely the deciding factor for the clients I work best with.",
     content:
-      "No, and honestly the firms we work best with do not choose on price alone. They choose on reputation, on dealing directly with one senior developer who owns the outcome, on a genuine understanding of their compliance obligations, and on a site that will still be fast and ranking in a few years. We are not the cheapest option, and we are not trying to be. We are the option that protects a reputation you have spent years building.",
+      "No, and honestly the firms I work best with do not choose on price alone. They choose on reputation, on dealing directly with one senior developer who owns the outcome, on a genuine understanding of their compliance obligations, and on a site that will still be fast and ranking in a few years. I am not the cheapest option, and I am not trying to be. I am the option that protects a reputation you have spent years building.",
   },
 ];
 
@@ -283,7 +283,7 @@ export default function ProfessionalServicesPage() {
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
             RAVENCI Solutions builds websites for professional services firms in
-            Brisbane. From $7,500, we deliver credibility-first design, careful
+            Brisbane. From $7,500, I deliver credibility-first design, careful
             migrations that protect your rankings, compliance-aware content, and
             a site that stays fast and ranking for years. You work with one
             senior developer who owns the outcome, you own everything at the
@@ -313,7 +313,7 @@ export default function ProfessionalServicesPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>467</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>350+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Projects Delivered
             </p>
@@ -421,7 +421,7 @@ export default function ProfessionalServicesPage() {
             </p>
 
             <p className={`mb-8 text-neutral-400/90`}>
-              We build sites that read as senior, considered, and trustworthy,
+              I build sites that read as senior, considered, and trustworthy,
               carry your search rankings safely through the rebuild, and hold up
               against the advertising rules your profession lives by.
             </p>
@@ -448,7 +448,7 @@ export default function ProfessionalServicesPage() {
           Built for Every Kind of Firm
         </h2>
         <p className={`mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
-          Whether you advise on tax, money, or the law, we build a site tailored
+          Whether you advise on tax, money, or the law, I build a site tailored
           to how your firm earns trust and wins the clients you want.
         </p>
         <div
@@ -471,7 +471,7 @@ export default function ProfessionalServicesPage() {
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
       >
         <h2 className={`mb-4 font-serif text-h3 font-bold text-center`}>
-          Integrations We Work With
+          Integrations I Work With
         </h2>
         <p className={`mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
           Your website connects to the practice, accounting, and CRM tools your
@@ -508,7 +508,7 @@ export default function ProfessionalServicesPage() {
         </h2>
         <p className={`mb-12 text-center text-neutral-400/90 max-w-2xl mx-auto`}>
           Professional firms carry advertising obligations most web studios
-          never think about. We treat compliance as risk reduction, structuring
+          never think about. I treat compliance as risk reduction, structuring
           your site so marketing supports your standing rather than threatening
           it.
         </p>
@@ -528,7 +528,7 @@ export default function ProfessionalServicesPage() {
           ))}
         </div>
         <p className={`mt-8 text-center text-sm text-neutral-500`}>
-          We are not your legal or compliance advisers. We provide technical and
+          I am not your legal or compliance adviser. I provide technical and
           content implementation that supports your obligations. Final sign-off
           against your professional standards stays with you.
         </p>
@@ -553,7 +553,7 @@ export default function ProfessionalServicesPage() {
         className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
       >
         <h2 className={`mb-12 font-serif text-h3 font-bold text-center`}>
-          How We Work with Professional Firms
+          How I Work with Professional Firms
         </h2>
         <div
           className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto`}
@@ -563,7 +563,7 @@ export default function ProfessionalServicesPage() {
               step: "01",
               title: "Discovery",
               description:
-                "We learn your firm, your ideal clients, and the reputation your site needs to live up to.",
+                "I learn your firm, your ideal clients, and the reputation your site needs to live up to.",
             },
             {
               step: "02",
@@ -606,7 +606,7 @@ export default function ProfessionalServicesPage() {
         </h2>
         <p className={`mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
           Two clear starting points, priced on the outcome you need. No padded
-          packages and no hidden platform fees. You own everything we build.
+          packages and no hidden platform fees. You own everything I build.
         </p>
         <div
           className={`grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto`}

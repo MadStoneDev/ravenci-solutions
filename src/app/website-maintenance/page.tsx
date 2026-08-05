@@ -13,13 +13,13 @@ import ProofCluster from "@/components/proof-cluster";
 export const metadata = {
   title: "Website Maintenance | RAVENCI Solutions",
   description:
-    "Website maintenance in Brisbane. Updates, security, backups, and optimization in one package. Protect your website investment with RAVENCI Solutions.",
+    "Website maintenance in Brisbane. Updates, security, backups, and optimisation in one package. Protect your website investment with RAVENCI Solutions.",
   alternates: { canonical: "/website-maintenance" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Website Maintenance | RAVENCI Solutions",
     description:
-      "Website maintenance in Brisbane. Updates, security, backups, and optimization in one package. Protect your website investment with RAVENCI Solutions.",
+      "Website maintenance in Brisbane. Updates, security, backups, and optimisation in one package. Protect your website investment with RAVENCI Solutions.",
     url: "/website-maintenance",
     type: "website",
   },
@@ -34,7 +34,7 @@ export default function WebMaintenancePage() {
     {
       title: "Software Updates",
       description:
-        "We keep your website, plugins, and themes updated to ensure compatibility and security",
+        "I keep your website, plugins, and themes updated to ensure compatibility and security",
     },
     {
       title: "Security Monitoring",
@@ -44,7 +44,7 @@ export default function WebMaintenancePage() {
     {
       title: "Performance Checks",
       description:
-        "Regular optimization of speed, database, and overall site performance",
+        "Regular optimisation of speed, database, and overall site performance",
     },
     {
       title: "Daily Backups",
@@ -219,7 +219,7 @@ export default function WebMaintenancePage() {
               Proactive Protection
             </h2>
             <p className={`mb-4 text-neutral-400/90`}>
-              Don't wait for problems to occur. Our maintenance service actively
+              Don't wait for problems to occur. My maintenance service actively
               monitors your site for security threats, performance issues, and
               needed updates to make sure your website is always available.
             </p>
@@ -227,9 +227,9 @@ export default function WebMaintenancePage() {
               Comprehensive Care
             </h2>
             <p className={`mb-4 text-neutral-400/90`}>
-              Our ongoing maintenance service ensures your website doesn't fall
-              behind. Although we offer one-off maintenance options, we highly
-              recommend that you sign up to our ongoing plans instead as it will
+              My ongoing maintenance service ensures your website doesn't fall
+              behind. Although I offer one-off maintenance options, I highly
+              recommend that you sign up to my ongoing plans instead as it will
               save you time and money in the long run.
             </p>
           </article>
@@ -241,7 +241,7 @@ export default function WebMaintenancePage() {
         >
           <article className={`max-w-lg`}>
             <h2 className={`mb-8 font-serif text-h3 font-bold`}>
-              How We Protect Your Business
+              How I Protect Your Business
             </h2>
             <ul className={`flex flex-col gap-8`}>
               {features.map((feature, index) => (
@@ -266,7 +266,7 @@ export default function WebMaintenancePage() {
       {/* Showcase Section */}
       <section className="py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <h2 className="mb-10 font-serif text-h3 font-bold text-center">
-          Some of the Businesses We Maintain
+          Some of the Businesses I Maintain
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
@@ -361,7 +361,7 @@ export default function WebMaintenancePage() {
         <article className={`mx-auto max-w-xl`}>
           <p className={`text-center text-neutral-50/70`}>
             Please note:{" "}
-            <span className={`text-white`}>As of October, 2024</span>, we no
+            <span className={`text-white`}>As of October, 2024</span>, I no
             longer host websites that are not signed up to reliable ongoing
             maintenance. This does not have to be through RAVENCI, but it must
             be from a reputable provider.
@@ -406,7 +406,7 @@ export default function WebMaintenancePage() {
           <p>
             A single security breach typically costs $5,000 to $15,000 to
             fix, plus the damage to your reputation and lost sales while
-            your site is down. Our annual maintenance cost is less than what
+            your site is down. My annual maintenance cost is less than what
             most businesses spend on one emergency fix.
           </p>
           <p>
@@ -503,28 +503,28 @@ export default function WebMaintenancePage() {
               title: `Can't I just do this myself?`,
               summary: `Most business owners lack the 5+ hours monthly needed for security monitoring, performance optimisation, and updates. Professional maintenance costs less than one emergency fix and protects against 2 AM breakdowns.`,
               content: `
-You absolutely could, but most business owners don't have 5+ hours monthly for security monitoring, performance optimization, and technical updates. Plus, when something breaks at 2 AM on a weekend, you'll be scrambling to fix it while losing sales. Your time is worth more than $39/hour.
+You absolutely could, but most business owners don't have 5+ hours monthly for security monitoring, performance optimisation, and technical updates. Plus, when something breaks at 2 AM on a weekend, you'll be scrambling to fix it while losing sales. Your time is worth more than $39/hour.
 `,
             },
             {
               title: `What if my site goes down?`,
               summary: `RAVENCI monitors 24/7 and typically restores sites within 2 hours during business hours. Proactive monitoring catches 95% of issues before they cause any downtime.`,
               content: `
-We monitor 24/7 and typically restore sites within 2 hours during business hours. Our monitoring catches 95% of issues before they cause downtime. Compare this to DIY maintenance where you might not even know your site is down until a customer tells you.
+I monitor 24/7 and typically restore sites within 2 hours during business hours. My monitoring catches 95% of issues before they cause downtime. Compare this to DIY maintenance where you might not even know your site is down until a customer tells you.
 `,
             },
             {
               title: `Is this really necessary?`,
               summary: `WordPress sites without maintenance are 70% more likely to be hacked. A single security breach typically costs $5,000 to $15,000 to fix. Professional maintenance costs less than one emergency fix per year.`,
               content: `
-WordPress sites without maintenance are 70% more likely to be hacked. One security breach typically costs $5,000 to $15,000 to fix, plus the damage to your reputation. Our maintenance costs less than one emergency website fix per year.
+WordPress sites without maintenance are 70% more likely to be hacked. One security breach typically costs $5,000 to $15,000 to fix, plus the damage to your reputation. My maintenance costs less than one emergency website fix per year.
 `,
             },
             {
               title: `What makes you different from other providers?`,
               summary: `RAVENCI is Brisbane-based with local support, not an overseas call centre. You get direct access to your developer, a 2-hour response time during business hours, and proactive monitoring that prevents problems.`,
               content: `
-We're Brisbane-based with local support, not an overseas call center. You get direct access to our team and, if we built your website, you will get direct access to the same developer who built your site. We promise a 2-hour response time during business hours, and proactive monitoring that prevents problems rather than just reacting to them.
+I'm Brisbane-based with local support, not an overseas call center. You get direct access to me and, if I built your website, you will get direct access to the same developer who built your site. I promise a 2-hour response time during business hours, and proactive monitoring that prevents problems rather than just reacting to them.
 `,
             },
           ]}
@@ -557,7 +557,7 @@ We're Brisbane-based with local support, not an overseas call center. You get di
             "@type": "Product",
             name: "RAVENCI Website Maintenance",
             description:
-              "Website maintenance in Brisbane. Updates, security, backups, and optimization in one package. Protect your website investment.",
+              "Website maintenance in Brisbane. Updates, security, backups, and optimisation in one package. Protect your website investment.",
             image: "https://ravenci.solutions/og/website-maintenance.png",
             brand: {
               "@type": "Brand",
@@ -672,7 +672,7 @@ We're Brisbane-based with local support, not an overseas call center. You get di
                 name: "Can't I just do website maintenance myself?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "You absolutely could, but most business owners don't have 5+ hours monthly for security monitoring, performance optimization, and technical updates. Plus, when something breaks at 2 AM on a weekend, you'll be scrambling to fix it while losing sales.",
+                  text: "You absolutely could, but most business owners don't have 5+ hours monthly for security monitoring, performance optimisation, and technical updates. Plus, when something breaks at 2 AM on a weekend, you'll be scrambling to fix it while losing sales.",
                 },
               },
               {
@@ -680,7 +680,7 @@ We're Brisbane-based with local support, not an overseas call center. You get di
                 name: "What if my site goes down?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "We monitor 24/7 and typically restore sites within 2 hours during business hours. Our monitoring catches 95% of issues before they cause downtime.",
+                  text: "I monitor 24/7 and typically restore sites within 2 hours during business hours. My monitoring catches 95% of issues before they cause downtime.",
                 },
               },
               {
@@ -688,7 +688,7 @@ We're Brisbane-based with local support, not an overseas call center. You get di
                 name: "Is website maintenance really necessary?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "WordPress sites without maintenance are 70% more likely to be hacked. One security breach typically costs $5,000 to $15,000 to fix, plus the damage to your reputation. Our maintenance costs less than one emergency website fix per year.",
+                  text: "WordPress sites without maintenance are 70% more likely to be hacked. One security breach typically costs $5,000 to $15,000 to fix, plus the damage to your reputation. My maintenance costs less than one emergency website fix per year.",
                 },
               },
               {
@@ -696,7 +696,7 @@ We're Brisbane-based with local support, not an overseas call center. You get di
                 name: "What makes RAVENCI different from other maintenance providers?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "We're Brisbane-based with local support, not an overseas call center. You get direct access to our team and, if we built your website, you will get direct access to the same developer who built your site. We promise a 2-hour response time during business hours, and proactive monitoring that prevents problems rather than just reacting to them.",
+                  text: "I'm Brisbane-based with local support, not an overseas call center. You get direct access to me and, if I built your website, you're working directly with the same developer who built your site. I promise a 2-hour response time during business hours, and proactive monitoring that prevents problems rather than just reacting to them.",
                 },
               },
             ],

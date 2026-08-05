@@ -93,22 +93,22 @@ const faqItems = [
     summary:
       "Yes. Many RAVENCI clients come after outgrowing a template site or DIY builder. Content is migrated and a custom platform is built that reflects your brand and scales with you.",
     content:
-      "Absolutely. Many of our clients come to us after outgrowing a template site or DIY builder. We migrate your content and build a custom platform that reflects your brand and scales with you.",
+      "Absolutely. Many of my clients come to me after outgrowing a template site or DIY builder. I migrate your content and build a custom platform that reflects your brand and scales with you.",
   },
   {
     title: "What's wrong with the way most agencies build websites?",
     summary:
       "Most agencies stack pre-built themes and plugins instead of building properly. The result: slow sites that get hacked, plugin subscriptions that pile up, and a developer you can't reach when something breaks.",
     content:
-      "Most agencies assemble websites from pre-built themes and a stack of plugins instead of building properly. It's faster for them, but it's a problem for you: slow sites, security gaps from plugin stacking, subscriptions piling up for every little feature, and a deep dependency on third-party developers who may stop supporting their plugins next year. We build sites the way they should be built. Properly, once, with the long view in mind. So they're still working in five years instead of falling apart in eighteen months.",
+      "Most agencies assemble websites from pre-built themes and a stack of plugins instead of building properly. It's faster for them, but it's a problem for you: slow sites, security gaps from plugin stacking, subscriptions piling up for every little feature, and a deep dependency on third-party developers who may stop supporting their plugins next year. I build sites the way they should be built. Properly, once, with the long view in mind. So they're still working in five years instead of falling apart in eighteen months.",
   },
   {
     title:
       "What technology does RAVENCI use for custom websites?",
     summary:
-      "We choose the right platform for each project: modern custom builds for performance and flexibility, WordPress for clients who want to manage content themselves. Either way, the result is fast, secure, and built to last.",
+      "I choose the right platform for each project: modern custom builds for performance and flexibility, WordPress for clients who want to manage content themselves. Either way, the result is fast, secure, and built to last.",
     content:
-      "We choose the right platform for each project rather than forcing every client onto the same one. For performance-critical sites we build custom from the ground up. For content-led sites where the team wants to manage things themselves, we build on WordPress, but properly, not as a stack of plugins. Either way you get a site that performs, ranks, and is still working five years from now.",
+      "I choose the right platform for each project rather than forcing every client onto the same one. For performance-critical sites I build custom from the ground up. For content-led sites where the team wants to manage things themselves, I build on WordPress, but properly, not as a stack of plugins. Either way you get a site that performs, ranks, and is still working five years from now.",
   },
   {
     title:
@@ -116,7 +116,7 @@ const faqItems = [
     summary:
       "RAVENCI custom websites start from $7,500. A typical agency build may look cheaper upfront, but plugin licence renewals ($300 to 800/yr), customisation fees ($1,000 to 5,000), and ongoing maintenance make total ownership cost comparable with worse results.",
     content:
-      "Our custom websites start from $7,500 for a Brochure site with CRM. A typical agency build may look cheaper upfront, but factor in plugin licence renewals ($300 to 800/yr), customisation fees ($1,000 to 5,000), and ongoing maintenance. The total cost of ownership is often comparable, with a worse result.",
+      "My custom websites start from $7,500 for a Brochure site with CRM. A typical agency build may look cheaper upfront, but factor in plugin licence renewals ($300 to 800/yr), customisation fees ($1,000 to 5,000), and ongoing maintenance. The total cost of ownership is often comparable, with a worse result.",
   },
 ];
 
@@ -135,7 +135,7 @@ export default function CustomVsTemplatePage() {
           </h2>
           <p className="mt-6 max-w-2xl text-neutral-500/80">
             Every business needs a website, but not every business needs the same
-            kind. We break down the real differences between a custom-built
+            kind. I break down the real differences between a custom-built
             website, a typical agency build, and a DIY builder, so you can make an
             informed decision based on cost, performance, and long-term value.
           </p>

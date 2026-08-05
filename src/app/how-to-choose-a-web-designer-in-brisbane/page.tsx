@@ -190,7 +190,7 @@ const ravenciScorecard = [
   {
     question: "Who owns everything?",
     answer:
-      "You do. Domain, code, content, hosting: all transferable, no lock-in. We&apos;ve never had a client unable to leave.",
+      "You do. Domain, code, content, hosting: all transferable, no lock-in. I&apos;ve never had a client unable to leave.",
   },
   {
     question: "12-month total cost transparent?",
@@ -200,12 +200,12 @@ const ravenciScorecard = [
   {
     question: "Which platforms?",
     answer:
-      "Custom Next.js, WordPress, Shopify, BigCommerce, GoHighLevel, Plasmic and Strapi. We're a Shopify Partner, BigCommerce Partner, and Synergy Wholesale Partner.",
+      "Custom Next.js, WordPress, Shopify, BigCommerce, GoHighLevel, Plasmic and Strapi. I'm a Shopify Partner, BigCommerce Partner, and Synergy Wholesale Partner.",
   },
   {
     question: "Case studies?",
     answer:
-      "See our published case studies: Peninsula Homes, Coast Remedial, Intercorp Developments, SAC Consulting and others, with platforms used and results.",
+      "See my published case studies: Peninsula Homes, Coast Remedial, Intercorp Developments, SAC Consulting and others, with platforms used and results.",
   },
   {
     question: "Maintenance details?",
@@ -228,9 +228,9 @@ const ravenciScorecard = [
       "30 days of post-launch bug fixes included. Ongoing maintenance plan or retainer packages from $350/mo for ongoing support.",
   },
   {
-    question: "What if you leave or we stop trading?",
+    question: "What if you leave or I stop trading?",
     answer:
-      "We document every project for handover. You always have access to your code, content, hosting, and domain. We've never had a contested handover.",
+      "I document every project for handover. You always have access to your code, content, hosting, and domain. I've never had a contested handover.",
   },
   {
     question: "Who actually does the work?",
@@ -458,7 +458,7 @@ export default function HowToChooseWebDesignerPage() {
             How RAVENCI Answers Each of the Ten Questions
           </h3>
           <p className="mb-10 max-w-2xl text-white/85 leading-relaxed">
-            We&apos;ll do the same exercise on ourselves. Here&apos;s how we
+            I&apos;ll do the same exercise on myself. Here&apos;s how I
             answer each of the ten questions above. Use this as a benchmark for
             comparing other quotes.
           </p>
@@ -511,7 +511,7 @@ export default function HowToChooseWebDesignerPage() {
                 href="/brisbane-website-audit"
                 className="text-ravenci-primary font-bold hover:underline"
               >
-                We Audited 50 Brisbane Business Websites
+                I Audited 50 Brisbane Business Websites
               </Link>{" "}
               72% scored below 50 on Google PageSpeed. See where the typical
               Brisbane site falls short.
@@ -526,8 +526,8 @@ export default function HowToChooseWebDesignerPage() {
           Ready to Have That Discovery Call?
         </h2>
         <p className="mb-10 max-w-lg text-neutral-500/80">
-          Tell us about your business in 2 minutes. We&apos;ll come back with
-          a tailored proposal, and we&apos;ll happily answer all ten of these
+          Tell me about your business in 2 minutes. I&apos;ll come back with
+          a tailored proposal, and I&apos;ll happily answer all ten of these
           questions before you commit to anything.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
@@ -541,7 +541,7 @@ export default function HowToChooseWebDesignerPage() {
             href="/case-studies"
             className="px-8 py-3 grid place-content-center border-2 border-ravenci-dark rounded-full text-ravenci-dark hover:bg-ravenci-dark hover:text-white transition-colors duration-300"
           >
-            See Our Case Studies
+            See My Case Studies
           </Link>
         </div>
       </section>

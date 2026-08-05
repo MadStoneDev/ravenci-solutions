@@ -62,7 +62,7 @@ export default function Home() {
             className={`mt-8 max-w-[600px] text-lg md:text-xl font-light text-neutral-400`}
           >
             Structural engineer by training, web developer for 25+ years.
-            467 projects for established Australian businesses,
+            350+ projects for established Australian businesses,
             built properly, still working in five years.
           </h2>
 
@@ -87,7 +87,7 @@ export default function Home() {
               href={`/case-studies`}
               className={`group relative px-6 py-3 rounded-full text-white transition-all duration-300 ease-in-out`}
             >
-              <span className={`z-20`}>Our Work</span>
+              <span className={`z-20`}>My Work</span>
 
               {/* Border */}
               <div
@@ -121,7 +121,7 @@ export default function Home() {
       {/* Client Logos */}
       <LogosPanel
         logos={CLIENT_LOGOS}
-        heading={`Some of Our Clients`}
+        heading={`Some of My Clients`}
         headingColour={`text-white`}
         headingSide={`bottom`}
         speed={`slow`}
@@ -189,7 +189,7 @@ export default function Home() {
           Clear pricing, scoped up front
         </h2>
         <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
-          No surprises. You know the starting point before we ever get on a
+          No surprises. You know the starting point before I ever get on a
           call.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -207,7 +207,7 @@ export default function Home() {
               href: "/ecommerce",
             },
             {
-              name: "Website Care Plans",
+              name: "Maintenance",
               price: "from $249/mo",
               line: "Updates, security, backups, and someone who answers when it matters.",
               href: "/website-maintenance",
@@ -291,17 +291,17 @@ export default function Home() {
 
           <div className={`mt-16 mb-24 flex flex-col gap-8 max-w-[500px]`}>
             <p>
-              Most websites we replace were built with the right intentions and
+              Most websites I replace were built with the right intentions and
               the wrong approach: drag-and-drop builders, plugin stacks,
-              subscriptions piling up, eventually breaking. We don&apos;t work
-              that way. We build properly, once, so it&apos;s still working
+              subscriptions piling up, eventually breaking. I don&apos;t work
+              that way. I build properly, once, so it&apos;s still working
               five years from now.
             </p>
 
             <p>
               From design through to development, hosting and ongoing maintenance,
               your site remains performant and fresh without you having to think about it. Tell
-              us what you need. We&apos;ll take it from there.
+              me what you need. I&apos;ll take it from there.
             </p>
           </div>
 
@@ -336,7 +336,7 @@ export default function Home() {
 <p class="mb-4 text-neutral-400/70">Sites you can update yourself without calling a developer for every little change. Built with a dashboard anyone can understand.</p>
 
 <p class="text-neutral-100">Custom builds when off-the-shelf won't cut it</p>
-<p class="mb-4 text-neutral-400/70">When the project genuinely needs something custom, we build it from scratch, engineered so it grows with you instead of against you.</p>
+<p class="mb-4 text-neutral-400/70">When the project genuinely needs something custom, I build it from scratch, engineered so it grows with you instead of against you.</p>
 
 <p class="text-neutral-100">E-commerce that sells</p>
 <p class="mb-4 text-neutral-400/70">Online stores designed around how your customers buy and how your team fulfils. Whether that's Shopify, BigCommerce, or a custom platform, chosen for what fits, not what's easiest.</p>
@@ -348,7 +348,7 @@ export default function Home() {
               {
                 title: `Design`,
                 content: `<p class="mb-4 text-neutral-100">Design that works for your customers, not for design awards.</p><p class="text-neutral-100">Planning the experience</p>
-<p class="mb-4 text-neutral-400/70">We start by studying the best user experience for your business: what your customers need, where they'll click, what makes them act. The design follows from that.</p>
+<p class="mb-4 text-neutral-400/70">I start by studying the best user experience for your business: what your customers need, where they'll click, what makes them act. The design follows from that.</p>
 <p class="text-neutral-100">How it looks</p>
 <p class="mb-4 text-neutral-400/70">A site that looks and feels true to your brand. Modern, clean and complete with the kind of attention to detail your customers will appreciate.</p>
 <p class="text-neutral-100">Driving action</p>
@@ -356,15 +356,15 @@ export default function Home() {
               },
               {
                 title: `After Launch`,
-                content: `<p class="mb-4 text-neutral-100">We don't hand you a site and disappear.</p>
+                content: `<p class="mb-4 text-neutral-100">I don't hand you a site and disappear.</p>
 
 <p class="text-neutral-100">Hosting that performs</p>
-<p class="mb-4 text-neutral-400/70">Every site we build lives on scalable cloud servers closest to your customers. Fast, secure, and properly maintained, not a shared hosting afterthought.</p>
+<p class="mb-4 text-neutral-400/70">Every site I build lives on scalable cloud servers closest to your customers. Fast, secure, and properly maintained, not a shared hosting afterthought.</p>
 
 <p class="text-neutral-100">Ongoing care</p>
-<p class="mb-4 text-neutral-400/70">Security updates, performance checks, backups, content changes. We handle it so you don't have to chase a developer every time something needs attention. Regular care is what keeps a five-year website going well beyond five years.</p>
+<p class="mb-4 text-neutral-400/70">Security updates, performance checks, backups, content changes. I handle it so you don't have to chase a developer every time something needs attention. Regular care is what keeps a five-year website going well beyond five years.</p>
 
-<a href="/retainer-packages" class="relative px-3 py-1 bg-ravenci-primary hover:bg-ravenci-primary/80 text-white rounded-full transition-all duration-300 ease-in-out">See our care plans</a>`,
+<a href="/retainer-packages" class="relative px-3 py-1 bg-ravenci-primary hover:bg-ravenci-primary/80 text-white rounded-full transition-all duration-300 ease-in-out">See my care plans</a>`,
               },
             ]}
           />
@@ -406,7 +406,7 @@ export default function Home() {
           <p>
             Most sites look great at launch and quietly fall apart after.
             Plugins clash, subscriptions stack up, the developer who built
-            it stops returning calls. That&apos;s not how we work. We build
+            it stops returning calls. That&apos;s not how I work. I build
             it right the first time so you can stop thinking about it.
           </p>
           <footer className={`border-t border-ravenci-dark`}>
@@ -435,9 +435,9 @@ export default function Home() {
 
           <div className={`mt-10 flex flex-col gap-8 max-w-[450px]`}>
             <p>
-              From custom business sites to full eCommerce platforms, we build
+              From custom business sites to full eCommerce platforms, I build
               the digital foundation that established businesses run on, and
-              we stick around to keep it running.
+              I stick around to keep it running.
             </p>
           </div>
         </article>
@@ -474,8 +474,8 @@ export default function Home() {
             Why Businesses Choose RAVENCI
           </h2>
           <p className="mb-10 text-center text-neutral-500/80">
-            Most agencies build websites to launch. We build them to last.
-            Here&apos;s how we stack up against the typical drag-and-drop crowd
+            Most agencies build websites to launch. I build them to last.
+            Here&apos;s how I stack up against the typical drag-and-drop crowd
             and the DIY builders.
           </p>
           <ComparisonTable />
@@ -502,7 +502,7 @@ export default function Home() {
               Month.
             </h2>
             <p className="mt-6 text-neutral-400 leading-relaxed">
-              Most agencies hand you a site and disappear. We stick around to
+              Most agencies hand you a site and disappear. I stick around to
               make sure it actually gets found. SEO retainers that compound your
               investment month over month: more visibility, more traffic, more
               enquiries.

@@ -13,13 +13,13 @@ import ProofCluster from "@/components/proof-cluster";
 export const metadata = {
   title: "Retainer Packages | RAVENCI Solutions",
   description:
-    "Monthly retainer packages for ongoing web support, eCommerce and strategy in Brisbane. A dedicated digital team without the overhead of hiring.",
+    "Monthly retainer packages for ongoing web support, eCommerce and strategy in Brisbane. A founder-led studio backed by a specialist network, without the overhead of hiring.",
   alternates: { canonical: "/retainer-packages" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Retainer Packages | RAVENCI Solutions",
     description:
-      "Monthly retainer packages for ongoing web support, eCommerce and strategy in Brisbane. A dedicated digital team without the overhead of hiring.",
+      "Monthly retainer packages for ongoing web support, eCommerce and strategy in Brisbane. A founder-led studio backed by a specialist network, without the overhead of hiring.",
     url: "/retainer-packages",
     type: "website",
   },
@@ -64,7 +64,7 @@ export default function RetainerPackagesPage() {
     {
       title: "No Lock-In on Website Care",
       description:
-        "Our entry-level tier has no minimum commitment. Pay monthly, cancel anytime",
+        "My entry-level tier has no minimum commitment. Pay monthly, cancel anytime",
     },
   ];
 
@@ -156,7 +156,7 @@ export default function RetainerPackagesPage() {
       summary:
         "Website Care includes up to 1 hour of edits. eCommerce Care and Growth Essentials hours roll over for 1 month, Growth Partner for 2 months. RAVENCI tracks your balance and helps plan usage.",
       content:
-        "It depends on your tier. Website Care includes up to 1 hour of content edits per month. eCommerce Care and Growth Essentials hours roll over for 1 month, and Growth Partner hours roll over for 2 months. We'll always let you know your balance and help you plan usage.",
+        "It depends on your tier. Website Care includes up to 1 hour of content edits per month. eCommerce Care and Growth Essentials hours roll over for 1 month, and Growth Partner hours roll over for 2 months. I'll always let you know your balance and help you plan usage.",
     },
     {
       title:
@@ -178,7 +178,7 @@ export default function RetainerPackagesPage() {
       summary:
         "Additional hours are billed at your tier's overage rate ($165/hr for Website Care and eCommerce Care, $155/hr for Growth Essentials and Growth Partner). RAVENCI always confirms before doing any work beyond your included hours.",
       content:
-        "No problem. Additional hours are billed at your tier's overage rate ($165/hr for Website Care and eCommerce Care, $155/hr for Growth Essentials and Growth Partner). We'll always confirm before doing any work beyond your included hours.",
+        "No problem. Additional hours are billed at your tier's overage rate ($165/hr for Website Care and eCommerce Care, $155/hr for Growth Essentials and Growth Partner). I'll always confirm before doing any work beyond your included hours.",
     },
   ];
 
@@ -215,7 +215,7 @@ export default function RetainerPackagesPage() {
         <article className={`col-span-12 flex flex-col`}>
           <Breadcrumbs items={[{ label: "Retainer Packages" }]} />
           <h1 className={`mt-4 text-4xl md:text-5xl lg:text-h1 font-medium`}>
-            Your Dedicated Digital Team
+            Your Dedicated Digital Partner
           </h1>
           <h2
             className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
@@ -224,11 +224,12 @@ export default function RetainerPackagesPage() {
             hiring
           </h2>
           <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
-            For established Australian businesses that want a digital team
-            without the overhead of hiring one. Hosting, maintenance, and
-            dedicated time for development, design, content and SEO, used
-            however your business needs it that month. Tell us the priorities.
-            We&apos;ll take it from there.
+            For established Australian businesses that want ongoing digital
+            support without the overhead of hiring in-house. Hosting,
+            maintenance, and dedicated time for development, design, content and
+            SEO, used
+            however your business needs it that month. Tell me the priorities.
+            I&apos;ll take it from there.
           </p>
         </article>
       </section>
@@ -277,7 +278,7 @@ export default function RetainerPackagesPage() {
               The Problem with Project-by-Project Work
             </h2>
             <div className={`my-4 text-neutral-400/90`}>
-              Common frustrations we hear from businesses:
+              Common frustrations I hear from businesses:
               <ul className={`mt-4 flex flex-col gap-2`}>
                 <li>- Freelancers who disappear between projects</li>
                 <li>- Websites that sit stagnant for months after launch</li>
@@ -293,7 +294,7 @@ export default function RetainerPackagesPage() {
               Why a Retainer Beats Hiring In-House
             </h2>
             <p className={`mb-6 text-neutral-400/90`}>
-              Our Growth Partner retainer costs{" "}
+              My Growth Partner retainer costs{" "}
               <span className={`text-white font-bold`}>$36,000/year</span>, a
               full-time hire costs{" "}
               <span className={`text-white font-bold`}>$80,000 to $100,000/year</span>{" "}
@@ -312,8 +313,8 @@ export default function RetainerPackagesPage() {
                   size={24}
                   className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
                 />
-                Access to a full team (dev, design, SEO, content), not just one
-                person
+                Access to a full range of skills (dev, design, SEO, content)
+                through one point of contact
               </li>
               <li className={`flex gap-2`}>
                 <IconCheck
@@ -331,13 +332,13 @@ export default function RetainerPackagesPage() {
               </li>
             </ul>
             <p className={`mb-4 text-neutral-400/90`}>
-              A retainer gives you a dedicated digital team that knows your
+              A retainer gives you a digital partner who knows your
               business inside and out. No onboarding every time, no context
               switching, no lost momentum.
             </p>
             <p className={`text-neutral-400/90`}>
-              That&apos;s how we approach it at RAVENCI. To make it even simpler for
-              you, we offer four tiers of retainer packages, each designed to
+              That&apos;s how I approach it at RAVENCI. To make it even simpler for
+              you, I offer four tiers of retainer packages, each designed to
               meet your specific needs.
             </p>
           </article>
@@ -374,7 +375,7 @@ export default function RetainerPackagesPage() {
       {/* Showcase Section */}
       <section className="py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <h2 className="mb-10 font-serif text-h3 font-bold text-center">
-          Some of Our Retainer Clients
+          Some of My Retainer Clients
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
           {[
@@ -490,8 +491,9 @@ export default function RetainerPackagesPage() {
           A Retainer That Pays for Itself
         </h2>
         <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
-          A retainer gives you a dedicated digital team for a fraction of what
-          hiring in-house would cost. No salaries, no super, no drawn-out hiring.
+          A retainer gives you a full range of digital skills for a fraction of
+          what hiring in-house would cost. No salaries, no super, no drawn-out
+          hiring.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
           <div className="p-6 rounded-xl border border-neutral-200 text-center">
@@ -509,8 +511,8 @@ export default function RetainerPackagesPage() {
             </p>
           </div>
           <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">Full team</p>
-            <p className="mt-1 text-sm text-neutral-500">not one person</p>
+            <p className="text-3xl font-bold text-ravenci-primary">Full skill set</p>
+            <p className="mt-1 text-sm text-neutral-500">not one specialty</p>
             <p className="mt-3 text-sm text-neutral-700">
               Dev, design, SEO, and content
             </p>
@@ -520,9 +522,9 @@ export default function RetainerPackagesPage() {
           <p>
             A full-time developer costs $80,000 to $100,000 a year before
             super, leave, equipment, and training, and you get one
-            person with one skill set. Our Growth Partner retainer gives you
-            access to a full team for $36,000 a year, and you use the hours
-            however your business needs them that month.
+            person with one skill set. My Growth Partner retainer gives you the
+            full range, dev, design, SEO, and content, for $36,000 a year, and
+            you use the hours however your business needs them that month.
           </p>
           <p>
             The real question isn&apos;t &ldquo;can I afford a retainer?&rdquo;

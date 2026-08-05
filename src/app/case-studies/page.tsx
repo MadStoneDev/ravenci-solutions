@@ -72,13 +72,13 @@ export default function CaseStudiesPage() {
           <h1
             className={`mt-2 text-4xl md:text-5xl lg:text-h1 font-medium text-ravenci-dark`}
           >
-            Our Client Work Speaks for Itself
+            My Client Work Speaks for Itself
           </h1>
           <h2
             className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
             style={{ lineHeight: "2.25rem" }}
           >
-            See what we&apos;ve built for Australian businesses and the
+            See what I&apos;ve built for Australian businesses and the
             results they got.
           </h2>
         </article>
@@ -104,7 +104,7 @@ export default function CaseStudiesPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>467</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>350+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Projects Delivered
             </p>
@@ -140,7 +140,7 @@ export default function CaseStudiesPage() {
             Ready to start your project?
           </h2>
           <p className={`mt-4 text-white/80`}>
-            Every project in our portfolio started with a conversation.
+            Every project in my portfolio started with a conversation.
             Let&apos;s start yours.
           </p>
           <div className={`mt-10`}>

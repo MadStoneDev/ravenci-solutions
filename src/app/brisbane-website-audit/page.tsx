@@ -17,13 +17,13 @@ import {
 export const metadata: Metadata = {
   title: "Brisbane Website Audit Results | RAVENCI Solutions",
   description:
-    "We audited 50 Brisbane business websites for speed, SEO, mobile, accessibility and security. 72% scored below 50 on Google PageSpeed. See the findings.",
+    "I audited 50 Brisbane business websites for speed, SEO, mobile, accessibility and security. 72% scored below 50 on Google PageSpeed. See the findings.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Brisbane Website Audit Results | RAVENCI Solutions",
     url: "/brisbane-website-audit",
     description:
-      "We audited 50 Brisbane business websites for speed, SEO, mobile, accessibility and security. 72% scored below 50 on Google PageSpeed. See the findings.",
+      "I audited 50 Brisbane business websites for speed, SEO, mobile, accessibility and security. 72% scored below 50 on Google PageSpeed. See the findings.",
     type: "article",
   },
   twitter: { ...TWITTER_DEFAULTS },
@@ -42,14 +42,14 @@ export default function BrisbaneWebsiteAuditPage() {
             Original Research, 2026
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
-            We Audited 50 Brisbane Business Websites
+            I Audited 50 Brisbane Business Websites
           </h1>
           <h2 className="max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light">
-            The results were worse than we expected
+            The results were worse than I expected
           </h2>
           <p className="mt-6 max-w-2xl text-neutral-500/80">
             Between January and February 2026, RAVENCI Solutions audited 50
-            randomly selected Brisbane business websites across 7 industries. We
+            randomly selected Brisbane business websites across 7 industries. I
             tested for speed, SEO, mobile usability, accessibility, and
             security. The average mobile PageSpeed score was 38 out of 100. Here
             are the full findings.
@@ -108,7 +108,7 @@ export default function BrisbaneWebsiteAuditPage() {
           Category-by-Category Breakdown
         </h3>
         <p className="mb-10 max-w-2xl text-neutral-500/80">
-          We scored each site across five categories. Here&apos;s how Brisbane
+          I scored each site across five categories. Here&apos;s how Brisbane
           businesses performed on average, with actionable recommendations for
           each area.
         </p>
@@ -284,7 +284,7 @@ export default function BrisbaneWebsiteAuditPage() {
             Want the full report as a PDF?
           </h2>
           <p className="mt-3 max-w-xl mx-auto text-neutral-600">
-            Same data, formatted for printing or sharing internally. We&apos;ll
+            Same data, formatted for printing or sharing internally. I&apos;ll
             email you the report and a copy lands in your inbox to keep.
           </p>
         </div>
@@ -297,7 +297,7 @@ export default function BrisbaneWebsiteAuditPage() {
           How Does Your Website Stack Up?
         </h2>
         <p className="mb-10 max-w-lg text-neutral-400">
-          Get a free Visibility Check. We&apos;ll audit your site across all
+          Get a free Visibility Check. I&apos;ll audit your site across all
           five categories and show you exactly where you stand compared to your
           competitors.
         </p>
@@ -312,7 +312,7 @@ export default function BrisbaneWebsiteAuditPage() {
             href="/web-development"
             className="group relative px-8 py-3 grid place-content-center border border-neutral-600 rounded-full text-neutral-300 hover:text-white hover:border-white transition-all duration-300 ease-in-out"
           >
-            See Our Website Design Packages
+            See My Website Design Packages
           </Link>
         </div>
       </section>

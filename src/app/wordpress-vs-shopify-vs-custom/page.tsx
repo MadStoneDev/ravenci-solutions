@@ -239,7 +239,7 @@ const commonMistakes = [
   {
     mistake: "Choosing Shopify when you don't sell anything online",
     detail:
-      "We see this monthly. A consulting business launches on Shopify because the templates look good, then pays $45 to $645/month for a platform they don't use as e-commerce. WordPress (or custom) costs less and serves the use case better.",
+      "I see this monthly. A consulting business launches on Shopify because the templates look good, then pays $45 to $645/month for a platform they don't use as e-commerce. WordPress (or custom) costs less and serves the use case better.",
   },
   {
     mistake: "Choosing custom Next.js for a budget under $10,000",
@@ -295,9 +295,9 @@ const faqItems = [
   {
     title: "Should I use BigCommerce instead of Shopify?",
     summary:
-      "BigCommerce is a strong Shopify alternative for businesses with complex catalogues, B2B requirements, or wanting more built-in features without paying for apps. Shopify wins on app ecosystem and brand recognition. RAVENCI is a partner of both. We recommend based on your specific catalogue and feature needs.",
+      "BigCommerce is a strong Shopify alternative for businesses with complex catalogues, B2B requirements, or wanting more built-in features without paying for apps. Shopify wins on app ecosystem and brand recognition. RAVENCI is a partner of both. I recommend based on your specific catalogue and feature needs.",
     content:
-      "BigCommerce is a strong Shopify alternative, particularly for businesses with complex product catalogues, B2B requirements, or that want more functionality built in without paying for separate apps. Shopify wins on app ecosystem breadth, brand recognition, and the cleanest checkout experience. BigCommerce wins on built-in features, lower app dependency, and often lower total cost of ownership at scale. As a Shopify Partner and a BigCommerce Partner, RAVENCI recommends based on your specific catalogue size, integration needs, and B2B/B2C mix, not on what's easier for us to build.",
+      "BigCommerce is a strong Shopify alternative, particularly for businesses with complex product catalogues, B2B requirements, or that want more functionality built in without paying for separate apps. Shopify wins on app ecosystem breadth, brand recognition, and the cleanest checkout experience. BigCommerce wins on built-in features, lower app dependency, and often lower total cost of ownership at scale. As a Shopify Partner and a BigCommerce Partner, RAVENCI recommends based on your specific catalogue size, integration needs, and B2B/B2C mix, not on what's easier for me to build.",
   },
   {
     title: "What about WordPress with WooCommerce vs Shopify?",
@@ -415,7 +415,7 @@ export default function PlatformComparisonPage() {
         <p className="mb-10 max-w-2xl text-neutral-500/80">
           The case for and against each platform, including when{" "}
           <em>not</em> to pick it. Most agencies skip the &quot;avoid&quot;
-          section. We don&apos;t.
+          section. I don&apos;t.
         </p>
         <div className="space-y-8">
           {platforms.map((p, index) => (
@@ -524,7 +524,7 @@ export default function PlatformComparisonPage() {
             Five Common Platform Mistakes
           </h3>
           <p className="mb-10 max-w-2xl text-white/85 leading-relaxed">
-            Patterns we&apos;ve seen across hundreds of Australian small
+            Patterns I&apos;ve seen across hundreds of Australian small
             business projects. Each one costs money to fix later, usually more
             than the original build saved.
           </p>
@@ -554,24 +554,24 @@ export default function PlatformComparisonPage() {
           </h3>
           <div className="space-y-4 text-neutral-600 leading-relaxed">
             <p>
-              We build on all three (Custom Next.js, WordPress, and Shopify),
+              I build on all three (Custom Next.js, WordPress, and Shopify),
               plus BigCommerce, Plasmic, and Strapi when the project calls for
               them. As a <strong>Shopify Partner</strong>, a{" "}
               <strong>BigCommerce Partner</strong>, and a{" "}
-              <strong>Synergy Wholesale Partner</strong>, we get better pricing
-              on platforms and infrastructure that we pass through to clients.
+              <strong>Synergy Wholesale Partner</strong>, I get better pricing
+              on platforms and infrastructure that I pass through to clients.
             </p>
             <p>
-              Our recommendation process is the same on every project: scope
+              My recommendation process is the same on every project: scope
               the actual business need, look at content volume and update
               cadence, look at e-commerce requirements, look at performance
               and integration needs, and then recommend the platform that fits
-              not the one that&apos;s easiest for us to build. We&apos;ll
+              not the one that&apos;s easiest for me to build. I&apos;ll
               tell you when WordPress is the right answer even when custom
-              would be more profitable for us.
+              would be more profitable for me.
             </p>
             <p>
-              See our{" "}
+              See my{" "}
               <Link
                 href="/cost-of-a-website-in-brisbane"
                 className="text-ravenci-primary hover:underline"
@@ -583,9 +583,9 @@ export default function PlatformComparisonPage() {
                 href="/web-development"
                 className="text-ravenci-primary hover:underline"
               >
-                see our web development packages
+                see my web development packages
               </Link>{" "}
-              for what we deliver and at what price point.
+              for what I deliver and at what price point.
             </p>
           </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -611,7 +611,7 @@ export default function PlatformComparisonPage() {
           Still Not Sure Which Platform?
         </h2>
         <p className="mb-10 max-w-lg text-neutral-500/80">
-          Tell us about your business in 2 minutes and we&apos;ll send back a
+          Tell me about your business in 2 minutes and I&apos;ll send back a
           tailored platform recommendation with realistic pricing. No sales
           pressure.
         </p>

@@ -56,7 +56,7 @@ export default function BusinessDesignPage() {
     {
       title: "Unlimited Revisions",
       description:
-        "We'll refine your designs until they perfectly represent your business",
+        "I'll refine your designs until they perfectly represent your business",
     },
     {
       title: "Fast Turnaround",
@@ -214,7 +214,7 @@ export default function BusinessDesignPage() {
               Your Brand Deserves Better
             </h2>
             <div className={`my-4 text-neutral-400/90`}>
-              Common problems we see:
+              Common problems I see:
               <ul className={`mt-4 flex flex-col gap-2`}>
                 <li>- Generic logos that look like everyone else's</li>
                 <li>- Inconsistent branding across different materials</li>
@@ -264,7 +264,7 @@ export default function BusinessDesignPage() {
               your business look established and professional.
             </p>
             <p className={`text-neutral-400/90`}>
-              We offer four comprehensive design packages, each tailored to
+              I offer four comprehensive design packages, each tailored to
               different business needs and budgets.
             </p>
           </article>
@@ -328,7 +328,7 @@ export default function BusinessDesignPage() {
       {/* Showcase Section */}
       <section className="py-20 px-5 sm:px-20 xl:px-36 bg-white">
         <h2 className="mb-10 font-serif text-h3 font-bold text-center">
-          Some of Our Recent Work
+          Some of My Recent Work
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
@@ -427,7 +427,7 @@ export default function BusinessDesignPage() {
             },
             {
               name: "3. Premium Signage",
-              price: "175",
+              price: "Get a quote",
               description:
                 "Shopfront signs, reception wall graphics, window graphics, outdoor banners, wayfinding signage, and A-frame signs. Installation support available.",
               accordionContent: `
@@ -443,7 +443,7 @@ export default function BusinessDesignPage() {
             },
             {
               name: "4. Vehicle Wraps",
-              price: "350",
+              price: "Get a quote",
               description:
                 "Partial or full vehicle wraps for sedans, utes, vans, and buses. One of the best ongoing marketing tools for your business.",
               accordionContent: `
@@ -596,27 +596,27 @@ export default function BusinessDesignPage() {
             {
               title: `How long does design work typically take?`,
               summary: `Logo + Guidelines takes 6 weeks, Full Brand Identity 8 weeks, and Signage or Vehicle Wraps 4 to 6 weeks. RAVENCI provides regular updates throughout every project.`,
-              content: `Brand Essentials: 6 weeks. Marketing Materials: 8 weeks. Signage & Vehicle Wraps: 4 to 6 weeks. We provide regular updates and involve you in every decision.`,
+              content: `Brand Essentials: 6 weeks. Marketing Materials: 8 weeks. Signage & Vehicle Wraps: 4 to 6 weeks. I provide regular updates and involve you in every decision.`,
             },
             {
               title: `What if I don't like the initial concepts?`,
               summary: `Every RAVENCI package includes multiple revisions. Designs are refined until they perfectly capture your vision and business goals.`,
-              content: `We include multiple revisions with every package. Our aim is that our designs perfectly capture your vision and business goals.`,
+              content: `I include multiple revisions with every package. My aim is that my designs perfectly capture your vision and business goals.`,
             },
             {
               title: `Do you handle printing and installation?`,
               summary: `RAVENCI works closely with trusted local suppliers and installers with near a decade of collaboration for all printing and installation needs.`,
-              content: `Though we do not personally handle printing, we do, however, work closely with trusted local suppliers and installers that we have collaborated with for near a decade.`,
+              content: `Though I do not personally handle printing, I do, however, work closely with trusted local suppliers and installers that I have collaborated with for near a decade.`,
             },
             {
               title: `Can you work with our existing brand guidelines?`,
               summary: `Yes. RAVENCI can work within existing brand guidelines or help evolve and strengthen your current brand identity, assessing what works and what needs improvement.`,
-              content: `Absolutely. We can work within existing brand guidelines or help evolve and strengthen your current brand identity. We'll assess what's working and what needs improvement.`,
+              content: `Absolutely. I can work within existing brand guidelines or help evolve and strengthen your current brand identity. I'll assess what's working and what needs improvement.`,
             },
             {
               title: `What file formats do we receive?`,
-              summary: `RAVENCI delivers all designs in industry standard formats including web-ready PNG and JPG, and print-ready PDF and SVG. Everything is organised and labeled for easy use.`,
-              content: `Our designs and print-ready files are provide in industry standard formats. Where applicable, you will receive source web-ready files in PNG and JPG, and print-ready files in PDF and SVG versions. Everything is organised and labeled for easy use.`,
+              summary: `RAVENCI delivers all designs in industry standard formats including web-ready PNG and JPG, and print-ready PDF and SVG. Everything is organised and labelled for easy use.`,
+              content: `My designs and print-ready files are provided in industry standard formats. Where applicable, you will receive source web-ready files in PNG and JPG, and print-ready files in PDF and SVG versions. Everything is organised and labelled for easy use.`,
             },
           ]}
         />
@@ -687,16 +687,12 @@ export default function BusinessDesignPage() {
                 {
                   "@type": "Offer",
                   name: "Premium Signage",
-                  price: "175",
-                  priceCurrency: "AUD",
                   description:
                     "Shopfront signs, reception wall graphics, window graphics, outdoor banners, wayfinding signage, and A-frame signs with installation coordination.",
                 },
                 {
                   "@type": "Offer",
                   name: "Vehicle Wraps",
-                  price: "350",
-                  priceCurrency: "AUD",
                   description:
                     "Partial or full vehicle wraps for sedans, utes, vans, and buses with print-ready files and installation coordination.",
                 },
@@ -749,7 +745,7 @@ export default function BusinessDesignPage() {
                 name: "What file formats do we receive?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "RAVENCI delivers all designs in industry standard formats including web-ready PNG and JPG, and print-ready PDF and SVG. Everything is organised and labeled for easy use.",
+                  text: "RAVENCI delivers all designs in industry standard formats including web-ready PNG and JPG, and print-ready PDF and SVG. Everything is organised and labelled for easy use.",
                 },
               },
             ],

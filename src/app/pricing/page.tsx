@@ -77,12 +77,12 @@ const groups: PriceGroup[] = [
       },
       {
         name: "Premium Signage",
-        price: "from $175",
+        price: "Get a quote",
         line: "Signage designed to match the rest of the brand.",
       },
       {
         name: "Vehicle Wraps",
-        price: "from $350",
+        price: "Get a quote",
         line: "Vehicle branding that turns the work ute into a moving billboard.",
       },
     ],
@@ -113,7 +113,7 @@ const groups: PriceGroup[] = [
     heading: "Care Plans",
     href: "/retainer-packages",
     blurb:
-      "A dedicated digital team on retainer, for a fraction of hiring in-house.",
+      "A digital partner on retainer, for a fraction of hiring in-house.",
     items: [
       {
         name: "Website Care",
@@ -181,8 +181,8 @@ export default function PricingPage() {
             Clear pricing, scoped up front
           </h1>
           <p className="mt-6 text-lg text-neutral-500/90">
-            No surprises. You know the starting point before we ever get on a
-            call. Every project is quoted properly once we understand what you
+            No surprises. You know the starting point before I ever get on a
+            call. Every project is quoted properly once I understand what you
             need, but here's where each thing starts.
           </p>
         </div>

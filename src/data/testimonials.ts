@@ -43,7 +43,7 @@ export const testimonials: Testimonial[] = [
       "Richard is amazing! He really cares about his work, his customers and people in general. The work that he has done for me goes above and beyond. Definitely recommend Richard to anyone!",
     author: "Viv Luhrs",
     image: null,
-    pages: ["website-maintenance"],
+    pages: ["website-maintenance", "ecommerce"],
   },
   {
     id: "danni-green-1",

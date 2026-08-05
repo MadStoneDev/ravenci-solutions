@@ -20,12 +20,12 @@ import { auditStats, AUDIT_META } from "@/data/brisbane-audit";
 export const metadata: Metadata = {
   title: "Free Website Audit Brisbane | RAVENCI Solutions",
   description:
-    "Free website audit for Brisbane businesses. We check speed, SEO, mobile usability, accessibility and security, then email you a no-obligation report.",
+    "Free website audit for Brisbane businesses. I check speed, SEO, mobile usability, accessibility and security, then email you a no-obligation report.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Free Website Audit Brisbane | RAVENCI Solutions",
     description:
-      "Free website audit for Brisbane businesses. We check speed, SEO, mobile usability, accessibility and security, then email you a no-obligation report.",
+      "Free website audit for Brisbane businesses. I check speed, SEO, mobile usability, accessibility and security, then email you a no-obligation report.",
     url: "/free-audit",
     type: "website",
   },
@@ -75,9 +75,9 @@ const howItWorks = [
   },
   {
     step: "02",
-    title: "We audit your site",
+    title: "I audit your site",
     description:
-      "Run your site through the same five-category check we used on 50 Brisbane businesses in 2026. Real review by a real person, not an automated scan.",
+      "Run your site through the same five-category check I used on 50 Brisbane businesses in 2026. Real review by a real person, not an automated scan.",
   },
   {
     step: "03",
@@ -93,35 +93,35 @@ const faqItems = [
     summary:
       "Free means free. No payment details required, no introductory offer that converts to a paid plan, no \"free with sign-up\" trap.",
     content:
-      "Free means free. No payment details required, no introductory offer that converts to a paid plan, no \"free with sign-up\" trap. We do this because we'd rather help a business understand its site than sell something the business doesn't need yet. If after reading the report you decide you'd like RAVENCI to fix any of the issues, that's a separate conversation. Most of the time you can act on the findings yourself or pass them to your existing developer.",
+      "Free means free. No payment details required, no introductory offer that converts to a paid plan, no \"free with sign-up\" trap. I do this because I'd rather help a business understand its site than sell something the business doesn't need yet. If after reading the report you decide you'd like RAVENCI to fix any of the issues, that's a separate conversation. Most of the time you can act on the findings yourself or pass them to your existing developer.",
   },
   {
     title: "How long until I get the report?",
     summary:
-      "Usually within 2 to 3 business days. We do this manually, not via an automated scan, so it takes a beat.",
+      "Usually within 2 to 3 business days. I do this manually, not via an automated scan, so it takes a beat.",
     content:
-      "Usually within 2 to 3 business days. We do this manually, not via an automated scan, so it takes a beat. If you need it faster for a specific reason (a board meeting, a pitch, a rebrand decision), tell us in the form and we'll prioritise.",
+      "Usually within 2 to 3 business days. I do this manually, not via an automated scan, so it takes a beat. If you need it faster for a specific reason (a board meeting, a pitch, a rebrand decision), tell me in the form and I'll prioritise.",
   },
   {
     title: "What if I don't have a website yet?",
     summary:
-      "The audit is for live sites. If you're pre-launch, we can have a different conversation. Talk to us via the contact form.",
+      "The audit is for live sites. If you're pre-launch, I can have a different conversation. Talk to me via the contact form.",
     content:
-      "The audit is for live sites. There's nothing to test if there's no live URL. If you're pre-launch and figuring out platform, scope, or what \"good\" should look like for your industry, we can have a different conversation. Use the main contact form on the site and tell us where you're at.",
+      "The audit is for live sites. There's nothing to test if there's no live URL. If you're pre-launch and figuring out platform, scope, or what \"good\" should look like for your industry, I can have a different conversation. Use the main contact form on the site and tell me where you're at.",
   },
   {
     title: "Is this just a sales pitch in disguise?",
     summary:
       "No. The report is the deliverable. There's no follow-up sales call unless you specifically ask for one.",
     content:
-      "No. The report is the deliverable. There's no follow-up sales call, no automated email sequence, no retargeting pixel that follows you around the internet for the next month. We send the report; what you do with it is up to you.",
+      "No. The report is the deliverable. There's no follow-up sales call, no automated email sequence, no retargeting pixel that follows you around the internet for the next month. I send the report; what you do with it is up to you.",
   },
   {
     title: "Can I share the report with my team or current developer?",
     summary:
       "Of course. The report is yours. Print it, forward it, paste sections into a brief, whatever's useful.",
     content:
-      "Of course. The report is yours to use however you want. Print it, forward it, paste sections into a brief for your current developer or marketing team. We'd rather you act on the findings than sit on them.",
+      "Of course. The report is yours to use however you want. Print it, forward it, paste sections into a brief for your current developer or marketing team. I'd rather you act on the findings than sit on them.",
   },
 ];
 
@@ -139,10 +139,10 @@ export default function FreeAuditPage() {
             A free website audit for your Brisbane business
           </h1>
           <p className="mt-6 max-w-2xl text-lg md:text-xl text-neutral-500/90 leading-relaxed">
-            We check your site across the same five categories we used on{" "}
+            I check your site across the same five categories I used on{" "}
             {AUDIT_META.totalSitesAudited} Brisbane businesses in{" "}
             {AUDIT_META.conductedDate}: speed, SEO, mobile usability,
-            accessibility, and security. We email you a plain-English
+            accessibility, and security. I email you a plain-English
             report showing exactly where you stand. No payment details, no
             sales call.
           </p>
@@ -182,7 +182,7 @@ export default function FreeAuditPage() {
             Get your audit
           </h2>
           <p className="max-w-2xl mx-auto text-neutral-600">
-            Four fields, thirty seconds. We&apos;ll come back to you within
+            Four fields, thirty seconds. I&apos;ll come back to you within
             2 to 3 business days with the full report.
           </p>
         </div>
@@ -193,14 +193,14 @@ export default function FreeAuditPage() {
       <section className="content-section py-20 md:py-24 px-5 sm:px-20 xl:px-36 bg-white">
         <div className="max-w-3xl mb-12">
           <span className="block mb-3 text-xs font-medium tracking-widest uppercase text-ravenci-primary">
-            What we check
+            What I check
           </span>
           <h2 className="text-3xl md:text-4xl font-medium text-ravenci-dark">
             Five categories, one honest report
           </h2>
           <p className="mt-4 text-neutral-600 leading-relaxed">
-            The same framework we used to audit{" "}
-            {AUDIT_META.totalSitesAudited} Brisbane business websites for our
+            The same framework I used to audit{" "}
+            {AUDIT_META.totalSitesAudited} Brisbane business websites for my
             2026 research. No proprietary scoring magic, just the things
             that matter to whether your site ranks, loads, and converts.
           </p>
@@ -238,7 +238,7 @@ export default function FreeAuditPage() {
             The bar in Brisbane is lower than most owners realise
           </h2>
           <p className="mt-4 text-white/80 leading-relaxed">
-            Findings from our 2026 audit of {AUDIT_META.totalSitesAudited}{" "}
+            Findings from my 2026 audit of {AUDIT_META.totalSitesAudited}{" "}
             randomly selected Brisbane business websites across{" "}
             {AUDIT_META.industries} industries:
           </p>
@@ -313,7 +313,7 @@ export default function FreeAuditPage() {
           Ready when you are
         </h2>
         <p className="mb-10 max-w-lg text-white/90">
-          Submit your details and we&apos;ll come back within 2–3 business
+          Submit your details and I&apos;ll come back within 2–3 business
           days with the full report.
         </p>
         <Link

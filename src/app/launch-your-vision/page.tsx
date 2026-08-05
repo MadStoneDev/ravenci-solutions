@@ -4,12 +4,12 @@ import LaunchYourVisionStepper from "@/components/launch-your-vision-stepper";
 export const metadata = {
   title: "Launch Your Vision | RAVENCI Solutions",
   description:
-    "Start your project with RAVENCI in Brisbane. Tell us about your website, store, app or branding project in two minutes, and get a tailored proposal back.",
+    "Start your project with RAVENCI in Brisbane. Tell me about your website, store, app or branding project in two minutes, and get a tailored proposal back.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Launch Your Vision | RAVENCI Solutions",
     description:
-      "Start your project with RAVENCI in Brisbane. Tell us about your website, store, app or branding project in two minutes, and get a tailored proposal back.",
+      "Start your project with RAVENCI in Brisbane. Tell me about your website, store, app or branding project in two minutes, and get a tailored proposal back.",
     url: "/launch-your-vision",
     type: "website" as const,
   },
@@ -32,7 +32,7 @@ export default function ContactPage() {
           <h2
             className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light text-neutral-500`}
           >
-            Two minutes. We&apos;ll come back with a tailored proposal.
+            Two minutes. I&apos;ll come back with a tailored proposal.
           </h2>
 
           <LaunchYourVisionStepper />

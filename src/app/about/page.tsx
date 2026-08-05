@@ -27,7 +27,7 @@ export default function AboutPage() {
     {
       title: "Transparency",
       description:
-        "No jargon, no hidden fees. We explain everything in plain English and keep you informed at every stage of the process.",
+        "No jargon, no hidden fees. I explain everything in plain English and keep you informed at every stage of the process.",
     },
     {
       title: "Client Ownership",
@@ -42,7 +42,7 @@ export default function AboutPage() {
     {
       title: "Integrity",
       description:
-        "Honest timelines, honest pricing. If something isn't right for your business, we'll tell you, even if it means recommending a different approach.",
+        "Honest timelines, honest pricing. If something isn't right for your business, I'll tell you, even if it means recommending a different approach.",
     },
   ];
 
@@ -60,7 +60,7 @@ export default function AboutPage() {
             className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
             style={{ lineHeight: "2.25rem" }}
           >
-            We take the long view on what your website needs to do.
+            I take the long view on what your website needs to do.
           </h2>
         </article>
       </section>
@@ -85,7 +85,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>467</p>
+            <p className={`text-4xl md:text-5xl font-bold`}>350+</p>
             <p className={`mt-2 text-sm text-white/80 font-light`}>
               Projects Delivered
             </p>
@@ -147,7 +147,7 @@ export default function AboutPage() {
                 Design, Richard brings both analytical thinking
                 and creative problem solving to every project. His mantra is
                 that everything must be done to perfection, everything must
-                serve a purpose. It is that which shapes how we approach our
+                serve a purpose. It is that which shapes how I approach my
                 work.
               </p>
               <p>
@@ -175,7 +175,7 @@ export default function AboutPage() {
       >
         <article className={`max-w-3xl mx-auto`}>
           <h2 className={`mb-8 font-serif text-h3 font-bold text-white`}>
-            What Makes Us Different
+            What Makes Me Different
           </h2>
           <div className={`space-y-6 text-neutral-400/90`}>
             <p>
@@ -187,9 +187,9 @@ export default function AboutPage() {
             </p>
             <p>
               That's why RAVENCI websites and designs are built to a
-              standard. We guarantee 85+ Google PageSpeed
-              scores because we believe performance isn't optional. We build on
-              proven platforms and follow best practices because we've seen what
+              standard. I guarantee 85+ Google PageSpeed
+              scores because I believe performance isn't optional. I build on
+              proven platforms and follow best practices because I've seen what
               happens when shortcuts are taken.
             </p>
 
@@ -244,7 +244,7 @@ export default function AboutPage() {
               You Own Everything
             </h4>
             <p>
-              When we build your website, it's yours. Your code, your content,
+              When I build your website, it's yours. Your code, your content,
               your domain. No lock-in contracts, no proprietary systems locking you in. If you ever want to move on, you take
               everything with you.
             </p>
@@ -252,12 +252,12 @@ export default function AboutPage() {
             <h4
               className={`mt-10 mb-4 font-serif text-lg font-bold text-white`}
             >
-              We Teach You, Too
+              I Teach You, Too
             </h4>
             <p>
               Every project includes tailored video tutorials showing you
-              exactly how to manage your website. We don't believe in creating
-              dependency. We want you to feel confident making updates, adding
+              exactly how to manage your website. I don't believe in creating
+              dependency. I want you to feel confident making updates, adding
               content, and running your site on your own terms.
             </p>
 
@@ -267,10 +267,10 @@ export default function AboutPage() {
               Specialist Network
             </h4>
             <p>
-              As a founder-led studio, we keep the team small, but never at the
+              As a founder-led studio, I keep things small, but never at the
               cost of quality. When your project needs specialist photography,
-              copywriting, or specialist design, we bring in trusted
-              collaborators who meet our standards.
+              copywriting, or design, I bring in trusted collaborators who meet
+              my standards.
             </p>
           </div>
         </article>
@@ -283,7 +283,7 @@ export default function AboutPage() {
         <h2
           className={`mb-12 font-serif text-h3 font-bold text-center text-ravenci-dark`}
         >
-          What We Stand For
+          What I Stand For
         </h2>
         <div
           className={`grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto`}
@@ -311,11 +311,11 @@ export default function AboutPage() {
       >
         <div className={`max-w-xl mx-auto text-center`}>
           <h2 className={`text-3xl md:text-4xl font-medium`}>
-            Ready to work with us?
+            Ready to work with me?
           </h2>
           <p className={`mt-4 text-white/80`}>
             Whether you&apos;re starting from scratch or need a website that
-            performs, we&apos;d love to hear about your project.
+            performs, I&apos;d love to hear about your project.
           </p>
           <div className={`mt-10`}>
             <Link
@@ -380,16 +380,6 @@ export default function AboutPage() {
               "UI/UX Design",
               "Structural Engineering",
               "SEO",
-            ],
-            alumniOf: [
-              {
-                "@type": "EducationalOrganization",
-                name: "University (Structural Engineering Degree)",
-              },
-              {
-                "@type": "EducationalOrganization",
-                name: "Design College (Graphic Design Diploma)",
-              },
             ],
             sameAs: ["https://www.linkedin.com/company/91459779/"],
           }),

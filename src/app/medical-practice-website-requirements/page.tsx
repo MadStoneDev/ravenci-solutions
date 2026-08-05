@@ -165,12 +165,12 @@ const commonMistakes = [
   {
     mistake: "Patient testimonials about clinical care",
     detail:
-      "The most common AHPRA breach we see on Australian medical practice sites. Even glowing Google reviews about 'how Dr X cured my back pain' embedded on the website can trigger an AHPRA notification. Display testimonials only about non-clinical aspects (reception, parking, wait times) and consider hiding clinical-aspect Google reviews from website embeds.",
+      "The most common AHPRA breach I see on Australian medical practice sites. Even glowing Google reviews about 'how Dr X cured my back pain' embedded on the website can trigger an AHPRA notification. Display testimonials only about non-clinical aspects (reception, parking, wait times) and consider hiding clinical-aspect Google reviews from website embeds.",
   },
   {
     mistake: "Booking buttons that break on mobile",
     detail:
-      "70%+ of patient website visits are now mobile. We've audited practice sites where the 'Book Now' button opens a desktop-only booking widget that doesn't work on phones. Test the booking flow on a real iPhone and Android before launch.",
+      "70%+ of patient website visits are now mobile. I've audited practice sites where the 'Book Now' button opens a desktop-only booking widget that doesn't work on phones. Test the booking flow on a real iPhone and Android before launch.",
   },
   {
     mistake: "No privacy policy, or a generic one copied from a template",
@@ -185,7 +185,7 @@ const commonMistakes = [
   {
     mistake: "Slow site that loses patients before they book",
     detail:
-      "Mobile patients with poor connections abandon sites that take longer than 3 seconds to load. Most Australian practice sites we've audited take 5-8 seconds. Image optimisation, code splitting, and proper hosting fix this.",
+      "Mobile patients with poor connections abandon sites that take longer than 3 seconds to load. Most Australian practice sites I've audited take 5-8 seconds. Image optimisation, code splitting, and proper hosting fix this.",
   },
   {
     mistake: "Missing or broken integration with practice management software",
@@ -200,7 +200,7 @@ const faqItems = [
     summary:
       "Testimonials about clinical aspects of care are prohibited under section 133 of the National Law. Reviews about non-clinical aspects (parking, reception, ease of booking) are generally fine. AHPRA's published guidance is the authoritative source. Review it before publishing any review content.",
     content:
-      "Testimonials about clinical aspects of care are prohibited under section 133 of the Health Practitioner Regulation National Law. This applies to written reviews, video testimonials, before-and-after stories, and case study quotes that describe clinical outcomes. Reviews about non-clinical aspects (parking, reception, ease of booking, wait times) are generally permitted. The line is sometimes nuanced: a review saying 'great practice, easy to book' is fine; the same review with 'and Dr X really helped my chronic pain' added would be a breach. AHPRA's published advertising guidance is the authoritative source. We recommend a compliance review of all testimonial content before publishing.",
+      "Testimonials about clinical aspects of care are prohibited under section 133 of the Health Practitioner Regulation National Law. This applies to written reviews, video testimonials, before-and-after stories, and case study quotes that describe clinical outcomes. Reviews about non-clinical aspects (parking, reception, ease of booking, wait times) are generally permitted. The line is sometimes nuanced: a review saying 'great practice, easy to book' is fine; the same review with 'and Dr X really helped my chronic pain' added would be a breach. AHPRA's published advertising guidance is the authoritative source. I recommend a compliance review of all testimonial content before publishing.",
   },
   {
     title:
@@ -222,28 +222,28 @@ const faqItems = [
     summary:
       "HotDoc is the most widely used in Australian general practice. HealthEngine adds patient-acquisition value. Cliniko is popular with allied health and specialists. Choice depends on your practice type, existing practice management software, and whether you want patient marketplace exposure.",
     content:
-      "HotDoc is the most widely used online booking system in Australian general practice, with strong integration with major practice management systems and a clean patient experience. HealthEngine adds patient-acquisition value via its directory and patient marketplace, alongside booking. Cliniko is popular with allied health and specialists who want booking and practice management in one product. The right choice depends on your practice type (GP vs specialist vs allied health), what practice management software you already use (Best Practice, MedicalDirector, etc.), and whether you want exposure on a patient-facing marketplace. We typically scope this with practice managers as part of the project discovery.",
+      "HotDoc is the most widely used online booking system in Australian general practice, with strong integration with major practice management systems and a clean patient experience. HealthEngine adds patient-acquisition value via its directory and patient marketplace, alongside booking. Cliniko is popular with allied health and specialists who want booking and practice management in one product. The right choice depends on your practice type (GP vs specialist vs allied health), what practice management software you already use (Best Practice, MedicalDirector, etc.), and whether you want exposure on a patient-facing marketplace. I typically scope this with practice managers as part of the project discovery.",
   },
   {
     title: "Do I need a privacy policy specific to healthcare?",
     summary:
       "Yes. A generic privacy policy doesn't address healthcare-specific obligations including how patient information is handled, Australian hosting versus international, and state-level health record acts in Victoria, ACT and NSW. A healthcare-tailored policy reduces both compliance and patient-trust risk.",
     content:
-      "Yes. A generic privacy policy template (copied from an e-commerce site or pulled off a template generator) doesn't address the specific obligations that apply to healthcare providers handling patient information. A proper medical practice privacy policy should address: what patient information is collected via the website (including via booking, contact forms, and analytics), where it's stored (Australian-hosted versus international, which matters for some patient cohorts), who has access internally and externally, how the practice complies with the Australian Privacy Principles, how patients can request access or correction, and how state-level Health Records Acts in Victoria, ACT, and NSW apply where relevant. We typically work with the practice's existing legal or compliance advisor to draft this rather than writing it ourselves.",
+      "Yes. A generic privacy policy template (copied from an e-commerce site or pulled off a template generator) doesn't address the specific obligations that apply to healthcare providers handling patient information. A proper medical practice privacy policy should address: what patient information is collected via the website (including via booking, contact forms, and analytics), where it's stored (Australian-hosted versus international, which matters for some patient cohorts), who has access internally and externally, how the practice complies with the Australian Privacy Principles, how patients can request access or correction, and how state-level Health Records Acts in Victoria, ACT, and NSW apply where relevant. I typically work with the practice's existing legal or compliance advisor to draft this rather than writing it myself.",
   },
   {
     title: "How long does it take to build a medical practice website?",
     summary:
       "A standard practice site with online booking integration, AHPRA-aware content, and privacy compliance typically takes 4 to 6 weeks. Sites with patient portals, multiple locations, or custom telehealth flows take 6 to 10 weeks. Compliance review adds 1 to 2 weeks.",
     content:
-      "A standard medical practice website with online booking integration, AHPRA-aware content structure, and privacy compliance typically takes 4 to 6 weeks from kickoff to launch. Sites with patient portals, multi-location handling, or custom telehealth flows take 6 to 10 weeks. AHPRA compliance review (which we strongly recommend) typically adds 1 to 2 weeks at the end of the project. The biggest delay is usually content readiness: practitioner bios, photography, and condition pages tend to be where projects sit waiting on the practice rather than the developer.",
+      "A standard medical practice website with online booking integration, AHPRA-aware content structure, and privacy compliance typically takes 4 to 6 weeks from kickoff to launch. Sites with patient portals, multi-location handling, or custom telehealth flows take 6 to 10 weeks. AHPRA compliance review (which I strongly recommend) typically adds 1 to 2 weeks at the end of the project. The biggest delay is usually content readiness: practitioner bios, photography, and condition pages tend to be where projects sit waiting on the practice rather than the developer.",
   },
   {
     title: "Can patients book appointments directly from my website?",
     summary:
       "Yes, typically via integration with HotDoc, HealthEngine, Cliniko or similar. Most patients now expect this. Booking buttons should be visible on every page, work flawlessly on mobile, and feed bookings directly into the practice management system to avoid double-handling.",
     content:
-      "Yes, and most Australian patients now expect this. Direct online booking is typically achieved via integration with HotDoc, HealthEngine, Cliniko, or whichever booking platform integrates with your practice management software. The booking button should be visible on every page (not buried in a footer), work flawlessly on mobile (where most patient visits originate), and feed bookings directly into the practice management system so reception isn't double-handling them. We test the end-to-end booking flow on real iOS and Android devices as part of every medical practice build.",
+      "Yes, and most Australian patients now expect this. Direct online booking is typically achieved via integration with HotDoc, HealthEngine, Cliniko, or whichever booking platform integrates with your practice management software. The booking button should be visible on every page (not buried in a footer), work flawlessly on mobile (where most patient visits originate), and feed bookings directly into the practice management system so reception isn't double-handling them. I test the end-to-end booking flow on real iOS and Android devices as part of every medical practice build.",
   },
   {
     title:
@@ -437,7 +437,7 @@ export default function MedicalPracticeRequirementsPage() {
           Six Common Mistakes on Australian Practice Websites
         </h3>
         <p className="mb-10 max-w-2xl text-neutral-500/80">
-          Patterns we see across audits of Australian healthcare websites. Each
+          Patterns I see across audits of Australian healthcare websites. Each
           one is fixable, and most are visible to AHPRA, patients, or both.
         </p>
         <div className="space-y-6">
@@ -465,7 +465,7 @@ export default function MedicalPracticeRequirementsPage() {
           </h3>
           <div className="space-y-4 text-neutral-600 leading-relaxed">
             <p>
-              We build healthcare websites for Australian medical practices,
+              I build healthcare websites for Australian medical practices,
               allied health providers, and specialist clinics. Every healthcare
               project includes AHPRA-aware content structure, Privacy Act
               compliance, online booking integration with HotDoc,
@@ -474,20 +474,20 @@ export default function MedicalPracticeRequirementsPage() {
               patients.
             </p>
             <p>
-              We typically work alongside your existing legal or compliance
-              advisor on AHPRA review. We know the patterns to avoid, but
+              I typically work alongside your existing legal or compliance
+              advisor on AHPRA review. I know the patterns to avoid, but
               final sign-off should always come from someone qualified to give
               that opinion.
             </p>
             <p>
-              See our{" "}
+              See my{" "}
               <Link
                 href="/healthcare"
                 className="text-ravenci-primary hover:underline"
               >
                 Healthcare Websites
               </Link>{" "}
-              page for what we deliver, or our{" "}
+              page for what I deliver, or my{" "}
               <Link
                 href="/cost-of-a-website-in-brisbane"
                 className="text-ravenci-primary hover:underline"
@@ -508,7 +508,7 @@ export default function MedicalPracticeRequirementsPage() {
               href="/launch-your-vision"
               className="px-6 py-3 grid place-content-center border-2 border-ravenci-dark rounded-full text-ravenci-dark hover:bg-ravenci-dark hover:text-white transition-colors duration-300"
             >
-              Talk to Us About Your Practice
+              Talk to Me About Your Practice
             </Link>
           </div>
         </div>
@@ -520,7 +520,7 @@ export default function MedicalPracticeRequirementsPage() {
           Building or Replacing Your Practice Website?
         </h2>
         <p className="mb-10 max-w-lg text-neutral-500/80">
-          Tell us about your practice and we&apos;ll send back a tailored
+          Tell me about your practice and I&apos;ll send back a tailored
           proposal covering AHPRA-aware structure, your existing booking and
           PM systems, and realistic timelines.
         </p>

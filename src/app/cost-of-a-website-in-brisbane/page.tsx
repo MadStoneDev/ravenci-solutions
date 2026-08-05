@@ -138,7 +138,7 @@ const pricingTiers = [
       "Custom application development (web or mobile)",
       "Enterprise CMS, multi-region hosting, advanced analytics",
       "Compliance work (privacy, accessibility, industry-specific)",
-      "Dedicated project team",
+      "Dedicated project lead and specialist network",
     ],
     hiddenCosts: [
       "Cloud infrastructure ($200 to $2,000/mo+)",
@@ -494,7 +494,7 @@ export default function BrisbaneWebsiteCostPage() {
           <div className="space-y-4 text-neutral-600 leading-relaxed">
             <p>
               RAVENCI Solutions builds custom websites in Brisbane across
-              business sites through to fully custom eCommerce platforms. Our
+              business sites through to fully custom eCommerce platforms. My
               Business Website starts at <strong>$7,500</strong> with CMS and
               CRM included, Custom Websites from{" "}
               <strong>$10,000</strong>, and eCommerce platforms from{" "}
@@ -502,12 +502,12 @@ export default function BrisbaneWebsiteCostPage() {
               online store.
             </p>
             <p>
-              We work primarily with Custom Next.js (for performance-critical
+              I work primarily with Custom Next.js (for performance-critical
               builds), WordPress (for content-heavy sites), Shopify and
               BigCommerce (for e-commerce), and Plasmic and Strapi when the
               project needs a visual builder or headless CMS. As Shopify,
-              BigCommerce, and Synergy Wholesale Partners we get better pricing
-              on platforms and infrastructure that we pass through to clients.
+              BigCommerce, and Synergy Wholesale Partners I get better pricing
+              on platforms and infrastructure that I pass through to clients.
             </p>
             <p>
               Hosting runs <strong>$39/mo</strong>, maintenance{" "}
@@ -521,7 +521,7 @@ export default function BrisbaneWebsiteCostPage() {
               href="/web-development"
               className="px-6 py-3 grid place-content-center bg-ravenci-dark rounded-full text-white hover:bg-ravenci-primary transition-colors duration-300"
             >
-              See Our Website Design Packages
+              See My Website Design Packages
             </Link>
             <Link
               href="/launch-your-vision"
@@ -604,7 +604,7 @@ export default function BrisbaneWebsiteCostPage() {
           Get a Real Quote, Not a Guess
         </h2>
         <p className="mb-10 max-w-lg text-neutral-500/80">
-          Tell us about your project in 2 minutes. We&apos;ll send back a
+          Tell me about your project in 2 minutes. I&apos;ll send back a
           tailored estimate with the platform, scope and 12-month total cost
           clearly laid out. No sales calls required.
         </p>
