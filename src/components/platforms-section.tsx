@@ -52,7 +52,7 @@ export default function PlatformsSection() {
       <div className="grid grid-cols-12 gap-8 mb-14 lg:mb-20">
         <article className="col-span-12 lg:col-span-7">
           <p className="mb-4 text-xs font-medium tracking-widest uppercase text-ravenci-primary">
-            Platforms we build on
+            Platforms I build on
           </p>
           <h3
             className="text-4xl md:text-5xl lg:text-6xl font-medium text-ravenci-dark"
@@ -66,9 +66,9 @@ export default function PlatformsSection() {
         </article>
         <article className="col-span-12 lg:col-span-5 lg:pl-8 lg:pt-2">
           <p className="text-base md:text-lg text-neutral-500/80 leading-relaxed">
-            We&apos;re not platform purists. After 25+ years in the industry,
-            we&apos;ve learned that the best platform is the one that fits your
-            goals, your team, and your budget, then gets built well. We also
+            I&apos;m not a platform purist. After 25+ years in the industry,
+            I&apos;ve learned that the best platform is the one that fits your
+            goals, your team, and your budget, then gets built well. I also
             build on BigCommerce, Strapi, Plasmic and Astro when the project
             calls for them.
           </p>

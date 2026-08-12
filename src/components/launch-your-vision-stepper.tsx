@@ -13,11 +13,9 @@ import {
   IconLoader2,
 } from "@tabler/icons-react";
 
-// Replace with your real Calendly URL when set up.
-// Can also be set via NEXT_PUBLIC_CALENDLY_URL env var.
+// Can be overridden via NEXT_PUBLIC_CALENDLY_URL env var.
 const CALENDLY_URL =
-  process.env.NEXT_PUBLIC_CALENDLY_URL ||
-  "https://calendly.com/ravenci-solutions/discovery-call";
+  process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/ravenci";
 
 const HIGH_BUDGET_VALUES = ["$10k to $25k", "$25k to $50k", "$50k+"];
 
@@ -242,7 +240,7 @@ export default function LaunchYourVisionStepper() {
             </h3>
           </div>
           <p className="text-neutral-600 leading-relaxed">
-            We&apos;ve received your enquiry and will respond within 24 hours
+            I&apos;ve received your enquiry and will respond within 24 hours
             (typically much faster) with a tailored proposal for your{" "}
             <strong className="text-ravenci-dark">
               {form.projectType.toLowerCase()}
@@ -262,7 +260,7 @@ export default function LaunchYourVisionStepper() {
                 </h4>
               </div>
               <p className="ml-8 text-sm text-neutral-600 mb-4 leading-relaxed">
-                For projects in your range we offer a free 30-minute discovery
+                For projects in your range I offer a free 30-minute discovery
                 call. Pick a time that works for you.
               </p>
               <a
@@ -283,7 +281,7 @@ export default function LaunchYourVisionStepper() {
                 Faster path for hosting + maintenance
               </h4>
               <p className="text-sm text-neutral-600 mb-4 leading-relaxed">
-                Hosting and maintenance are also available via our self-serve
+                Hosting and maintenance are also available via my self-serve
                 checkout. Same pricing, instant setup.
               </p>
               <Link
@@ -315,7 +313,7 @@ export default function LaunchYourVisionStepper() {
         <h3 className="font-bold text-red-700 mb-2">Something went wrong</h3>
         <p className="text-sm text-red-600 mb-4">
           {errorMessage ||
-            "We couldn't send your enquiry. Please try again or email us directly."}
+            "I couldn't send your enquiry. Please try again or email me directly."}
         </p>
         <div className="flex gap-3">
           <button
@@ -329,7 +327,7 @@ export default function LaunchYourVisionStepper() {
             href="mailto:hello@ravenci.solutions"
             className="px-4 py-2 border border-red-300 text-red-700 rounded-full text-sm hover:bg-red-100 transition-colors"
           >
-            Email us directly
+            Email me directly
           </a>
         </div>
       </div>
@@ -379,7 +377,7 @@ export default function LaunchYourVisionStepper() {
         {step === 2 && (
           <Step
             label="What stage are you at?"
-            sublabel="Helps us understand where to start the conversation."
+            sublabel="Helps me understand where to start the conversation."
           >
             <ChoiceGrid
               options={STAGE_OPTIONS}
@@ -393,7 +391,7 @@ export default function LaunchYourVisionStepper() {
         {step === 3 && (
           <Step
             label="When do you need it?"
-            sublabel="Realistic timelines help us scope properly."
+            sublabel="Realistic timelines help me scope properly."
           >
             <ChoiceGrid
               options={TIMELINE_OPTIONS}
@@ -407,7 +405,7 @@ export default function LaunchYourVisionStepper() {
         {step === 4 && (
           <Step
             label="What's your budget range?"
-            sublabel="Optional, but it helps us recommend the right approach. No pressure."
+            sublabel="Optional, but it helps me recommend the right approach. No pressure."
           >
             <ChoiceGrid
               options={BUDGET_OPTIONS}
@@ -430,8 +428,8 @@ export default function LaunchYourVisionStepper() {
         {/* Step 5, Business info */}
         {step === 5 && (
           <Step
-            label="Tell us about your business"
-            sublabel="A few quick details to make our response useful."
+            label="Tell me about your business"
+            sublabel="A few quick details to make my response useful."
           >
             <div className="flex flex-col gap-6">
               <Field
@@ -461,8 +459,8 @@ export default function LaunchYourVisionStepper() {
         {/* Step 6, Contact */}
         {step === 6 && (
           <Step
-            label="How can we reach you?"
-            sublabel="We'll respond within 24 hours, usually faster."
+            label="How can I reach you?"
+            sublabel="I'll respond within 24 hours, usually faster."
           >
             <div className="flex flex-col gap-6">
               <Field
@@ -487,8 +485,8 @@ export default function LaunchYourVisionStepper() {
               />
               <p className="text-xs text-neutral-500 leading-relaxed mt-2">
                 By submitting, you agree to be contacted by RAVENCI Solutions
-                about your enquiry. We never share your details with third
-                parties. See our{" "}
+                about your enquiry. I never share your details with third
+                parties. See the{" "}
                 <Link
                   href="/privacy-policy"
                   className="text-ravenci-primary hover:underline"

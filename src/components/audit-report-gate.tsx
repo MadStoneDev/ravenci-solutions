@@ -55,7 +55,7 @@ export default function AuditReportGate() {
           Report ready, {form.name.split(" ")[0]}.
         </h3>
         <p className="text-neutral-600 mb-6 leading-relaxed">
-          We&apos;ve also sent a copy to{" "}
+          I&apos;ve also sent a copy to{" "}
           <strong className="text-ravenci-dark">{form.email}</strong>. Save it
           as a PDF or print directly from the report page.
         </p>
@@ -150,8 +150,8 @@ export default function AuditReportGate() {
         </button>
 
         <p className="text-xs text-neutral-500 leading-relaxed mt-1">
-          We&apos;ll only use your email to send the report and occasional
-          related insights. No spam, unsubscribe anytime. See our{" "}
+          I&apos;ll only use your email to send the report and occasional
+          related insights. No spam, unsubscribe anytime. See the{" "}
           <Link
             href="/privacy-policy"
             className="text-ravenci-primary hover:underline"

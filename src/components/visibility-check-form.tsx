@@ -69,7 +69,7 @@ export default function VisibilityCheckForm() {
         </div>
         <h3 className="text-2xl font-semibold mb-2">Request Received</h3>
         <p className="text-neutral-600 max-w-md">
-          We&apos;ll review your website and send your free visibility report
+          I&apos;ll review your website and send your free visibility report
           within 2 business days. Keep an eye on your inbox.
         </p>
       </div>
@@ -189,7 +189,7 @@ export default function VisibilityCheckForm() {
       </button>
 
       <p className="mt-3 text-xs text-neutral-500">
-        No spam, no obligation. We&apos;ll only use your email to send the
+        No spam, no obligation. I&apos;ll only use your email to send the
         report. Protected by reCAPTCHA.
       </p>
     </form>

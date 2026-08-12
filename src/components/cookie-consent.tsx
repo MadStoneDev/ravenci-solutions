@@ -61,8 +61,8 @@ export default function CookieConsent() {
     >
       <div className="mx-4 mb-4 md:mx-8 md:mb-6 p-5 md:p-6 bg-ravenci-dark border border-neutral-700 rounded-lg shadow-2xl max-w-xl">
         <p className="text-sm text-neutral-300 leading-relaxed">
-          We use cookies and similar tools (Google Analytics, Microsoft Clarity)
-          to understand how visitors use our site and to improve your experience.
+          I use cookies and similar tools (Google Analytics, Microsoft Clarity)
+          to understand how visitors use my site and to improve your experience.
           No personal data is sold.{" "}
           <Link
             href="/privacy-policy"

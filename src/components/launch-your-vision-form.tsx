@@ -102,7 +102,7 @@ export default function LaunchYourVisionForm() {
       >
         <span className={`text-lg font-bold`}>Thank you.</span>
         <span>
-          Your message has been sent successfully! We'll be in touch soon.
+          Your message has been sent successfully! I'll be in touch soon.
         </span>
       </div>
     );
@@ -113,7 +113,7 @@ export default function LaunchYourVisionForm() {
       >
         <span className={`text-lg font-bold`}>Not what you expected?</span>
         <span>
-          Us neither. Please refresh the page and try again later or email us
+          Me neither. Please refresh the page and try again later or email me
           directly at{" "}
           <a href={`mailto:hello@ravenci.solutions`} className={`font-bold`}>
             hello@ravenci.solutions
@@ -161,7 +161,7 @@ export default function LaunchYourVisionForm() {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="How can we help you make your vision a reality?"
+          placeholder="How can I help you make your vision a reality?"
           className={`py-4 border-b border-neutral-300 focus:outline-none resize-none min-w-[40px] w-full font-light`}
           required
         />

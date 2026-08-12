@@ -148,7 +148,7 @@ interface LogosPanelProps {
 
 export default function LogosPanel({
   logos = TECH_LOGOS,
-  heading = "Technologies We use",
+  heading = "Technologies I use",
   headingColour = "text-white",
   headingSide = "top",
   theme = "bg-ravenci-primary",

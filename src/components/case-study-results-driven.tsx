@@ -189,7 +189,7 @@ export default function CaseStudyResultsDriven({
             Ready to achieve similar results?
           </h2>
           <p className={`mt-4 text-neutral-500`}>
-            Let&apos;s talk about how we can help your business grow with a
+            Let&apos;s talk about how I can help your business grow with a
             website that works.
           </p>
           <div className={`mt-10 flex justify-center gap-4`}>
