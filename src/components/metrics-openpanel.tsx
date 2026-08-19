@@ -1,11 +1,9 @@
 "use client";
 
-import Script from "next/script";
+import { OpenPanelComponent } from "@openpanel/nextjs";
 import { useEffect, useState } from "react";
 
 const OPENPANEL_CLIENT_ID = process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID;
-// Optional — set only when self-hosting OpenPanel (defaults to the cloud API).
-const OPENPANEL_API_URL = process.env.NEXT_PUBLIC_OPENPANEL_API_URL;
 
 const OpenPanel = () => {
   const [consentGranted, setConsentGranted] = useState(false);
@@ -22,34 +20,17 @@ const OpenPanel = () => {
 
   if (!OPENPANEL_CLIENT_ID || !consentGranted) return null;
 
-  const initOptions = {
-    clientId: OPENPANEL_CLIENT_ID,
-    trackScreenViews: true,
-    trackOutgoingLinks: true,
-    trackAttributes: true,
-    ...(OPENPANEL_API_URL ? { apiUrl: OPENPANEL_API_URL } : {}),
-  };
-
+  // Route the script and events through our own /api/op proxy so ad blockers
+  // can't block them. The proxy is defined in src/app/api/op/[...op]/route.ts.
   return (
-    <>
-      <Script
-        id="openpanel-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.op=window.op||function(){var n=[];return new Proxy(function(){arguments.length&&n.push([].slice.call(arguments))},{get:function(t,r){return"q"===r?n:function(){n.push([r].concat([].slice.call(arguments)))}},has:function(t,r){return"q"===r}})}();
-            window.op('init', ${JSON.stringify(initOptions)});
-          `,
-        }}
-      />
-      <Script
-        id="openpanel-sdk"
-        src="https://openpanel.dev/op1.js"
-        strategy="afterInteractive"
-        defer
-        async
-      />
-    </>
+    <OpenPanelComponent
+      clientId={OPENPANEL_CLIENT_ID}
+      apiUrl="/api/op"
+      scriptUrl="/api/op/op1.js"
+      trackScreenViews
+      trackOutgoingLinks
+      trackAttributes
+    />
   );
 };
 
