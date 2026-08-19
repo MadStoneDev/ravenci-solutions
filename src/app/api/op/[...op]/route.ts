@@ -1,22 +1,25 @@
 import { createRouteHandler } from "@openpanel/nextjs/server";
 import { NextResponse } from "next/server";
 
-// Base URL of the (self-hosted) OpenPanel instance, e.g.
-// https://analytics.ravenci.solutions. Falls back to OpenPanel Cloud origins
-// when unset. Both the script and event ingestion are proxied through our own
-// /api/op route so ad blockers can't block the OpenPanel origin.
-const baseUrl = process.env.NEXT_PUBLIC_OPENPANEL_URL?.replace(/\/+$/, "");
+// Self-hosted OpenPanel splits into two origins, mirroring the cloud:
+//  - NEXT_PUBLIC_OPENPANEL_URL      = dashboard domain, serves /op1.js
+//    (cloud equivalent: https://openpanel.dev)
+//  - NEXT_PUBLIC_OPENPANEL_API_URL  = API domain, receives /track
+//    (cloud equivalent: https://api.openpanel.dev)
+// Both are proxied through our own /api/op route so ad blockers can't block
+// the OpenPanel origins. Each falls back to its cloud origin when unset.
+const dashboardUrl = process.env.NEXT_PUBLIC_OPENPANEL_URL?.replace(/\/+$/, "");
+const apiUrl = process.env.NEXT_PUBLIC_OPENPANEL_API_URL?.replace(/\/+$/, "");
 
-// Events API upstream. Self-hosted exposes it at `${baseUrl}/api`; cloud uses
-// https://api.openpanel.dev (the SDK's default when apiUrl is undefined).
-const apiUrl = baseUrl ? `${baseUrl}/api` : undefined;
+// Events API upstream. The SDK forwards `${apiUrl}/track`, so pass the bare
+// origin (no /api suffix) — same shape as the https://api.openpanel.dev default.
 const opHandler = createRouteHandler(apiUrl ? { apiUrl } : undefined);
 
-// The script upstream. Self-hosted serves it at `${baseUrl}/op1.js`; cloud at
-// https://openpanel.dev/op1.js. We re-serve it under a neutral filename
-// (/api/op/script.js) because ad blockers match the literal "op1.js" name even
-// when it's served first-party.
-const scriptSrc = baseUrl ? `${baseUrl}/op1.js` : "https://openpanel.dev/op1.js";
+// The script upstream, re-served under a neutral filename (/api/op/script.js)
+// because ad blockers match the literal "op1.js" name even first-party.
+const scriptSrc = dashboardUrl
+  ? `${dashboardUrl}/op1.js`
+  : "https://openpanel.dev/op1.js";
 
 async function proxyScript(request: Request) {
   const url = new URL(request.url);
