@@ -26,7 +26,7 @@ const OpenPanel = () => {
     <OpenPanelComponent
       clientId={OPENPANEL_CLIENT_ID}
       apiUrl="/api/op"
-      scriptUrl="/api/op/op1.js"
+      scriptUrl="/api/op/script.js"
       trackScreenViews
       trackOutgoingLinks
       trackAttributes
