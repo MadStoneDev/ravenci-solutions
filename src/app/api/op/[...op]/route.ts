@@ -1,21 +1,26 @@
 import { createRouteHandler } from "@openpanel/nextjs/server";
 import { NextResponse } from "next/server";
 
-// Proxies OpenPanel event ingestion (/track) through our own domain so ad
-// blockers can't block the openpanel.dev origin.
-// apiUrl overrides the upstream events API only when self-hosting; the cloud
-// default (https://api.openpanel.dev) is used otherwise.
-const apiUrl = process.env.NEXT_PUBLIC_OPENPANEL_API_URL || undefined;
+// Base URL of the (self-hosted) OpenPanel instance, e.g.
+// https://analytics.ravenci.solutions. Falls back to OpenPanel Cloud origins
+// when unset. Both the script and event ingestion are proxied through our own
+// /api/op route so ad blockers can't block the OpenPanel origin.
+const baseUrl = process.env.NEXT_PUBLIC_OPENPANEL_URL?.replace(/\/+$/, "");
+
+// Events API upstream. Self-hosted exposes it at `${baseUrl}/api`; cloud uses
+// https://api.openpanel.dev (the SDK's default when apiUrl is undefined).
+const apiUrl = baseUrl ? `${baseUrl}/api` : undefined;
 const opHandler = createRouteHandler(apiUrl ? { apiUrl } : undefined);
 
-// The SDK proxy only serves the script at a path ending in "/op1.js", but ad
-// blockers match that literal filename even first-party. So we serve the same
-// upstream script from a neutral filename that isn't on any blocklist.
-const SCRIPT_SRC = "https://openpanel.dev/op1.js";
+// The script upstream. Self-hosted serves it at `${baseUrl}/op1.js`; cloud at
+// https://openpanel.dev/op1.js. We re-serve it under a neutral filename
+// (/api/op/script.js) because ad blockers match the literal "op1.js" name even
+// when it's served first-party.
+const scriptSrc = baseUrl ? `${baseUrl}/op1.js` : "https://openpanel.dev/op1.js";
 
 async function proxyScript(request: Request) {
   const url = new URL(request.url);
-  let src = SCRIPT_SRC;
+  let src = scriptSrc;
   if (url.searchParams.size > 0) src += `?${url.searchParams.toString()}`;
 
   try {
