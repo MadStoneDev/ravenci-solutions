@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { IconArrowRight } from "@tabler/icons-react";
 
 import type { CaseStudy } from "@/data/case-studies";
-import { IconArrowRight } from "@tabler/icons-react";
 
 export default function CaseStudyCard({
   caseStudy,
@@ -14,66 +14,47 @@ export default function CaseStudyCard({
   return (
     <Link
       href={`/case-studies/${caseStudy.slug}`}
-      className={`group flex flex-col overflow-hidden bg-white brutalist-card rounded-lg`}
+      className="group flex flex-col overflow-hidden rounded-sm border border-border bg-card transition-colors duration-fast hover:border-foreground/30"
     >
-      {/* Image */}
-      <div
-        className={`relative w-full aspect-[16/10] overflow-hidden bg-neutral-100 border-b border-ravenci-dark`}
-      >
+      <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-border bg-muted">
         <Image
           src={caseStudy.cardImage ?? caseStudy.featuredImage}
-          alt={`${caseStudy.clientName} project showcase`}
+          alt={`${caseStudy.clientName} project`}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           priority={priority}
-          className={`object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-in-out`}
+          className="object-cover object-top transition-transform duration-slow ease-standard group-hover:scale-105"
         />
       </div>
 
-      {/* Content */}
-      <div className={`p-5 flex flex-col flex-1`}>
-        <span
-          className={`mb-2 text-xs font-medium tracking-wider uppercase text-ravenci-primary`}
-        >
+      <div className="flex flex-1 flex-col p-6">
+        <span className="mb-2 font-mono text-label uppercase text-accent">
           {caseStudy.industryLabel}
         </span>
-        <h3 className={`text-xl font-semibold text-ravenci-dark`}>
-          {caseStudy.clientName}
-        </h3>
-        <p className={`mt-2 text-sm text-neutral-500 line-clamp-3 flex-1`}>
+        <h3 className="text-heading-s text-foreground">{caseStudy.clientName}</h3>
+        <p className="mt-2 line-clamp-3 flex-1 text-small text-muted-foreground">
           {caseStudy.excerpt}
         </p>
 
-        {/* Service pills */}
-        <div className={`mt-4 flex flex-wrap gap-2`}>
+        <div className="mt-4 flex flex-wrap gap-2">
           {caseStudy.serviceLabels.slice(0, 3).map((service) => (
             <span
               key={service}
-              className={`px-3 py-1 text-xs font-medium bg-neutral-100 text-neutral-600 rounded-full`}
+              className="rounded-sm border border-border px-2.5 py-1 font-mono text-label-sm uppercase text-muted-foreground"
             >
               {service}
             </span>
           ))}
         </div>
 
-        {/* View link */}
-        <div className={`mt-4`}>
-          <span
-            className={`group/link relative inline-flex items-center gap-1 px-2 text-sm font-medium text-ravenci-primary`}
-          >
-            <span
-              className={`z-10 group-hover:text-white transition-colors duration-300`}
-            >
-              View Case Study
-            </span>
-            <IconArrowRight
-              className={`z-10 group-hover:text-white group-hover:translate-x-2 transition-all duration-300`}
-            />{" "}
-            <div
-              className={`absolute top-0 left-full group-hover:left-0 right-0 bottom-0 bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </span>
-        </div>
+        <span className="mt-4 inline-flex items-center gap-1 text-small font-medium text-accent">
+          View case study
+          <IconArrowRight
+            size={16}
+            aria-hidden
+            className="transition-transform duration-fast group-hover:translate-x-1"
+          />
+        </span>
       </div>
     </Link>
   );
