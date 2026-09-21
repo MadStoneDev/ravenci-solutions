@@ -1,22 +1,23 @@
-import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-
-import { IconArrowRight, IconExternalLink } from "@tabler/icons-react";
+import { IconArrowUpRight } from "@tabler/icons-react";
 
 import Breadcrumbs from "@/components/breadcrumbs";
-import { getAllLabProjects, type LabStatus } from "@/data/lab-projects";
+import SectionLabel from "@/components/section-label";
+import { Button } from "@/components/ui/button";
+import { LAB_PROJECTS, type LabStatus } from "@/data/labs";
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata: Metadata = {
-  title: "RAVENCI Labs | RAVENCI Solutions",
+  title: "Labs | RAVENCI Solutions",
   description:
-    "Things RAVENCI builds for myself: web apps, tools and experiments that show what I love building when nobody's asking me to.",
+    "Products I've built. Side projects and tools, as proof of range, from RAVENCI Solutions in Brisbane.",
   openGraph: {
     ...OG_DEFAULTS,
-    title: "RAVENCI Labs | RAVENCI Solutions",
-    description:
-      "Things RAVENCI builds for myself: web apps, tools and experiments that show what I love building when nobody's asking me to.",
+    title: "Labs | RAVENCI Solutions",
+    description: "Products I've built, as proof of range.",
     url: "/labs",
     type: "website",
   },
@@ -27,262 +28,82 @@ export const metadata: Metadata = {
 const STATUS_LABEL: Record<LabStatus, string> = {
   live: "Live",
   beta: "Beta",
-  "in-progress": "In Progress",
-  concept: "Concept",
-};
-
-const STATUS_CLASSES: Record<LabStatus, string> = {
-  live: "bg-green-100 text-green-700 border-green-200",
-  beta: "bg-blue-100 text-blue-700 border-blue-200",
-  "in-progress": "bg-yellow-100 text-yellow-700 border-yellow-200",
-  concept: "bg-neutral-100 text-neutral-600 border-neutral-200",
+  wip: "In progress",
 };
 
 export default function LabsPage() {
-  const projects = getAllLabProjects();
-
   return (
     <main className="flex flex-col">
       {/* Hero */}
-      <section className="content-section pt-32 pb-20 md:pb-24 px-5 sm:px-20 xl:px-36 bg-white">
-        <article className="max-w-3xl flex flex-col gap-2">
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="flex max-w-3xl flex-col gap-4">
           <Breadcrumbs items={[{ label: "Labs" }]} />
-          <span className="mt-2 text-xs font-medium tracking-wider uppercase text-ravenci-primary">
-            RAVENCI Labs
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
-            Things I built for myself.
-          </h1>
-          <h2 className="mt-2 max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light text-neutral-500">
-            Web apps, tools and experiments: what I love building when nobody
-            commissioned it.
-          </h2>
-          <p className="mt-6 max-w-2xl text-neutral-500/80 leading-relaxed">
-            Client work pays the bills. Side projects keep the craft sharp.
-            Some of these become real products, some stay personal tools, some
-            quietly fade away. They&apos;re here because they&apos;re proof of
-            what I like building when I&apos;m the only stakeholder.
+          <SectionLabel label="Labs" tick />
+          <h1 className="text-display-l text-foreground">Things I&apos;ve built</h1>
+          <p className="text-lead text-muted-foreground">
+            Products and tools I&apos;ve built outside of client work. Proof of
+            range, and where I try things before they turn up in a build.
           </p>
-        </article>
+        </div>
       </section>
 
-      {/* Projects grid */}
-      <section className="content-section py-16 md:py-20 px-5 sm:px-20 xl:px-36 bg-neutral-100">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
-          {projects.map((project) => (
-            <article
-              key={project.slug}
-              className="bg-white border border-neutral-200 rounded-lg overflow-hidden flex flex-col"
-            >
-              {/* Image */}
-              <div className="relative w-full aspect-[16/10] overflow-hidden bg-neutral-100 border-b border-neutral-200">
-                <Image
-                  src={project.featuredImage}
-                  alt={`${project.name} preview`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-top"
-                />
-                <span
-                  className={`absolute top-4 right-4 px-3 py-1 text-xs font-bold rounded-full border ${
-                    STATUS_CLASSES[project.status]
-                  }`}
-                >
-                  {STATUS_LABEL[project.status]}
-                </span>
-              </div>
-
-              {/* Content */}
-              <div className="p-6 md:p-8 flex flex-col flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-xs font-medium tracking-widest uppercase text-ravenci-primary">
-                    {project.category}
-                  </span>
-                  <span className="text-neutral-300">·</span>
-                  <span className="text-xs text-neutral-500">
-                    {project.year}
+      {/* Grid */}
+      <section className={SECTION}>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {LAB_PROJECTS.map((p) => {
+            const inner = (
+              <>
+                <div className="flex items-start justify-between gap-3">
+                  <h2 className="text-heading-s text-foreground">{p.name}</h2>
+                  <span className="shrink-0 font-mono text-label-sm uppercase text-muted-foreground">
+                    {STATUS_LABEL[p.status]}
                   </span>
                 </div>
-
-                <h3 className="text-2xl md:text-3xl font-medium text-ravenci-dark">
-                  {project.name}
-                </h3>
-                <p className="mt-1 text-sm text-neutral-500 italic">
-                  {project.tagline}
-                </p>
-
-                <p className="mt-4 text-neutral-600 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Features */}
-                <div className="mt-6 pt-6 border-t border-neutral-200">
-                  <p className="mb-3 text-xs font-bold tracking-wider uppercase text-neutral-500">
-                    What it does
-                  </p>
-                  <ul className="space-y-3">
-                    {project.features.map((f, i) => (
-                      <li key={i} className="text-sm">
-                        <p className="font-medium text-ravenci-dark">
-                          {f.title}
-                        </p>
-                        <p className="text-neutral-600 mt-0.5 leading-relaxed">
-                          {f.description}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Tech stack */}
-                <div className="mt-6 pt-6 border-t border-neutral-200">
-                  <p className="mb-3 text-xs font-bold tracking-wider uppercase text-neutral-500">
-                    Built with
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2.5 py-1 text-xs bg-neutral-100 text-neutral-700 rounded border border-neutral-200"
-                      >
-                        {tech}
+                <p className="mt-2 flex-1 text-small text-muted-foreground">{p.oneLiner}</p>
+                {p.stack.length > 0 && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {p.stack.map((s) => (
+                      <span key={s} className="rounded-sm border border-border px-2.5 py-1 font-mono text-label-sm uppercase text-muted-foreground">
+                        {s}
                       </span>
                     ))}
                   </div>
-                </div>
+                )}
+                {p.url && (
+                  <span className="mt-4 inline-flex items-center gap-1 text-small font-medium text-accent">
+                    Visit <IconArrowUpRight size={16} aria-hidden />
+                  </span>
+                )}
+              </>
+            );
 
-                {/* CTAs */}
-                <div className="mt-8 pt-6 border-t border-neutral-200 flex flex-wrap gap-3">
-                  {project.url ? (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-ravenci-primary text-white rounded-full hover:bg-ravenci-primary/85 transition-colors text-sm"
-                    >
-                      Visit {project.name}
-                      <IconExternalLink size={16} />
-                    </a>
-                  ) : (
-                    <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-neutral-200 text-neutral-500 rounded-full text-sm cursor-not-allowed">
-                      {project.status === "in-progress"
-                        ? "Coming Soon"
-                        : "No public URL yet"}
-                    </span>
-                  )}
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 border border-neutral-300 text-ravenci-dark rounded-full hover:bg-neutral-50 transition-colors text-sm"
-                    >
-                      View on GitHub
-                      <IconExternalLink size={16} />
-                    </a>
-                  )}
-                </div>
+            const cls =
+              "flex flex-col rounded-sm border border-border bg-card p-6 transition-colors duration-fast hover:border-foreground/30";
+
+            return p.url ? (
+              <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className={`group ${cls}`}>
+                {inner}
+              </a>
+            ) : (
+              <div key={p.name} className={cls}>
+                {inner}
               </div>
-            </article>
-          ))}
+            );
+          })}
         </div>
       </section>
 
-      {/* Why we have a labs section */}
-      <section className="content-section py-20 md:py-24 px-5 sm:px-20 xl:px-36 bg-white">
-        <div className="max-w-3xl">
-          <h3 className="font-serif text-h3 font-bold mb-6 text-ravenci-dark">
-            Why I have a Labs section
-          </h3>
-          <div className="space-y-4 text-neutral-600 leading-relaxed">
-            <p>
-              Most of what I ship is for clients: websites, brand work,
-              e-commerce stores, web apps. The work in Labs is what I build
-              when there&apos;s no client brief, just an idea worth chasing.
-            </p>
-            <p>
-              These projects keep the craft sharp. They&apos;re where I try
-              new tools, push edges, and prove out approaches before suggesting
-              them to clients. Some become real products. Some stay personal.
-              All of them are built end-to-end the same way as my client work
-              Properly engineered, properly designed.
-            </p>
-            <p>
-              If you&apos;re thinking about building something custom (a tool,
-              a platform, a web app for your business), these are a useful
-              proof point. I&apos;ve built things from scratch, end-to-end,
-              including the bits most agencies outsource.
-            </p>
-          </div>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/web-apps"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-ravenci-dark text-white rounded-full hover:bg-ravenci-primary transition-colors"
-            >
-              See My Web App Services
-              <IconArrowRight size={16} />
-            </Link>
-            <Link
-              href="/launch-your-vision"
-              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-ravenci-dark text-ravenci-dark rounded-full hover:bg-ravenci-dark hover:text-white transition-colors"
-            >
-              Talk to Me About Your Project
-            </Link>
-          </div>
+      {/* Closing CTA (dark) */}
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <h2 className="max-w-2xl text-display-m text-foreground">
+            Got something like this in mind?
+          </h2>
+          <Button asChild size="lg" variant="primary">
+            <Link href="/launch-your-vision">Start a project</Link>
+          </Button>
         </div>
       </section>
-
-      {/* BreadcrumbList JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                name: "Home",
-                item: "https://ravenci.solutions",
-              },
-              {
-                "@type": "ListItem",
-                position: 2,
-                name: "Labs",
-                item: "https://ravenci.solutions/labs",
-              },
-            ],
-          }),
-        }}
-      />
-
-      {/* CollectionPage JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            name: "RAVENCI Labs: Side Projects",
-            description:
-              "Side projects, tools and experiments built by RAVENCI Solutions.",
-            url: "https://ravenci.solutions/labs",
-            isPartOf: {
-              "@type": "WebSite",
-              name: "RAVENCI Solutions",
-              url: "https://ravenci.solutions",
-            },
-            hasPart: projects.map((p) => ({
-              "@type": "SoftwareApplication",
-              name: p.name,
-              description: p.description,
-              applicationCategory: p.category,
-              ...(p.url ? { url: p.url } : {}),
-            })),
-          }),
-        }}
-      />
     </main>
   );
 }
