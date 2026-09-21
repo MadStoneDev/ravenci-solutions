@@ -66,14 +66,14 @@ export default function MainFooter() {
               businesses. Brisbane, Australia.
             </p>
             <div className="mt-6 flex flex-col gap-1.5 text-body">
-              <a href="tel:+61731061836" className="hover:text-accent">
+              <a href="tel:+61731061836" className="hover:text-foreground">
                 07 3106 1836
               </a>
-              <a href="tel:+61426238272" className="hover:text-accent">
+              <a href="tel:+61426238272" className="hover:text-foreground">
                 0426 238 272
               </a>
             </div>
-            <div className="mt-4 flex gap-4 text-small text-accent">
+            <div className="mt-4 flex gap-4 text-small text-foreground/80">
               <a
                 href="https://www.linkedin.com/company/91459779/"
                 target="_blank"
@@ -107,7 +107,7 @@ export default function MainFooter() {
                     <li key={link.href + link.label}>
                       <Link
                         href={link.href}
-                        className="text-small text-foreground/90 transition-colors duration-fast hover:text-accent"
+                        className="text-small text-foreground/90 transition-colors duration-fast hover:text-foreground"
                       >
                         {link.label}
                       </Link>

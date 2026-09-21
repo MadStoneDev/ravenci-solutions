@@ -63,6 +63,14 @@ Richard confirms he wants to. Build to 2.2 criteria regardless (harmless).
 Genuine copy only. No AI-tells, no corny self-praise. Match Richard's plain,
 first-person voice (his articles are the standard).
 
+**Purple rule (Richard, 2026-09-21):** RAVENCI Purple **#8E1A80** is the ONLY
+purple. Never a different purple as a default — the design system's lighter
+dark-accent #D57ACA is **retired** (like #7F1670). Tints/opacity are fine for
+hover and effects, never as the default colour. Consequence on charcoal: purple
+is used as a **fill** (white text on it) or a mark/rule — never as body/link/
+label text there, where #8E1A80 wouldn't meet contrast; use paper/muted text
+instead. `--accent` = #8E1A80 in both themes.
+
 ## Accuracy — resolved
 Richard's qualification is a **Bachelor's Degree in Structural Engineering**.
 The live About page's "degree" wording is correct — keep it. Never call it a

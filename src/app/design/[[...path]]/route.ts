@@ -149,7 +149,7 @@ async function directoryIndex(
   li{padding:.15rem 0;border-bottom:1px solid #E0DDD6}
   a{color:#8E1A80;text-decoration:none}
   a:hover{text-decoration:underline}
-  @media (prefers-color-scheme:dark){body{background:#0F0F12;color:#F6F5F2}h1{color:#9A9AA4}li{border-color:#2F2F38}a{color:#D57ACA}}
+  @media (prefers-color-scheme:dark){body{background:#0F0F12;color:#F6F5F2}h1{color:#9A9AA4}li{border-color:#2F2F38}a{color:#F6F5F2}}
 </style>
 <h1>design/${escapeHtml(rel)}</h1>
 <ul>${up}${items}</ul>`;

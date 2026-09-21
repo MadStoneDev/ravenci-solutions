@@ -66,7 +66,10 @@ export default function CookieConsent() {
           I use cookies and similar tools (Google Analytics, Microsoft Clarity)
           to understand how visitors use my site and to improve your experience.
           No personal data is sold.{" "}
-          <Link href="/privacy-policy" className="text-accent hover:underline">
+          <Link
+            href="/privacy-policy"
+            className="font-medium text-foreground underline underline-offset-2"
+          >
             Privacy Policy
           </Link>
         </p>

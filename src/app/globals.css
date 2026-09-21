@@ -88,9 +88,12 @@
     --border: 240 9% 20%;
     --input: 45 18% 96%;             /* [OVERRIDE §1.2] bare triple, dark */
 
-    --accent: 307 52% 66%;           /* #D57ACA  8.0:1 on charcoal */
-    --accent-foreground: 240 9% 6%;
-    --ring: 307 52% 66%;
+    /* RAVENCI Purple is the ONLY purple, both themes. #D57ACA retired.
+       On charcoal, purple is used as a fill (white text on it) or a mark —
+       never as body/link text, where it wouldn't meet contrast. */
+    --accent: 307 69% 33%;           /* #8E1A80  RAVENCI Purple */
+    --accent-foreground: 0 0% 100%;
+    --ring: 307 69% 33%;
 
     --destructive: 2 71% 55%;
     --destructive-foreground: 240 9% 6%;
