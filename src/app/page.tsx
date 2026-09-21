@@ -1,618 +1,437 @@
 import Link from "next/link";
-
-import Accordion from "@/components/accordion";
-import ComparisonTable from "@/components/comparison-table";
-import LazyVideo from "@/components/lazy-video";
-import LogosPanel from "@/components/logo-panel";
-import TestimonialsSingle from "@/components/testimonials-single";
-import VisibilityCheckForm from "@/components/visibility-check-form";
-
-import { CLIENT_LOGOS } from "@/lib/our-clients";
-import {
-  getTestimonialByID,
-  getTestimonialsForPage,
-} from "@/data/testimonials";
-
-import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Image from "next/image";
-import { Route } from "next";
-import { IconStarFilled, IconCheck } from "@tabler/icons-react";
-import ServicesShowcase from "@/components/services-showcase";
-import PlatformsSection from "@/components/platforms-section";
+import { IconArrowRight, IconCheck, IconX } from "@tabler/icons-react";
+
+import SectionLabel from "@/components/section-label";
+import PlatformSelector from "@/components/platform-selector";
+import VisibilityCheckForm from "@/components/visibility-check-form";
+import { Button } from "@/components/ui/button";
+import { getCaseStudyBySlug } from "@/data/case-studies";
+import { getHomepagePageSpeed } from "@/lib/pagespeed";
+import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 
 export const metadata = {
   title: "Custom Website Design Brisbane | RAVENCI Solutions",
-  description: "Custom websites and eCommerce for established Australian businesses. A structural engineer's approach, built properly, still working in five years.",
+  description:
+    "Custom websites and eCommerce for established Australian businesses. A structural engineer's approach, built properly, still working in five years.",
   alternates: { canonical: "/" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Custom Website Design Brisbane | RAVENCI Solutions",
-    description: "Custom websites and eCommerce for established Australian businesses. A structural engineer's approach, built properly, still working in five years.",
+    description:
+      "Custom websites and eCommerce for established Australian businesses. Built properly, still working in five years.",
     url: "/",
-    type: "website",
+    type: "website" as const,
   },
-  twitter: {
-    ...TWITTER_DEFAULTS,
-  },
+  twitter: { ...TWITTER_DEFAULTS },
 };
 
-export default function Home() {
-  const homepageTestimonials = getTestimonialsForPage("homepage");
-  const adamTestimonial = getTestimonialByID("adam-bisset");
-  const geoffTestimonial = getTestimonialByID("geoff-beisler");
+const LIGHT = "px-5 py-16 md:px-12 md:py-24 lg:px-20";
+const DARK = "dark bg-background text-foreground px-5 py-16 md:px-12 md:py-24 lg:px-20";
+
+const STACK_STEPS = [
+  { n: "01", name: "Design", copy: "Wireframes and a full visual design you sign off before a line of code is written.", tag: "Signed-off design" },
+  { n: "02", name: "Build", copy: "Hand-built on the right platform. Your code, your content, your domain. No lock-in.", tag: "Repo + CMS" },
+  { n: "03", name: "Host", copy: "Managed Australian-supported hosting from $39/mo. SSL, daily backups, monitoring, 99.9% uptime.", tag: "Live, monitored", highlight: true },
+  { n: "04", name: "Secure", copy: "Patching, firewall, domain and DNS management, and a restore that has actually been tested.", tag: "Patch log" },
+  { n: "05", name: "Optimise", copy: "SEO, AEO and GEO: found by Google, and quoted correctly by the AI assistants your buyers now ask.", tag: "Monthly report" },
+  { n: "06", name: "Maintain", copy: "Updates, content changes and new features on retainer from $249/mo. You email me, not a ticket system.", tag: "Care plan" },
+];
+
+const INDUSTRIES = [
+  { n: "01", label: "Construction", headline: "Builders, developers, architects, engineers", blurb: "Project showcases that win tenders, secure client and tender portals, and Procore, Xero and Deputy talking to each other.", chips: ["Procore", "Xero", "Tender portal"], href: "/construction" },
+  { n: "02", label: "Healthcare", headline: "Practices, clinics, allied health, recruiters", blurb: "Online booking wired to HotDoc, Cliniko or Halaxy, patient portals, and content written to stay inside AHPRA's advertising rules.", chips: ["HotDoc", "Cliniko", "AHPRA-aware"], href: "/healthcare" },
+  { n: "03", label: "eCommerce", headline: "Retail and wholesale brands that need to sell", blurb: "Shopify and BigCommerce done properly, headless when the catalogue demands it, and B2B portals with real wholesale pricing.", chips: ["Shopify", "BigCommerce", "B2B portal"], href: "/ecommerce" },
+];
+
+const WORK_FEATURED = [
+  { slug: "goingdark", category: "eCommerce / Shopify", name: "GoingDark", blurb: "An inherited thermal and night-vision store, rebuilt properly on Shopify.", metricValue: "+38.5%", metricLabel: "Purchases" },
+  { slug: "peninsula-homes", category: "Construction", name: "Peninsula Homes", blurb: "A Sydney Northern Beaches builder whose site had to look as considered as the houses.", metricValue: "80%", metricLabel: "Work from referrals" },
+  { slug: "nikita-morell", category: "Professional services", name: "Nikita Morell", blurb: "A copywriter for architects whose own site had to out-write the architects." },
+];
+
+const WORK_COMPACT = [
+  { slug: "covenant-security-solutions", name: "Covenant Security", services: "Brand identity, print, vehicle signage" },
+  { slug: "sac-consulting", name: "SAC Consulting", services: "Web development" },
+  { slug: "cadeaurable", name: "Cadeaurable", services: "Branding, stationery, eCommerce" },
+];
+
+const COMPARISON = [
+  { feature: "You speak to the person building it", ravenci: "Always", agency: "Account manager", diy: "Nobody" },
+  { feature: "85+ PageSpeed in writing", ravenci: "Guaranteed", agency: "Rarely", diy: "No" },
+  { feature: "You own the code, content and domain", ravenci: "Yes", agency: "Sometimes", diy: "Platform owns it" },
+  { feature: "Hosting, security and backups included", ravenci: "From $39/mo", agency: "Outsourced", diy: "Bundled, unmanaged" },
+  { feature: "Plugin clutter and subscription stack", ravenci: "None", agency: "15 to 30 plugins", diy: "Paid apps forever" },
+  { feature: "Still working in five years", ravenci: "By design", agency: "Rebuild at 3 years", diy: "Rebuild at 2 years" },
+];
+
+const TRUST = ["Shopify Partner", "BigCommerce Partner", "Synergy Wholesale Partner"];
+
+const TESTIMONIALS = [
+  {
+    label: "5.0 · Google review",
+    quote:
+      "I could not recommend Richard more highly. His knowledge is remarkable, his professionalism exceptional, and the way he completely sorted my issues, quickly, effortlessly was simply brilliant. Champion bloke, brilliant at what he does.",
+    name: "Geoff Beisler",
+    company: "Green Earth Trees",
+  },
+  {
+    label: "Client",
+    quote:
+      "Our brand new startup is launching with the best possible website I could have imagined. He took the time from the very beginning to understand us and our business, and he has made our branding and website reflect that and represent us perfectly.",
+    name: "Adam Bisset",
+    company: "Covenant Security Solutions",
+  },
+];
+
+function WorkThumb({ slug, name }: { slug: string; name: string }) {
+  const cs = getCaseStudyBySlug(slug);
+  const img = cs?.cardImage ?? cs?.featuredImage;
+  return (
+    <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-muted">
+      {img && (
+        <Image src={img} alt={`${name} project`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-top transition-transform duration-slow ease-standard group-hover:scale-105" />
+      )}
+    </div>
+  );
+}
+
+export default async function Home() {
+  const score = await getHomepagePageSpeed();
 
   return (
-    <main className={`flex flex-col`}>
-      <section
-        className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 gap-6 justify-center min-h-[750px] bg-ravenci-dark`}
-      >
-        <article
-          className={`col-span-12 lg:col-span-8 pb-16 lg:pb-0 flex flex-col justify-center`}
-        >
-          <h1
-            className={`max-w-[500px] lg:max-w-[860px] text-4xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-medium text-white leading-[1.05]`}
-          >
-            I&apos;m Richard. I build websites that{" "}
-            <span className="font-serif italic font-normal text-ravenci-primary">
-              pay for themselves
-            </span>
-            .
-          </h1>
-          <h2
-            className={`mt-8 max-w-[600px] text-lg md:text-xl font-light text-neutral-400`}
-          >
-            Structural engineer by training, web developer for 25+ years.
-            350+ projects for established Australian businesses,
-            built properly, still working in five years.
-          </h2>
-
-          <div className={`mt-16 flex gap-6`}>
-            <Link
-              href={`/launch-your-vision`}
-              className={`group relative px-6 py-3 grid place-content-center bg-white rounded-full text-ravenci-dark hover:text-white transition-all duration-300 ease-in-out`}
-            >
-              <span className={`z-20`}>Launch Your Vision</span>
-
-              <div
-                className={`absolute top-0 bottom-full group-hover:bottom-0 left-0 right-0 bg-ravenci-dark z-0 transition-all duration-500 ease-in-out`}
-              ></div>
-
-              {/* Border */}
-              <div
-                className={`absolute top-0 bottom-0 left-0 right-0 rounded-full border-2 border-white z-10`}
-              ></div>
-            </Link>
-
-            <Link
-              href={`/case-studies`}
-              className={`group relative px-6 py-3 rounded-full text-white transition-all duration-300 ease-in-out`}
-            >
-              <span className={`z-20`}>My Work</span>
-
-              {/* Border */}
-              <div
-                className={`absolute top-0 bottom-0 left-0 right-0 rounded-full border-2 border-transparent group-hover:border-white z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-            </Link>
-          </div>
-        </article>
-
-        <ServicesShowcase />
-      </section>
-
-      {/* Video */}
-      <section
-        className={`content-section video-container relative h-[750px] bg-white overflow-hidden`}
-        style={{
-          backgroundColor: `rgba(255,255,255,0)`,
-        }}
-      >
-        <article className={`absolute inset-0 w-full h-[750px]`}>
-          <LazyVideo
-            src="/ravenci-promo.mp4"
-            poster="/og-image.jpg"
-            className="relative w-full h-screen"
-          />
-        </article>
-
-        <article className={`relative z-10 h-[750px]`}></article>
-      </section>
-
-      {/* Client Logos */}
-      <LogosPanel
-        logos={CLIENT_LOGOS}
-        heading={`Some of My Clients`}
-        headingColour={`text-white`}
-        headingSide={`bottom`}
-        speed={`slow`}
-      />
-
-      {/* Proof + Pricing + Guarantee */}
-      <section className="content-section py-24 px-5 sm:px-20 xl:px-36 bg-white">
-        {/* Proof band */}
-        <div className="flex flex-col lg:flex-row lg:items-center gap-10 mb-16 max-w-5xl mx-auto">
-          <div className="lg:w-1/3 text-center lg:text-left">
-            <p className="font-serif text-5xl font-bold text-ravenci-primary">
-              +38.5%
+    <main className="flex flex-col">
+      {/* 1 - Hero */}
+      <section className={`${LIGHT} border-b border-border`}>
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-16">
+          <div className="flex max-w-xl flex-col gap-6">
+            <SectionLabel index="01" label="Build" tick />
+            <h1 className="text-display-xl text-foreground">
+              Websites engineered to still be working in five years.
+            </h1>
+            <p className="text-lead text-muted-foreground">
+              Designed, developed, hosted, secured, optimised and maintained. One
+              engineer, one number to call, accountable for the whole stack.
             </p>
-            <p className="mt-2 text-neutral-500/80">
-              more customers buying after GoingDark&apos;s relaunch, three
-              months in.
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg" variant="primary">
+                <Link href="/launch-your-vision">Start a project</Link>
+              </Button>
+              <Button asChild size="lg" variant="secondary">
+                <Link href="#visibility-check">Free visibility check</Link>
+              </Button>
+            </div>
+            <p className="font-mono text-label uppercase text-muted-foreground">
+              From $7,500 · 85+ PageSpeed, guaranteed · Brisbane
             </p>
           </div>
-          <div className="lg:w-2/3 lg:border-l lg:border-neutral-200 lg:pl-10">
-            <a
-              href="https://g.page/r/CTttHG3mMzZ_EAI/review"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center lg:justify-start gap-2 mb-3 hover:opacity-80 transition-opacity"
-            >
-              <div className="flex text-ravenci-primary">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <IconStarFilled key={i} size={18} />
+
+          {/* Static blueprint (HeroBuild replaces this in step 8) */}
+          <div className="flex-1" aria-hidden>
+            <div className="rounded-sm border border-border bg-card p-6 shadow-1">
+              <div className="mb-4 flex items-center justify-between">
+                <div className="h-2.5 w-24 rounded-sm bg-foreground/80" />
+                <div className="h-6 w-20 rounded-sm bg-accent" />
+              </div>
+              <div className="mb-3 h-3 w-3/4 rounded-sm bg-foreground/70" />
+              <div className="mb-5 h-2 w-1/2 rounded-sm bg-muted" />
+              <div className="mb-5 aspect-[16/7] rounded-sm border border-dashed border-accent/60 bg-muted" />
+              <div className="grid grid-cols-3 gap-3">
+                {[0, 1, 2].map((i) => (
+                  <div key={i} className="rounded-sm border border-border p-3">
+                    <div className={`mb-2 h-1.5 w-8 rounded-sm ${i === 0 ? "bg-accent" : "bg-muted"}`} />
+                    <div className="h-1.5 w-full rounded-sm bg-muted" />
+                  </div>
                 ))}
               </div>
-              <span className="text-sm text-neutral-500 underline underline-offset-2 decoration-neutral-300">
-                5.0 from 11 Google reviews
-              </span>
-            </a>
-            <p className="text-lg font-light leading-relaxed text-neutral-700">
-              &ldquo;Our brand new startup is launching with the best possible
-              website I could have imagined. He took the time from the very
-              beginning to understand us and our business, and he has made our
-              branding and website reflect that and represent us
-              perfectly.&rdquo;
-            </p>
-            <p className="mt-3 text-sm text-neutral-500">
-              <span className="font-bold">Adam Bisset</span>, Covenant Security
-              Solutions
-            </p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {[
-                "Shopify Partner",
-                "BigCommerce Partner",
-                "Synergy Wholesale Partner",
-              ].map((b) => (
-                <span
-                  key={b}
-                  className="px-3 py-1 rounded-full border border-neutral-200 text-xs text-neutral-500"
-                >
-                  {b}
-                </span>
-              ))}
+              <div className="mt-5 flex justify-between font-mono text-label-sm uppercase text-muted-foreground">
+                <span>1440 px</span>
+                <span>LCP 0.9s</span>
+                <span>Hero / SVG</span>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Pricing snapshot */}
-        <h2 className="mb-2 font-serif text-h3 font-bold text-center">
-          Clear pricing, scoped up front
-        </h2>
-        <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
-          No surprises. You know the starting point before I ever get on a
-          call.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {[
-            {
-              name: "Custom Websites",
-              price: "from $7,500",
-              line: "A custom site that captures enquiries and still performs in five years.",
-              href: "/web-development",
-            },
-            {
-              name: "eCommerce",
-              price: "from $12,000",
-              line: "A store built to sell and to last, on the right platform for your products.",
-              href: "/ecommerce",
-            },
-            {
-              name: "Maintenance",
-              price: "from $249/mo",
-              line: "Updates, security, backups, and someone who answers when it matters.",
-              href: "/website-maintenance",
-            },
-          ].map((t) => (
-            <Link
-              key={t.name}
-              href={t.href as Route}
-              className="group p-6 rounded-xl border border-neutral-200 hover:border-ravenci-primary transition-colors duration-300 flex flex-col"
-            >
-              <p className="font-serif text-xl font-bold">{t.name}</p>
-              <p className="mt-1 text-2xl font-bold text-ravenci-primary">
-                {t.price}
-              </p>
-              <p className="mt-3 text-sm text-neutral-500/90 flex-grow">
-                {t.line}
-              </p>
-              <span className="mt-4 text-sm font-medium text-ravenci-dark group-hover:text-ravenci-primary transition-colors">
-                See what&apos;s included
+      {/* 2 - Trust strip */}
+      <section className="dark bg-background px-5 py-6 text-foreground md:px-12 lg:px-20">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-label-sm uppercase text-muted-foreground">
+          {TRUST.map((t) => (
+            <span key={t}>{t}</span>
+          ))}
+          <span className="text-foreground">
+            <span className="font-semibold">5.0</span> from 11 Google reviews
+          </span>
+          <span>Since 2018</span>
+          <span>25+ years</span>
+        </div>
+      </section>
+
+      {/* 3 - Stack story */}
+      <section id="process" className={DARK}>
+        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
+          <div className="flex flex-col gap-4 lg:w-[420px] lg:shrink-0">
+            <SectionLabel index="02" label="The whole stack" tone="muted" />
+            <h2 className="text-display-m text-foreground">One person, the whole stack.</h2>
+            <p className="text-body text-muted-foreground">
+              Most agencies hand you off: a designer, then a developer, then a
+              support queue, then a hosting company who has never seen your site. I
+              do all six steps, so nothing falls between them.
+            </p>
+          </div>
+          <div className="flex-1">
+            <ol className="flex flex-col">
+              {STACK_STEPS.map((s) => (
+                <li
+                  key={s.n}
+                  className={`flex flex-col gap-2 border-t border-white/10 py-5 md:flex-row md:items-baseline md:gap-6 ${s.highlight ? "bg-accent/10 px-4" : ""}`}
+                >
+                  <span className="font-mono text-label text-muted-foreground md:w-10">{s.n}</span>
+                  <span className="text-heading-s text-foreground md:w-36 md:shrink-0">{s.name}</span>
+                  <span className="flex-1 text-small text-muted-foreground">{s.copy}</span>
+                  <span className="font-mono text-label-sm uppercase text-foreground/80 md:w-44 md:text-right">{s.tag}</span>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-8 text-heading-s text-foreground">
+              Built once. Built properly. Still working in five years.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 4 - Platform selector */}
+      <section className={`${LIGHT} border-b border-border`}>
+        <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div className="flex flex-col gap-3">
+            <SectionLabel index="03" label="Platform" />
+            <h2 className="text-display-m text-foreground">
+              Right tool for the business, <em className="not-italic text-accent">not the agency.</em>
+            </h2>
+          </div>
+          <p className="max-w-sm text-small text-muted-foreground">
+            Tell me your situation. I&apos;ll tell you what I&apos;d build it on and
+            why, including when the answer is cheaper than you expected.
+          </p>
+        </div>
+        <PlatformSelector />
+      </section>
+
+      {/* 5 - Industries */}
+      <section className={`${LIGHT} border-b border-border`}>
+        <div className="mb-10 flex flex-col gap-3">
+          <SectionLabel index="04" label="Industries" />
+          <h2 className="text-display-m text-foreground">I know your software before you name it.</h2>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {INDUSTRIES.map((ind) => (
+            <Link key={ind.href} href={ind.href} className="group flex flex-col gap-4 rounded-sm border border-border bg-card p-8 transition-colors duration-fast hover:border-foreground/30">
+              <SectionLabel index={ind.n} label={ind.label} />
+              <h3 className="text-heading-m text-foreground">{ind.headline}</h3>
+              <p className="flex-1 text-small text-muted-foreground">{ind.blurb}</p>
+              <div className="flex flex-wrap gap-2">
+                {ind.chips.map((c) => (
+                  <span key={c} className="rounded-sm border border-border px-2.5 py-1 font-mono text-label-sm uppercase text-muted-foreground">{c}</span>
+                ))}
+              </div>
+              <span className="inline-flex items-center gap-1 text-small font-medium text-accent">
+                {ind.label} websites <IconArrowRight size={16} aria-hidden className="transition-transform duration-fast group-hover:translate-x-1" />
               </span>
             </Link>
           ))}
         </div>
+      </section>
 
-        <p className="mt-8 text-center text-sm text-neutral-500">
-          <Link
-            href="/pricing"
-            className="font-medium text-ravenci-primary underline underline-offset-4 hover:no-underline"
-          >
-            See full pricing
+      {/* 6 - Selected work */}
+      <section className={`${LIGHT} border-b border-border`}>
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div className="flex flex-col gap-3">
+            <SectionLabel index="05" label="Selected work" />
+            <h2 className="text-display-m text-foreground">Built for Australian businesses. Measured after launch.</h2>
+          </div>
+          <Link href="/case-studies" className="inline-flex items-center gap-1 text-small font-medium text-accent hover:underline">
+            All case studies <IconArrowRight size={16} aria-hidden />
           </Link>
-          , or{" "}
-          <Link
-            href="/cost-of-a-website-in-brisbane"
-            className="font-medium text-ravenci-primary underline underline-offset-4 hover:no-underline"
-          >
-            read the Brisbane website cost guide
-          </Link>{" "}
-          if you&apos;re not sure what your project needs.
-        </p>
-
-        {/* 85+ Guarantee */}
-        <div className="mt-16 max-w-4xl mx-auto p-8 rounded-xl bg-ravenci-dark text-white flex flex-col md:flex-row md:items-center gap-6">
-          <div className="flex-shrink-0 flex items-center gap-3">
-            <span className="font-serif text-4xl font-bold text-ravenci-primary">
-              85+
-            </span>
-            <span className="font-serif text-xl font-bold leading-tight">
-              The RAVENCI
-              <br />
-              Guarantee
-            </span>
-          </div>
-          <p className="text-neutral-300 font-light md:border-l md:border-white/20 md:pl-6">
-            Every site I build ships at 85 or higher on Google PageSpeed. If it
-            doesn&apos;t, I keep working until it does, at no extra cost. None of
-            my competitors put that in writing.
-          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {WORK_FEATURED.map((w) => (
+            <Link key={w.slug} href={`/case-studies/${w.slug}`} className="group flex flex-col overflow-hidden rounded-sm border border-border bg-card transition-colors duration-fast hover:border-foreground/30">
+              <WorkThumb slug={w.slug} name={w.name} />
+              <div className="flex flex-1 flex-col gap-2 p-6">
+                <span className="font-mono text-label uppercase text-accent">{w.category}</span>
+                <span className="text-heading-s text-foreground">{w.name}</span>
+                <span className="flex-1 text-small text-muted-foreground">{w.blurb}</span>
+                {w.metricValue && (
+                  <div className="mt-2 flex items-baseline gap-2 border-t border-border pt-3">
+                    <span className="tnum text-heading-m text-accent">{w.metricValue}</span>
+                    <span className="font-mono text-label-sm uppercase text-muted-foreground">{w.metricLabel}</span>
+                  </div>
+                )}
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          {WORK_COMPACT.map((w) => (
+            <Link key={w.slug} href={`/case-studies/${w.slug}`} className="group flex items-center justify-between gap-4 rounded-sm border border-border bg-card p-5 transition-colors duration-fast hover:border-foreground/30">
+              <div className="flex flex-col">
+                <span className="text-heading-s text-foreground">{w.name}</span>
+                <span className="text-small text-muted-foreground">{w.services}</span>
+              </div>
+              <IconArrowRight size={18} aria-hidden className="shrink-0 text-accent transition-transform duration-fast group-hover:translate-x-1" />
+            </Link>
+          ))}
         </div>
       </section>
 
-      {/* Services Section */}
-      <section
-        className={`content-section relative py-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[750px] bg-ravenci-dark text-white`}
-      >
-        <Image
-          className={`absolute -top-[52px] md:-top-[60px] lg:-top-[70px] right-2 md:right-12 scale-50 sm:scale-75 lg:scale-100 z-20`}
-          src={`/standing-raven.svg`}
-          alt={`RAVENCI Solutions`}
-          width={74}
-          height={88}
-        />
-
-        <article className={`col-span-12 lg:col-span-6 mb-16 lg:mb-0`}>
-          <h2
-            className={`max-w-[500px] text-5xl font-light`}
-            style={{ lineHeight: "3.75rem" }}
-          >
-            Your website should generate results, not headaches.
-          </h2>
-
-          <div className={`mt-16 mb-24 flex flex-col gap-8 max-w-[500px]`}>
-            <p>
-              Most websites I replace were built with the right intentions and
-              the wrong approach: drag-and-drop builders, plugin stacks,
-              subscriptions piling up, eventually breaking. I don&apos;t work
-              that way. I build properly, once, so it&apos;s still working
-              five years from now.
-            </p>
-
-            <p>
-              From design through to development, hosting and ongoing maintenance,
-              your site remains performant and fresh without you having to think about it. Tell
-              me what you need. I&apos;ll take it from there.
-            </p>
-          </div>
-
-          <div className={`mt-16 flex gap-6`}>
-            <Link
-              href={`/launch-your-vision` as Route}
-              className={`group relative px-6 py-3 grid place-content-center bg-white rounded-full text-ravenci-dark hover:text-white transition-all duration-300 ease-in-out`}
-            >
-              <span className={`z-20`}>Start Creating</span>
-
-              <div
-                className={`absolute top-0 bottom-full group-hover:bottom-0 left-0 right-0 bg-ravenci-dark z-0 transition-all duration-500 ease-in-out`}
-              ></div>
-
-              {/* Border */}
-              <div
-                className={`absolute top-0 bottom-0 left-0 right-0 rounded-full border-2 border-white z-10`}
-              ></div>
-            </Link>
-          </div>
-        </article>
-
-        <article className={`lg:col-start-8 col-span-12 lg:col-span-5`}>
-          <Accordion
-            titleClassName={`py-6 text-2xl`}
-            items={[
-              {
-                title: `Development`,
-                content: `<p class="mb-4 text-neutral-100">Built once. Built properly. Still working in five years.</p>
-
-<p class="text-neutral-100">Content sites your team can manage</p>
-<p class="mb-4 text-neutral-400/70">Sites you can update yourself without calling a developer for every little change. Built with a dashboard anyone can understand.</p>
-
-<p class="text-neutral-100">Custom builds when off-the-shelf won't cut it</p>
-<p class="mb-4 text-neutral-400/70">When the project genuinely needs something custom, I build it from scratch, engineered so it grows with you instead of against you.</p>
-
-<p class="text-neutral-100">E-commerce that sells</p>
-<p class="mb-4 text-neutral-400/70">Online stores designed around how your customers buy and how your team fulfils. Whether that's Shopify, BigCommerce, or a custom platform, chosen for what fits, not what's easiest.</p>
-
-<p class="text-neutral-100">Talks to the rest of your business</p>
-<p class="mb-4 text-neutral-400/70">Your website connected to your CRM, your booking system, your accounting, your email, so data flows automatically and nobody's re-typing it three times.</p>
-`,
-              },
-              {
-                title: `Design`,
-                content: `<p class="mb-4 text-neutral-100">Design that works for your customers, not for design awards.</p><p class="text-neutral-100">Planning the experience</p>
-<p class="mb-4 text-neutral-400/70">I start by studying the best user experience for your business: what your customers need, where they'll click, what makes them act. The design follows from that.</p>
-<p class="text-neutral-100">How it looks</p>
-<p class="mb-4 text-neutral-400/70">A site that looks and feels true to your brand. Modern, clean and complete with the kind of attention to detail your customers will appreciate.</p>
-<p class="text-neutral-100">Driving action</p>
-<p class="mb-4 text-neutral-400/70">Every page is designed with a purpose: to get your visitors to enquire, to buy, or to learn more about your business.</p>`,
-              },
-              {
-                title: `After Launch`,
-                content: `<p class="mb-4 text-neutral-100">I don't hand you a site and disappear.</p>
-
-<p class="text-neutral-100">Hosting that performs</p>
-<p class="mb-4 text-neutral-400/70">Every site I build lives on scalable cloud servers closest to your customers. Fast, secure, and properly maintained, not a shared hosting afterthought.</p>
-
-<p class="text-neutral-100">Ongoing care</p>
-<p class="mb-4 text-neutral-400/70">Security updates, performance checks, backups, content changes. I handle it so you don't have to chase a developer every time something needs attention. Regular care is what keeps a five-year website going well beyond five years.</p>
-
-<a href="/retainer-packages" class="relative px-3 py-1 bg-ravenci-primary hover:bg-ravenci-primary/80 text-white rounded-full transition-all duration-300 ease-in-out">See my care plans</a>`,
-              },
-            ]}
-          />
-        </article>
-      </section>
-
-      {/* Platforms */}
-      <PlatformsSection />
-
-      {/* Testimonial */}
-      <TestimonialsSingle
-        key={adamTestimonial!.id}
-        testimonial={{
-          content: adamTestimonial!.content,
-          author: adamTestimonial!.author,
-          role: adamTestimonial!.role,
-          company: adamTestimonial!.company,
-          image: adamTestimonial!.image || null,
-        }}
-        extraClassNames={`content-section bg-ravenci-primary`}
-      />
-
-      {/* From the Founder */}
-      <section
-        className={`content-section pt-32 pb-32 px-5 sm:px-20 xl:px-36 flex flex-col justify-center min-h-[750px] bg-white`}
-      >
-        <blockquote
-          className={`flex flex-col gap-10 max-w-[1100px] text-2xl md:text-3xl lg:text-4xl font-normal`}
-          style={{
-            lineHeight: "3.5rem",
-          }}
-        >
-          <p>
-            After 25+ years building websites for Australian businesses, I&apos;ve
-            learned that the easy part is launch day. The hard part is the next five
-            years.
-          </p>
-
-          <p>
-            Most sites look great at launch and quietly fall apart after.
-            Plugins clash, subscriptions stack up, the developer who built
-            it stops returning calls. That&apos;s not how I work. I build
-            it right the first time so you can stop thinking about it.
-          </p>
-          <footer className={`border-t border-ravenci-dark`}>
-            <cite
-              className={`text-base md:text-lg lg:text-xl font-light`}
-              style={{
-                fontStyle: "normal",
-              }}
-            >
-              Richard Haddad, Founder
-            </cite>
-          </footer>
-        </blockquote>
-      </section>
-
-      <section
-        className={`content-section pt-40 pb-48 px-5 sm:px-20 xl:px-36 grid grid-cols-12 bg-neutral-100 text-ravenci-dark`}
-      >
-        <article className={`mb-16 lg:mb-0 col-span-12 lg:col-span-6`}>
-          <h2
-            className={`max-w-[500px] text-5xl font-light`}
-            style={{ lineHeight: "3.75rem" }}
-          >
-            Proudly serving clients since 2018.
-          </h2>
-
-          <div className={`mt-10 flex flex-col gap-8 max-w-[450px]`}>
-            <p>
-              From custom business sites to full eCommerce platforms, I build
-              the digital foundation that established businesses run on, and
-              I stick around to keep it running.
-            </p>
-          </div>
-        </article>
-
-        <article className={`col-span-12 lg:col-span-6 md:px-10`}>
-          <section
-            className={`flex flex-row flex-wrap border-t border-l border-neutral-200`}
-          >
-            {CLIENT_LOGOS.slice(0, 9).map(({ title, logo, href }, index) => {
-              return (
-                <div
-                  key={`icon-${title}-${index}`}
-                  title={title}
-                  className={`px-4 py-5 flex justify-center items-center w-1/2 sm:w-1/3 h-24 hover:bg-neutral-200/40 border-b border-r border-neutral-200 transition-all duration-300 ease-in-out`}
-                >
-                  <Image
-                    src={logo}
-                    alt={title}
-                    width={150}
-                    height={60}
-                    className={`w-full h-full object-contain`}
-                  />
-                </div>
-              );
-            })}
-          </section>
-        </article>
-      </section>
-
-      {/* Comparison Table */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="mb-2 font-serif text-h3 font-bold text-center">
-            Why Businesses Choose RAVENCI
-          </h2>
-          <p className="mb-10 text-center text-neutral-500/80">
-            Most agencies build websites to launch. I build them to last.
-            Here&apos;s how I stack up against the typical drag-and-drop crowd
-            and the DIY builders.
-          </p>
-          <ComparisonTable />
-          <div className="mt-8 text-center">
-            <Link
-              href="/custom-vs-template"
-              className="text-sm text-ravenci-primary hover:underline"
-            >
-              Read the full comparison breakdown
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* SEO & Ongoing Growth */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl">
-          <div>
-            <span className="text-xs font-medium tracking-widest uppercase text-ravenci-primary">
-              After Launch
-            </span>
-            <h2 className="mt-4 text-3xl md:text-4xl font-medium">
-              A Great Website Earns Its Keep. An Optimised One Earns More Every
-              Month.
+      {/* 7 - Proof */}
+      <section id="pricing" className={DARK}>
+        <div className="flex flex-col gap-10 border-b border-white/10 pb-14 lg:flex-row lg:items-center lg:gap-16">
+          {score !== null && (
+            <div className="flex shrink-0 items-center gap-5">
+              <div className="flex h-28 w-28 items-center justify-center rounded-full border-4 border-accent">
+                <span className="tnum text-metric text-foreground">{score}</span>
+              </div>
+              <span className="font-mono text-label uppercase text-muted-foreground">
+                Live PageSpeed<br />this URL, mobile
+              </span>
+            </div>
+          )}
+          <div className="flex flex-col gap-4">
+            <SectionLabel index="06" label="Proof" tone="muted" />
+            <h2 className="max-w-2xl text-display-m text-foreground">
+              {score !== null ? `This site scores ${score}. ` : ""}Your site will score 85+ or I keep working.
             </h2>
-            <p className="mt-6 text-neutral-400 leading-relaxed">
-              Most agencies hand you a site and disappear. I stick around to
-              make sure it actually gets found. SEO retainers that compound your
-              investment month over month: more visibility, more traffic, more
-              enquiries.
+            <p className="max-w-2xl text-body text-muted-foreground">
+              Not a target. A written guarantee on every build. Performance is a
+              structural decision, so it gets made at the start, not bolted on after
+              launch.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/seo-and-content"
-                className="px-6 py-3 bg-ravenci-primary text-white rounded-full hover:bg-ravenci-primary/85 transition-colors duration-300"
-              >
-                SEO & Content Services
-              </Link>
-              <Link
-                href="/retainer-packages"
-                className="px-6 py-3 rounded-full text-white border-2 border-white/30 hover:bg-white hover:text-ravenci-dark transition-colors duration-300"
-              >
-                Care Plans
-              </Link>
-            </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="p-6 rounded-xl bg-white shadow-lg">
-              <p className="text-2xl font-bold text-ravenci-primary">85+</p>
-              <p className="mt-1 text-sm text-neutral-600">
-                PageSpeed guaranteed on every build
-              </p>
+        </div>
+
+        {/* Comparison table */}
+        <div className="mt-12 overflow-x-auto">
+          <table className="w-full min-w-[640px] border-collapse text-left">
+            <thead>
+              <tr className="border-b border-white/15">
+                <th className="py-3 pr-4 font-mono text-label uppercase text-muted-foreground">What you get</th>
+                <th className="bg-accent/10 px-4 py-3 text-heading-s text-foreground">RAVENCI</th>
+                <th className="px-4 py-3 text-small text-muted-foreground">Typical agency</th>
+                <th className="px-4 py-3 text-small text-muted-foreground">DIY builder</th>
+              </tr>
+            </thead>
+            <tbody>
+              {COMPARISON.map((row) => (
+                <tr key={row.feature} className="border-b border-white/10">
+                  <td className="py-4 pr-4 text-small text-foreground/90">{row.feature}</td>
+                  <td className="bg-accent/10 px-4 py-4">
+                    <span className="flex items-center gap-2 text-small font-semibold text-foreground">
+                      <IconCheck size={16} aria-hidden className="shrink-0 text-foreground" />
+                      {row.ravenci}
+                    </span>
+                  </td>
+                  <td className="px-4 py-4">
+                    <span className="flex items-center gap-2 text-small text-muted-foreground">
+                      <IconX size={16} aria-hidden className="shrink-0" />
+                      {row.agency}
+                    </span>
+                  </td>
+                  <td className="px-4 py-4">
+                    <span className="flex items-center gap-2 text-small text-muted-foreground">
+                      <IconX size={16} aria-hidden className="shrink-0" />
+                      {row.diy}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+          <span className="font-mono text-label-sm uppercase text-muted-foreground">
+            Custom sites from $7,500 / eCommerce from $12,000 / maintenance from $249/mo
+          </span>
+          <Link href="/pricing" className="inline-flex items-center gap-1 text-small font-medium text-accent hover:underline">
+            See full pricing <IconArrowRight size={16} aria-hidden />
+          </Link>
+        </div>
+      </section>
+
+      {/* 8 - Testimonials */}
+      <section className={`${LIGHT} border-b border-border`}>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {TESTIMONIALS.map((t) => (
+            <figure key={t.name} className="flex flex-col rounded-sm border border-border bg-card p-9">
+              <SectionLabel label={t.label} />
+              <blockquote className="mt-5 flex-1 text-heading-s font-normal text-foreground">
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+              <figcaption className="mt-6 text-small text-muted-foreground">
+                <span className="font-semibold text-foreground">{t.name}</span> · {t.company}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      {/* 9 - Founder note */}
+      <section id="founder" className={`${LIGHT} border-b border-border`}>
+        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
+          <div className="flex flex-col gap-3 lg:w-[280px] lg:shrink-0">
+            <div className="flex h-24 w-24 items-center justify-center rounded-full border border-border font-mono text-heading-s text-accent">
+              RH
             </div>
-            <div className="p-6 rounded-xl bg-white shadow-lg">
-              <p className="text-2xl font-bold text-ravenci-primary">
-                Monthly
-              </p>
-              <p className="mt-1 text-sm text-neutral-600">
-                Reporting so you see what&apos;s working
-              </p>
-            </div>
-            <div className="p-6 rounded-xl bg-white shadow-lg col-span-2">
-              <p className="text-sm text-neutral-600">
-                Most clients add an SEO retainer after launch. The website gets
-                them online. The SEO gets them found.
-              </p>
-            </div>
+            <span className="text-heading-s text-foreground">Richard Haddad</span>
+            <span className="font-mono text-label uppercase text-muted-foreground">Founder · RAVENCI Solutions</span>
+          </div>
+          <div className="flex max-w-3xl flex-col gap-5">
+            <SectionLabel index="07" label="Who builds it" />
+            <p className="text-display-m font-normal leading-tight text-foreground">
+              I trained as a structural engineer. Ten years in steel detailing and
+              structural drafting taught me that a thing either holds up under load
+              or it doesn&apos;t, and that you find out later, not on the day it&apos;s
+              handed over.
+            </p>
+            <p className="text-body text-muted-foreground">
+              I&apos;ve been building for the web for 25 years and running RAVENCI
+              from Brisbane since 2018. I design it, I build it, I host it, I patch
+              it, and I answer the phone when something breaks. The sites I built
+              five years ago are still fast, still ranking, still running. That&apos;s
+              the whole pitch.
+            </p>
+            <Link href="/about" className="inline-flex items-center gap-1 text-small font-medium text-accent hover:underline">
+              More about how I work <IconArrowRight size={16} aria-hidden />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <TestimonialsSingle
-        key={geoffTestimonial!.id}
-        testimonial={{
-          content: geoffTestimonial!.content,
-          author: geoffTestimonial!.author,
-          role: geoffTestimonial!.role,
-          company: geoffTestimonial!.company,
-          image: geoffTestimonial!.image || null,
-        }}
-        extraClassNames={`content-section bg-ravenci-primary`}
-      />
-
-      {/* Visibility Check Lead Magnet */}
-      <section
-        id="visibility-check"
-        className={`content-section pt-20 pb-28 px-5 sm:px-20 xl:px-36 bg-neutral-100`}
-      >
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-medium mb-4">
-            Can Google and AI actually find you?
-          </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            A free report on how your business shows up in Google and the AI
-            tools people now search with. I go through your site myself, not an
-            automated scan, and send it back within two business days. No sales
-            call.
-          </p>
-          <ul className="mt-6 flex flex-col sm:flex-row sm:flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-neutral-600 max-w-3xl mx-auto">
-            {[
-              "Your visibility score, Google and AI",
-              "The specific issues holding you back",
-              "The quick wins worth doing first",
-            ].map((item) => (
-              <li key={item} className="flex items-center gap-2">
-                <IconCheck
-                  size={16}
-                  className="text-ravenci-primary flex-shrink-0"
-                />
-                {item}
-              </li>
-            ))}
-          </ul>
+      {/* 10 - Visibility check */}
+      <section id="visibility-check" className={DARK}>
+        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
+          <div className="flex flex-col gap-4 lg:w-[440px] lg:shrink-0">
+            <SectionLabel index="08" label="Free check" tone="muted" />
+            <h2 className="text-display-m text-foreground">Can Google and AI actually find you?</h2>
+            <p className="text-body text-muted-foreground">
+              I&apos;ll run your site through the same checks I use on client work and
+              send back what search engines and AI assistants see. No pitch attached.
+            </p>
+            <ul className="mt-2 flex flex-col gap-2.5">
+              {["Technical SEO and Core Web Vitals", "How AI assistants describe your business", "What your three nearest competitors are doing"].map((b) => (
+                <li key={b} className="flex items-start gap-3 text-small text-muted-foreground">
+                  <span aria-hidden className="mt-1.5 h-2 w-2 shrink-0 bg-accent" />
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex-1">
+            <VisibilityCheckForm />
+          </div>
         </div>
-        <VisibilityCheckForm />
       </section>
-
-      <footer className={`bg-ravenci-dark`}></footer>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            name: "RAVENCI Solutions Services",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Website Design", url: "https://ravenci.solutions/web-development" },
-              { "@type": "ListItem", position: 2, name: "eCommerce", url: "https://ravenci.solutions/ecommerce" },
-              { "@type": "ListItem", position: 3, name: "Branding", url: "https://ravenci.solutions/business-design" },
-              { "@type": "ListItem", position: 4, name: "SEO & Content", url: "https://ravenci.solutions/seo-and-content" },
-              { "@type": "ListItem", position: 5, name: "Retainer Packages", url: "https://ravenci.solutions/retainer-packages" },
-            ],
-          }),
-        }}
-      />
     </main>
   );
 }
