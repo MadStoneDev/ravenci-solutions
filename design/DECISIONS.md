@@ -30,11 +30,17 @@ Richard confirms he wants to. Build to 2.2 criteria regardless (harmless).
 - **Peninsula Homes memberships** — ❌ NOT HIA. They are members of the
   **Master Builders Association (MBA)** and **Master Builders Green Living**.
   Replace the "HIA Member" tag with these two.
-- **Build timeline** — do NOT ship a flat "six weeks, typically." Anchor as
-  **"from 3 weeks"** and pair with the honest per-tier ranges already published
-  (Foundation ~3 wks · Growth 4–6 · Premium 10–14). Show the WK-by-WK schedule
-  as *an example* of a typical build, not a fixed promise. **Confirmed: use
-  "from 3 weeks."**
+- **Build timeline** — "from 3 weeks" is a **floor, sign-off to live**, NOT a
+  fixed weekly schedule. Meaning (Richard, 2026-09-21): when the **design is
+  already provided** and the site is **smaller**, he can build and launch in
+  about 3 weeks; it **scales up** with the size of the site and whether he's
+  doing the design too. Do NOT present a rigid "WK1 discovery / WK2 strategy /
+  WK3 design…" grid — it contradicts the floor. Present the stages (discovery/
+  design compress or drop when design is provided) with the honest "from 3
+  weeks, scales with size" framing; exact timeline scoped with the fixed price.
+  **Canonical stages (Richard's words):** design sign-off → development → first
+  look (~3 weeks) → two rounds of feedback → final touches → go live. The
+  "3 weeks" is the **first-look** milestone, not go-live.
 - **Video training included** — ✅ TRUE. Richard provides training videos for
   every site he builds — any CMS, and even custom builds. Safe to claim; frame
   as "training videos for your site, whatever it's built on."

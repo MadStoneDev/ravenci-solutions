@@ -24,7 +24,8 @@ export interface IncludedItem {
 }
 
 export interface ProcessStep {
-  when: string;
+  /** Optional stage tag. When omitted the template shows a 01–NN index. */
+  when?: string;
   title: string;
   description: string;
 }
@@ -59,7 +60,7 @@ export interface ServicePageData {
   heroCtas: { primary: CtaLink; secondary?: CtaLink };
   pricingAnchor: PricingAnchor;
   included: IncludedItem[];
-  process?: { heading: string; steps: ProcessStep[] };
+  process?: { heading: string; note?: string; steps: ProcessStep[] };
   relatedWork?: RelatedWorkItem[];
   faq: ServiceFaq[];
   closingCta: {
@@ -147,14 +148,33 @@ export const WEB_DEVELOPMENT: ServicePageData = {
     },
   ],
   process: {
-    heading: "From three weeks, depending on scope. Here's where the time goes.",
+    heading: "First look in about three weeks — then feedback, final touches, and live.",
+    note: "Once the design's signed off I start building. You'll see the site on a private staging link around three weeks in, then we run two rounds of feedback and the final polish before going live. Bigger sites take longer — I scope the exact timeline with the fixed price, so you know before we start.",
     steps: [
-      { when: "WK 1", title: "Discovery", description: "Goals, audience, competitors, scope." },
-      { when: "WK 1–2", title: "Strategy", description: "Architecture, user flows, platform call." },
-      { when: "WK 2–3", title: "Design", description: "Wireframes, then full visuals you sign off." },
-      { when: "WK 3–5", title: "Build", description: "Clean code, CMS, integrations, content." },
-      { when: "LAUNCH", title: "Test & launch", description: "Devices, performance, accessibility, go live." },
-      { when: "ONGOING", title: "Support", description: "Hosting, patching, changes, reporting." },
+      {
+        title: "Design sign-off",
+        description: "We lock the design before I write code. Bring your own and we start right here.",
+      },
+      {
+        title: "Development",
+        description: "I build the site — clean code, your CMS, integrations and content.",
+      },
+      {
+        title: "First look",
+        description: "You see it on a private staging link, around three weeks in.",
+      },
+      {
+        title: "Feedback",
+        description: "Two rounds. You review, I refine — not an endless drip of change requests.",
+      },
+      {
+        title: "Final touches",
+        description: "Performance, accessibility and cross-device checks.",
+      },
+      {
+        title: "Go live",
+        description: "Launch, then hosting, patching, changes and reporting.",
+      },
     ],
   },
   relatedWork: [

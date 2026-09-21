@@ -157,6 +157,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           <div className="mb-10 flex flex-col gap-3">
             <SectionLabel index="03" label="How it runs" tone="muted" />
             <h2 className="max-w-3xl text-heading-m text-foreground">{data.process.heading}</h2>
+            {data.process.note && (
+              <p className="max-w-2xl text-body text-muted-foreground">{data.process.note}</p>
+            )}
           </div>
           <ol className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-6">
             {data.process.steps.map((step, i) => (
@@ -164,7 +167,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                 key={step.title}
                 className={`flex flex-col gap-2.5 border-t-2 pt-4 ${i === 0 ? "border-accent" : "border-border"}`}
               >
-                <span className="font-mono text-label uppercase text-muted-foreground">{step.when}</span>
+                <span className="font-mono text-label uppercase text-muted-foreground">
+                  {step.when ?? String(i + 1).padStart(2, "0")}
+                </span>
                 <span className="text-heading-s text-foreground">{step.title}</span>
                 <span className="text-small text-muted-foreground">{step.description}</span>
               </li>
