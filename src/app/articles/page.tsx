@@ -1,8 +1,12 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
+
 import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
 import { getAllArticles } from "@/lib/articles";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata = {
   title: "Articles & Insights | RAVENCI Solutions",
@@ -24,93 +28,67 @@ export default function ArticlesPage() {
   const articles = getAllArticles();
 
   return (
-    <main className={`flex flex-col`}>
-      <section
-        className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
-      >
-        <article className={`col-span-12 flex flex-col`}>
+    <main className="flex flex-col">
+      {/* Hero */}
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="flex max-w-3xl flex-col gap-4">
           <Breadcrumbs items={[{ label: "Articles" }]} />
-          <h1 className={`mt-4 text-4xl md:text-5xl lg:text-h1 font-medium`}>
-            Code, Create, Transform
-          </h1>
-          <h2 className={`text-2xl md:text-3xl lg:text-h2 font-light`}>
-            Expert perspectives on modern digital development
-          </h2>
-        </article>
+          <SectionLabel label="Writing" tick />
+          <h1 className="text-display-l text-foreground">Articles</h1>
+          <p className="text-lead text-muted-foreground">
+            Plain notes on web development, SEO, and running a site that lasts.
+          </p>
+        </div>
       </section>
 
-      <section
-        className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 min-h-[750px] bg-ravenci-dark`}
-      >
-        {articles.map((article) => (
-          <article key={article.slug} className={`flex flex-col`}>
-            <div
-              className="relative mb-4 w-full overflow-hidden"
-              style={{ aspectRatio: "5/6" }}
+      {/* Grid */}
+      <section className={SECTION}>
+        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          {articles.map((article) => (
+            <Link
+              key={article.slug}
+              href={`/articles/${article.slug}`}
+              className="group flex flex-col overflow-hidden rounded-sm border border-border bg-card transition-colors duration-fast hover:border-foreground/30"
             >
               {article.featuredImage && (
-                <Image
-                  src={article.featuredImage.src}
-                  alt={article.featuredImage.alt || article.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
-                  className="object-cover object-center"
-                />
+                <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-border bg-muted">
+                  <Image
+                    src={article.featuredImage.src}
+                    alt={article.featuredImage.alt || article.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover object-center transition-transform duration-slow ease-standard group-hover:scale-105"
+                  />
+                </div>
               )}
-            </div>
-            <div
-              className={`mb-2 group px-2 py-1 relative flex w-fit hover:scale-105 transition-all duration-300 ease-in-out`}
-            >
-              <p
-                className={`text-xs uppercase font-bold text-neutral-400 group-hover:text-white z-10 transition-all duration-300 ease-in-out`}
-              >
-                {article.categories.length > 0 ? article.categories[0] : ` `}
-              </p>
-              <div
-                className={`absolute top-0 left-0 right-full group-hover:right-0 bottom-0 bg-ravenci-primary transition-all duration-300 ease-in-out`}
-              ></div>
-            </div>
-
-            <Link
-              href={`/articles/${article.slug}`}
-              className={`mb-4 group relative px-1 py-0.5 flex hover:scale-105 transition-all duration-300 ease-in-out`}
-            >
-              <h3
-                className={`font-serif text-xl text-white font-semibold`}
-              >
-                {article.title}
-              </h3>
+              <div className="flex flex-1 flex-col p-6">
+                {article.categories.length > 0 && (
+                  <span className="mb-2 font-mono text-label uppercase text-accent">
+                    {article.categories[0]}
+                  </span>
+                )}
+                <h2 className="text-heading-s text-foreground">{article.title}</h2>
+                {article.publishedAt && (
+                  <time
+                    dateTime={new Date(article.publishedAt).toISOString()}
+                    className="mt-2 text-small text-muted-foreground"
+                  >
+                    {new Date(article.publishedAt).toLocaleDateString("en-AU", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </time>
+                )}
+                <p className="mt-2 line-clamp-3 flex-1 text-small text-muted-foreground">
+                  {article.excerpt}
+                </p>
+              </div>
             </Link>
-
-            {article.publishedAt && (
-              <time
-                dateTime={new Date(article.publishedAt).toISOString()}
-                className="text-xs text-neutral-500 mb-2"
-              >
-                {new Date(article.publishedAt).toLocaleDateString("en-AU", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </time>
-            )}
-
-            <p
-              className={`text-sm text-neutral-400 font-light`}
-              style={{
-                lineHeight: "1.6em",
-              }}
-            >
-              {article.excerpt}
-            </p>
-          </article>
-        ))}
+          ))}
+        </div>
       </section>
-      <section
-        className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[250px] bg-white`}
-      ></section>
 
-      {/* CollectionPage JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
