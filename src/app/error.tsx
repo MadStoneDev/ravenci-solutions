@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { IconArrowLeft, IconRefresh } from "@tabler/icons-react";
+import { IconRefresh } from "@tabler/icons-react";
+
+import { Button } from "@/components/ui/button";
 
 export default function Error({
   reset,
@@ -11,34 +13,24 @@ export default function Error({
 }) {
   return (
     <main className="flex flex-col">
-      <section className="content-section py-32 px-5 sm:px-20 xl:px-36 flex justify-center min-h-[500px] bg-white">
-        <article className="flex flex-col justify-center items-center max-w-sm">
-          <h1 className="text-4xl md:text-5xl lg:text-h1 text-center font-medium text-ravenci-dark">
-            Oops
-          </h1>
-          <h2 className="text-2xl text-center">Something went wrong.</h2>
-          <p className="mt-10 text-lg text-center text-neutral-500">
+      <section className="flex min-h-[500px] items-center justify-center bg-background px-5 py-32 md:px-12 lg:px-20">
+        <article className="flex max-w-sm flex-col items-center text-center">
+          <h1 className="text-display-m text-foreground">Oops</h1>
+          <h2 className="mt-2 text-heading-s text-foreground">
+            Something went wrong.
+          </h2>
+          <p className="mt-8 text-body text-muted-foreground">
             We hit an unexpected issue loading this page. You can try again or
             head back to safety.
           </p>
-          <div className="mt-10 flex items-center gap-6">
-            <button
-              type="button"
-              onClick={reset}
-              className="group relative pl-2 pr-3 py-1 inline-flex items-center gap-2 w-fit hover:text-white transition-all duration-300 rounded-full"
-            >
-              <IconRefresh size={18} className="z-10" />
-              <span className="z-10">Try Again</span>
-              <div className="absolute top-0 right-0 bottom-0 left-full group-hover:left-0 bg-ravenci-primary transition-all duration-300 ease-in-out" />
-            </button>
-            <Link
-              href="/"
-              className="group relative pl-2 pr-3 py-1 inline-flex items-center gap-2 w-fit hover:text-white transition-all duration-300 rounded-full"
-            >
-              <IconArrowLeft size={18} className="z-10" />
-              <span className="z-10">Go Home</span>
-              <div className="absolute top-0 right-0 bottom-0 left-full group-hover:left-0 bg-ravenci-dark transition-all duration-300 ease-in-out" />
-            </Link>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <Button onClick={reset} variant="primary" size="lg">
+              <IconRefresh size={18} />
+              Try again
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/">Go home</Link>
+            </Button>
           </div>
         </article>
       </section>

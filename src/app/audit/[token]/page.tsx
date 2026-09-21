@@ -8,6 +8,8 @@ import { IconCheck, IconAlertTriangle } from "@tabler/icons-react";
 import { getAuditByToken, getAllAuditTokens } from "@/lib/audits";
 import { mdxComponents } from "@/lib/mdx-components";
 import PrintButton from "@/components/print-button";
+import { Button } from "@/components/ui/button";
+import SectionLabel from "@/components/section-label";
 
 export function generateStaticParams() {
   // Only prerender published audits, drafts must not be reachable.
@@ -34,19 +36,7 @@ export async function generateMetadata({
   };
 }
 
-function scoreColour(score: number): string {
-  if (score < 40) return "border-red-500 bg-red-50 text-red-700";
-  if (score < 60) return "border-yellow-500 bg-yellow-50 text-yellow-700";
-  if (score < 80) return "border-blue-500 bg-blue-50 text-blue-700";
-  return "border-green-500 bg-green-50 text-green-700";
-}
-
-function overallScoreColour(score: number): string {
-  if (score < 40) return "text-red-600";
-  if (score < 60) return "text-yellow-600";
-  if (score < 80) return "text-blue-600";
-  return "text-green-600";
-}
+const LABEL = "font-mono text-label-sm uppercase text-muted-foreground";
 
 export default async function AuditReportPage({
   params,
@@ -62,7 +52,7 @@ export default async function AuditReportPage({
   }
 
   return (
-    <main className="report-page bg-white text-ravenci-dark min-h-screen">
+    <main className="report-page flex min-h-screen flex-col bg-background text-foreground">
       {/* Print stylesheet, applies when user prints or saves as PDF */}
       <style
         dangerouslySetInnerHTML={{
@@ -92,34 +82,36 @@ export default async function AuditReportPage({
         <PrintButton />
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 md:px-10 py-12 md:py-20">
+      <div className="mx-auto max-w-4xl px-5 py-12 md:px-10 md:py-20">
         {/* Cover */}
-        <header className="pb-10 mb-12 border-b-2 border-ravenci-dark">
-          <p className="text-xs font-bold tracking-widest uppercase text-ravenci-primary">
-            Visibility Audit · Prepared for {audit.clientBusiness}
-          </p>
-          <h1 className="mt-4 text-4xl md:text-5xl font-medium leading-tight">
+        <header className="mb-12 border-b border-border pb-10">
+          <SectionLabel
+            label={`Visibility Audit · Prepared for ${audit.clientBusiness}`}
+          />
+          <h1 className="mt-4 text-display-m text-foreground">
             {audit.headline}
           </h1>
-          <p className="mt-2 text-xl md:text-2xl font-light text-neutral-600">
+          <p className="mt-2 text-heading-s text-muted-foreground">
             {audit.clientWebsite}
           </p>
           <div className="mt-8 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="text-sm text-neutral-500">Prepared by</p>
-              <p className="text-lg font-bold">RAVENCI Solutions</p>
-              <p className="text-sm text-neutral-500">
+              <p className={LABEL}>Prepared by</p>
+              <p className="mt-1 text-body font-semibold text-foreground">
+                RAVENCI Solutions
+              </p>
+              <p className="text-small text-muted-foreground">
                 Brisbane, Australia · ravenci.solutions
               </p>
             </div>
             <div className="text-right">
-              <p className="text-sm text-neutral-500">Conducted</p>
-              <p className="text-lg font-bold">{audit.conductedDate}</p>
-              <p className="text-sm text-neutral-500">
+              <p className={LABEL}>Conducted</p>
+              <p className="mt-1 text-body font-semibold text-foreground">
+                {audit.conductedDate}
+              </p>
+              <p className="text-small text-muted-foreground">
                 Overall score{" "}
-                <span
-                  className={`font-bold ${overallScoreColour(audit.overallScore)}`}
-                >
+                <span className="font-semibold text-accent">
                   {audit.overallScore}/100
                 </span>
               </p>
@@ -128,9 +120,9 @@ export default async function AuditReportPage({
         </header>
 
         {audit.specialMessage && (
-          <section className="mb-14 avoid-break">
-            <div className="p-6 border-l-4 border-ravenci-primary bg-neutral-50">
-              <p className="text-base leading-relaxed text-neutral-700 whitespace-pre-line">
+          <section className="avoid-break mb-14">
+            <div className="border-l-2 border-accent bg-muted p-6">
+              <p className="whitespace-pre-line text-body text-muted-foreground">
                 {audit.specialMessage}
               </p>
             </div>
@@ -138,30 +130,22 @@ export default async function AuditReportPage({
         )}
 
         {/* Score bars */}
-        <section className="mb-14 avoid-break">
-          <h2 className="text-2xl md:text-3xl font-medium mb-6 border-l-4 border-ravenci-primary pl-4">
+        <section className="avoid-break mb-14">
+          <h2 className="mb-6 border-l-2 border-accent pl-4 text-heading-m text-foreground">
             Category Scores
           </h2>
           <div className="space-y-3">
             {audit.categories.map((cat) => (
-              <div key={cat.id} className="flex items-center gap-3 text-sm">
-                <span className="w-44 min-w-[120px] font-medium">
+              <div key={cat.id} className="flex items-center gap-3 text-small">
+                <span className="w-44 min-w-[120px] font-medium text-foreground">
                   {cat.label}
                 </span>
-                <div className="flex-1 h-7 bg-neutral-100 rounded-full overflow-hidden">
+                <div className="h-7 flex-1 overflow-hidden rounded-full bg-muted">
                   <div
-                    className={`h-full rounded-full flex items-center justify-end pr-2 ${
-                      cat.score < 40
-                        ? "bg-red-400"
-                        : cat.score < 60
-                          ? "bg-yellow-400"
-                          : cat.score < 80
-                            ? "bg-blue-400"
-                            : "bg-green-400"
-                    }`}
+                    className="flex h-full items-center justify-end rounded-full bg-accent pr-2"
                     style={{ width: `${Math.max(cat.score, 4)}%` }}
                   >
-                    <span className="text-xs font-bold text-white">
+                    <span className="text-xs font-bold text-accent-foreground">
                       {cat.score}
                     </span>
                   </div>
@@ -172,39 +156,37 @@ export default async function AuditReportPage({
         </section>
 
         {/* Per-category breakdown */}
-        <section className="mb-14 page-break-before">
-          <h2 className="text-2xl md:text-3xl font-medium mb-6 border-l-4 border-ravenci-primary pl-4">
+        <section className="page-break-before mb-14">
+          <h2 className="mb-6 border-l-2 border-accent pl-4 text-heading-m text-foreground">
             Findings by Category
           </h2>
           <div className="space-y-8">
             {audit.categories.map((cat) => (
               <div key={cat.id} className="avoid-break">
-                <div className="flex flex-wrap items-baseline gap-3 mb-2">
-                  <h3 className="text-lg font-bold">{cat.label}</h3>
-                  <span
-                    className={`px-3 py-0.5 text-sm font-bold rounded-full border ${scoreColour(cat.score)}`}
-                  >
+                <div className="mb-2 flex flex-wrap items-baseline gap-3">
+                  <h3 className="text-heading-s text-foreground">
+                    {cat.label}
+                  </h3>
+                  <span className="rounded-full border border-border bg-muted px-3 py-0.5 text-small font-semibold text-foreground">
                     {cat.score}/100
                   </span>
                 </div>
-                <p className="text-sm text-neutral-700 leading-relaxed mb-4">
+                <p className="mb-4 text-small text-muted-foreground">
                   {cat.summary}
                 </p>
 
                 {cat.findings.length > 0 && (
                   <>
-                    <p className="text-xs font-bold uppercase tracking-wider text-neutral-500 mb-2">
-                      What we found
-                    </p>
+                    <p className={`mb-2 ${LABEL}`}>What we found</p>
                     <ul className="mb-4 space-y-1.5">
                       {cat.findings.map((f, j) => (
                         <li
                           key={j}
-                          className="flex items-start gap-2 text-sm text-neutral-700"
+                          className="flex items-start gap-2 text-small text-muted-foreground"
                         >
                           <IconAlertTriangle
                             size={14}
-                            className="mt-1 text-yellow-600 flex-shrink-0"
+                            className="mt-1 flex-shrink-0 text-muted-foreground"
                           />
                           <span>{f}</span>
                         </li>
@@ -215,18 +197,16 @@ export default async function AuditReportPage({
 
                 {cat.recommendations.length > 0 && (
                   <>
-                    <p className="text-xs font-bold uppercase tracking-wider text-neutral-500 mb-2">
-                      Recommendations
-                    </p>
+                    <p className={`mb-2 ${LABEL}`}>Recommendations</p>
                     <ul className="space-y-1.5">
                       {cat.recommendations.map((r, j) => (
                         <li
                           key={j}
-                          className="flex items-start gap-2 text-sm text-neutral-700"
+                          className="flex items-start gap-2 text-small text-muted-foreground"
                         >
                           <IconCheck
                             size={14}
-                            className="mt-1 text-ravenci-primary flex-shrink-0"
+                            className="mt-1 flex-shrink-0 text-accent"
                           />
                           <span>{r}</span>
                         </li>
@@ -241,24 +221,24 @@ export default async function AuditReportPage({
 
         {/* Optional narrative body from MDX */}
         {audit.content.trim().length > 0 && (
-          <section className="mb-14 avoid-break prose prose-sm max-w-none">
+          <section className="avoid-break prose prose-sm mb-14 max-w-none">
             <MDXRemote source={audit.content} components={mdxComponents} />
           </section>
         )}
 
         {/* Priority actions */}
         {audit.priorityActions.length > 0 && (
-          <section className="mb-14 page-break-before avoid-break">
-            <h2 className="text-2xl md:text-3xl font-medium mb-6 border-l-4 border-ravenci-primary pl-4">
+          <section className="page-break-before avoid-break mb-14">
+            <h2 className="mb-6 border-l-2 border-accent pl-4 text-heading-m text-foreground">
               Where We&apos;d Start
             </h2>
             <ol className="space-y-4">
               {audit.priorityActions.map((action, i) => (
                 <li key={i} className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-ravenci-primary text-white text-sm font-bold flex items-center justify-center">
+                  <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-accent text-sm font-bold text-accent-foreground">
                     {i + 1}
                   </span>
-                  <p className="text-base text-neutral-700 leading-relaxed pt-0.5">
+                  <p className="pt-0.5 text-body text-muted-foreground">
                     {action}
                   </p>
                 </li>
@@ -268,42 +248,43 @@ export default async function AuditReportPage({
         )}
 
         {/* CTA */}
-        <section className="mt-16 pt-10 border-t-2 border-ravenci-dark avoid-break">
-          <h2 className="text-2xl font-medium mb-4">
+        <section className="avoid-break mt-16 border-t border-border pt-10">
+          <h2 className="mb-4 text-heading-m text-foreground">
             Want a hand fixing any of this?
           </h2>
-          <p className="text-sm text-neutral-700 leading-relaxed mb-6">
+          <p className="mb-6 text-body text-muted-foreground">
             If any of the issues above are worth fixing and you&apos;d like
-            RAVENCI&apos;s help, reply to the email this report came in on
-            with your rough timeline and budget. I&apos;ll come back with
-            options that fit. No sales call required, no obligation.
+            RAVENCI&apos;s help, reply to the email this report came in on with
+            your rough timeline and budget. I&apos;ll come back with options
+            that fit. No sales call required, no obligation.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             <div>
-              <p className="font-bold">Website</p>
-              <p className="text-neutral-600">ravenci.solutions</p>
+              <p className="text-body font-semibold text-foreground">Website</p>
+              <p className="text-muted-foreground">ravenci.solutions</p>
             </div>
             <div>
-              <p className="font-bold">Phone</p>
-              <p className="text-neutral-600">07 3106 1836</p>
+              <p className="text-body font-semibold text-foreground">Phone</p>
+              <p className="text-muted-foreground">07 3106 1836</p>
             </div>
             <div>
-              <p className="font-bold">Brisbane, AU</p>
-              <p className="text-neutral-600">hello@ravenci.solutions</p>
+              <p className="text-body font-semibold text-foreground">
+                Brisbane, AU
+              </p>
+              <p className="text-muted-foreground">hello@ravenci.solutions</p>
             </div>
           </div>
           <div className="no-print mt-8">
-            <Link
-              href="/launch-your-vision"
-              className="inline-block px-6 py-3 bg-ravenci-dark text-white rounded-full hover:bg-ravenci-primary transition-colors text-sm"
-            >
-              Talk to RAVENCI About Your Project
-            </Link>
+            <Button asChild size="lg" variant="primary">
+              <Link href="/launch-your-vision">
+                Talk to RAVENCI About Your Project
+              </Link>
+            </Button>
           </div>
         </section>
 
         {/* Footer credit */}
-        <footer className="mt-12 pt-6 border-t border-neutral-200 text-xs text-neutral-500 text-center">
+        <footer className="mt-12 border-t border-border pt-6 text-center text-small text-muted-foreground">
           © {new Date().getFullYear()} RAVENCI Solutions · Visibility audit
           prepared for {audit.clientBusiness} on {audit.conductedDate}
         </footer>
