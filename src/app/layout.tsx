@@ -6,7 +6,8 @@ import OpenPanel from "@/components/metrics-openpanel";
 
 import "./globals.css";
 
-import { Lexend, Playfair_Display } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
+import { archivo, jetbrainsMono } from "@/lib/fonts";
 
 import MainFooter from "@/components/main-footer";
 import MainNavigation from "@/components/main-navigation";
@@ -17,12 +18,8 @@ import CookieConsent from "@/components/cookie-consent";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
-const lexend = Lexend({
-  variable: "--font-lexend",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
+// Playfair kept for legacy `font-serif` uses during migration; remove once
+// no page depends on it (README §4). Archivo/JetBrains Mono come from @/lib/fonts.
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
   subsets: ["latin"],
@@ -179,7 +176,10 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en-AU">
+    <html
+      lang="en-AU"
+      className={`${archivo.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
@@ -202,9 +202,7 @@ export default function RootLayout({
         <meta name="geo.region" content="AU-QLD" />
         <meta name="geo.placename" content="Brisbane" />
       </head>
-      <body
-        className={`relative ${lexend.variable} ${playfairDisplay.variable} antialiased`}
-      >
+      <body className={`relative font-sans antialiased`}>
         {/* Consent default, denied until user accepts. Must run before
             GA/GTM so trackers respect the signal. */}
         <Script id="consent-default" strategy="beforeInteractive">

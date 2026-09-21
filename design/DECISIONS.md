@@ -33,8 +33,8 @@ Richard confirms he wants to. Build to 2.2 criteria regardless (harmless).
 - **Build timeline** — do NOT ship a flat "six weeks, typically." Anchor as
   **"from 3 weeks"** and pair with the honest per-tier ranges already published
   (Foundation ~3 wks · Growth 4–6 · Premium 10–14). Show the WK-by-WK schedule
-  as *an example* of a typical build, not a fixed promise. (Richard leaning
-  "from 3+"; final anchor wording pending his OK — see report.)
+  as *an example* of a typical build, not a fixed promise. **Confirmed: use
+  "from 3 weeks."**
 - **Video training included** — ✅ TRUE. Richard provides training videos for
   every site he builds — any CMS, and even custom builds. Safe to claim; frame
   as "training videos for your site, whatever it's built on."
