@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { IconArrowRight, IconCheck } from "@tabler/icons-react";
 
@@ -6,6 +7,7 @@ import Breadcrumbs from "@/components/breadcrumbs";
 import SectionLabel from "@/components/section-label";
 import StickyCTA from "@/components/sticky-cta";
 import { Button } from "@/components/ui/button";
+import { getCaseStudyBySlug } from "@/data/case-studies";
 import type { ServicePageData } from "@/data/service-pages";
 
 const SECTION = "px-5 py-14 md:px-12 md:py-24 lg:px-20";
@@ -107,12 +109,14 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           <div className="lg:w-[360px] lg:shrink-0">
             <div className="rounded-sm border border-border bg-card p-8">
               <SectionLabel label="Pricing anchor" tone="muted" />
-              <div className="mt-4 flex items-baseline gap-2">
+              <div className="mt-4 flex flex-wrap items-baseline gap-x-2 gap-y-1">
                 <span className="font-mono text-label uppercase text-muted-foreground">
                   {data.pricingAnchor.fromLabel}
                 </span>
                 {data.pricingAnchor.price && (
-                  <span className="text-metric text-foreground">{data.pricingAnchor.price}</span>
+                  <span className="text-4xl font-bold leading-none tracking-tight tabular-nums text-foreground md:text-5xl">
+                    {data.pricingAnchor.price}
+                  </span>
                 )}
               </div>
               {data.pricingAnchor.note && (
@@ -194,20 +198,35 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
             </Link>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {data.relatedWork.map((work) => (
-              <Link
-                key={work.href}
-                href={work.href}
-                className="group flex flex-col rounded-sm border border-border bg-card transition-colors duration-fast hover:border-foreground/30"
-              >
-                <div className="h-40 rounded-t-sm bg-muted" aria-hidden />
-                <div className="flex flex-col gap-2 p-6">
-                  <span className="font-mono text-label uppercase text-accent">{work.category}</span>
-                  <span className="text-heading-s text-foreground">{work.title}</span>
-                  <span className="text-small text-muted-foreground">{work.blurb}</span>
-                </div>
-              </Link>
-            ))}
+            {data.relatedWork.map((work) => {
+              const slug = work.href.split("/").pop() ?? "";
+              const cs = getCaseStudyBySlug(slug);
+              const img = cs?.cardImage ?? cs?.featuredImage;
+              return (
+                <Link
+                  key={work.href}
+                  href={work.href}
+                  className="group flex flex-col overflow-hidden rounded-sm border border-border bg-card transition-colors duration-fast hover:border-foreground/30"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-muted">
+                    {img && (
+                      <Image
+                        src={img}
+                        alt={`${work.title} project`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover object-top transition-transform duration-slow ease-standard group-hover:scale-105"
+                      />
+                    )}
+                  </div>
+                  <div className="flex flex-col gap-2 p-6">
+                    <span className="font-mono text-label uppercase text-accent">{work.category}</span>
+                    <span className="text-heading-s text-foreground">{work.title}</span>
+                    <span className="text-small text-muted-foreground">{work.blurb}</span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </section>
       )}
