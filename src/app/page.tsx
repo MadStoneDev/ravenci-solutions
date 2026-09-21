@@ -3,8 +3,10 @@ import Image from "next/image";
 import { IconArrowRight, IconCheck, IconX } from "@tabler/icons-react";
 
 import SectionLabel from "@/components/section-label";
-import PlatformSelector from "@/components/platform-selector";
 import VisibilityCheckForm from "@/components/visibility-check-form";
+import HeroBuild from "@/components/hero-build";
+import StackStory from "@/components/stack-story";
+import PlatformSelector from "@/components/platform-selector";
 import { Button } from "@/components/ui/button";
 import { getCaseStudyBySlug } from "@/data/case-studies";
 import { getHomepagePageSpeed } from "@/lib/pagespeed";
@@ -28,15 +30,6 @@ export const metadata = {
 
 const LIGHT = "px-5 py-16 md:px-12 md:py-24 lg:px-20";
 const DARK = "dark bg-background text-foreground px-5 py-16 md:px-12 md:py-24 lg:px-20";
-
-const STACK_STEPS = [
-  { n: "01", name: "Design", copy: "Wireframes and a full visual design you sign off before a line of code is written.", tag: "Signed-off design" },
-  { n: "02", name: "Build", copy: "Hand-built on the right platform. Your code, your content, your domain. No lock-in.", tag: "Repo + CMS" },
-  { n: "03", name: "Host", copy: "Managed Australian-supported hosting from $39/mo. SSL, daily backups, monitoring, 99.9% uptime.", tag: "Live, monitored", highlight: true },
-  { n: "04", name: "Secure", copy: "Patching, firewall, domain and DNS management, and a restore that has actually been tested.", tag: "Patch log" },
-  { n: "05", name: "Optimise", copy: "SEO, AEO and GEO: found by Google, and quoted correctly by the AI assistants your buyers now ask.", tag: "Monthly report" },
-  { n: "06", name: "Maintain", copy: "Updates, content changes and new features on retainer from $249/mo. You email me, not a ticket system.", tag: "Care plan" },
-];
 
 const INDUSTRIES = [
   { n: "01", label: "Construction", headline: "Builders, developers, architects, engineers", blurb: "Project showcases that win tenders, secure client and tender portals, and Procore, Xero and Deputy talking to each other.", chips: ["Procore", "Xero", "Tender portal"], href: "/construction" },
@@ -126,31 +119,7 @@ export default async function Home() {
             </p>
           </div>
 
-          {/* Static blueprint (HeroBuild replaces this in step 8) */}
-          <div className="flex-1" aria-hidden>
-            <div className="rounded-sm border border-border bg-card p-6 shadow-1">
-              <div className="mb-4 flex items-center justify-between">
-                <div className="h-2.5 w-24 rounded-sm bg-foreground/80" />
-                <div className="h-6 w-20 rounded-sm bg-accent" />
-              </div>
-              <div className="mb-3 h-3 w-3/4 rounded-sm bg-foreground/70" />
-              <div className="mb-5 h-2 w-1/2 rounded-sm bg-muted" />
-              <div className="mb-5 aspect-[16/7] rounded-sm border border-dashed border-accent/60 bg-muted" />
-              <div className="grid grid-cols-3 gap-3">
-                {[0, 1, 2].map((i) => (
-                  <div key={i} className="rounded-sm border border-border p-3">
-                    <div className={`mb-2 h-1.5 w-8 rounded-sm ${i === 0 ? "bg-accent" : "bg-muted"}`} />
-                    <div className="h-1.5 w-full rounded-sm bg-muted" />
-                  </div>
-                ))}
-              </div>
-              <div className="mt-5 flex justify-between font-mono text-label-sm uppercase text-muted-foreground">
-                <span>1440 px</span>
-                <span>LCP 0.9s</span>
-                <span>Hero / SVG</span>
-              </div>
-            </div>
-          </div>
+          <HeroBuild />
         </div>
       </section>
 
@@ -169,37 +138,7 @@ export default async function Home() {
       </section>
 
       {/* 3 - Stack story */}
-      <section id="process" className={DARK}>
-        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
-          <div className="flex flex-col gap-4 lg:w-[420px] lg:shrink-0">
-            <SectionLabel index="02" label="The whole stack" tone="muted" />
-            <h2 className="text-display-m text-foreground">One person, the whole stack.</h2>
-            <p className="text-body text-muted-foreground">
-              Most agencies hand you off: a designer, then a developer, then a
-              support queue, then a hosting company who has never seen your site. I
-              do all six steps, so nothing falls between them.
-            </p>
-          </div>
-          <div className="flex-1">
-            <ol className="flex flex-col">
-              {STACK_STEPS.map((s) => (
-                <li
-                  key={s.n}
-                  className={`flex flex-col gap-2 border-t border-white/10 py-5 md:flex-row md:items-baseline md:gap-6 ${s.highlight ? "bg-accent/10 px-4" : ""}`}
-                >
-                  <span className="font-mono text-label text-muted-foreground md:w-10">{s.n}</span>
-                  <span className="text-heading-s text-foreground md:w-36 md:shrink-0">{s.name}</span>
-                  <span className="flex-1 text-small text-muted-foreground">{s.copy}</span>
-                  <span className="font-mono text-label-sm uppercase text-foreground/80 md:w-44 md:text-right">{s.tag}</span>
-                </li>
-              ))}
-            </ol>
-            <p className="mt-8 text-heading-s text-foreground">
-              Built once. Built properly. Still working in five years.
-            </p>
-          </div>
-        </div>
-      </section>
+      <StackStory />
 
       {/* 4 - Platform selector */}
       <section className={`${LIGHT} border-b border-border`}>

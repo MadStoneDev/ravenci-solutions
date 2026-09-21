@@ -166,6 +166,17 @@
     50%      { opacity: 0.45; }
   }
   .rv-pulse { animation: rv-pulse 1.6s var(--ease-standard) infinite; }
+
+  /* HeroBuild assembly — plays once on load, staggered via --i. CSS only, so
+     the above-the-fold hero pulls no JS animation library. */
+  @keyframes rv-assemble {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: none; }
+  }
+  .rv-assemble {
+    animation: rv-assemble var(--dur-base) var(--ease-standard) both;
+    animation-delay: calc(var(--i, 0) * var(--stagger));
+  }
 }
 
 /* ==========================================================================

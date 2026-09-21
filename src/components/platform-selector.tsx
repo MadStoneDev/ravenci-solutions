@@ -107,28 +107,31 @@ export default function PlatformSelector() {
         })}
       </div>
 
-      {/* Detail card */}
+      {/* Detail card. Keyed by selection so the CSS assemble animation replays
+          on change without an animation library. */}
       <div className="rounded-sm border border-border bg-card p-8">
         <span className="font-mono text-label uppercase text-muted-foreground">Recommended stack</span>
         <div className="my-4 h-px w-full bg-border" />
-        <h3 className="text-heading-m text-foreground">{active.stack}</h3>
-        <p className="mt-3 text-body text-muted-foreground">{active.reason}</p>
-        <ul className="mt-5 flex flex-col gap-2.5">
-          {active.spec.map((s) => (
-            <li key={s} className="flex items-start gap-3 text-small text-foreground">
-              <span aria-hidden className="mt-1.5 h-2 w-2 shrink-0 bg-accent" />
-              {s}
-            </li>
-          ))}
-        </ul>
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-5">
-          <span className="font-mono text-label uppercase text-foreground">{active.price}</span>
-          <Link
-            href="/launch-your-vision"
-            className="inline-flex items-center gap-1 text-small font-medium text-accent hover:underline"
-          >
-            Get a recommendation <IconArrowRight size={16} aria-hidden />
-          </Link>
+        <div key={selected} className="rv-assemble">
+          <h3 className="text-heading-m text-foreground">{active.stack}</h3>
+          <p className="mt-3 text-body text-muted-foreground">{active.reason}</p>
+          <ul className="mt-5 flex flex-col gap-2.5">
+            {active.spec.map((s) => (
+              <li key={s} className="flex items-start gap-3 text-small text-foreground">
+                <span aria-hidden className="mt-1.5 h-2 w-2 shrink-0 bg-accent" />
+                {s}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-5">
+            <span className="font-mono text-label uppercase text-foreground">{active.price}</span>
+            <Link
+              href="/launch-your-vision"
+              className="inline-flex items-center gap-1 text-small font-medium text-accent hover:underline"
+            >
+              Get a recommendation <IconArrowRight size={16} aria-hidden />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
