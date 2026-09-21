@@ -71,7 +71,7 @@ export const LAB_PROJECTS: LabProject[] = [
     stack: ["Next.js", "React", "TypeScript", "Tailwind", "Supabase", "Puppeteer", "Express"],
     problemSolved:
       "Two repos share one database: a self-hosted Express and Puppeteer crawler computes every score once at scan completion and persists it, while the frontend only ever reads. The wedge is owning the on-site audit plus the customer's first-party Search Console data, rather than rebuilding a web-scale index.",
-    status: "wip",
+    status: "live",
   },
   {
     name: "RAVENCI Builder",
@@ -89,12 +89,13 @@ export const LAB_PROJECTS: LabProject[] = [
     oneLiner: "A fast markdown note-taking app.",
     stack: ["Next.js", "React", "TypeScript", "Tailwind", "Supabase", "Milkdown"],
     problemSolved: "",
-    status: "wip",
+    status: "live",
   },
   {
     name: "TheJury",
     url: "",
-    oneLiner: "[PLACEHOLDER: one-line description]",
+    oneLiner:
+      "Anonymous staff feedback, AGM motions, community consultation and live session polls. Hosted in Australia, with a results record you can attach to the minutes. No account needed to vote.",
     stack: ["Next.js", "React", "TypeScript", "Tailwind", "Supabase", "Stripe"],
     problemSolved: "",
     status: "wip",
@@ -102,7 +103,8 @@ export const LAB_PROJECTS: LabProject[] = [
   {
     name: "JustTerms",
     url: "",
-    oneLiner: "[PLACEHOLDER: one-line description]",
+    oneLiner:
+      "Generate compliant Privacy Policies, Terms & Conditions, Cookie Policies and more for your Australian business.",
     stack: ["Next.js", "React", "TypeScript", "Tailwind", "PocketBase", "Stripe"],
     problemSolved: "",
     status: "wip",
