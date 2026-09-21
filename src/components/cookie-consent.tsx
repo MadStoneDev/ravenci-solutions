@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
+
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
@@ -55,37 +57,31 @@ export default function CookieConsent() {
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-[60] transform transition-transform duration-500 ease-in-out ${
-        visible ? "translate-y-0" : "translate-y-full"
-      }`}
+      role="dialog"
+      aria-label="Cookie preferences"
+      className="dark fixed bottom-0 left-0 right-0 z-[60]"
     >
-      <div className="mx-4 mb-4 md:mx-8 md:mb-6 p-5 md:p-6 bg-ravenci-dark border border-neutral-700 rounded-lg shadow-2xl max-w-xl">
-        <p className="text-sm text-neutral-300 leading-relaxed">
+      <div className="mx-4 mb-4 max-w-xl rounded-sm border border-border bg-card p-5 text-foreground shadow-2 md:mx-8 md:mb-6 md:p-6">
+        <p className="text-small leading-relaxed text-muted-foreground">
           I use cookies and similar tools (Google Analytics, Microsoft Clarity)
           to understand how visitors use my site and to improve your experience.
           No personal data is sold.{" "}
-          <Link
-            href="/privacy-policy"
-            className="text-ravenci-primary hover:underline"
-          >
+          <Link href="/privacy-policy" className="text-accent hover:underline">
             Privacy Policy
           </Link>
         </p>
-        <div className="mt-4 flex items-center gap-3">
-          <button
-            type="button"
-            onClick={handleAccept}
-            className="px-5 py-2 text-sm font-medium bg-ravenci-primary hover:bg-ravenci-primary/85 text-white rounded-full transition-colors duration-300"
-          >
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <Button type="button" variant="primary" size="sm" onClick={handleAccept}>
             Accept
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
+            variant="secondary"
+            size="sm"
             onClick={handleDecline}
-            className="px-5 py-2 text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-300"
           >
-            Decline
-          </button>
+            Essential only
+          </Button>
         </div>
       </div>
     </div>

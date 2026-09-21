@@ -11,35 +11,34 @@ export default function Breadcrumbs({
   dark = false,
 }: {
   items: BreadcrumbItem[];
+  /** Deprecated — kept for call-site compatibility. Colours now come from the
+   *  active token palette; wrap in a `dark` scope for charcoal sections. */
   dark?: boolean;
 }) {
+  void dark;
   return (
     <nav
       aria-label="Breadcrumb"
-      className={`flex items-center gap-1 text-sm ${
-        dark ? "text-neutral-400" : "text-neutral-400"
-      }`}
+      className="flex flex-wrap items-center gap-1 text-small text-muted-foreground"
     >
-      <Link href="/" className="hover:text-ravenci-primary transition-colors duration-200">
+      <Link
+        href="/"
+        className="transition-colors duration-fast hover:text-accent"
+      >
         Home
       </Link>
       {items.map((item, index) => (
         <span key={index} className="flex items-center gap-1">
-          <IconChevronRight
-            size={14}
-            className={dark ? "text-neutral-500" : "text-neutral-300"}
-          />
+          <IconChevronRight size={14} aria-hidden className="text-border" />
           {item.href ? (
             <Link
               href={item.href}
-              className="hover:text-ravenci-primary transition-colors duration-200"
+              className="transition-colors duration-fast hover:text-accent"
             >
               {item.label}
             </Link>
           ) : (
-            <span
-              className={`font-medium ${dark ? "text-white" : "text-ravenci-dark"}`}
-            >
+            <span aria-current="page" className="font-medium text-foreground">
               {item.label}
             </span>
           )}
