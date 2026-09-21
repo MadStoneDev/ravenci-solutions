@@ -256,7 +256,7 @@ export default async function Home() {
             <thead>
               <tr className="border-b border-white/15">
                 <th className="py-3 pr-4 font-mono text-label uppercase text-muted-foreground">What you get</th>
-                <th className="bg-accent/10 px-4 py-3 text-heading-s text-foreground">RAVENCI</th>
+                <th className="bg-accent/30 px-4 py-3 text-heading-s text-foreground">RAVENCI</th>
                 <th className="px-4 py-3 text-small text-muted-foreground">Typical agency</th>
                 <th className="px-4 py-3 text-small text-muted-foreground">DIY builder</th>
               </tr>
@@ -265,7 +265,7 @@ export default async function Home() {
               {COMPARISON.map((row) => (
                 <tr key={row.feature} className="border-b border-white/10">
                   <td className="py-4 pr-4 text-small text-foreground/90">{row.feature}</td>
-                  <td className="bg-accent/10 px-4 py-4">
+                  <td className="bg-accent/30 px-4 py-4">
                     <span className="flex items-center gap-2 text-small font-semibold text-foreground">
                       <IconCheck size={16} aria-hidden className="shrink-0 text-foreground" />
                       {row.ravenci}

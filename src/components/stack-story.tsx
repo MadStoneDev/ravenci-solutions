@@ -33,7 +33,7 @@ function Row({ step, active }: { step: (typeof STEPS)[number]; active: boolean }
   return (
     <div
       className={`flex flex-col gap-2 border-t border-white/10 py-5 transition-opacity duration-base md:flex-row md:items-baseline md:gap-6 ${
-        active ? "bg-accent/10 px-4 opacity-100" : "opacity-55"
+        active ? "bg-accent/30 px-4 opacity-100" : "opacity-55"
       }`}
     >
       <span className="font-mono text-label text-muted-foreground md:w-10">{step.n}</span>
