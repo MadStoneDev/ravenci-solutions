@@ -106,7 +106,7 @@ const config: Config = {
         label: ["0.75rem", { lineHeight: "1", letterSpacing: "0.14em", fontWeight: "500" }],
         "label-sm": ["0.6875rem", { lineHeight: "1", letterSpacing: "0.12em", fontWeight: "500" }],
 
-        /* [LEGACY] h1/h2/h3 — 211 uses. Remove once migrated to display-*/heading-*. */
+        /* [LEGACY] h1/h2/h3 — 211 uses. Remove once migrated to display/heading tokens. */
         h1: ["4rem", { lineHeight: "5rem" }],
         h2: ["2rem", { lineHeight: "2rem" }],
         h3: ["1.5rem", { lineHeight: "2rem" }],
