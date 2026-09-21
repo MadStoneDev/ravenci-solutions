@@ -219,7 +219,9 @@ export default function RootLayout({
         </a>
         <ReCaptchaProvider>
           <MainNavigation />
-          <div id="main-content">{children}</div>
+          <div id="main-content" className="pt-16 md:pt-[76px]">
+            {children}
+          </div>
           <MainFooter />
 
           <SpinningCircleText text={"Book Now · Free Consultation · "} />

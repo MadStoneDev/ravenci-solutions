@@ -1,395 +1,148 @@
-﻿import Image from "next/image";
 import Link from "next/link";
-import {
-  IconBrandLinkedin,
-  IconDeviceMobileFilled,
-  IconMailFilled,
-  IconPhoneFilled,
-} from "@tabler/icons-react";
+
 import FooterEmailCapture from "@/components/footer-email-capture";
 
+type FooterLink = { href: string; label: string; external?: boolean };
+
+// IA per README §2: existing slugs, Branding + Mobile Apps dropped, Labs kept.
+const COLUMNS: { heading: string; links: FooterLink[] }[] = [
+  {
+    heading: "Services",
+    links: [
+      { href: "/web-development", label: "Website Design & Development" },
+      { href: "/ecommerce", label: "eCommerce" },
+      { href: "/web-apps", label: "Web Apps & Client Portals" },
+      { href: "/website-maintenance", label: "Managed Web" },
+      { href: "/seo-and-content", label: "SEO / AEO / GEO" },
+    ],
+  },
+  {
+    heading: "Industries",
+    links: [
+      { href: "/construction", label: "Construction" },
+      { href: "/healthcare", label: "Healthcare" },
+      { href: "/ecommerce", label: "eCommerce brands" },
+      { href: "/professional-services", label: "Professional services" },
+    ],
+  },
+  {
+    heading: "Company",
+    links: [
+      { href: "/case-studies", label: "Work" },
+      { href: "/our-process", label: "Process" },
+      { href: "/pricing", label: "Pricing" },
+      { href: "/about", label: "About" },
+      { href: "/articles", label: "Articles" },
+      { href: "/labs", label: "Labs" },
+    ],
+  },
+  {
+    heading: "Guides",
+    links: [
+      { href: "/cost-of-a-website-in-brisbane", label: "Brisbane website costs" },
+      { href: "/wordpress-vs-shopify-vs-custom", label: "WordPress vs Shopify vs Custom" },
+      { href: "/custom-vs-template", label: "Custom vs template" },
+      { href: "/how-to-choose-a-web-designer-in-brisbane", label: "How to choose a web designer" },
+    ],
+  },
+];
+
 export default function MainFooter() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className={`relative`}>
-      <section
-        className={`absolute top-0 left-0 right-0`}
-        style={{
-          transform: `translateY(-99%)`,
-        }}
-      >
-        <Image
-          src={`/raven-on-rock.svg`}
-          alt={`RAVENCI crow standing on a rock`}
-          width={200}
-          height={79}
-          className={`mx-auto`}
-        />
-      </section>
-
-      <section
-        className={`px-5 md:px-12 pt-16 pb-6 bg-ravenci-dark text-white`}
-      >
-        <h4 className={`text-neutral-400/70`}>Services</h4>
-        <article
-          className={`mt-6 flex flex-wrap gap-x-6 gap-y-5 max-w-2xl text-sm font-light`}
-        >
-          <div className={`group/link relative px-2`}>
-            <Link href={`/web-development`} className={`relative z-10`}>
-              Website Design
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/ecommerce`} className={`relative z-10`}>
-              eCommerce Development
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/business-design`} className={`relative z-10`}>
-              Branding
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/retainer-packages`} className={`relative z-10`}>
-              Retainer Packages
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/seo-and-content`} className={`relative z-10`}>
-              SEO and Content
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/pricing`} className={`relative z-10`}>
-              Pricing
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/web-apps`} className={`relative z-10`}>
-              Web Apps
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/mobile-apps`} className={`relative z-10`}>
-              Mobile Apps
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-        </article>
-
-        <h4 className={`mt-12 text-neutral-400/70`}>Industries</h4>
-        <article
-          className={`mt-6 flex flex-wrap gap-x-6 gap-y-5 max-w-2xl text-sm font-light`}
-        >
-          <div className={`group/link relative px-2`}>
-            <Link href={`/healthcare`} className={`relative z-10`}>
-              Healthcare Websites
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/construction`} className={`relative z-10`}>
-              Construction Websites
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-        </article>
-
-        <h4 className={`mt-12 text-neutral-400/70`}>Info</h4>
-        <article
-          className={`mt-6 flex flex-wrap gap-x-6 gap-y-5 max-w-2xl text-sm font-light`}
-        >
-          <div className={`group/link relative px-2`}>
-            <Link href={`/about`} className={`relative z-10`}>
-              About
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/our-process`} className={`relative z-10`}>
-              Our Process
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/articles`} className={`relative z-10`}>
-              Articles
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/case-studies`} className={`relative z-10`}>
-              Case Studies
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/labs`} className={`relative z-10`}>
-              Labs
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/custom-vs-template`} className={`relative z-10`}>
-              Custom vs Template
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/brisbane-website-audit`} className={`relative z-10`}>
-              Brisbane Website Audit
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link
-              href={`/cost-of-a-website-in-brisbane`}
-              className={`relative z-10`}
-            >
-              Brisbane Website Costs
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link
-              href={`/wordpress-vs-shopify-vs-custom`}
-              className={`relative z-10`}
-            >
-              WordPress vs Shopify vs Custom
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link
-              href={`/medical-practice-website-requirements`}
-              className={`relative z-10`}
-            >
-              Medical Practice Websites
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link
-              href={`/how-to-choose-a-web-designer-in-brisbane`}
-              className={`relative z-10`}
-            >
-              How to Choose a Web Designer
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-
-          <div className={`group/link relative px-2`}>
-            <Link href={`/launch-your-vision`} className={`relative z-10`}>
-              Launch Your Vision
-            </Link>
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-1 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            ></div>
-          </div>
-        </article>
-
-        <h4 className={`mt-12 text-neutral-400/70`}>Contact</h4>
-        <article
-          className={`mt-6 flex flex-wrap gap-x-6 gap-y-5 max-w-2xl text-sm font-light`}
-        >
-          <div
-            className={`group/link pl-1 pr-2 relative flex items-center gap-1`}
-          >
-            <IconPhoneFilled
-              size={18}
-              className={`text-ravenci-primary group-hover/link:text-white z-10 transition-all duration-300 ease-in-out`}
-            />
-            <Link href={`tel:+61731061836`} className={`relative z-10`}>
-              07 3106 1836
-            </Link>
-
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-0 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            />
-          </div>
-
-          <div
-            className={`group/link pl-1 pr-2 relative flex items-center gap-1`}
-          >
-            <IconDeviceMobileFilled
-              size={18}
-              className={`text-ravenci-primary group-hover/link:text-white z-10 transition-all duration-300 ease-in-out`}
-            />
-            <Link href={`tel:+61426238272`} className={`relative z-10`}>
-              0426 238 272
-            </Link>
-
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-0 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            />
-          </div>
-
-          <div
-            className={`group/link pl-1 pr-2 relative flex items-center gap-1`}
-          >
-            <IconMailFilled
-              size={18}
-              className={`text-ravenci-primary group-hover/link:text-white z-10 transition-all duration-300 ease-in-out`}
-            />
-            <Link href={`/launch-your-vision`} className={`relative z-10`}>
-              Contact Form
-            </Link>
-
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-0 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            />
-          </div>
-
-          <div
-            className={`group/link pl-1 pr-2 relative flex items-center gap-1`}
-          >
-            <IconBrandLinkedin
-              size={18}
-              className={`text-ravenci-primary group-hover/link:text-white z-10 transition-all duration-300 ease-in-out`}
-            />
-            <a
-              href={`https://www.linkedin.com/company/91459779/`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`relative z-10`}
-            >
-              LinkedIn
-            </a>
-
-            <div
-              className={`absolute top-0 left-0 bottom-0 w-0 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            />
-          </div>
-
-          <div className={`basis-full`}>
-            <div
-              className={`group/link inline-flex pl-1 pr-2 relative items-center gap-1`}
-            >
+    // `dark` scopes the footer to the charcoal palette in both themes.
+    <footer
+      id="start"
+      className="dark border-t border-border bg-background px-5 pb-10 pt-16 text-foreground md:px-12 md:pt-[72px] lg:px-20"
+    >
+      <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-14">
+        {/* Row A — brand + link columns */}
+        <div className="flex flex-col gap-12 lg:flex-row lg:gap-14">
+          <div className="lg:w-80">
+            <p className="text-[17px] font-bold tracking-[0.1em]">RAVENCI</p>
+            <p className="mt-4 text-body text-muted-foreground">
+              Custom web development, eCommerce and managed web for Australian
+              businesses. Brisbane, Australia.
+            </p>
+            <div className="mt-6 flex flex-col gap-1.5 text-body">
+              <a href="tel:+61731061836" className="hover:text-accent">
+                07 3106 1836
+              </a>
+              <a href="tel:+61426238272" className="hover:text-accent">
+                0426 238 272
+              </a>
+            </div>
+            <div className="mt-4 flex gap-4 text-small text-accent">
               <a
-                href={`https://www.designrush.com/agency/website-design-development`}
+                href="https://www.linkedin.com/company/91459779/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`relative z-10`}
+                className="hover:underline"
               >
-                As seen on DesignRush
+                LinkedIn
               </a>
-
-              <div
-                className={`absolute top-0 left-0 bottom-0 w-0 group-hover/link:w-full bg-ravenci-primary transition-all duration-300 ease-in-out`}
-              />
+              <span aria-hidden className="text-border">
+                ·
+              </span>
+              <a
+                href="https://www.designrush.com/agency/website-design-development"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                DesignRush
+              </a>
             </div>
           </div>
 
-          <div className={`basis-full`}>
-            <div
-              className={`inline-flex pl-1 pr-2 relative items-center gap-1 opacity-50`}
-            >
-              Brisbane, Australia
-            </div>
+          <div className="grid flex-1 grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-4">
+            {COLUMNS.map((col) => (
+              <div key={col.heading}>
+                <p className="mb-4 font-mono text-label uppercase text-muted-foreground">
+                  {col.heading}
+                </p>
+                <ul className="flex flex-col gap-3">
+                  {col.links.map((link) => (
+                    <li key={link.href + link.label}>
+                      <Link
+                        href={link.href}
+                        className="text-small text-foreground/90 transition-colors duration-fast hover:text-accent"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-        </article>
+        </div>
 
-        {/* Compact email capture */}
-        <FooterEmailCapture />
+        {/* Row B — email capture (existing wiring, restyled shell) */}
+        <div className="border-y border-border py-7">
+          <FooterEmailCapture />
+        </div>
 
-        <article
-          className={`mt-16 pt-3 flex flex-col gap-2 border-t border-neutral-600`}
-        >
-          <p className={`text-xs text-neutral-500`}>
-            © 2018 - {new Date().getFullYear()}{" "}
-            <span className={`font-bold`}>RAVENCI</span> Solutions
-          </p>
-
-          <div className={`text-xs text-neutral-500`}>
-            <Link
-              href={`/privacy-policy`}
-              className={`py-0.5 hover:px-1 hover:text-white hover:bg-ravenci-primary transition-all duration-300`}
-            >
+        {/* Row C — legal bar */}
+        <div className="flex flex-col gap-4 text-small text-muted-foreground md:flex-row md:items-center">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <span>© 2018 – {year} RAVENCI Solutions</span>
+            <Link href="/privacy-policy" className="hover:text-foreground">
               Privacy Policy
             </Link>
-            &nbsp;|&nbsp;
-            <Link
-              href={`/terms-and-conditions`}
-              className={`py-0.5 hover:px-1 hover:text-white hover:bg-ravenci-primary transition-all duration-300`}
-            >
+            <Link href="/terms-and-conditions" className="hover:text-foreground">
               Terms of Service
             </Link>
-            &nbsp;|&nbsp;
-            <Link
-              href={`/accessibility-statement`}
-              className={`py-0.5 hover:px-1 hover:text-white hover:bg-ravenci-primary transition-all duration-300`}
-            >
+            <Link href="/accessibility-statement" className="hover:text-foreground">
               Accessibility
             </Link>
           </div>
-        </article>
-      </section>
+          <span className="font-mono text-label uppercase tracking-[0.08em] text-muted-foreground md:ml-auto">
+            Built once. Built properly.
+          </span>
+        </div>
+      </div>
     </footer>
   );
 }
