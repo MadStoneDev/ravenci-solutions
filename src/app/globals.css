@@ -177,6 +177,20 @@
     animation: rv-assemble var(--dur-base) var(--ease-standard) both;
     animation-delay: calc(var(--i, 0) * var(--stagger));
   }
+
+  /* HeroBuild continuous build loop — opacity only (leaves transform free for
+     cursor parallax), staggered by --i so the blueprint keeps "drafting"
+     itself. Slow, calm, never fully disappears. */
+  @keyframes rv-buildloop {
+    0%   { opacity: 0.18; }
+    14%  { opacity: 1; }
+    82%  { opacity: 1; }
+    100% { opacity: 0.18; }
+  }
+  .rv-buildloop {
+    animation: rv-buildloop 7s var(--ease-standard) infinite;
+    animation-delay: calc(var(--i, 0) * 0.22s);
+  }
 }
 
 /* ==========================================================================
@@ -224,4 +238,6 @@
   }
   .rv-reveal { opacity: 1 !important; transform: none !important; }
   .rv-marquee { animation: none !important; }
+  .rv-assemble,
+  .rv-buildloop { animation: none !important; opacity: 1 !important; }
 }
