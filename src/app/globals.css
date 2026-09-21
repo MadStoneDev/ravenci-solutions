@@ -178,14 +178,17 @@
     animation-delay: calc(var(--i, 0) * var(--stagger));
   }
 
-  /* HeroBuild continuous build loop — opacity only (leaves transform free for
-     cursor parallax), staggered by --i so the blueprint keeps "drafting"
-     itself. Slow, calm, never fully disappears. */
+  /* HeroBuild continuous build loop — each block slides up from below into
+     place, holds, fades out, then slides up again. Staggered by --i so the
+     blueprint keeps drafting itself. The downward reset (90-100%) happens while
+     invisible, so only the upward slide is ever seen. Parallax lives on the
+     card wrapper so it never fights this transform. */
   @keyframes rv-buildloop {
-    0%   { opacity: 0.18; }
-    14%  { opacity: 1; }
-    82%  { opacity: 1; }
-    100% { opacity: 0.18; }
+    0%   { opacity: 0; transform: translateY(16px); }
+    12%  { opacity: 1; transform: translateY(0); }
+    78%  { opacity: 1; transform: translateY(0); }
+    90%  { opacity: 0; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(16px); }
   }
   .rv-buildloop {
     animation: rv-buildloop 7s var(--ease-standard) infinite;
@@ -239,5 +242,5 @@
   .rv-reveal { opacity: 1 !important; transform: none !important; }
   .rv-marquee { animation: none !important; }
   .rv-assemble,
-  .rv-buildloop { animation: none !important; opacity: 1 !important; }
+  .rv-buildloop { animation: none !important; opacity: 1 !important; transform: none !important; }
 }

@@ -28,7 +28,7 @@ export default function HeroBuild() {
 
   return (
     <div ref={ref} onPointerMove={onMove} onPointerLeave={() => setP({ x: 0, y: 0 })} className="flex-1" aria-hidden>
-      <div className="relative rounded-sm border border-border bg-card p-6 shadow-2" style={shift(2)}>
+      <div className="relative rounded-sm border border-border bg-card p-6 shadow-2" style={shift(5)}>
         {/* top width dimension line */}
         <div className="rv-buildloop mb-5 flex items-center gap-2" style={step(0)}>
           <span className="h-2 w-px bg-border" />
@@ -60,10 +60,10 @@ export default function HeroBuild() {
         </div>
 
         {/* media frame */}
-        <div className="rv-buildloop mb-5 aspect-[16/7] rounded-sm border border-dashed border-accent/60 bg-muted" style={{ ...step(4), ...shift(6) }} />
+        <div className="rv-buildloop mb-5 aspect-[16/7] rounded-sm border border-dashed border-accent/60 bg-muted" style={step(4)} />
 
         {/* feature cards */}
-        <div className="rv-buildloop mb-5 grid grid-cols-3 gap-3" style={{ ...step(5), ...shift(3) }}>
+        <div className="rv-buildloop mb-5 grid grid-cols-3 gap-3" style={step(5)}>
           {[0, 1, 2].map((i) => (
             <div key={i} className="rounded-sm border border-border p-3">
               <div className={`mb-2 h-1.5 w-8 rounded-sm ${i === 0 ? "bg-accent" : "bg-muted"}`} />
