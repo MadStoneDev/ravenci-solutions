@@ -57,7 +57,7 @@ export default function MainFooter() {
       className="dark border-t border-border bg-background px-5 pb-10 pt-16 text-foreground md:px-12 md:pt-[72px] lg:px-20"
     >
       <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-14">
-        {/* Row A — brand + link columns */}
+        {/* Row A: brand + link columns */}
         <div className="flex flex-col gap-12 lg:flex-row lg:gap-14">
           <div className="lg:w-80">
             <p className="text-[17px] font-bold tracking-[0.1em]">RAVENCI</p>
@@ -119,12 +119,12 @@ export default function MainFooter() {
           </div>
         </div>
 
-        {/* Row B — email capture (existing wiring, restyled shell) */}
+        {/* Row B: email capture (existing wiring, restyled shell) */}
         <div className="border-y border-border py-7">
           <FooterEmailCapture />
         </div>
 
-        {/* Row C — legal bar */}
+        {/* Row C: legal bar */}
         <div className="flex flex-col gap-4 text-small text-muted-foreground md:flex-row md:items-center">
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <span>© 2018 – {year} RAVENCI Solutions</span>

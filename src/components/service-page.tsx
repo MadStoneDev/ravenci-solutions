@@ -136,7 +136,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       <section id="included" className={`${SECTION} border-b border-border`}>
         <div className="mb-10 flex flex-col gap-3">
           <SectionLabel index="02" label="Included" />
-          <h2 className="text-heading-m text-foreground">In every build, not as an upsell</h2>
+          <h2 className="text-heading-m text-foreground">Included in every build</h2>
         </div>
         <ul className="grid grid-cols-1 border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">
           {data.included.map((item, i) => (
@@ -217,7 +217,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
           <div className="flex flex-col gap-4 lg:w-[360px] lg:shrink-0">
             <SectionLabel index="05" label="Questions" />
-            <h2 className="text-heading-m text-foreground">The ones I get asked every time</h2>
+            <h2 className="text-heading-m text-foreground">Common questions</h2>
             <p className="text-small text-muted-foreground">
               Something not here? Ring me.{" "}
               <a href="tel:+61731061836" className="text-accent hover:underline">

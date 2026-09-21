@@ -1,6 +1,6 @@
 // Data model for the data-driven service template (BRIEF §8).
 // Props: name, outcome, included[], pricingAnchor, relatedWork[], faq[],
-// ctaVariant — plus an optional process timeline and SEO/JSON-LD fields.
+// ctaVariant, plus an optional process timeline and SEO/JSON-LD fields.
 // Copy follows design/DECISIONS.md: genuine copy only, WCAG 2.1 AA, "from
 // three weeks" framing, no invented figures.
 
@@ -85,7 +85,7 @@ export const WEB_DEVELOPMENT: ServicePageData = {
   outcome:
     "One senior developer designs it around your business and hand-builds it. The whole website, not just the look.",
   supporting:
-    "Your site is a structure. It carries load — traffic, content, integrations, five years of edits by people who aren't developers. I build it so it holds.",
+    "Your site has to carry real load: traffic, content, integrations, and years of edits by people who aren't developers. I build it to handle all of that.",
   heroCtas: {
     primary: { label: "Request a proposal", href: "/launch-your-vision" },
     secondary: { label: "What's included", href: "#included" },
@@ -119,12 +119,12 @@ export const WEB_DEVELOPMENT: ServicePageData = {
     {
       title: "SEO built in",
       description:
-        "Structure, markup and schema done at build time so the content has somewhere to land.",
+        "Structure, markup and schema done while the site is built, not bolted on afterwards.",
     },
     {
       title: "Accessibility to WCAG 2.1 AA",
       description:
-        "Keyboard navigation, real contrast, proper labels. Increasingly a legal question, not a nice-to-have.",
+        "Keyboard navigation, proper contrast, and real labels. It's becoming a legal requirement in Australia.",
     },
     {
       title: "Video training, made for you",
@@ -144,12 +144,12 @@ export const WEB_DEVELOPMENT: ServicePageData = {
     {
       title: "Revision rounds",
       description:
-        "Written into every project. Changing your mind at design stage is the cheap time to do it.",
+        "Built into every project. The design stage is the right time to change your mind.",
     },
   ],
   process: {
-    heading: "First look in about three weeks — then feedback, final touches, and live.",
-    note: "Once the design's signed off I start building. You'll see the site on a private staging link around three weeks in, then we run two rounds of feedback and the final polish before going live. Bigger sites take longer — I scope the exact timeline with the fixed price, so you know before we start.",
+    heading: "First look in about three weeks. Then feedback, final touches, and live.",
+    note: "Once the design's signed off I start building. You'll see the site on a private staging link around three weeks in, then we run two rounds of feedback and the final polish before going live. Bigger sites take longer. I scope the exact timeline with the fixed price, so you know before we start.",
     steps: [
       {
         title: "Design sign-off",
@@ -157,7 +157,7 @@ export const WEB_DEVELOPMENT: ServicePageData = {
       },
       {
         title: "Development",
-        description: "I build the site — clean code, your CMS, integrations and content.",
+        description: "I build the site: clean code, your CMS, integrations and content.",
       },
       {
         title: "First look",
@@ -165,7 +165,7 @@ export const WEB_DEVELOPMENT: ServicePageData = {
       },
       {
         title: "Feedback",
-        description: "Two rounds. You review, I refine — not an endless drip of change requests.",
+        description: "Two rounds. You review it, I make the changes.",
       },
       {
         title: "Final touches",
@@ -216,7 +216,7 @@ export const WEB_DEVELOPMENT: ServicePageData = {
     {
       question: "What makes this more expensive than a $999 website?",
       answer:
-        "A $999 site is one page, no revisions, and a template you will be rebuilding inside two years. You are not buying pages. You are buying a business asset that keeps working after launch day.",
+        "A $999 site is one page, no revisions, and a template you'll be replacing inside two years. What I build is meant to still be doing its job years after launch.",
     },
     {
       question: "Do you handle hosting and domains too?",
