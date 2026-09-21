@@ -1,5 +1,9 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import LaunchYourVisionStepper from "@/components/launch-your-vision-stepper";
+import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata = {
   title: "Launch Your Vision | RAVENCI Solutions",
@@ -19,21 +23,19 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className={`flex flex-col`}>
-      <section
-        className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 justify-center bg-white`}
-      >
-        <article className={`col-span-12 flex flex-col`}>
-          <h1
-            className={`max-w-[660px] text-4xl md:text-5xl lg:text-h1 font-medium`}
-          >
-            Launch Your Vision
-          </h1>
-          <h2
-            className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light text-neutral-500`}
-          >
-            Two minutes. I&apos;ll come back with a tailored proposal.
-          </h2>
+    <main className="flex flex-col">
+      <section className={SECTION}>
+        <article className="flex flex-col">
+          <div className="flex max-w-3xl flex-col gap-4">
+            <Breadcrumbs items={[{ label: "Launch Your Vision" }]} />
+            <SectionLabel label="Start a project" tick />
+            <h1 className="text-display-l text-foreground">
+              Launch Your Vision
+            </h1>
+            <p className="max-w-2xl text-lead text-muted-foreground">
+              Two minutes. I&apos;ll come back with a tailored proposal.
+            </p>
+          </div>
 
           <LaunchYourVisionStepper />
         </article>

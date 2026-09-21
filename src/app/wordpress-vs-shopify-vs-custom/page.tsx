@@ -6,6 +6,10 @@ import { IconCheck, IconX, IconMinus } from "@tabler/icons-react";
 
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+import { Button } from "@/components/ui/button";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata: Metadata = {
   title: "WordPress vs Shopify vs Custom | RAVENCI Solutions",
@@ -108,23 +112,23 @@ const matrixRows: {
 function Cell({ value }: { value: CellValue }) {
   if (value === "yes")
     return (
-      <span className="inline-flex items-center gap-1.5 text-sm text-green-700">
-        <IconCheck size={18} className="flex-shrink-0" /> Yes
+      <span className="inline-flex items-center gap-1.5 text-small font-medium text-accent">
+        <IconCheck size={18} className="shrink-0" /> Yes
       </span>
     );
   if (value === "partial")
     return (
-      <span className="inline-flex items-center gap-1.5 text-sm text-yellow-700">
-        <IconMinus size={18} className="flex-shrink-0" /> Partial
+      <span className="inline-flex items-center gap-1.5 text-small text-muted-foreground">
+        <IconMinus size={18} className="shrink-0" /> Partial
       </span>
     );
   if (value === "no")
     return (
-      <span className="inline-flex items-center gap-1.5 text-sm text-red-700">
-        <IconX size={18} className="flex-shrink-0" /> No
+      <span className="inline-flex items-center gap-1.5 text-small text-muted-foreground">
+        <IconX size={18} className="shrink-0" /> No
       </span>
     );
-  return <span className="text-sm text-neutral-700">{value}</span>;
+  return <span className="text-small text-muted-foreground">{value}</span>;
 }
 
 const platforms = [
@@ -326,27 +330,25 @@ export default function PlatformComparisonPage() {
   return (
     <main className="flex flex-col">
       {/* Hero */}
-      <section className="content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 bg-white">
-        <article className="max-w-3xl flex flex-col gap-2">
+      <section className={`${SECTION} border-b border-border`}>
+        <article className="flex max-w-3xl flex-col gap-4">
           <Breadcrumbs
             items={[{ label: "WordPress vs Shopify vs Custom Next.js" }]}
           />
-          <span className="mt-2 text-xs font-medium tracking-wider uppercase text-ravenci-primary">
-            Platform Comparison, 2026
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
+          <SectionLabel label="Platform Comparison, 2026" tick />
+          <h1 className="text-display-l text-foreground">
             WordPress vs Shopify vs Custom Next.js
           </h1>
-          <h2 className="max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light">
+          <p className="text-lead text-muted-foreground">
             Which platform is right for your Australian business?
-          </h2>
-          <p className="mt-6 max-w-2xl text-neutral-500/80">
+          </p>
+          <p className="max-w-prose text-body text-muted-foreground">
             For most Australian businesses in 2026,{" "}
-            <strong className="text-ravenci-dark">WordPress</strong> remains the
+            <strong className="text-foreground">WordPress</strong> remains the
             safest default for content-heavy sites,{" "}
-            <strong className="text-ravenci-dark">Shopify</strong> dominates
+            <strong className="text-foreground">Shopify</strong> dominates
             standard e-commerce, and{" "}
-            <strong className="text-ravenci-dark">Custom Next.js</strong> wins
+            <strong className="text-foreground">Custom Next.js</strong> wins
             where performance, custom functionality or differentiation matter
             most. Choosing the wrong platform can cost $5,000 to $15,000 to fix
             within 18 months. Here&apos;s an honest comparison from an agency
@@ -356,39 +358,35 @@ export default function PlatformComparisonPage() {
       </section>
 
       {/* Comparison matrix */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white">
-        <h3 className="mb-4 font-serif text-h3 font-bold">
-          Quick Comparison
-        </h3>
-        <p className="mb-10 max-w-2xl text-neutral-400">
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="01" label="Quick comparison" />
+        <h2 className="mt-3 text-display-m text-foreground">Quick Comparison</h2>
+        <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
           The full feature-by-feature comparison. Detailed breakdowns and
           recommendations follow below.
         </p>
-        <div className="overflow-x-auto">
-          <table className="w-full bg-white text-ravenci-dark rounded-lg overflow-hidden">
+        <div className="overflow-x-auto rounded-sm border border-border">
+          <table className="w-full bg-card text-foreground">
             <thead>
-              <tr className="bg-neutral-200/70">
-                <th className="px-4 py-4 text-left text-sm font-bold">
+              <tr className="border-b border-border bg-muted">
+                <th className="px-4 py-4 text-left text-small font-semibold text-foreground">
                   Feature
                 </th>
-                <th className="px-4 py-4 text-left text-sm font-bold">
+                <th className="px-4 py-4 text-left text-small font-semibold text-foreground">
                   WordPress
                 </th>
-                <th className="px-4 py-4 text-left text-sm font-bold">
+                <th className="px-4 py-4 text-left text-small font-semibold text-foreground">
                   Shopify
                 </th>
-                <th className="px-4 py-4 text-left text-sm font-bold">
+                <th className="px-4 py-4 text-left text-small font-semibold text-foreground">
                   Custom Next.js
                 </th>
               </tr>
             </thead>
             <tbody>
               {matrixRows.map((row, index) => (
-                <tr
-                  key={index}
-                  className="border-t border-neutral-200/70 hover:bg-neutral-100/40"
-                >
-                  <td className="px-4 py-3 text-sm font-medium">
+                <tr key={index} className="border-t border-border">
+                  <td className="px-4 py-3 align-top text-small font-medium text-foreground">
                     {row.feature}
                   </td>
                   <td className="px-4 py-3 align-top">
@@ -408,73 +406,78 @@ export default function PlatformComparisonPage() {
       </section>
 
       {/* Platform deep dives */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
-        <h3 className="mb-4 font-serif text-h3 font-bold">
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <SectionLabel index="02" label="When to choose each" tone="muted" />
+        <h2 className="mt-3 text-display-m text-foreground">
           When to Choose Each Platform
-        </h3>
-        <p className="mb-10 max-w-2xl text-neutral-500/80">
-          The case for and against each platform, including when{" "}
-          <em>not</em> to pick it. Most agencies skip the &quot;avoid&quot;
-          section. I don&apos;t.
+        </h2>
+        <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
+          The case for and against each platform, including when <em>not</em> to
+          pick it. Most agencies skip the &quot;avoid&quot; section. I
+          don&apos;t.
         </p>
         <div className="space-y-8">
           {platforms.map((p, index) => (
             <div
               key={index}
-              className="p-6 md:p-8 bg-white rounded-lg border border-neutral-200"
+              className="rounded-sm border border-white/10 bg-card p-6 md:p-8"
             >
-              <h4 className="text-2xl md:text-3xl font-bold text-ravenci-dark mb-2">
-                {p.name}
-              </h4>
-              <p className="mb-6 text-neutral-500 italic">{p.tagline}</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+              <h3 className="mb-2 text-heading-m text-foreground">{p.name}</h3>
+              <p className="mb-6 text-body italic text-muted-foreground">
+                {p.tagline}
+              </p>
+              <div className="mb-6 grid grid-cols-1 gap-8 md:grid-cols-2">
                 <div>
-                  <p className="mb-3 text-sm font-bold text-ravenci-dark">
+                  <p className="mb-3 text-small font-semibold text-foreground">
                     Choose {p.name} when:
                   </p>
                   <ul className="space-y-2">
                     {p.chooseWhen.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm">
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-small text-muted-foreground"
+                      >
                         <IconCheck
                           size={18}
-                          className="p-0.5 bg-green-600 rounded-full text-white flex-shrink-0 mt-0.5"
+                          className="mt-0.5 shrink-0 text-foreground"
                         />
-                        <span className="text-neutral-600">{item}</span>
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <p className="mb-3 text-sm font-bold text-ravenci-dark">
+                  <p className="mb-3 text-small font-semibold text-foreground">
                     Avoid {p.name} when:
                   </p>
                   <ul className="space-y-2">
                     {p.avoidWhen.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm">
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-small text-muted-foreground"
+                      >
                         <IconX
                           size={18}
-                          className="p-0.5 bg-red-500 rounded-full text-white flex-shrink-0 mt-0.5"
+                          className="mt-0.5 shrink-0 text-muted-foreground"
                         />
-                        <span className="text-neutral-600">{item}</span>
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
-              <div className="pt-6 border-t border-neutral-200 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 border-t border-white/10 pt-6 md:grid-cols-2">
                 <div>
-                  <p className="mb-2 text-xs font-bold tracking-wider uppercase text-neutral-500">
+                  <p className="mb-2 font-mono text-label uppercase text-muted-foreground">
                     Real costs (AU, 2026)
                   </p>
-                  <p className="text-sm text-neutral-700 leading-relaxed">
-                    {p.costs}
-                  </p>
+                  <p className="text-small text-muted-foreground">{p.costs}</p>
                 </div>
                 <div>
-                  <p className="mb-2 text-xs font-bold tracking-wider uppercase text-neutral-500">
+                  <p className="mb-2 font-mono text-label uppercase text-muted-foreground">
                     Common use cases
                   </p>
-                  <p className="text-sm text-neutral-700 leading-relaxed">
+                  <p className="text-small text-muted-foreground">
                     {p.examples}
                   </p>
                 </div>
@@ -485,32 +488,35 @@ export default function PlatformComparisonPage() {
       </section>
 
       {/* Decision framework */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-white">
-        <h3 className="mb-4 font-serif text-h3 font-bold">
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="03" label="Decision framework" />
+        <h2 className="mt-3 text-display-m text-foreground">
           The Five-Minute Decision Framework
-        </h3>
-        <p className="mb-10 max-w-2xl text-neutral-500/80">
+        </h2>
+        <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
           Six common scenarios and the platform that usually wins. Not absolute
           (your situation may differ), but a strong starting point.
         </p>
-        <div className="space-y-4 max-w-4xl">
+        <div className="max-w-4xl space-y-4">
           {decisionFramework.map((item, index) => (
             <div
               key={index}
-              className="p-5 md:p-6 bg-neutral-100/60 rounded-lg border border-neutral-200/70 grid grid-cols-1 md:grid-cols-12 gap-4"
+              className="grid grid-cols-1 gap-4 rounded-sm border border-border bg-card p-5 md:grid-cols-12 md:p-6"
             >
               <div className="md:col-span-5">
-                <p className="text-sm font-medium text-ravenci-dark">
+                <p className="text-body font-medium text-foreground">
                   &quot;{item.scenario}&quot;
                 </p>
               </div>
               <div className="md:col-span-2">
-                <span className="inline-block px-3 py-1 bg-ravenci-primary text-white text-sm font-bold rounded-full">
+                <span className="inline-block rounded-sm bg-accent px-3 py-1 text-small font-semibold text-accent-foreground">
                   {item.answer}
                 </span>
               </div>
               <div className="md:col-span-5">
-                <p className="text-sm text-neutral-600">{item.reason}</p>
+                <p className="text-small text-muted-foreground">
+                  {item.reason}
+                </p>
               </div>
             </div>
           ))}
@@ -518,28 +524,27 @@ export default function PlatformComparisonPage() {
       </section>
 
       {/* Common mistakes */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-primary text-white">
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
         <div className="max-w-4xl">
-          <h3 className="mb-4 font-serif text-h3 font-bold">
+          <SectionLabel index="04" label="Common mistakes" tone="muted" />
+          <h2 className="mt-3 text-display-m text-foreground">
             Five Common Platform Mistakes
-          </h3>
-          <p className="mb-10 max-w-2xl text-white/85 leading-relaxed">
-            Patterns I&apos;ve seen across hundreds of Australian small
-            business projects. Each one costs money to fix later, usually more
-            than the original build saved.
+          </h2>
+          <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
+            Patterns I&apos;ve seen across hundreds of Australian small business
+            projects. Each one costs money to fix later, usually more than the
+            original build saved.
           </p>
           <div className="space-y-6">
             {commonMistakes.map((m, index) => (
               <div
                 key={index}
-                className="p-5 md:p-6 bg-white/10 border border-white/15 rounded-lg"
+                className="rounded-sm border border-white/10 bg-card p-5 md:p-6"
               >
-                <h4 className="mb-2 font-bold text-white">
+                <h3 className="mb-2 text-heading-s text-foreground">
                   {index + 1}. {m.mistake}
-                </h4>
-                <p className="text-sm text-white/85 leading-relaxed">
-                  {m.detail}
-                </p>
+                </h3>
+                <p className="text-body text-muted-foreground">{m.detail}</p>
               </div>
             ))}
           </div>
@@ -547,98 +552,100 @@ export default function PlatformComparisonPage() {
       </section>
 
       {/* RAVENCI positioning */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+      <section className={`${SECTION} border-b border-border`}>
         <div className="max-w-3xl">
-          <h3 className="mb-6 font-serif text-h3 font-bold">
+          <SectionLabel index="05" label="How RAVENCI picks" />
+          <h2 className="mt-3 text-display-m text-foreground">
             How RAVENCI Picks the Right Platform
-          </h3>
-          <div className="space-y-4 text-neutral-600 leading-relaxed">
+          </h2>
+          <div className="mt-6 flex flex-col gap-4 text-body text-muted-foreground">
             <p>
-              I build on all three (Custom Next.js, WordPress, and Shopify),
-              plus BigCommerce, Plasmic, and Strapi when the project calls for
-              them. As a <strong>Shopify Partner</strong>, a{" "}
-              <strong>BigCommerce Partner</strong>, and a{" "}
-              <strong>Synergy Wholesale Partner</strong>, I get better pricing
-              on platforms and infrastructure that I pass through to clients.
+              I build on all three (Custom Next.js, WordPress, and Shopify), plus
+              BigCommerce, Plasmic, and Strapi when the project calls for them.
+              As a <strong className="text-foreground">Shopify Partner</strong>,
+              a{" "}
+              <strong className="text-foreground">BigCommerce Partner</strong>,
+              and a{" "}
+              <strong className="text-foreground">
+                Synergy Wholesale Partner
+              </strong>
+              , I get better pricing on platforms and infrastructure that I pass
+              through to clients.
             </p>
             <p>
-              My recommendation process is the same on every project: scope
-              the actual business need, look at content volume and update
-              cadence, look at e-commerce requirements, look at performance
-              and integration needs, and then recommend the platform that fits
-              not the one that&apos;s easiest for me to build. I&apos;ll
-              tell you when WordPress is the right answer even when custom
-              would be more profitable for me.
+              My recommendation process is the same on every project: scope the
+              actual business need, look at content volume and update cadence,
+              look at e-commerce requirements, look at performance and
+              integration needs, and then recommend the platform that fits not
+              the one that&apos;s easiest for me to build. I&apos;ll tell you
+              when WordPress is the right answer even when custom would be more
+              profitable for me.
             </p>
             <p>
               See my{" "}
               <Link
                 href="/cost-of-a-website-in-brisbane"
-                className="text-ravenci-primary hover:underline"
+                className="text-accent hover:underline"
               >
                 Brisbane website cost guide
               </Link>{" "}
               for honest pricing across all platforms, or{" "}
               <Link
                 href="/web-development"
-                className="text-ravenci-primary hover:underline"
+                className="text-accent hover:underline"
               >
                 see my web development packages
               </Link>{" "}
               for what I deliver and at what price point.
             </p>
           </div>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/launch-your-vision"
-              className="px-6 py-3 grid place-content-center bg-ravenci-dark rounded-full text-white hover:bg-ravenci-primary transition-colors duration-300"
-            >
-              Get a Platform Recommendation
-            </Link>
-            <Link
-              href="/web-development"
-              className="px-6 py-3 grid place-content-center border-2 border-ravenci-dark rounded-full text-ravenci-dark hover:bg-ravenci-dark hover:text-white transition-colors duration-300"
-            >
-              See Website Design Packages
-            </Link>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <Button asChild size="lg" variant="primary">
+              <Link href="/launch-your-vision">
+                Get a Platform Recommendation
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/web-development">See Website Design Packages</Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 flex flex-col items-center text-center bg-white">
-        <h2 className="mb-4 text-3xl md:text-4xl font-medium">
-          Still Not Sure Which Platform?
+      {/* FAQ */}
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="06" label="FAQ" />
+        <h2 className="mt-3 text-display-m text-foreground">
+          Frequently Asked Questions
         </h2>
-        <p className="mb-10 max-w-lg text-neutral-500/80">
-          Tell me about your business in 2 minutes and I&apos;ll send back a
-          tailored platform recommendation with realistic pricing. No sales
-          pressure.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href="/launch-your-vision"
-            className="px-8 py-3 grid place-content-center bg-ravenci-primary rounded-full text-white hover:bg-ravenci-primary/85 transition-colors duration-300"
-          >
-            Launch Your Vision
-          </Link>
-          <Link
-            href="/cost-of-a-website-in-brisbane"
-            className="px-8 py-3 grid place-content-center border-2 border-ravenci-dark rounded-full text-ravenci-dark hover:bg-ravenci-dark hover:text-white transition-colors duration-300"
-          >
-            See Pricing Guide
-          </Link>
+        <div className="mt-8 max-w-3xl">
+          <Accordion titleClassName="py-6 text-lg" items={faqItems} />
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-neutral-100">
-        <h2 className="font-serif text-h3">Frequently Asked Questions</h2>
-        <Accordion titleClassName="py-6 text-lg" items={faqItems} />
+      {/* CTA */}
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="text-display-m text-foreground">
+              Still Not Sure Which Platform?
+            </h2>
+            <p className="mt-4 text-body text-muted-foreground">
+              Tell me about your business in 2 minutes and I&apos;ll send back a
+              tailored platform recommendation with realistic pricing. No sales
+              pressure.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <Button asChild size="lg" variant="primary">
+              <Link href="/launch-your-vision">Launch Your Vision</Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/cost-of-a-website-in-brisbane">See Pricing Guide</Link>
+            </Button>
+          </div>
+        </div>
       </section>
-
-      {/* Spacer */}
-      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[80px] bg-neutral-100" />
 
       {/* BreadcrumbList JSON-LD */}
       <script

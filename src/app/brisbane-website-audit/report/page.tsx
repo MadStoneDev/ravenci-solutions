@@ -12,6 +12,8 @@ import {
   auditFaqItems,
 } from "@/data/brisbane-audit";
 import PrintButton from "@/components/print-button";
+import SectionLabel from "@/components/section-label";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title:
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function BrisbaneAuditReportPage() {
   return (
-    <main className="report-page bg-white text-ravenci-dark min-h-screen">
+    <main className="report-page min-h-screen bg-background text-foreground">
       {/* Print stylesheet, applies when user prints or saves as PDF */}
       <style
         dangerouslySetInnerHTML={{
@@ -52,42 +54,40 @@ export default function BrisbaneAuditReportPage() {
       />
 
       {/* Floating print button, hidden in print */}
-      <div className="no-print fixed top-6 right-6 z-50 flex flex-col gap-2">
+      <div className="no-print fixed right-6 top-6 z-50 flex flex-col gap-2">
         <PrintButton />
         <Link
           href="/brisbane-website-audit"
-          className="px-5 py-3 bg-white text-ravenci-dark border border-neutral-300 rounded-full shadow-lg hover:bg-neutral-100 transition-colors text-sm font-medium text-center"
+          className="rounded-sm border border-border bg-card px-5 py-3 text-center text-small font-medium text-foreground shadow-lg transition-colors hover:bg-muted"
         >
           Back to summary
         </Link>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 md:px-10 py-12 md:py-20">
+      <div className="mx-auto max-w-4xl px-6 py-12 md:px-10 md:py-20">
         {/* Cover */}
-        <header className="pb-10 mb-12 border-b-2 border-ravenci-dark">
-          <p className="text-xs font-bold tracking-widest uppercase text-ravenci-primary">
-            Original Research · {AUDIT_META.conductedDate}
-          </p>
-          <h1 className="mt-4 text-4xl md:text-5xl font-medium leading-tight">
-            We Audited 50 Brisbane Business Websites
+        <header className="mb-12 border-b-2 border-foreground pb-10">
+          <SectionLabel label={`Original research · ${AUDIT_META.conductedDate}`} />
+          <h1 className="mt-4 text-display-l text-foreground">
+            We audited 50 Brisbane business websites
           </h1>
-          <p className="mt-2 text-xl md:text-2xl font-light text-neutral-600">
+          <p className="mt-2 text-lead text-muted-foreground">
             The full findings: performance, SEO, mobile, security, accessibility.
           </p>
           <div className="mt-8 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="text-sm text-neutral-500">Published by</p>
-              <p className="text-lg font-bold">RAVENCI Solutions</p>
-              <p className="text-sm text-neutral-500">
+              <p className="text-small text-muted-foreground">Published by</p>
+              <p className="text-heading-s text-foreground">RAVENCI Solutions</p>
+              <p className="text-small text-muted-foreground">
                 Brisbane, Australia · ravenci.solutions
               </p>
             </div>
             <div className="text-right">
-              <p className="text-sm text-neutral-500">Sample size</p>
-              <p className="text-lg font-bold">
+              <p className="text-small text-muted-foreground">Sample size</p>
+              <p className="text-heading-s text-foreground">
                 {AUDIT_META.totalSitesAudited} websites
               </p>
-              <p className="text-sm text-neutral-500">
+              <p className="text-small text-muted-foreground">
                 {AUDIT_META.industries} industries
               </p>
             </div>
@@ -95,48 +95,44 @@ export default function BrisbaneAuditReportPage() {
         </header>
 
         {/* Executive summary */}
-        <section className="mb-14 avoid-break">
-          <h2 className="text-2xl md:text-3xl font-medium mb-4 border-l-4 border-ravenci-primary pl-4">
-            Executive Summary
+        <section className="avoid-break mb-14">
+          <h2 className="mb-4 border-l-4 border-accent pl-4 text-heading-m text-foreground">
+            Executive summary
           </h2>
-          <p className="text-base leading-relaxed text-neutral-700">
+          <p className="text-body text-muted-foreground">
             Between January and February 2026, RAVENCI Solutions audited 50
             randomly selected Brisbane business websites across 7 industries.
             The average mobile PageSpeed score was{" "}
-            <strong>38 out of 100</strong>. 72% scored below 50. 64% had no
-            structured data at all. 42% had SSL issues. The bar for Brisbane
-            business websites in 2026 is surprisingly low, and the
-            opportunity to differentiate is correspondingly large.
+            <strong className="text-foreground">38 out of 100</strong>. 72%
+            scored below 50. 64% had no structured data at all. 42% had SSL
+            issues. The bar for Brisbane business websites in 2026 is
+            surprisingly low, and the opportunity to differentiate is
+            correspondingly large.
           </p>
         </section>
 
         {/* Headline stats */}
-        <section className="mb-14 avoid-break">
-          <h2 className="text-2xl md:text-3xl font-medium mb-6 border-l-4 border-ravenci-primary pl-4">
-            The Headline Numbers
+        <section className="avoid-break mb-14">
+          <h2 className="mb-6 border-l-4 border-accent pl-4 text-heading-m text-foreground">
+            The headline numbers
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {auditStats.map((s, i) => (
               <div
                 key={i}
-                className={`p-4 border-l-4 ${
-                  s.severity === "critical"
-                    ? "border-red-500 bg-red-50"
-                    : "border-yellow-500 bg-yellow-50"
-                }`}
+                className="rounded-sm border border-border bg-card p-4"
               >
                 <div className="flex items-baseline gap-3">
-                  <span className="text-3xl font-bold">{s.stat}</span>
+                  <span className="tnum text-metric text-foreground">
+                    {s.stat}
+                  </span>
                   <IconAlertTriangle
                     size={18}
-                    className={
-                      s.severity === "critical"
-                        ? "text-red-600"
-                        : "text-yellow-600"
-                    }
+                    aria-hidden
+                    className="text-muted-foreground"
                   />
                 </div>
-                <p className="mt-1 text-sm text-neutral-700 leading-snug">
+                <p className="mt-1 text-small text-muted-foreground">
                   {s.label}
                 </p>
               </div>
@@ -145,42 +141,37 @@ export default function BrisbaneAuditReportPage() {
         </section>
 
         {/* Category breakdown */}
-        <section className="mb-14 page-break-before">
-          <h2 className="text-2xl md:text-3xl font-medium mb-6 border-l-4 border-ravenci-primary pl-4">
-            Category-by-Category Breakdown
+        <section className="page-break-before mb-14">
+          <h2 className="mb-6 border-l-4 border-accent pl-4 text-heading-m text-foreground">
+            Category-by-category breakdown
           </h2>
           <div className="space-y-6">
             {categoryBreakdown.map((cat, i) => (
               <div key={i} className="avoid-break">
-                <div className="flex flex-wrap items-baseline gap-3 mb-2">
-                  <h3 className="text-lg font-bold">{cat.category}</h3>
-                  <span
-                    className={`px-3 py-0.5 text-sm font-bold rounded-full ${
-                      parseInt(cat.score) < 40
-                        ? "bg-red-100 text-red-700"
-                        : parseInt(cat.score) < 50
-                          ? "bg-yellow-100 text-yellow-700"
-                          : "bg-green-100 text-green-700"
-                    }`}
-                  >
+                <div className="mb-2 flex flex-wrap items-baseline gap-3">
+                  <h3 className="text-heading-s text-foreground">
+                    {cat.category}
+                  </h3>
+                  <span className="rounded-sm border border-border bg-muted px-3 py-0.5 text-small font-medium text-foreground">
                     Avg {cat.score}
                   </span>
                 </div>
-                <p className="text-sm text-neutral-700 leading-relaxed mb-3">
+                <p className="mb-3 text-body text-muted-foreground">
                   {cat.detail}
                 </p>
-                <p className="text-xs font-bold uppercase tracking-wider text-neutral-500 mb-2">
+                <p className="mb-2 font-mono text-label uppercase text-muted-foreground">
                   Recommendations
                 </p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
                   {cat.recommendations.map((r, j) => (
                     <li
                       key={j}
-                      className="flex items-start gap-2 text-sm text-neutral-700"
+                      className="flex items-start gap-2 text-small text-muted-foreground"
                     >
                       <IconCheck
                         size={14}
-                        className="mt-1 text-ravenci-primary flex-shrink-0"
+                        aria-hidden
+                        className="mt-1 shrink-0 text-accent"
                       />
                       <span>{r}</span>
                     </li>
@@ -192,33 +183,27 @@ export default function BrisbaneAuditReportPage() {
         </section>
 
         {/* Industry breakdown */}
-        <section className="mb-14 avoid-break">
-          <h2 className="text-2xl md:text-3xl font-medium mb-6 border-l-4 border-ravenci-primary pl-4">
-            Performance by Industry
+        <section className="avoid-break mb-14">
+          <h2 className="mb-6 border-l-4 border-accent pl-4 text-heading-m text-foreground">
+            Performance by industry
           </h2>
           <div className="space-y-3">
             {industryBreakdown.map((ind, i) => (
-              <div key={i} className="flex items-center gap-3 text-sm">
-                <span className="w-44 min-w-[120px] font-medium">
+              <div key={i} className="flex items-center gap-3 text-small">
+                <span className="w-44 min-w-[120px] font-medium text-foreground">
                   {ind.industry}
                 </span>
-                <div className="flex-1 h-7 bg-neutral-100 rounded-full overflow-hidden">
+                <div className="h-7 flex-1 overflow-hidden rounded-sm bg-muted">
                   <div
-                    className={`h-full rounded-full flex items-center justify-end pr-2 ${
-                      ind.avgScore < 40
-                        ? "bg-red-400"
-                        : ind.avgScore < 50
-                          ? "bg-yellow-400"
-                          : "bg-green-400"
-                    }`}
+                    className="flex h-full items-center justify-end rounded-sm bg-foreground pr-2"
                     style={{ width: `${ind.avgScore}%` }}
                   >
-                    <span className="text-xs font-bold text-white">
+                    <span className="tnum text-small font-semibold text-background">
                       {ind.avgScore}
                     </span>
                   </div>
                 </div>
-                <span className="text-xs text-neutral-500 w-16 text-right">
+                <span className="w-16 text-right text-small text-muted-foreground">
                   {ind.count} sites
                 </span>
               </div>
@@ -227,17 +212,17 @@ export default function BrisbaneAuditReportPage() {
         </section>
 
         {/* Key takeaways */}
-        <section className="mb-14 page-break-before">
-          <h2 className="text-2xl md:text-3xl font-medium mb-6 border-l-4 border-ravenci-primary pl-4">
-            Key Takeaways
+        <section className="page-break-before mb-14">
+          <h2 className="mb-6 border-l-4 border-accent pl-4 text-heading-m text-foreground">
+            Key takeaways
           </h2>
           <ol className="space-y-4">
             {keyTakeaways.map((t, i) => (
               <li key={i} className="avoid-break">
-                <h3 className="text-lg font-bold">
+                <h3 className="text-heading-s text-foreground">
                   {i + 1}. {t.title}
                 </h3>
-                <p className="mt-1 text-sm text-neutral-700 leading-relaxed">
+                <p className="mt-1 text-body text-muted-foreground">
                   {t.detail}
                 </p>
               </li>
@@ -246,15 +231,15 @@ export default function BrisbaneAuditReportPage() {
         </section>
 
         {/* Methodology / FAQ */}
-        <section className="mb-14 avoid-break">
-          <h2 className="text-2xl md:text-3xl font-medium mb-6 border-l-4 border-ravenci-primary pl-4">
+        <section className="avoid-break mb-14">
+          <h2 className="mb-6 border-l-4 border-accent pl-4 text-heading-m text-foreground">
             Methodology
           </h2>
           <div className="space-y-4">
             {auditFaqItems.map((f, i) => (
               <div key={i} className="avoid-break">
-                <h3 className="text-base font-bold">{f.title}</h3>
-                <p className="mt-1 text-sm text-neutral-700 leading-relaxed">
+                <h3 className="text-heading-s text-foreground">{f.title}</h3>
+                <p className="mt-1 text-body text-muted-foreground">
                   {f.content}
                 </p>
               </div>
@@ -263,42 +248,43 @@ export default function BrisbaneAuditReportPage() {
         </section>
 
         {/* About / CTA */}
-        <section className="mt-16 pt-10 border-t-2 border-ravenci-dark avoid-break">
-          <h2 className="text-2xl font-medium mb-4">About RAVENCI Solutions</h2>
-          <p className="text-sm text-neutral-700 leading-relaxed mb-6">
+        <section className="avoid-break mt-16 border-t-2 border-foreground pt-10">
+          <h2 className="mb-4 text-heading-m text-foreground">
+            About RAVENCI Solutions
+          </h2>
+          <p className="mb-6 text-body text-muted-foreground">
             RAVENCI Solutions is a Brisbane-based web development and design
-            studio. We&apos;ve delivered 350+ projects for Australian
+            studio. We&apos;ve delivered 467 projects for Australian
             businesses since 2018, building on Custom Next.js, WordPress,
             Shopify, BigCommerce, GoHighLevel, Plasmic and Strapi. As a Shopify
             Partner, BigCommerce Partner, and Synergy Wholesale Partner, we
             pass through better infrastructure pricing to clients.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+          <div className="grid grid-cols-1 gap-4 text-small sm:grid-cols-3">
             <div>
-              <p className="font-bold">Website</p>
-              <p className="text-neutral-600">ravenci.solutions</p>
+              <p className="font-semibold text-foreground">Website</p>
+              <p className="text-muted-foreground">ravenci.solutions</p>
             </div>
             <div>
-              <p className="font-bold">Phone</p>
-              <p className="text-neutral-600">07 3106 1836</p>
+              <p className="font-semibold text-foreground">Phone</p>
+              <p className="text-muted-foreground">07 3106 1836</p>
             </div>
             <div>
-              <p className="font-bold">Brisbane, AU</p>
-              <p className="text-neutral-600">hello@ravenci.solutions</p>
+              <p className="font-semibold text-foreground">Brisbane, AU</p>
+              <p className="text-muted-foreground">hello@ravenci.solutions</p>
             </div>
           </div>
           <div className="no-print mt-8">
-            <Link
-              href="/launch-your-vision"
-              className="inline-block px-6 py-3 bg-ravenci-dark text-white rounded-full hover:bg-ravenci-primary transition-colors text-sm"
-            >
-              Talk to RAVENCI About Your Project
-            </Link>
+            <Button asChild variant="primary">
+              <Link href="/launch-your-vision">
+                Talk to RAVENCI about your project
+              </Link>
+            </Button>
           </div>
         </section>
 
         {/* Footer credit */}
-        <footer className="mt-12 pt-6 border-t border-neutral-200 text-xs text-neutral-500 text-center">
+        <footer className="mt-12 border-t border-border pt-6 text-center text-small text-muted-foreground">
           © {new Date().getFullYear()} RAVENCI Solutions · Brisbane Business
           Website Audit 2026 · Published {AUDIT_META.publishedDate}
         </footer>

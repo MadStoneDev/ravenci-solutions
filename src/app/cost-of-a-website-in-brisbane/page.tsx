@@ -6,6 +6,10 @@ import { IconCheck, IconAlertCircle } from "@tabler/icons-react";
 
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+import { Button } from "@/components/ui/button";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata: Metadata = {
   title: "Website Cost in Brisbane 2026 | RAVENCI Solutions",
@@ -294,53 +298,50 @@ export default function BrisbaneWebsiteCostPage() {
   return (
     <main className="flex flex-col">
       {/* Hero */}
-      <section className="content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 bg-white">
-        <article className="max-w-3xl flex flex-col gap-2">
+      <section className={`${SECTION} border-b border-border`}>
+        <article className="flex max-w-3xl flex-col gap-4">
           <Breadcrumbs items={[{ label: "Cost of a Website in Brisbane" }]} />
-          <span className="mt-2 text-xs font-medium tracking-wider uppercase text-ravenci-primary">
-            Brisbane Website Pricing, 2026
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
+          <SectionLabel label="Brisbane Website Pricing, 2026" tick />
+          <h1 className="text-display-l text-foreground">
             How Much Does a Website Cost in Brisbane in 2026?
           </h1>
-          <h2 className="max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light">
+          <p className="text-lead text-muted-foreground">
             Real pricing for every tier, and the hidden ongoing fees most
-            agencies don&apos;t mention
-          </h2>
-          <p className="mt-6 max-w-2xl text-neutral-500/80">
+            agencies don&apos;t mention.
+          </p>
+          <p className="max-w-prose text-body text-muted-foreground">
             A custom website in Brisbane typically costs between{" "}
-            <strong className="text-ravenci-dark">$1,500 and $25,000</strong> in
+            <strong className="text-foreground">$1,500 and $25,000</strong> in
             2026 depending on complexity. Template-based agency builds start
             around $1,500. Standard small business sites run $5,000 to $10,000.
             Custom Next.js or premium branded builds reach $15,000 to $25,000+.
             Hosting and maintenance add $300 to $600 per month. This guide breaks
-            down what you get at each price point, what affects the
-            quote, and the ongoing costs nobody mentions in the proposal.
+            down what you get at each price point, what affects the quote, and
+            the ongoing costs nobody mentions in the proposal.
           </p>
         </article>
       </section>
 
       {/* Headline numbers */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white">
-        <h3 className="mb-10 font-serif text-h3 font-bold">
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <SectionLabel label="At a glance" tone="muted" />
+        <h2 className="mt-3 text-display-m text-foreground">
           Brisbane Website Costs at a Glance
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        </h2>
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {headlineStats.map((item, index) => (
             <div
               key={index}
-              className="p-6 bg-white/5 border border-white/10 rounded-lg"
+              className="rounded-sm border border-white/10 bg-card p-6"
             >
-              <p className="text-4xl md:text-5xl font-bold text-ravenci-primary mb-3">
+              <p className="tnum mb-3 text-metric text-foreground">
                 {item.stat}
               </p>
-              <p className="text-sm text-neutral-300 leading-relaxed">
-                {item.label}
-              </p>
+              <p className="text-small text-muted-foreground">{item.label}</p>
             </div>
           ))}
         </div>
-        <p className="mt-8 text-sm text-neutral-400 max-w-2xl">
+        <p className="mt-8 max-w-prose text-small text-muted-foreground">
           Pricing reflects 2026 Brisbane market rates for agency-built websites.
           DIY platforms (Wix, Squarespace) sit below this range. Enterprise web
           applications sit well above.
@@ -348,11 +349,12 @@ export default function BrisbaneWebsiteCostPage() {
       </section>
 
       {/* Pricing tiers */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
-        <h3 className="mb-4 font-serif text-h3 font-bold">
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="01" label="Pricing tiers" />
+        <h2 className="mt-3 text-display-m text-foreground">
           The Five Pricing Tiers, Honestly Compared
-        </h3>
-        <p className="mb-10 max-w-2xl text-neutral-500/80">
+        </h2>
+        <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
           Most Brisbane websites fall into one of five tiers. Here&apos;s
           what&apos;s included at each price point, what&apos;s typically
           missing, and the ongoing costs to factor in.
@@ -361,61 +363,67 @@ export default function BrisbaneWebsiteCostPage() {
           {pricingTiers.map((tier, index) => (
             <div
               key={index}
-              className="p-6 md:p-8 bg-white rounded-lg border border-neutral-200"
+              className="rounded-sm border border-border bg-card p-6 md:p-8"
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6 pb-6 border-b border-neutral-200">
+              <div className="mb-6 flex flex-col gap-4 border-b border-border pb-6 md:flex-row md:items-start md:justify-between">
                 <div>
-                  <h4 className="text-xl md:text-2xl font-bold text-ravenci-dark mb-1">
+                  <h3 className="mb-1 text-heading-s text-foreground">
                     {tier.tier}
-                  </h4>
-                  <p className="text-sm text-neutral-500">
+                  </h3>
+                  <p className="text-small text-muted-foreground">
                     Best for: {tier.bestFor}
                   </p>
                 </div>
                 <div className="md:text-right">
                   <p
-                    className={`text-2xl md:text-3xl font-bold ${
+                    className={`text-heading-m ${
                       tier.severity === "premium"
-                        ? "text-ravenci-primary"
-                        : "text-ravenci-dark"
+                        ? "text-accent"
+                        : "text-foreground"
                     }`}
                   >
                     {tier.price}
                   </p>
-                  <p className="text-xs text-neutral-500 mt-1">
+                  <p className="mt-1 text-small text-muted-foreground">
                     {tier.annual} · Build time: {tier.timeline}
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                 <div>
-                  <p className="mb-3 text-sm font-bold text-ravenci-dark">
+                  <p className="mb-3 text-small font-semibold text-foreground">
                     What you get:
                   </p>
                   <ul className="space-y-2">
                     {tier.whatYouGet.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm">
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-small text-muted-foreground"
+                      >
                         <IconCheck
                           size={18}
-                          className="p-0.5 bg-ravenci-primary rounded-full text-white flex-shrink-0 mt-0.5"
+                          className="mt-0.5 shrink-0 text-accent"
                         />
-                        <span className="text-neutral-600">{item}</span>
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <p className="mb-3 text-sm font-bold text-ravenci-dark">
+                  <p className="mb-3 text-small font-semibold text-foreground">
                     Watch out for:
                   </p>
                   <ul className="space-y-2">
                     {tier.hiddenCosts.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm">
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-small text-muted-foreground"
+                      >
                         <IconAlertCircle
                           size={18}
-                          className="text-yellow-600 flex-shrink-0 mt-0.5"
+                          className="mt-0.5 shrink-0 text-muted-foreground"
                         />
-                        <span className="text-neutral-600">{item}</span>
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -427,38 +435,38 @@ export default function BrisbaneWebsiteCostPage() {
       </section>
 
       {/* What affects cost */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-white">
-        <h3 className="mb-4 font-serif text-h3 font-bold">
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="02" label="What affects the quote" />
+        <h2 className="mt-3 text-display-m text-foreground">
           The Nine Factors That Affect a Brisbane Website Quote
-        </h3>
-        <p className="mb-10 max-w-2xl text-neutral-500/80">
+        </h2>
+        <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
           Two quotes for the same business can differ by $5,000 or more.
           Here&apos;s why, and what to ask about when comparing.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {costFactors.map((factor, index) => (
             <div
               key={index}
-              className="p-6 bg-neutral-100/60 rounded-lg border border-neutral-200/70"
+              className="rounded-sm border border-border bg-card p-6"
             >
-              <h4 className="mb-2 font-bold text-ravenci-dark">
+              <h3 className="mb-2 text-heading-s text-foreground">
                 {factor.factor}
-              </h4>
-              <p className="text-sm text-neutral-600 leading-relaxed">
-                {factor.detail}
-              </p>
+              </h3>
+              <p className="text-body text-muted-foreground">{factor.detail}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Hidden ongoing costs */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-primary text-white">
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
         <div className="max-w-4xl">
-          <h3 className="mb-4 font-serif text-h3 font-bold">
+          <SectionLabel label="Ongoing costs" tone="muted" />
+          <h2 className="mt-3 text-display-m text-foreground">
             The Ongoing Costs Nobody Mentions in the Proposal
-          </h3>
-          <p className="mb-10 text-white/85 max-w-2xl leading-relaxed">
+          </h2>
+          <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
             Most build quotes describe the one-off project cost. The 12-month
             total cost of ownership is usually 1.5 to 2 times higher once you
             factor in hosting, maintenance, plugins, and platforms. Here&apos;s
@@ -468,17 +476,17 @@ export default function BrisbaneWebsiteCostPage() {
             {ongoingCosts.map((cost, index) => (
               <div
                 key={index}
-                className="p-5 bg-white/10 border border-white/15 rounded-lg"
+                className="rounded-sm border border-white/10 bg-card p-5"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                  <h4 className="font-bold text-white">{cost.item}</h4>
-                  <span className="text-sm font-bold text-ravenci-light-gray">
+                <div className="mb-2 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                  <h3 className="text-heading-s text-foreground">
+                    {cost.item}
+                  </h3>
+                  <span className="text-small font-semibold text-muted-foreground">
                     {cost.range}
                   </span>
                 </div>
-                <p className="text-sm text-white/80 leading-relaxed">
-                  {cost.note}
-                </p>
+                <p className="text-body text-muted-foreground">{cost.note}</p>
               </div>
             ))}
           </div>
@@ -486,63 +494,62 @@ export default function BrisbaneWebsiteCostPage() {
       </section>
 
       {/* RAVENCI positioning */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+      <section className={`${SECTION} border-b border-border`}>
         <div className="max-w-3xl">
-          <h3 className="mb-6 font-serif text-h3 font-bold">
+          <SectionLabel index="03" label="Where RAVENCI fits" />
+          <h2 className="mt-3 text-display-m text-foreground">
             Where RAVENCI Fits in This Market
-          </h3>
-          <div className="space-y-4 text-neutral-600 leading-relaxed">
+          </h2>
+          <div className="mt-6 flex flex-col gap-4 text-body text-muted-foreground">
             <p>
               RAVENCI Solutions builds custom websites in Brisbane across
               business sites through to fully custom eCommerce platforms. My
-              Business Website starts at <strong>$7,500</strong> with CMS and
+              Business Website starts at{" "}
+              <strong className="text-foreground">$7,500</strong> with CMS and
               CRM included, Custom Websites from{" "}
-              <strong>$10,000</strong>, and eCommerce platforms from{" "}
-              <strong>$12,000</strong> for businesses needing a professional
-              online store.
+              <strong className="text-foreground">$10,000</strong>, and eCommerce
+              platforms from{" "}
+              <strong className="text-foreground">$12,000</strong> for businesses
+              needing a professional online store.
             </p>
             <p>
               I work primarily with Custom Next.js (for performance-critical
               builds), WordPress (for content-heavy sites), Shopify and
               BigCommerce (for e-commerce), and Plasmic and Strapi when the
               project needs a visual builder or headless CMS. As Shopify,
-              BigCommerce, and Synergy Wholesale Partners I get better pricing
-              on platforms and infrastructure that I pass through to clients.
+              BigCommerce, and Synergy Wholesale Partners I get better pricing on
+              platforms and infrastructure that I pass through to clients.
             </p>
             <p>
-              Hosting runs <strong>$39/mo</strong>, maintenance{" "}
-              <strong>$249/mo</strong>, with a bundled discount when you take
-              both. There are no hidden plugin renewal surprises and no
-              lock-in.
+              Hosting runs{" "}
+              <strong className="text-foreground">$39/mo</strong>, maintenance{" "}
+              <strong className="text-foreground">$249/mo</strong>, with a
+              bundled discount when you take both. There are no hidden plugin
+              renewal surprises and no lock-in.
             </p>
           </div>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/web-development"
-              className="px-6 py-3 grid place-content-center bg-ravenci-dark rounded-full text-white hover:bg-ravenci-primary transition-colors duration-300"
-            >
-              See My Website Design Packages
-            </Link>
-            <Link
-              href="/launch-your-vision"
-              className="px-6 py-3 grid place-content-center border-2 border-ravenci-dark rounded-full text-ravenci-dark hover:bg-ravenci-dark hover:text-white transition-colors duration-300"
-            >
-              Get a Tailored Quote
-            </Link>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <Button asChild size="lg" variant="primary">
+              <Link href="/web-development">See My Website Design Packages</Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/launch-your-vision">Get a Tailored Quote</Link>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Key takeaways */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white">
+      <section className={`${SECTION} border-b border-border`}>
         <div className="max-w-3xl">
-          <h3 className="mb-8 font-serif text-h3 font-bold">Key Takeaways</h3>
-          <div className="space-y-6 text-white/90 leading-relaxed">
+          <SectionLabel index="04" label="Key takeaways" />
+          <h2 className="mt-3 text-display-m text-foreground">Key Takeaways</h2>
+          <div className="mt-8 flex flex-col gap-6">
             <div>
-              <h4 className="mb-2 text-lg font-bold text-white">
+              <h3 className="mb-2 text-heading-s text-foreground">
                 1. Most Brisbane SMB websites should budget $5,000 to $15,000
-              </h4>
-              <p>
+              </h3>
+              <p className="text-body text-muted-foreground">
                 The sweet spot for an established small business is the standard
                 small business or custom premium tier. Below $5,000 you&apos;re
                 in template territory with limited future flexibility. Above
@@ -551,20 +558,20 @@ export default function BrisbaneWebsiteCostPage() {
               </p>
             </div>
             <div>
-              <h4 className="mb-2 text-lg font-bold text-white">
+              <h3 className="mb-2 text-heading-s text-foreground">
                 2. Year-one cost is 1.5 to 2x the build quote
-              </h4>
-              <p>
+              </h3>
+              <p className="text-body text-muted-foreground">
                 A $10,000 build with content production, hosting, maintenance,
                 and a 10% contingency lands at $14,000 to $16,000 in year one.
                 Budget accordingly so you&apos;re not surprised in month three.
               </p>
             </div>
             <div>
-              <h4 className="mb-2 text-lg font-bold text-white">
+              <h3 className="mb-2 text-heading-s text-foreground">
                 3. Cheap quotes are usually expensive within 18 months
-              </h4>
-              <p>
+              </h3>
+              <p className="text-body text-muted-foreground">
                 Sites built without proper SEO, performance, and maintenance
                 foundations typically need a $3,000 to $7,000 fix or rebuild
                 within 18 months. The cheapest quote in your inbox is rarely the
@@ -572,10 +579,10 @@ export default function BrisbaneWebsiteCostPage() {
               </p>
             </div>
             <div>
-              <h4 className="mb-2 text-lg font-bold text-white">
+              <h3 className="mb-2 text-heading-s text-foreground">
                 4. The platform should match the business, not the agency
-              </h4>
-              <p>
+              </h3>
+              <p className="text-body text-muted-foreground">
                 If an agency only quotes one platform regardless of your needs,
                 that&apos;s a red flag. WordPress suits content-heavy sites.
                 Shopify and BigCommerce suit e-commerce. Custom Next.js suits
@@ -584,54 +591,54 @@ export default function BrisbaneWebsiteCostPage() {
               </p>
             </div>
             <div>
-              <h4 className="mb-2 text-lg font-bold text-white">
+              <h3 className="mb-2 text-heading-s text-foreground">
                 5. Always get a 12-month total cost figure
-              </h4>
-              <p>
-                Reputable Brisbane agencies will give you a clear year-one
-                figure including hosting, maintenance, and any platform fees.
-                If a quote can&apos;t be reduced to a single annual number, the
-                fees are probably hidden in fine print.
+              </h3>
+              <p className="text-body text-muted-foreground">
+                Reputable Brisbane agencies will give you a clear year-one figure
+                including hosting, maintenance, and any platform fees. If a quote
+                can&apos;t be reduced to a single annual number, the fees are
+                probably hidden in fine print.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 flex flex-col items-center text-center bg-white">
-        <h2 className="mb-4 text-3xl md:text-4xl font-medium">
-          Get a Real Quote, Not a Guess
+      {/* FAQ */}
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="05" label="FAQ" />
+        <h2 className="mt-3 text-display-m text-foreground">
+          Frequently Asked Questions
         </h2>
-        <p className="mb-10 max-w-lg text-neutral-500/80">
-          Tell me about your project in 2 minutes. I&apos;ll send back a
-          tailored estimate with the platform, scope and 12-month total cost
-          clearly laid out. No sales calls required.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href="/launch-your-vision"
-            className="px-8 py-3 grid place-content-center bg-ravenci-primary rounded-full text-white hover:bg-ravenci-primary/85 transition-colors duration-300"
-          >
-            Launch Your Vision
-          </Link>
-          <Link
-            href="/web-development"
-            className="px-8 py-3 grid place-content-center border-2 border-ravenci-dark rounded-full text-ravenci-dark hover:bg-ravenci-dark hover:text-white transition-colors duration-300"
-          >
-            See Pricing Packages
-          </Link>
+        <div className="mt-8 max-w-3xl">
+          <Accordion titleClassName="py-6 text-lg" items={faqItems} />
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-neutral-100">
-        <h2 className="font-serif text-h3">Frequently Asked Questions</h2>
-        <Accordion titleClassName="py-6 text-lg" items={faqItems} />
+      {/* CTA */}
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="text-display-m text-foreground">
+              Get a Real Quote, Not a Guess
+            </h2>
+            <p className="mt-4 text-body text-muted-foreground">
+              Tell me about your project in 2 minutes. I&apos;ll send back a
+              tailored estimate with the platform, scope and 12-month total cost
+              clearly laid out. No sales calls required.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <Button asChild size="lg" variant="primary">
+              <Link href="/launch-your-vision">Launch Your Vision</Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/web-development">See Pricing Packages</Link>
+            </Button>
+          </div>
+        </div>
       </section>
-
-      {/* Spacer */}
-      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[80px] bg-neutral-100" />
 
       {/* BreadcrumbList JSON-LD */}
       <script

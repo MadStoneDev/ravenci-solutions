@@ -13,9 +13,13 @@ import {
 } from "@tabler/icons-react";
 
 import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+import { Button } from "@/components/ui/button";
 import VisibilityCheckForm from "@/components/visibility-check-form";
 import Accordion from "@/components/accordion";
 import { auditStats, AUDIT_META } from "@/data/brisbane-audit";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata: Metadata = {
   title: "Free Website Audit Brisbane | RAVENCI Solutions",
@@ -129,42 +133,39 @@ export default function FreeAuditPage() {
   return (
     <main className="flex flex-col">
       {/* Hero */}
-      <section className="content-section pt-32 pb-16 md:pb-20 px-5 sm:px-20 xl:px-36 bg-white">
-        <div className="max-w-3xl">
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="flex max-w-3xl flex-col gap-4">
           <Breadcrumbs items={[{ label: "Free Website Audit" }]} />
-          <span className="mt-4 block text-xs font-medium tracking-widest uppercase text-ravenci-primary">
-            Five-category website audit
-          </span>
-          <h1 className="mt-3 text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.05] text-ravenci-dark">
+          <SectionLabel label="Five-category website audit" tick />
+          <h1 className="text-display-l text-foreground">
             A free website audit for your Brisbane business
           </h1>
-          <p className="mt-6 max-w-2xl text-lg md:text-xl text-neutral-500/90 leading-relaxed">
+          <p className="text-lead text-muted-foreground">
             I check your site across the same five categories I used on{" "}
             {AUDIT_META.totalSitesAudited} Brisbane businesses in{" "}
             {AUDIT_META.conductedDate}: speed, SEO, mobile usability,
-            accessibility, and security. I email you a plain-English
-            report showing exactly where you stand. No payment details, no
-            sales call.
+            accessibility, and security. I email you a plain-English report
+            showing exactly where you stand. No payment details, no sales call.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-neutral-600">
+          <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-3 text-small text-muted-foreground">
             <div className="flex items-center gap-2">
               <IconCheck
                 size={18}
-                className="p-0.5 bg-ravenci-primary rounded-full text-white"
+                className="rounded-full bg-accent p-0.5 text-accent-foreground"
               />
               <span>Real human review</span>
             </div>
             <div className="flex items-center gap-2">
               <IconCheck
                 size={18}
-                className="p-0.5 bg-ravenci-primary rounded-full text-white"
+                className="rounded-full bg-accent p-0.5 text-accent-foreground"
               />
               <span>Plain-English report</span>
             </div>
             <div className="flex items-center gap-2">
               <IconCheck
                 size={18}
-                className="p-0.5 bg-ravenci-primary rounded-full text-white"
+                className="rounded-full bg-accent p-0.5 text-accent-foreground"
               />
               <span>2 to 3 business days</span>
             </div>
@@ -173,53 +174,46 @@ export default function FreeAuditPage() {
       </section>
 
       {/* Form, pulled high on the page so the action is immediate */}
-      <section
-        id="audit-form"
-        className="content-section pt-12 pb-20 md:pb-24 px-5 sm:px-20 xl:px-36 bg-neutral-100"
-      >
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-medium text-ravenci-dark mb-4">
-            Get your audit
-          </h2>
-          <p className="max-w-2xl mx-auto text-neutral-600">
-            Four fields, thirty seconds. I&apos;ll come back to you within
-            2 to 3 business days with the full report.
+      <section id="audit-form" className={`${SECTION} border-b border-border`}>
+        <div className="mb-10 text-center">
+          <h2 className="text-display-m text-foreground">Get your audit</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-body text-muted-foreground">
+            Four fields, thirty seconds. I&apos;ll come back to you within 2 to 3
+            business days with the full report.
           </p>
         </div>
         <VisibilityCheckForm />
       </section>
 
       {/* What the audit covers */}
-      <section className="content-section py-20 md:py-24 px-5 sm:px-20 xl:px-36 bg-white">
-        <div className="max-w-3xl mb-12">
-          <span className="block mb-3 text-xs font-medium tracking-widest uppercase text-ravenci-primary">
-            What I check
-          </span>
-          <h2 className="text-3xl md:text-4xl font-medium text-ravenci-dark">
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mb-12 flex max-w-3xl flex-col gap-3">
+          <SectionLabel index="01" label="What I check" />
+          <h2 className="text-display-m text-foreground">
             Five categories, one honest report
           </h2>
-          <p className="mt-4 text-neutral-600 leading-relaxed">
-            The same framework I used to audit{" "}
-            {AUDIT_META.totalSitesAudited} Brisbane business websites for my
-            2026 research. No proprietary scoring magic, just the things
-            that matter to whether your site ranks, loads, and converts.
+          <p className="text-body text-muted-foreground">
+            The same framework I used to audit {AUDIT_META.totalSitesAudited}{" "}
+            Brisbane business websites for my 2026 research. No proprietary
+            scoring magic, just the things that matter to whether your site
+            ranks, loads, and converts.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {auditCategories.map((cat) => {
             const Icon = cat.icon;
             return (
               <div
                 key={cat.title}
-                className="p-6 border border-neutral-200 rounded-lg bg-white hover:border-ravenci-primary/30 transition-colors duration-200"
+                className="rounded-sm border border-border bg-card p-6"
               >
-                <div className="mb-4 inline-flex p-2.5 rounded-lg bg-ravenci-primary/10">
-                  <Icon size={24} className="text-ravenci-primary" />
+                <div className="mb-4 inline-flex rounded-sm bg-accent/10 p-2.5">
+                  <Icon size={24} className="text-accent" />
                 </div>
-                <h3 className="mb-2 text-lg font-bold text-ravenci-dark">
+                <h3 className="mb-2 text-heading-s text-foreground">
                   {cat.title}
                 </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
+                <p className="text-body text-muted-foreground">
                   {cat.description}
                 </p>
               </div>
@@ -228,38 +222,38 @@ export default function FreeAuditPage() {
         </div>
       </section>
 
-      {/* Why it matters, the data */}
-      <section className="content-section py-20 md:py-24 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white">
-        <div className="max-w-3xl mb-10">
-          <span className="block mb-3 text-xs font-medium tracking-widest uppercase text-white/70">
-            Why it matters
-          </span>
-          <h2 className="text-3xl md:text-4xl font-medium">
+      {/* Why it matters, the data (dark) */}
+      <section
+        className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}
+      >
+        <div className="mb-10 flex max-w-3xl flex-col gap-3">
+          <SectionLabel index="02" label="Why it matters" tone="muted" />
+          <h2 className="text-display-m text-foreground">
             The bar in Brisbane is lower than most owners realise
           </h2>
-          <p className="mt-4 text-white/80 leading-relaxed">
+          <p className="text-body text-muted-foreground">
             Findings from my 2026 audit of {AUDIT_META.totalSitesAudited}{" "}
             randomly selected Brisbane business websites across{" "}
             {AUDIT_META.industries} industries:
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl">
+        <div className="grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {auditStats.slice(0, 6).map((item, index) => (
             <div
               key={index}
-              className="p-5 bg-white/5 border border-white/10 rounded-lg"
+              className="rounded-sm border border-white/10 bg-white/5 p-5"
             >
-              <div className="text-3xl font-bold mb-2">{item.stat}</div>
-              <p className="text-sm text-white/70 leading-relaxed">
-                {item.label}
-              </p>
+              <div className="mb-2 text-metric text-foreground">
+                {item.stat}
+              </div>
+              <p className="text-body text-muted-foreground">{item.label}</p>
             </div>
           ))}
         </div>
         <div className="mt-10">
           <Link
             href="/brisbane-website-audit"
-            className="inline-flex items-center gap-2 text-white/90 hover:text-white hover:gap-3 transition-all duration-200"
+            className="inline-flex items-center gap-2 text-foreground transition-all duration-fast hover:gap-3"
           >
             <span className="font-medium">Read the full audit research</span>
             <IconArrowRight size={18} />
@@ -268,28 +262,26 @@ export default function FreeAuditPage() {
       </section>
 
       {/* How it works */}
-      <section className="content-section py-20 md:py-24 px-5 sm:px-20 xl:px-36 bg-white">
-        <div className="max-w-3xl mb-12">
-          <span className="block mb-3 text-xs font-medium tracking-widest uppercase text-ravenci-primary">
-            How it works
-          </span>
-          <h2 className="text-3xl md:text-4xl font-medium text-ravenci-dark">
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mb-12 flex max-w-3xl flex-col gap-3">
+          <SectionLabel index="03" label="How it works" />
+          <h2 className="text-display-m text-foreground">
             Three steps, no fine print
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {howItWorks.map((step) => (
             <div
               key={step.step}
-              className="p-8 border border-neutral-200 rounded-lg bg-white"
+              className="rounded-sm border border-border bg-card p-8"
             >
-              <div className="mb-4 text-ravenci-primary text-sm font-bold tracking-widest">
+              <div className="mb-4 font-mono text-label text-accent">
                 {step.step}
               </div>
-              <h3 className="mb-3 text-xl font-bold text-ravenci-dark">
+              <h3 className="mb-3 text-heading-s text-foreground">
                 {step.title}
               </h3>
-              <p className="text-neutral-600 leading-relaxed">
+              <p className="text-body text-muted-foreground">
                 {step.description}
               </p>
             </div>
@@ -298,30 +290,27 @@ export default function FreeAuditPage() {
       </section>
 
       {/* FAQ */}
-      <section className="content-section py-16 md:py-20 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-neutral-100">
-        <h2 className="font-serif text-h3 text-ravenci-dark">
-          Common Questions
-        </h2>
-        <div className="max-w-3xl w-full">
-          <Accordion titleClassName="py-6 text-lg" items={faqItems} />
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-3">
+          <h2 className="text-display-m text-foreground">Common questions</h2>
+          <div className="w-full">
+            <Accordion titleClassName="py-6 text-lg" items={faqItems} />
+          </div>
         </div>
       </section>
 
-      {/* Final CTA back to the form */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 flex flex-col items-center text-center bg-ravenci-primary text-white">
-        <h2 className="mb-4 text-3xl md:text-4xl font-medium">
-          Ready when you are
-        </h2>
-        <p className="mb-10 max-w-lg text-white/90">
-          Submit your details and I&apos;ll come back within 2–3 business
-          days with the full report.
+      {/* Final CTA back to the form (dark) */}
+      <section
+        className={`dark bg-background text-foreground ${SECTION} flex flex-col items-center text-center`}
+      >
+        <h2 className="text-display-m text-foreground">Ready when you are</h2>
+        <p className="mb-8 mt-4 max-w-lg text-body text-muted-foreground">
+          Submit your details and I&apos;ll come back within 2 to 3 business days
+          with the full report.
         </p>
-        <Link
-          href="#audit-form"
-          className="px-8 py-3 grid place-content-center bg-white rounded-full text-ravenci-primary font-medium hover:bg-white/90 transition-all duration-300 ease-in-out"
-        >
-          Get my free audit
-        </Link>
+        <Button asChild size="lg" variant="primary">
+          <Link href="#audit-form">Get my free audit</Link>
+        </Button>
       </section>
 
       {/* FAQPage JSON-LD for AEO */}

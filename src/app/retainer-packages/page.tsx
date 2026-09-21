@@ -6,9 +6,13 @@ import StickyCTA from "@/components/sticky-cta";
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+import { Button } from "@/components/ui/button";
 import PricingCards from "@/components/pricing-cards";
 import { getTestimonialsForPage } from "@/data/testimonials";
 import ProofCluster from "@/components/proof-cluster";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata = {
   title: "Retainer Packages | RAVENCI Solutions",
@@ -183,7 +187,7 @@ export default function RetainerPackagesPage() {
   ];
 
   return (
-    <main className={`flex flex-col`}>
+    <main className="flex flex-col">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -208,159 +212,151 @@ export default function RetainerPackagesPage() {
         }}
       />
 
-      {/* Hero Section */}
-      <section
-        className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
-      >
-        <article className={`col-span-12 flex flex-col`}>
+      {/* Hero */}
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="flex max-w-3xl flex-col gap-4">
           <Breadcrumbs items={[{ label: "Retainer Packages" }]} />
-          <h1 className={`mt-4 text-4xl md:text-5xl lg:text-h1 font-medium`}>
+          <SectionLabel label="Retainer Packages" tick />
+          <h1 className="text-display-l text-foreground">
             Your Dedicated Digital Partner
           </h1>
-          <h2
-            className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
-          >
+          <p className="text-lead text-muted-foreground">
             Ongoing development, design, and strategy, without the overhead of
-            hiring
-          </h2>
-          <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
+            hiring.
+          </p>
+          <p className="text-body text-muted-foreground">
             For established Australian businesses that want ongoing digital
             support without the overhead of hiring in-house. Hosting,
             maintenance, and dedicated time for development, design, content and
-            SEO, used
-            however your business needs it that month. Tell me the priorities.
-            I&apos;ll take it from there.
+            SEO, used however your business needs it that month. Tell me the
+            priorities. I&apos;ll take it from there.
           </p>
-        </article>
+        </div>
       </section>
 
-      {/* Social Proof Bar */}
+      {/* Social proof */}
       <section
-        className={`p-10 flex flex-col items-center gap-3 bg-ravenci-primary text-white text-center`}
+        className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}
       >
-        <div className={`max-w-lg`}>
-          <h3
-            className={`pb-6 border-b border-white/20 font-serif font-medium text-xl`}
-          >
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-heading-m text-foreground">
             Trusted by Brisbane businesses for ongoing digital partnership
-          </h3>
+          </h2>
           {testimonials[0] && (
-            <>
-              <p
-                className={`my-6 font-sans font-light leading-8 text-ravenci-light-gray`}
-              >
+            <figure className="mt-6">
+              <blockquote className="text-heading-m font-light text-foreground">
                 &ldquo;{testimonials[0].content}&rdquo;
-              </p>
-              <h3 className={`font-sans text-2xl font-light text-neutral-100`}>
-                <span className={`font-bold`}>
-                  {testimonials[0].author.split(" ")[0]}
-                </span>{" "}
-                {testimonials[0].author.split(" ").slice(1).join(" ")}
-              </h3>
-              {testimonials[0].role && (
-                <p className="mt-1 text-sm text-white/60">
-                  {testimonials[0].role}
-                </p>
-              )}
-            </>
+              </blockquote>
+              <figcaption className="mt-4 text-small text-muted-foreground">
+                <span className="font-semibold text-foreground">
+                  {testimonials[0].author}
+                </span>
+                {testimonials[0].role ? ` · ${testimonials[0].role}` : ""}
+              </figcaption>
+            </figure>
           )}
         </div>
       </section>
 
-      {/* Two-Column Section */}
-      <div className={`grid grid-cols-1 lg:grid-cols-2`}>
-        {/* Left Column, Dark: Pain Points + Why a Retainer Beats Hiring */}
+      {/* Two-column: problem (dark) + why choose (light) */}
+      <div className="grid grid-cols-1 lg:grid-cols-2">
         <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
+          className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}
         >
-          <article className={`max-w-lg`}>
-            <h2 className={`font-serif text-h3 font-bold text-white`}>
+          <div className="max-w-lg">
+            <h2 className="text-heading-m text-foreground">
               The Problem with Project-by-Project Work
             </h2>
-            <div className={`my-4 text-neutral-400/90`}>
+            <div className="mt-4 text-body text-muted-foreground">
               Common frustrations I hear from businesses:
-              <ul className={`mt-4 flex flex-col gap-2`}>
+              <ul className="mt-4 flex flex-col gap-2">
                 <li>- Freelancers who disappear between projects</li>
                 <li>- Websites that sit stagnant for months after launch</li>
                 <li>- Surprise invoices every time you need a small change</li>
                 <li>- Juggling multiple vendors for dev, design, and SEO</li>
-                <li>- Losing momentum because you can&apos;t get things done fast enough</li>
+                <li>
+                  - Losing momentum because you can&apos;t get things done fast
+                  enough
+                </li>
               </ul>
             </div>
 
-            <h2
-              className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}
-            >
+            <h2 className="mt-8 text-heading-m text-foreground">
               Why a Retainer Beats Hiring In-House
             </h2>
-            <p className={`mb-6 text-neutral-400/90`}>
+            <p className="mt-4 text-body text-muted-foreground">
               My Growth Partner retainer costs{" "}
-              <span className={`text-white font-bold`}>$36,000/year</span>, a
-              full-time hire costs{" "}
-              <span className={`text-white font-bold`}>$80,000 to $100,000/year</span>{" "}
+              <span className="font-semibold text-foreground">
+                $36,000/year
+              </span>
+              , a full-time hire costs{" "}
+              <span className="font-semibold text-foreground">
+                $80,000 to $100,000/year
+              </span>{" "}
               before super, leave, equipment, and training.
             </p>
-            <ul className={`flex flex-col gap-4 mb-6 text-neutral-400/90`}>
-              <li className={`flex gap-2`}>
+            <ul className="mt-6 flex flex-col gap-4 text-body text-muted-foreground">
+              <li className="flex items-start gap-3">
                 <IconCheck
-                  size={24}
-                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                  size={20}
+                  aria-hidden
+                  className="mt-0.5 shrink-0 text-foreground"
                 />
                 No recruitment costs, onboarding, or HR overhead
               </li>
-              <li className={`flex gap-2`}>
+              <li className="flex items-start gap-3">
                 <IconCheck
-                  size={24}
-                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                  size={20}
+                  aria-hidden
+                  className="mt-0.5 shrink-0 text-foreground"
                 />
                 Access to a full range of skills (dev, design, SEO, content)
                 through one point of contact
               </li>
-              <li className={`flex gap-2`}>
+              <li className="flex items-start gap-3">
                 <IconCheck
-                  size={24}
-                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                  size={20}
+                  aria-hidden
+                  className="mt-0.5 shrink-0 text-foreground"
                 />
                 Scale up or down as your business needs change
               </li>
-              <li className={`flex gap-2`}>
+              <li className="flex items-start gap-3">
                 <IconCheck
-                  size={24}
-                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                  size={20}
+                  aria-hidden
+                  className="mt-0.5 shrink-0 text-foreground"
                 />
                 No sick days, no annual leave, no gaps in coverage
               </li>
             </ul>
-            <p className={`mb-4 text-neutral-400/90`}>
-              A retainer gives you a digital partner who knows your
-              business inside and out. No onboarding every time, no context
-              switching, no lost momentum.
+            <p className="mt-6 text-body text-muted-foreground">
+              A retainer gives you a digital partner who knows your business
+              inside and out. No onboarding every time, no context switching, no
+              lost momentum.
             </p>
-            <p className={`text-neutral-400/90`}>
-              That&apos;s how I approach it at RAVENCI. To make it even simpler for
-              you, I offer four tiers of retainer packages, each designed to
+            <p className="mt-4 text-body text-muted-foreground">
+              That&apos;s how I approach it at RAVENCI. To make it even simpler
+              for you, I offer four tiers of retainer packages, each designed to
               meet your specific needs.
             </p>
-          </article>
+          </div>
         </section>
 
-        {/* Right Column, Light: Features Checklist */}
-        <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
-        >
-          <article className={`max-w-lg`}>
-            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
+        <section className={`${SECTION} border-b border-border`}>
+          <div className="max-w-lg">
+            <h2 className="text-heading-m text-foreground">
               Why Choose a Retainer
             </h2>
-            <ul className={`flex flex-col gap-8`}>
+            <ul className="mt-8 flex flex-col gap-8">
               {features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-2">
+                <li key={index} className="flex items-start gap-3">
                   <IconCircleCheckFilled
-                    className="text-ravenci-primary flex-shrink-0"
-                    size={24}
+                    className="mt-0.5 shrink-0 text-accent"
+                    size={22}
                   />
-                  <p className={`text-neutral-600`}>
-                    <span className="font-bold text-ravenci-dark">
+                  <p className="text-body text-muted-foreground">
+                    <span className="font-semibold text-foreground">
                       {feature.title}:
                     </span>{" "}
                     {feature.description}
@@ -368,45 +364,58 @@ export default function RetainerPackagesPage() {
                 </li>
               ))}
             </ul>
-          </article>
+          </div>
         </section>
       </div>
 
-      {/* Showcase Section */}
-      <section className="py-20 px-5 sm:px-20 xl:px-36 bg-white">
-        <h2 className="mb-10 font-serif text-h3 font-bold text-center">
-          Some of My Retainer Clients
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+      {/* Showcase */}
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mb-10 flex flex-col gap-3">
+          <SectionLabel index="01" label="Retainer clients" />
+          <h2 className="text-display-m text-foreground">
+            Some of My Retainer Clients
+          </h2>
+        </div>
+        <div className="grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2">
           {[
-            { name: "Covenant Security", image: "/showcase-images/Client - Covenant Security.png" },
-            { name: "GoingDark", image: "/showcase-images/Client - GoingDark.png" },
+            {
+              name: "Covenant Security",
+              image: "/showcase-images/Client - Covenant Security.png",
+            },
+            {
+              name: "GoingDark",
+              image: "/showcase-images/Client - GoingDark.png",
+            },
           ].map((project) => (
-            <div key={project.name} className="group relative overflow-hidden rounded-xl">
-              <Image
-                src={project.image}
-                alt={`${project.name}, RAVENCI retainer client`}
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-10">
-                <p className="text-sm font-medium text-white">{project.name}</p>
+            <div
+              key={project.name}
+              className="group overflow-hidden rounded-sm border border-border bg-card"
+            >
+              <div className="overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={`${project.name}, RAVENCI retainer client`}
+                  width={600}
+                  height={400}
+                  className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
+              <p className="p-4 text-small font-medium text-foreground">
+                {project.name}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Full-Width Pricing Section */}
+      {/* Pricing */}
       <section
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
+        className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}
       >
-        <h2
-          className={`mb-12 font-serif text-h3 font-bold text-white text-center`}
-        >
-          Choose Your Retainer
-        </h2>
+        <div className="mb-12 flex flex-col gap-3">
+          <SectionLabel index="02" label="Pricing" tone="muted" />
+          <h2 className="text-display-m text-foreground">Choose Your Retainer</h2>
+        </div>
         <PricingCards
           tiers={[
             {
@@ -486,70 +495,72 @@ export default function RetainerPackagesPage() {
       </section>
 
       {/* Investment ROI */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
-        <h2 className="mb-4 font-serif text-h3 font-bold text-center">
-          A Retainer That Pays for Itself
-        </h2>
-        <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
-          A retainer gives you a full range of digital skills for a fraction of
-          what hiring in-house would cost. No salaries, no super, no drawn-out
-          hiring.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
-          <div className="p-6 rounded-xl border border-neutral-200 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">$36k</p>
-            <p className="mt-1 text-sm text-neutral-500">per year</p>
-            <p className="mt-3 text-sm text-neutral-700">
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mb-10 flex flex-col gap-3">
+          <SectionLabel index="03" label="The maths" />
+          <h2 className="text-display-m text-foreground">
+            A Retainer That Pays for Itself
+          </h2>
+          <p className="max-w-2xl text-lead text-muted-foreground">
+            A retainer gives you a full range of digital skills for a fraction
+            of what hiring in-house would cost. No salaries, no super, no
+            drawn-out hiring.
+          </p>
+        </div>
+        <div className="mb-12 grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="rounded-sm border border-border bg-card p-6 text-center">
+            <p className="tnum text-metric text-accent">$36k</p>
+            <p className="mt-1 text-small text-muted-foreground">per year</p>
+            <p className="mt-3 text-small text-foreground">
               Growth Partner retainer
             </p>
           </div>
-          <div className="p-6 rounded-xl border border-neutral-200 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">$80 to 100k</p>
-            <p className="mt-1 text-sm text-neutral-500">per year</p>
-            <p className="mt-3 text-sm text-neutral-700">
+          <div className="rounded-sm border border-border bg-card p-6 text-center">
+            <p className="tnum text-metric text-accent">$80 to 100k</p>
+            <p className="mt-1 text-small text-muted-foreground">per year</p>
+            <p className="mt-3 text-small text-foreground">
               Full-time hire before super and leave
             </p>
           </div>
-          <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">Full skill set</p>
-            <p className="mt-1 text-sm text-neutral-500">not one specialty</p>
-            <p className="mt-3 text-sm text-neutral-700">
+          <div className="rounded-sm border border-accent/40 bg-accent/[0.04] p-6 text-center">
+            <p className="text-metric text-accent">Full skill set</p>
+            <p className="mt-1 text-small text-muted-foreground">
+              not one specialty
+            </p>
+            <p className="mt-3 text-small text-foreground">
               Dev, design, SEO, and content
             </p>
           </div>
         </div>
-        <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
+        <div className="max-w-2xl space-y-4 text-body text-muted-foreground">
           <p>
-            A full-time developer costs $80,000 to $100,000 a year before
-            super, leave, equipment, and training, and you get one
-            person with one skill set. My Growth Partner retainer gives you the
-            full range, dev, design, SEO, and content, for $36,000 a year, and
-            you use the hours however your business needs them that month.
+            A full-time developer costs $80,000 to $100,000 a year before super,
+            leave, equipment, and training, and you get one person with one
+            skill set. My Growth Partner retainer gives you the full range, dev,
+            design, SEO, and content, for $36,000 a year, and you use the hours
+            however your business needs them that month.
           </p>
           <p>
             The real question isn&apos;t &ldquo;can I afford a retainer?&rdquo;
-            It&apos;s &ldquo;can I afford to let my website sit stagnant
-            between projects?&rdquo;
+            It&apos;s &ldquo;can I afford to let my website sit stagnant between
+            projects?&rdquo;
           </p>
         </div>
       </section>
 
-      {/* What Can Affect Pricing */}
-      <section
-        className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50`}
-      >
-        <h2 className={`mb-8 font-serif text-h3 font-bold text-center`}>
-          What Can Affect Which Tier You Need
-        </h2>
-        <p
-          className={`mb-8 text-center text-neutral-500/80 max-w-2xl mx-auto`}
-        >
-          Not sure which retainer fits? These factors help determine the
-          right level of support for your business.
-        </p>
-        <div
-          className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto`}
-        >
+      {/* What Can Affect Which Tier */}
+      <section className={`bg-muted ${SECTION} border-b border-border`}>
+        <div className="mb-8 flex flex-col gap-3">
+          <SectionLabel index="04" label="Which tier" />
+          <h2 className="text-heading-m text-foreground">
+            What Can Affect Which Tier You Need
+          </h2>
+          <p className="max-w-2xl text-body text-muted-foreground">
+            Not sure which retainer fits? These factors help determine the right
+            level of support for your business.
+          </p>
+        </div>
+        <div className="grid max-w-4xl grid-cols-1 gap-x-12 gap-y-6 md:grid-cols-2">
           {[
             "How often you need content or design changes",
             "Whether you need active SEO and keyword tracking",
@@ -562,51 +573,69 @@ export default function RetainerPackagesPage() {
           ].map((item, i) => (
             <div key={i} className="flex items-start gap-2">
               <IconCircleCheckFilled
-                className="text-neutral-400 flex-shrink-0 mt-0.5"
+                className="mt-0.5 shrink-0 text-muted-foreground"
                 size={18}
               />
-              <p className="text-neutral-600 text-sm">{item}</p>
+              <p className="text-small text-muted-foreground">{item}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Related Services */}
-      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 bg-neutral-50">
-        <h2 className="mb-8 font-serif text-h3 font-bold text-center">Related Services</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <section className={`${SECTION} border-b border-border`}>
+        <h2 className="mb-8 text-heading-m text-foreground">Related Services</h2>
+        <div className="grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-3">
           {[
             { name: "Website Design", href: "/web-development", description: "Custom websites built to perform" },
             { name: "Website Maintenance", href: "/website-maintenance", description: "Keep your site secure and up to date" },
             { name: "SEO & Content", href: "/seo-and-content", description: "Get found by the right customers" },
           ].map((service) => (
-            <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
-              <h3 className="font-bold text-ravenci-dark mb-2">{service.name}</h3>
-              <p className="text-sm text-neutral-500">{service.description}</p>
+            <Link
+              key={service.href}
+              href={service.href}
+              className="group rounded-sm border border-border bg-card p-6 text-center transition-colors duration-fast hover:border-foreground/30"
+            >
+              <h3 className="text-heading-s text-foreground">{service.name}</h3>
+              <p className="mt-2 text-small text-muted-foreground">
+                {service.description}
+              </p>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section
-        className={`content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white`}
-      >
-        <h2 className={`font-serif text-h3`}>Frequently Asked Questions</h2>
-        <Accordion
-          titleClassName={`py-6 text-lg`}
-          items={faqItems}
-        />
+      {/* FAQ */}
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-8 flex flex-col gap-3">
+            <SectionLabel index="05" label="FAQ" />
+            <h2 className="text-display-m text-foreground">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <Accordion titleClassName="py-6 text-lg" items={faqItems} />
+        </div>
       </section>
 
-      {/* Footer Spacer */}
-      <section
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
-      ></section>
-
-      {/* Proof near the CTA */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
-        <ProofCluster testimonial={testimonials[0]} />
+      {/* Closing CTA */}
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <div className="mx-auto flex max-w-3xl flex-col gap-10">
+          <ProofCluster testimonial={testimonials[0]} theme="dark" />
+          <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <h2 className="text-display-m text-foreground">
+                Ready to bring me on board?
+              </h2>
+              <p className="mt-4 text-body text-muted-foreground">
+                Tell me your priorities and I&apos;ll take it from there.
+              </p>
+            </div>
+            <Button asChild size="lg" variant="primary">
+              <Link href="/launch-your-vision">Book a Strategy Call</Link>
+            </Button>
+          </div>
+        </div>
       </section>
 
       {/* Sticky CTA for Mobile */}

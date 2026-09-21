@@ -4,9 +4,13 @@ import Image from "next/image";
 import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+import { Button } from "@/components/ui/button";
 import StickyCTA from "@/components/sticky-cta";
 import { getTestimonialsForPage } from "@/data/testimonials";
 import ProofCluster from "@/components/proof-cluster";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata = {
   title: "Web Hosting | RAVENCI Solutions",
@@ -68,7 +72,7 @@ export default function WebHostingPage() {
   ];
 
   return (
-    <main className={`flex flex-col`}>
+    <main className="flex flex-col">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -93,165 +97,146 @@ export default function WebHostingPage() {
         }}
       />
 
-      {/* Hero Section */}
-      <section
-        className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
-      >
-        <article className={`col-span-12 flex flex-col`}>
+      {/* Hero */}
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="flex max-w-3xl flex-col gap-4">
           <Breadcrumbs items={[{ label: "Web Hosting" }]} />
-          <h1 className={`mt-4 text-4xl md:text-5xl lg:text-h1 font-medium`}>
-            Host With Me!
-          </h1>
-          <h2
-            className={`max-w-4xl text-2xl md:text-3xl lg:text-h2 font-light`}
-          >
-            Modern web hosting that grows with you
-          </h2>
-          <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
+          <SectionLabel label="Web Hosting" tick />
+          <h1 className="text-display-l text-foreground">Host With Me!</h1>
+          <p className="text-lead text-muted-foreground">
+            Modern web hosting that grows with you.
+          </p>
+          <p className="text-body text-muted-foreground">
             RAVENCI Solutions provides managed cloud hosting for Australian
-            businesses. Fast servers worldwide, 24/7 monitoring,
-            reliable security, and Brisbane-based support. All-inclusive pricing
-            from $39/mo with no hidden fees, no surprise charges, and no complex
+            businesses. Fast servers worldwide, 24/7 monitoring, reliable
+            security, and Brisbane-based support. All-inclusive pricing from
+            $39/mo with no hidden fees, no surprise charges, and no complex
             add-ons to buy.
           </p>
-        </article>
+        </div>
       </section>
 
-      {/* Social Proof Bar */}
+      {/* Social proof */}
       <section
-        className={`p-10 flex flex-col items-center gap-3 bg-ravenci-primary text-white text-center`}
+        className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}
       >
-        <div className={`max-w-lg`}>
-          <h3
-            className={`pb-6 border-b border-white/20 font-serif font-medium text-xl`}
-          >
-            Hosting websites for 75+ Australian businesses including law
-            firms, medical practices and retail stores
-          </h3>
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-heading-m text-foreground">
+            Hosting websites for 75+ Australian businesses including law firms,
+            medical practices and retail stores
+          </h2>
           {testimonials[0] && (
-            <>
-              <p
-                className={`my-6 font-sans font-light leading-8 text-ravenci-light-gray`}
-              >
+            <figure className="mt-6">
+              <blockquote className="text-heading-m font-light text-foreground">
                 &ldquo;{testimonials[0].content}&rdquo;
-              </p>
-              <h3 className={`font-sans text-2xl font-light text-neutral-100`}>
-                <span className={`font-bold`}>
-                  {testimonials[0].author.split(" ")[0]}
-                </span>{" "}
-                {testimonials[0].author.split(" ").slice(1).join(" ")}
-              </h3>
-              {testimonials[0].role && (
-                <p className="mt-1 text-sm text-white/60">
-                  {testimonials[0].role}
-                </p>
-              )}
-            </>
+              </blockquote>
+              <figcaption className="mt-4 text-small text-muted-foreground">
+                <span className="font-semibold text-foreground">
+                  {testimonials[0].author}
+                </span>
+                {testimonials[0].role ? ` · ${testimonials[0].role}` : ""}
+              </figcaption>
+            </figure>
           )}
         </div>
       </section>
 
-      {/* Two-Column Section */}
-      <div className={`grid grid-cols-1 lg:grid-cols-2`}>
-        {/* Left Column, Dark: Pain Points + Why Choose + Info */}
+      {/* Two-column: why (dark) + what's included (light) */}
+      <div className="grid grid-cols-1 lg:grid-cols-2">
         <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
+          className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}
         >
-          <article className={`max-w-lg`}>
-            <h2 className={`font-serif text-h3 font-bold text-white`}>
+          <div className="max-w-lg">
+            <h2 className="text-heading-m text-foreground">
               Hosting Should Be Simple
             </h2>
-            <div className={`my-4 text-neutral-400/90`}>
+            <div className="mt-4 text-body text-muted-foreground">
               Stop dealing with:
-              <ul className={`mt-4 flex flex-col gap-2`}>
+              <ul className="mt-4 flex flex-col gap-2">
                 <li>- Websites that crash during high traffic</li>
                 <li>- Slow loading times that lose customers</li>
-                <li>- Complex hosting panels you can't understand</li>
+                <li>- Complex hosting panels you can&apos;t understand</li>
                 <li>- Surprise overage charges and hidden fees</li>
-                <li>- Offshore support that can't relate to you</li>
+                <li>- Offshore support that can&apos;t relate to you</li>
               </ul>
             </div>
 
-            <h2
-              className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}
-            >
+            <h2 className="mt-8 text-heading-s text-foreground">
               Why Choose RAVENCI Over Other Hosts?
             </h2>
-            <ul className={`flex flex-col gap-4 mb-6 text-neutral-400/90`}>
-              <li className={`flex gap-2`}>
+            <ul className="mt-4 flex flex-col gap-4 text-body text-muted-foreground">
+              <li className="flex items-start gap-3">
                 <IconCheck
-                  size={24}
-                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                  size={20}
+                  aria-hidden
+                  className="mt-0.5 shrink-0 text-foreground"
                 />
                 Brisbane-based support you can reach directly
               </li>
-              <li className={`flex gap-2`}>
+              <li className="flex items-start gap-3">
                 <IconCheck
-                  size={24}
-                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                  size={20}
+                  aria-hidden
+                  className="mt-0.5 shrink-0 text-foreground"
                 />
                 All-inclusive pricing with no hidden fees
               </li>
-              <li className={`flex gap-2`}>
+              <li className="flex items-start gap-3">
                 <IconCheck
-                  size={24}
-                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                  size={20}
+                  aria-hidden
+                  className="mt-0.5 shrink-0 text-foreground"
                 />
                 Automatic scaling as your site grows
               </li>
-              <li className={`flex gap-2`}>
+              <li className="flex items-start gap-3">
                 <IconCheck
-                  size={24}
-                  className={`flex-shrink-0 p-1 bg-ravenci-primary rounded-full text-white`}
+                  size={20}
+                  aria-hidden
+                  className="mt-0.5 shrink-0 text-foreground"
                 />
                 Built for business websites
               </li>
             </ul>
 
-            <h2
-              className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}
-            >
+            <h2 className="mt-8 text-heading-s text-foreground">
               Fast for Every Customer, Everywhere
             </h2>
-            <p className={`mb-4 text-neutral-400/90`}>
+            <p className="mt-4 text-body text-muted-foreground">
               Your site loads quickly whether your visitor is around the corner
               or across the world. I handle the boring infrastructure side of
               that. You just get a site that performs.
             </p>
 
-            <h2
-              className={`mt-8 mb-4 font-serif text-h3 font-bold text-white`}
-            >
+            <h2 className="mt-8 text-heading-s text-foreground">
               Fair, Simple Pricing
             </h2>
-            <p className={`mb-4 text-neutral-400/90`}>
+            <p className="mt-4 text-body text-muted-foreground">
               Instead of complex tiers, my hosting scales naturally with your
-              website's needs. I start with generous resources that work for
+              website&apos;s needs. I start with generous resources that work for
               most businesses, and as your site grows, your hosting grows with
-              it, no complicated decisions required. You'll never pay for
-              resources you don't need, and I'll proactively let you know if I
-              spot opportunities to optimise your site's performance.
+              it, no complicated decisions required. You&apos;ll never pay for
+              resources you don&apos;t need, and I&apos;ll proactively let you
+              know if I spot opportunities to optimise your site&apos;s
+              performance.
             </p>
-          </article>
+          </div>
         </section>
 
-        {/* Right Column, Light: Features */}
-        <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
-        >
-          <article className={`max-w-lg`}>
-            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
-              What's Included with Every Hosting
+        <section className={`${SECTION} border-b border-border`}>
+          <div className="max-w-lg">
+            <h2 className="text-heading-m text-foreground">
+              What&apos;s Included with Every Hosting
             </h2>
-            <ul className={`flex flex-col gap-8`}>
+            <ul className="mt-8 flex flex-col gap-8">
               {features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-2">
+                <li key={index} className="flex items-start gap-3">
                   <IconCircleCheckFilled
-                    className="text-ravenci-primary flex-shrink-0"
-                    size={24}
+                    className="mt-0.5 shrink-0 text-accent"
+                    size={22}
                   />
-                  <p className={`text-neutral-600`}>
-                    <span className="font-bold text-ravenci-dark">
+                  <p className="text-body text-muted-foreground">
+                    <span className="font-semibold text-foreground">
                       {feature.title}:
                     </span>{" "}
                     {feature.description}
@@ -259,146 +244,154 @@ export default function WebHostingPage() {
                 </li>
               ))}
             </ul>
-          </article>
+          </div>
         </section>
       </div>
 
-      {/* Full-Width Pricing Section */}
+      {/* Pricing */}
       <section
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
+        className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}
       >
-        <h2
-          className={`mb-12 font-serif text-h3 font-bold text-white text-center`}
-        >
-          Simple, All-Inclusive Hosting
-        </h2>
-        <div className="bg-neutral-800/50 rounded-xl p-8 border border-neutral-700 max-w-md mx-auto">
-          <h4 className="text-xl font-bold text-white">
+        <div className="mb-12 flex flex-col gap-3">
+          <SectionLabel index="01" label="Pricing" tone="muted" />
+          <h2 className="text-display-m text-foreground">
+            Simple, All-Inclusive Hosting
+          </h2>
+        </div>
+        <div className="mx-auto max-w-md rounded-sm border border-border bg-card p-8">
+          <h3 className="text-heading-s text-foreground">
             Managed Cloud Hosting
-          </h4>
-          <p className="mt-2 text-neutral-400/90">
+          </h3>
+          <p className="mt-2 text-body text-muted-foreground">
             Everything you need to keep your website fast, secure, and online.
             Cloud hosting, SSL, daily backups, security monitoring, automatic
             scaling, and Brisbane-based support, all included.
           </p>
-          <Link
-            href="/quote?service=web-hosting"
-            className="group/cta mt-8 block text-center rounded-xl border border-neutral-600 hover:border-white hover:bg-white p-6 transition-colors"
-          >
-            <span className="block text-3xl font-bold text-white group-hover/cta:text-ravenci-dark transition-colors">
-              $39
-              <span className="text-lg font-normal text-neutral-400 group-hover/cta:text-neutral-500 transition-colors">
-                /mo.
-              </span>
-            </span>
-            <span className="block mt-3 text-sm font-medium text-white group-hover/cta:text-ravenci-dark transition-colors">
-              Get a hosting quote &rarr;
-            </span>
-          </Link>
+          <div className="mt-8 flex items-baseline gap-1">
+            <span className="tnum text-metric text-foreground">$39</span>
+            <span className="text-body text-muted-foreground">/mo.</span>
+          </div>
+          <Button asChild size="lg" variant="primary" className="mt-6 w-full">
+            <Link href="/quote?service=web-hosting">Get a hosting quote</Link>
+          </Button>
         </div>
       </section>
 
-      {/* Showcase Section */}
-      <section className="py-20 px-5 sm:px-20 xl:px-36 bg-white">
-        <h2 className="mb-10 font-serif text-h3 font-bold text-center">
-          Some of the Businesses I Host
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Showcase */}
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mb-10 flex flex-col gap-3">
+          <SectionLabel index="02" label="Hosted businesses" />
+          <h2 className="text-display-m text-foreground">
+            Some of the Businesses I Host
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { name: "Peninsula Homes", image: "/showcase-images/Client - Peninsula Homes.png" },
             { name: "SAC Consulting", image: "/showcase-images/Client - SAC Consulting.png" },
             { name: "Beauty Retreat Bribie Islands", image: "/showcase-images/Client - Beauty Retreat Bribie Islands.png" },
             { name: "The DIRT Agency", image: "/showcase-images/Client - The DIRT Agency.png" },
           ].map((project) => (
-            <div key={project.name} className="group relative overflow-hidden rounded-xl">
-              <Image
-                src={project.image}
-                alt={`${project.name} hosted by RAVENCI`}
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-10">
-                <p className="text-sm font-medium text-white">{project.name}</p>
+            <div
+              key={project.name}
+              className="group overflow-hidden rounded-sm border border-border bg-card"
+            >
+              <div className="overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={`${project.name} hosted by RAVENCI`}
+                  width={600}
+                  height={400}
+                  className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
+              <p className="p-4 text-small font-medium text-foreground">
+                {project.name}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Notice Section */}
-      <section
-        className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-primary`}
-      >
-        <article className={`mx-auto max-w-xl`}>
-          <p className={`text-center text-neutral-50/70`}>
+      {/* Notice */}
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mx-auto max-w-xl rounded-sm border border-border bg-muted p-6 md:p-8">
+          <p className="text-center text-body text-muted-foreground">
             Please note:{" "}
-            <span className={`text-white`}>As of October, 2024</span>, I no
-            longer host websites that are not signed up to reliable ongoing
-            maintenance. This does not have to be through RAVENCI, but it must
-            be from a reputable provider.
+            <span className="font-medium text-foreground">
+              As of October, 2024
+            </span>
+            , I no longer host websites that are not signed up to reliable
+            ongoing maintenance. This does not have to be through RAVENCI, but it
+            must be from a reputable provider.
           </p>
-        </article>
+        </div>
       </section>
 
       {/* Investment ROI */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
-        <h2 className="mb-4 font-serif text-h3 font-bold text-center">
-          Cheap Hosting Has a Real Price
-        </h2>
-        <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
-          Hosting is the foundation everything else sits on. Get it right and
-          your site stays fast and online every day. Get it wrong and you feel
-          it in lost customers.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
-          <div className="p-6 rounded-xl border border-neutral-200 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">$1.30</p>
-            <p className="mt-1 text-sm text-neutral-500">per day</p>
-            <p className="mt-3 text-sm text-neutral-700">
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mb-10 flex flex-col gap-3">
+          <SectionLabel index="03" label="The real cost" />
+          <h2 className="text-display-m text-foreground">
+            Cheap Hosting Has a Real Price
+          </h2>
+          <p className="max-w-2xl text-lead text-muted-foreground">
+            Hosting is the foundation everything else sits on. Get it right and
+            your site stays fast and online every day. Get it wrong and you feel
+            it in lost customers.
+          </p>
+        </div>
+        <div className="mb-12 grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="rounded-sm border border-border bg-card p-6 text-center">
+            <p className="tnum text-metric text-accent">$1.30</p>
+            <p className="mt-1 text-small text-muted-foreground">per day</p>
+            <p className="mt-3 text-small text-foreground">
               Managed cloud hosting
             </p>
           </div>
-          <div className="p-6 rounded-xl border border-neutral-200 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">$468</p>
-            <p className="mt-1 text-sm text-neutral-500">per year</p>
-            <p className="mt-3 text-sm text-neutral-700">
+          <div className="rounded-sm border border-border bg-card p-6 text-center">
+            <p className="tnum text-metric text-accent">$468</p>
+            <p className="mt-1 text-small text-muted-foreground">per year</p>
+            <p className="mt-3 text-small text-foreground">
               Total annual hosting cost
             </p>
           </div>
-          <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5 text-center">
-            <p className="text-3xl font-bold text-ravenci-primary">99.9%</p>
-            <p className="mt-1 text-sm text-neutral-500">uptime</p>
-            <p className="mt-3 text-sm text-neutral-700">
+          <div className="rounded-sm border border-accent/40 bg-accent/[0.04] p-6 text-center">
+            <p className="tnum text-metric text-accent">99.9%</p>
+            <p className="mt-1 text-small text-muted-foreground">uptime</p>
+            <p className="mt-3 text-small text-foreground">
               Your site stays online and earning
             </p>
           </div>
         </div>
-        <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
+        <div className="max-w-2xl space-y-4 text-body text-muted-foreground">
           <p>
             Every hour your website is down costs you customers. If your site
-            generates even one enquiry a day, a single day of downtime from
-            cheap hosting costs you more than an entire year of managed hosting
-            with RAVENCI.
+            generates even one enquiry a day, a single day of downtime from cheap
+            hosting costs you more than an entire year of managed hosting with
+            RAVENCI.
           </p>
           <p>
             The real question isn&apos;t &ldquo;can I afford proper
-            hosting?&rdquo; It&apos;s &ldquo;can I afford the lost revenue
-            when my $5/month host goes down during a campaign?&rdquo;
+            hosting?&rdquo; It&apos;s &ldquo;can I afford the lost revenue when
+            my $5/month host goes down during a campaign?&rdquo;
           </p>
         </div>
       </section>
 
       {/* What Can Affect Pricing */}
-      <section className={`content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50`}>
-        <h2 className={`mb-8 font-serif text-h3 font-bold text-center`}>
-          What Can Affect Pricing
-        </h2>
-        <p className={`mb-8 text-center text-neutral-500/80 max-w-2xl mx-auto`}>
-          My hosting starts at $39/mo for most business websites. These
-          factors can move the price above that starting point.
-        </p>
-        <div className={`grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto`}>
+      <section className={`bg-muted ${SECTION} border-b border-border`}>
+        <div className="mb-8 flex flex-col gap-3">
+          <SectionLabel index="04" label="Pricing factors" />
+          <h2 className="text-heading-m text-foreground">
+            What Can Affect Pricing
+          </h2>
+          <p className="max-w-2xl text-body text-muted-foreground">
+            My hosting starts at $39/mo for most business websites. These factors
+            can move the price above that starting point.
+          </p>
+        </div>
+        <div className="grid max-w-4xl grid-cols-1 gap-x-12 gap-y-6 md:grid-cols-2">
           {[
             "High-traffic websites requiring more server resources",
             "eCommerce platforms with payment gateway requirements",
@@ -411,77 +404,99 @@ export default function WebHostingPage() {
           ].map((item, i) => (
             <div key={i} className="flex items-start gap-2">
               <IconCircleCheckFilled
-                className="text-neutral-400 flex-shrink-0 mt-0.5"
+                className="mt-0.5 shrink-0 text-muted-foreground"
                 size={18}
               />
-              <p className="text-neutral-600 text-sm">{item}</p>
+              <p className="text-small text-muted-foreground">{item}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Related Services */}
-      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 bg-neutral-50">
-        <h2 className="mb-8 font-serif text-h3 font-bold text-center">Related Services</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <section className={`${SECTION} border-b border-border`}>
+        <h2 className="mb-8 text-heading-m text-foreground">Related Services</h2>
+        <div className="grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-3">
           {[
             { name: "Website Maintenance", href: "/website-maintenance", description: "Keep your site secure and up to date" },
             { name: "Website Design", href: "/web-development", description: "Custom websites built to perform" },
             { name: "Retainer Packages", href: "/retainer-packages", description: "Ongoing development and support" },
           ].map((service) => (
-            <Link key={service.href} href={service.href} className="p-6 rounded-xl border border-neutral-200 bg-white hover:border-ravenci-primary/30 transition-colors text-center">
-              <h3 className="font-bold text-ravenci-dark mb-2">{service.name}</h3>
-              <p className="text-sm text-neutral-500">{service.description}</p>
+            <Link
+              key={service.href}
+              href={service.href}
+              className="group rounded-sm border border-border bg-card p-6 text-center transition-colors duration-fast hover:border-foreground/30"
+            >
+              <h3 className="text-heading-s text-foreground">{service.name}</h3>
+              <p className="mt-2 text-small text-muted-foreground">
+                {service.description}
+              </p>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section
-        className={`content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white`}
-      >
-        <h2 className={`font-serif text-h3`}>Frequently Asked Questions</h2>
-        <Accordion
-          titleClassName={`py-6 text-lg`}
-          items={[
-            {
-              title: `How is this different from cheap hosting like Bluehost?`,
-              summary: `RAVENCI uses enterprise-grade cloud infrastructure with automatic scaling, dedicated resources, Brisbane-based support, and all-inclusive pricing. SSL, backups, and security are included. No extra charges.`,
-              content: `My hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimisation that cheap hosts can't match. Plus everything is included: SSL, backups, security. No extra charges.`,
-            },
-            {
-              title: `What if my traffic suddenly spikes?`,
-              summary: `RAVENCI cloud hosting automatically scales to handle traffic spikes without crashing or downtime. Servers grow with your traffic, unlike shared hosting which can go offline during surges.`,
-              content: `My cloud hosting automatically scales to handle traffic spikes without your site crashing. My servers grow with your traffic so you never have to worry about any downtime. Compare this to shared hosting where traffic spikes can take your site offline.`,
-            },
-            {
-              title: `Do you migrate my existing website?`,
-              summary: `Yes. RAVENCI handles complete website migration from your current host, though extra charges may apply. Your site will be faster and more secure from day one with zero downtime.`,
-              content: `Yes, I handle the complete migration from your current host though extra charges may apply. Your site will be faster and more secure from day one, and I'll make sure nothing breaks in the process.`,
-            },
-            {
-              title: `What's included in the $39/month price?`,
-              summary: `Everything: cloud hosting, SSL certificate, daily backups, security monitoring, automatic scaling, and Brisbane-based support. No hidden fees, no surprise charges, no add-ons required.`,
-              content: `Everything: cloud hosting, SSL certificate, daily backups, security monitoring, automatic scaling, and Brisbane-based support. No hidden fees, no surprise charges, no complex add-ons to buy.`,
-            },
-            {
-              title: `Can I host my website elsewhere and still get your other services?`,
-              summary: `Yes, RAVENCI can work with other quality hosts. However, hosting and maintenance bundles offer the best value and performance since everything is optimised to work together.`,
-              content: `While I prefer to host sites I maintain to guarantee optimal performance and security, I can work with other quality hosts. However, my hosting + maintenance bundles offer the best value and performance since everything is optimised to work together.`,
-            },
-          ]}
-        />
+      {/* FAQ */}
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-8 flex flex-col gap-3">
+            <SectionLabel index="05" label="FAQ" />
+            <h2 className="text-display-m text-foreground">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <Accordion
+            titleClassName="py-6 text-lg"
+            items={[
+              {
+                title: `How is this different from cheap hosting like Bluehost?`,
+                summary: `RAVENCI uses enterprise-grade cloud infrastructure with automatic scaling, dedicated resources, Brisbane-based support, and all-inclusive pricing. SSL, backups, and security are included. No extra charges.`,
+                content: `My hosting uses enterprise-grade cloud infrastructure with automatic scaling, not overcrowded shared servers. You get dedicated resources, Brisbane-based support, and performance optimisation that cheap hosts can't match. Plus everything is included: SSL, backups, security. No extra charges.`,
+              },
+              {
+                title: `What if my traffic suddenly spikes?`,
+                summary: `RAVENCI cloud hosting automatically scales to handle traffic spikes without crashing or downtime. Servers grow with your traffic, unlike shared hosting which can go offline during surges.`,
+                content: `My cloud hosting automatically scales to handle traffic spikes without your site crashing. My servers grow with your traffic so you never have to worry about any downtime. Compare this to shared hosting where traffic spikes can take your site offline.`,
+              },
+              {
+                title: `Do you migrate my existing website?`,
+                summary: `Yes. RAVENCI handles complete website migration from your current host, though extra charges may apply. Your site will be faster and more secure from day one with zero downtime.`,
+                content: `Yes, I handle the complete migration from your current host though extra charges may apply. Your site will be faster and more secure from day one, and I'll make sure nothing breaks in the process.`,
+              },
+              {
+                title: `What's included in the $39/month price?`,
+                summary: `Everything: cloud hosting, SSL certificate, daily backups, security monitoring, automatic scaling, and Brisbane-based support. No hidden fees, no surprise charges, no add-ons required.`,
+                content: `Everything: cloud hosting, SSL certificate, daily backups, security monitoring, automatic scaling, and Brisbane-based support. No hidden fees, no surprise charges, no complex add-ons to buy.`,
+              },
+              {
+                title: `Can I host my website elsewhere and still get your other services?`,
+                summary: `Yes, RAVENCI can work with other quality hosts. However, hosting and maintenance bundles offer the best value and performance since everything is optimised to work together.`,
+                content: `While I prefer to host sites I maintain to guarantee optimal performance and security, I can work with other quality hosts. However, my hosting + maintenance bundles offer the best value and performance since everything is optimised to work together.`,
+              },
+            ]}
+          />
+        </div>
       </section>
 
-      {/* Footer Spacer */}
-      <section
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
-      ></section>
-
-      {/* Proof near the CTA */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
-        <ProofCluster testimonial={testimonials[0]} />
+      {/* Closing CTA */}
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <div className="mx-auto flex max-w-3xl flex-col gap-10">
+          <ProofCluster testimonial={testimonials[0]} theme="dark" />
+          <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <h2 className="text-display-m text-foreground">
+                Ready to host with me?
+              </h2>
+              <p className="mt-4 text-body text-muted-foreground">
+                Tell me about your site and I&apos;ll put together a hosting
+                quote.
+              </p>
+            </div>
+            <Button asChild size="lg" variant="primary">
+              <Link href="/quote?service=web-hosting">Get a Hosting Quote</Link>
+            </Button>
+          </div>
+        </div>
       </section>
 
       {/* Sticky CTA for Mobile */}

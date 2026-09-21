@@ -6,6 +6,8 @@ import { IconAlertTriangle, IconCheck } from "@tabler/icons-react";
 
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+import { Button } from "@/components/ui/button";
 import AuditReportGate from "@/components/audit-report-gate";
 import {
   auditStats,
@@ -13,6 +15,8 @@ import {
   industryBreakdown,
   auditFaqItems as faqItems,
 } from "@/data/brisbane-audit";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata: Metadata = {
   title: "Brisbane Website Audit Results | RAVENCI Solutions",
@@ -35,65 +39,57 @@ export default function BrisbaneWebsiteAuditPage() {
   return (
     <main className="flex flex-col">
       {/* Hero */}
-      <section className="content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 bg-white">
-        <article className="max-w-3xl flex flex-col gap-2">
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="flex max-w-3xl flex-col gap-4">
           <Breadcrumbs items={[{ label: "Brisbane Website Audit" }]} />
-          <span className="mt-2 text-xs font-medium tracking-wider uppercase text-ravenci-primary">
-            Original Research, 2026
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
-            I Audited 50 Brisbane Business Websites
+          <SectionLabel label="Original research, 2026" tick />
+          <h1 className="text-display-l text-foreground">
+            I audited 50 Brisbane business websites
           </h1>
-          <h2 className="max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light">
-            The results were worse than I expected
-          </h2>
-          <p className="mt-6 max-w-2xl text-neutral-500/80">
+          <p className="text-heading-m text-muted-foreground">
+            The results were worse than I expected.
+          </p>
+          <p className="text-lead text-muted-foreground">
             Between January and February 2026, RAVENCI Solutions audited 50
             randomly selected Brisbane business websites across 7 industries. I
             tested for speed, SEO, mobile usability, accessibility, and
             security. The average mobile PageSpeed score was 38 out of 100. Here
             are the full findings.
           </p>
-        </article>
+        </div>
       </section>
 
-      {/* Key stats grid */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white">
-        <h3 className="mb-10 font-serif text-h3 font-bold">
-          The Headline Numbers
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+      {/* Key stats grid (dark) */}
+      <section
+        className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}
+      >
+        <SectionLabel index="01" label="The headline numbers" tone="muted" />
+        <h2 className="mt-3 mb-10 text-display-m text-foreground">
+          The headline numbers
+        </h2>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {auditStats.map((item, index) => (
             <div
               key={index}
-              className="p-5 bg-white/5 border border-white/10 rounded-lg flex flex-col"
+              className="flex flex-col rounded-sm border border-border bg-card p-6"
             >
-              <div className="flex items-start gap-2 mb-2">
-                {item.severity === "critical" ? (
-                  <IconAlertTriangle
-                    size={20}
-                    className="text-red-400 flex-shrink-0 mt-0.5"
-                  />
-                ) : (
-                  <IconAlertTriangle
-                    size={20}
-                    className="text-yellow-400 flex-shrink-0 mt-0.5"
-                  />
-                )}
-                <span className="text-3xl font-bold">{item.stat}</span>
+              <div className="mb-2 flex items-start gap-2">
+                <IconAlertTriangle
+                  size={20}
+                  aria-hidden
+                  className="mt-0.5 shrink-0 text-muted-foreground"
+                />
+                <span className="tnum text-metric text-foreground">
+                  {item.stat}
+                </span>
               </div>
-              <p className="text-sm text-neutral-400 leading-relaxed">
-                {item.label}
-              </p>
+              <p className="text-small text-muted-foreground">{item.label}</p>
               {item.ravenciCounter && (
                 <div
-                  className="mt-auto pt-3 flex items-center gap-2 text-sm font-bold text-green-400"
+                  className="mt-auto flex items-center gap-2 pt-3 text-small font-semibold text-foreground"
                   title={item.ravenciCounterNote}
                 >
-                  <IconCheck
-                    size={16}
-                    className="p-0.5 bg-green-500/30 rounded-full text-green-400 flex-shrink-0"
-                  />
+                  <IconCheck size={16} aria-hidden className="shrink-0" />
                   <span>{item.ravenciCounter}</span>
                 </div>
               )}
@@ -103,11 +99,12 @@ export default function BrisbaneWebsiteAuditPage() {
       </section>
 
       {/* Category breakdown */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-100">
-        <h3 className="mb-4 font-serif text-h3 font-bold">
-          Category-by-Category Breakdown
-        </h3>
-        <p className="mb-10 max-w-2xl text-neutral-500/80">
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="02" label="Category breakdown" />
+        <h2 className="mt-3 text-display-m text-foreground">
+          Category-by-category breakdown
+        </h2>
+        <p className="mb-10 mt-3 max-w-2xl text-lead text-muted-foreground">
           I scored each site across five categories. Here&apos;s how Brisbane
           businesses performed on average, with actionable recommendations for
           each area.
@@ -116,52 +113,48 @@ export default function BrisbaneWebsiteAuditPage() {
           {categoryBreakdown.map((cat, index) => (
             <div
               key={index}
-              className="p-6 md:p-8 bg-white rounded-lg border border-neutral-200"
+              className="rounded-sm border border-border bg-card p-6 md:p-8"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-                <h4 className="text-xl font-bold text-ravenci-dark">
+              <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <h3 className="text-heading-s text-foreground">
                   {cat.category}
-                </h4>
-                <span
-                  className={`px-3 py-1 w-fit text-sm font-bold rounded-full ${
-                    parseInt(cat.score) < 40
-                      ? "bg-red-100 text-red-700"
-                      : parseInt(cat.score) < 50
-                        ? "bg-yellow-100 text-yellow-700"
-                        : "bg-green-100 text-green-700"
-                  }`}
-                >
+                </h3>
+                <span className="w-fit rounded-sm border border-border bg-muted px-3 py-1 text-small font-medium text-foreground">
                   Brisbane average: {cat.score}
                 </span>
                 {cat.ravenciAverage && (
                   <span
-                    className="px-3 py-1 w-fit text-sm font-bold rounded-full bg-ravenci-primary/10 text-ravenci-primary"
+                    className="w-fit rounded-sm border border-accent/30 px-3 py-1 text-small font-medium text-accent"
                     title={cat.ravenciSampleNote}
                   >
                     RAVENCI sites: {cat.ravenciAverage}
                   </span>
                 )}
               </div>
-              <p className="mb-4 text-neutral-600 leading-relaxed">
+              <p className="mb-4 text-body text-muted-foreground">
                 {cat.detail}
               </p>
               {cat.ravenciSampleNote && (
-                <p className="mb-4 text-xs text-neutral-500 italic">
+                <p className="mb-4 text-small italic text-muted-foreground">
                   RAVENCI comparison: {cat.ravenciSampleNote}
                 </p>
               )}
               <div>
-                <p className="mb-2 text-sm font-bold text-ravenci-dark">
+                <p className="mb-2 text-small font-semibold text-foreground">
                   How to fix it:
                 </p>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <ul className="grid grid-cols-1 gap-2 md:grid-cols-2">
                   {cat.recommendations.map((rec, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm">
+                    <li
+                      key={i}
+                      className="flex items-start gap-2 text-small text-muted-foreground"
+                    >
                       <IconCheck
                         size={18}
-                        className="p-0.5 bg-ravenci-primary rounded-full text-white flex-shrink-0 mt-0.5"
+                        aria-hidden
+                        className="mt-0.5 shrink-0 text-accent"
                       />
-                      <span className="text-neutral-600">{rec}</span>
+                      <span>{rec}</span>
                     </li>
                   ))}
                 </ul>
@@ -172,11 +165,12 @@ export default function BrisbaneWebsiteAuditPage() {
       </section>
 
       {/* Industry breakdown */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-white">
-        <h3 className="mb-4 font-serif text-h3 font-bold">
-          Performance by Industry
-        </h3>
-        <p className="mb-10 max-w-2xl text-neutral-500/80">
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="03" label="Performance by industry" />
+        <h2 className="mt-3 text-display-m text-foreground">
+          Performance by industry
+        </h2>
+        <p className="mb-10 mt-3 max-w-2xl text-lead text-muted-foreground">
           Trades and construction businesses performed worst, while education
           and real estate showed comparatively stronger results, though no
           industry averaged above 52.
@@ -184,26 +178,20 @@ export default function BrisbaneWebsiteAuditPage() {
         <div className="max-w-2xl space-y-4">
           {industryBreakdown.map((ind, index) => (
             <div key={index} className="flex items-center gap-4">
-              <span className="w-48 min-w-[120px] text-sm font-medium text-ravenci-dark">
+              <span className="w-48 min-w-[120px] text-small font-medium text-foreground">
                 {ind.industry}
               </span>
-              <div className="flex-1 h-8 bg-neutral-100 rounded-full overflow-hidden">
+              <div className="h-8 flex-1 overflow-hidden rounded-sm bg-muted">
                 <div
-                  className={`h-full rounded-full flex items-center justify-end pr-3 ${
-                    ind.avgScore < 40
-                      ? "bg-red-400"
-                      : ind.avgScore < 50
-                        ? "bg-yellow-400"
-                        : "bg-green-400"
-                  }`}
+                  className="flex h-full items-center justify-end rounded-sm bg-foreground pr-3"
                   style={{ width: `${ind.avgScore}%` }}
                 >
-                  <span className="text-xs font-bold text-white">
+                  <span className="tnum text-small font-semibold text-background">
                     {ind.avgScore}
                   </span>
                 </div>
               </div>
-              <span className="text-xs text-neutral-400 min-w-[60px]">
+              <span className="min-w-[60px] text-small text-muted-foreground">
                 {ind.count} sites
               </span>
             </div>
@@ -211,16 +199,21 @@ export default function BrisbaneWebsiteAuditPage() {
         </div>
       </section>
 
-      {/* Key takeaways */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-primary text-white">
+      {/* Key takeaways (dark) */}
+      <section
+        className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}
+      >
         <div className="max-w-3xl">
-          <h3 className="mb-8 font-serif text-h3 font-bold">Key Takeaways</h3>
-          <div className="space-y-6 text-white/90 leading-relaxed">
+          <SectionLabel index="04" label="Key takeaways" tone="muted" />
+          <h2 className="mt-3 mb-8 text-display-m text-foreground">
+            Key takeaways
+          </h2>
+          <div className="space-y-6">
             <div>
-              <h4 className="mb-2 text-lg font-bold text-white">
+              <h3 className="mb-2 text-heading-s text-foreground">
                 1. Speed is the biggest problem
-              </h4>
-              <p>
+              </h3>
+              <p className="text-body text-muted-foreground">
                 72% of Brisbane business websites scored below 50 on mobile
                 PageSpeed. Google uses Core Web Vitals as a ranking factor: slow
                 sites are actively penalised in search results. Every second of
@@ -228,10 +221,10 @@ export default function BrisbaneWebsiteAuditPage() {
               </p>
             </div>
             <div>
-              <h4 className="mb-2 text-lg font-bold text-white">
+              <h3 className="mb-2 text-heading-s text-foreground">
                 2. Most sites are invisible to AI search
-              </h4>
-              <p>
+              </h3>
+              <p className="text-body text-muted-foreground">
                 64% had no structured data at all. As AI-powered search (Google
                 SGE, ChatGPT, Perplexity) grows, sites without schema markup
                 will not be cited in AI-generated answers. This is the new SEO
@@ -239,20 +232,20 @@ export default function BrisbaneWebsiteAuditPage() {
               </p>
             </div>
             <div>
-              <h4 className="mb-2 text-lg font-bold text-white">
+              <h3 className="mb-2 text-heading-s text-foreground">
                 3. Security is being ignored
-              </h4>
-              <p>
+              </h3>
+              <p className="text-body text-muted-foreground">
                 42% had SSL issues and 34% ran outdated CMS versions. These
                 sites are vulnerable to hacking, data breaches, and Google
                 warnings that drive visitors away.
               </p>
             </div>
             <div>
-              <h4 className="mb-2 text-lg font-bold text-white">
+              <h3 className="mb-2 text-heading-s text-foreground">
                 4. Accessibility is an afterthought
-              </h4>
-              <p>
+              </h3>
+              <p className="text-body text-muted-foreground">
                 38% failed basic colour contrast checks. 52% had images without
                 alt text. Zero sites had accessibility statements. This
                 isn&apos;t just about compliance. It&apos;s about excluding
@@ -260,10 +253,10 @@ export default function BrisbaneWebsiteAuditPage() {
               </p>
             </div>
             <div>
-              <h4 className="mb-2 text-lg font-bold text-white">
+              <h3 className="mb-2 text-heading-s text-foreground">
                 5. The bar is surprisingly low
-              </h4>
-              <p>
+              </h3>
+              <p className="text-body text-muted-foreground">
                 If your website scores 80+ on PageSpeed, has structured data,
                 proper meta tags, and basic accessibility, you&apos;re already
                 ahead of the vast majority of Brisbane businesses. The
@@ -275,15 +268,13 @@ export default function BrisbaneWebsiteAuditPage() {
       </section>
 
       {/* Lead-gated downloadable report */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-100">
-        <div className="text-center mb-10">
-          <span className="block mb-3 text-xs font-medium tracking-widest uppercase text-ravenci-primary">
-            Take it with you
-          </span>
-          <h2 className="text-3xl md:text-4xl font-medium text-ravenci-dark">
+      <section className={`bg-muted ${SECTION} border-b border-border`}>
+        <div className="mb-10 flex flex-col items-center gap-3 text-center">
+          <SectionLabel label="Take it with you" />
+          <h2 className="text-display-m text-foreground">
             Want the full report as a PDF?
           </h2>
-          <p className="mt-3 max-w-xl mx-auto text-neutral-600">
+          <p className="mx-auto max-w-xl text-lead text-muted-foreground">
             Same data, formatted for printing or sharing internally. I&apos;ll
             email you the report and a copy lands in your inbox to keep.
           </p>
@@ -291,40 +282,40 @@ export default function BrisbaneWebsiteAuditPage() {
         <AuditReportGate />
       </section>
 
-      {/* CTA */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 flex flex-col items-center text-center bg-ravenci-dark text-white">
-        <h2 className="mb-4 text-3xl md:text-4xl font-medium">
-          How Does Your Website Stack Up?
-        </h2>
-        <p className="mb-10 max-w-lg text-neutral-400">
-          Get a free Visibility Check. I&apos;ll audit your site across all
-          five categories and show you exactly where you stand compared to your
-          competitors.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href="/launch-your-vision"
-            className="group relative px-8 py-3 grid place-content-center bg-ravenci-primary rounded-full text-white hover:bg-ravenci-primary/85 transition-all duration-300 ease-in-out"
-          >
-            Free Visibility Check
-          </Link>
-          <Link
-            href="/web-development"
-            className="group relative px-8 py-3 grid place-content-center border border-neutral-600 rounded-full text-neutral-300 hover:text-white hover:border-white transition-all duration-300 ease-in-out"
-          >
-            See My Website Design Packages
-          </Link>
+      {/* FAQ */}
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mb-8 flex flex-col gap-3">
+          <SectionLabel label="About this research" />
+          <h2 className="text-display-m text-foreground">
+            About this research
+          </h2>
+        </div>
+        <Accordion items={faqItems} />
+      </section>
+
+      {/* Closing CTA (dark) */}
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="text-display-m text-foreground">
+              How does your website stack up?
+            </h2>
+            <p className="mt-4 text-body text-muted-foreground">
+              Get a free Visibility Check. I&apos;ll audit your site across all
+              five categories and show you exactly where you stand compared to
+              your competitors.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <Button asChild size="lg" variant="primary">
+              <Link href="/launch-your-vision">Free Visibility Check</Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/web-development">See my website design packages</Link>
+            </Button>
+          </div>
         </div>
       </section>
-
-      {/* FAQ */}
-      <section className="content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white">
-        <h2 className="font-serif text-h3">About This Research</h2>
-        <Accordion titleClassName="py-6 text-lg" items={faqItems} />
-      </section>
-
-      {/* Spacer */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white" />
 
       {/* BreadcrumbList JSON-LD */}
       <script

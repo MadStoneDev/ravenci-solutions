@@ -6,6 +6,10 @@ import { IconCheck, IconAlertTriangle, IconX } from "@tabler/icons-react";
 
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+import { Button } from "@/components/ui/button";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata: Metadata = {
   title:
@@ -190,7 +194,7 @@ const ravenciScorecard = [
   {
     question: "Who owns everything?",
     answer:
-      "You do. Domain, code, content, hosting: all transferable, no lock-in. I&apos;ve never had a client unable to leave.",
+      "You do. Domain, code, content, hosting: all transferable, no lock-in. I've never had a client unable to leave.",
   },
   {
     question: "12-month total cost transparent?",
@@ -302,58 +306,59 @@ export default function HowToChooseWebDesignerPage() {
   return (
     <main className="flex flex-col">
       {/* Hero */}
-      <section className="content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 bg-white">
-        <article className="max-w-3xl flex flex-col gap-2">
+      <section className={`${SECTION} border-b border-border`}>
+        <article className="flex max-w-3xl flex-col gap-4">
           <Breadcrumbs
             items={[{ label: "How to Choose a Web Designer in Brisbane" }]}
           />
-          <span className="mt-2 text-xs font-medium tracking-wider uppercase text-ravenci-primary">
-            Brisbane Web Designer Guide, 2026
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
+          <SectionLabel label="Brisbane Web Designer Guide, 2026" tick />
+          <h1 className="text-display-l text-foreground">
             How to Choose a Web Designer in Brisbane in 2026
           </h1>
-          <h2 className="max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light">
+          <p className="text-lead text-muted-foreground">
             Ten questions to ask, the red flags to spot, and how to compare
-            quotes properly
-          </h2>
-          <p className="mt-6 max-w-2xl text-neutral-500/80">
-            Choosing a Brisbane web designer in 2026 comes down to ten
-            questions: who owns everything afterwards, the 12-month total cost,
-            which platform and why, case studies, maintenance terms,
-            revision rounds, timeline, post-launch support, exit process, and
-            who does the work. This guide walks through each question
-            with the answer to look for, plus the red and green flags
-            separating reputable agencies from the rest.
+            quotes properly.
+          </p>
+          <p className="max-w-prose text-body text-muted-foreground">
+            Choosing a Brisbane web designer in 2026 comes down to ten questions:
+            who owns everything afterwards, the 12-month total cost, which
+            platform and why, case studies, maintenance terms, revision rounds,
+            timeline, post-launch support, exit process, and who does the work.
+            This guide walks through each question with the answer to look for,
+            plus the red and green flags separating reputable agencies from the
+            rest.
           </p>
         </article>
       </section>
 
       {/* The 10 questions */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white">
-        <h3 className="mb-4 font-serif text-h3 font-bold">
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <SectionLabel index="01" label="The ten questions" tone="muted" />
+        <h2 className="mt-3 text-display-m text-foreground">
           The Ten Essential Questions
-        </h3>
-        <p className="mb-10 max-w-2xl text-neutral-400">
-          Ask these in your discovery call. Vague or evasive answers to any
-          one are typically a sign of pattern problems across the engagement.
+        </h2>
+        <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
+          Ask these in your discovery call. Vague or evasive answers to any one
+          are typically a sign of pattern problems across the engagement.
         </p>
         <div className="space-y-4">
           {questions.map((q, index) => (
             <div
               key={index}
-              className="p-5 md:p-6 bg-white rounded-xl shadow-lg"
+              className="rounded-sm border border-white/10 bg-card p-5 md:p-6"
             >
-              <div className="flex items-start gap-4 mb-3">
-                <span className="font-serif text-2xl md:text-3xl font-bold text-ravenci-primary">
+              <div className="mb-3 flex items-start gap-4">
+                <span className="font-mono text-heading-m text-muted-foreground">
                   {q.number}
                 </span>
-                <h4 className="text-lg md:text-xl font-bold text-ravenci-dark pt-1">
+                <h3 className="pt-1 text-heading-s text-foreground">
                   {q.question}
-                </h4>
+                </h3>
               </div>
-              <p className="ml-12 text-sm text-neutral-600 leading-relaxed">
-                <span className="font-bold text-ravenci-dark">What to listen for:</span>{" "}
+              <p className="ml-12 text-body text-muted-foreground">
+                <span className="font-semibold text-foreground">
+                  What to listen for:
+                </span>{" "}
                 {q.rightAnswer}
               </p>
             </div>
@@ -362,32 +367,34 @@ export default function HowToChooseWebDesignerPage() {
       </section>
 
       {/* Red flags / Green flags */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
-        <h3 className="mb-10 font-serif text-h3 font-bold">
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="02" label="Red flags and green flags" />
+        <h2 className="mb-10 mt-3 text-display-m text-foreground">
           Red Flags &amp; Green Flags
-        </h3>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        </h2>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Red flags */}
           <div>
-            <h4 className="mb-6 text-xl font-bold text-red-700 flex items-center gap-2">
-              <IconAlertTriangle size={24} /> Red Flags
-            </h4>
+            <h3 className="mb-6 flex items-center gap-2 text-heading-s text-foreground">
+              <IconAlertTriangle size={24} className="text-muted-foreground" />{" "}
+              Red Flags
+            </h3>
             <div className="space-y-4">
               {redFlags.map((item, index) => (
                 <div
                   key={index}
-                  className="p-5 bg-white rounded-lg border-l-4 border-red-500"
+                  className="rounded-sm border border-border border-l-2 border-l-muted-foreground bg-card p-5"
                 >
-                  <div className="flex items-start gap-2 mb-2">
+                  <div className="mb-2 flex items-start gap-2">
                     <IconX
                       size={18}
-                      className="p-0.5 bg-red-500 rounded-full text-white flex-shrink-0 mt-0.5"
+                      className="mt-0.5 shrink-0 text-muted-foreground"
                     />
-                    <h5 className="font-bold text-ravenci-dark text-sm">
+                    <h4 className="text-small font-semibold text-foreground">
                       {item.flag}
-                    </h5>
+                    </h4>
                   </div>
-                  <p className="ml-7 text-sm text-neutral-600 leading-relaxed">
+                  <p className="ml-7 text-small text-muted-foreground">
                     {item.detail}
                   </p>
                 </div>
@@ -396,25 +403,25 @@ export default function HowToChooseWebDesignerPage() {
           </div>
           {/* Green flags */}
           <div>
-            <h4 className="mb-6 text-xl font-bold text-green-700 flex items-center gap-2">
-              <IconCheck size={24} /> Green Flags
-            </h4>
+            <h3 className="mb-6 flex items-center gap-2 text-heading-s text-foreground">
+              <IconCheck size={24} className="text-accent" /> Green Flags
+            </h3>
             <div className="space-y-4">
               {greenFlags.map((item, index) => (
                 <div
                   key={index}
-                  className="p-5 bg-white rounded-lg border-l-4 border-green-500"
+                  className="rounded-sm border border-border border-l-2 border-l-accent bg-card p-5"
                 >
-                  <div className="flex items-start gap-2 mb-2">
+                  <div className="mb-2 flex items-start gap-2">
                     <IconCheck
                       size={18}
-                      className="p-0.5 bg-green-600 rounded-full text-white flex-shrink-0 mt-0.5"
+                      className="mt-0.5 shrink-0 text-accent"
                     />
-                    <h5 className="font-bold text-ravenci-dark text-sm">
+                    <h4 className="text-small font-semibold text-foreground">
                       {item.flag}
-                    </h5>
+                    </h4>
                   </div>
-                  <p className="ml-7 text-sm text-neutral-600 leading-relaxed">
+                  <p className="ml-7 text-small text-muted-foreground">
                     {item.detail}
                   </p>
                 </div>
@@ -425,55 +432,53 @@ export default function HowToChooseWebDesignerPage() {
       </section>
 
       {/* Brisbane-specific factors */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-white">
-        <h3 className="mb-4 font-serif text-h3 font-bold">
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="03" label="Brisbane-specific factors" />
+        <h2 className="mt-3 text-display-m text-foreground">
           Brisbane-Specific Factors That Matter
-        </h3>
-        <p className="mb-10 max-w-2xl text-neutral-500/80">
+        </h2>
+        <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
           Six things a local Brisbane agency typically does better than an
           interstate or overseas alternative, and that often justify the
           local-versus-offshore price difference.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {brisbaneSpecifics.map((item, index) => (
             <div
               key={index}
-              className="p-6 bg-neutral-100/60 rounded-lg border border-neutral-200/70"
+              className="rounded-sm border border-border bg-card p-6"
             >
-              <h4 className="mb-2 font-bold text-ravenci-dark">
+              <h3 className="mb-2 text-heading-s text-foreground">
                 {item.factor}
-              </h4>
-              <p className="text-sm text-neutral-600 leading-relaxed">
-                {item.detail}
-              </p>
+              </h3>
+              <p className="text-body text-muted-foreground">{item.detail}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* RAVENCI scorecard */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-primary text-white">
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
         <div className="max-w-4xl">
-          <h3 className="mb-4 font-serif text-h3 font-bold">
+          <SectionLabel index="04" label="The RAVENCI scorecard" tone="muted" />
+          <h2 className="mt-3 text-display-m text-foreground">
             How RAVENCI Answers Each of the Ten Questions
-          </h3>
-          <p className="mb-10 max-w-2xl text-white/85 leading-relaxed">
-            I&apos;ll do the same exercise on myself. Here&apos;s how I
-            answer each of the ten questions above. Use this as a benchmark for
+          </h2>
+          <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
+            I&apos;ll do the same exercise on myself. Here&apos;s how I answer
+            each of the ten questions above. Use this as a benchmark for
             comparing other quotes.
           </p>
           <div className="space-y-4">
             {ravenciScorecard.map((item, index) => (
               <div
                 key={index}
-                className="p-5 bg-white/10 border border-white/15 rounded-lg"
+                className="rounded-sm border border-white/10 bg-card p-5"
               >
-                <h4 className="mb-2 text-sm font-bold text-white">
+                <h3 className="mb-2 text-heading-s text-foreground">
                   {item.question}
-                </h4>
-                <p className="text-sm text-white/90 leading-relaxed">
-                  {item.answer}
-                </p>
+                </h3>
+                <p className="text-body text-muted-foreground">{item.answer}</p>
               </div>
             ))}
           </div>
@@ -481,26 +486,25 @@ export default function HowToChooseWebDesignerPage() {
       </section>
 
       {/* Cross-link CTAs */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
+      <section className={`${SECTION} border-b border-border`}>
         <div className="max-w-3xl">
-          <h3 className="mb-6 font-serif text-h3 font-bold">
-            Read Next
-          </h3>
-          <div className="space-y-4 text-neutral-600 leading-relaxed">
+          <SectionLabel index="05" label="Read next" />
+          <h2 className="mt-3 text-display-m text-foreground">Read Next</h2>
+          <div className="mt-6 flex flex-col gap-4 text-body text-muted-foreground">
             <p>
               <Link
                 href="/cost-of-a-website-in-brisbane"
-                className="text-ravenci-primary font-bold hover:underline"
+                className="font-semibold text-accent hover:underline"
               >
                 How Much Does a Website Cost in Brisbane in 2026?
               </Link>{" "}
-              Real pricing per tier, what affects cost, and the hidden
-              ongoing fees most agencies don&apos;t mention in proposals.
+              Real pricing per tier, what affects cost, and the hidden ongoing
+              fees most agencies don&apos;t mention in proposals.
             </p>
             <p>
               <Link
                 href="/wordpress-vs-shopify-vs-custom"
-                className="text-ravenci-primary font-bold hover:underline"
+                className="font-semibold text-accent hover:underline"
               >
                 WordPress vs Shopify vs Custom Next.js
               </Link>{" "}
@@ -509,7 +513,7 @@ export default function HowToChooseWebDesignerPage() {
             <p>
               <Link
                 href="/brisbane-website-audit"
-                className="text-ravenci-primary font-bold hover:underline"
+                className="font-semibold text-accent hover:underline"
               >
                 I Audited 50 Brisbane Business Websites
               </Link>{" "}
@@ -520,40 +524,40 @@ export default function HowToChooseWebDesignerPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 flex flex-col items-center text-center bg-white">
-        <h2 className="mb-4 text-3xl md:text-4xl font-medium">
-          Ready to Have That Discovery Call?
+      {/* FAQ */}
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="06" label="FAQ" />
+        <h2 className="mt-3 text-display-m text-foreground">
+          Frequently Asked Questions
         </h2>
-        <p className="mb-10 max-w-lg text-neutral-500/80">
-          Tell me about your business in 2 minutes. I&apos;ll come back with
-          a tailored proposal, and I&apos;ll happily answer all ten of these
-          questions before you commit to anything.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href="/launch-your-vision"
-            className="px-8 py-3 grid place-content-center bg-ravenci-primary rounded-full text-white hover:bg-ravenci-primary/85 transition-colors duration-300"
-          >
-            Launch Your Vision
-          </Link>
-          <Link
-            href="/case-studies"
-            className="px-8 py-3 grid place-content-center border-2 border-ravenci-dark rounded-full text-ravenci-dark hover:bg-ravenci-dark hover:text-white transition-colors duration-300"
-          >
-            See My Case Studies
-          </Link>
+        <div className="mt-8 max-w-3xl">
+          <Accordion titleClassName="py-6 text-lg" items={faqItems} />
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-neutral-100">
-        <h2 className="font-serif text-h3">Frequently Asked Questions</h2>
-        <Accordion titleClassName="py-6 text-lg" items={faqItems} />
+      {/* CTA */}
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="text-display-m text-foreground">
+              Ready to Have That Discovery Call?
+            </h2>
+            <p className="mt-4 text-body text-muted-foreground">
+              Tell me about your business in 2 minutes. I&apos;ll come back with
+              a tailored proposal, and I&apos;ll happily answer all ten of these
+              questions before you commit to anything.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <Button asChild size="lg" variant="primary">
+              <Link href="/launch-your-vision">Launch Your Vision</Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/case-studies">See My Case Studies</Link>
+            </Button>
+          </div>
+        </div>
       </section>
-
-      {/* Spacer */}
-      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[80px] bg-neutral-100" />
 
       {/* BreadcrumbList JSON-LD */}
       <script
