@@ -17,6 +17,8 @@ export interface LabProject {
   problemSolved: string;
   status: LabStatus;
   screenshot?: string;
+  /** Kept in the data but not shown in the Labs grid. */
+  hidden?: boolean;
 }
 
 export const LAB_PROJECTS: LabProject[] = [
@@ -32,7 +34,7 @@ export const LAB_PROJECTS: LabProject[] = [
   },
   {
     name: "QRmory",
-    url: "",
+    url: "https://qrmory.com",
     oneLiner:
       "A dynamic QR code generator for small businesses. Restyle, print and repoint your codes without reprinting, with scan analytics and hosted content like menus, vCards and link pages.",
     stack: ["Next.js", "React", "TypeScript", "Tailwind", "Supabase", "Paddle", "Cloudflare R2"],
@@ -42,6 +44,7 @@ export const LAB_PROJECTS: LabProject[] = [
   },
   {
     name: "Just Cases",
+    hidden: true,
     url: "",
     oneLiner:
       "A case study builder for service professionals. Branded before-and-after case studies with password protection, PDF export and view analytics.",
@@ -62,7 +65,7 @@ export const LAB_PROJECTS: LabProject[] = [
   },
   {
     name: "RankRiot",
-    url: "",
+    url: "https://rankriot.app",
     oneLiner:
       "An SEO site-audit tool that crawls your site, scores its technical and on-page issues, and combines that with your own Google Search Console data.",
     stack: ["Next.js", "React", "TypeScript", "Tailwind", "Supabase", "Puppeteer", "Express"],
@@ -82,7 +85,7 @@ export const LAB_PROJECTS: LabProject[] = [
   },
   {
     name: "JustNoted",
-    url: "",
+    url: "https://justnoted.app",
     oneLiner: "A fast markdown note-taking app.",
     stack: ["Next.js", "React", "TypeScript", "Tailwind", "Supabase", "Milkdown"],
     problemSolved: "",

@@ -50,7 +50,7 @@ export default function LabsPage() {
       {/* Grid */}
       <section className={SECTION}>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {LAB_PROJECTS.map((p) => {
+          {LAB_PROJECTS.filter((p) => !p.hidden).map((p) => {
             const inner = (
               <>
                 <div className="flex items-start justify-between gap-3">
