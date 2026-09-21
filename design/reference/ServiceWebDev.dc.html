@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>Service template — Website Design &amp; Development</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #F6F5F2; font-family: 'Archivo','Helvetica Neue',Arial,sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: #8E1A80; text-decoration: none; }
+a:hover { color: #7F1670; }
+</style>
+</helmet>
+
+<div style="width: 1440px; height: 4300px; box-sizing: border-box; background: #F6F5F2; color: #0F0F12; display: flex; flex-direction: column;">
+
+  <div style="display: flex; align-items: center; gap: 16px; padding: 10px 80px; background: #EDEBE5; border-bottom: 1px solid rgba(15,15,18,0.10); font-family: 'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.10em; color: #5A5A64;">
+    <span style="color: #8E1A80;">SERVICE TEMPLATE</span>
+    <span>PROPS: name &middot; outcome &middot; included[] &middot; pricingAnchor &middot; relatedWork[] &middot; faq[] &middot; ctaVariant</span>
+  </div>
+
+  <header style="display: flex; align-items: center; gap: 40px; height: 76px; padding: 0 80px; border-bottom: 1px solid rgba(15,15,18,0.10);">
+    <a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; color: #0F0F12;">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M2 14.5c3.4-.6 5.4-2.4 6.6-5.2C9.6 7 11.2 5.5 13.6 5.2L20 4.4l-2.6 3.3 2 .5-3.1 2.2 1.3 1-4.2 1.9c-2.2 1-3.4 2.4-4 4.6" stroke="#0F0F12" stroke-width="1.3" stroke-linejoin="round"></path><circle cx="15.6" cy="6.4" r=".9" fill="#8E1A80"></circle></svg>
+      <span style="font-size: 17px; font-weight: 700; letter-spacing: 0.10em;">RAVENCI</span>
+    </a>
+    <nav style="display: flex; align-items: center; gap: 26px; flex-grow: 1; font-size: 14px; font-weight: 500;">
+      <a href="ServicesOverview.dc.html" style="color: #8E1A80; border-bottom: 1px solid #8E1A80; padding-bottom: 2px;">Services</a>
+      <a href="IndustryConstruction.dc.html" style="color: #0F0F12;">Industries</a>
+      <a href="CaseResults.dc.html" style="color: #0F0F12;">Work</a>
+      <a href="Main.dc.html" style="color: #0F0F12;">Process</a>
+      <a href="ServicesOverview.dc.html" style="color: #0F0F12;">Pricing</a>
+      <a href="Main.dc.html" style="color: #0F0F12;">About</a>
+    </nav>
+    <a href="#start" style="display: inline-flex; align-items: center; height: 44px; padding: 0 22px; border-radius: 4px; background: #0F0F12; color: #F6F5F2; font-size: 14px; font-weight: 600;">Start a project</a>
+  </header>
+
+  <section style="padding: 64px 80px; display: flex; gap: 72px; border-bottom: 1px solid rgba(15,15,18,0.10);">
+    <div style="width: 700px; display: flex; flex-direction: column; gap: 20px;">
+      <nav style="display: flex; gap: 10px; align-items: center; font-size: 13px; color: #5A5A64;"><a href="Main.dc.html" style="color: #5A5A64;">Home</a><span>/</span><a href="ServicesOverview.dc.html" style="color: #5A5A64;">Services</a><span>/</span><span style="color: #0F0F12;">Website Design &amp; Development</span></nav>
+      <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.14em; color: #8E1A80;">01 / SERVICE</span>
+      <h1 style="margin: 0; font-size: 58px; line-height: 1.03; letter-spacing: -0.035em; font-weight: 700;">Website Design &amp; Development</h1>
+      <p style="margin: 0; font-size: 20px; line-height: 1.5; color: #0F0F12;">One senior developer designs it around your business and hand-builds it. The whole website, not just the look.</p>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #45454F;">Your site is a structure. It carries load &mdash; traffic, content, integrations, five years of edits by people who aren't developers. I build it so it holds.</p>
+      <div style="display: flex; gap: 14px; padding-top: 6px;">
+        <a href="#start" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; border-radius: 4px; background: #0F0F12; color: #F6F5F2; font-size: 15px; font-weight: 600;">Request a proposal</a>
+        <a href="#included" style="display: inline-flex; align-items: center; height: 52px; padding: 0 24px; border-radius: 4px; border: 1px solid rgba(15,15,18,0.24); color: #0F0F12; font-size: 15px; font-weight: 500;">What's included</a>
+      </div>
+    </div>
+    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; gap: 20px; padding: 32px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF;">
+      <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">PRICING ANCHOR</span>
+      <span style="display: flex; align-items: baseline; gap: 12px;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #5A5A64;">FROM</span><span style="font-size: 52px; font-weight: 700; letter-spacing: -0.04em;">$7,500</span></span>
+      <span style="font-size: 15px; line-height: 1.6; color: #45454F;">Scoped and fixed before we start. Custom sites from $10,000, eCommerce from $12,000.</span>
+      <span style="display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 1px solid rgba(15,15,18,0.10);">
+        <span style="display: flex; gap: 10px; align-items: center; font-size: 14px;"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7.5 5.5 11 12 3.5" fill="none" stroke="#8E1A80" stroke-width="2"></path></svg>85+ PageSpeed guaranteed</span>
+        <span style="display: flex; gap: 10px; align-items: center; font-size: 14px;"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7.5 5.5 11 12 3.5" fill="none" stroke="#8E1A80" stroke-width="2"></path></svg>You own the code and content</span>
+        <span style="display: flex; gap: 10px; align-items: center; font-size: 14px;"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7.5 5.5 11 12 3.5" fill="none" stroke="#8E1A80" stroke-width="2"></path></svg>Tailored video training included</span>
+      </span>
+    </div>
+  </section>
+
+  <section id="included" style="padding: 72px 80px; border-bottom: 1px solid rgba(15,15,18,0.10);">
+    <div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 32px;">
+      <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.14em; color: #8E1A80;">02 / INCLUDED</span>
+      <h2 style="margin: 0; font-size: 34px; letter-spacing: -0.025em; font-weight: 700;">In every build, not as an upsell</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid rgba(15,15,18,0.14); border-left: 1px solid rgba(15,15,18,0.14);">
+      <div style="padding: 26px; border-right: 1px solid rgba(15,15,18,0.14); border-bottom: 1px solid rgba(15,15,18,0.14); display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #8E1A80;">01</span><span style="font-size: 18px; font-weight: 600;">Responsive design</span><span style="font-size: 14px; line-height: 1.6; color: #45454F;">Drawn mobile-first and tested on real devices, not just a browser resize.</span></div>
+      <div style="padding: 26px; border-right: 1px solid rgba(15,15,18,0.14); border-bottom: 1px solid rgba(15,15,18,0.14); display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #8E1A80;">02</span><span style="font-size: 18px; font-weight: 600;">A CMS you'll actually use</span><span style="font-size: 14px; line-height: 1.6; color: #45454F;">My own block system. Edit any page without a developer and without breaking the layout.</span></div>
+      <div style="padding: 26px; border-right: 1px solid rgba(15,15,18,0.14); border-bottom: 1px solid rgba(15,15,18,0.14); display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #8E1A80;">03</span><span style="font-size: 18px; font-weight: 600;">Performance optimisation</span><span style="font-size: 14px; line-height: 1.6; color: #45454F;">Core Web Vitals handled in the build, not patched by a caching plugin afterwards.</span></div>
+      <div style="padding: 26px; border-right: 1px solid rgba(15,15,18,0.14); border-bottom: 1px solid rgba(15,15,18,0.14); display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #8E1A80;">04</span><span style="font-size: 18px; font-weight: 600;">SEO built in</span><span style="font-size: 14px; line-height: 1.6; color: #45454F;">Structure, markup and schema done at build time so the content has somewhere to land.</span></div>
+      <div style="padding: 26px; border-right: 1px solid rgba(15,15,18,0.14); border-bottom: 1px solid rgba(15,15,18,0.14); display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #8E1A80;">05</span><span style="font-size: 18px; font-weight: 600;">Accessibility to WCAG 2.2 AA</span><span style="font-size: 14px; line-height: 1.6; color: #45454F;">Keyboard navigation, real contrast, proper labels. Increasingly a legal question, not a nice-to-have.</span></div>
+      <div style="padding: 26px; border-right: 1px solid rgba(15,15,18,0.14); border-bottom: 1px solid rgba(15,15,18,0.14); display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #8E1A80;">06</span><span style="font-size: 18px; font-weight: 600;">Video training, made for you</span><span style="font-size: 14px; line-height: 1.6; color: #45454F;">Recorded against your site, not a generic tutorial. So you're not dependent on me.</span></div>
+      <div style="padding: 26px; border-right: 1px solid rgba(15,15,18,0.14); border-bottom: 1px solid rgba(15,15,18,0.14); display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #8E1A80;">07</span><span style="font-size: 18px; font-weight: 600;">Analytics and Search Console</span><span style="font-size: 14px; line-height: 1.6; color: #45454F;">Configured and verified, in accounts you own, before launch day.</span></div>
+      <div style="padding: 26px; border-right: 1px solid rgba(15,15,18,0.14); border-bottom: 1px solid rgba(15,15,18,0.14); display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #8E1A80;">08</span><span style="font-size: 18px; font-weight: 600;">SSL and a secure launch</span><span style="font-size: 14px; line-height: 1.6; color: #45454F;">Certificates, redirects and a migration plan so you don't lose rankings on the switch.</span></div>
+      <div style="padding: 26px; border-right: 1px solid rgba(15,15,18,0.14); border-bottom: 1px solid rgba(15,15,18,0.14); display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #8E1A80;">09</span><span style="font-size: 18px; font-weight: 600;">Revision rounds</span><span style="font-size: 14px; line-height: 1.6; color: #45454F;">Written into every project. Changing your mind at design stage is the cheap time to do it.</span></div>
+    </div>
+  </section>
+
+  <section style="padding: 72px 80px; background: #0F0F12; color: #F6F5F2;">
+    <div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 32px;">
+      <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.14em; color: #D57ACA;">03 / HOW IT RUNS</span>
+      <h2 style="margin: 0; font-size: 34px; letter-spacing: -0.025em; font-weight: 700;">Six weeks, typically. Here's where they go.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px;">
+      <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: 2px solid #D57ACA;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #D57ACA;">WK 1</span><span style="font-size: 16px; font-weight: 600;">Discovery</span><span style="font-size: 13px; line-height: 1.55; color: #9A9AA4;">Goals, audience, competitors, scope.</span></div>
+      <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: 2px solid rgba(255,255,255,0.16);"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #6E6E78;">WK 1&ndash;2</span><span style="font-size: 16px; font-weight: 600;">Strategy</span><span style="font-size: 13px; line-height: 1.55; color: #9A9AA4;">Architecture, user flows, platform call.</span></div>
+      <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: 2px solid rgba(255,255,255,0.16);"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #6E6E78;">WK 2&ndash;3</span><span style="font-size: 16px; font-weight: 600;">Design</span><span style="font-size: 13px; line-height: 1.55; color: #9A9AA4;">Wireframes, then full visuals you sign off.</span></div>
+      <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: 2px solid rgba(255,255,255,0.16);"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #6E6E78;">WK 3&ndash;5</span><span style="font-size: 16px; font-weight: 600;">Build</span><span style="font-size: 13px; line-height: 1.55; color: #9A9AA4;">Clean code, CMS, integrations, content.</span></div>
+      <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: 2px solid rgba(255,255,255,0.16);"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #6E6E78;">WK 6</span><span style="font-size: 16px; font-weight: 600;">Test &amp; launch</span><span style="font-size: 13px; line-height: 1.55; color: #9A9AA4;">Devices, performance, accessibility, go live.</span></div>
+      <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: 2px solid rgba(255,255,255,0.16);"><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #6E6E78;">ONGOING</span><span style="font-size: 16px; font-weight: 600;">Support</span><span style="font-size: 13px; line-height: 1.55; color: #9A9AA4;">Hosting, patching, changes, reporting.</span></div>
+    </div>
+  </section>
+
+  <section style="padding: 72px 80px; border-bottom: 1px solid rgba(15,15,18,0.10);">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 32px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.14em; color: #8E1A80;">04 / RELATED WORK</span>
+        <h2 style="margin: 0; font-size: 34px; letter-spacing: -0.025em; font-weight: 700;">Built this way</h2>
+      </div>
+      <a href="CaseResults.dc.html" style="font-size: 15px; font-weight: 600;">All case studies &rarr;</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+      <a href="CaseVisual.dc.html" style="display: flex; flex-direction: column; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; color: #0F0F12;"><span style="height: 170px; background: #EDEBE5; display: block; position: relative;"><span style="position: absolute; left: 22px; top: 20px; right: 22px; bottom: 0; background: #FFFFFF; border: 1px solid rgba(15,15,18,0.14); display: block;"></span><span style="position: absolute; left: 36px; top: 50px; width: 130px; height: 8px; background: #0F0F12; display: block;"></span><span style="position: absolute; right: 36px; top: 48px; width: 110px; height: 80px; background: #D9D5CC; display: block;"></span></span><span style="padding: 20px; display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.12em; color: #8E1A80;">CONSTRUCTION</span><span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em;">Peninsula Homes</span><span style="font-size: 14px; line-height: 1.5; color: #45454F;">Custom WordPress build for a bespoke home builder.</span></span></a>
+      <a href="CasePremium.dc.html" style="display: flex; flex-direction: column; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; color: #0F0F12;"><span style="height: 170px; background: #2A1226; display: block; position: relative;"><span style="position: absolute; left: 22px; top: 20px; right: 22px; bottom: 0; background: #F6F5F2; border: 1px solid rgba(15,15,18,0.14); display: block;"></span><span style="position: absolute; left: 36px; top: 50px; width: 150px; height: 9px; background: #0F0F12; display: block;"></span><span style="position: absolute; right: 36px; top: 46px; width: 88px; height: 88px; border-radius: 999px; background: #D9D5CC; display: block;"></span></span><span style="padding: 20px; display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.12em; color: #8E1A80;">PROFESSIONAL SERVICES</span><span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em;">Nikita Morell</span><span style="font-size: 14px; line-height: 1.5; color: #45454F;">A copywriter for architects, with a site to match the writing.</span></span></a>
+      <a href="CaseResults.dc.html" style="display: flex; flex-direction: column; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; color: #0F0F12;"><span style="height: 170px; background: #1A2A44; display: block; position: relative;"><span style="position: absolute; left: 22px; top: 20px; right: 22px; bottom: 0; background: #16243B; border: 1px solid rgba(255,255,255,0.14); display: block;"></span><span style="position: absolute; left: 36px; top: 50px; width: 140px; height: 8px; background: #F6F5F2; display: block;"></span><span style="position: absolute; left: 36px; top: 68px; width: 96px; height: 8px; background: rgba(246,245,242,0.4); display: block;"></span></span><span style="padding: 20px; display: flex; flex-direction: column; gap: 8px;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.12em; color: #8E1A80;">PROFESSIONAL SERVICES</span><span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em;">SAC Consulting</span><span style="font-size: 14px; line-height: 1.5; color: #45454F;">A workplace culture consultancy that needed authority, fast.</span></span></a>
+    </div>
+  </section>
+
+  <section style="padding: 72px 80px; display: flex; gap: 72px; border-bottom: 1px solid rgba(15,15,18,0.10);">
+    <div style="width: 380px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px;">
+      <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.14em; color: #8E1A80;">05 / QUESTIONS</span>
+      <h2 style="margin: 0; font-size: 34px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 700;">The ones I get asked every time</h2>
+      <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5A5A64;">Something not here? Ring me. 07 3106 1836.</p>
+    </div>
+    <div style="flex-grow: 1; display: flex; flex-direction: column; border-top: 1px solid rgba(15,15,18,0.14);">
+      <sc-for list="{{faqs}}" as="q" hint-placeholder-count="5">
+        <div style="display: flex; flex-direction: column; border-bottom: 1px solid rgba(15,15,18,0.12);">
+          <button type="button" aria-expanded="{{q.open}}" onClick="{{q.toggle}}" style="display: flex; align-items: center; gap: 16px; padding: 22px 0; background: none; border: 0; text-align: left; font-family: inherit; font-size: 18px; font-weight: 600; color: #0F0F12; cursor: pointer;">
+            <span style="flex-grow: 1;">{{q.question}}</span>
+            <span style="font-size: 22px; color: #8E1A80; width: 20px; text-align: center;">{{q.sign}}</span>
+          </button>
+          <sc-if value="{{q.open}}" hint-placeholder-val="{{true}}">
+            <p style="margin: 0; padding: 0 60px 24px 0; font-size: 16px; line-height: 1.65; color: #45454F;">{{q.answer}}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="start" style="padding: 72px 80px; background: #0F0F12; color: #F6F5F2; display: flex; align-items: center; gap: 48px;">
+    <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 14px;">
+      <h2 style="margin: 0; font-size: 40px; line-height: 1.06; letter-spacing: -0.03em; font-weight: 700;">Tell me the problem. I'll take it from there.</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #9A9AA4; max-width: 620px;">Two minutes of questions and I'll come back with a scoped, fixed price and a timeline. No obligation, no sales sequence.</p>
+    </div>
+    <a href="Main.dc.html" style="display: inline-flex; align-items: center; height: 56px; padding: 0 30px; border-radius: 4px; background: #F6F5F2; color: #0F0F12; font-size: 16px; font-weight: 600;">Launch your vision</a>
+  </section>
+
+  <footer style="background: #0F0F12; color: #F6F5F2; border-top: 1px solid rgba(255,255,255,0.10); padding: 40px 80px; display: flex; align-items: center; gap: 32px;">
+    <span style="font-size: 16px; font-weight: 700; letter-spacing: 0.10em;">RAVENCI</span>
+    <span style="font-size: 14px; color: #9A9AA4;">Brisbane, Australia &middot; 07 3106 1836</span>
+    <span style="margin-left: auto; font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.10em; color: #6E6E78;">FULL SITEMAP FOOTER &mdash; SEE HOMEPAGE ARTBOARD</span>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4300}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { open: 0 };
+  }
+  renderVals() {
+    var self = this;
+    var items = [
+      { question: 'How long does a typical website take to build?', answer: 'A foundation site takes about three weeks, a growth site four to six, and a premium brand and web project ten to fourteen. The variable is almost always content, not code.' },
+      { question: 'What if I am not happy with the result?', answer: 'You sign off the design before I write any code, and revision rounds are written into every project. Nothing gets built that you have not already seen and approved.' },
+      { question: 'Can I update the website myself after it launches?', answer: 'Yes, and you will want to. I build on my own block system so you can edit any page without breaking the layout, and every project includes video training recorded against your actual site.' },
+      { question: 'What makes this more expensive than a $999 website?', answer: 'A $999 site is one page, no revisions, and a template you will be rebuilding inside two years. You are not buying pages. You are buying a business asset that keeps working after launch day.' },
+      { question: 'Do you handle hosting and domains too?', answer: 'I do. Managed hosting starts at $39 a month with SSL, daily backups and monitoring, and I manage domains and DNS as part of it. One invoice, one person to call.' }
+    ];
+    return {
+      faqs: items.map(function (it, i) {
+        var open = self.state.open === i;
+        return {
+          question: it.question,
+          answer: it.answer,
+          open: open,
+          sign: open ? '−' : '+',
+          toggle: function () { self.setState({ open: open ? -1 : i }); }
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

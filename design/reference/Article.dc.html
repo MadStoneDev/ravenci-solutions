@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>Article layout — MDX restyle</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #F6F5F2; font-family: 'Archivo','Helvetica Neue',Arial,sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: #8E1A80; text-decoration: none; }
+a:hover { color: #7F1670; }
+</style>
+</helmet>
+
+<div style="width: 1440px; height: 3500px; box-sizing: border-box; background: #F6F5F2; color: #0F0F12; display: flex; flex-direction: column;">
+
+  <div style="display: flex; align-items: center; gap: 16px; padding: 10px 80px; background: #EDEBE5; border-bottom: 1px solid rgba(15,15,18,0.10); font-family: 'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.10em; color: #5A5A64;">
+    <span style="color: #8E1A80;">ARTICLE LAYOUT</span>
+    <span>EXISTING MDX PIPELINE &middot; RESTYLE ONLY &middot; PROSE MEASURE 680PX &middot; STICKY CONTENTS RAIL</span>
+  </div>
+
+  <header style="display: flex; align-items: center; gap: 40px; height: 76px; padding: 0 80px; border-bottom: 1px solid rgba(15,15,18,0.10);">
+    <a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; color: #0F0F12;">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M2 14.5c3.4-.6 5.4-2.4 6.6-5.2C9.6 7 11.2 5.5 13.6 5.2L20 4.4l-2.6 3.3 2 .5-3.1 2.2 1.3 1-4.2 1.9c-2.2 1-3.4 2.4-4 4.6" stroke="#0F0F12" stroke-width="1.3" stroke-linejoin="round"></path><circle cx="15.6" cy="6.4" r=".9" fill="#8E1A80"></circle></svg>
+      <span style="font-size: 17px; font-weight: 700; letter-spacing: 0.10em;">RAVENCI</span>
+    </a>
+    <nav style="display: flex; align-items: center; gap: 26px; flex-grow: 1; font-size: 14px; font-weight: 500;">
+      <a href="ServicesOverview.dc.html" style="color: #0F0F12;">Services</a>
+      <a href="IndustryConstruction.dc.html" style="color: #0F0F12;">Industries</a>
+      <a href="CaseResults.dc.html" style="color: #0F0F12;">Work</a>
+      <a href="Main.dc.html" style="color: #0F0F12;">Process</a>
+      <a href="ServicesOverview.dc.html" style="color: #0F0F12;">Pricing</a>
+      <a href="Main.dc.html" style="color: #0F0F12;">About</a>
+    </nav>
+    <a href="Main.dc.html" style="display: inline-flex; align-items: center; height: 44px; padding: 0 22px; border-radius: 4px; background: #0F0F12; color: #F6F5F2; font-size: 14px; font-weight: 600;">Start a project</a>
+  </header>
+
+  <section style="padding: 56px 80px 40px; border-bottom: 1px solid rgba(15,15,18,0.10); display: flex; flex-direction: column; gap: 20px;">
+    <nav style="display: flex; gap: 10px; align-items: center; font-size: 13px; color: #5A5A64;"><a href="Main.dc.html" style="color: #5A5A64;">Home</a><span>/</span><a href="Article.dc.html" style="color: #5A5A64;">Articles</a><span>/</span><span style="color: #0F0F12;">Three factors that drive customer choice</span></nav>
+    <div style="display: flex; gap: 20px; align-items: center; font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #8E1A80;">
+      <span>BUSINESS TECHNOLOGY</span><span style="color: #C9C7C1;">/</span><span style="color: #5A5A64;">17 SEPTEMBER 2025</span><span style="color: #C9C7C1;">/</span><span style="color: #5A5A64;">7 MIN READ</span>
+    </div>
+    <h1 style="margin: 0; max-width: 1000px; font-size: 58px; line-height: 1.04; letter-spacing: -0.035em; font-weight: 700;">Three factors that drive customer choice over having the best</h1>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="width: 36px; height: 36px; border: 1px solid rgba(15,15,18,0.18); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #8E1A80;">RH</span>
+      <span style="font-size: 14px; color: #5A5A64;">Written by <strong style="color: #0F0F12; font-weight: 600;">Richard Haddad</strong></span>
+    </div>
+  </section>
+
+  <section style="display: flex; gap: 64px; padding: 56px 80px 72px; border-bottom: 1px solid rgba(15,15,18,0.10);">
+
+    <aside style="width: 240px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px;">
+      <span style="font-family: 'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.12em; color: #5A5A64;">ON THIS PAGE</span>
+      <nav style="display: flex; flex-direction: column; gap: 10px; border-left: 1px solid rgba(15,15,18,0.14); padding-left: 16px;">
+        <a href="#c1" style="font-size: 14px; color: #8E1A80; font-weight: 600;">1. Convenience</a>
+        <a href="#c2" style="font-size: 14px; color: #5A5A64;">2. Practicality</a>
+        <a href="#c3" style="font-size: 14px; color: #5A5A64;">3. Trust</a>
+        <a href="#c4" style="font-size: 14px; color: #5A5A64;">Conclusion</a>
+      </nav>
+      <span style="margin-top: 12px; padding-top: 16px; border-top: 1px solid rgba(15,15,18,0.14); font-family: 'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.12em; color: #5A5A64;">SHARE</span>
+      <span style="display: flex; gap: 8px;">
+        <a href="#share" aria-label="Share on LinkedIn" style="width: 44px; height: 44px; border: 1px solid rgba(15,15,18,0.16); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #5A5A64;">in</a>
+        <a href="#share" aria-label="Copy link" style="width: 44px; height: 44px; border: 1px solid rgba(15,15,18,0.16); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #5A5A64;">link</a>
+      </span>
+    </aside>
+
+    <article style="width: 680px; display: flex; flex-direction: column; gap: 26px;">
+      <div style="width: 680px; height: 340px; background: #E0DDD6; border: 1px solid rgba(15,15,18,0.14); display: flex; align-items: flex-end; padding: 16px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.10em; color: #5A5A64;">HERO IMAGE &middot; next/image, priority, 1360&times;680 &middot; NO STOCK PHOTOGRAPHY: USE CLIENT WORK OR LINE-ART</span>
+      </div>
+
+      <p style="margin: 0; font-size: 21px; line-height: 1.6; color: #0F0F12;">No matter what industry your business is in, there's one thing we all have in common: our need for customers. It makes no difference how good your product is &mdash; without customers, the business doesn't survive.</p>
+
+      <p style="margin: 0; font-size: 17px; line-height: 1.75; color: #2A2A31;">Every company needs customers, and we are all competing over the same groups of people. What I find common in all of it is this mantra: <strong style="font-weight: 600;">"We are the best in&hellip;"</strong></p>
+
+      <div style="display: flex; flex-direction: column; gap: 10px; padding: 24px 28px; border-left: 2px solid #8E1A80; background: #EFEDE7;">
+        <span style="font-size: 17px; line-height: 1.6;">Gillette: <strong style="font-weight: 600;">The best a man can get.</strong></span>
+        <span style="font-size: 17px; line-height: 1.6;">Mercedes-Benz: <strong style="font-weight: 600;">The best or nothing.</strong></span>
+        <span style="font-size: 17px; line-height: 1.6;">BMW: <strong style="font-weight: 600;">The ultimate driving machine.</strong></span>
+      </div>
+
+      <p style="margin: 0; font-size: 17px; line-height: 1.75; color: #2A2A31;">There's nothing really wrong with that, but my question is always: well, best for whom? Find your favourite restaurant on Google and read the reviews. The same burger gets two opposite verdicts from two different people. Trying to make your product "the best" may not always be the best way to find good customers.</p>
+
+      <h2 id="c1" style="margin: 16px 0 0; font-size: 32px; line-height: 1.15; letter-spacing: -0.025em; font-weight: 700;">1. Convenience: make life easier for your customers</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.75; color: #2A2A31;">Drive-thrus can account for up to 70% of a fast food restaurant's sales. The product may not be the best around, or even the cheapest, but the process of getting it is easy, so people come.</p>
+      <p style="margin: 0; font-size: 17px; line-height: 1.75; color: #2A2A31;">More and more people are opting for online shopping over visiting a bricks-and-mortar store. Libraries in Australia found digital lending grew by 48% over the past handful of years. Convenience isn't everything, but it is a very tempting offer against a competitor who doesn't offer it.</p>
+
+      <div style="display: flex; align-items: center; gap: 20px; padding: 24px 28px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF;">
+        <span style="font-size: 16px; line-height: 1.6; flex-grow: 1;">Need help making your website easier to use? <a href="ServiceWebDev.dc.html" style="font-weight: 600;">Let's talk</a> about streamlining your online presence.</span>
+        <a href="Main.dc.html" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 3px; background: #0F0F12; color: #F6F5F2; font-size: 14px; font-weight: 600; flex-shrink: 0;">Start a project</a>
+      </div>
+
+      <h2 id="c2" style="margin: 16px 0 0; font-size: 32px; line-height: 1.15; letter-spacing: -0.025em; font-weight: 700;">2. Practicality: make your product more usable</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.75; color: #2A2A31;">Remember the pen with four colours in it? Magical, at least to a primary school kid. After some use, the levers jammed, and holding the thing wasn't practical because of how big it was. I was happy to carry multiple pens, each of which wrote in one single colour. It was way more practical.</p>
+      <p style="margin: 0; font-size: 17px; line-height: 1.75; color: #2A2A31;">You often opt for practicality over a seemingly cheaper product or the "ultimate" problem solver. Ask your grandparents how much they love new smartphones over their old Nokia.</p>
+
+      <h2 id="c3" style="margin: 16px 0 0; font-size: 32px; line-height: 1.15; letter-spacing: -0.025em; font-weight: 700;">3. Trust: make your name familiar and reliable</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.75; color: #2A2A31;">If I could stress any factor of your business, it would be this. Be a business your customers can always count on.</p>
+      <blockquote style="margin: 0; padding: 28px 32px; background: #0F0F12; color: #F6F5F2; font-size: 22px; line-height: 1.5; letter-spacing: -0.015em;">A customer once called and said they had looked for a web developer closer to them, but months later the work still hadn't been done. They decided to bring their business back to me, because "he gets the job done".</blockquote>
+      <p style="margin: 0; font-size: 17px; line-height: 1.75; color: #2A2A31;">Unlike the other two factors, trust is in fact everything. It doesn't matter how practical the purchase process is or how practical your product is. Break your customers' trust and, often, they will never return.</p>
+
+      <h2 id="c4" style="margin: 16px 0 0; font-size: 32px; line-height: 1.15; letter-spacing: -0.025em; font-weight: 700;">Conclusion</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.75; color: #2A2A31;">Every competitor will try to beat you on product and service. They'll drop prices, add features at the same price, throw in the bells and whistles. In the end, what customers look for is:</p>
+      <ul style="margin: 0; padding: 0 0 0 22px; display: flex; flex-direction: column; gap: 10px; font-size: 17px; line-height: 1.6; color: #2A2A31;">
+        <li>The convenience of the process</li>
+        <li>The practicality of your product</li>
+        <li>Most importantly of all, the trust you've built</li>
+      </ul>
+
+      <div style="display: flex; align-items: center; gap: 16px; padding: 24px 0 0; margin-top: 12px; border-top: 1px solid rgba(15,15,18,0.14);">
+        <span style="width: 48px; height: 48px; border: 1px solid rgba(15,15,18,0.18); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono',monospace; font-size: 14px; color: #8E1A80;">RH</span>
+        <span style="display: flex; flex-direction: column; gap: 3px;"><span style="font-size: 16px; font-weight: 600;">Richard Haddad</span><span style="font-size: 14px; color: #5A5A64;">Founder of RAVENCI Solutions. Structural engineer turned web developer, Brisbane.</span></span>
+      </div>
+    </article>
+
+    <aside style="flex-grow: 1; display: flex; flex-direction: column; gap: 16px;">
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 12px; position: sticky; top: 40px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.12em; color: #8E1A80;">FREE CHECK</span>
+        <span style="font-size: 19px; font-weight: 700; line-height: 1.25; letter-spacing: -0.02em;">Can Google and AI find your business?</span>
+        <span style="font-size: 14px; line-height: 1.6; color: #45454F;">I'll send back what search engines and AI assistants actually see. No pitch.</span>
+        <a href="Main.dc.html" style="display: inline-flex; align-items: center; justify-content: center; height: 44px; border-radius: 3px; background: #8E1A80; color: #FFFFFF; font-size: 14px; font-weight: 600;">Get my free report</a>
+      </div>
+    </aside>
+  </section>
+
+  <section style="padding: 64px 80px; border-bottom: 1px solid rgba(15,15,18,0.10);">
+    <div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 28px;">
+      <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.14em; color: #8E1A80;">RELATED READING</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+      <a href="Article.dc.html" style="display: flex; flex-direction: column; gap: 12px; padding: 26px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; color: #0F0F12;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.12em; color: #5A5A64;">18 SEP 2025</span><span style="font-size: 20px; font-weight: 700; line-height: 1.25; letter-spacing: -0.02em;">The hidden costs of DIY website builders</span><span style="font-size: 14px; line-height: 1.55; color: #45454F;">Seven reasons we're not worried, and why you still need an experienced developer.</span></a>
+      <a href="Article.dc.html" style="display: flex; flex-direction: column; gap: 12px; padding: 26px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; color: #0F0F12;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.12em; color: #5A5A64;">17 SEP 2025</span><span style="font-size: 20px; font-weight: 700; line-height: 1.25; letter-spacing: -0.02em;">10-point website launch checklist</span><span style="font-size: 14px; line-height: 1.55; color: #45454F;">A printable checklist to work through before your new site goes live.</span></a>
+      <a href="Article.dc.html" style="display: flex; flex-direction: column; gap: 12px; padding: 26px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; color: #0F0F12;"><span style="font-family: 'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.12em; color: #5A5A64;">GUIDE</span><span style="font-size: 20px; font-weight: 700; line-height: 1.25; letter-spacing: -0.02em;">WordPress vs Shopify vs custom Next.js</span><span style="font-size: 14px; line-height: 1.55; color: #45454F;">Which platform is right for your Australian business, and what each one really costs.</span></a>
+    </div>
+  </section>
+
+  <footer style="background: #0F0F12; color: #F6F5F2; padding: 40px 80px; display: flex; align-items: center; gap: 32px;">
+    <span style="font-size: 16px; font-weight: 700; letter-spacing: 0.10em;">RAVENCI</span>
+    <span style="font-size: 14px; color: #9A9AA4;">Brisbane, Australia &middot; 07 3106 1836</span>
+    <span style="margin-left: auto; font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.10em; color: #6E6E78;">FULL SITEMAP FOOTER &mdash; SEE HOMEPAGE ARTBOARD</span>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3500}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

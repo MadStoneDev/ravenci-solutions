@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>RAVENCI design system — tokens, type, motion, components</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #F6F5F2; font-family: 'Archivo','Helvetica Neue',Arial,sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: #8E1A80; text-decoration: none; }
+a:hover { color: #7F1670; }
+</style>
+</helmet>
+
+<div style="width: 1440px; height: 5200px; box-sizing: border-box; background: #F6F5F2; color: #0F0F12; display: flex; flex-direction: column;">
+
+  <header style="padding: 72px 80px 40px; border-bottom: 1px solid rgba(15,15,18,0.10); display: flex; flex-direction: column; gap: 18px;">
+    <div style="font-family: 'JetBrains Mono',ui-monospace,Menlo,monospace; font-size: 11px; letter-spacing: 0.14em; color: #8E1A80;">RAVENCI / DESIGN SYSTEM / v1.0</div>
+    <h1 style="margin: 0; font-size: 62px; line-height: 1.02; letter-spacing: -0.035em; font-weight: 700;">Tokens, type, motion, components.</h1>
+    <p style="margin: 0; font-size: 18px; line-height: 1.55; color: #45454F; max-width: 760px;">Everything below maps to CSS custom properties consumed by Tailwind 3.4 in the existing Next.js 15 codebase. Colour tokens are authored in HSL under shadcn naming. Purple lives only in <code style="font-family: 'JetBrains Mono',monospace; font-size: 15px; color: #8E1A80;">--accent</code>.</p>
+  </header>
+
+  <section style="padding: 72px 80px; border-bottom: 1px solid rgba(15,15,18,0.10);">
+    <div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 28px;">
+      <span style="font-family: 'JetBrains Mono',ui-monospace,Menlo,monospace; font-size: 11px; letter-spacing: 0.14em; color: #8E1A80;">01 / COLOUR</span>
+      <h2 style="margin: 0; font-size: 30px; letter-spacing: -0.02em; font-weight: 700;">Monochrome first, purple under 5%</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px;">
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'JetBrains Mono',ui-monospace,Menlo,monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">LIGHT THEME (:root)</span>
+        <div style="display: flex; flex-direction: column; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF;">
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid rgba(15,15,18,0.08);"><span style="width: 44px; height: 32px; background: #F6F5F2; border: 1px solid rgba(15,15,18,0.14); display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px;">--background</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #5A5A64;">40 12% 96%</span><span style="font-size: 13px; color: #5A5A64; margin-left: auto;">Paper</span></div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid rgba(15,15,18,0.08);"><span style="width: 44px; height: 32px; background: #0F0F12; display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px;">--foreground</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #5A5A64;">240 9% 6%</span><span style="font-size: 13px; color: #5A5A64; margin-left: auto;">Ink</span></div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid rgba(15,15,18,0.08);"><span style="width: 44px; height: 32px; background: #FFFFFF; border: 1px solid rgba(15,15,18,0.14); display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px;">--card</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #5A5A64;">0 0% 100%</span><span style="font-size: 13px; color: #5A5A64; margin-left: auto;">Raised surface</span></div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid rgba(15,15,18,0.08);"><span style="width: 44px; height: 32px; background: #EDEBE5; display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px;">--muted</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #5A5A64;">42 13% 92%</span><span style="font-size: 13px; color: #5A5A64; margin-left: auto;">Section step</span></div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid rgba(15,15,18,0.08);"><span style="width: 44px; height: 32px; background: #5A5A64; display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px;">--muted-foreground</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #5A5A64;">240 5% 37%</span><span style="font-size: 13px; color: #5A5A64; margin-left: auto;">Secondary text</span></div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid rgba(15,15,18,0.08);"><span style="width: 44px; height: 32px; background: #E0DDD6; display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px;">--border</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #5A5A64;">40 10% 86%</span><span style="font-size: 13px; color: #5A5A64; margin-left: auto;">Hairline</span></div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid rgba(15,15,18,0.08);"><span style="width: 44px; height: 32px; background: #8E1A80; display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px;">--accent</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #5A5A64;">307 69% 33%</span><span style="font-size: 13px; color: #5A5A64; margin-left: auto;">7.2:1 on paper</span></div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px;"><span style="width: 44px; height: 32px; background: #7F1670; display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px;">--ring</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #5A5A64;">308 71% 29%</span><span style="font-size: 13px; color: #5A5A64; margin-left: auto;">Original brand purple</span></div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'JetBrains Mono',ui-monospace,Menlo,monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">DARK THEME (.dark)</span>
+        <div style="display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,0.14); background: #17171C;">
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.08);"><span style="width: 44px; height: 32px; background: #0F0F12; border: 1px solid rgba(255,255,255,0.16); display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px; color: #F6F5F2;">--background</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #9A9AA4;">240 9% 6%</span><span style="font-size: 13px; color: #9A9AA4; margin-left: auto;">Charcoal</span></div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.08);"><span style="width: 44px; height: 32px; background: #F6F5F2; display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px; color: #F6F5F2;">--foreground</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #9A9AA4;">40 12% 96%</span><span style="font-size: 13px; color: #9A9AA4; margin-left: auto;">Paper</span></div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.08);"><span style="width: 44px; height: 32px; background: #17171C; border: 1px solid rgba(255,255,255,0.16); display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px; color: #F6F5F2;">--card</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #9A9AA4;">240 8% 10%</span><span style="font-size: 13px; color: #9A9AA4; margin-left: auto;">Raised surface</span></div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.08);"><span style="width: 44px; height: 32px; background: #22222A; display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px; color: #F6F5F2;">--muted</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #9A9AA4;">240 10% 14%</span><span style="font-size: 13px; color: #9A9AA4; margin-left: auto;">Section step</span></div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.08);"><span style="width: 44px; height: 32px; background: #9A9AA4; display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px; color: #F6F5F2;">--muted-foreground</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #9A9AA4;">240 5% 62%</span><span style="font-size: 13px; color: #9A9AA4; margin-left: auto;">6.1:1 on charcoal</span></div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.08);"><span style="width: 44px; height: 32px; background: #2F2F38; display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px; color: #F6F5F2;">--border</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #9A9AA4;">240 9% 20%</span><span style="font-size: 13px; color: #9A9AA4; margin-left: auto;">Hairline</span></div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.08);"><span style="width: 44px; height: 32px; background: #D57ACA; display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px; color: #F6F5F2;">--accent</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #9A9AA4;">307 51% 66%</span><span style="font-size: 13px; color: #9A9AA4; margin-left: auto;">8.0:1 on charcoal</span></div>
+          <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px;"><span style="width: 44px; height: 32px; background: #D57ACA; opacity: 0.5; display: block;"></span><code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; width: 160px; color: #F6F5F2;">--ring</code><span style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #9A9AA4;">307 51% 66% / .5</span><span style="font-size: 13px; color: #9A9AA4; margin-left: auto;">Focus halo</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 0; margin-top: 32px; border: 1px solid rgba(15,15,18,0.14);">
+      <span style="flex-grow: 1; height: 56px; background: #F6F5F2; display: flex; align-items: flex-end; padding: 6px 10px; font-family: 'JetBrains Mono',monospace; font-size: 10px; color: #5A5A64;">#F6F5F2</span>
+      <span style="flex-grow: 1; height: 56px; background: #EDEBE5; display: flex; align-items: flex-end; padding: 6px 10px; font-family: 'JetBrains Mono',monospace; font-size: 10px; color: #5A5A64;">#EDEBE5</span>
+      <span style="flex-grow: 1; height: 56px; background: #E0DDD6; display: flex; align-items: flex-end; padding: 6px 10px; font-family: 'JetBrains Mono',monospace; font-size: 10px; color: #5A5A64;">#E0DDD6</span>
+      <span style="flex-grow: 1; height: 56px; background: #9A9AA4; display: flex; align-items: flex-end; padding: 6px 10px; font-family: 'JetBrains Mono',monospace; font-size: 10px; color: #0F0F12;">#9A9AA4</span>
+      <span style="flex-grow: 1; height: 56px; background: #5A5A64; display: flex; align-items: flex-end; padding: 6px 10px; font-family: 'JetBrains Mono',monospace; font-size: 10px; color: #F6F5F2;">#5A5A64</span>
+      <span style="flex-grow: 1; height: 56px; background: #2F2F38; display: flex; align-items: flex-end; padding: 6px 10px; font-family: 'JetBrains Mono',monospace; font-size: 10px; color: #F6F5F2;">#2F2F38</span>
+      <span style="flex-grow: 1; height: 56px; background: #17171C; display: flex; align-items: flex-end; padding: 6px 10px; font-family: 'JetBrains Mono',monospace; font-size: 10px; color: #F6F5F2;">#17171C</span>
+      <span style="flex-grow: 1; height: 56px; background: #0F0F12; display: flex; align-items: flex-end; padding: 6px 10px; font-family: 'JetBrains Mono',monospace; font-size: 10px; color: #F6F5F2;">#0F0F12</span>
+      <span style="width: 120px; height: 56px; background: #8E1A80; display: flex; align-items: flex-end; padding: 6px 10px; font-family: 'JetBrains Mono',monospace; font-size: 10px; color: #FFFFFF;">#8E1A80</span>
+      <span style="width: 120px; height: 56px; background: #D57ACA; display: flex; align-items: flex-end; padding: 6px 10px; font-family: 'JetBrains Mono',monospace; font-size: 10px; color: #0F0F12;">#D57ACA</span>
+    </div>
+  </section>
+
+  <section style="padding: 72px 80px; border-bottom: 1px solid rgba(15,15,18,0.10);">
+    <div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 28px;">
+      <span style="font-family: 'JetBrains Mono',ui-monospace,Menlo,monospace; font-size: 11px; letter-spacing: 0.14em; color: #8E1A80;">02 / TYPE</span>
+      <h2 style="margin: 0; font-size: 30px; letter-spacing: -0.02em; font-weight: 700;">Archivo and JetBrains Mono. Two families, no serif.</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; padding-bottom: 36px;">
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 10px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">DISPLAY + BODY</span>
+        <span style="font-size: 40px; font-weight: 700; letter-spacing: -0.03em;">Archivo</span>
+        <code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #45454F; line-height: 1.7;">next/font/google &middot; weights 400 500 600 700<br>display: 'swap' &middot; adjustFontFallback: true<br>fallback: ['Helvetica Neue','Arial','sans-serif']</code>
+      </div>
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 10px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">TECHNICAL LABELS + METRICS</span>
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 40px; font-weight: 500; letter-spacing: -0.02em;">JetBrains Mono</span>
+        <code style="font-family: 'JetBrains Mono',monospace; font-size: 13px; color: #45454F; line-height: 1.7;">next/font/google &middot; weights 400 500<br>display: 'swap' &middot; size-adjust via adjustFontFallback<br>fallback: ['ui-monospace','SFMono-Regular','Menlo','monospace']</code>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid rgba(15,15,18,0.10);"><code style="width: 150px; font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #5A5A64;">display-xl / 68</code><span style="width: 210px; font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #5A5A64;">1.02 / -0.035em / 700</span><span style="font-size: 68px; line-height: 1.02; letter-spacing: -0.035em; font-weight: 700;">Still working</span></div>
+      <div style="display: flex; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid rgba(15,15,18,0.10);"><code style="width: 150px; font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #5A5A64;">display-l / 46</code><span style="width: 210px; font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #5A5A64;">1.06 / -0.03em / 700</span><span style="font-size: 46px; line-height: 1.06; letter-spacing: -0.03em; font-weight: 700;">Section heading</span></div>
+      <div style="display: flex; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid rgba(15,15,18,0.10);"><code style="width: 150px; font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #5A5A64;">heading-m / 26</code><span style="width: 210px; font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #5A5A64;">1.2 / -0.02em / 700</span><span style="font-size: 26px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 700;">Card title</span></div>
+      <div style="display: flex; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid rgba(15,15,18,0.10);"><code style="width: 150px; font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #5A5A64;">lead / 19</code><span style="width: 210px; font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #5A5A64;">1.55 / 0 / 400</span><span style="font-size: 19px; line-height: 1.55;">Sub-heading and hero support copy.</span></div>
+      <div style="display: flex; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid rgba(15,15,18,0.10);"><code style="width: 150px; font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #5A5A64;">body / 16</code><span style="width: 210px; font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #5A5A64;">1.65 / 0 / 400</span><span style="font-size: 16px; line-height: 1.65;">Body copy, 68 characters maximum measure.</span></div>
+      <div style="display: flex; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid rgba(15,15,18,0.10);"><code style="width: 150px; font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #5A5A64;">metric / 56</code><span style="width: 210px; font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #5A5A64;">1 / -0.04em / 700 / tnum</span><span style="font-size: 56px; line-height: 1; letter-spacing: -0.04em; font-weight: 700; color: #8E1A80;">+38.5%</span></div>
+      <div style="display: flex; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid rgba(15,15,18,0.10); border-bottom: 1px solid rgba(15,15,18,0.10);"><code style="width: 150px; font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #5A5A64;">label / 11 mono</code><span style="width: 210px; font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #5A5A64;">1 / 0.14em / 500 / uppercase</span><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.14em; color: #8E1A80;">01 / BUILD</span></div>
+    </div>
+  </section>
+
+  <section style="padding: 72px 80px; border-bottom: 1px solid rgba(15,15,18,0.10);">
+    <div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 28px;">
+      <span style="font-family: 'JetBrains Mono',ui-monospace,Menlo,monospace; font-size: 11px; letter-spacing: 0.14em; color: #8E1A80;">03 / STRUCTURE</span>
+      <h2 style="margin: 0; font-size: 30px; letter-spacing: -0.02em; font-weight: 700;">Grid, spacing, radius, elevation</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px;">
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">GRID</span>
+        <span style="display: flex; gap: 4px; height: 70px;"><span style="flex-grow: 1; background: rgba(142,26,128,0.10); display: block;"></span><span style="flex-grow: 1; background: rgba(142,26,128,0.10); display: block;"></span><span style="flex-grow: 1; background: rgba(142,26,128,0.10); display: block;"></span><span style="flex-grow: 1; background: rgba(142,26,128,0.10); display: block;"></span><span style="flex-grow: 1; background: rgba(142,26,128,0.10); display: block;"></span><span style="flex-grow: 1; background: rgba(142,26,128,0.10); display: block;"></span><span style="flex-grow: 1; background: rgba(142,26,128,0.10); display: block;"></span><span style="flex-grow: 1; background: rgba(142,26,128,0.10); display: block;"></span><span style="flex-grow: 1; background: rgba(142,26,128,0.10); display: block;"></span><span style="flex-grow: 1; background: rgba(142,26,128,0.10); display: block;"></span><span style="flex-grow: 1; background: rgba(142,26,128,0.10); display: block;"></span><span style="flex-grow: 1; background: rgba(142,26,128,0.10); display: block;"></span></span>
+        <code style="font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #45454F; line-height: 1.7;">12 cols &middot; 24px gutter<br>80px page margin (desktop)<br>20px page margin (mobile)<br>max-width 1440</code>
+      </div>
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">SPACING (4PX BASE)</span>
+        <span style="display: flex; align-items: flex-end; gap: 6px; height: 70px;"><span style="width: 8px; height: 8px; background: #0F0F12; display: block;"></span><span style="width: 12px; height: 12px; background: #0F0F12; display: block;"></span><span style="width: 16px; height: 16px; background: #0F0F12; display: block;"></span><span style="width: 24px; height: 24px; background: #0F0F12; display: block;"></span><span style="width: 32px; height: 32px; background: #0F0F12; display: block;"></span><span style="width: 48px; height: 48px; background: #0F0F12; display: block;"></span></span>
+        <code style="font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #45454F; line-height: 1.7;">8 12 16 24 32 48 64 80 96<br>section-y: 96 desktop / 56 mobile</code>
+      </div>
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">RADIUS</span>
+        <span style="display: flex; align-items: center; gap: 10px; height: 70px;"><span style="width: 48px; height: 48px; border: 1px solid #0F0F12; border-radius: 0; display: block;"></span><span style="width: 48px; height: 48px; border: 1px solid #0F0F12; border-radius: 3px; display: block;"></span><span style="width: 48px; height: 48px; border: 1px solid #0F0F12; border-radius: 6px; display: block;"></span><span style="width: 48px; height: 48px; border: 1px solid #0F0F12; border-radius: 999px; display: block;"></span></span>
+        <code style="font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #45454F; line-height: 1.7;">--radius-none 0 (panels, tables)<br>--radius-sm 3px (buttons, inputs)<br>--radius-md 6px (media)<br>--radius-full (avatar only)</code>
+      </div>
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">ELEVATION</span>
+        <span style="display: flex; align-items: center; gap: 12px; height: 70px;"><span style="width: 56px; height: 44px; background: #FFFFFF; border: 1px solid rgba(15,15,18,0.14); display: block;"></span><span style="width: 56px; height: 44px; background: #FFFFFF; border: 1px solid rgba(15,15,18,0.10); box-shadow: 0 1px 2px rgba(15,15,18,0.05); display: block;"></span><span style="width: 56px; height: 44px; background: #FFFFFF; border: 1px solid rgba(15,15,18,0.10); box-shadow: 0 8px 24px -8px rgba(15,15,18,0.18); display: block;"></span></span>
+        <code style="font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #45454F; line-height: 1.7;">--shadow-0 hairline only<br>--shadow-1 0 1px 2px /.05<br>--shadow-2 0 8px 24px -8px /.18<br>no hard-offset shadows</code>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px; padding: 28px 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; align-items: center; gap: 40px;">
+      <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64; width: 160px;">ENGINEERING MOTIF</span>
+      <svg width="820" height="58" viewBox="0 0 820 58" role="img" aria-label="Dimension line, tick marks and section label motifs used across the site">
+        <path d="M0 30h180" stroke="rgba(15,15,18,0.40)" stroke-width="1"></path>
+        <path d="M0 24v12M180 24v12" stroke="rgba(15,15,18,0.40)" stroke-width="1"></path>
+        <text x="90" y="20" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="10" letter-spacing="0.08em" fill="#5A5A64">DIMENSION</text>
+        <path d="M230 18v24M254 26v16M278 26v16M302 26v16M326 18v24M350 26v16M374 26v16M398 26v16M422 18v24" stroke="rgba(15,15,18,0.35)" stroke-width="1"></path>
+        <text x="326" y="56" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="10" letter-spacing="0.08em" fill="#5A5A64">TICK SCALE</text>
+        <path d="M470 30h30" stroke="#8E1A80" stroke-width="1"></path>
+        <text x="510" y="34" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="0.14em" fill="#8E1A80">01 / BUILD</text>
+        <path d="M640 12h180M640 48h180" stroke="rgba(15,15,18,0.14)" stroke-width="1"></path>
+        <text x="730" y="34" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="10" letter-spacing="0.08em" fill="#5A5A64">HAIRLINE RULES</text>
+      </svg>
+    </div>
+  </section>
+
+  <section style="padding: 72px 80px; background: #0F0F12; color: #F6F5F2;">
+    <div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 28px;">
+      <span style="font-family: 'JetBrains Mono',ui-monospace,Menlo,monospace; font-size: 11px; letter-spacing: 0.14em; color: #D57ACA;">04 / MOTION</span>
+      <h2 style="margin: 0; font-size: 30px; letter-spacing: -0.02em; font-weight: 700;">Two tiers. Everything respects reduced motion.</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding-bottom: 28px;">
+      <div style="padding: 28px; border: 1px solid rgba(255,255,255,0.14); background: #17171C; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #D57ACA;">TIER A &middot; CSS ONLY &middot; USED EVERYWHERE</span>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9C9D2;">Scroll reveals, marquees, hover and focus states, comparison rows. Tailwind utilities plus <code style="font-family: 'JetBrains Mono',monospace; color: #D57ACA;">animation-timeline: view()</code> where supported, falling back to a plain opacity transition. Zero JavaScript, zero PageSpeed cost.</p>
+        <code style="font-family: 'JetBrains Mono',monospace; font-size: 12px; line-height: 1.8; color: #9A9AA4;">--ease-standard: cubic-bezier(0.2, 0, 0, 1)<br>--ease-exit: cubic-bezier(0.4, 0, 1, 1)<br>--ease-spring: cubic-bezier(0.34, 1.2, 0.64, 1)<br>--dur-fast: 120ms &nbsp;(hover, focus)<br>--dur-base: 220ms &nbsp;(state change)<br>--dur-slow: 420ms &nbsp;(reveal)<br>--dur-story: 900ms (pinned step)<br>--stagger: 60ms &nbsp;&nbsp;(row by row)</code>
+      </div>
+      <div style="padding: 28px; border: 1px solid rgba(213,122,202,0.35); background: #17171C; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #D57ACA;">TIER B &middot; FRAMER MOTION &middot; EXACTLY THREE PLACES</span>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9C9D2;">Dynamically imported, below the fold except the hero, and gated on <code style="font-family: 'JetBrains Mono',monospace; color: #D57ACA;">useReducedMotion()</code>. Nowhere else on the site.</p>
+        <ol style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #F6F5F2;">
+          <li>Hero build moment &mdash; SVG wireframe assembly, cursor parallax</li>
+          <li>Pinned &ldquo;whole stack&rdquo; story &mdash; six steps tied to scroll progress</li>
+          <li>Platform selector &mdash; panel morph between four stacks</li>
+        </ol>
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #9A9AA4;">Full behaviour, timing and states: the three notes pinned beside the homepage artboards on this canvas.</span>
+      </div>
+    </div>
+
+    <div style="padding: 24px 28px; border: 1px solid rgba(255,255,255,0.14); display: flex; gap: 40px; align-items: center;">
+      <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #D57ACA; width: 210px;">REDUCED MOTION</span>
+      <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C9C9D2; flex-grow: 1;">Under <code style="font-family: 'JetBrains Mono',monospace; color: #D57ACA;">prefers-reduced-motion: reduce</code> every reveal renders at its final state, the hero paints assembled, the pinned story unpins into a plain stacked list, the gauge shows its number without counting, and marquees stop. Nothing is hidden, nothing needs scrolling to appear.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 24px;">
+      <div style="padding: 24px; border: 1px solid rgba(255,255,255,0.14); background: #17171C; display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #9A9AA4;">LOADING FALLBACK &middot; ROUTE</span>
+        <span style="display: flex; flex-direction: column; gap: 10px; padding: 20px 0;">
+          <span style="width: 100%; height: 2px; background: rgba(255,255,255,0.12); display: block; position: relative;"><span style="position: absolute; left: 0; top: 0; width: 38%; height: 2px; background: #D57ACA; display: block;"></span></span>
+          <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #6E6E78;">RAVENCI &middot; LOADING</span>
+        </span>
+        <span style="font-size: 13px; color: #9A9AA4; line-height: 1.6;">Hairline progress bar pinned under the nav, raven mark at 40% opacity, plus <code style="font-family: 'JetBrains Mono',monospace; color: #D57ACA;">sr-only</code> "Loading page" for screen readers. Matches the existing route-level loading pattern.</span>
+      </div>
+      <div style="padding: 24px; border: 1px solid rgba(255,255,255,0.14); background: #17171C; display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #9A9AA4;">SKELETON &middot; CARD</span>
+        <span style="display: flex; flex-direction: column; gap: 10px; padding: 12px 0;">
+          <span style="width: 100%; height: 64px; background: rgba(255,255,255,0.06); display: block;"></span>
+          <span style="width: 60%; height: 10px; background: rgba(255,255,255,0.10); display: block;"></span>
+          <span style="width: 40%; height: 10px; background: rgba(255,255,255,0.06); display: block;"></span>
+        </span>
+        <span style="font-size: 13px; color: #9A9AA4; line-height: 1.6;">Opacity pulse only, 1.6s, <code style="font-family: 'JetBrains Mono',monospace; color: #D57ACA;">--ease-standard</code>. No shimmer sweep.</span>
+      </div>
+      <div style="padding: 24px; border: 1px solid rgba(255,255,255,0.14); background: #17171C; display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #9A9AA4;">FOCUS STATE</span>
+        <span style="display: flex; gap: 12px; align-items: center; padding: 12px 0;">
+          <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; background: #F6F5F2; color: #0F0F12; font-size: 14px; font-weight: 600; border-radius: 3px; outline: 2px solid #D57ACA; outline-offset: 3px;">Focused</span>
+        </span>
+        <span style="font-size: 13px; color: #9A9AA4; line-height: 1.6;">2px <code style="font-family: 'JetBrains Mono',monospace; color: #D57ACA;">--ring</code> outline, 3px offset, on every focusable element in both themes. Never removed, never colour-only.</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 72px 80px;">
+    <div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 28px;">
+      <span style="font-family: 'JetBrains Mono',ui-monospace,Menlo,monospace; font-size: 11px; letter-spacing: 0.14em; color: #8E1A80;">05 / COMPONENTS</span>
+      <h2 style="margin: 0; font-size: 30px; letter-spacing: -0.02em; font-weight: 700;">Variants, mapped to the existing inventory</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">BUTTON &middot; 5 VARIANTS</span>
+        <span style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <button type="button" style="height: 44px; padding: 0 20px; background: #0F0F12; color: #F6F5F2; border: 0; border-radius: 3px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer;">Primary</button>
+          <button type="button" style="height: 44px; padding: 0 20px; background: transparent; color: #0F0F12; border: 1px solid rgba(15,15,18,0.24); border-radius: 3px; font-family: inherit; font-size: 14px; font-weight: 500; cursor: pointer;">Secondary</button>
+          <button type="button" style="height: 44px; padding: 0 20px; background: #8E1A80; color: #FFFFFF; border: 0; border-radius: 3px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer;">Accent</button>
+          <button type="button" style="height: 44px; padding: 0 12px; background: transparent; color: #8E1A80; border: 0; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer;">Ghost &rarr;</button>
+          <button type="button" disabled style="height: 44px; padding: 0 20px; background: #E0DDD6; color: #8A8A95; border: 0; border-radius: 3px; font-family: inherit; font-size: 14px; font-weight: 600;">Disabled</button>
+        </span>
+        <span style="font-size: 13px; color: #5A5A64; line-height: 1.6;">44px min height on every size. Hover lifts the fill one neutral step in 120ms; accent gains a 0&nbsp;0&nbsp;0&nbsp;3px purple halo at 12% opacity.</span>
+      </div>
+
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">INPUT + LABEL &middot; 3 STATES</span>
+        <span style="display: flex; flex-direction: column; gap: 6px;">
+          <label for="ds-a" style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.10em; color: #5A5A64;">DEFAULT</label>
+          <input id="ds-a" type="text" placeholder="Business name" style="height: 44px; border: 1px solid rgba(15,15,18,0.20); border-radius: 3px; padding: 0 12px; font-family: inherit; font-size: 15px; background: #FFFFFF;">
+        </span>
+        <span style="display: flex; flex-direction: column; gap: 6px;">
+          <label for="ds-b" style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.10em; color: #8E1A80;">FOCUSED</label>
+          <input id="ds-b" type="text" value="Whitlock Constructions" style="height: 44px; border: 1px solid #8E1A80; border-radius: 3px; padding: 0 12px; font-family: inherit; font-size: 15px; background: #FFFFFF; outline: 2px solid rgba(142,26,128,0.35); outline-offset: 2px;">
+        </span>
+        <span style="display: flex; flex-direction: column; gap: 6px;">
+          <label for="ds-c" style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.10em; color: #B4231F;">ERROR</label>
+          <input id="ds-c" type="email" value="jane@" aria-invalid="true" style="height: 44px; border: 1px solid #B4231F; border-radius: 3px; padding: 0 12px; font-family: inherit; font-size: 15px; background: #FFFFFF;">
+          <span style="font-size: 13px; color: #B4231F;">Enter a full email address.</span>
+        </span>
+      </div>
+
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">BREADCRUMBS + SECTION LABEL</span>
+        <nav style="display: flex; gap: 10px; align-items: center; font-size: 13px; color: #5A5A64;"><a href="Main.dc.html" style="color: #5A5A64;">Home</a><span>/</span><a href="ServicesOverview.dc.html" style="color: #5A5A64;">Services</a><span>/</span><span style="color: #0F0F12;">Web Development</span></nav>
+        <span style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.14em; color: #8E1A80;"><span style="width: 22px; height: 1px; background: #8E1A80;"></span>02 / THE WHOLE STACK</span>
+        <span style="font-size: 13px; color: #5A5A64; line-height: 1.6;">Every major section carries a numbered mono label. The number is the section's index on that page, not a global counter.</span>
+      </div>
+
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">PRICING CARD &middot; 2 VARIANTS</span>
+        <span style="display: flex; gap: 12px;">
+          <span style="flex-grow: 1; border: 1px solid rgba(15,15,18,0.14); padding: 18px; display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 15px; font-weight: 600;">Business Website</span><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #5A5A64;">FROM</span><span style="font-size: 28px; font-weight: 700; letter-spacing: -0.03em;">$7,500</span></span>
+          <span style="flex-grow: 1; border: 1px solid #0F0F12; background: #0F0F12; color: #F6F5F2; padding: 18px; display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 15px; font-weight: 600;">eCommerce</span><span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; color: #D57ACA;">FROM &middot; MOST CHOSEN</span><span style="font-size: 28px; font-weight: 700; letter-spacing: -0.03em;">$12,000</span></span>
+        </span>
+        <span style="font-size: 13px; color: #5A5A64; line-height: 1.6;">Default and emphasised. No third "premium" treatment, no strikethroughs, no countdown.</span>
+      </div>
+
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">METRICS BAR</span>
+        <span style="display: flex; background: #0F0F12; color: #F6F5F2;">
+          <span style="flex-grow: 1; padding: 18px 12px; display: flex; flex-direction: column; gap: 4px; align-items: center;"><span style="font-size: 26px; font-weight: 700; letter-spacing: -0.03em;">25+</span><span style="font-family: 'JetBrains Mono',monospace; font-size: 9px; letter-spacing: 0.10em; color: #9A9AA4;">YEARS</span></span>
+          <span style="flex-grow: 1; padding: 18px 12px; display: flex; flex-direction: column; gap: 4px; align-items: center; border-left: 1px solid rgba(255,255,255,0.12);"><span style="font-size: 26px; font-weight: 700; letter-spacing: -0.03em;">75+</span><span style="font-family: 'JetBrains Mono',monospace; font-size: 9px; letter-spacing: 0.10em; color: #9A9AA4;">BUSINESSES</span></span>
+          <span style="flex-grow: 1; padding: 18px 12px; display: flex; flex-direction: column; gap: 4px; align-items: center; border-left: 1px solid rgba(255,255,255,0.12);"><span style="font-size: 26px; font-weight: 700; letter-spacing: -0.03em;">350+</span><span style="font-family: 'JetBrains Mono',monospace; font-size: 9px; letter-spacing: 0.10em; color: #9A9AA4;">PROJECTS</span></span>
+          <span style="flex-grow: 1; padding: 18px 12px; display: flex; flex-direction: column; gap: 4px; align-items: center; border-left: 1px solid rgba(255,255,255,0.12);"><span style="font-size: 26px; font-weight: 700; letter-spacing: -0.03em; color: #D57ACA;">85+</span><span style="font-family: 'JetBrains Mono',monospace; font-size: 9px; letter-spacing: 0.10em; color: #9A9AA4;">PAGESPEED</span></span>
+        </span>
+        <span style="font-size: 13px; color: #5A5A64; line-height: 1.6;">Replaces the current full-bleed purple band. Numerals count up once on first view (Tier A, CSS counter).</span>
+      </div>
+
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">ACCORDION &middot; OPEN + CLOSED</span>
+        <span style="border-top: 1px solid rgba(15,15,18,0.14); display: flex; flex-direction: column;">
+          <button type="button" aria-expanded="true" style="display: flex; align-items: center; gap: 12px; padding: 16px 0; background: none; border: 0; border-bottom: 1px solid rgba(15,15,18,0.10); text-align: left; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; color: #0F0F12;">How long does a build take?<span style="margin-left: auto; color: #8E1A80; font-size: 18px;">&minus;</span></button>
+          <span style="padding: 14px 0 18px; font-size: 14px; line-height: 1.6; color: #45454F; border-bottom: 1px solid rgba(15,15,18,0.10);">Foundation sites take three weeks. Growth sites four to six. Premium brand and web projects ten to fourteen.</span>
+          <button type="button" aria-expanded="false" style="display: flex; align-items: center; gap: 12px; padding: 16px 0; background: none; border: 0; border-bottom: 1px solid rgba(15,15,18,0.10); text-align: left; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; color: #0F0F12;">What do I need to provide?<span style="margin-left: auto; color: #8E1A80; font-size: 18px;">+</span></button>
+        </span>
+        <span style="font-size: 13px; color: #5A5A64; line-height: 1.6;">Real <code style="font-family: 'JetBrains Mono',monospace;">&lt;button aria-expanded&gt;</code>, height transition 220ms, icon rotates not swaps.</span>
+      </div>
+
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">CASE CARD &middot; REST / HOVER</span>
+        <span style="display: flex; gap: 12px;">
+          <span style="flex-grow: 1; border: 1px solid rgba(15,15,18,0.14); display: flex; flex-direction: column;"><span style="height: 74px; background: #0F0F12; display: block;"></span><span style="padding: 12px; font-size: 13px; font-weight: 600;">Rest &mdash; desktop</span></span>
+          <span style="flex-grow: 1; border: 1px solid #0F0F12; box-shadow: 0 8px 24px -8px rgba(15,15,18,0.18); display: flex; flex-direction: column;"><span style="height: 74px; background: #0F0F12; position: relative; display: block;"><span style="position: absolute; right: 10px; top: 8px; width: 28px; height: 58px; border: 1px solid rgba(213,122,202,0.8); background: #17171C; display: block;"></span></span><span style="padding: 12px; font-size: 13px; font-weight: 600;">Hover &mdash; mobile slides in</span></span>
+        </span>
+        <span style="font-size: 13px; color: #5A5A64; line-height: 1.6;">Tier A. The phone frame translates in from the right over 420ms. On touch it is visible at rest instead &mdash; no hover-only content.</span>
+      </div>
+
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">TESTIMONIAL &middot; SINGLE</span>
+        <blockquote style="margin: 0; font-size: 16px; line-height: 1.5; letter-spacing: -0.01em;">"Champion bloke, brilliant at what he does."</blockquote>
+        <span style="font-size: 13px; color: #5A5A64;"><strong style="color: #0F0F12;">Geoff Beisler</strong> &middot; Green Earth Trees</span>
+        <span style="font-size: 13px; color: #5A5A64; line-height: 1.6;">One quote per section, shown once per site. No carousel, no autoplay, no duplicate quotes across pages.</span>
+      </div>
+
+      <div style="padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64;">STICKY CTA &middot; MOBILE</span>
+        <span style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: #0F0F12; color: #F6F5F2;">
+          <span style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 13px; font-weight: 600;">Custom sites from $7,500</span><span style="font-family: 'JetBrains Mono',monospace; font-size: 10px; color: #9A9AA4;">SCOPED, FIXED PRICE</span></span>
+          <span style="margin-left: auto; display: inline-flex; align-items: center; height: 40px; padding: 0 16px; background: #D57ACA; color: #0F0F12; border-radius: 3px; font-size: 13px; font-weight: 600;">Start</span>
+        </span>
+        <span style="font-size: 13px; color: #5A5A64; line-height: 1.6;">Appears after the hero leaves the viewport, hides over the footer, sits above the cookie banner, respects safe-area inset.</span>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px; padding: 24px; border: 1px solid rgba(15,15,18,0.14); background: #FFFFFF; display: flex; gap: 32px; align-items: flex-start;">
+      <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64; width: 200px; flex-shrink: 0;">COOKIE CONSENT</span>
+      <span style="flex-grow: 1; display: flex; align-items: center; gap: 20px; padding: 18px 20px; border: 1px solid rgba(15,15,18,0.16); background: #F6F5F2;">
+        <span style="font-size: 14px; line-height: 1.55; color: #45454F; flex-grow: 1;">I use analytics cookies to see which pages actually help. Nothing is sold, nothing is shared. <a href="#legal">Privacy policy</a></span>
+        <button type="button" style="height: 40px; padding: 0 16px; background: transparent; border: 1px solid rgba(15,15,18,0.24); border-radius: 3px; font-family: inherit; font-size: 14px; cursor: pointer;">Essential only</button>
+        <button type="button" style="height: 40px; padding: 0 16px; background: #0F0F12; color: #F6F5F2; border: 0; border-radius: 3px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer;">Accept</button>
+      </span>
+    </div>
+
+    <div style="margin-top: 24px; padding: 24px; border: 1px dashed rgba(15,15,18,0.24); background: #EFEDE7; display: flex; gap: 32px; align-items: flex-start;">
+      <span style="font-family: 'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.12em; color: #5A5A64; width: 200px; flex-shrink: 0;">RESTYLE ONLY</span>
+      <span style="flex-grow: 1; font-size: 14px; line-height: 1.7; color: #45454F;">Visibility check form, Launch Your Vision multi-step stepper, quoting and checkout component, audit report gate, footer email capture. These take the tokens above &mdash; field heights, labels, focus rings, button variants, stepper progress rail &mdash; and keep their existing logic, validation and submission untouched.</span>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

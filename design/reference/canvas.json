@@ -1,0 +1,63 @@
+{
+  "v": 3,
+  "createdOnFiles": { "v": 1, "at": "2026-09-21T02:40:00Z" },
+  "title": "RAVENCI — site redesign",
+  "launch": { "view": "canvas" },
+  "pages": [],
+  "designSystems": [],
+  "boards": {
+    "DesignSystem.dc.html": { "x": 0, "y": 0, "w": 1440, "h": 5200, "title": "Design system — tokens, type, motion, components" },
+    "Main.dc.html": { "x": 0, "y": 5600, "w": 1440, "h": 7700, "title": "Homepage — desktop", "is_interactive": true, "guides": [{ "kind": "columns", "count": 12, "gutter": 24, "margin": 80 }] },
+    "HomeMobile.dc.html": { "x": 1520, "y": 5600, "w": 390, "h": 5400, "title": "Homepage — mobile 390" },
+    "ServicesOverview.dc.html": { "x": 0, "y": 13700, "w": 1440, "h": 3700, "title": "Services overview — the whole package" },
+    "ServiceWebDev.dc.html": { "x": 1520, "y": 13700, "w": 1440, "h": 4300, "title": "Service template — Web Development", "is_interactive": true },
+    "IndustryConstruction.dc.html": { "x": 0, "y": 18400, "w": 1440, "h": 4500, "title": "Industry template — Construction" },
+    "Article.dc.html": { "x": 1520, "y": 18400, "w": 1440, "h": 3500, "title": "Article layout" },
+    "CaseResults.dc.html": { "x": 0, "y": 23300, "w": 1440, "h": 3900, "title": "Case study A — results-driven" },
+    "CaseVisual.dc.html": { "x": 1520, "y": 23300, "w": 1440, "h": 3900, "title": "Case study B — visual showcase" },
+    "CasePremium.dc.html": { "x": 3040, "y": 23300, "w": 1440, "h": 3900, "title": "Case study C — premium" }
+  },
+  "order": [
+    "Main.dc.html",
+    "DesignSystem.dc.html",
+    "HomeMobile.dc.html",
+    "ServicesOverview.dc.html",
+    "ServiceWebDev.dc.html",
+    "IndustryConstruction.dc.html",
+    "Article.dc.html",
+    "CaseResults.dc.html",
+    "CaseVisual.dc.html",
+    "CasePremium.dc.html"
+  ],
+  "notes": {
+    "t1": { "x": 0, "y": -300, "text": "01 — Design system", "kind": "title1", "maxW": 1440 },
+    "t2": { "x": 0, "y": 5300, "text": "02 — Homepage", "kind": "title1", "maxW": 1910 },
+    "t3": { "x": 0, "y": 13400, "text": "03 — Services", "kind": "title1", "maxW": 2960 },
+    "t4": { "x": 0, "y": 18100, "text": "04 — Industry + article templates", "kind": "title1", "maxW": 2960 },
+    "t5": { "x": 0, "y": 23000, "text": "05 — Case study template, three variants", "kind": "title1", "maxW": 4480 },
+    "tierb1": {
+      "x": 1990,
+      "y": 5600,
+      "w": 420,
+      "maxH": 700,
+      "color": "purple",
+      "text": "TIER B / 1 — HERO BUILD MOMENT\n\nBehaviour: on mount the blueprint assembles. Frame outline draws (stroke-dashoffset, 400ms). Header bar, hero text blocks, dashed image frame and three cards fade+rise 8px, staggered 60ms, in DOM order. Dimension lines and labels last.\n\nTiming: 1.1s total, --ease-standard. Starts after first paint; the assembled state is the SSR markup, so the SVG is the LCP element either way.\n\nIdle: cursor parallax. Pointer position maps to a ±6px translate on the dashed frame, ±3px on the card row, ±2px on the outline. Spring, damping 30, stiffness 120. Pointer-coarse devices get a 4s ambient drift instead.\n\nStates: initial (flat), assembling, idle, reduced-motion (renders assembled, no parallax, no drift)."
+    },
+    "tierb2": {
+      "x": 1990,
+      "y": 6400,
+      "w": 420,
+      "maxH": 700,
+      "color": "purple",
+      "text": "TIER B / 2 — PINNED STACK STORY\n\nBehaviour: the section pins for 6 x 100vh of scroll. Left column stays fixed; the six step rows advance with scroll progress. Active row: full-opacity text, purple index, 7% purple row tint. Inactive: 55% opacity. Progress rail fills 0→100% and the counter reads 01/06 → 06/06.\n\nTiming: row transition 320ms, --ease-standard. Progress rail tracks scroll directly, no easing. Steps snap on cross, they don't crossfade.\n\nScroll-linked via useScroll + useTransform, no scroll hijacking — the user's scroll speed is the only input.\n\nStates: before pin, pinned 01..06, released. Reduced motion and <1024px: no pin, all six rows render stacked at full opacity, rail shows 06/06."
+    },
+    "tierb3": {
+      "x": 1990,
+      "y": 7200,
+      "w": 420,
+      "maxH": 700,
+      "color": "purple",
+      "text": "TIER B / 3 — PLATFORM SELECTOR\n\nBehaviour: four options, one selected. Selection moves a shared layoutId pill behind the active button (220ms spring, damping 26). The panel morphs: stack name and reason crossfade out 120ms, new content fades in +8px over 200ms; the three spec lines stagger 50ms. Panel height animates to the new content height, never jumps.\n\nKeyboard: arrow keys move between options (roving tabindex), Enter/Space selects, focus ring always visible. Touch: the option row scrolls horizontally, tap selects.\n\nStates: content site (default) / store / app / have-a-design. Selection persists in the URL hash so a recommendation can be linked.\n\nReduced motion: content swaps instantly, pill jumps, height is not animated."
+    }
+  }
+}
