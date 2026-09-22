@@ -27,22 +27,19 @@ export default function StickyCTA({
   }, [startingPrice]);
 
   return (
-    <div className="md:hidden fixed inset-x-0 bottom-0 z-50 border-t border-neutral-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <div className="fixed inset-x-0 bottom-0 z-[70] border-t border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80 md:hidden">
       <div className="mx-auto flex w-full max-w-screen-xl items-center justify-between gap-4 px-4 py-3">
-        <div className="text-sm">
+        <div className="text-small">
           {formatted ? (
             <div className="leading-tight">
-              <p className="font-medium text-neutral-900">{`From ${formatted}`}</p>
-              <p className="text-xs text-neutral-500">{priceNote}</p>
+              <p className="font-medium text-foreground">{`From ${formatted}`}</p>
+              <p className="text-small text-muted-foreground">{priceNote}</p>
             </div>
           ) : (
-            <p className="font-medium text-neutral-900">Ready to start?</p>
+            <p className="font-medium text-foreground">Ready to start?</p>
           )}
         </div>
-        <Button
-          asChild
-          className="bg-ravenci-primary hover:bg-ravenci-primary/90 text-white"
-        >
+        <Button asChild variant="primary">
           <Link href={link} aria-label={label}>
             {label}
           </Link>

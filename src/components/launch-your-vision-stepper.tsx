@@ -230,36 +230,36 @@ export default function LaunchYourVisionStepper() {
 
     return (
       <div className="mt-12 max-w-2xl">
-        <div className="p-8 md:p-10 bg-white border border-neutral-200 rounded-lg">
+        <div className="p-8 md:p-10 bg-card border border-border rounded-sm">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-full bg-ravenci-primary flex items-center justify-center">
-              <IconCheck size={22} className="text-white" />
+            <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+              <IconCheck size={22} className="text-accent-foreground" />
             </div>
-            <h3 className="text-2xl md:text-3xl font-medium text-ravenci-dark">
+            <h3 className="text-heading-s font-semibold text-foreground">
               Thanks, {form.name.split(" ")[0]}.
             </h3>
           </div>
-          <p className="text-neutral-600 leading-relaxed">
+          <p className="text-body text-muted-foreground leading-relaxed">
             I&apos;ve received your enquiry and will respond within 24 hours
             (typically much faster) with a tailored proposal for your{" "}
-            <strong className="text-ravenci-dark">
+            <strong className="text-foreground">
               {form.projectType.toLowerCase()}
             </strong>{" "}
             project.
           </p>
 
           {isHighBudget && (
-            <div className="mt-8 p-5 bg-ravenci-primary/5 border border-ravenci-primary/20 rounded-lg">
+            <div className="mt-8 p-5 bg-accent/10 border border-accent rounded-sm">
               <div className="flex items-start gap-3 mb-2">
                 <IconCalendar
                   size={22}
-                  className="text-ravenci-primary flex-shrink-0 mt-0.5"
+                  className="text-accent flex-shrink-0 mt-0.5"
                 />
-                <h4 className="font-bold text-ravenci-dark">
+                <h4 className="font-semibold text-foreground">
                   Want to fast-track?
                 </h4>
               </div>
-              <p className="ml-8 text-sm text-neutral-600 mb-4 leading-relaxed">
+              <p className="ml-8 text-small text-muted-foreground mb-4 leading-relaxed">
                 For projects in your range I offer a free 30-minute discovery
                 call. Pick a time that works for you.
               </p>
@@ -267,7 +267,7 @@ export default function LaunchYourVisionStepper() {
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-8 inline-flex items-center gap-2 px-5 py-2.5 bg-ravenci-primary text-white rounded-full hover:bg-ravenci-primary/85 transition-colors text-sm"
+                className="ml-8 inline-flex items-center gap-2 h-12 px-5 bg-accent text-accent-foreground rounded-sm hover:bg-accent/90 transition-colors text-small font-semibold"
               >
                 Book a Discovery Call
                 <IconArrowRight size={16} />
@@ -276,17 +276,17 @@ export default function LaunchYourVisionStepper() {
           )}
 
           {isHostingOnly && (
-            <div className="mt-8 p-5 bg-neutral-100 border border-neutral-200 rounded-lg">
-              <h4 className="font-bold text-ravenci-dark mb-2">
+            <div className="mt-8 p-5 bg-muted border border-border rounded-sm">
+              <h4 className="font-semibold text-foreground mb-2">
                 Faster path for hosting + maintenance
               </h4>
-              <p className="text-sm text-neutral-600 mb-4 leading-relaxed">
+              <p className="text-small text-muted-foreground mb-4 leading-relaxed">
                 Hosting and maintenance are also available via my self-serve
                 checkout. Same pricing, instant setup.
               </p>
               <Link
                 href="/quote"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-ravenci-dark text-white rounded-full hover:bg-ravenci-primary transition-colors text-sm"
+                className="inline-flex items-center gap-2 h-12 px-5 bg-foreground text-background rounded-sm hover:bg-foreground/90 transition-colors text-small font-semibold"
               >
                 Go to Self-Serve Quote
                 <IconArrowRight size={16} />
@@ -294,10 +294,10 @@ export default function LaunchYourVisionStepper() {
             </div>
           )}
 
-          <div className="mt-8 pt-6 border-t border-neutral-200">
-            <p className="text-xs text-neutral-500">
+          <div className="mt-8 pt-6 border-t border-border">
+            <p className="text-small text-muted-foreground">
               Confirmation sent to{" "}
-              <span className="font-medium text-neutral-700">{form.email}</span>.
+              <span className="font-medium text-foreground">{form.email}</span>.
               Check your spam folder if it doesn&apos;t arrive within 5 minutes.
             </p>
           </div>
@@ -309,9 +309,11 @@ export default function LaunchYourVisionStepper() {
   // ─── ERROR STATE ───────────────────────────────────────────────────────────
   if (submitStatus === "error") {
     return (
-      <div className="mt-12 max-w-2xl p-6 bg-red-50 border border-red-200 rounded-lg">
-        <h3 className="font-bold text-red-700 mb-2">Something went wrong</h3>
-        <p className="text-sm text-red-600 mb-4">
+      <div className="mt-12 max-w-2xl p-6 bg-card border border-border rounded-sm">
+        <h3 className="font-semibold text-foreground mb-2">
+          Something went wrong
+        </h3>
+        <p className="text-small text-muted-foreground mb-4">
           {errorMessage ||
             "I couldn't send your enquiry. Please try again or email me directly."}
         </p>
@@ -319,13 +321,13 @@ export default function LaunchYourVisionStepper() {
           <button
             type="button"
             onClick={() => setSubmitStatus("idle")}
-            className="px-4 py-2 bg-red-600 text-white rounded-full text-sm hover:bg-red-700 transition-colors"
+            className="inline-flex items-center h-12 px-5 bg-foreground text-background rounded-sm text-small font-semibold hover:bg-foreground/90 transition-colors"
           >
             Try again
           </button>
           <a
             href="mailto:hello@ravenci.solutions"
-            className="px-4 py-2 border border-red-300 text-red-700 rounded-full text-sm hover:bg-red-100 transition-colors"
+            className="inline-flex items-center h-12 px-5 border border-foreground/25 text-foreground rounded-sm text-small font-semibold hover:bg-muted transition-colors"
           >
             Email me directly
           </a>
@@ -342,16 +344,16 @@ export default function LaunchYourVisionStepper() {
       {/* Progress bar */}
       <div className="mb-10">
         <div className="flex items-center justify-between mb-3">
-          <span className="text-xs font-medium tracking-widest uppercase text-ravenci-primary">
+          <span className="font-mono text-label-sm uppercase text-accent">
             Step {step} of {TOTAL_STEPS}
           </span>
-          <span className="text-xs text-neutral-500">
+          <span className="font-mono text-label-sm uppercase text-muted-foreground">
             ~2 minutes total
           </span>
         </div>
-        <div className="w-full h-1.5 bg-neutral-200 rounded-full overflow-hidden">
+        <div className="w-full h-1.5 bg-muted rounded-sm overflow-hidden">
           <div
-            className="h-full bg-ravenci-primary rounded-full transition-all duration-500 ease-out"
+            className="h-full bg-accent rounded-sm transition-all duration-500 ease-out"
             style={{ width: `${progressPct}%` }}
           />
         </div>
@@ -418,9 +420,9 @@ export default function LaunchYourVisionStepper() {
                 update("budget", "");
                 next();
               }}
-              className="mt-6 text-sm text-neutral-500 hover:text-ravenci-primary transition-colors"
+              className="mt-6 text-small text-muted-foreground hover:text-accent transition-colors"
             >
-              Skip this step →
+              Skip this step
             </button>
           </Step>
         )}
@@ -483,13 +485,13 @@ export default function LaunchYourVisionStepper() {
                 placeholder="0400 000 000"
                 type="tel"
               />
-              <p className="text-xs text-neutral-500 leading-relaxed mt-2">
+              <p className="text-small text-muted-foreground leading-relaxed mt-2">
                 By submitting, you agree to be contacted by RAVENCI Solutions
                 about your enquiry. I never share your details with third
                 parties. See the{" "}
                 <Link
                   href="/privacy-policy"
-                  className="text-ravenci-primary hover:underline"
+                  className="text-accent hover:underline"
                 >
                   privacy policy
                 </Link>
@@ -501,12 +503,12 @@ export default function LaunchYourVisionStepper() {
       </div>
 
       {/* Navigation buttons */}
-      <div className="mt-10 pt-6 border-t border-neutral-200 flex items-center justify-between">
+      <div className="mt-10 pt-6 border-t border-border flex items-center justify-between">
         <button
           type="button"
           onClick={back}
           disabled={step === 1}
-          className="inline-flex items-center gap-2 px-5 py-2.5 text-neutral-600 hover:text-ravenci-dark disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          className="inline-flex items-center gap-2 h-12 px-5 rounded-sm border border-foreground/25 text-foreground font-semibold hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           <IconArrowLeft size={16} />
           Back
@@ -517,7 +519,7 @@ export default function LaunchYourVisionStepper() {
             type="button"
             onClick={next}
             disabled={!canProceed()}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-ravenci-primary text-white rounded-full hover:bg-ravenci-primary/85 disabled:bg-neutral-300 disabled:cursor-not-allowed transition-colors"
+            className="inline-flex items-center gap-2 h-12 px-6 rounded-sm bg-foreground text-background font-semibold hover:bg-foreground/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
             Next
             <IconArrowRight size={16} />
@@ -527,7 +529,7 @@ export default function LaunchYourVisionStepper() {
             type="button"
             onClick={submit}
             disabled={!canProceed() || submitStatus === "loading"}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-ravenci-primary text-white rounded-full hover:bg-ravenci-primary/85 disabled:bg-neutral-300 disabled:cursor-not-allowed transition-colors"
+            className="inline-flex items-center gap-2 h-12 px-6 rounded-sm bg-accent text-accent-foreground font-semibold hover:bg-accent/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
             {submitStatus === "loading" ? (
               <>
@@ -560,11 +562,9 @@ function Step({
 }) {
   return (
     <div>
-      <h3 className="text-2xl md:text-3xl font-medium text-ravenci-dark">
-        {label}
-      </h3>
+      <h3 className="text-heading-s font-semibold text-foreground">{label}</h3>
       {sublabel && (
-        <p className="mt-2 text-neutral-500 text-sm md:text-base">{sublabel}</p>
+        <p className="mt-2 text-body text-muted-foreground">{sublabel}</p>
       )}
       <div className="mt-8">{children}</div>
     </div>
@@ -589,16 +589,16 @@ function ChoiceGrid({
             key={option}
             type="button"
             onClick={() => onChange(option)}
-            className={`text-left p-4 md:p-5 rounded-lg border-2 transition-all duration-200 ${
+            className={`text-left p-4 md:p-5 rounded-sm border transition-all duration-200 ${
               selected
-                ? "border-ravenci-primary bg-ravenci-primary/5"
-                : "border-neutral-200 bg-white hover:border-neutral-400"
+                ? "border-accent bg-accent/10"
+                : "border-border bg-card hover:border-foreground/40"
             }`}
           >
             <div className="flex items-center justify-between gap-3">
               <span
                 className={`font-medium ${
-                  selected ? "text-ravenci-primary" : "text-ravenci-dark"
+                  selected ? "text-accent" : "text-foreground"
                 }`}
               >
                 {option}
@@ -606,7 +606,7 @@ function ChoiceGrid({
               {selected && (
                 <IconCheck
                   size={20}
-                  className="text-ravenci-primary flex-shrink-0"
+                  className="text-accent flex-shrink-0"
                 />
               )}
             </div>
@@ -634,7 +634,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block mb-2 text-sm font-medium text-ravenci-dark">
+      <label className="block mb-2 font-mono text-label-sm uppercase text-muted-foreground">
         {label}
       </label>
       {textarea ? (
@@ -643,7 +643,7 @@ function Field({
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
           rows={4}
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-ravenci-primary focus:ring-1 focus:ring-ravenci-primary resize-y"
+          className="w-full rounded-sm border border-input/60 bg-background px-3.5 py-2.5 text-foreground focus:border-accent focus:outline-none resize-y"
         />
       ) : (
         <input
@@ -651,7 +651,7 @@ function Field({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-ravenci-primary focus:ring-1 focus:ring-ravenci-primary"
+          className="w-full h-12 rounded-sm border border-input/60 bg-background px-3.5 py-2.5 text-foreground focus:border-accent focus:outline-none"
         />
       )}
     </div>

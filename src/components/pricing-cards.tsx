@@ -30,17 +30,17 @@ export default function PricingCards({ tiers }: { tiers: PricingTier[] }) {
       {tiers.map((tier, index) => (
         <div
           key={index}
-          className="grid lg:row-span-4 lg:[grid-template-rows:subgrid] bg-neutral-800/50 rounded-xl p-8 border border-neutral-700"
+          className="grid lg:row-span-4 lg:[grid-template-rows:subgrid] rounded-sm border border-border bg-card p-8 shadow-1"
         >
-          <h4 className="font-serif text-2xl font-bold text-white">
+          <h4 className="text-heading-s text-foreground">
             {tier.name}
           </h4>
-          <p className="mt-2 mb-2 text-neutral-400">
+          <p className="mt-2 mb-2 text-body text-muted-foreground">
             {tier.description}
           </p>
           <div className="mt-2">
             <Accordion
-              titleClassName="py-3 px-4 mb-2 text-base rounded-lg border border-neutral-600 bg-neutral-800 text-white hover:border-ravenci-primary hover:bg-ravenci-primary/20 transition-colors"
+              titleClassName="px-4 mb-2 rounded-sm border border-border bg-muted text-foreground hover:border-accent hover:bg-muted/70 transition-colors"
               items={[
                 {
                   title: "What's Included",
@@ -54,15 +54,15 @@ export default function PricingCards({ tiers }: { tiers: PricingTier[] }) {
           </div>
           <Link
             href="/launch-your-vision"
-            className="group/cta mt-4 block text-center rounded-xl border border-neutral-600 hover:border-white hover:bg-white p-6 transition-colors"
+            className="group/cta mt-4 block rounded-sm border border-border bg-background p-6 text-center transition-colors hover:border-foreground hover:bg-foreground"
           >
-            <p className="text-sm text-neutral-400 group-hover/cta:text-neutral-500 transition-colors">
+            <p className="text-small text-muted-foreground transition-colors group-hover/cta:text-background/70">
               {/^\d/.test(tier.price) ? "from" : " "}
             </p>
-            <p className="text-4xl font-bold text-white group-hover/cta:text-ravenci-dark transition-colors">
+            <p className="text-display-m font-bold text-foreground transition-colors group-hover/cta:text-background">
               {/^\d/.test(tier.price) ? `$${tier.price}` : tier.price}
             </p>
-            <p className="mt-3 text-sm font-medium text-white group-hover/cta:text-ravenci-dark transition-colors">
+            <p className="mt-3 text-small font-medium text-foreground transition-colors group-hover/cta:text-background">
               Request a proposal &rarr;
             </p>
           </Link>
