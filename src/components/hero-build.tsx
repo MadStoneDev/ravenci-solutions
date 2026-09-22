@@ -195,7 +195,7 @@ export default function HeroBuild() {
             {Math.round(ps)}
             {done ? "+" : ""} PageSpeed
           </span>
-          <span className="text-muted-foreground">Hero / SVG</span>
+          <span className="text-muted-foreground">WCAG 2.1 AA</span>
         </div>
       </div>
     </div>

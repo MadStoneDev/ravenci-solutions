@@ -130,10 +130,9 @@ export default async function Home() {
             <span key={t}>{t}</span>
           ))}
           <span className="text-foreground">
-            <span className="font-semibold">5.0</span> from 11 Google reviews
+            <span className="font-semibold">5.0</span> from Google reviews
           </span>
           <span>Since 2018</span>
-          <span>25+ years</span>
         </div>
       </section>
 
