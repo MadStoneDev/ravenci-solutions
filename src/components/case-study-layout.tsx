@@ -4,6 +4,7 @@ import { IconArrowRight, IconExternalLink } from "@tabler/icons-react";
 
 import Breadcrumbs from "@/components/breadcrumbs";
 import SectionLabel from "@/components/section-label";
+import ScrollingScreenshot from "@/components/scrolling-screenshot";
 import { Button } from "@/components/ui/button";
 import {
   type CaseStudy,
@@ -22,29 +23,53 @@ function nextOf(cs: CaseStudy): CaseStudy | null {
   return all[(i + 1) % all.length];
 }
 
-/** Media block: real client screenshot via next/image, top-anchored. */
-function Media({
+/**
+ * Media block for case studies. Handles three real cases from the data:
+ *  - video features (.mp4/.webm) -> autoplay-loop-muted <video>
+ *  - full-length screenshots (scroll) -> ScrollingScreenshot auto-scroll window
+ *  - everything else -> next/image, top-anchored
+ * `className` controls the frame (aspect ratio + border), so the caller decides
+ * whether it's a standalone bordered block or flush inside a card.
+ */
+function CaseMedia({
   src,
   alt,
+  scroll,
+  duration,
   className,
-  dark,
 }: {
   src: string;
   alt: string;
+  scroll?: boolean;
+  duration?: number;
   className?: string;
-  dark?: boolean;
 }) {
+  const frame = `relative w-full overflow-hidden bg-muted ${className ?? "aspect-[16/9] rounded-sm border border-border"}`;
+
+  if (/\.(mp4|webm)$/i.test(src)) {
+    return (
+      <div className={frame}>
+        <video
+          src={src}
+          muted
+          loop
+          autoPlay
+          playsInline
+          preload="metadata"
+          aria-label={alt}
+          className="absolute inset-0 h-full w-full object-cover object-top"
+        />
+      </div>
+    );
+  }
+
+  if (scroll) {
+    return <ScrollingScreenshot src={src} alt={alt} duration={duration} className={`${frame} group`} />;
+  }
+
   return (
-    <div
-      className={`relative w-full overflow-hidden rounded-sm border ${dark ? "border-white/10" : "border-border"} ${className ?? ""}`}
-    >
-      <Image
-        src={src}
-        alt={alt}
-        width={1280}
-        height={800}
-        className="h-full w-full object-cover object-top"
-      />
+    <div className={frame}>
+      <Image src={src} alt={alt} fill sizes="(max-width: 1024px) 100vw, 900px" className="object-cover object-top" />
     </div>
   );
 }
@@ -206,11 +231,14 @@ function WhatIBuilt({ cs }: { cs: CaseStudy }) {
       </div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {cs.features.map((f, i) => (
-          <div key={f.title} className="flex flex-col rounded-sm border border-border bg-card">
-            {f.image && (
-              <div className="relative aspect-[16/10] overflow-hidden rounded-t-sm border-b border-border bg-muted">
-                <Image src={f.image} alt={f.title} fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover object-top" />
-              </div>
+          <div key={f.title} className="flex flex-col overflow-hidden rounded-sm border border-border bg-card">
+            {(f.image || f.images?.[0]) && (
+              <CaseMedia
+                src={(f.image ?? f.images?.[0]) as string}
+                alt={f.title}
+                scroll={f.imageScroll}
+                className="aspect-[16/10] border-b border-border"
+              />
             )}
             <div className="flex flex-col gap-2 p-6">
               <span className="font-mono text-label uppercase text-accent">
@@ -279,7 +307,13 @@ export default function CaseStudyLayout({ caseStudy: cs }: { caseStudy: CaseStud
 
       {/* Media */}
       <section className={SECTION}>
-        <Media src={cs.featuredImage} alt={`${cs.clientName} website`} />
+        <CaseMedia
+          src={cs.featuredImage}
+          alt={`${cs.clientName} website`}
+          scroll={cs.featuredImageScroll}
+          duration={cs.featuredImageScrollDuration}
+          className="aspect-[16/9] rounded-sm border border-border md:aspect-[21/9]"
+        />
       </section>
 
       {/* Visual variant: gallery */}
@@ -287,7 +321,12 @@ export default function CaseStudyLayout({ caseStudy: cs }: { caseStudy: CaseStud
         <section className={`${SECTION} border-t border-border`}>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {cs.galleryImages.slice(0, 3).map((img, i) => (
-              <Media key={i} src={img} alt={`${cs.clientName} screenshot ${i + 1}`} className="aspect-[3/4]" />
+              <CaseMedia
+                key={i}
+                src={img}
+                alt={`${cs.clientName} screenshot ${i + 1}`}
+                className="aspect-[3/4] rounded-sm border border-border"
+              />
             ))}
           </div>
         </section>
