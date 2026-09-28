@@ -92,6 +92,17 @@ export const LAB_PROJECTS: LabProject[] = [
     status: "live",
   },
   {
+    name: "JustReel",
+    url: "https://justreel.app",
+    oneLiner:
+      "A movie and TV show database for tracking what you've watched, building shareable collections, and discussing shows with the people you watch them with.",
+    // Full stack beyond Next.js/TypeScript and the technical write-up left for
+    // Richard rather than invented.
+    stack: ["Next.js", "React", "TypeScript"],
+    problemSolved: "",
+    status: "live",
+  },
+  {
     name: "TheJury",
     url: "",
     oneLiner:
