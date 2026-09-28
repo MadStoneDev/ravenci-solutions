@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "indexnow": "node scripts/indexnow-submit.js"
+    "indexnow": "node scripts/indexnow-submit.js",
+    "dod": "playwright test",
+    "dod:visual": "playwright test visual",
+    "dod:a11y": "playwright test a11y",
+    "dod:report": "playwright show-report playwright-report"
   },
   "dependencies": {
     "@microsoft/clarity": "^1.0.0",
@@ -31,6 +35,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

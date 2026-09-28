@@ -43,3 +43,10 @@ next-env.d.ts
 .env*.local
 
 certificates
+
+# DoD / Playwright harness artifacts
+test-results/
+playwright-report/
+/blob-report/
+.playwright/
+dod-screens/

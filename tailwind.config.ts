@@ -9,7 +9,7 @@ import type { Config } from "tailwindcss";
  *   [OVERRIDE] README §3 / §1.2 mandated change
  */
 const config: Config = {
-  darkMode: ["class"],
+  darkMode: "media", // dark theme follows the OS (prefers-color-scheme); no toggle
   // [NEW] broad glob — covers app, components, pages and content mdx
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {

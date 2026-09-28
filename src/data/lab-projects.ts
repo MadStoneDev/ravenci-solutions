@@ -27,22 +27,20 @@ export interface LabProject {
 
 export const LAB_PROJECTS: LabProject[] = [
   // ── 1. JustReel ─────────────────────────────────────────────────────────────
-  // TODO: Richard to confirm tech stack, live URL, status, and any extra features
   {
     slug: "justreel",
     name: "JustReel",
     tagline: "Track movies and shows. Build collections. Share with friends.",
     description:
       "A movie and TV show database for tracking what you've watched, building shareable collections, and discussing shows with the people you watch them with. Built because the existing options either treat tracking as a chore or treat sharing as an afterthought.",
-    status: "in-progress", // TODO: Richard to update to "live" / "beta" once deployed
+    status: "live",
     category: "Web App",
-    // url: "https://justreel.app", // TODO: Richard to add live URL
+    url: "https://justreel.app",
     featuredImage: "/showcase-images/JustReel.png",
     techStack: [
-      // TODO: Richard to confirm actual stack
+      // TODO: Richard to confirm the rest of the stack
       "Next.js",
       "TypeScript",
-      "TBC",
     ],
     features: [
       {

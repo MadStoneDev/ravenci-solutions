@@ -73,7 +73,11 @@
     --stagger: 60ms;
   }
 
-  .dark {
+  /* Dark theme follows the visitor's OS setting (prefers-color-scheme).
+     No in-app toggle: the system decides. To add a manual override later,
+     wrap these in :root[data-theme="dark"] as well. */
+  @media (prefers-color-scheme: dark) {
+   :root {
     --background: 240 9% 6%;         /* #0F0F12 charcoal, never pure black */
     --foreground: 45 18% 96%;
     --card: 240 10% 10%;
@@ -106,6 +110,7 @@
 
     --shadow-1: 0 1px 2px hsl(0 0% 0% / 0.4);
     --shadow-2: 0 8px 24px -8px hsl(0 0% 0% / 0.6);
+   }
   }
 }
 
@@ -243,4 +248,20 @@
   .rv-marquee { animation: none !important; }
   .rv-assemble,
   .rv-buildloop { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* ==========================================================================
+   Dark theme — purple is a FILL/mark only, never text.               [RULE]
+   RAVENCI Purple #8E1A80 on charcoal is ~2.4:1 (fails WCAG AA), so on dark
+   any purple TEXT (labels, links, prices) renders in paper instead. Purple
+   fills (bg-accent + white text) and marks (bg-accent rules/dots) are
+   untouched — they already pass. One central lever for all `text-accent`
+   usages incl. hover/group-hover. Unlayered so it beats the utility layer.
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  .text-accent,
+  .hover\:text-accent:hover,
+  .group:hover .group-hover\:text-accent {
+    color: hsl(var(--foreground));
+  }
 }
