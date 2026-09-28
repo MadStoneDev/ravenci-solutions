@@ -89,7 +89,7 @@ const config: Config = {
         mono: ["var(--font-jetbrains-mono)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
         /* [LEGACY] Playfair — 182 `font-serif` uses across 30 files. Keep until
            those pages are migrated, then remove Playfair from fonts + this line. */
-        serif: ["Playfair Display", "serif"],
+        serif: ["var(--font-playfair-display)", "Playfair Display", "serif"],
       },
 
       fontSize: {

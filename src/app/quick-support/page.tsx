@@ -1,5 +1,8 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata = {
   title: "Quick Support | RAVENCI Solutions",
@@ -21,13 +24,12 @@ export const metadata = {
 export default function QuickSupportPage() {
   return (
     <main className="flex flex-col">
-      <section className="content-section pt-32 pb-12 px-5 sm:px-20 xl:px-36 bg-white">
-        <article className="max-w-2xl mx-auto flex flex-col items-center text-center">
+      <section className={`${SECTION} border-b border-border`}>
+        <article className="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
           <Breadcrumbs items={[{ label: "Quick Support" }]} />
-          <h1 className="mt-4 text-4xl md:text-5xl font-medium">
-            Quick Support
-          </h1>
-          <p className="mt-4 text-neutral-500/80 max-w-lg">
+          <SectionLabel label="Remote support session" tick />
+          <h1 className="text-display-l text-foreground">Quick Support</h1>
+          <p className="max-w-lg text-lead text-muted-foreground">
             Need a hand? Use the widget below to start a remote support session.
             Once connected, I can see your screen and help you sort things out
             in real time.
@@ -35,15 +37,15 @@ export default function QuickSupportPage() {
         </article>
       </section>
 
-      <section className="content-section pb-32 px-5 sm:px-20 xl:px-36 bg-white">
-        <div className="max-w-md mx-auto flex flex-col items-center">
+      <section className={SECTION}>
+        <div className="mx-auto flex max-w-md flex-col items-center">
           <iframe
             title="RAVENCI Remote Support"
             src="https://getscreen.me/invite/widget?token=PU8So02pAnH7GCk5fx0rx6RRQYLXHDuI&v=2"
-            className="w-full max-w-[400px] h-[400px] rounded-xl border border-neutral-200"
+            className="h-[400px] w-full max-w-[400px] rounded-sm border border-border"
             style={{ border: "none" }}
           />
-          <p className="mt-6 text-sm text-neutral-400 text-center max-w-sm">
+          <p className="mt-6 max-w-sm text-center text-small text-muted-foreground">
             This session is private and secure. Screen sharing ends the moment
             you close the connection.
           </p>

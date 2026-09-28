@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Route } from "next";
 
 import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+import { Button } from "@/components/ui/button";
 import StickyCTA from "@/components/sticky-cta";
 import ProofCluster from "@/components/proof-cluster";
 import { getTestimonialByID } from "@/data/testimonials";
@@ -174,13 +176,16 @@ export default function PricingPage() {
   return (
     <main className="flex flex-col">
       {/* Hero */}
-      <section className="content-section pt-32 pb-16 px-5 sm:px-20 xl:px-36 bg-white">
+      <section className="px-5 py-14 md:px-12 md:py-20 lg:px-20">
         <div className="max-w-3xl">
           <Breadcrumbs items={[{ label: "Pricing" }]} />
-          <h1 className="mt-4 text-4xl md:text-5xl lg:text-h1 font-medium">
+          <div className="mt-4">
+            <SectionLabel index="01" label="Pricing" tick />
+          </div>
+          <h1 className="mt-4 text-display-l text-foreground">
             Clear pricing, scoped up front
           </h1>
-          <p className="mt-6 text-lg text-neutral-500/90">
+          <p className="mt-6 text-lead text-muted-foreground">
             No surprises. You know the starting point before I ever get on a
             call. Every project is quoted properly once I understand what you
             need, but here's where each thing starts.
@@ -189,12 +194,13 @@ export default function PricingPage() {
       </section>
 
       {/* Why we cost more */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white">
+      <section className="dark bg-background text-foreground px-5 py-14 md:px-12 md:py-20 lg:px-20">
         <div className="max-w-3xl">
-          <h2 className="font-serif text-h3 font-bold">
+          <SectionLabel index="02" label="Value" tone="muted" />
+          <h2 className="mt-4 text-display-m text-foreground">
             Why a RAVENCI site costs more than a $999 one
           </h2>
-          <div className="mt-6 space-y-5 text-neutral-300 font-light leading-relaxed">
+          <div className="mt-6 space-y-5 text-body text-muted-foreground">
             <p>
               You can buy a website for $999. You'll get one page, no revisions,
               and a template you'll be rebuilding inside two years. The cheapest
@@ -214,35 +220,35 @@ export default function PricingPage() {
       </section>
 
       {/* Price groups */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
+      <section className="px-5 py-14 md:px-12 md:py-20 lg:px-20">
         <div className="max-w-4xl mx-auto flex flex-col gap-16">
           {groups.map((group) => (
             <div key={group.heading}>
               <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
-                <h2 className="font-serif text-h3 font-bold">
+                <h2 className="text-heading-m text-foreground">
                   {group.heading}
                 </h2>
                 <Link
                   href={group.href as Route}
-                  className="text-sm font-medium text-ravenci-primary underline underline-offset-4 hover:no-underline"
+                  className="text-small font-medium text-accent underline underline-offset-4 hover:no-underline"
                 >
                   See details
                 </Link>
               </div>
-              <p className="mb-6 text-neutral-500/80">{group.blurb}</p>
-              <div className="divide-y divide-neutral-200 border-y border-neutral-200">
+              <p className="mb-6 text-body text-muted-foreground">
+                {group.blurb}
+              </p>
+              <div className="divide-y divide-border border-y border-border">
                 {group.items.map((item) => (
                   <div
                     key={item.name}
                     className="py-4 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6"
                   >
                     <div className="sm:w-52 flex-shrink-0">
-                      <p className="font-medium">{item.name}</p>
-                      <p className="font-bold text-ravenci-primary">
-                        {item.price}
-                      </p>
+                      <p className="font-medium text-foreground">{item.name}</p>
+                      <p className="font-bold text-accent">{item.price}</p>
                     </div>
-                    <p className="text-sm text-neutral-500/90 sm:pt-0.5">
+                    <p className="text-small text-muted-foreground sm:pt-0.5">
                       {item.line}
                     </p>
                   </div>
@@ -251,13 +257,13 @@ export default function PricingPage() {
             </div>
           ))}
 
-          <p className="text-sm text-neutral-500">
+          <p className="text-small text-muted-foreground">
             Additional work outside a project or plan is billed at $165/hr, and
             I always confirm before doing anything beyond what's agreed. Not
             sure what your project needs?{" "}
             <Link
               href="/cost-of-a-website-in-brisbane"
-              className="font-medium text-ravenci-primary underline underline-offset-4 hover:no-underline"
+              className="font-medium text-accent underline underline-offset-4 hover:no-underline"
             >
               Read the Brisbane website cost guide
             </Link>
@@ -267,22 +273,19 @@ export default function PricingPage() {
       </section>
 
       {/* CTA */}
-      <section className="content-section pt-20 pb-28 px-5 sm:px-20 xl:px-36 bg-ravenci-primary text-white">
+      <section className="dark bg-background text-foreground px-5 py-14 md:px-12 md:py-20 lg:px-20">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-medium">
+          <h2 className="text-display-m text-foreground">
             Tell me what you need
           </h2>
-          <p className="mt-4 text-white/80">
+          <p className="mt-4 text-body text-muted-foreground">
             Send through the problem and I'll come back with a scoped, fixed
             price. No sales pressure, no obligation.
           </p>
           <div className="mt-10">
-            <Link
-              href="/launch-your-vision"
-              className="inline-block px-8 py-3 bg-white text-ravenci-dark font-medium rounded-full hover:bg-neutral-100 transition-colors duration-300"
-            >
-              Launch Your Vision
-            </Link>
+            <Button asChild size="lg" variant="primary">
+              <Link href="/launch-your-vision">Launch Your Vision</Link>
+            </Button>
           </div>
         </div>
         <div className="mt-12">

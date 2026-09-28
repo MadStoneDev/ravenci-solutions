@@ -6,6 +6,10 @@ import { IconCheck, IconX } from "@tabler/icons-react";
 
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+import { Button } from "@/components/ui/button";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata: Metadata = {
   title: "Custom Website vs Template | RAVENCI Solutions",
@@ -124,16 +128,17 @@ export default function CustomVsTemplatePage() {
   return (
     <main className="flex flex-col">
       {/* Hero */}
-      <section className="content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 bg-white">
-        <article className="max-w-3xl flex flex-col gap-2">
+      <section className={`${SECTION} border-b border-border`}>
+        <article className="flex max-w-3xl flex-col gap-4">
           <Breadcrumbs items={[{ label: "Custom vs Template" }]} />
-          <h1 className="mt-2 text-4xl md:text-5xl lg:text-h1 font-medium">
+          <SectionLabel label="Custom vs Template" tick />
+          <h1 className="text-display-l text-foreground">
             Custom Website vs Template
           </h1>
-          <h2 className="max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light">
+          <p className="text-lead text-muted-foreground">
             Which approach pays off for Australian businesses?
-          </h2>
-          <p className="mt-6 max-w-2xl text-neutral-500/80">
+          </p>
+          <p className="max-w-prose text-body text-muted-foreground">
             Every business needs a website, but not every business needs the same
             kind. I break down the real differences between a custom-built
             website, a typical agency build, and a DIY builder, so you can make an
@@ -143,26 +148,27 @@ export default function CustomVsTemplatePage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-white">
-        <h3 className="mb-10 font-serif text-h3 font-bold">
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="01" label="Comparison" />
+        <h2 className="mb-10 mt-3 text-display-m text-foreground">
           Side-by-Side Comparison
-        </h3>
+        </h2>
 
         {/* Desktop table */}
-        <div className="hidden lg:block overflow-x-auto rounded-xl border border-neutral-200">
-          <table className="w-full text-sm">
+        <div className="hidden overflow-x-auto rounded-sm border border-border lg:block">
+          <table className="w-full text-small">
             <thead>
-              <tr className="bg-neutral-50 border-b border-neutral-200">
-                <th className="py-4 pl-6 pr-4 text-left font-bold text-ravenci-dark w-[14%]">
+              <tr className="border-b border-border bg-muted">
+                <th className="w-[14%] py-4 pl-6 pr-4 text-left font-semibold text-foreground">
                   Feature
                 </th>
-                <th className="py-4 px-4 text-left font-bold text-ravenci-primary w-[30%] bg-ravenci-primary/5">
+                <th className="w-[30%] bg-accent/5 py-4 px-4 text-left font-semibold text-accent">
                   RAVENCI Custom
                 </th>
-                <th className="py-4 px-4 text-left font-bold text-neutral-700 w-[28%]">
+                <th className="w-[28%] py-4 px-4 text-left font-semibold text-foreground">
                   Typical Agency
                 </th>
-                <th className="py-4 px-4 text-left font-bold text-neutral-700 w-[28%]">
+                <th className="w-[28%] py-4 px-4 text-left font-semibold text-foreground">
                   DIY Builder
                 </th>
               </tr>
@@ -171,18 +177,18 @@ export default function CustomVsTemplatePage() {
               {comparisonRows.map((row, index) => (
                 <tr
                   key={index}
-                  className="border-b border-neutral-100 last:border-0"
+                  className="border-b border-border last:border-0"
                 >
-                  <td className="py-5 pl-6 pr-4 font-bold text-ravenci-dark align-top">
+                  <td className="py-5 pl-6 pr-4 align-top font-semibold text-foreground">
                     {row.feature}
                   </td>
-                  <td className="py-5 px-4 text-ravenci-dark align-top bg-ravenci-primary/5">
+                  <td className="bg-accent/5 py-5 px-4 align-top text-foreground">
                     {row.custom}
                   </td>
-                  <td className="py-5 px-4 text-neutral-700 align-top">
+                  <td className="py-5 px-4 align-top text-muted-foreground">
                     {row.template}
                   </td>
-                  <td className="py-5 px-4 text-neutral-700 align-top">
+                  <td className="py-5 px-4 align-top text-muted-foreground">
                     {row.diy}
                   </td>
                 </tr>
@@ -192,30 +198,31 @@ export default function CustomVsTemplatePage() {
         </div>
 
         {/* Mobile cards */}
-        <div className="lg:hidden space-y-6">
+        <div className="space-y-6 lg:hidden">
           {comparisonRows.map((row, index) => (
-            <div key={index} className="p-5 rounded-xl border border-neutral-200">
-              <h4 className="mb-4 font-bold text-ravenci-dark text-lg">
+            <div
+              key={index}
+              className="rounded-sm border border-border bg-card p-5"
+            >
+              <h3 className="mb-4 text-heading-s text-foreground">
                 {row.feature}
-              </h4>
-              <div className="space-y-3 text-sm">
-                <div className="p-3 rounded-lg bg-ravenci-primary/5">
-                  <span className="font-bold text-ravenci-primary">
-                    Custom:
-                  </span>{" "}
-                  <span className="text-ravenci-dark">{row.custom}</span>
+              </h3>
+              <div className="space-y-3 text-small">
+                <div className="rounded-sm bg-accent/5 p-3">
+                  <span className="font-semibold text-accent">Custom:</span>{" "}
+                  <span className="text-foreground">{row.custom}</span>
                 </div>
-                <div>
-                  <span className="font-bold text-neutral-700">
+                <div className="text-muted-foreground">
+                  <span className="font-semibold text-foreground">
                     Template:
                   </span>{" "}
-                  <span className="text-neutral-700">{row.template}</span>
+                  <span>{row.template}</span>
                 </div>
-                <div>
-                  <span className="font-bold text-neutral-700">
+                <div className="text-muted-foreground">
+                  <span className="font-semibold text-foreground">
                     DIY Builder:
                   </span>{" "}
-                  <span className="text-neutral-700">{row.diy}</span>
+                  <span>{row.diy}</span>
                 </div>
               </div>
             </div>
@@ -224,203 +231,199 @@ export default function CustomVsTemplatePage() {
       </section>
 
       {/* Quick verdict */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white">
-        <div>
-          <h3 className="mb-8 font-serif text-h3 font-bold">
-            The Quick Verdict
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h4 className="mb-3 text-lg font-bold text-ravenci-primary">
-                Choose Custom If...
-              </h4>
-              <ul className="space-y-2 text-neutral-400/90">
-                <li className="flex gap-2">
-                  <IconCheck
-                    size={20}
-                    className="p-0.5 bg-ravenci-primary rounded-full text-white flex-shrink-0 mt-0.5"
-                  />
-                  Your website drives revenue
-                </li>
-                <li className="flex gap-2">
-                  <IconCheck
-                    size={20}
-                    className="p-0.5 bg-ravenci-primary rounded-full text-white flex-shrink-0 mt-0.5"
-                  />
-                  You need strong SEO
-                </li>
-                <li className="flex gap-2">
-                  <IconCheck
-                    size={20}
-                    className="p-0.5 bg-ravenci-primary rounded-full text-white flex-shrink-0 mt-0.5"
-                  />
-                  Brand perception matters
-                </li>
-                <li className="flex gap-2">
-                  <IconCheck
-                    size={20}
-                    className="p-0.5 bg-ravenci-primary rounded-full text-white flex-shrink-0 mt-0.5"
-                  />
-                  You plan to scale
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="mb-3 text-lg font-bold text-neutral-300">
-                A Typical Agency Works If...
-              </h4>
-              <ul className="space-y-2 text-neutral-400/90">
-                <li className="flex gap-2">
-                  <IconCheck
-                    size={20}
-                    className="p-0.5 bg-neutral-600 rounded-full text-white flex-shrink-0 mt-0.5"
-                  />
-                  Budget is very tight
-                </li>
-                <li className="flex gap-2">
-                  <IconCheck
-                    size={20}
-                    className="p-0.5 bg-neutral-600 rounded-full text-white flex-shrink-0 mt-0.5"
-                  />
-                  You just need a basic presence
-                </li>
-                <li className="flex gap-2">
-                  <IconX
-                    size={20}
-                    className="p-0.5 bg-neutral-700 rounded-full text-neutral-400 flex-shrink-0 mt-0.5"
-                  />
-                  Performance is not critical
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="mb-3 text-lg font-bold text-neutral-300">
-                DIY Works If...
-              </h4>
-              <ul className="space-y-2 text-neutral-400/90">
-                <li className="flex gap-2">
-                  <IconCheck
-                    size={20}
-                    className="p-0.5 bg-neutral-600 rounded-full text-white flex-shrink-0 mt-0.5"
-                  />
-                  You need something this week
-                </li>
-                <li className="flex gap-2">
-                  <IconCheck
-                    size={20}
-                    className="p-0.5 bg-neutral-600 rounded-full text-white flex-shrink-0 mt-0.5"
-                  />
-                  It&apos;s a side project or hobby
-                </li>
-                <li className="flex gap-2">
-                  <IconX
-                    size={20}
-                    className="p-0.5 bg-neutral-700 rounded-full text-neutral-400 flex-shrink-0 mt-0.5"
-                  />
-                  You don&apos;t mind platform lock-in
-                </li>
-              </ul>
-            </div>
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <SectionLabel label="The quick verdict" tone="muted" />
+        <h2 className="mb-8 mt-3 text-display-m text-foreground">
+          The Quick Verdict
+        </h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="rounded-sm border border-white/10 bg-card p-6">
+            <h3 className="mb-3 text-heading-s text-foreground">
+              Choose Custom If...
+            </h3>
+            <ul className="space-y-2 text-body text-muted-foreground">
+              <li className="flex gap-2">
+                <IconCheck
+                  size={20}
+                  className="mt-0.5 shrink-0 text-foreground"
+                />
+                Your website drives revenue
+              </li>
+              <li className="flex gap-2">
+                <IconCheck
+                  size={20}
+                  className="mt-0.5 shrink-0 text-foreground"
+                />
+                You need strong SEO
+              </li>
+              <li className="flex gap-2">
+                <IconCheck
+                  size={20}
+                  className="mt-0.5 shrink-0 text-foreground"
+                />
+                Brand perception matters
+              </li>
+              <li className="flex gap-2">
+                <IconCheck
+                  size={20}
+                  className="mt-0.5 shrink-0 text-foreground"
+                />
+                You plan to scale
+              </li>
+            </ul>
+          </div>
+          <div className="rounded-sm border border-white/10 bg-card p-6">
+            <h3 className="mb-3 text-heading-s text-foreground">
+              A Typical Agency Works If...
+            </h3>
+            <ul className="space-y-2 text-body text-muted-foreground">
+              <li className="flex gap-2">
+                <IconCheck
+                  size={20}
+                  className="mt-0.5 shrink-0 text-foreground"
+                />
+                Budget is very tight
+              </li>
+              <li className="flex gap-2">
+                <IconCheck
+                  size={20}
+                  className="mt-0.5 shrink-0 text-foreground"
+                />
+                You just need a basic presence
+              </li>
+              <li className="flex gap-2">
+                <IconX
+                  size={20}
+                  className="mt-0.5 shrink-0 text-muted-foreground"
+                />
+                Performance is not critical
+              </li>
+            </ul>
+          </div>
+          <div className="rounded-sm border border-white/10 bg-card p-6">
+            <h3 className="mb-3 text-heading-s text-foreground">
+              DIY Works If...
+            </h3>
+            <ul className="space-y-2 text-body text-muted-foreground">
+              <li className="flex gap-2">
+                <IconCheck
+                  size={20}
+                  className="mt-0.5 shrink-0 text-foreground"
+                />
+                You need something this week
+              </li>
+              <li className="flex gap-2">
+                <IconCheck
+                  size={20}
+                  className="mt-0.5 shrink-0 text-foreground"
+                />
+                It&apos;s a side project or hobby
+              </li>
+              <li className="flex gap-2">
+                <IconX
+                  size={20}
+                  className="mt-0.5 shrink-0 text-muted-foreground"
+                />
+                You don&apos;t mind platform lock-in
+              </li>
+            </ul>
           </div>
         </div>
       </section>
 
       {/* Total Cost of Ownership */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 bg-white">
-        <h3 className="mb-4 font-serif text-h3 font-bold text-center">
-          The Real Cost Is What You Pay Over Five Years
-        </h3>
-        <p className="mb-12 text-center text-neutral-500/80 max-w-2xl mx-auto">
-          Upfront price is only part of the picture. Here&apos;s what each
-          approach actually costs when you account for the full lifecycle.
-        </p>
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mb-12 flex flex-col gap-3">
+          <SectionLabel index="02" label="Total cost of ownership" />
+          <h2 className="text-display-m text-foreground">
+            The Real Cost Is What You Pay Over Five Years
+          </h2>
+          <p className="max-w-prose text-body text-muted-foreground">
+            Upfront price is only part of the picture. Here&apos;s what each
+            approach actually costs when you account for the full lifecycle.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
-          <div className="p-6 rounded-xl border border-ravenci-primary/30 bg-ravenci-primary/5">
-            <h4 className="font-bold text-ravenci-primary mb-3">
-              Custom Website
-            </h4>
-            <ul className="space-y-2 text-sm text-neutral-600">
+        <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="rounded-sm border border-accent/30 bg-accent/5 p-6">
+            <h3 className="mb-3 text-heading-s text-accent">Custom Website</h3>
+            <ul className="space-y-2 text-small text-muted-foreground">
               <li>Build: $7,500 to $12,000</li>
-              <li>Plugins & licences: $0/yr</li>
+              <li>Plugins &amp; licences: $0/yr</li>
               <li>Rebuild: None needed</li>
-              <li className="pt-2 border-t border-neutral-200 font-bold text-ravenci-dark">
+              <li className="border-t border-border pt-2 font-semibold text-foreground">
                 5-year total: $7,500 to $12,000 + hosting
               </li>
             </ul>
           </div>
-          <div className="p-6 rounded-xl border border-neutral-200">
-            <h4 className="font-bold text-neutral-700 mb-3">
+          <div className="rounded-sm border border-border bg-card p-6">
+            <h3 className="mb-3 text-heading-s text-foreground">
               Typical Agency Build
-            </h4>
-            <ul className="space-y-2 text-sm text-neutral-600">
+            </h3>
+            <ul className="space-y-2 text-small text-muted-foreground">
               <li>Build: $3,000 to $6,000</li>
-              <li>Plugins & licences: $300 to $800/yr</li>
+              <li>Plugins &amp; licences: $300 to $800/yr</li>
               <li>Rebuild at 18 to 24 months: $3,000 to $6,000</li>
-              <li className="pt-2 border-t border-neutral-200 font-bold text-neutral-700">
+              <li className="border-t border-border pt-2 font-semibold text-foreground">
                 5-year total: $8,500 to $18,000
               </li>
             </ul>
           </div>
-          <div className="p-6 rounded-xl border border-neutral-200">
-            <h4 className="font-bold text-neutral-700 mb-3">
-              DIY Builder
-            </h4>
-            <ul className="space-y-2 text-sm text-neutral-600">
+          <div className="rounded-sm border border-border bg-card p-6">
+            <h3 className="mb-3 text-heading-s text-foreground">DIY Builder</h3>
+            <ul className="space-y-2 text-small text-muted-foreground">
               <li>Platform: $20 to $80/mo ($1,200 to $4,800 over 5 yrs)</li>
               <li>Premium features: $10 to $40/mo</li>
               <li>Your time: priceless (or billable)</li>
-              <li className="pt-2 border-t border-neutral-200 font-bold text-neutral-700">
+              <li className="border-t border-border pt-2 font-semibold text-foreground">
                 5-year total: $1,800 to $7,200 + your time
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="max-w-2xl mx-auto text-neutral-600 space-y-4">
+        <div className="flex max-w-prose flex-col gap-4 text-body text-muted-foreground">
           <p>
-            But cost is only half the equation. A custom site that ranks well
-            and converts visitors into clients pays for itself. At $7,500 over
-            five years, that&apos;s $4.10 a day. If it brings in one extra
-            client a month, even at $500 per job, that&apos;s $6,000 a year
-            from a $1,500 annual investment. A 4x return. Most businesses see
-            more than that.
+            But cost is only half the equation. A custom site that ranks well and
+            converts visitors into clients pays for itself. At $7,500 over five
+            years, that&apos;s $4.10 a day. If it brings in one extra client a
+            month, even at $500 per job, that&apos;s $6,000 a year from a $1,500
+            annual investment. A 4x return. Most businesses see more than that.
           </p>
           <p>
-            A template or DIY site might cost less upfront, but if it
-            doesn&apos;t rank, doesn&apos;t convert, and needs replacing in
-            eighteen months, it&apos;s the most expensive option of the three.
+            A template or DIY site might cost less upfront, but if it doesn&apos;t
+            rank, doesn&apos;t convert, and needs replacing in eighteen months,
+            it&apos;s the most expensive option of the three.
           </p>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 flex flex-col items-center text-center bg-ravenci-primary text-white">
-        <h2 className="mb-4 text-3xl md:text-4xl font-medium">
-          Ready to Build It Right?
-        </h2>
-        <p className="mb-10 max-w-md text-white/80">
-          Custom websites from $7,500. No templates, no lock-in, no surprises.
-          Start with a free consultation.
-        </p>
-        <Link
-          href="/launch-your-vision"
-          className="group relative px-8 py-3 grid place-content-center bg-white rounded-full text-ravenci-dark hover:text-white transition-all duration-300 ease-in-out"
-        >
-          <span className="z-20">Launch Your Vision</span>
-          <div className="absolute top-0 bottom-full group-hover:bottom-0 left-0 right-0 bg-ravenci-dark z-0 transition-all duration-500 ease-in-out" />
-          <div className="absolute top-0 bottom-0 left-0 right-0 rounded-full border-2 border-white z-10" />
-        </Link>
-      </section>
-
       {/* FAQ */}
-      <section className="content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white">
-        <h2 className="font-serif text-h3">Common Questions</h2>
-        <Accordion titleClassName="py-6 text-lg" items={faqItems} />
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="03" label="FAQ" />
+        <h2 className="mt-3 text-display-m text-foreground">Common Questions</h2>
+        <div className="mt-8 max-w-3xl">
+          <Accordion titleClassName="py-6 text-lg" items={faqItems} />
+        </div>
       </section>
 
-      {/* Spacer */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white" />
+      {/* CTA */}
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="text-display-m text-foreground">
+              Ready to Build It Right?
+            </h2>
+            <p className="mt-4 text-body text-muted-foreground">
+              Custom websites from $7,500. No templates, no lock-in, no
+              surprises. Start with a free consultation.
+            </p>
+          </div>
+          <Button asChild size="lg" variant="primary">
+            <Link href="/launch-your-vision">Launch Your Vision</Link>
+          </Button>
+        </div>
+      </section>
 
       {/* BreadcrumbList JSON-LD */}
       <script

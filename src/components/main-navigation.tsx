@@ -1,638 +1,269 @@
-﻿"use client";
+"use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
-
-import {
-  IconBriefcase,
-  IconBuildingSkyscraper,
-  IconChartLine,
-  IconChevronDown,
-  IconCloudComputing,
-  IconHammer,
-  IconHeartbeat,
-  IconHome,
-  IconInfoCircle,
-  IconListCheck,
-  IconMail,
-  IconMenu,
-  IconNews,
-  IconPalette,
-  IconPresentation,
-  IconReceiptDollar,
-  IconRefresh,
-  IconShoppingCart,
-  IconTerminal2,
-  IconX,
-} from "@tabler/icons-react";
-import { checkOverlappingElements } from "@/lib/general-utils";
 import { usePathname } from "next/navigation";
+import { IconChevronDown, IconMenu, IconX } from "@tabler/icons-react";
+
+import { Button } from "@/components/ui/button";
+
+type NavLink = { href: string; label: string };
+
+// IA per README §2: existing slugs kept, no /services/ prefix; Branding and
+// Mobile Apps dropped from nav.
+const SERVICES: NavLink[] = [
+  { href: "/web-development", label: "Website Design & Development" },
+  { href: "/ecommerce", label: "eCommerce" },
+  { href: "/web-apps", label: "Web Apps & Client Portals" },
+  { href: "/website-maintenance", label: "Managed Web" },
+  { href: "/seo-and-content", label: "SEO / AEO / GEO" },
+];
+
+const INDUSTRIES: NavLink[] = [
+  { href: "/construction", label: "Construction" },
+  { href: "/healthcare", label: "Healthcare" },
+  { href: "/ecommerce", label: "eCommerce" },
+];
+
+const PRIMARY: NavLink[] = [
+  { href: "/case-studies", label: "Work" },
+  { href: "/our-process", label: "Process" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/about", label: "About" },
+];
+
+const COMPANY: NavLink[] = [
+  ...PRIMARY,
+  { href: "/articles", label: "Articles" },
+  { href: "/labs", label: "Labs" },
+];
+
+const CTA = { href: "/launch-your-vision", label: "Start a project" };
+
+function isActive(pathname: string, href: string) {
+  return pathname === href || pathname.startsWith(href + "/");
+}
+
+/** Desktop dropdown: hover to open, keyboard-focusable, Escape/blur to close. */
+function NavDropdown({
+  label,
+  items,
+  pathname,
+}: {
+  label: string;
+  items: NavLink[];
+  pathname: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
+
+  const openNow = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpen(true);
+  };
+  const closeSoon = () => {
+    closeTimer.current = setTimeout(() => setOpen(false), 140);
+  };
+
+  const active = items.some((i) => isActive(pathname, i.href));
+
+  return (
+    <div
+      ref={wrapRef}
+      className="relative"
+      onMouseEnter={openNow}
+      onMouseLeave={closeSoon}
+      onBlur={(e) => {
+        if (!wrapRef.current?.contains(e.relatedTarget as Node)) setOpen(false);
+      }}
+      onKeyDown={(e) => {
+        if (e.key === "Escape") setOpen(false);
+      }}
+    >
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="menu"
+        onClick={() => setOpen((v) => !v)}
+        className={`flex items-center gap-1 text-sm font-medium transition-colors duration-fast ${
+          active ? "text-accent" : "text-foreground/80 hover:text-foreground"
+        }`}
+      >
+        {label}
+        <IconChevronDown
+          size={14}
+          className={`transition-transform duration-base ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      <div
+        className={`absolute left-0 top-full pt-3 ${
+          open ? "visible opacity-100" : "invisible opacity-0"
+        } transition-opacity duration-base`}
+      >
+        <div
+          role="menu"
+          className="min-w-[240px] rounded-sm border border-border bg-card py-2 shadow-2"
+        >
+          {items.map((item) => (
+            <Link
+              key={item.href + item.label}
+              href={item.href}
+              role="menuitem"
+              onClick={() => setOpen(false)}
+              className={`block px-4 py-2.5 text-sm transition-colors duration-fast hover:bg-muted ${
+                isActive(pathname, item.href)
+                  ? "text-accent"
+                  : "text-foreground/80 hover:text-foreground"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function MainNavigation() {
-  // Hooks
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // States
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
-  const [isLogoOnDark, setIsLogoOnDark] = useState(false);
-  const [isMenuOnDark, setIsMenuOnDark] = useState(false);
-  const [isAtTop, setIsAtTop] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
 
-  // Refs
-  const logoRef = useRef<HTMLAnchorElement>(null);
-  const menuButtonRef = useRef<HTMLButtonElement>(null);
-  const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  // Functions
-  const serviceLinks = [
-    { href: "/web-development", label: "Website Design", icon: IconTerminal2 },
-    { href: "/ecommerce", label: "eCommerce", icon: IconShoppingCart },
-    { href: "/business-design", label: "Branding", icon: IconPalette },
-    { href: "/seo-and-content", label: "SEO & Content", icon: IconChartLine },
-    { href: "/retainer-packages", label: "Retainer Packages", icon: IconRefresh },
-    { href: "/pricing", label: "Pricing", icon: IconReceiptDollar },
-  ];
-
-  const industryLinks = [
-    { href: "/healthcare", label: "Healthcare", icon: IconHeartbeat },
-    {
-      href: "/construction",
-      label: "Construction",
-      icon: IconBuildingSkyscraper,
-    },
-    {
-      href: "/professional-services",
-      label: "Professional Services",
-      icon: IconBriefcase,
-    },
-  ];
-
-  const handleServicesEnter = () => {
-    if (servicesTimeoutRef.current) {
-      clearTimeout(servicesTimeoutRef.current);
-      servicesTimeoutRef.current = null;
-    }
-    setIsServicesOpen(true);
-  };
-
-  const handleServicesLeave = () => {
-    servicesTimeoutRef.current = setTimeout(() => {
-      setIsServicesOpen(false);
-    }, 150);
-  };
-
-  const handleMenuClick = (status: boolean) => {
-    if (status) {
-      setIsMenuOpen(status);
-
-      setTimeout(() => {
-        setShowMenu(status);
-      }, 100);
-    } else {
-      setShowMenu(status);
-
-      setTimeout(() => {
-        setIsMenuOpen(status);
-      }, 150);
-    }
-  };
-
-  const rafRef = useRef<number | null>(null);
-
-  const handleScroll = () => {
-    if (rafRef.current) return;
-    rafRef.current = requestAnimationFrame(() => {
-      const results = checkOverlappingElements(
-        [logoRef, menuButtonRef],
-        `content-section`,
-        [`bg-ravenci-dark`, `bg-ravenci-primary`],
-      );
-
-      setIsLogoOnDark(results[0]);
-      setIsMenuOnDark(results[1]);
-
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      setIsAtTop(scrollTop <= 100);
-      rafRef.current = null;
-    });
-  };
-
-  // Effects
+  // Close the mobile drawer on route change.
   useEffect(() => {
-    handleScroll();
-
-    window.addEventListener(`scroll`, handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener(`scroll`, handleScroll);
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
+    setMenuOpen(false);
   }, [pathname]);
 
+  // Lock body scroll while the drawer is open.
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
-  }, [isMenuOpen]);
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   return (
     <>
-      {isMenuOpen && (
-        <section
-          className={`fixed py-20 top-0 ${
-            showMenu ? "right-0 px-10 md:px-24" : "right-full pl-0"
-          } left-0 h-dvh bg-white z-40 overflow-y-auto transition-all duration-300 ease-in-out`}
-        >
-          <article
-            className={`flex flex-col justify-center items-start gap-y-6 min-h-full`}
-          >
-            <Link
-              href={`/`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconHome
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
+      <header className="fixed top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm">
+        <nav className="mx-auto flex h-16 w-full items-center gap-8 px-5 md:h-[76px] md:px-12 lg:px-20">
+          {/* Logo */}
+          <Link href="/" className="flex shrink-0 items-center" aria-label="RAVENCI home">
+            <Image
+              src="/ravenci-logo-dark.svg"
+              alt="RAVENCI"
+              width={125}
+              height={25}
+              priority
+              className="dark:hidden"
+            />
+            <Image
+              src="/ravenci-logo.svg"
+              alt="RAVENCI"
+              width={125}
+              height={25}
+              priority
+              className="hidden dark:block"
+            />
+          </Link>
+
+          {/* Desktop nav */}
+          <div className="hidden flex-1 items-center gap-7 lg:flex">
+            <NavDropdown label="Services" items={SERVICES} pathname={pathname} />
+            <NavDropdown label="Industries" items={INDUSTRIES} pathname={pathname} />
+            {PRIMARY.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-medium transition-colors duration-fast ${
+                  isActive(pathname, item.href)
+                    ? "border-b border-accent pb-0.5 text-accent"
+                    : "text-foreground/80 hover:text-foreground"
+                }`}
               >
-                Home
-              </span>
-            </Link>
-
-            <Link
-              href={`/about`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconInfoCircle
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                About
-              </span>
-            </Link>
-
-            <Link
-              href={`/articles`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconNews
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                Articles
-              </span>
-            </Link>
-
-            <Link
-              href={`/our-process`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconListCheck
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                Our Process
-              </span>
-            </Link>
-
-            <Link
-              href={`/case-studies`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconPresentation
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                Case Studies
-              </span>
-            </Link>
-
-            <Link
-              href={`/quote`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconReceiptDollar
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                Get a Quote
-              </span>
-            </Link>
-
-            <Link
-              href={`/web-development`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconTerminal2
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                Website Design
-              </span>
-            </Link>
-
-            <Link
-              href={`/business-design`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconPalette
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                Branding
-              </span>
-            </Link>
-
-            <Link
-              href={`/website-maintenance`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconHammer
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                Website Maintenance
-              </span>
-            </Link>
-
-            <Link
-              href={`/web-hosting`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconCloudComputing
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                Web Hosting
-              </span>
-            </Link>
-
-            <Link
-              href={`/retainer-packages`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconRefresh
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                Retainer Packages
-              </span>
-            </Link>
-
-            <Link
-              href={`/pricing`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconReceiptDollar
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                Pricing
-              </span>
-            </Link>
-
-            <Link
-              href={`/ecommerce`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconShoppingCart
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                eCommerce
-              </span>
-            </Link>
-
-            <Link
-              href={`/launch-your-vision`}
-              className={`group relative px-3 py-2 flex flex-row items-center gap-2 rounded-full ${
-                showMenu ? "opacity-100" : "opacity-0"
-              } overflow-hidden transition-all duration-500 ease-in-out`}
-              onClick={() => {
-                handleMenuClick(false);
-              }}
-            >
-              <div
-                className={`absolute top-0 left-0 right-0 bottom-full group-hover:bottom-0 bg-ravenci-dark -z-10 transition-all duration-500 ease-in-out`}
-              ></div>
-              <IconMail
-                className={`min-w-[24px] text-ravenci-dark group-hover:text-white transition-all duration-300 ease-in-out`}
-              />
-              <span
-                className={`px-3 py-1 text-xl group-hover:text-white transition-all duration-300 ease-in-out`}
-              >
-                Launch Your Vision
-              </span>
-            </Link>
-          </article>
-        </section>
-      )}
-
-      <nav
-        id={`menu`}
-        className={`pl-3 pr-5 md:px-12 ${
-          isAtTop
-            ? "py-8 pointer-events-none"
-            : "py-4 pointer-events-auto bg-white/80 backdrop-blur-sm"
-        } fixed top-0 flex justify-between items-center w-full z-50 transition-all duration-300 ease-in-out`}
-      >
-        {/* Logo */}
-        <Link
-          ref={logoRef}
-          href={`/`}
-          className={`pointer-events-auto flex items-center gap-1 z-10`}
-        >
-          <Image
-            src={
-              isMenuOpen
-                ? `/ravenci-logo-dark.svg`
-                : isAtTop
-                  ? isLogoOnDark
-                    ? `/ravenci-logo.svg`
-                    : `/ravenci-logo-dark.svg`
-                  : `/ravenci-symbol-dark.svg`
-            }
-            alt={`Welcome to RAVENCI`}
-            width={125}
-            height={25}
-            priority
-          />
-        </Link>
-
-        {/* Desktop Nav Links */}
-        <div
-          className={`pointer-events-auto hidden lg:flex items-center gap-8 ${
-            isMenuOpen ? "opacity-0" : "opacity-100"
-          } transition-opacity duration-300 ease-in-out`}
-        >
-          <div
-            className="relative"
-            onMouseEnter={handleServicesEnter}
-            onMouseLeave={handleServicesLeave}
-          >
-            <button
-              type="button"
-              className={`flex items-center gap-1 text-sm font-medium ${
-                isAtTop && isMenuOnDark
-                  ? "text-white/80 hover:text-white"
-                  : "text-ravenci-dark/70 hover:text-ravenci-dark"
-              } transition-colors duration-300 ease-in-out`}
-            >
-              Services
-              <IconChevronDown
-                size={14}
-                className={`${isServicesOpen ? "rotate-180" : ""} transition-transform duration-200`}
-              />
-            </button>
-
-            <div
-              className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 ${
-                isServicesOpen
-                  ? "opacity-100 visible translate-y-0"
-                  : "opacity-0 invisible -translate-y-1"
-              } transition-all duration-200 ease-in-out`}
-            >
-              <div className="bg-white rounded-lg shadow-xl border border-neutral-100 py-2 min-w-[220px]">
-                {serviceLinks.map((service) => (
-                  <Link
-                    key={service.href}
-                    href={service.href}
-                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-ravenci-dark/70 hover:text-ravenci-primary hover:bg-neutral-50 transition-colors duration-150"
-                    onClick={() => setIsServicesOpen(false)}
-                  >
-                    <service.icon
-                      size={18}
-                      className="text-ravenci-primary/60"
-                    />
-                    {service.label}
-                  </Link>
-                ))}
-                <div className="my-1 mx-4 border-t border-neutral-100" />
-                {industryLinks.map((industry) => (
-                  <Link
-                    key={industry.href}
-                    href={industry.href}
-                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-ravenci-dark/70 hover:text-ravenci-primary hover:bg-neutral-50 transition-colors duration-150"
-                    onClick={() => setIsServicesOpen(false)}
-                  >
-                    <industry.icon
-                      size={18}
-                      className="text-ravenci-primary/60"
-                    />
-                    {industry.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
+                {item.label}
+              </Link>
+            ))}
           </div>
-          <Link
-            href={`/our-process`}
-            className={`text-sm font-medium ${
-              isAtTop && isMenuOnDark
-                ? "text-white/80 hover:text-white"
-                : "text-ravenci-dark/70 hover:text-ravenci-dark"
-            } transition-colors duration-300 ease-in-out`}
-          >
-            Our Process
-          </Link>
-          <Link
-            href={`/articles`}
-            className={`text-sm font-medium ${
-              isAtTop && isMenuOnDark
-                ? "text-white/80 hover:text-white"
-                : "text-ravenci-dark/70 hover:text-ravenci-dark"
-            } transition-colors duration-300 ease-in-out`}
-          >
-            Articles
-          </Link>
-          <Link
-            href={`/case-studies`}
-            className={`text-sm font-medium ${
-              isAtTop && isMenuOnDark
-                ? "text-white/80 hover:text-white"
-                : "text-ravenci-dark/70 hover:text-ravenci-dark"
-            } transition-colors duration-300 ease-in-out`}
-          >
-            Case Studies
-          </Link>
-          <Link
-            href={`/about`}
-            className={`text-sm font-medium ${
-              isAtTop && isMenuOnDark
-                ? "text-white/80 hover:text-white"
-                : "text-ravenci-dark/70 hover:text-ravenci-dark"
-            } transition-colors duration-300 ease-in-out`}
-          >
-            About
-          </Link>
-          <Link
-            href={`/launch-your-vision`}
-            className={`px-5 py-2 text-sm font-medium bg-ravenci-primary hover:bg-ravenci-primary/85 text-white rounded-full transition-colors duration-300 ease-in-out`}
-          >
-            Get Started
-          </Link>
-        </div>
 
-        <button
-          ref={menuButtonRef}
-          type={`button`}
-          aria-label={`Open menu`}
-          aria-expanded={isMenuOpen}
-          aria-controls={`menu`}
-          className={`pointer-events-auto relative w-7 h-7 transition-all duration-300 ease-in-out`}
-          onClick={() => handleMenuClick(!isMenuOpen)}
+          {/* Desktop CTA */}
+          <div className="ml-auto hidden lg:block">
+            <Button asChild size="default">
+              <Link href={CTA.href}>{CTA.label}</Link>
+            </Button>
+          </div>
+
+          {/* Mobile toggle */}
+          <button
+            type="button"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            onClick={() => setMenuOpen((v) => !v)}
+            className="ml-auto inline-flex h-11 w-11 items-center justify-center text-foreground lg:hidden"
+          >
+            {menuOpen ? <IconX size={24} /> : <IconMenu size={24} />}
+          </button>
+        </nav>
+      </header>
+
+      {/* Mobile drawer */}
+      {menuOpen && (
+        <div
+          id="mobile-menu"
+          className="fixed inset-0 top-16 z-40 overflow-y-auto bg-background px-5 pb-16 pt-6 lg:hidden"
         >
-          <IconMenu
-            className={`absolute top-1/2 -translate-y-1/2 right-0 ${
-              isMenuOpen ? `opacity-0` : `opacity-100`
-            } ${
-              isAtTop && isMenuOnDark && !isMenuOpen
-                ? `text-white`
-                : `text-ravenci-dark`
-            } transition-all duration-500 ease-in-out`}
-          />
-
-          <IconX
-            className={`absolute top-1/2 -translate-y-1/2 right-0 ${
-              isMenuOpen ? `opacity-100` : `opacity-0`
-            } ${
-              isAtTop && isMenuOnDark && !isMenuOpen
-                ? `text-white`
-                : `text-ravenci-dark`
-            } transition-all duration-500 ease-in-out`}
-          />
-        </button>
-      </nav>
+          <nav className="flex flex-col gap-8">
+            <MobileGroup label="Services" items={SERVICES} pathname={pathname} onNav={closeMenu} />
+            <MobileGroup label="Industries" items={INDUSTRIES} pathname={pathname} onNav={closeMenu} />
+            <MobileGroup label="Company" items={COMPANY} pathname={pathname} onNav={closeMenu} />
+            <Button asChild size="lg" className="w-full">
+              <Link href={CTA.href} onClick={closeMenu}>
+                {CTA.label}
+              </Link>
+            </Button>
+          </nav>
+        </div>
+      )}
     </>
+  );
+}
+
+function MobileGroup({
+  label,
+  items,
+  pathname,
+  onNav,
+}: {
+  label: string;
+  items: NavLink[];
+  pathname: string;
+  onNav: () => void;
+}) {
+  return (
+    <div>
+      <p className="mb-3 font-mono text-label uppercase text-muted-foreground">
+        {label}
+      </p>
+      <div className="flex flex-col gap-1">
+        {items.map((item) => (
+          <Link
+            key={item.href + item.label}
+            href={item.href}
+            onClick={onNav}
+            className={`py-1.5 text-lead ${
+              isActive(pathname, item.href) ? "text-accent" : "text-foreground"
+            }`}
+          >
+            {item.label}
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }

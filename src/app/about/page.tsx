@@ -1,8 +1,13 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Link from "next/link";
-import { IconCircleCheckFilled } from "@tabler/icons-react";
+import { IconCheck } from "@tabler/icons-react";
+
+import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+import { Button } from "@/components/ui/button";
 import { getTestimonialByID } from "@/data/testimonials";
-import ProofCluster from "@/components/proof-cluster";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata = {
   title: "About | RAVENCI Solutions",
@@ -12,7 +17,7 @@ export const metadata = {
     ...OG_DEFAULTS,
     title: "About | RAVENCI Solutions",
     description:
-      "Meet RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency and websites that genuinely perform.",
+      "Meet RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and websites that genuinely perform.",
     url: "/about",
     type: "website" as const,
   },
@@ -20,314 +25,183 @@ export const metadata = {
   alternates: { canonical: "/about" },
 };
 
-export default function AboutPage() {
-  const proofTestimonial = getTestimonialByID("geoff-beisler");
+const STATS = [
+  { value: "25+", label: "Years in digital" },
+  { value: "75+", label: "Australian businesses" },
+  { value: "467", label: "Projects delivered" },
+  { value: "85+", label: "PageSpeed guaranteed" },
+];
 
-  const values = [
-    {
-      title: "Transparency",
-      description:
-        "No jargon, no hidden fees. I explain everything in plain English and keep you informed at every stage of the process.",
-    },
-    {
-      title: "Client Ownership",
-      description:
-        "You own what you pay for: your website, your content, your domain. No lock-in contracts, no proprietary traps.",
-    },
-    {
-      title: "Education",
-      description:
-        "Every project comes with tailored video tutorials and full access post-launch, so you're never left guessing how to manage your own site.",
-    },
-    {
-      title: "Integrity",
-      description:
-        "Honest timelines, honest pricing. If something isn't right for your business, I'll tell you, even if it means recommending a different approach.",
-    },
-  ];
+const VALUES = [
+  { title: "Transparency", description: "No jargon, no hidden fees. I explain everything in plain English and keep you informed at every stage." },
+  { title: "Client ownership", description: "You own what you pay for: your website, your content, your domain. No lock-in contracts, no proprietary traps." },
+  { title: "Education", description: "Every project comes with tailored video training and full access after launch, so you're never guessing how to manage your own site." },
+  { title: "Integrity", description: "Honest timelines, honest pricing. If something isn't right for your business, I'll tell you, even if it means a different approach." },
+];
+
+const QUALIFICATIONS = [
+  { title: "Structural Engineering degree", detail: "for analytical thinking and problem solving" },
+  { title: "Ten years in steel detailing and structural drafting", detail: "where a thing either holds up under load or it doesn't" },
+  { title: "Graphic Design diploma", detail: "for professional visual design" },
+  { title: "25+ years digital experience", detail: "across construction, trades, medical, legal and retail" },
+];
+
+export default function AboutPage() {
+  const geoff = getTestimonialByID("geoff-beisler");
 
   return (
-    <main className={`flex flex-col`}>
-      {/* Section 1: Hero */}
-      <section
-        className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
-      >
-        <article className={`max-w-2xl col-span-12 flex flex-col gap-2`}>
-          <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
-            The Engineering Behind Your Website
-          </h1>
-          <h2
-            className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
-            style={{ lineHeight: "2.25rem" }}
-          >
-            I take the long view on what your website needs to do.
-          </h2>
-        </article>
+    <main className="flex flex-col">
+      {/* Hero */}
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="flex max-w-3xl flex-col gap-4">
+          <Breadcrumbs items={[{ label: "About" }]} />
+          <SectionLabel label="About" tick />
+          <h1 className="text-display-l text-foreground">The engineering behind your website</h1>
+          <p className="text-lead text-muted-foreground">
+            I take the long view on what your website needs to do, and I build it
+            so it still holds up in five years.
+          </p>
+        </div>
       </section>
 
-      {/* Section 2: Stats Bar */}
-      <section
-        className={`content-section py-12 px-5 sm:px-20 xl:px-36 bg-ravenci-primary text-white`}
-      >
-        <div
-          className={`grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center`}
-        >
-          <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>25+</p>
-            <p className={`mt-2 text-sm text-white/80 font-light`}>
-              Years in Digital
-            </p>
+      {/* Stats */}
+      <section className={`${SECTION} border-b border-border`}>
+        <dl className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          {STATS.map((s) => (
+            <div key={s.label} className="flex flex-col gap-1">
+              <dt className="sr-only">{s.label}</dt>
+              <dd className="tnum text-metric text-accent">{s.value}</dd>
+              <p className="text-small text-muted-foreground">{s.label}</p>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      {/* Story */}
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
+          <div className="flex flex-col gap-3 lg:w-[280px] lg:shrink-0">
+            <div className="flex h-24 w-24 items-center justify-center rounded-full border border-border font-mono text-heading-s text-accent">
+              RH
+            </div>
+            <span className="text-heading-s text-foreground">Richard Haddad</span>
+            <span className="font-mono text-label uppercase text-muted-foreground">Founder · RAVENCI Solutions</span>
           </div>
-          <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>75+</p>
-            <p className={`mt-2 text-sm text-white/80 font-light`}>
-              Australian Businesses
+          <div className="flex max-w-2xl flex-col gap-4">
+            <SectionLabel index="01" label="The story" />
+            <p className="text-body text-muted-foreground">
+              I&apos;m a structural engineer turned web developer, with a
+              multicultural upbringing that spans the Middle East and Australia.
+              Before the web, I spent ten years in steel detailing and structural
+              drafting, with a Structural Engineering degree behind that, and a
+              Graphic Design diploma alongside it.
             </p>
-          </div>
-          <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>350+</p>
-            <p className={`mt-2 text-sm text-white/80 font-light`}>
-              Projects Delivered
+            <p className="text-body text-muted-foreground">
+              That mix, analytical thinking and visual craft, shapes how I work.
+              Everything has to serve a purpose, and everything has to hold up.
             </p>
-          </div>
-          <div>
-            <p className={`text-4xl md:text-5xl font-bold`}>85+</p>
-            <p className={`mt-2 text-sm text-white/80 font-light`}>
-              PageSpeed Guaranteed
+            <p className="text-body text-muted-foreground">
+              After 25+ years in the digital space, I founded RAVENCI in Brisbane
+              in 2018 to offer Australian businesses something different: websites
+              and designs built with the same discipline and attention to detail.
+            </p>
+            <p className="text-body text-muted-foreground">
+              RAVENCI runs as a founder-led studio backed by a network of
+              specialist collaborators. You get the accountability of dealing
+              directly with the person doing the work, plus specialist expertise
+              whenever your project needs it.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Section 3: The Story, Two Column */}
-      <div className={`grid grid-cols-1 lg:grid-cols-2 bg-white`}>
-        {/* Left: Photo Placeholder */}
-        <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 flex items-center justify-center bg-neutral-50`}
-        >
-          <div
-            className={`w-full max-w-sm flex flex-col items-center justify-center gap-4`}
-          >
-            <div
-              className={`w-28 h-28 rounded-full bg-ravenci-primary/10 flex items-center justify-center`}
-            >
-              <span
-                className={`text-4xl font-serif font-bold text-ravenci-primary`}
-              >
-                RH
-              </span>
-            </div>
-            <div className={`text-center`}>
-              <p className={`text-lg font-medium text-ravenci-dark`}>
-                Richard Haddad
-              </p>
-              <p className={`text-sm text-neutral-500 font-light`}>
-                Founder, RAVENCI Solutions
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Right: The Story */}
-        <section
-          className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
-        >
-          <article className={`max-w-lg`}>
-            <h2 className={`mb-8 font-serif text-h3 font-bold`}>
-              The Story Behind RAVENCI
-            </h2>
-            <div className={`space-y-4 text-neutral-500/80`}>
-              <p>
-                RAVENCI was founded by Richard Haddad, a structural engineer
-                turned web developer with a multicultural upbringing that spans
-                the Middle East and Australia.
-              </p>
-              <p>
-                With a degree in Structural Engineering and a diploma in Graphic
-                Design, Richard brings both analytical thinking
-                and creative problem solving to every project. His mantra is
-                that everything must be done to perfection, everything must
-                serve a purpose. It is that which shapes how I approach my
-                work.
-              </p>
-              <p>
-                After 25+ years in the digital space, Richard
-                founded RAVENCI in Brisbane to offer Australian businesses
-                something different: websites and designs built with the same discipline and
-                attention to detail.
-              </p>
-              <p>
-                Today, RAVENCI operates as a founder-led studio supported by a
-                network of specialist collaborators. This means you get the
-                accountability and personal attention of working and
-                communicating directly with the person doing the work,
-                combined with access to specialist expertise whenever your
-                project requires it.
-              </p>
-            </div>
-          </article>
-        </section>
-      </div>
-
-      {/* Section 4: What Makes Us Different */}
-      <section
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark`}
-      >
-        <article className={`max-w-3xl mx-auto`}>
-          <h2 className={`mb-8 font-serif text-h3 font-bold text-white`}>
-            What Makes Me Different
-          </h2>
-          <div className={`space-y-6 text-neutral-400/90`}>
+      {/* What makes me different (dark) */}
+      <section className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}>
+        <div className="mx-auto max-w-3xl">
+          <SectionLabel index="02" label="What makes me different" tone="muted" />
+          <h2 className="mt-3 text-display-m text-foreground">Built to a standard, not to a deadline</h2>
+          <div className="mt-6 flex flex-col gap-4 text-body text-muted-foreground">
             <p>
-              Most web developers and designers come from a purely technical or
-              creative background. Richard's structural engineering career
-              taught him something that sets him apart: every decision must be
-              intentional, every component must be solid, and the final product
-              must perform under real-world conditions.
+              Most developers and designers come from a purely technical or
+              creative background. Engineering taught me something else: every
+              decision has to be intentional, every component has to be solid, and
+              the finished thing has to perform under real conditions.
             </p>
             <p>
-              That's why RAVENCI websites and designs are built to a
-              standard. I guarantee 85+ Google PageSpeed
-              scores because I believe performance isn't optional. I build on
-              proven platforms and follow best practices because I've seen what
-              happens when shortcuts are taken.
-            </p>
-
-            <h4
-              className={`mt-10 mb-4 font-serif text-lg font-bold text-white`}
-            >
-              The Qualifications Behind the Work
-            </h4>
-            <ul className={`flex flex-col gap-3`}>
-              <li className={`flex items-start gap-2`}>
-                <IconCircleCheckFilled
-                  className="text-ravenci-primary flex-shrink-0 mt-0.5"
-                  size={20}
-                />
-                <span>
-                  <span className={`font-bold text-white`}>
-                    Structural Engineering Degree
-                  </span>{" "}
-                  for analytical thinking and problem solving
-                </span>
-              </li>
-              <li className={`flex items-start gap-2`}>
-                <IconCircleCheckFilled
-                  className="text-ravenci-primary flex-shrink-0 mt-0.5"
-                  size={20}
-                />
-                <span>
-                  <span className={`font-bold text-white`}>
-                    Graphic Design Diploma
-                  </span>{" "}
-                  for professional visual design
-                </span>
-              </li>
-              <li className={`flex items-start gap-2`}>
-                <IconCircleCheckFilled
-                  className="text-ravenci-primary flex-shrink-0 mt-0.5"
-                  size={20}
-                />
-                <span>
-                  <span className={`font-bold text-white`}>
-                    25+ Years Digital Experience
-                  </span>{" "}
-                  across construction, trades, medical, legal, and retail
-                  industries
-                </span>
-              </li>
-            </ul>
-
-            <h4
-              className={`mt-10 mb-4 font-serif text-lg font-bold text-white`}
-            >
-              You Own Everything
-            </h4>
-            <p>
-              When I build your website, it's yours. Your code, your content,
-              your domain. No lock-in contracts, no proprietary systems locking you in. If you ever want to move on, you take
-              everything with you.
-            </p>
-
-            <h4
-              className={`mt-10 mb-4 font-serif text-lg font-bold text-white`}
-            >
-              I Teach You, Too
-            </h4>
-            <p>
-              Every project includes tailored video tutorials showing you
-              exactly how to manage your website. I don't believe in creating
-              dependency. I want you to feel confident making updates, adding
-              content, and running your site on your own terms.
-            </p>
-
-            <h4
-              className={`mt-10 mb-4 font-serif text-lg font-bold text-white`}
-            >
-              Specialist Network
-            </h4>
-            <p>
-              As a founder-led studio, I keep things small, but never at the
-              cost of quality. When your project needs specialist photography,
-              copywriting, or design, I bring in trusted collaborators who meet
-              my standards.
+              That&apos;s why I guarantee 85+ Google PageSpeed. Performance isn&apos;t
+              optional, and I&apos;ve seen what happens when shortcuts get taken.
             </p>
           </div>
-        </article>
+
+          <h3 className="mt-10 text-heading-s text-foreground">The qualifications behind the work</h3>
+          <ul className="mt-4 flex flex-col gap-3">
+            {QUALIFICATIONS.map((q) => (
+              <li key={q.title} className="flex items-start gap-3 text-body text-muted-foreground">
+                <IconCheck size={20} aria-hidden className="mt-0.5 shrink-0 text-foreground" />
+                <span>
+                  <span className="font-semibold text-foreground">{q.title}</span> {q.detail}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="mt-10 text-heading-s text-foreground">You own everything</h3>
+          <p className="mt-3 text-body text-muted-foreground">
+            When I build your website, it&apos;s yours. Your code, your content,
+            your domain. No lock-in, no proprietary systems. If you ever want to
+            move on, you take everything with you.
+          </p>
+
+          <h3 className="mt-10 text-heading-s text-foreground">I teach you, too</h3>
+          <p className="mt-3 text-body text-muted-foreground">
+            Every project includes training videos showing you exactly how to
+            manage your site. I don&apos;t build dependency. I want you confident
+            making updates and running your site on your own terms.
+          </p>
+        </div>
       </section>
 
-      {/* Section 5: Values */}
-      <section
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-neutral-50/80`}
-      >
-        <h2
-          className={`mb-12 font-serif text-h3 font-bold text-center text-ravenci-dark`}
-        >
-          What I Stand For
-        </h2>
-        <div
-          className={`grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto`}
-        >
-          {values.map((value, index) => (
-            <div key={index} className={`p-6 bg-white rounded-lg`}>
-              <div className={`flex items-center gap-2 mb-3`}>
-                <IconCircleCheckFilled
-                  className="text-ravenci-primary flex-shrink-0"
-                  size={24}
-                />
-                <h4 className={`font-bold text-ravenci-dark text-lg`}>
-                  {value.title}
-                </h4>
-              </div>
-              <p className={`text-neutral-500/80`}>{value.description}</p>
+      {/* Values */}
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mb-10 flex flex-col gap-3">
+          <SectionLabel index="03" label="What I stand for" />
+          <h2 className="text-display-m text-foreground">What I stand for</h2>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {VALUES.map((v) => (
+            <div key={v.title} className="rounded-sm border border-border bg-card p-8">
+              <h3 className="text-heading-s text-foreground">{v.title}</h3>
+              <p className="mt-2 text-body text-muted-foreground">{v.description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CTA */}
-      <section
-        className={`content-section pt-24 pb-28 px-5 sm:px-20 xl:px-36 bg-ravenci-primary text-white`}
-      >
-        <div className={`max-w-xl mx-auto text-center`}>
-          <h2 className={`text-3xl md:text-4xl font-medium`}>
-            Ready to work with me?
-          </h2>
-          <p className={`mt-4 text-white/80`}>
-            Whether you&apos;re starting from scratch or need a website that
-            performs, I&apos;d love to hear about your project.
-          </p>
-          <div className={`mt-10`}>
-            <Link
-              href={`/launch-your-vision`}
-              className={`inline-block px-8 py-3 bg-white text-ravenci-dark font-medium rounded-full hover:bg-neutral-100 transition-colors duration-300 ease-in-out`}
-            >
-              Launch Your Vision
-            </Link>
+      {/* Testimonial + CTA (dark) */}
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        {geoff && (
+          <figure className="mx-auto mb-12 max-w-3xl">
+            <SectionLabel label="5.0 · Google review" tone="muted" />
+            <blockquote className="mt-4 text-heading-m text-foreground">
+              &ldquo;{geoff.content}&rdquo;
+            </blockquote>
+            <figcaption className="mt-4 text-small text-muted-foreground">
+              <span className="font-semibold text-foreground">{geoff.author}</span>
+              {geoff.company ? ` · ${geoff.company}` : ""}
+            </figcaption>
+          </figure>
+        )}
+        <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="text-display-m text-foreground">Ready to work with me?</h2>
+            <p className="mt-4 text-body text-muted-foreground">
+              Whether you&apos;re starting from scratch or need a site that
+              performs, tell me about your project.
+            </p>
           </div>
-        </div>
-        <div className="mt-12">
-          <ProofCluster testimonial={proofTestimonial} theme="dark" />
+          <Button asChild size="lg" variant="primary">
+            <Link href="/launch-your-vision">Start a project</Link>
+          </Button>
         </div>
       </section>
 
@@ -339,22 +213,13 @@ export default function AboutPage() {
             "@type": "AboutPage",
             name: "About RAVENCI Solutions",
             description:
-              "Meet the team behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency.",
+              "Meet the person behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency.",
             mainEntity: {
               "@type": "Organization",
               name: "RAVENCI Solutions",
-              founder: {
-                "@type": "Person",
-                name: "Richard Haddad",
-                jobTitle: "Founder",
-              },
-              foundingLocation: {
-                "@type": "Place",
-                name: "Brisbane, Australia",
-              },
+              founder: { "@type": "Person", name: "Richard Haddad", jobTitle: "Founder" },
+              foundingLocation: { "@type": "Place", name: "Brisbane, Australia" },
               areaServed: "Australia",
-              description:
-                "A founder-led website design and development studio building high-performance websites for Australian businesses.",
             },
           }),
         }}
@@ -367,20 +232,8 @@ export default function AboutPage() {
             "@type": "Person",
             name: "Richard Haddad",
             jobTitle: "Founder",
-            worksFor: {
-              "@type": "Organization",
-              name: "RAVENCI Solutions",
-              url: "https://ravenci.solutions",
-            },
-            knowsAbout: [
-              "Web Design and Development",
-              "Next.js",
-              "React",
-              "WordPress",
-              "UI/UX Design",
-              "Structural Engineering",
-              "SEO",
-            ],
+            worksFor: { "@type": "Organization", name: "RAVENCI Solutions", url: "https://ravenci.solutions" },
+            knowsAbout: ["Web Design and Development", "Next.js", "React", "WordPress", "UI/UX Design", "Structural Engineering", "SEO"],
             sameAs: ["https://www.linkedin.com/company/91459779/"],
           }),
         }}

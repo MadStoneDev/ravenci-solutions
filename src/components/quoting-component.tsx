@@ -148,20 +148,20 @@ export default function QuotingComponent() {
 
   if (!selectedService) {
     return (
-      <main className="pb-10 flex flex-col min-h-screen bg-neutral-50">
+      <main className="pb-10 flex flex-col min-h-screen bg-background">
         <section className="content-section pt-32 pb-24 px-5 sm:px-20 xl:px-36">
-          <h1 className="text-4xl md:text-5xl font-medium mb-8">
+          <h1 className="text-heading-m text-foreground mb-8">
             Hosting & Maintenance
           </h1>
-          <p className="text-xl text-neutral-600 mb-4 max-w-2xl">
+          <p className="text-body text-muted-foreground mb-4 max-w-2xl">
             Select a hosting or maintenance plan to get started. Configure
             add-ons and check out securely via Stripe.
           </p>
-          <p className="text-base text-neutral-500 mb-12 max-w-2xl">
+          <p className="text-small text-muted-foreground mb-12 max-w-2xl">
             Looking for web development, design, SEO, or app projects?{" "}
             <Link
               href="/launch-your-vision"
-              className="text-ravenci-primary hover:text-ravenci-primary/70 font-medium transition-all duration-300 ease-in-out"
+              className="text-accent hover:text-accent/70 font-medium transition-all duration-300 ease-in-out"
             >
               Request a proposal
             </Link>
@@ -174,23 +174,25 @@ export default function QuotingComponent() {
                 onClick={() => {
                   handleServiceSelection(service.id);
                 }}
-                className="flex flex-col items-start justify-between bg-white p-6 rounded-lg shadow-md hover:shadow-lg cursor-pointer transition-shadow border border-neutral-200 hover:border-ravenci-primary"
+                className="flex flex-col items-start justify-between bg-card p-6 rounded-sm border border-border hover:border-accent cursor-pointer transition-colors"
               >
                 <section>
                   <div
-                    className={`mb-4 p-3 inline-block bg-ravenci-primary rounded-full text-white`}
+                    className={`mb-4 p-3 inline-block bg-accent/10 rounded-sm text-accent`}
                   >
                     {service.icon && service.icon}
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">{service.name}</h3>
-                  <p className="text-neutral-600 text-sm mb-4">
+                  <h3 className="text-heading-s text-foreground mb-2">
+                    {service.name}
+                  </h3>
+                  <p className="text-muted-foreground text-small mb-4">
                     {service.description}
                   </p>
                 </section>
-                <div className="text-xl font-bold text-ravenci-primary">
+                <div className="text-heading-s text-accent">
                   ${service.basePrice.toFixed(2)}
                   {service.isRecurring && (
-                    <span className="text-sm font-normal">
+                    <span className="text-small font-normal text-muted-foreground">
                       /{service.recurringPeriod}
                     </span>
                   )}
@@ -208,19 +210,17 @@ export default function QuotingComponent() {
     service.addons?.map((id) => ({ id, ...addons[id] })) || [];
 
   return (
-    <main className="pb-10 flex flex-col min-h-screen bg-neutral-50">
+    <main className="pb-10 flex flex-col min-h-screen bg-background">
       <section className="content-section pt-32 pb-12 px-5 sm:px-20 xl:px-36">
         <button
           onClick={() => setSelectedService("")}
-          className="mb-6 flex items-center gap-1 text-ravenci-primary hover:text-ravenci-primary/80 font-medium transition-all duration-300 ease-in-out"
+          className="mb-6 flex items-center gap-1 text-accent hover:text-accent/80 font-medium transition-all duration-300 ease-in-out"
         >
           <IconArrowLeft /> Back to Services
         </button>
 
-        <h1 className="text-4xl md:text-5xl font-medium mb-4">
-          {service.name}
-        </h1>
-        <p className="text-xl text-neutral-600 mb-8 max-w-3xl">
+        <h1 className="text-heading-m text-foreground mb-4">{service.name}</h1>
+        <p className="text-body text-muted-foreground mb-8 max-w-3xl">
           {service.description}
         </p>
       </section>
@@ -228,19 +228,21 @@ export default function QuotingComponent() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-5 sm:px-20 xl:px-36 pb-20">
         {/* Main Service Details */}
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Base Service</h2>
-            <div className="p-4 flex flex-col md:flex-row justify-between md:items-center gap-5 md:gap-2 bg-ravenci-primary/10 rounded-lg">
+          <div className="bg-card rounded-sm border border-border p-6 mb-8">
+            <h2 className="text-heading-s text-foreground mb-4">Base Service</h2>
+            <div className="p-5 flex flex-col md:flex-row justify-between md:items-center gap-5 md:gap-2 border border-accent bg-accent/10 rounded-sm">
               <div className={`max-w-xl`}>
-                <h3 className="text-lg font-semibold">{service.name}</h3>
-                <p className="text-neutral-600">{service.description}</p>
+                <h3 className="text-heading-s text-foreground">
+                  {service.name}
+                </h3>
+                <p className="text-muted-foreground">{service.description}</p>
               </div>
               <div
-                className={`min-w-[180px] text-2xl font-bold text-ravenci-primary text-right`}
+                className={`min-w-[180px] text-heading-s text-accent text-right`}
               >
                 ${service.basePrice.toFixed(2)}
                 {service.isRecurring && (
-                  <span className="text-sm font-normal">
+                  <span className="text-small font-normal text-muted-foreground">
                     /{service.recurringPeriod}
                   </span>
                 )}
@@ -248,11 +250,11 @@ export default function QuotingComponent() {
             </div>
 
             <div className={`mt-5`}>
-              <p className="text-sm text-ravenci-dark/50">
+              <p className="text-small text-muted-foreground">
                 Not quite what you're looking for?{" "}
                 <Link
                   href={`/launch-your-vision`}
-                  className={`text-ravenci-primary hover:text-ravenci-primary/70 transition-all duration-300 ease-in-out`}
+                  className={`text-accent hover:text-accent/70 transition-all duration-300 ease-in-out`}
                 >
                   Get in touch!
                 </Link>
@@ -262,25 +264,29 @@ export default function QuotingComponent() {
 
           {/* Add-ons */}
           {availableAddons.length > 0 && (
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-2xl font-semibold mb-6">Available Add-ons</h2>
+            <div className="bg-card rounded-sm border border-border p-6">
+              <h2 className="text-heading-s text-foreground mb-6">
+                Available Add-ons
+              </h2>
               <div className="space-y-4">
                 {availableAddons.map((addon) => {
                   return (
                     <div
                       key={addon.id}
-                      className="p-4 border rounded-lg border-neutral-200"
+                      className="p-5 border rounded-sm border-border bg-card"
                     >
                       <div className="flex justify-between items-start mb-2">
                         <div className="flex-1">
-                          <h3 className="font-semibold">{addon.title}</h3>
-                          <p className="text-neutral-600 text-sm">
+                          <h3 className="font-semibold text-foreground">
+                            {addon.title}
+                          </h3>
+                          <p className="text-muted-foreground text-small">
                             {addon.description}
                           </p>
-                          <div className="text-lg font-bold text-neutral-800 mt-1">
+                          <div className="text-heading-s text-foreground mt-1">
                             ${addon.price.toFixed(2)}
                             {addon.isRecurring && (
-                              <span className="text-sm font-normal">
+                              <span className="text-small font-normal text-muted-foreground">
                                 /{addon.recurringPeriod}
                               </span>
                             )}
@@ -300,11 +306,11 @@ export default function QuotingComponent() {
                                     ),
                                   )
                                 }
-                                className="p-1 rounded bg-neutral-200 hover:bg-neutral-300"
+                                className="p-1 rounded-sm border border-border bg-muted text-foreground hover:border-accent"
                               >
                                 <IconMinus size={16} />
                               </button>
-                              <span className="w-8 text-center">
+                              <span className="w-8 text-center text-foreground">
                                 {selectedAddons[addon.id] || 0}
                               </span>
                               <button
@@ -317,13 +323,13 @@ export default function QuotingComponent() {
                                     ),
                                   )
                                 }
-                                className="p-1 rounded bg-neutral-200 hover:bg-neutral-300"
+                                className="p-1 rounded-sm border border-border bg-muted text-foreground hover:border-accent"
                               >
                                 <IconPlus size={16} />
                               </button>
                             </div>
                           ) : (
-                            <label className="flex items-center">
+                            <label className="flex items-center text-foreground text-small">
                               <input
                                 type="checkbox"
                                 checked={
@@ -335,7 +341,7 @@ export default function QuotingComponent() {
                                     e.target.checked ? 1 : 0,
                                   )
                                 }
-                                className="mr-2"
+                                className="mr-2 accent-accent"
                               />
                               Add
                             </label>
@@ -350,11 +356,11 @@ export default function QuotingComponent() {
           )}
 
           <div className={`mt-5`}>
-            <p className="text-sm text-ravenci-dark/50">
+            <p className="text-small text-muted-foreground">
               Not quite what you're looking for?{" "}
               <Link
                 href={`/launch-your-vision`}
-                className={`text-ravenci-primary hover:text-ravenci-primary/70 transition-all duration-300 ease-in-out`}
+                className={`text-accent hover:text-accent/70 transition-all duration-300 ease-in-out`}
               >
                 Get in touch!
               </Link>
@@ -364,23 +370,25 @@ export default function QuotingComponent() {
 
         {/* Order Summary */}
         <div className="lg:col-span-1">
-          <div className="bg-white rounded-lg shadow-md p-6 sticky top-6">
-            <h2 className="text-2xl font-semibold mb-6">Order Summary</h2>
+          <div className="bg-card rounded-sm border border-border p-6 sticky top-6">
+            <h2 className="text-heading-s text-foreground mb-6">
+              Order Summary
+            </h2>
 
             {/* Totals */}
             <div className="space-y-3 mb-6">
               {calculatedTotals.oneTime > 0 && (
-                <div className="flex justify-between">
+                <div className="flex justify-between text-foreground">
                   <span>One-time Total:</span>
-                  <span className="font-semibold">
+                  <span className="font-semibold text-accent">
                     ${calculatedTotals.oneTime.toFixed(2)}
                   </span>
                 </div>
               )}
               {calculatedTotals.recurring > 0 && (
-                <div className="flex justify-between">
+                <div className="flex justify-between text-foreground">
                   <span>Monthly Recurring:</span>
-                  <span className="font-semibold">
+                  <span className="font-semibold text-accent">
                     ${calculatedTotals.recurring.toFixed(2)}/month
                   </span>
                 </div>
@@ -389,26 +397,30 @@ export default function QuotingComponent() {
 
             {/* Payment Method */}
             <div className="mb-6">
-              <h3 className="font-semibold mb-3">Payment Method</h3>
-              <div className="flex items-center text-neutral-600">
+              <h3 className="font-mono text-label-sm uppercase text-muted-foreground mb-3">
+                Payment Method
+              </h3>
+              <div className="flex items-center text-muted-foreground">
                 <IconCreditCard size={18} className="mr-2" />
                 Secure checkout via Stripe
               </div>
             </div>
 
             <div className="mb-6">
-              <h3 className="font-semibold mb-3">Additional Comments</h3>
+              <h3 className="font-mono text-label-sm uppercase text-muted-foreground mb-3">
+                Additional Comments
+              </h3>
               <textarea
                 value={comments}
                 onChange={(e) => setComments(e.target.value)}
                 placeholder="Any special requirements or notes..."
-                className="w-full p-3 border border-neutral-300 rounded-lg resize-none h-24 text-sm"
+                className="w-full p-3.5 border border-input/60 bg-background rounded-sm resize-none h-24 text-small text-foreground focus:border-accent outline-none"
               />
             </div>
 
             {error && (
-              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-                <p className="text-red-600 text-sm">{error}</p>
+              <div className="mb-4 p-3 bg-muted border border-border rounded-sm">
+                <p className="text-foreground text-small">{error}</p>
               </div>
             )}
 
@@ -416,11 +428,11 @@ export default function QuotingComponent() {
             <button
               onClick={handleCheckout}
               disabled={isLoading}
-              className="w-full bg-ravenci-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-ravenci-primary/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full h-12 bg-accent text-accent-foreground px-6 rounded-sm font-semibold hover:bg-accent/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <div className="flex items-center justify-center gap-2">
-                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-accent-foreground"></div>
                   Processing...
                 </div>
               ) : (

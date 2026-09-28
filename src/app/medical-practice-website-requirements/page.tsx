@@ -10,6 +10,10 @@ import {
 
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+import { Button } from "@/components/ui/button";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata: Metadata = {
   title: "Medical Practice Website Guide | RAVENCI Solutions",
@@ -259,73 +263,70 @@ export default function MedicalPracticeRequirementsPage() {
   return (
     <main className="flex flex-col">
       {/* Hero */}
-      <section className="content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 bg-white">
-        <article className="max-w-3xl flex flex-col gap-2">
+      <section className={`${SECTION} border-b border-border`}>
+        <article className="flex max-w-3xl flex-col gap-4">
           <Breadcrumbs
-            items={[
-              { label: "Medical Practice Website Requirements" },
-            ]}
+            items={[{ label: "Medical Practice Website Requirements" }]}
           />
-          <span className="mt-2 text-xs font-medium tracking-wider uppercase text-ravenci-primary">
-            Healthcare Web Design, 2026
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
+          <SectionLabel label="Healthcare Web Design, 2026" tick />
+          <h1 className="text-display-l text-foreground">
             What Australian Medical Practice Websites Need in 2026
           </h1>
-          <h2 className="max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light">
+          <p className="text-lead text-muted-foreground">
             AHPRA-aware. Privacy-compliant. Patient-friendly.
-          </h2>
-          <p className="mt-6 max-w-2xl text-neutral-500/80">
+          </p>
+          <p className="max-w-prose text-body text-muted-foreground">
             Australian medical practice websites in 2026 must address five
-            things:{" "}
-            <strong className="text-ravenci-dark">AHPRA</strong> advertising
-            guidelines, the{" "}
-            <strong className="text-ravenci-dark">
+            things: <strong className="text-foreground">AHPRA</strong>{" "}
+            advertising guidelines, the{" "}
+            <strong className="text-foreground">
               Australian Privacy Principles
             </strong>{" "}
             for patient information, online booking integrated with practice
             management software,{" "}
-            <strong className="text-ravenci-dark">accessibility</strong>{" "}
-            standards for diverse patient needs, and{" "}
-            <strong className="text-ravenci-dark">patient-facing essentials</strong>{" "}
-            findable in under 30 seconds. This guide breaks down each area
-            with the specific requirements, common mistakes, and how to get it
-            right.
+            <strong className="text-foreground">accessibility</strong> standards
+            for diverse patient needs, and{" "}
+            <strong className="text-foreground">
+              patient-facing essentials
+            </strong>{" "}
+            findable in under 30 seconds. This guide breaks down each area with
+            the specific requirements, common mistakes, and how to get it right.
           </p>
         </article>
       </section>
 
       {/* AHPRA essentials */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white">
-        <h3 className="mb-4 font-serif text-h3 font-bold">
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <SectionLabel index="01" label="AHPRA compliance" tone="muted" />
+        <h2 className="mt-3 text-display-m text-foreground">
           AHPRA Advertising Compliance Essentials
-        </h3>
-        <p className="mb-10 max-w-2xl text-neutral-400">
+        </h2>
+        <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
           The Health Practitioner Regulation National Law sets specific limits
           on what registered health practitioners can publish in advertising,
-          and websites count as advertising. These five areas drive the
-          majority of complaints.
+          and websites count as advertising. These five areas drive the majority
+          of complaints.
         </p>
         <div className="space-y-4">
           {ahpraEssentials.map((item, index) => (
             <div
               key={index}
-              className="p-5 md:p-6 bg-white rounded-xl shadow-lg"
+              className="rounded-sm border border-white/10 bg-card p-5 md:p-6"
             >
-              <div className="flex items-start gap-3 mb-2">
+              <div className="mb-2 flex items-start gap-3">
                 <IconAlertTriangle
                   size={22}
-                  className="text-amber-500 flex-shrink-0 mt-0.5"
+                  className="mt-0.5 shrink-0 text-muted-foreground"
                 />
-                <h4 className="font-bold text-ravenci-dark">{item.item}</h4>
+                <h3 className="text-heading-s text-foreground">{item.item}</h3>
               </div>
-              <p className="ml-9 text-sm text-neutral-600 leading-relaxed">
+              <p className="ml-9 text-body text-muted-foreground">
                 {item.detail}
               </p>
             </div>
           ))}
         </div>
-        <p className="mt-8 text-sm text-neutral-400 max-w-2xl italic">
+        <p className="mt-8 max-w-prose text-small italic text-muted-foreground">
           This is general guidance, not legal advice. Final compliance review
           should be conducted by a healthcare-experienced legal or compliance
           professional. AHPRA&apos;s{" "}
@@ -333,7 +334,7 @@ export default function MedicalPracticeRequirementsPage() {
             href="https://www.ahpra.gov.au/publications/advertising-resources.aspx"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-ravenci-primary hover:underline"
+            className="font-medium text-foreground underline"
           >
             published advertising resources
           </a>{" "}
@@ -342,11 +343,12 @@ export default function MedicalPracticeRequirementsPage() {
       </section>
 
       {/* Privacy essentials */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
-        <h3 className="mb-4 font-serif text-h3 font-bold">
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="02" label="Privacy and patient data" />
+        <h2 className="mt-3 text-display-m text-foreground">
           Privacy Act &amp; Patient Data Handling
-        </h3>
-        <p className="mb-10 max-w-2xl text-neutral-500/80">
+        </h2>
+        <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
           Healthcare websites collect more sensitive personal information than
           most commercial sites. The Australian Privacy Principles, plus
           state-level health-record legislation, set the baseline.
@@ -355,16 +357,16 @@ export default function MedicalPracticeRequirementsPage() {
           {privacyEssentials.map((item, index) => (
             <div
               key={index}
-              className="p-5 md:p-6 bg-white border border-neutral-200 rounded-lg"
+              className="rounded-sm border border-border bg-card p-5 md:p-6"
             >
-              <div className="flex items-start gap-3 mb-2">
+              <div className="mb-2 flex items-start gap-3">
                 <IconCircleCheckFilled
                   size={22}
-                  className="text-ravenci-primary flex-shrink-0 mt-0.5"
+                  className="mt-0.5 shrink-0 text-accent"
                 />
-                <h4 className="font-bold text-ravenci-dark">{item.item}</h4>
+                <h3 className="text-heading-s text-foreground">{item.item}</h3>
               </div>
-              <p className="ml-9 text-sm text-neutral-600 leading-relaxed">
+              <p className="ml-9 text-body text-muted-foreground">
                 {item.detail}
               </p>
             </div>
@@ -373,56 +375,60 @@ export default function MedicalPracticeRequirementsPage() {
       </section>
 
       {/* Practice management integrations */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-white">
-        <h3 className="mb-4 font-serif text-h3 font-bold">
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="03" label="Booking integrations" />
+        <h2 className="mt-3 text-display-m text-foreground">
           Practice Management &amp; Booking Integrations
-        </h3>
-        <p className="mb-10 max-w-2xl text-neutral-500/80">
+        </h2>
+        <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
           Online booking that doesn&apos;t feed into the practice management
           system creates more work for reception, not less. The right
           integration depends on practice type, existing PM software, and
           whether patient marketplace exposure matters.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {integrations.map((int, index) => (
             <div
               key={index}
-              className="p-5 bg-neutral-100/60 rounded-lg border border-neutral-200/70"
+              className="rounded-sm border border-border bg-card p-5"
             >
-              <h4 className="font-bold text-ravenci-dark mb-1">{int.name}</h4>
-              <p className="text-sm text-neutral-600 leading-relaxed">
-                {int.use}
-              </p>
+              <h3 className="mb-1 text-heading-s text-foreground">
+                {int.name}
+              </h3>
+              <p className="text-body text-muted-foreground">{int.use}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Patient-facing essentials */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-ravenci-primary text-white">
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
         <div className="max-w-4xl">
-          <h3 className="mb-4 font-serif text-h3 font-bold">
+          <SectionLabel index="04" label="Patient-facing essentials" tone="muted" />
+          <h2 className="mt-3 text-display-m text-foreground">
             Patient-Facing Essentials
-          </h3>
-          <p className="mb-10 max-w-2xl text-white/85 leading-relaxed">
-            What patients want when they land on your website on a
-            phone, often while feeling unwell. Get these eight right and the
-            site does its job.
+          </h2>
+          <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
+            What patients want when they land on your website on a phone, often
+            while feeling unwell. Get these eight right and the site does its
+            job.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {patientEssentials.map((item, index) => (
               <div
                 key={index}
-                className="p-5 bg-white/10 border border-white/15 rounded-lg"
+                className="rounded-sm border border-white/10 bg-card p-5"
               >
-                <div className="flex items-start gap-2 mb-2">
+                <div className="mb-2 flex items-start gap-2">
                   <IconCheck
                     size={20}
-                    className="p-0.5 bg-white rounded-full text-ravenci-primary flex-shrink-0 mt-0.5"
+                    className="mt-0.5 shrink-0 text-foreground"
                   />
-                  <h4 className="font-bold text-white">{item.title}</h4>
+                  <h3 className="text-heading-s text-foreground">
+                    {item.title}
+                  </h3>
                 </div>
-                <p className="ml-7 text-sm text-white/85 leading-relaxed">
+                <p className="ml-7 text-body text-muted-foreground">
                   {item.description}
                 </p>
               </div>
@@ -432,11 +438,12 @@ export default function MedicalPracticeRequirementsPage() {
       </section>
 
       {/* Common mistakes */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-neutral-50">
-        <h3 className="mb-4 font-serif text-h3 font-bold">
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="05" label="Common mistakes" />
+        <h2 className="mt-3 text-display-m text-foreground">
           Six Common Mistakes on Australian Practice Websites
-        </h3>
-        <p className="mb-10 max-w-2xl text-neutral-500/80">
+        </h2>
+        <p className="mb-10 mt-4 max-w-prose text-body text-muted-foreground">
           Patterns I see across audits of Australian healthcare websites. Each
           one is fixable, and most are visible to AHPRA, patients, or both.
         </p>
@@ -444,110 +451,101 @@ export default function MedicalPracticeRequirementsPage() {
           {commonMistakes.map((m, index) => (
             <div
               key={index}
-              className="p-6 bg-white rounded-lg border border-neutral-200"
+              className="rounded-sm border border-border bg-card p-6"
             >
-              <h4 className="mb-2 font-bold text-ravenci-dark">
+              <h3 className="mb-2 text-heading-s text-foreground">
                 {index + 1}. {m.mistake}
-              </h4>
-              <p className="text-sm text-neutral-600 leading-relaxed">
-                {m.detail}
-              </p>
+              </h3>
+              <p className="text-body text-muted-foreground">{m.detail}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* RAVENCI positioning */}
-      <section className="content-section py-16 px-5 sm:px-20 xl:px-36 bg-white">
+      <section className={`${SECTION} border-b border-border`}>
         <div className="max-w-3xl">
-          <h3 className="mb-6 font-serif text-h3 font-bold">
+          <SectionLabel index="06" label="How RAVENCI builds healthcare" />
+          <h2 className="mt-3 text-display-m text-foreground">
             How RAVENCI Builds Healthcare Websites
-          </h3>
-          <div className="space-y-4 text-neutral-600 leading-relaxed">
+          </h2>
+          <div className="mt-6 flex flex-col gap-4 text-body text-muted-foreground">
             <p>
               I build healthcare websites for Australian medical practices,
               allied health providers, and specialist clinics. Every healthcare
               project includes AHPRA-aware content structure, Privacy Act
-              compliance, online booking integration with HotDoc,
-              HealthEngine, Cliniko or your existing platform, accessibility
-              built to WCAG standards, and 85+ PageSpeed performance for mobile
-              patients.
+              compliance, online booking integration with HotDoc, HealthEngine,
+              Cliniko or your existing platform, accessibility built to WCAG
+              standards, and 85+ PageSpeed performance for mobile patients.
             </p>
             <p>
               I typically work alongside your existing legal or compliance
-              advisor on AHPRA review. I know the patterns to avoid, but
-              final sign-off should always come from someone qualified to give
-              that opinion.
+              advisor on AHPRA review. I know the patterns to avoid, but final
+              sign-off should always come from someone qualified to give that
+              opinion.
             </p>
             <p>
               See my{" "}
-              <Link
-                href="/healthcare"
-                className="text-ravenci-primary hover:underline"
-              >
+              <Link href="/healthcare" className="text-accent hover:underline">
                 Healthcare Websites
               </Link>{" "}
               page for what I deliver, or my{" "}
               <Link
                 href="/cost-of-a-website-in-brisbane"
-                className="text-ravenci-primary hover:underline"
+                className="text-accent hover:underline"
               >
                 Brisbane website cost guide
               </Link>{" "}
               for honest pricing.
             </p>
           </div>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/healthcare"
-              className="px-6 py-3 grid place-content-center bg-ravenci-dark rounded-full text-white hover:bg-ravenci-primary transition-colors duration-300"
-            >
-              See Healthcare Website Design
-            </Link>
-            <Link
-              href="/launch-your-vision"
-              className="px-6 py-3 grid place-content-center border-2 border-ravenci-dark rounded-full text-ravenci-dark hover:bg-ravenci-dark hover:text-white transition-colors duration-300"
-            >
-              Talk to Me About Your Practice
-            </Link>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <Button asChild size="lg" variant="primary">
+              <Link href="/healthcare">See Healthcare Website Design</Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/launch-your-vision">
+                Talk to Me About Your Practice
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="content-section py-20 px-5 sm:px-20 xl:px-36 flex flex-col items-center text-center bg-neutral-100">
-        <h2 className="mb-4 text-3xl md:text-4xl font-medium">
-          Building or Replacing Your Practice Website?
+      {/* FAQ */}
+      <section className={`${SECTION} border-b border-border`}>
+        <SectionLabel index="07" label="FAQ" />
+        <h2 className="mt-3 text-display-m text-foreground">
+          Frequently Asked Questions
         </h2>
-        <p className="mb-10 max-w-lg text-neutral-500/80">
-          Tell me about your practice and I&apos;ll send back a tailored
-          proposal covering AHPRA-aware structure, your existing booking and
-          PM systems, and realistic timelines.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href="/launch-your-vision"
-            className="px-8 py-3 grid place-content-center bg-ravenci-primary rounded-full text-white hover:bg-ravenci-primary/85 transition-colors duration-300"
-          >
-            Launch Your Vision
-          </Link>
-          <Link
-            href="/healthcare"
-            className="px-8 py-3 grid place-content-center border-2 border-ravenci-dark rounded-full text-ravenci-dark hover:bg-ravenci-dark hover:text-white transition-colors duration-300"
-          >
-            See Healthcare Packages
-          </Link>
+        <div className="mt-8 max-w-3xl">
+          <Accordion titleClassName="py-6 text-lg" items={faqItems} />
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white">
-        <h2 className="font-serif text-h3">Frequently Asked Questions</h2>
-        <Accordion titleClassName="py-6 text-lg" items={faqItems} />
+      {/* CTA */}
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="text-display-m text-foreground">
+              Building or Replacing Your Practice Website?
+            </h2>
+            <p className="mt-4 text-body text-muted-foreground">
+              Tell me about your practice and I&apos;ll send back a tailored
+              proposal covering AHPRA-aware structure, your existing booking and
+              PM systems, and realistic timelines.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <Button asChild size="lg" variant="primary">
+              <Link href="/launch-your-vision">Launch Your Vision</Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/healthcare">See Healthcare Packages</Link>
+            </Button>
+          </div>
+        </div>
       </section>
-
-      {/* Spacer */}
-      <section className="content-section py-12 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[80px] bg-white" />
 
       {/* BreadcrumbList JSON-LD */}
       <script

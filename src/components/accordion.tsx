@@ -1,8 +1,7 @@
 "use client";
 
-import { ReactNode, useState } from "react";
-
-import { IconPlus, IconMinus } from "@tabler/icons-react";
+import { ReactNode, useId, useState } from "react";
+import { IconChevronDown } from "@tabler/icons-react";
 
 interface AccordionItem {
   title: string;
@@ -19,46 +18,41 @@ const Accordion = ({
   titleClassName?: string;
 }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleItem = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const baseId = useId();
 
   return (
     <div className="w-full max-w-2xl">
-      {items.map((item, index) => (
-        <div key={index} className="border-b border-white/50 overflow-hidden">
-          <button
-            onClick={() => toggleItem(index)}
-            className={`relative flex justify-between items-center w-full text-left ${titleClassName}`}
-            aria-expanded={openIndex === index}
-          >
-            <span className={``}>{item.title}</span>
-            <IconPlus
-              className={`absolute top-1/2 -translate-y-1/2 right-0 ${
-                openIndex === index ? "rotate-180 opacity-0" : "opacity-100"
-              } transition-all duration-300 ease-in-out`}
-              size={20}
-            />
+      {items.map((item, index) => {
+        const open = openIndex === index;
+        const btnId = `${baseId}-btn-${index}`;
+        const panelId = `${baseId}-panel-${index}`;
+        return (
+          <div key={index} className="border-b border-border">
+            <h3>
+              <button
+                id={btnId}
+                type="button"
+                aria-expanded={open}
+                aria-controls={panelId}
+                onClick={() => setOpenIndex(open ? null : index)}
+                className={`flex w-full items-center justify-between gap-4 py-5 text-left text-heading-s text-foreground ${titleClassName ?? ""}`}
+              >
+                <span>{item.title}</span>
+                <IconChevronDown
+                  size={20}
+                  aria-hidden
+                  className={`shrink-0 text-accent transition-transform duration-base ease-standard ${open ? "rotate-180" : ""}`}
+                />
+              </button>
+            </h3>
 
-            <IconMinus
-              className={`absolute top-1/2 -translate-y-1/2 right-0 ${
-                openIndex === index
-                  ? "rotate-0 opacity-100"
-                  : "-rotate-180 opacity-0"
-              } transition-all duration-300 ease-in-out`}
-              size={20}
-            />
-          </button>
-
-          <div
-            className={`h-fit ${
-              openIndex === index
-                ? "max-h-[9999px] opacity-100"
-                : "max-h-0 opacity-0"
-            } transition-all duration-700 ease-in-out overflow-hidden`}
-          >
-            <div className={`pb-5 font-light`}>
+            <div
+              id={panelId}
+              role="region"
+              aria-labelledby={btnId}
+              hidden={!open}
+              className="overflow-hidden pb-5 text-body text-subtle"
+            >
               {typeof item.content === "string" ? (
                 <div dangerouslySetInnerHTML={{ __html: item.content }} />
               ) : (
@@ -66,8 +60,8 @@ const Accordion = ({
               )}
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

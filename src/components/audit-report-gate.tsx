@@ -7,9 +7,12 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import {
   IconDownload,
   IconCheck,
-  IconLoader2,
   IconArrowRight,
 } from "@tabler/icons-react";
+
+const FIELD =
+  "h-12 w-full rounded-sm border border-input/60 bg-background px-3.5 text-body text-foreground outline-none transition-colors focus:border-accent";
+const LABEL = "mb-1.5 block font-mono text-label-sm uppercase text-muted-foreground";
 
 export default function AuditReportGate() {
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -47,40 +50,42 @@ export default function AuditReportGate() {
 
   if (status === "success") {
     return (
-      <div className="max-w-2xl mx-auto p-8 md:p-10 bg-white border border-neutral-200 rounded-lg text-center">
-        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-ravenci-primary mb-4">
-          <IconCheck size={24} className="text-white" />
+      <div className="mx-auto max-w-2xl rounded-sm border border-border bg-card p-8 text-center md:p-10">
+        <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full border border-accent text-accent">
+          <IconCheck size={24} />
         </div>
-        <h3 className="text-2xl font-medium text-ravenci-dark mb-2">
+        <h3 className="text-heading-s text-foreground">
           Report ready, {form.name.split(" ")[0]}.
         </h3>
-        <p className="text-neutral-600 mb-6 leading-relaxed">
+        <p className="mt-2 text-body text-muted-foreground">
           I&apos;ve also sent a copy to{" "}
-          <strong className="text-ravenci-dark">{form.email}</strong>. Save it
-          as a PDF or print directly from the report page.
+          <strong className="text-foreground">{form.email}</strong>. Save it as
+          a PDF or print directly from the report page.
         </p>
-        <Link
-          href="/brisbane-website-audit/report"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-ravenci-primary text-white rounded-full hover:bg-ravenci-primary/85 transition-colors"
-        >
-          Open the Full Report
-          <IconArrowRight size={18} />
-        </Link>
+        <div className="mt-6 flex justify-center">
+          <Link
+            href="/brisbane-website-audit/report"
+            className="inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-accent px-6 text-sm font-semibold text-accent-foreground transition-all duration-fast hover:bg-accent/90"
+          >
+            Open the full report
+            <IconArrowRight size={18} />
+          </Link>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-6 md:p-8 bg-white border border-neutral-200 rounded-lg">
-      <div className="flex items-start gap-3 mb-6">
-        <div className="w-10 h-10 rounded-full bg-ravenci-primary/10 flex items-center justify-center flex-shrink-0">
-          <IconDownload size={20} className="text-ravenci-primary" />
+    <div className="mx-auto max-w-2xl rounded-sm border border-border bg-card p-6 md:p-8">
+      <div className="mb-6 flex items-start gap-3">
+        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-accent text-accent">
+          <IconDownload size={20} />
         </div>
         <div>
-          <h3 className="text-xl md:text-2xl font-medium text-ravenci-dark">
-            Get the Full Report
+          <h3 className="text-heading-s text-foreground">
+            Get the full report
           </h3>
-          <p className="mt-1 text-sm text-neutral-500">
+          <p className="mt-1 text-small text-muted-foreground">
             All 50 sites, every category, every recommendation, in a printable
             PDF you can share with your team.
           </p>
@@ -88,12 +93,9 @@ export default function AuditReportGate() {
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
-            <label
-              htmlFor="audit-name"
-              className="block text-sm font-medium text-neutral-700 mb-1"
-            >
+            <label htmlFor="audit-name" className={LABEL}>
               Your name
             </label>
             <input
@@ -103,14 +105,11 @@ export default function AuditReportGate() {
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               placeholder="First and last name"
-              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-ravenci-primary focus:ring-1 focus:ring-ravenci-primary"
+              className={FIELD}
             />
           </div>
           <div>
-            <label
-              htmlFor="audit-email"
-              className="block text-sm font-medium text-neutral-700 mb-1"
-            >
+            <label htmlFor="audit-email" className={LABEL}>
               Email
             </label>
             <input
@@ -120,42 +119,39 @@ export default function AuditReportGate() {
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               placeholder="you@yourbusiness.com.au"
-              className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:border-ravenci-primary focus:ring-1 focus:ring-ravenci-primary"
+              className={FIELD}
             />
           </div>
         </div>
 
         {status === "error" && (
-          <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">
-            {errorMessage}
+          <div className="rounded-sm border border-destructive/40 bg-destructive/10 p-3">
+            <p className="text-small text-destructive">{errorMessage}</p>
           </div>
         )}
 
         <button
           type="submit"
           disabled={status === "loading"}
-          className="self-start inline-flex items-center gap-2 px-6 py-3 bg-ravenci-primary text-white rounded-full hover:bg-ravenci-primary/85 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-sm bg-accent px-6 text-sm font-semibold text-accent-foreground transition-all duration-fast hover:bg-accent/90 disabled:opacity-50"
         >
           {status === "loading" ? (
             <>
-              <IconLoader2 size={18} className="animate-spin" />
+              <span className="h-4 w-4 animate-spin rounded-full border-2 border-accent-foreground border-t-transparent" />
               Preparing report...
             </>
           ) : (
             <>
               <IconDownload size={18} />
-              Get the Report
+              Get the report
             </>
           )}
         </button>
 
-        <p className="text-xs text-neutral-500 leading-relaxed mt-1">
+        <p className="mt-1 text-small text-muted-foreground">
           I&apos;ll only use your email to send the report and occasional
           related insights. No spam, unsubscribe anytime. See the{" "}
-          <Link
-            href="/privacy-policy"
-            className="text-ravenci-primary hover:underline"
-          >
+          <Link href="/privacy-policy" className="text-accent hover:underline">
             privacy policy
           </Link>
           .

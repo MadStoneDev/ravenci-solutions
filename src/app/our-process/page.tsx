@@ -12,6 +12,11 @@ import {
 } from "@tabler/icons-react";
 
 import Accordion from "@/components/accordion";
+import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+import { Button } from "@/components/ui/button";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const metadata = {
   title: "My Process | RAVENCI Solutions",
@@ -110,13 +115,19 @@ const steps = [
   },
 ];
 
+const stats = [
+  { value: "25+", label: "Years of digital experience" },
+  { value: "467", label: "Projects delivered" },
+  { value: "85+", label: "PageSpeed guaranteed" },
+];
+
 const faqItems = [
   {
     title: "How long does the full process take?",
     summary:
       "Foundation websites take 3 weeks, Growth websites 4-6 weeks, and Premium Brand & Web projects 10-14 weeks. A detailed timeline is provided during the Strategy & Planning phase.",
     content:
-      "Timelines vary by project scope. A Foundation Website typically takes 3 weeks. A Growth Website runs 4-6 weeks. Premium Brand & Web projects take 10-14 weeks. I provide a detailed timeline during the Strategy & Planning phase and keep you updated at every milestone.",
+      "Timelines vary by project scope. A Foundation Website typically takes 3 weeks. A Growth Website runs 4 to 6 weeks. Premium Brand & Web projects take 10 to 14 weeks. I provide a detailed timeline during the Strategy & Planning phase and keep you updated at every milestone.",
   },
   {
     title: "What do I need to provide to get started?",
@@ -150,83 +161,81 @@ const faqItems = [
 
 export default function OurProcessPage() {
   return (
-    <main className={`flex flex-col`}>
+    <main className="flex flex-col">
       {/* Hero */}
-      <section
-        className={`content-section pt-32 pb-24 md:pb-32 px-5 sm:px-20 xl:px-36 grid grid-cols-12 min-h-[250px] bg-white`}
-      >
-        <article className={`max-w-2xl col-span-12 flex flex-col gap-2`}>
-          <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
-            How I Bring Your Vision to Life
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="flex max-w-3xl flex-col gap-4">
+          <Breadcrumbs items={[{ label: "My Process" }]} />
+          <SectionLabel label="My Process" tick />
+          <h1 className="text-display-l text-foreground">
+            How I bring your vision to life
           </h1>
-          <h2
-            className={`max-w-2xl text-2xl md:text-3xl lg:text-h2 font-light`}
-            style={{ lineHeight: "2.25rem" }}
-          >
-            My proven 6-step process refined over 25+ years of delivering
-            digital products and platforms that work
-          </h2>
-          <p className={`mt-6 max-w-2xl text-neutral-500/80`}>
-            RAVENCI's web development process follows six steps: Discovery,
+          <p className="text-lead text-muted-foreground">
+            My proven 6-step process, refined over 25+ years of delivering
+            digital products and platforms that work.
+          </p>
+          <p className="text-body text-muted-foreground">
+            RAVENCI&apos;s web development process follows six steps: Discovery,
             Strategy, Design, Development, Testing, and Ongoing Support.
-            Foundation websites take 3 weeks, Growth websites 4-6 weeks, and
-            Premium Brand & Web projects 10-14 weeks. Every project includes
+            Foundation websites take 3 weeks, Growth websites 4 to 6 weeks, and
+            Premium Brand & Web projects 10 to 14 weeks. Every project includes
             revision rounds and 85+ PageSpeed guaranteed.
           </p>
-        </article>
+        </div>
       </section>
 
-      {/* Intro bar */}
-      <section
-        className={`p-10 flex flex-col items-center gap-3 bg-ravenci-primary text-white text-center`}
-      >
-        <div className={`max-w-lg`}>
-          <h2 className={`font-serif font-medium text-xl`}>
-            Great websites aren't accidents. They're the result of careful
-            planning, clear communication, and disciplined execution. Every
-            single time.
+      {/* Intro statement */}
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-heading-m text-foreground">
+            Great websites aren&apos;t accidents. They&apos;re the result of
+            careful planning, clear communication, and disciplined execution.
+            Every single time.
           </h2>
         </div>
       </section>
 
       {/* The 6 Steps */}
-      <section
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-white`}
-      >
-        <div className={`max-w-4xl mx-auto flex flex-col gap-20`}>
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mb-10 flex flex-col gap-3">
+          <SectionLabel index="01" label="The steps" />
+          <h2 className="text-display-m text-foreground">
+            Six steps, start to launch and beyond
+          </h2>
+        </div>
+        <div className="mx-auto flex max-w-4xl flex-col gap-6">
           {steps.map((step) => (
             <article
               key={step.number}
-              className={`grid grid-cols-12 gap-6 md:gap-10 items-start`}
+              className="grid grid-cols-1 gap-6 rounded-sm border border-border bg-card p-6 md:grid-cols-12 md:gap-10 md:p-8"
             >
-              <div
-                className={`col-span-12 md:col-span-2 flex md:flex-col items-center md:items-start gap-4`}
-              >
-                <div
-                  className={`w-14 h-14 flex-shrink-0 flex items-center justify-center rounded-full bg-ravenci-primary/10`}
-                >
-                  <step.icon size={28} className={`text-ravenci-primary`} />
+              <div className="flex items-center gap-4 md:col-span-3 md:flex-col md:items-start">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-sm border border-border">
+                  <step.icon size={26} className="text-accent" aria-hidden />
                 </div>
-                <span
-                  className={`text-sm font-bold text-ravenci-primary tracking-widest`}
-                >
-                  STEP {step.number}
+                <span className="font-mono text-label uppercase text-muted-foreground">
+                  Step {step.number}
                 </span>
               </div>
 
-              <div className={`col-span-12 md:col-span-10`}>
-                <h3 className={`mb-4 font-serif text-2xl md:text-h3 font-bold`}>
+              <div className="md:col-span-9">
+                <h3 className="mb-3 text-heading-s text-foreground">
                   {step.name}
                 </h3>
-                <p className={`mb-6 text-neutral-500/80`}>{step.description}</p>
-                <ul className={`flex flex-col gap-3`}>
+                <p className="mb-6 text-body text-muted-foreground">
+                  {step.description}
+                </p>
+                <ul className="flex flex-col gap-3">
                   {step.highlights.map((highlight, i) => (
-                    <li key={i} className={`flex items-start gap-2`}>
+                    <li key={i} className="flex items-start gap-2">
                       <IconCircleCheckFilled
-                        className={`text-ravenci-primary flex-shrink-0`}
-                        size={20}
+                        className="mt-0.5 shrink-0 text-accent"
+                        size={18}
+                        aria-hidden
                       />
-                      <span className={`text-neutral-600`}>{highlight}</span>
+                      <span className="text-body text-muted-foreground">
+                        {highlight}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -236,44 +245,26 @@ export default function OurProcessPage() {
         </div>
       </section>
 
-      {/* Why Process Matters */}
+      {/* Why Process Matters (dark) */}
       <section
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 bg-ravenci-dark text-white`}
+        className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}
       >
-        <div className={`max-w-4xl mx-auto text-center`}>
-          <h2 className={`mb-12 text-3xl md:text-4xl font-medium`}>
-            Why Process Matters
+        <div className="mx-auto max-w-4xl text-center">
+          <SectionLabel index="02" label="Why process matters" tone="muted" />
+          <h2 className="mt-3 text-display-m text-foreground">
+            Results by design, not by luck
           </h2>
-          <div className={`grid grid-cols-1 sm:grid-cols-3 gap-10`}>
-            <div>
-              <p
-                className={`text-4xl md:text-5xl font-bold text-ravenci-primary`}
-              >
-                25+
-              </p>
-              <p className={`mt-2 text-neutral-400`}>
-                Years of Digital Experience
-              </p>
-            </div>
-            <div>
-              <p
-                className={`text-4xl md:text-5xl font-bold text-ravenci-primary`}
-              >
-                350+
-              </p>
-              <p className={`mt-2 text-neutral-400`}>Projects Delivered</p>
-            </div>
-            <div>
-              <p
-                className={`text-4xl md:text-5xl font-bold text-ravenci-primary`}
-              >
-                85+
-              </p>
-              <p className={`mt-2 text-neutral-400`}>PageSpeed Guaranteed</p>
-            </div>
-          </div>
-          <p className={`mt-12 max-w-2xl mx-auto text-neutral-400`}>
-            A consistent, proven process is why I deliver results every time.
+          <dl className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-3">
+            {stats.map((s) => (
+              <div key={s.label} className="flex flex-col gap-1">
+                <dt className="sr-only">{s.label}</dt>
+                <dd className="tnum text-metric text-foreground">{s.value}</dd>
+                <p className="text-small text-muted-foreground">{s.label}</p>
+              </div>
+            ))}
+          </dl>
+          <p className="mx-auto mt-12 max-w-2xl text-body text-muted-foreground">
+            A consistent, proven process is why I deliver results every time,
             not by luck, but by design. Every step exists because 25+ years of
             experience taught me what works.
           </p>
@@ -281,42 +272,33 @@ export default function OurProcessPage() {
       </section>
 
       {/* FAQ */}
-      <section
-        className={`content-section py-16 px-6 md:px-10 flex flex-col items-center justify-center gap-3 bg-white`}
-      >
-        <h2 className={`font-serif text-h3`}>Process Questions Answered</h2>
-        <Accordion titleClassName={`py-6 text-lg`} items={faqItems} />
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-8 flex flex-col gap-3">
+            <SectionLabel index="03" label="Questions" />
+            <h2 className="text-display-m text-foreground">
+              Process questions answered
+            </h2>
+          </div>
+          <Accordion items={faqItems} />
+        </div>
       </section>
 
-      {/* CTA */}
-      <section
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 flex flex-col items-center text-center bg-ravenci-primary text-white`}
-      >
-        <h2 className={`mb-4 text-3xl md:text-4xl font-medium`}>
-          Ready to Start?
-        </h2>
-        <p className={`mb-10 max-w-md text-white/80`}>
-          Let's talk about your project. The first step is always a
-          conversation.
-        </p>
-        <Link
-          href={`/launch-your-vision`}
-          className={`group relative px-8 py-3 grid place-content-center bg-white rounded-full text-ravenci-dark hover:text-white transition-all duration-300 ease-in-out`}
-        >
-          <span className={`z-20`}>Launch Your Vision</span>
-          <div
-            className={`absolute top-0 bottom-full group-hover:bottom-0 left-0 right-0 bg-ravenci-dark z-0 transition-all duration-500 ease-in-out`}
-          ></div>
-          <div
-            className={`absolute top-0 bottom-0 left-0 right-0 rounded-full border-2 border-white z-10`}
-          ></div>
-        </Link>
+      {/* Closing CTA (dark) */}
+      <section className={`dark bg-background text-foreground ${SECTION}`}>
+        <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="text-display-m text-foreground">Ready to start?</h2>
+            <p className="mt-4 text-body text-muted-foreground">
+              Let&apos;s talk about your project. The first step is always a
+              conversation.
+            </p>
+          </div>
+          <Button asChild size="lg" variant="primary">
+            <Link href="/launch-your-vision">Launch your vision</Link>
+          </Button>
+        </div>
       </section>
-
-      {/* Footer spacer */}
-      <section
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 grid grid-cols-5 gap-10 min-h-[150px] bg-white`}
-      ></section>
 
       {/* HowTo JSON-LD */}
       <script

@@ -1,6 +1,11 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import { Metadata } from "next";
 
+import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
+
 export const metadata: Metadata = {
   title: "Privacy Policy | RAVENCI Solutions",
   description:
@@ -19,31 +24,27 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <section className={``}>
-      <article
-        className={`content-section py-32 px-5 sm:px-20 xl:px-36 flex flex-col bg-ravenci-dark text-white`}
-      >
-        <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
-          Privacy Policy
-        </h1>
-        <h2 className={`text-2xl md:text-3xl lg:text-h2 font-light`}>
-          Your privacy is important to us
-        </h2>
-      </article>
+    <main className="flex flex-col">
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="flex max-w-3xl flex-col gap-4">
+          <Breadcrumbs items={[{ label: "Privacy Policy" }]} />
+          <SectionLabel label="Legal" tick />
+          <h1 className="text-display-l text-foreground">Privacy Policy</h1>
+          <p className="text-lead text-muted-foreground">
+            Your privacy is important to us.
+          </p>
+        </div>
+      </section>
 
-      <article
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 pb-16 lg:pb-32 bg-white`}
-      >
-        <div
-          className={`col-span-12 lg:col-span-8 flex flex-col justify-center gap-5 max-w-3xl`}
-        >
-          <p className={`max-w-3xl`}>
+      <section className={SECTION}>
+        <div className="flex max-w-prose flex-col gap-5 text-body text-muted-foreground">
+          <p>
             Your privacy is important to us. It is RAVENCI&#39;s policy to
             respect your privacy and comply with any applicable law and
             regulation regarding any personal information we may collect about
             you, including across our website,{" "}
             <a
-              className={`text-ravenci-primary`}
+              className="text-accent hover:underline"
               href="https://ravenci.solutions/"
             >
               https://ravenci.solutions/
@@ -69,14 +70,14 @@ export default function PrivacyPolicyPage() {
           <p>This policy is effective as of 14 April 2021. </p>
           <p>Last updated: 14 April 2021 </p>
 
-          <h3 className={`mt-4 text-2xl font-bold`}>Information We Collect</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Information We Collect</h3>
           <p>
             Information we collect includes both information you knowingly and
             actively provide us when using or participating in any of our
             services and promotions, and any information automatically sent by
             your devices in the course of accessing our products and services.{" "}
           </p>
-          <h4 className={`mt-2 text-lg font-bold`}>Log Data</h4>
+          <h4 className="mt-2 text-body font-semibold text-foreground">Log Data</h4>
           <p>
             When you visit our website, our servers may automatically log the
             standard data provided by your web browser. It may include your
@@ -99,7 +100,7 @@ export default function PrivacyPolicyPage() {
             identifying by itself, it may be possible to combine it with other
             data to personally identify individual persons.{" "}
           </p>
-          <h4 className={`mt-2 text-lg font-bold`}>Device Data</h4>
+          <h4 className="mt-2 text-body font-semibold text-foreground">Device Data</h4>
           <p>
             When you visit our website or interact with our services, we may
             automatically collect data about your device, such as:{" "}
@@ -115,7 +116,7 @@ export default function PrivacyPolicyPage() {
             manufacturer or software provider to learn what information they
             make available to us.{" "}
           </p>
-          <h4 className={`mt-2 text-lg font-bold`}>Personal Information</h4>
+          <h4 className="mt-2 text-body font-semibold text-foreground">Personal Information</h4>
           <p>
             We may ask for personal information which may include one or more of
             the following:{" "}
@@ -124,7 +125,7 @@ export default function PrivacyPolicyPage() {
             <li className="mb-1 list-disc">Name</li>
             <li className="mb-1 list-disc">Email</li>
           </ul>
-          <h4 className={`mt-2 text-lg font-bold`}>
+          <h4 className="mt-2 text-body font-semibold text-foreground">
             Legitimate Reasons for Processing Your Personal Information
           </h4>
           <p>
@@ -133,7 +134,7 @@ export default function PrivacyPolicyPage() {
             personal information that is reasonably necessary to provide our
             services to you.{" "}
           </p>
-          <h4 className={`mt-2 text-lg font-bold`}>
+          <h4 className="mt-2 text-body font-semibold text-foreground">
             Collection and Use of Information
           </h4>
           <p>
@@ -186,7 +187,7 @@ export default function PrivacyPolicyPage() {
             with general information or research data we receive from other
             trusted sources.{" "}
           </p>
-          <h4 className={`mt-2 text-lg font-bold`}>
+          <h4 className="mt-2 text-body font-semibold text-foreground">
             Security of Your Personal Information
           </h4>
           <p>
@@ -207,7 +208,7 @@ export default function PrivacyPolicyPage() {
             security strength, ensuring the security of your own information
             within the bounds of our services.{" "}
           </p>
-          <h4 className={`mt-2 text-lg font-bold`}>
+          <h4 className="mt-2 text-body font-semibold text-foreground">
             How Long We Keep Your Personal Information
           </h4>
           <p>
@@ -223,13 +224,13 @@ export default function PrivacyPolicyPage() {
             for archiving purposes in the public interest, scientific, or
             historical research purposes or statistical purposes.{" "}
           </p>
-          <h3 className={`mt-4 text-2xl font-bold`}>Children's Privacy</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Children's Privacy</h3>
           <p>
             We do not aim any of our products or services directly at children
             under the age of 13, and we do not knowingly collect personal
             information about children under 13.{" "}
           </p>
-          <h3 className={`mt-4 text-2xl font-bold`}>
+          <h3 className="mt-4 text-heading-s text-foreground">
             Disclosure of Personal Information to Third Parties
           </h3>
           <p>We may disclose personal information to: </p>
@@ -264,7 +265,7 @@ export default function PrivacyPolicyPage() {
               third parties to collect and process data
             </li>
           </ul>
-          <h3 className={`mt-4 text-2xl font-bold`}>
+          <h3 className="mt-4 text-heading-s text-foreground">
             International Transfers of Personal Information
           </h3>
           <p>
@@ -282,7 +283,7 @@ export default function PrivacyPolicyPage() {
             transferred personal information in accordance with this privacy
             policy.{" "}
           </p>
-          <h3 className={`mt-4 text-2xl font-bold`}>
+          <h3 className="mt-4 text-heading-s text-foreground">
             Your Rights and Controlling Your Personal Information
           </h3>
           <p>
@@ -327,7 +328,7 @@ export default function PrivacyPolicyPage() {
             contact a regulatory body or data protection authority in relation
             to your complaint.{" "}
           </p>
-          <h3 className={`mt-4 text-2xl font-bold`}>Use of Cookies</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Use of Cookies</h3>
           <p>
             We use &ldquo;cookies&rdquo; to collect information about you and
             your activity across our site. A cookie is a small piece of data
@@ -336,14 +337,14 @@ export default function PrivacyPolicyPage() {
             serve you content based on preferences you have specified.{" "}
           </p>
           <p>Please refer to our Cookie Policy for more information. </p>
-          <h3 className={`mt-4 text-2xl font-bold`}>Limits of Our Policy</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Limits of Our Policy</h3>
           <p>
             Our website may link to external sites that are not operated by us.
             Please be aware that we have no control over the content and
             policies of those sites, and cannot accept responsibility or
             liability for their respective privacy practices.{" "}
           </p>
-          <h3 className={`mt-4 text-2xl font-bold`}>Changes to This Policy</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Changes to This Policy</h3>
           <p>
             At our discretion, we may change our privacy policy to reflect
             updates to our business processes, current acceptable practices, or
@@ -356,23 +357,23 @@ export default function PrivacyPolicyPage() {
             opportunity to opt in to or opt out of, as applicable, any new uses
             of your personal information.{" "}
           </p>
-          <h3 className={`mt-4 text-2xl font-bold`}>Contact Us</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Contact Us</h3>
           <p>
             For any questions or concerns regarding your privacy, you may
             contact us using the following details:{" "}
           </p>
           <p>
-            <span className="">RAVENCI Team</span>
+            <span className="font-semibold text-foreground">RAVENCI Team</span>
             <br />
             <a
-              className={`text-ravenci-primary`}
+              className="text-accent hover:underline"
               href="mailto: hello@ravenci.solutions"
             >
               hello@ravenci.solutions
             </a>
           </p>
         </div>
-      </article>
-    </section>
+      </section>
+    </main>
   );
 }

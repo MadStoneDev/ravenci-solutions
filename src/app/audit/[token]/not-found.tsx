@@ -1,33 +1,28 @@
 import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
+import SectionLabel from "@/components/section-label";
+
 export default function AuditNotFound() {
   return (
-    <main className="min-h-screen bg-white flex items-center justify-center px-6">
+    <main className="flex min-h-screen items-center justify-center bg-background px-5 md:px-12 lg:px-20">
       <div className="max-w-md text-center">
-        <p className="text-xs font-bold tracking-widest uppercase text-ravenci-primary">
-          Audit not found
-        </p>
-        <h1 className="mt-4 text-3xl font-medium text-ravenci-dark">
+        <SectionLabel label="Audit not found" className="justify-center" />
+        <h1 className="mt-4 text-display-m text-foreground">
           We can&apos;t find that report
         </h1>
-        <p className="mt-4 text-neutral-600 leading-relaxed">
+        <p className="mt-4 text-body text-muted-foreground">
           The link may have expired or been mistyped. If you were expecting an
           audit and can&apos;t find the original email, get in touch and
           we&apos;ll resend the link.
         </p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-          <Link
-            href="/"
-            className="px-5 py-2.5 bg-ravenci-dark text-white rounded-full hover:bg-ravenci-primary transition-colors text-sm"
-          >
-            Back to RAVENCI
-          </Link>
-          <Link
-            href="/free-audit"
-            className="px-5 py-2.5 bg-white text-ravenci-dark border border-neutral-300 rounded-full hover:bg-neutral-100 transition-colors text-sm"
-          >
-            Request a new audit
-          </Link>
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <Button asChild size="lg" variant="primary">
+            <Link href="/">Back to RAVENCI</Link>
+          </Button>
+          <Button asChild size="lg" variant="secondary">
+            <Link href="/free-audit">Request a new audit</Link>
+          </Button>
         </div>
       </div>
     </main>

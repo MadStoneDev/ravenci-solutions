@@ -1,8 +1,9 @@
-﻿// /app/quote/success/page.tsx
+// /app/quote/success/page.tsx
 "use client";
 
 import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 interface SessionData {
   id: string;
@@ -54,22 +55,24 @@ function SuccessPageContent() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
+      <main className="flex min-h-screen items-center justify-center bg-background">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-ravenci-primary mx-auto mb-4"></div>
-          <p className="text-neutral-600">Loading your confirmation...</p>
+          <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2 border-accent"></div>
+          <p className="text-body text-muted-foreground">
+            Loading your confirmation...
+          </p>
         </div>
-      </div>
+      </main>
     );
   }
 
   if (error) {
     return (
-      <div className="min-h-screen bg-neutral-50 flex items-center justify-center p-5">
-        <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full text-center">
-          <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <main className="flex min-h-screen items-center justify-center bg-background px-5 py-14 md:px-12 md:py-20 lg:px-20">
+        <div className="w-full max-w-md rounded-sm border border-border bg-card p-8 text-center">
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-destructive/10">
             <svg
-              className="w-8 h-8 text-red-500"
+              className="h-8 w-8 text-destructive"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -82,18 +85,19 @@ function SuccessPageContent() {
               ></path>
             </svg>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          <h1 className="mb-2 text-heading-m text-foreground">
             Something went wrong
           </h1>
-          <p className="text-gray-600 mb-6">{error}</p>
-          <button
+          <p className="mb-6 text-body text-muted-foreground">{error}</p>
+          <Button
+            variant="primary"
+            className="w-full"
             onClick={() => router.push("/quote")}
-            className="w-full bg-ravenci-primary text-white py-2 px-4 rounded-lg hover:bg-ravenci-primary/80 transition-colors"
           >
             Back to Quote
-          </button>
+          </Button>
         </div>
-      </div>
+      </main>
     );
   }
 
@@ -101,12 +105,12 @@ function SuccessPageContent() {
     sessionData?.metadata?.payment_type === "installments";
 
   return (
-    <main className="min-h-screen bg-neutral-50 flex items-center justify-center p-5">
-      <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full text-center">
+    <main className="flex min-h-screen items-center justify-center bg-background px-5 py-14 md:px-12 md:py-20 lg:px-20">
+      <div className="w-full max-w-md rounded-sm border border-border bg-card p-8 text-center">
         <div className="mb-6">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent/10">
             <svg
-              className="w-8 h-8 text-green-500"
+              className="h-8 w-8 text-accent"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -119,12 +123,12 @@ function SuccessPageContent() {
               ></path>
             </svg>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          <h1 className="mb-2 text-heading-m text-foreground">
             {isInstallmentPlan
-              ? "Installment Plan Set Up!"
-              : "Payment Successful!"}
+              ? "Installment Plan Set Up"
+              : "Payment Successful"}
           </h1>
-          <p className="text-gray-600">
+          <p className="text-body text-muted-foreground">
             {isInstallmentPlan
               ? "Your installment plan has been set up successfully. You'll receive automatic invoices each month."
               : "Thank you for your purchase. We've received your payment and will be in touch soon."}
@@ -132,21 +136,23 @@ function SuccessPageContent() {
         </div>
 
         {sessionData && (
-          <div className="mb-6 p-4 bg-gray-50 rounded-lg text-left">
-            <h3 className="font-semibold mb-3">Order Summary:</h3>
-            <div className="space-y-2 text-sm">
+          <div className="mb-6 rounded-sm border border-border bg-muted p-4 text-left">
+            <h2 className="mb-3 text-heading-s text-foreground">
+              Order Summary
+            </h2>
+            <div className="space-y-2 text-small">
               <div className="flex justify-between">
-                <span className="text-gray-600">Service:</span>
-                <span className="font-medium">
+                <span className="text-muted-foreground">Service:</span>
+                <span className="font-medium text-foreground">
                   {sessionData.metadata?.service_name}
                 </span>
               </div>
 
               <div className="flex justify-between">
-                <span className="text-gray-600">
+                <span className="text-muted-foreground">
                   {isInstallmentPlan ? "First Payment:" : "Amount:"}
                 </span>
-                <span className="font-medium">
+                <span className="font-medium text-foreground">
                   ${((sessionData.amount_total || 0) / 100).toFixed(2)}
                 </span>
               </div>
@@ -154,14 +160,16 @@ function SuccessPageContent() {
               {isInstallmentPlan && (
                 <>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Payment Plan:</span>
-                    <span className="font-medium">
+                    <span className="text-muted-foreground">Payment Plan:</span>
+                    <span className="font-medium text-foreground">
                       {sessionData.metadata?.installment_plan}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Total Payments:</span>
-                    <span className="font-medium">
+                    <span className="text-muted-foreground">
+                      Total Payments:
+                    </span>
+                    <span className="font-medium text-foreground">
                       {sessionData.metadata?.total_installments}
                     </span>
                   </div>
@@ -169,25 +177,27 @@ function SuccessPageContent() {
               )}
 
               <div className="flex justify-between">
-                <span className="text-gray-600">Status:</span>
-                <span className="font-medium text-green-600 capitalize">
+                <span className="text-muted-foreground">Status:</span>
+                <span className="font-medium capitalize text-accent">
                   {sessionData.payment_status}
                 </span>
               </div>
 
               {sessionData.customer_email && (
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Email:</span>
-                  <span className="font-medium">
+                  <span className="text-muted-foreground">Email:</span>
+                  <span className="font-medium text-foreground">
                     {sessionData.customer_email}
                   </span>
                 </div>
               )}
 
               {sessionData.metadata?.comments && (
-                <div className="pt-2 border-t">
-                  <span className="text-gray-600 block mb-1">Notes:</span>
-                  <span className="font-medium text-sm">
+                <div className="border-t border-border pt-2">
+                  <span className="mb-1 block text-muted-foreground">
+                    Notes:
+                  </span>
+                  <span className="text-small font-medium text-foreground">
                     {sessionData.metadata.comments}
                   </span>
                 </div>
@@ -197,26 +207,28 @@ function SuccessPageContent() {
         )}
 
         <div className="space-y-3">
-          <p className="text-sm text-gray-600">
+          <p className="text-small text-muted-foreground">
             {isInstallmentPlan
               ? "A confirmation email has been sent with your installment schedule."
               : "A confirmation email has been sent to your email address."}
           </p>
 
           <div className="space-y-2">
-            <button
+            <Button
+              variant="primary"
+              className="w-full"
               onClick={() => router.push("/")}
-              className="w-full bg-ravenci-primary text-white py-2 px-4 rounded-lg hover:bg-ravenci-primary/80 transition-colors"
             >
               Return to Home
-            </button>
+            </Button>
 
-            <button
+            <Button
+              variant="secondary"
+              className="w-full"
               onClick={() => router.push("/quote")}
-              className="w-full bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors"
             >
               Create Another Quote
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -227,12 +239,12 @@ function SuccessPageContent() {
 // Loading fallback component
 function LoadingFallback() {
   return (
-    <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
+    <main className="flex min-h-screen items-center justify-center bg-background">
       <div className="text-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-ravenci-primary mx-auto mb-4"></div>
+        <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2 border-accent"></div>
         <span className="sr-only">Loading</span>
       </div>
-    </div>
+    </main>
   );
 }
 

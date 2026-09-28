@@ -4,9 +4,7 @@ import {
   getAllSlugs,
   getCaseStudyBySlug,
 } from "@/data/case-studies";
-import CaseStudyResultsDriven from "@/components/case-study-results-driven";
-import CaseStudyVisualShowcase from "@/components/case-study-visual-showcase";
-import CaseStudyPremium from "@/components/case-study-premium";
+import CaseStudyLayout from "@/components/case-study-layout";
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -118,13 +116,7 @@ export default async function CaseStudyPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
 
-      {caseStudy.template === "premium" ? (
-        <CaseStudyPremium caseStudy={caseStudy} />
-      ) : caseStudy.template === "visual-showcase" ? (
-        <CaseStudyVisualShowcase caseStudy={caseStudy} />
-      ) : (
-        <CaseStudyResultsDriven caseStudy={caseStudy} />
-      )}
+      <CaseStudyLayout caseStudy={caseStudy} />
     </main>
   );
 }

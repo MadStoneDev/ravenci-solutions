@@ -1,6 +1,11 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import { Metadata } from "next";
 
+import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
+
 export const metadata: Metadata = {
   title: "Terms and Conditions | RAVENCI Solutions",
   description:
@@ -19,28 +24,24 @@ export const metadata: Metadata = {
 
 export default function TermsAndConditionsPage() {
   return (
-    <section className={``}>
-      <article
-        className={`content-section py-32 px-5 sm:px-20 xl:px-36 flex flex-col bg-ravenci-dark text-white`}
-      >
-        <h1 className={`text-4xl md:text-5xl lg:text-h1 font-medium`}>
-          Terms and Conditions
-        </h1>
-        <h2 className={`text-2xl md:text-3xl lg:text-h2 font-light`}>
-          Terms of Service
-        </h2>
-      </article>
+    <main className="flex flex-col">
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="flex max-w-3xl flex-col gap-4">
+          <Breadcrumbs items={[{ label: "Terms and Conditions" }]} />
+          <SectionLabel label="Legal" tick />
+          <h1 className="text-display-l text-foreground">
+            Terms and Conditions
+          </h1>
+          <p className="text-lead text-muted-foreground">Terms of Service.</p>
+        </div>
+      </section>
 
-      <article
-        className={`content-section py-20 px-5 sm:px-20 xl:px-36 pb-16 lg:pb-32 bg-white`}
-      >
-        <div
-          className={`col-span-12 lg:col-span-8 flex flex-col justify-center gap-5 max-w-3xl`}
-        >
-          <p className={`max-w-3xl`}>
+      <section className={SECTION}>
+        <div className="flex max-w-prose flex-col gap-5 text-body text-muted-foreground">
+          <p>
             These Terms of Service govern your use of the website located at{" "}
             <a
-              className={`text-ravenci-primary`}
+              className="text-accent hover:underline"
               href="https://ravenci.solutions"
             >
               https://ravenci.solutions
@@ -50,7 +51,7 @@ export default function TermsAndConditionsPage() {
           <p>
             By accessing{" "}
             <a
-              className={`text-ravenci-primary`}
+              className="text-accent hover:underline"
               href="https://ravenci.solutions"
             >
               https://ravenci.solutions
@@ -68,7 +69,7 @@ export default function TermsAndConditionsPage() {
           </p>
           <p>These Terms of Service were last updated on 14 April 2021.</p>
 
-          <h3 className={`mt-4 text-2xl font-bold`}>Limitations of Use</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Limitations of Use</h3>
           <p>
             By using this website, you warrant on behalf of yourself, your
             users, and other parties you represent that you will not:
@@ -115,7 +116,7 @@ export default function TermsAndConditionsPage() {
             </li>
           </ul>
 
-          <h3 className={`mt-4 text-2xl font-bold`}>Intellectual Property</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Intellectual Property</h3>
           <p>
             The intellectual property in the materials contained in this website
             are owned by or licensed to RAVENCI and are protected by applicable
@@ -130,7 +131,7 @@ export default function TermsAndConditionsPage() {
             RAVENCI at any time.
           </p>
 
-          <h3 className={`mt-4 text-2xl font-bold`}>Liability</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Liability</h3>
           <p>
             Our website and the materials on our website are provided on an 'as
             is' basis. To the extent permitted by law, RAVENCI makes no
@@ -163,7 +164,7 @@ export default function TermsAndConditionsPage() {
             incidental damages, these limitations may not apply to you.
           </p>
 
-          <h3 className={`mt-4 text-2xl font-bold`}>Accuracy of Materials</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Accuracy of Materials</h3>
           <p>
             The materials appearing on our website are not comprehensive and are
             for general information purposes only. RAVENCI does not warrant or
@@ -173,7 +174,7 @@ export default function TermsAndConditionsPage() {
             this website.
           </p>
 
-          <h3 className={`mt-4 text-2xl font-bold`}>Links</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Links</h3>
           <p>
             RAVENCI has not reviewed all of the sites linked to its website and
             is not responsible for the contents of any such linked site. The
@@ -183,14 +184,14 @@ export default function TermsAndConditionsPage() {
             investigations with respect to the suitability of those sites.
           </p>
 
-          <h3 className={`mt-4 text-2xl font-bold`}>Right to Terminate</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Right to Terminate</h3>
           <p>
             We may suspend or terminate your right to use our website and
             terminate these Terms of Service immediately upon written notice to
             you for any breach of these Terms of Service.
           </p>
 
-          <h3 className={`mt-4 text-2xl font-bold`}>Severance</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Severance</h3>
           <p>
             Any term of these Terms of Service which is wholly or partially void
             or unenforceable is severed to the extent that it is void or
@@ -198,30 +199,30 @@ export default function TermsAndConditionsPage() {
             Service is not affected.
           </p>
 
-          <h3 className={`mt-4 text-2xl font-bold`}>Governing Law</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Governing Law</h3>
           <p>
             These Terms of Service are governed by and construed in accordance
             with the laws of Australia. You irrevocably submit to the exclusive
             jurisdiction of the courts in that State or location.
           </p>
 
-          <h3 className={`mt-4 text-2xl font-bold`}>Contact Us</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Contact Us</h3>
           <p>
             For any questions or concerns regarding these terms, you may contact
             us using the following details:
           </p>
           <p>
-            <span className="">RAVENCI Team</span>
+            <span className="font-semibold text-foreground">RAVENCI Team</span>
             <br />
             <a
-              className={`text-ravenci-primary`}
+              className="text-accent hover:underline"
               href="mailto: hello@ravenci.solutions"
             >
               hello@ravenci.solutions
             </a>
           </p>
         </div>
-      </article>
-    </section>
+      </section>
+    </main>
   );
 }

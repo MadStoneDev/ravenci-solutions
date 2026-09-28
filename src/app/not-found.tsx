@@ -1,39 +1,31 @@
-﻿"use client";
+"use client";
 
-import Link from "next/link";
 import { IconArrowLeft } from "@tabler/icons-react";
+
+import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
-    <main className={`flex flex-col`}>
-      <section
-        className={`content-section py-32 px-5 sm:px-20 xl:px-36 grid gap-6 justify-center min-h-[500px] bg-white`}
-      >
-        <article
-          className={`pb-16 lg:pb-0 flex flex-col justify-center items-center max-w-sm`}
-        >
-          <h1
-            className={`max-w-[500px] lg:max-w-[660px] text-4xl md:text-5xl lg:text-h1 text-center font-medium text-ravenci-dark`}
-          >
-            404
-          </h1>
-          <h2 className={`text-2xl text-center`}>Ok, that's embarrassing.</h2>
-          <p className={`mt-10 text-lg text-center`}>
-            We have no idea how you got here but let's get you back to where you
-            were last!
+    <main className="flex flex-col">
+      <section className="flex min-h-[500px] items-center justify-center bg-background px-5 py-32 md:px-12 lg:px-20">
+        <article className="flex max-w-sm flex-col items-center text-center">
+          <h1 className="text-display-m text-foreground">404</h1>
+          <h2 className="mt-2 text-heading-s text-foreground">
+            Ok, that&apos;s embarrassing.
+          </h2>
+          <p className="mt-8 text-body text-muted-foreground">
+            We have no idea how you got here, but let&apos;s get you back to
+            where you were last.
           </p>
-          <button
-            type="button"
-            className={`group relative mt-10 pl-2 pr-3 py-1 inline-flex items-center gap-2 w-fit hover:text-white transition-all duration-300 rounded-full`}
+          <Button
             onClick={() => window.history.back()}
+            variant="primary"
+            size="lg"
+            className="mt-10"
           >
-            <IconArrowLeft size={18} className={`z-10`} />
-            <span className={`z-10`}>Go Back</span>
-
-            <div
-              className={`absolute top-0 right-0 bottom-0 left-full group-hover:left-0 bg-ravenci-primary transition-all duration-300 ease-in-out`}
-            />
-          </button>
+            <IconArrowLeft size={18} />
+            Go back
+          </Button>
         </article>
       </section>
     </main>

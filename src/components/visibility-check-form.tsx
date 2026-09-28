@@ -6,6 +6,10 @@ import { IconSearch, IconCheck } from "@tabler/icons-react";
 
 import { trackLead } from "@/lib/analytics";
 
+const FIELD =
+  "h-12 w-full rounded-sm border border-input/60 bg-background px-3.5 text-body text-foreground outline-none transition-colors focus:border-accent";
+const LABEL = "mb-1.5 block font-mono text-label-sm uppercase text-muted-foreground";
+
 export default function VisibilityCheckForm() {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -44,13 +48,7 @@ export default function VisibilityCheckForm() {
 
         trackLead("visibility-check");
         setStatus("success");
-        setFormData({
-          name: "",
-          email: "",
-          businessName: "",
-          websiteUrl: "",
-          intent: "",
-        });
+        setFormData({ name: "", email: "", businessName: "", websiteUrl: "", intent: "" });
       } catch (err) {
         setStatus("error");
         setErrorMessage(
@@ -63,97 +61,79 @@ export default function VisibilityCheckForm() {
 
   if (status === "success") {
     return (
-      <div className="py-12 flex flex-col items-center text-center">
-        <div className="mb-4 p-3 rounded-full bg-green-100">
-          <IconCheck size={32} className="text-green-600" />
+      <div className="flex flex-col items-center rounded-sm border border-border bg-card p-10 text-center">
+        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-accent text-accent">
+          <IconCheck size={28} />
         </div>
-        <h3 className="text-2xl font-semibold mb-2">Request Received</h3>
-        <p className="text-neutral-600 max-w-md">
-          I&apos;ll review your website and send your free visibility report
-          within 2 business days. Keep an eye on your inbox.
+        <h3 className="text-heading-s text-foreground">Request received</h3>
+        <p className="mt-2 max-w-md text-small text-muted-foreground">
+          I&apos;ll review your website and send your free visibility report within
+          two business days. Keep an eye on your inbox.
         </p>
       </div>
     );
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-2xl mx-auto p-6 md:p-8 bg-white brutalist-card rounded-lg"
-    >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <form onSubmit={handleSubmit} className="rounded-sm border border-border bg-card p-6 md:p-8">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
-          <label htmlFor="vc-name" className="block text-sm font-medium text-neutral-700 mb-1">
-            Your Name
-          </label>
+          <label htmlFor="vc-name" className={LABEL}>Your name</label>
           <input
             id="vc-name"
             type="text"
             required
             value={formData.name}
-            onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
-            placeholder="Jane Smith"
-            className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-ravenci-primary focus:border-transparent outline-none transition-all"
+            onChange={(e) => setFormData((p) => ({ ...p, name: e.target.value }))}
+            placeholder="Jane Whitlock"
+            className={FIELD}
           />
         </div>
         <div>
-          <label htmlFor="vc-email" className="block text-sm font-medium text-neutral-700 mb-1">
-            Email Address
-          </label>
+          <label htmlFor="vc-email" className={LABEL}>Email</label>
           <input
             id="vc-email"
             type="email"
             required
             value={formData.email}
-            onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-            placeholder="jane@example.com"
-            className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-ravenci-primary focus:border-transparent outline-none transition-all"
+            onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
+            placeholder="jane@company.com.au"
+            className={FIELD}
           />
         </div>
         <div>
-          <label htmlFor="vc-business" className="block text-sm font-medium text-neutral-700 mb-1">
-            Business Name
-          </label>
+          <label htmlFor="vc-business" className={LABEL}>Business name</label>
           <input
             id="vc-business"
             type="text"
             required
             value={formData.businessName}
-            onChange={(e) => setFormData((prev) => ({ ...prev, businessName: e.target.value }))}
-            placeholder="Smith & Co."
-            className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-ravenci-primary focus:border-transparent outline-none transition-all"
+            onChange={(e) => setFormData((p) => ({ ...p, businessName: e.target.value }))}
+            placeholder="Whitlock Constructions"
+            className={FIELD}
           />
         </div>
         <div>
-          <label htmlFor="vc-website" className="block text-sm font-medium text-neutral-700 mb-1">
-            Website URL
-          </label>
+          <label htmlFor="vc-website" className={LABEL}>Website URL</label>
           <input
             id="vc-website"
             type="url"
             required
             value={formData.websiteUrl}
-            onChange={(e) => setFormData((prev) => ({ ...prev, websiteUrl: e.target.value }))}
-            placeholder="https://example.com"
-            className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-ravenci-primary focus:border-transparent outline-none transition-all"
+            onChange={(e) => setFormData((p) => ({ ...p, websiteUrl: e.target.value }))}
+            placeholder="https://"
+            className={FIELD}
           />
         </div>
       </div>
 
-      <div className="mb-4">
-        <label
-          htmlFor="vc-intent"
-          className="block text-sm font-medium text-neutral-700 mb-1"
-        >
-          What brought you here? <span className="text-neutral-400">(optional)</span>
-        </label>
+      <div className="mt-4">
+        <label htmlFor="vc-intent" className={LABEL}>What are you after? (optional)</label>
         <select
           id="vc-intent"
           value={formData.intent}
-          onChange={(e) =>
-            setFormData((prev) => ({ ...prev, intent: e.target.value }))
-          }
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-ravenci-primary focus:border-transparent outline-none transition-all bg-white"
+          onChange={(e) => setFormData((p) => ({ ...p, intent: e.target.value }))}
+          className={`${FIELD} appearance-none`}
         >
           <option value="">Pick the closest match (optional)</option>
           <option value="rebuild">Considering a rebuild</option>
@@ -165,32 +145,32 @@ export default function VisibilityCheckForm() {
       </div>
 
       {status === "error" && (
-        <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-          <p className="text-red-600 text-sm">{errorMessage}</p>
+        <div className="mt-4 rounded-sm border border-destructive/40 bg-destructive/10 p-3">
+          <p className="text-small text-destructive">{errorMessage}</p>
         </div>
       )}
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full sm:w-auto px-8 py-3 bg-ravenci-primary text-white font-semibold rounded-lg hover:bg-ravenci-primary/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded-sm bg-accent px-6 text-sm font-semibold text-accent-foreground transition-all duration-fast hover:bg-accent/90 disabled:opacity-50"
       >
         {status === "loading" ? (
           <>
-            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" />
+            <span className="h-4 w-4 animate-spin rounded-full border-2 border-accent-foreground border-t-transparent" />
             Sending...
           </>
         ) : (
           <>
-            <IconSearch size={18} />
-            Get My Free Report
+            <IconSearch size={18} aria-hidden />
+            Get my free report
           </>
         )}
       </button>
 
-      <p className="mt-3 text-xs text-neutral-500">
-        No spam, no obligation. I&apos;ll only use your email to send the
-        report. Protected by reCAPTCHA.
+      <p className="mt-3 text-small text-muted-foreground">
+        Sent by me, usually within a business day. No mailing list, no follow-up
+        sequence. Protected by reCAPTCHA.
       </p>
     </form>
   );

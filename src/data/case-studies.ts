@@ -246,7 +246,9 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 
   // ── 2. NNAccountability ─────────────────────────────────────────────────────
-  // TODO: Richard to fill in real hero copy, problem/approach/results, screenshots
+  // Not publicly listed: the client moved the site to another host without
+  // consent while still being billed for RAVENCI hosting. Kept as a record
+  // only. hidden:true keeps it out of all listings.
   {
     slug: "nnaccountability",
     clientName: "NNAccountability",
@@ -260,18 +262,16 @@ export const CASE_STUDIES: CaseStudy[] = [
     cardImage: "/showcase-images/Client - NNAccountability.png",
     featuredImageScroll: true,
     clientLogo: "/clients/nnaccountability-logo.svg",
-    // Currently on temporary subdomain; migrating to nnaccountability.com.au at launch
-    clientUrl: "https://nnaccountability.ravenci.solutions",
+    clientUrl: "https://nnaccountability.com.au",
     template: "premium",
     metaTitle: "NNAccountability Case Study | RAVENCI Solutions",
     metaDescription:
       "A rebuilt WordPress site for NNAccountability, Australian accountants and Xero specialists. Found RAVENCI through AI and search; chose local because reachable matters.",
     heroHeadline: "A rebuilt website for an Australian accounting and Xero practice",
     heroSubheadline:
-      "Nikoletta runs NNAccountability, an Australian accounting and Xero specialist practice helping businesses set up, integrate and train on the software underneath their finance work. She found me through AI search and Google, picked up the phone, and hired me to renew her website. Built on WordPress with a RAVENCI-customised Zion Builder, currently in staging awaiting final feedback before launch.",
+      "Nikoletta runs NNAccountability, an Australian accounting and Xero specialist practice helping businesses set up, integrate and train on the software underneath their finance work. She found me through AI search and Google, picked up the phone, and hired me to renew her website. Built on WordPress with a RAVENCI-customised Zion Builder, and now live at nnaccountability.com.au.",
 
     year: 2026,
-    timeline: "In progress",
     techStack: ["WordPress", "Zion Builder", "JavaScript", "PHP"],
     collaborators: [
       { role: "Development", name: "RAVENCI Solutions" },
@@ -291,7 +291,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "WordPress, custom builder, and a staging-first workflow",
       paragraphs: [
         "We built on WordPress with a RAVENCI-customised Zion Builder so Nikoletta and her team can keep updating copy themselves once the site is live. PHP and JavaScript handle the parts the builder doesn't natively cover.",
-        "The project runs through a staging site first: every revision visible before anything reaches the live domain. That lets Nikoletta walk through changes at her pace, give feedback in context, and approve each round without surprises. The site is currently in staging awaiting first-round feedback; once that's resolved, it moves to nnaccountability.com.au.",
+        "The project ran through a staging site first: every revision visible before anything reached the live domain. That let Nikoletta walk through changes at her pace, give feedback in context, and approve each round without surprises. Once she'd signed off, it moved to its permanent home at nnaccountability.com.au.",
       ],
       highlights: [
         "WordPress + RAVENCI-customised Zion Builder",
@@ -309,9 +309,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
     results: {
-      heading: "In staging, almost live",
+      heading: "Live, and hers to run",
       paragraphs: [
-        "The site is currently live in staging at nnaccountability.ravenci.solutions while Nikoletta and her team work through the first round of feedback. Once that's resolved, it moves to its permanent home at nnaccountability.com.au.",
+        "The site is live at nnaccountability.com.au, built on WordPress with a RAVENCI-customised Zion Builder so Nikoletta and her team can keep the copy current themselves.",
         "What Nikoletta got, and what mattered most to her in choosing RAVENCI, was a developer she could actually reach: based in Australia, on the phone when she needs to be, working through revisions with her directly. No tickets disappearing into a queue, no overseas team adding a day to every email, no agency layer between her and the person building the site.",
       ],
     },
@@ -321,8 +321,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       "coming-soon", // Contact / About page
     ],
     order: 2,
-    featured: true,
-    hidden: true, // In progress; un-hide once the live site is launched at nnaccountability.com.au
+    featured: false,
+    hidden: true, // Client moved hosts without consent; not publicly listed.
   },
 
   // ── 3. GoingDark ───────────────────────────────────────────────────────────

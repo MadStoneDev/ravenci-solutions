@@ -1,6 +1,11 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import { Metadata } from "next";
 
+import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
+
+const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
+
 export const metadata: Metadata = {
   title: "Accessibility Statement | RAVENCI Solutions",
   description:
@@ -19,22 +24,22 @@ export const metadata: Metadata = {
 
 export default function AccessibilityStatementPage() {
   return (
-    <section>
-      <article
-        className="content-section py-32 px-5 sm:px-20 xl:px-36 flex flex-col bg-ravenci-dark text-white"
-      >
-        <h1 className="text-4xl md:text-5xl lg:text-h1 font-medium">
-          Accessibility Statement
-        </h1>
-        <h2 className="text-2xl md:text-3xl lg:text-h2 font-light">
-          Our commitment to an inclusive web
-        </h2>
-      </article>
+    <main className="flex flex-col">
+      <section className={`${SECTION} border-b border-border`}>
+        <div className="flex max-w-3xl flex-col gap-4">
+          <Breadcrumbs items={[{ label: "Accessibility Statement" }]} />
+          <SectionLabel label="Legal" tick />
+          <h1 className="text-display-l text-foreground">
+            Accessibility Statement
+          </h1>
+          <p className="text-lead text-muted-foreground">
+            Our commitment to an inclusive web.
+          </p>
+        </div>
+      </section>
 
-      <article
-        className="content-section py-20 px-5 sm:px-20 xl:px-36 pb-16 lg:pb-32 bg-white"
-      >
-        <div className="col-span-12 lg:col-span-8 flex flex-col justify-center gap-5 max-w-3xl">
+      <section className={SECTION}>
+        <div className="flex max-w-prose flex-col gap-5 text-body text-muted-foreground">
           <p>
             RAVENCI Solutions is committed to ensuring our website is accessible
             to everyone, including people with disabilities. We continuously
@@ -42,7 +47,7 @@ export default function AccessibilityStatementPage() {
             relevant accessibility standards.
           </p>
 
-          <h3 className="mt-4 text-xl font-bold">Standards We Follow</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Standards We Follow</h3>
           <p>
             We aim to conform to the Web Content Accessibility Guidelines (WCAG)
             2.1 at Level AA. These guidelines explain how to make web content
@@ -51,7 +56,7 @@ export default function AccessibilityStatementPage() {
             learning, and neurological disabilities.
           </p>
 
-          <h3 className="mt-4 text-xl font-bold">What We Do</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">What We Do</h3>
           <ul className="pl-5 list-disc space-y-2">
             <li>
               Use semantic HTML to ensure content is structured and meaningful
@@ -81,7 +86,7 @@ export default function AccessibilityStatementPage() {
             </li>
           </ul>
 
-          <h3 className="mt-4 text-xl font-bold">Third-Party Content</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Third-Party Content</h3>
           <p>
             Our website may include content from third-party services (such as
             embedded videos, maps, or analytics tools). While we strive to
@@ -89,14 +94,14 @@ export default function AccessibilityStatementPage() {
             compliance for content controlled by external providers.
           </p>
 
-          <h3 className="mt-4 text-xl font-bold">Ongoing Improvements</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Ongoing Improvements</h3>
           <p>
             Accessibility is an ongoing effort. We regularly review our website
             and make updates to improve usability. As web standards evolve, we
             update our practices to reflect current best practices.
           </p>
 
-          <h3 className="mt-4 text-xl font-bold">Feedback</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Feedback</h3>
           <p>
             If you experience any difficulty accessing our website or have
             suggestions for improvement, we want to hear from you. Please
@@ -107,14 +112,14 @@ export default function AccessibilityStatementPage() {
               Email:{" "}
               <a
                 href="mailto:hello@ravenci.solutions"
-                className="text-ravenci-primary"
+                className="text-accent hover:underline"
               >
                 hello@ravenci.solutions
               </a>
             </li>
             <li>
               Phone:{" "}
-              <a href="tel:+61731061836" className="text-ravenci-primary">
+              <a href="tel:+61731061836" className="text-accent hover:underline">
                 (07) 3106 1836
               </a>
             </li>
@@ -124,11 +129,11 @@ export default function AccessibilityStatementPage() {
             respond within 2 business days.
           </p>
 
-          <p className="mt-8 text-sm text-neutral-400">
+          <p className="mt-8 text-small text-muted-foreground">
             This statement was last updated on 4 March 2026.
           </p>
         </div>
-      </article>
-    </section>
+      </section>
+    </main>
   );
 }
