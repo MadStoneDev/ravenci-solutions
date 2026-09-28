@@ -246,8 +246,9 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 
   // ── 2. NNAccountability ─────────────────────────────────────────────────────
-  // Live at nnaccountability.com.au. Two galleryImages remain "coming-soon"
-  // pending final screenshots (same sentinel other live case studies use).
+  // Not publicly listed: the client moved the site to another host without
+  // consent while still being billed for RAVENCI hosting. Kept as a record
+  // only. hidden:true keeps it out of all listings.
   {
     slug: "nnaccountability",
     clientName: "NNAccountability",
@@ -320,7 +321,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       "coming-soon", // Contact / About page
     ],
     order: 2,
-    featured: true,
+    featured: false,
+    hidden: true, // Client moved hosts without consent; not publicly listed.
   },
 
   // ── 3. GoingDark ───────────────────────────────────────────────────────────
