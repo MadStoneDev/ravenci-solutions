@@ -140,6 +140,20 @@ export default function MainNavigation() {
     setMenuOpen(false);
   }, [pathname]);
 
+  // Close the drawer once the viewport reaches the desktop breakpoint. The
+  // drawer and its close button are lg:hidden, so if the menu was left open
+  // while resizing/zooming past lg, menuOpen (and the body scroll lock below)
+  // would otherwise stick with no visible way to clear it.
+  useEffect(() => {
+    const wide = window.matchMedia("(min-width: 1024px)");
+    const close = () => {
+      if (wide.matches) setMenuOpen(false);
+    };
+    close();
+    wide.addEventListener("change", close);
+    return () => wide.removeEventListener("change", close);
+  }, []);
+
   // Lock body scroll while the drawer is open.
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
