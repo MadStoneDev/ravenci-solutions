@@ -63,6 +63,29 @@ const groups: PriceGroup[] = [
     ],
   },
   {
+    heading: "Web Apps & Platforms",
+    href: "/web-apps",
+    blurb:
+      "Custom software built around how your business actually works, not bent around someone else's.",
+    items: [
+      {
+        name: "Web App / Client Portal",
+        price: "from $35,000",
+        line: "Logins, roles, job tracking and document handover, wired into the tools you already run.",
+      },
+      {
+        name: "Business Platform",
+        price: "from $55,000",
+        line: "A full platform that replaces the spreadsheets and duplicate systems eating your team's time.",
+      },
+      {
+        name: "Enterprise Build",
+        price: "from $75,000",
+        line: "Larger builds designed to scale from where you are now to where you're heading.",
+      },
+    ],
+  },
+  {
     heading: "Branding",
     href: "/business-design",
     blurb: "A brand that looks as established as the work behind it.",

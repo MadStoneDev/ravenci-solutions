@@ -585,11 +585,136 @@ export const SEO_CONTENT: ServicePageData = {
   },
 };
 
+export const BRANDING: ServicePageData = {
+  slug: "business-design",
+  breadcrumbLabel: "Branding",
+  name: "Branding that looks as established as the work behind it",
+  outcome:
+    "I design the brand that makes a customer trust you before you've said a word, from the logo out to the ute in the car park.",
+  supporting:
+    "Logo and guidelines, full identity systems, signage and vehicle wraps. I don't print in-house, but I coordinate it through the same local suppliers and installers I've worked with for close to a decade.",
+  heroCtas: {
+    primary: { label: "Request a proposal", href: "/launch-your-vision" },
+    secondary: { label: "What's included", href: "#included" },
+  },
+  pricingAnchor: {
+    fromLabel: "FROM",
+    price: "$3,500",
+    note: "Logo and guidelines from $3,500. Full brand identity from $10,000. Signage and vehicle wraps quoted on scope.",
+    ticks: [
+      "You own every file",
+      "Several concepts, revisions included",
+      "Print-ready for suppliers I trust",
+    ],
+  },
+  included: [
+    {
+      title: "Logo and visual identity",
+      description:
+        "A custom logo with several concepts to choose from, plus the colour palette and typography that hold the whole brand together.",
+    },
+    {
+      title: "Brand guidelines",
+      description:
+        "A style guide so the brand stays consistent as you grow, whoever ends up using it.",
+    },
+    {
+      title: "Print-ready stationery",
+      description:
+        "Business cards, letterhead, email signatures, and invoice or quote templates, all built to match.",
+    },
+    {
+      title: "Signage",
+      description:
+        "Shopfront and reception graphics, window graphics, outdoor banners, wayfinding and A-frame signs, with installation coordinated.",
+    },
+    {
+      title: "Vehicle wraps",
+      description:
+        "Partial or full wraps for sedans, utes, vans and buses: one of the best ongoing bits of marketing you'll ever own.",
+    },
+    {
+      title: "Print and install handled",
+      description:
+        "I don't print in-house, but I've used the same trusted local suppliers and installers for close to a decade, and I coordinate the lot.",
+    },
+    {
+      title: "Files in standard formats",
+      description:
+        "Web-ready PNG and JPG, print-ready PDF and SVG, organised and labelled. They're yours, to use however you need.",
+    },
+    {
+      title: "Works with what you have",
+      description:
+        "Starting from scratch or evolving an existing brand, I work out what's already pulling its weight and build from there.",
+    },
+  ],
+  process: {
+    heading: "From first concepts to final files.",
+    note: "Logo and guidelines run about six weeks, a full brand identity about eight, and signage or vehicle wraps four to six. You're in on every decision, and I keep you updated the whole way through.",
+    steps: [
+      { title: "Brief", description: "We go through your business, your customers, and where the brand has to work hardest." },
+      { title: "Concepts", description: "You see several directions, not one take-it-or-leave-it option." },
+      { title: "Refinement", description: "We narrow it down and refine, with revisions built in until it's right." },
+      { title: "Delivery", description: "Final files in every format you need, organised and yours to keep." },
+    ],
+  },
+  relatedWork: [
+    { href: "/case-studies/covenant-security-solutions", category: "Security", title: "Covenant Security", blurb: "Brand identity, print and vehicle signage for a new security firm." },
+    { href: "/case-studies/cadeaurable", category: "eCommerce", title: "Cadeaurable", blurb: "Branding and stationery for a personalised-gifts brand, through to the store." },
+    { href: "/case-studies/coast-remedial-solutions", category: "Construction", title: "Coast Remedial Solutions", blurb: "A brand built for a remedial building specialist." },
+  ],
+  faq: [
+    {
+      question: "How long does design work take?",
+      answer:
+        "Logo and guidelines take about six weeks, a full brand identity about eight, and signage or vehicle wraps four to six. I keep you updated throughout and involve you in every decision.",
+    },
+    {
+      question: "What if I don't like the initial concepts?",
+      answer:
+        "Every package includes revisions, and I show you several directions up front rather than a single option. We refine until it genuinely represents your business.",
+    },
+    {
+      question: "Do you handle printing and installation?",
+      answer:
+        "I don't print in-house, but I work with trusted local suppliers and installers I've collaborated with for close to a decade, and I coordinate the whole thing.",
+    },
+    {
+      question: "Can you work with our existing brand guidelines?",
+      answer:
+        "Yes. I can work within what you already have or help evolve and strengthen it, after working out what's already doing its job and what needs improvement.",
+    },
+    {
+      question: "What file formats do we receive?",
+      answer:
+        "Industry-standard formats: web-ready PNG and JPG, print-ready PDF and SVG, all organised and labelled. You own every file.",
+    },
+  ],
+  closingCta: {
+    heading: "Tell me what your brand needs to do.",
+    body: "Send through where your brand is now and where it needs to get to, and I'll come back with a scope and a fixed price. No obligation.",
+    primary: { label: "Start a project", href: "/launch-your-vision" },
+  },
+  sticky: { label: "Request a proposal", href: "/launch-your-vision", startingPrice: 3500 },
+  metaTitle: "Branding & Brand Identity Brisbane | RAVENCI",
+  metaDescription:
+    "Branding and brand identity for established Brisbane businesses. Logo and guidelines from $3,500, full identity from $10,000, plus signage and vehicle wraps.",
+  schema: {
+    serviceType: "Branding",
+    offers: [
+      { name: "Logo + Guidelines", price: "3500", description: "Custom logo with several concepts, brand colour palette, typography, core stationery, and a brand guidelines PDF." },
+      { name: "Full Brand Identity", price: "10000", description: "A complete brand system: logo, extended guidelines, print materials, and digital assets." },
+    ],
+  },
+};
+
 export const SERVICE_PAGES: Record<string, ServicePageData> = {
   "web-development": WEB_DEVELOPMENT,
   "build-only": BUILD_ONLY,
   ecommerce: ECOMMERCE,
   "web-apps": WEB_APPS,
+  "business-design": BRANDING,
   "website-maintenance": MANAGED_WEB,
   "seo-and-content": SEO_CONTENT,
 };
