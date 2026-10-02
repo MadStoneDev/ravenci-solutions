@@ -11,6 +11,8 @@ import {
   IconArrowLeft,
 } from "@tabler/icons-react";
 
+import Breadcrumbs from "@/components/breadcrumbs";
+import SectionLabel from "@/components/section-label";
 import { addons } from "@/lib/data/addons";
 import { services } from "@/lib/data/services";
 
@@ -148,26 +150,32 @@ export default function QuotingComponent() {
 
   if (!selectedService) {
     return (
-      <main className="pb-10 flex flex-col min-h-screen bg-background">
-        <section className="content-section pt-32 pb-24 px-5 sm:px-20 xl:px-36">
-          <h1 className="text-heading-m text-foreground mb-8">
-            Hosting & Maintenance
-          </h1>
-          <p className="text-body text-muted-foreground mb-4 max-w-2xl">
-            Select a hosting or maintenance plan to get started. Configure
-            add-ons and check out securely via Stripe.
-          </p>
-          <p className="text-small text-muted-foreground mb-12 max-w-2xl">
-            Looking for web development, design, SEO, or app projects?{" "}
-            <Link
-              href="/launch-your-vision"
-              className="text-accent hover:text-accent/70 font-medium transition-all duration-300 ease-in-out"
-            >
-              Request a proposal
-            </Link>
-          </p>
+      <main className="flex flex-col bg-background">
+        <section className="px-5 py-14 md:px-12 md:py-20 lg:px-20">
+          <div className="max-w-3xl">
+            <Breadcrumbs items={[{ label: "Get a Quote" }]} />
+            <div className="mt-4">
+              <SectionLabel index="01" label="Quote" tick />
+            </div>
+            <h1 className="mt-4 text-display-l text-foreground">
+              Hosting &amp; Maintenance
+            </h1>
+            <p className="mt-6 text-lead text-muted-foreground">
+              Select a hosting or maintenance plan to get started. Configure
+              add-ons and check out securely via Stripe.
+            </p>
+            <p className="mt-4 text-small text-muted-foreground">
+              Looking for web development, design, SEO, or app projects?{" "}
+              <Link
+                href="/launch-your-vision"
+                className="font-medium text-accent transition-colors duration-fast hover:text-accent/70"
+              >
+                Request a proposal
+              </Link>
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
             {Object.values(services).map((service) => (
               <div
                 key={service.id}
@@ -210,22 +218,25 @@ export default function QuotingComponent() {
     service.addons?.map((id) => ({ id, ...addons[id] })) || [];
 
   return (
-    <main className="pb-10 flex flex-col min-h-screen bg-background">
-      <section className="content-section pt-32 pb-12 px-5 sm:px-20 xl:px-36">
+    <main className="flex flex-col bg-background">
+      <section className="px-5 pt-14 pb-8 md:px-12 md:pt-20 lg:px-20">
+        <Breadcrumbs
+          items={[{ label: "Get a Quote", href: "/quote" }, { label: service.name }]}
+        />
         <button
           onClick={() => setSelectedService("")}
-          className="mb-6 flex items-center gap-1 text-accent hover:text-accent/80 font-medium transition-all duration-300 ease-in-out"
+          className="mt-4 mb-6 inline-flex items-center gap-1 font-medium text-accent transition-colors duration-fast hover:text-accent/80"
         >
-          <IconArrowLeft /> Back to Services
+          <IconArrowLeft size={18} /> Back to Services
         </button>
 
-        <h1 className="text-heading-m text-foreground mb-4">{service.name}</h1>
-        <p className="text-body text-muted-foreground mb-8 max-w-3xl">
+        <h1 className="text-display-m text-foreground">{service.name}</h1>
+        <p className="mt-4 text-lead text-muted-foreground max-w-3xl">
           {service.description}
         </p>
       </section>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-5 sm:px-20 xl:px-36 pb-20">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-5 md:px-12 lg:px-20 pb-20">
         {/* Main Service Details */}
         <div className="lg:col-span-2">
           <div className="bg-card rounded-sm border border-border p-6 mb-8">
@@ -370,7 +381,7 @@ export default function QuotingComponent() {
 
         {/* Order Summary */}
         <div className="lg:col-span-1">
-          <div className="bg-card rounded-sm border border-border p-6 sticky top-6">
+          <div className="bg-card rounded-sm border border-border p-6 sticky top-24">
             <h2 className="text-heading-s text-foreground mb-6">
               Order Summary
             </h2>
