@@ -58,15 +58,6 @@ const config: Config = {
           DEFAULT: "hsl(var(--secondary) / <alpha-value>)",
           foreground: "hsl(var(--secondary-foreground) / <alpha-value>)",
         },
-
-        /* [LEGACY + OVERRIDE §3] Alias the old brand names to the new tokens so
-           the 461 `ravenci-primary` / 323 `ravenci-dark` uses instantly adopt
-           the new palette (retiring #7F1670) while class names stay valid.
-           Migrate to accent/foreground per page, then delete this block. */
-        ravenci: {
-          dark: "hsl(var(--foreground) / <alpha-value>)",
-          primary: "hsl(var(--accent) / <alpha-value>)",
-        },
       },
 
       borderRadius: {
@@ -87,9 +78,6 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-archivo)", "Helvetica Neue", "Arial", "sans-serif"],
         mono: ["var(--font-jetbrains-mono)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
-        /* [LEGACY] Playfair — 182 `font-serif` uses across 30 files. Keep until
-           those pages are migrated, then remove Playfair from fonts + this line. */
-        serif: ["var(--font-playfair-display)", "Playfair Display", "serif"],
       },
 
       fontSize: {

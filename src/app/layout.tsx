@@ -6,7 +6,6 @@ import OpenPanel from "@/components/metrics-openpanel";
 
 import "./globals.css";
 
-import { Playfair_Display } from "next/font/google";
 import { archivo, jetbrainsMono } from "@/lib/fonts";
 
 import MainFooter from "@/components/main-footer";
@@ -17,14 +16,6 @@ import CookieConsent from "@/components/cookie-consent";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
-
-// Playfair kept for legacy `font-serif` uses during migration; remove once
-// no page depends on it (README §4). Archivo/JetBrains Mono come from @/lib/fonts.
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ravenci.solutions"),
@@ -178,7 +169,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-AU"
-      className={`${archivo.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable}`}
+      className={`${archivo.variable} ${jetbrainsMono.variable}`}
     >
       <head>
         <script
@@ -213,7 +204,7 @@ export default function RootLayout({
 
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-ravenci-primary focus:text-white focus:rounded-md focus:outline-none"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-accent focus:text-accent-foreground focus:rounded-md focus:outline-none"
         >
           Skip to main content
         </a>

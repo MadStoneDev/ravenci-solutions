@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
   IconCheck,
   IconAlertTriangle,
-  IconCircleCheckFilled,
 } from "@tabler/icons-react";
 
 import Accordion from "@/components/accordion";
@@ -360,7 +359,7 @@ export default function MedicalPracticeRequirementsPage() {
               className="rounded-sm border border-border bg-card p-5 md:p-6"
             >
               <div className="mb-2 flex items-start gap-3">
-                <IconCircleCheckFilled
+                <IconCheck
                   size={22}
                   className="mt-0.5 shrink-0 text-accent"
                 />

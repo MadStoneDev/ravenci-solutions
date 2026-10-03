@@ -1,7 +1,7 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
-import { IconCheck, IconCircleCheckFilled } from "@tabler/icons-react";
+import { IconCheck } from "@tabler/icons-react";
 import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
 import SectionLabel from "@/components/section-label";
@@ -231,7 +231,7 @@ export default function WebHostingPage() {
             <ul className="mt-8 flex flex-col gap-8">
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <IconCircleCheckFilled
+                  <IconCheck
                     className="mt-0.5 shrink-0 text-accent"
                     size={22}
                   />
@@ -403,7 +403,7 @@ export default function WebHostingPage() {
             "Migration from complex existing hosting setups",
           ].map((item, i) => (
             <div key={i} className="flex items-start gap-2">
-              <IconCircleCheckFilled
+              <IconCheck
                 className="mt-0.5 shrink-0 text-muted-foreground"
                 size={18}
               />

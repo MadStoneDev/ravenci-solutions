@@ -8,7 +8,7 @@ import {
   IconCode,
   IconRocket,
   IconHeartHandshake,
-  IconCircleCheckFilled,
+  IconCheck,
 } from "@tabler/icons-react";
 
 import Accordion from "@/components/accordion";
@@ -228,7 +228,7 @@ export default function OurProcessPage() {
                 <ul className="flex flex-col gap-3">
                   {step.highlights.map((highlight, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <IconCircleCheckFilled
+                      <IconCheck
                         className="mt-0.5 shrink-0 text-accent"
                         size={18}
                         aria-hidden
