@@ -13,24 +13,14 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 // so the full care-plan flow can be exercised before go-live.
 const IS_TEST_MODE = (process.env.STRIPE_SECRET_KEY ?? "").startsWith("sk_test_");
 
-// Server-side addon prices - MUST match your frontend exactly
+// Server-side addon prices. Only the add-ons offered on the standalone hosting
+// plan in the UI are purchasable. Project-type add-ons (copywriting, SEO
+// content, contact forms, etc.) are proposal-only and must never be charged
+// here; they are deliberately excluded so a crafted request can't buy them.
 const ADDON_PRICES: Record<string, { price: number; isRecurring: boolean }> = {
-  "backup-service": { price: 19, isRecurring: true },
-  "oneoff-backup-service": { price: 39, isRecurring: false },
-  "wordpress-migration": { price: 175, isRecurring: false },
   "email-hosting": { price: 5, isRecurring: true },
   "malware-protection": { price: 10, isRecurring: true },
-  "malware-audit": { price: 49, isRecurring: false },
-  "content-updates": { price: 95, isRecurring: true },
-  "oneoff-content-updates": { price: 85, isRecurring: false },
-  "performance-optimization": { price: 95, isRecurring: true },
-  "oneoff-performance-optimization": { price: 120, isRecurring: false },
-  "contact-form": { price: 595, isRecurring: false },
-  "cookie-banner": { price: 195, isRecurring: false },
-  copywriting: { price: 295, isRecurring: false },
-  "seo-content": { price: 495, isRecurring: false },
-  "web-hosting-addon": { price: 39, isRecurring: true },
-  "maintenance-addon": { price: 249, isRecurring: true },
+  "wordpress-migration": { price: 175, isRecurring: false },
 };
 
 // Server-side service prices - MUST match your frontend exactly
