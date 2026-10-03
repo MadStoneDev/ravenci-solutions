@@ -259,8 +259,7 @@ export default function BrisbaneWebsiteAuditPage() {
               <p className="text-body text-muted-foreground">
                 If your website scores 80+ on PageSpeed, has structured data,
                 proper meta tags, and basic accessibility, you&apos;re already
-                ahead of the vast majority of Brisbane businesses. The
-                opportunity is enormous.
+                ahead of most Brisbane businesses.
               </p>
             </div>
           </div>

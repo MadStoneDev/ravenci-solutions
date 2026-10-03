@@ -188,7 +188,7 @@ export const industryBreakdown: AuditIndustry[] = [
   { industry: "Healthcare & Medical", count: 8, avgScore: 41 },
   { industry: "Professional Services", count: 10, avgScore: 44 },
   { industry: "Hospitality & Food", count: 7, avgScore: 36 },
-  { industry: "Retail & E-commerce", count: 6, avgScore: 39 },
+  { industry: "Retail & eCommerce", count: 6, avgScore: 39 },
   { industry: "Real Estate", count: 4, avgScore: 47 },
   { industry: "Education & Training", count: 3, avgScore: 52 },
 ];

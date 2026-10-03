@@ -102,7 +102,7 @@ export default function TermsAndConditionsPage() {
               applicable laws or regulations;
             </li>
             <li className="mb-1 list-disc">
-              use this website in conjunction with sending unauthorized
+              use this website in conjunction with sending unauthorised
               advertising or spam;
             </li>
             <li className="mb-1 list-disc">
@@ -125,8 +125,8 @@ export default function TermsAndConditionsPage() {
             transitory use.
           </p>
           <p>
-            This constitutes the grant of a license, not a transfer of title.
-            This license shall automatically terminate if you violate any of
+            This constitutes the grant of a licence, not a transfer of title.
+            This licence shall automatically terminate if you violate any of
             these restrictions or the Terms of Service, and may be terminated by
             RAVENCI at any time.
           </p>
@@ -145,7 +145,7 @@ export default function TermsAndConditionsPage() {
             In no event shall RAVENCI or its suppliers be liable for any
             consequential loss suffered or incurred by you or any third party
             arising from the use or inability to use this website or the
-            materials on this website, even if RAVENCI or an authorized
+            materials on this website, even if RAVENCI or an authorised
             representative has been notified, orally or in writing, of the
             possibility of such damage.
           </p>

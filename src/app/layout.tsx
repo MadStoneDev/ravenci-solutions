@@ -101,7 +101,7 @@ export default function RootLayout({
       "Next.js",
       "React",
       "WordPress",
-      "E-commerce",
+      "eCommerce",
       "UI/UX Design",
       "SEO",
     ],

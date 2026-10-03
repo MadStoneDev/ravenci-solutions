@@ -193,7 +193,7 @@ export default function PrivacyPolicyPage() {
           <p>
             When we collect and process personal information, and while we
             retain this information, we will protect it within commercially
-            acceptable means to prevent loss and theft, as well as unauthorized
+            acceptable means to prevent loss and theft, as well as unauthorised
             access, disclosure, copying, use, or modification.{" "}
           </p>
           <p>

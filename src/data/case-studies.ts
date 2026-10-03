@@ -330,7 +330,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "goingdark",
     clientName: "GoingDark",
     industry: "ecommerce",
-    industryLabel: "E-commerce",
+    industryLabel: "eCommerce",
     services: ["web-development", "ecommerce", "seo-and-content"],
     serviceLabels: ["Web Development", "Shopify", "SEO"],
     excerpt:
@@ -873,7 +873,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "cadeaurable",
     clientName: "Cadeaurable",
     industry: "ecommerce",
-    industryLabel: "E-commerce",
+    industryLabel: "eCommerce",
     services: ["business-design", "web-development", "ecommerce"],
     serviceLabels: [
       "Branding Design",

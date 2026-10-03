@@ -21,7 +21,7 @@ const HIGH_BUDGET_VALUES = ["$10k to $25k", "$25k to $50k", "$50k+"];
 
 type ProjectType =
   | "Business website"
-  | "E-commerce store"
+  | "eCommerce store"
   | "Web application"
   | "Mobile app"
   | "Branding refresh"
@@ -63,7 +63,7 @@ interface FormState {
 
 const PROJECT_TYPE_OPTIONS: ProjectType[] = [
   "Business website",
-  "E-commerce store",
+  "eCommerce store",
   "Web application",
   "Mobile app",
   "Branding refresh",
@@ -365,7 +365,7 @@ export default function LaunchYourVisionStepper() {
         {step === 1 && (
           <Step
             label="What are you looking to build?"
-            sublabel="Pick the closest match. We'll figure out the details together."
+            sublabel="Pick the closest match. I'll figure out the details with you."
           >
             <ChoiceGrid
               options={PROJECT_TYPE_OPTIONS}

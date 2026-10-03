@@ -125,13 +125,13 @@ function SuccessPageContent() {
           </div>
           <h1 className="mb-2 text-heading-m text-foreground">
             {isInstallmentPlan
-              ? "Installment Plan Set Up"
+              ? "Instalment Plan Set Up"
               : "Payment Successful"}
           </h1>
           <p className="text-body text-muted-foreground">
             {isInstallmentPlan
-              ? "Your installment plan has been set up successfully. You'll receive automatic invoices each month."
-              : "Thank you for your purchase. We've received your payment and will be in touch soon."}
+              ? "Your instalment plan has been set up successfully. You'll receive automatic invoices each month."
+              : "Thank you for your purchase. I've received your payment and will be in touch soon."}
           </p>
         </div>
 
@@ -209,7 +209,7 @@ function SuccessPageContent() {
         <div className="space-y-3">
           <p className="text-small text-muted-foreground">
             {isInstallmentPlan
-              ? "A confirmation email has been sent with your installment schedule."
+              ? "A confirmation email has been sent with your instalment schedule."
               : "A confirmation email has been sent to your email address."}
           </p>
 

@@ -12,7 +12,7 @@ const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 export const metadata = {
   title: "About | RAVENCI Solutions",
   description:
-    "Meet RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency and websites that genuinely perform.",
+    "Meet RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency and websites that hold up.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "About | RAVENCI Solutions",
@@ -122,10 +122,9 @@ export default function AboutPage() {
           <h2 className="mt-3 text-display-m text-foreground">Built to a standard, not to a deadline</h2>
           <div className="mt-6 flex flex-col gap-4 text-body text-muted-foreground">
             <p>
-              Most developers and designers come from a purely technical or
-              creative background. Engineering taught me something else: every
-              decision has to be intentional, every component has to be solid, and
-              the finished thing has to perform under real conditions.
+              My background is engineering, not web or graphic design. It taught
+              me to make every decision intentional: every component solid, and
+              the finished thing tested under real conditions before it ships.
             </p>
             <p>
               That&apos;s why I guarantee 85+ Google PageSpeed. Performance isn&apos;t
@@ -195,8 +194,8 @@ export default function AboutPage() {
           <div className="max-w-2xl">
             <h2 className="text-display-m text-foreground">Ready to work with me?</h2>
             <p className="mt-4 text-body text-muted-foreground">
-              Whether you&apos;re starting from scratch or need a site that
-              performs, tell me about your project.
+              Starting from scratch, or rebuilding something that should be
+              working harder? Tell me about your project.
             </p>
           </div>
           <Button asChild size="lg" variant="primary">

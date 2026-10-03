@@ -97,7 +97,7 @@ const faqItems = [
     summary:
       "Yes. Many RAVENCI clients come after outgrowing a template site or DIY builder. Content is migrated and a custom platform is built that reflects your brand and scales with you.",
     content:
-      "Absolutely. Many of my clients come to me after outgrowing a template site or DIY builder. I migrate your content and build a custom platform that reflects your brand and scales with you.",
+      "Yes. A lot of my clients come to me after outgrowing a template or DIY builder. I migrate your content and build a custom platform that reflects your brand and scales with you.",
   },
   {
     title: "What's wrong with the way most agencies build websites?",
@@ -388,7 +388,7 @@ export default function CustomVsTemplatePage() {
             converts visitors into clients pays for itself. At $7,500 over five
             years, that&apos;s $4.10 a day. If it brings in one extra client a
             month, even at $500 per job, that&apos;s $6,000 a year from a $1,500
-            annual investment. A 4x return. Most businesses see more than that.
+            annual investment. A 4x return.
           </p>
           <p>
             A template or DIY site might cost less upfront, but if it doesn&apos;t

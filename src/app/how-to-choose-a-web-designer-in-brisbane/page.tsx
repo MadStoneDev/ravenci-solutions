@@ -45,7 +45,7 @@ const questions = [
     number: "03",
     question: "Which platform do you recommend for my business, and why?",
     rightAnswer:
-      "A specific platform recommendation tied to your business needs (content, e-commerce, performance, integrations), not a one-size-fits-all 'we always use X.' Reputable agencies build on multiple platforms.",
+      "A specific platform recommendation tied to your business needs (content, eCommerce, performance, integrations), not a one-size-fits-all 'we always use X.' Reputable agencies build on multiple platforms.",
   },
   {
     number: "04",
@@ -153,7 +153,7 @@ const greenFlags = [
   {
     flag: "Explains trade-offs in plain English",
     detail:
-      "If they can't explain why a decision is being made without using jargon, either they don't understand it or they're hiding something. Good agencies translate; bad ones obfuscate.",
+      "If they can't explain why a decision is being made without using jargon, either they don't understand it or they're hiding something.",
   },
 ];
 

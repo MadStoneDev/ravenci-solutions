@@ -166,9 +166,9 @@ const costFactors = [
       "A bespoke design easily doubles the cost of a template build. The trade-off: it's distinctive, faster to load, and easier to evolve.",
   },
   {
-    factor: "E-commerce functionality",
+    factor: "eCommerce functionality",
     detail:
-      "Selling products adds payment integration, inventory, shipping logic, and tax handling. Expect $3,000+ on top of a content site for basic e-commerce, $10,000+ for complex catalogues.",
+      "Selling products adds payment integration, inventory, shipping logic, and tax handling. Expect $3,000+ on top of a content site for basic eCommerce, $10,000+ for complex catalogues.",
   },
   {
     factor: "Third-party integrations",
@@ -515,7 +515,7 @@ export default function BrisbaneWebsiteCostPage() {
             <p>
               I work primarily with Custom Next.js (for performance-critical
               builds), WordPress (for content-heavy sites), Shopify and
-              BigCommerce (for e-commerce), and Plasmic and Strapi when the
+              BigCommerce (for eCommerce), and Plasmic and Strapi when the
               project needs a visual builder or headless CMS. As Shopify,
               BigCommerce, and Synergy Wholesale Partners I get better pricing on
               platforms and infrastructure that I pass through to clients.
@@ -585,7 +585,7 @@ export default function BrisbaneWebsiteCostPage() {
               <p className="text-body text-muted-foreground">
                 If an agency only quotes one platform regardless of your needs,
                 that&apos;s a red flag. WordPress suits content-heavy sites.
-                Shopify and BigCommerce suit e-commerce. Custom Next.js suits
+                Shopify and BigCommerce suit eCommerce. Custom Next.js suits
                 performance-critical builds. The right answer depends on your
                 business, not the agency&apos;s comfort zone.
               </p>

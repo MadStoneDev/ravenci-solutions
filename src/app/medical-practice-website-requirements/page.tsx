@@ -178,7 +178,7 @@ const commonMistakes = [
   {
     mistake: "No privacy policy, or a generic one copied from a template",
     detail:
-      "Healthcare websites should have a tailored privacy policy that addresses what patient information is collected, where it's stored (Australian-hosted vs international), who has access, and how patients exercise their access and correction rights. A generic e-commerce template doesn't meet the bar.",
+      "Healthcare websites should have a tailored privacy policy that addresses what patient information is collected, where it's stored (Australian-hosted vs international), who has access, and how patients exercise their access and correction rights. A generic eCommerce template doesn't meet the bar.",
   },
   {
     mistake: "Practitioner profiles with no AHPRA registration check",
@@ -232,7 +232,7 @@ const faqItems = [
     summary:
       "Yes. A generic privacy policy doesn't address healthcare-specific obligations including how patient information is handled, Australian hosting versus international, and state-level health record acts in Victoria, ACT and NSW. A healthcare-tailored policy reduces both compliance and patient-trust risk.",
     content:
-      "Yes. A generic privacy policy template (copied from an e-commerce site or pulled off a template generator) doesn't address the specific obligations that apply to healthcare providers handling patient information. A proper medical practice privacy policy should address: what patient information is collected via the website (including via booking, contact forms, and analytics), where it's stored (Australian-hosted versus international, which matters for some patient cohorts), who has access internally and externally, how the practice complies with the Australian Privacy Principles, how patients can request access or correction, and how state-level Health Records Acts in Victoria, ACT, and NSW apply where relevant. I typically work with the practice's existing legal or compliance advisor to draft this rather than writing it myself.",
+      "Yes. A generic privacy policy template (copied from an eCommerce site or pulled off a template generator) doesn't address the specific obligations that apply to healthcare providers handling patient information. A proper medical practice privacy policy should address: what patient information is collected via the website (including via booking, contact forms, and analytics), where it's stored (Australian-hosted versus international, which matters for some patient cohorts), who has access internally and externally, how the practice complies with the Australian Privacy Principles, how patients can request access or correction, and how state-level Health Records Acts in Victoria, ACT, and NSW apply where relevant. I typically work with the practice's existing legal or compliance advisor to draft this rather than writing it myself.",
   },
   {
     title: "How long does it take to build a medical practice website?",

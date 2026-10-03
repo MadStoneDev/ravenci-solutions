@@ -38,7 +38,7 @@ const matrixRows: {
   {
     feature: "Best for",
     wordpress: "Content sites, blogs, brochure sites",
-    shopify: "Standard e-commerce, drop-shipping",
+    shopify: "Standard eCommerce, drop-shipping",
     custom: "Performance, differentiation, web apps",
   },
   {
@@ -140,11 +140,11 @@ const platforms = [
       "You want a familiar CMS your team can update",
       "Your site has 10+ pages of regularly-updated content",
       "You want a wide ecosystem of plugins and themes",
-      "You're not running e-commerce as the primary business",
+      "You're not running eCommerce as the primary business",
       "Long-term ownership and portability matter",
     ],
     avoidWhen: [
-      "You're running a high-volume e-commerce store (use Shopify or BigCommerce)",
+      "You're running a high-volume eCommerce store (use Shopify or BigCommerce)",
       "You need sub-2-second load times on every page (custom is faster)",
       "You expect heavy custom functionality (custom builds scale better)",
       "You don't want to maintain plugin updates yourself or pay someone to",
@@ -156,7 +156,7 @@ const platforms = [
   },
   {
     name: "Shopify",
-    tagline: "The e-commerce industry standard",
+    tagline: "The eCommerce industry standard",
     chooseWhen: [
       "Your primary business is selling products online",
       "You want all-in-one hosting, payments, inventory, and shipping",
@@ -174,7 +174,7 @@ const platforms = [
     costs:
       "Build: $5,000 to $20,000. Platform: $45 to $645/mo. Apps: $50 to $300/mo typical. Transaction fees: 0.5 to 2% if not using Shopify Payments.",
     examples:
-      "Retail e-commerce, fashion and apparel, beauty and cosmetics, consumer goods, drop-shipping, multi-channel sellers (Shopify + Amazon + eBay).",
+      "Retail eCommerce, fashion and apparel, beauty and cosmetics, consumer goods, drop-shipping, multi-channel sellers (Shopify + Amazon + eBay).",
   },
   {
     name: "Custom Next.js",
@@ -202,7 +202,7 @@ const platforms = [
 
 const decisionFramework = [
   {
-    scenario: "I'm a small business with 5 to 15 pages, no e-commerce",
+    scenario: "I'm a small business with 5 to 15 pages, no eCommerce",
     answer: "WordPress",
     reason:
       "Lowest cost, fastest to launch, easiest for your team to update later. Avoid the temptation to over-engineer.",
@@ -235,7 +235,7 @@ const decisionFramework = [
     scenario: "I want my brand to feel premium and one-of-a-kind",
     answer: "Custom Next.js (or Shopify Plus)",
     reason:
-      "Both give enough design control to break out of template patterns. Custom wins on motion, layout, and load time. Shopify Plus wins if e-commerce is the focus.",
+      "Both give enough design control to break out of template patterns. Custom wins on motion, layout, and load time. Shopify Plus wins if eCommerce is the focus.",
   },
 ];
 
@@ -243,7 +243,7 @@ const commonMistakes = [
   {
     mistake: "Choosing Shopify when you don't sell anything online",
     detail:
-      "I see this monthly. A consulting business launches on Shopify because the templates look good, then pays $45 to $645/month for a platform they don't use as e-commerce. WordPress (or custom) costs less and serves the use case better.",
+      "I see this monthly. A consulting business launches on Shopify because the templates look good, then pays $45 to $645/month for a platform they don't use as eCommerce. WordPress (or custom) costs less and serves the use case better.",
   },
   {
     mistake: "Choosing custom Next.js for a budget under $10,000",
@@ -251,7 +251,7 @@ const commonMistakes = [
       "Custom builds need 60 to 120 hours of senior developer time. Quotes under $10,000 mean cut corners somewhere, usually on design, testing, or post-launch support. Spend $5,000 on WordPress instead and reinvest the rest in marketing.",
   },
   {
-    mistake: "Choosing WordPress for high-volume e-commerce",
+    mistake: "Choosing WordPress for high-volume eCommerce",
     detail:
       "WooCommerce works for 20 to 200 products. Beyond that, performance, security, and PCI compliance all become harder than they need to be. Migrate to Shopify or BigCommerce before the pain hits.",
   },
@@ -306,9 +306,9 @@ const faqItems = [
   {
     title: "What about WordPress with WooCommerce vs Shopify?",
     summary:
-      "WooCommerce works well for sub-200-product catalogues attached to a content-led business. Shopify wins above 200 products, in checkout reliability, security, and ongoing maintenance simplicity. If e-commerce is the primary business, choose Shopify. If it's a side feature on a content site, WooCommerce is fine.",
+      "WooCommerce works well for sub-200-product catalogues attached to a content-led business. Shopify wins above 200 products, in checkout reliability, security, and ongoing maintenance simplicity. If eCommerce is the primary business, choose Shopify. If it's a side feature on a content site, WooCommerce is fine.",
     content:
-      "WooCommerce, the e-commerce plugin for WordPress, works well for catalogues under about 200 products attached to a content-led business. It's a sensible choice when most of the site is content (services, blog, about) with e-commerce as a secondary feature. Shopify wins above 200 products, on checkout reliability, on security and PCI compliance handled for you, and on simpler ongoing maintenance. The honest test: if e-commerce is the primary business, choose Shopify. If it's a side feature on a content site, WooCommerce is fine and saves the platform fee.",
+      "WooCommerce, the eCommerce plugin for WordPress, works well for catalogues under about 200 products attached to a content-led business. It's a sensible choice when most of the site is content (services, blog, about) with eCommerce as a secondary feature. Shopify wins above 200 products, on checkout reliability, on security and PCI compliance handled for you, and on simpler ongoing maintenance. The honest test: if eCommerce is the primary business, choose Shopify. If it's a side feature on a content site, WooCommerce is fine and saves the platform fee.",
   },
   {
     title: "How long does each platform take to build?",
@@ -347,7 +347,7 @@ export default function PlatformComparisonPage() {
             <strong className="text-foreground">WordPress</strong> remains the
             safest default for content-heavy sites,{" "}
             <strong className="text-foreground">Shopify</strong> dominates
-            standard e-commerce, and{" "}
+            standard eCommerce, and{" "}
             <strong className="text-foreground">Custom Next.js</strong> wins
             where performance, custom functionality or differentiation matter
             most. Choosing the wrong platform can cost $5,000 to $15,000 to fix
@@ -575,7 +575,7 @@ export default function PlatformComparisonPage() {
             <p>
               My recommendation process is the same on every project: scope the
               actual business need, look at content volume and update cadence,
-              look at e-commerce requirements, look at performance and
+              look at eCommerce requirements, look at performance and
               integration needs, and then recommend the platform that fits not
               the one that&apos;s easiest for me to build. I&apos;ll tell you
               when WordPress is the right answer even when custom would be more

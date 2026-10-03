@@ -40,7 +40,7 @@ const steps = [
     name: "Discovery & Consultation",
     icon: IconSearch,
     description:
-      "Every great project starts with understanding. I dig into your business goals, target audience, competitors, and existing digital presence to build a complete picture before writing a single line of code.",
+      "I dig into your business goals, your audience, your competitors and your current site, to get the full picture before a line of code gets written.",
     highlights: [
       "In-depth business and audience analysis",
       "Competitor and market research",
@@ -66,7 +66,7 @@ const steps = [
     name: "Design & Prototyping",
     icon: IconPalette,
     description:
-      "I create wireframes and visual designs that bring your brand to life. You'll see exactly how your site will look and feel before development starts. No surprises.",
+      "I create wireframes and visual designs so you see exactly how the site will look and feel before development starts. No surprises.",
     highlights: [
       "Wireframes for layout and structure",
       "High-fidelity visual designs",
@@ -79,7 +79,7 @@ const steps = [
     name: "Development & Build",
     icon: IconCode,
     description:
-      "This is where it all comes together. Clean, performant code built to modern standards. I develop with speed, accessibility, and SEO built in from the start, not bolted on after.",
+      "Clean, performant code built to modern standards. I build with speed, accessibility and SEO in from the start, not bolted on after.",
     highlights: [
       "Clean, maintainable code",
       "85+ Google PageSpeed guaranteed",
@@ -92,7 +92,7 @@ const steps = [
     name: "Testing & Launch",
     icon: IconRocket,
     description:
-      "Before anything goes live, I test across devices, browsers, and screen sizes. Performance audits, accessibility checks, and final client review ensure a flawless launch.",
+      "Before anything goes live, I test across devices, browsers and screen sizes. Performance audits, accessibility checks, and a final review with you, so launch day holds no surprises.",
     highlights: [
       "Cross-browser and device testing",
       "Performance and speed audits",
@@ -168,11 +168,10 @@ export default function OurProcessPage() {
           <Breadcrumbs items={[{ label: "My Process" }]} />
           <SectionLabel label="My Process" tick />
           <h1 className="text-display-l text-foreground">
-            How I bring your vision to life
+            How I run a project, start to finish
           </h1>
           <p className="text-lead text-muted-foreground">
-            My proven 6-step process, refined over 25+ years of delivering
-            digital products and platforms that work.
+            The six steps I follow on every build, refined over 25+ years.
           </p>
           <p className="text-body text-muted-foreground">
             RAVENCI&apos;s web development process follows six steps: Discovery,
@@ -188,9 +187,7 @@ export default function OurProcessPage() {
       <section className={`${SECTION} border-b border-border`}>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-heading-m text-foreground">
-            Great websites aren&apos;t accidents. They&apos;re the result of
-            careful planning, clear communication, and disciplined execution.
-            Every single time.
+            Good websites come from planning and discipline, not luck.
           </h2>
         </div>
       </section>
@@ -264,9 +261,8 @@ export default function OurProcessPage() {
             ))}
           </dl>
           <p className="mx-auto mt-12 max-w-2xl text-body text-muted-foreground">
-            A consistent, proven process is why I deliver results every time,
-            not by luck, but by design. Every step exists because 25+ years of
-            experience taught me what works.
+            I follow the same steps on every project because they work. Each one
+            is there because 25+ years taught me it matters.
           </p>
         </div>
       </section>
