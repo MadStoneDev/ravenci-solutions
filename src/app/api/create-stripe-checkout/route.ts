@@ -195,7 +195,7 @@ export async function POST(request: NextRequest) {
           store_addon: storeAddon ? "true" : "false",
           terms_accepted: "true",
           terms_accepted_at: new Date().toISOString(),
-          terms_version: "3-month-minimum+tos",
+          terms_version: "2026-10-03",
           comments: typeof body.comments === "string" ? body.comments : "",
         },
         allow_promotion_codes: true,

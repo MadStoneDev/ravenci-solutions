@@ -67,7 +67,65 @@ export default function TermsAndConditionsPage() {
             update this page. Any changes to these Terms of Service will take
             effect immediately from the date of publication.
           </p>
-          <p>These Terms of Service were last updated on 14 April 2021.</p>
+          <p>These Terms of Service were last updated on 3 October 2026.</p>
+
+          <h3 className="mt-4 text-heading-s text-foreground">Care Plans and Hosting</h3>
+          <p>
+            The following terms apply to RAVENCI care plans, the online store
+            add-on, and standalone hosting, in addition to any separate proposal
+            or agreement for project work:
+          </p>
+          <ul className="pl-5">
+            <li className="mb-1 list-disc">
+              <span className="font-semibold text-foreground">
+                Monthly care plans
+              </span>{" "}
+              have a minimum term of three months. After the minimum term, they
+              continue month-to-month and may be cancelled with 30 days' written
+              notice. The plan remains active and billable until the notice
+              period ends.
+            </li>
+            <li className="mb-1 list-disc">
+              <span className="font-semibold text-foreground">
+                Plans paid 6 or 12 months upfront
+              </span>{" "}
+              are billed in advance for the full period and renew automatically
+              at the same rate for the same period unless cancelled in writing
+              before the renewal date. Amounts paid for a period already paid are
+              non-refundable, except where a refund is required by law.
+            </li>
+            <li className="mb-1 list-disc">
+              <span className="font-semibold text-foreground">
+                Included hours
+              </span>{" "}
+              reset each month and do not roll over. Included hours cover design,
+              development, content updates, and small SEO tasks. Work beyond the
+              included hours is billed at the plan's extra-hour rate and is only
+              carried out after we confirm it with you.
+            </li>
+            <li className="mb-1 list-disc">
+              <span className="font-semibold text-foreground">Hosting</span> is
+              included with every care plan for as long as the plan is active.
+              Standalone managed hosting, without a care plan, is $39 per month.
+            </li>
+            <li className="mb-1 list-disc">
+              <span className="font-semibold text-foreground">
+                The online store add-on
+              </span>{" "}
+              is $200 per month and may be added to any care plan.
+            </li>
+            <li className="mb-1 list-disc">
+              <span className="font-semibold text-foreground">
+                When a care plan or hosting ends,
+              </span>{" "}
+              hosting continues until the end of the paid period. On request,
+              we'll provide your website files and database and reasonable help
+              moving your site to a new host, provided your account is paid up to
+              date. Additional migration work beyond reasonable assistance is
+              billed at $165 per hour.
+            </li>
+          </ul>
+          <p>Prices are in Australian dollars.</p>
 
           <h3 className="mt-4 text-heading-s text-foreground">Limitations of Use</h3>
           <p>
