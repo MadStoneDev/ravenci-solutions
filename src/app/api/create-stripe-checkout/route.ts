@@ -3,7 +3,7 @@ import { Stripe } from "stripe";
 import { checkRateLimit } from "@/lib/api-guards";
 import {
   CARE_PLAN_PRICE_IDS,
-  STORE_ADDON_PRICE_ID,
+  STORE_ADDON_PRICE_IDS,
   isPlaceholderPriceId,
   type BillingInterval,
 } from "@/lib/data/care-plans";
@@ -149,7 +149,7 @@ export async function POST(request: NextRequest) {
         { price: planPriceId, quantity: 1 },
       ];
       if (storeAddon) {
-        careLineItems.push({ price: STORE_ADDON_PRICE_ID, quantity: 1 });
+        careLineItems.push({ price: STORE_ADDON_PRICE_IDS[interval], quantity: 1 });
       }
 
       // Fail safe until the real Price IDs are dropped in.

@@ -47,8 +47,14 @@ export const CARE_PLAN_PRICE_IDS: Record<
   },
 };
 
-/** Store add-on Price ID (recurring, $200/mo). Replace before go-live. */
-export const STORE_ADDON_PRICE_ID = "REPLACE_WITH_STRIPE_PRICE_ID_store_addon_monthly";
+// Store add-on Price IDs. Stripe requires every recurring item in one
+// subscription to share the same billing interval, so the store add-on needs a
+// matching price for each interval ($200/mo = $1,200 per 6 months = $2,400/yr).
+export const STORE_ADDON_PRICE_IDS: Record<BillingInterval, string> = {
+  monthly: "REPLACE_WITH_STRIPE_PRICE_ID_store_addon_monthly", // $200/mo
+  sixMonth: "REPLACE_WITH_STRIPE_PRICE_ID_store_addon_6month", // $1,200 every 6 months
+  twelveMonth: "REPLACE_WITH_STRIPE_PRICE_ID_store_addon_12month", // $2,400 yearly
+};
 
 /** True while a Price ID is still a placeholder, so checkout can fail safe. */
 export function isPlaceholderPriceId(id: string): boolean {
