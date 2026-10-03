@@ -13,10 +13,7 @@ interface SessionData {
   payment_status: string;
   metadata: {
     service_name?: string;
-    payment_type?: string;
-    installment_plan?: string;
     comments?: string;
-    total_installments?: string;
   };
 }
 
@@ -101,9 +98,6 @@ function SuccessPageContent() {
     );
   }
 
-  const isInstallmentPlan =
-    sessionData?.metadata?.payment_type === "installments";
-
   return (
     <main className="flex min-h-screen items-center justify-center bg-background px-5 py-14 md:px-12 md:py-20 lg:px-20">
       <div className="w-full max-w-md rounded-sm border border-border bg-card p-8 text-center">
@@ -124,14 +118,11 @@ function SuccessPageContent() {
             </svg>
           </div>
           <h1 className="mb-2 text-heading-m text-foreground">
-            {isInstallmentPlan
-              ? "Instalment Plan Set Up"
-              : "Payment Successful"}
+            Payment Successful
           </h1>
           <p className="text-body text-muted-foreground">
-            {isInstallmentPlan
-              ? "Your instalment plan has been set up successfully. You'll receive automatic invoices each month."
-              : "Thank you for your purchase. I've received your payment and will be in touch soon."}
+            Thank you for your purchase. I've received your payment and will be
+            in touch soon.
           </p>
         </div>
 
@@ -149,32 +140,11 @@ function SuccessPageContent() {
               </div>
 
               <div className="flex justify-between">
-                <span className="text-muted-foreground">
-                  {isInstallmentPlan ? "First Payment:" : "Amount:"}
-                </span>
+                <span className="text-muted-foreground">Amount:</span>
                 <span className="font-medium text-foreground">
                   ${((sessionData.amount_total || 0) / 100).toFixed(2)}
                 </span>
               </div>
-
-              {isInstallmentPlan && (
-                <>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Payment Plan:</span>
-                    <span className="font-medium text-foreground">
-                      {sessionData.metadata?.installment_plan}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">
-                      Total Payments:
-                    </span>
-                    <span className="font-medium text-foreground">
-                      {sessionData.metadata?.total_installments}
-                    </span>
-                  </div>
-                </>
-              )}
 
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Status:</span>
@@ -208,9 +178,7 @@ function SuccessPageContent() {
 
         <div className="space-y-3">
           <p className="text-small text-muted-foreground">
-            {isInstallmentPlan
-              ? "A confirmation email has been sent with your instalment schedule."
-              : "A confirmation email has been sent to your email address."}
+            A confirmation email has been sent to your email address.
           </p>
 
           <div className="space-y-2">

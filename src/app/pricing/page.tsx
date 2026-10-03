@@ -50,7 +50,7 @@ const groups: PriceGroup[] = [
     href: "/web-development",
     blurb:
       "Custom sites built to last, owned by you, still fast in five years.",
-    note: "50% deposit to start, 50% at launch.",
+    note: "50% deposit, 25% when you see the first version, 25% before launch. Larger projects can be staged to suit.",
     items: [
       {
         name: "Business Website",
@@ -107,7 +107,7 @@ const groups: PriceGroup[] = [
     href: "/web-apps",
     blurb:
       "Custom software built around how your business actually works, not bent around someone else's.",
-    note: "50% deposit to start, 50% at launch.",
+    note: "50% deposit, 25% when you see the first version, 25% before launch. Larger projects can be staged to suit.",
     items: [
       {
         name: "Web App / Client Portal",
