@@ -50,3 +50,7 @@ playwright-report/
 /blob-report/
 .playwright/
 dod-screens/
+
+# Local editor / CLI state (personal, not shared)
+.claude/settings.local.json
+.idea/workspace.xml
