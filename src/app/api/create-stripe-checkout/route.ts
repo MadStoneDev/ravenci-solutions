@@ -3,9 +3,8 @@ import { Stripe } from "stripe";
 import { checkRateLimit } from "@/lib/api-guards";
 import {
   getCarePlanPriceIds,
-  getStoreAddonPriceIds,
+  getStoreAddonPriceId,
   isPlaceholderPriceId,
-  type BillingInterval,
 } from "@/lib/data/care-plans";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
@@ -127,7 +126,6 @@ export async function POST(request: NextRequest) {
     // Maintenance and Website Care only. Growth/Partner are book-a-call.
     if (body.carePlan) {
       const planId = body.carePlan.planId;
-      const interval = body.carePlan.interval as BillingInterval;
       const storeAddon = body.carePlan.storeAddon === true;
 
       if (planId !== "maintenance" && planId !== "website-care") {
@@ -136,35 +134,23 @@ export async function POST(request: NextRequest) {
           { status: 400 },
         );
       }
-      if (
-        interval !== "monthly" &&
-        interval !== "sixMonth" &&
-        interval !== "twelveMonth"
-      ) {
-        return NextResponse.json(
-          { error: "Invalid billing interval" },
-          { status: 400 },
-        );
-      }
 
-      // The 3-month minimum + Terms of Service acceptance is required.
+      // Terms of Service acceptance is required.
       if (body.carePlan.termsAccepted !== true) {
         return NextResponse.json(
-          { error: "Please accept the 3-month minimum term and Terms of Service." },
+          { error: "Please accept the Terms of Service." },
           { status: 400 },
         );
       }
 
       const planPriceId =
-        getCarePlanPriceIds(IS_TEST_MODE)[planId as "maintenance" | "website-care"][
-          interval
-        ];
+        getCarePlanPriceIds(IS_TEST_MODE)[planId as "maintenance" | "website-care"];
       const careLineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [
         { price: planPriceId, quantity: 1 },
       ];
       if (storeAddon) {
         careLineItems.push({
-          price: getStoreAddonPriceIds(IS_TEST_MODE)[interval],
+          price: getStoreAddonPriceId(IS_TEST_MODE),
           quantity: 1,
         });
       }
@@ -191,7 +177,7 @@ export async function POST(request: NextRequest) {
         metadata: {
           payment_type: "care_plan",
           care_plan: planId,
-          billing_interval: interval,
+          billing_interval: "monthly",
           store_addon: storeAddon ? "true" : "false",
           terms_accepted: "true",
           terms_accepted_at: new Date().toISOString(),

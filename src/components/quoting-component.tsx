@@ -18,11 +18,9 @@ import { addons } from "@/lib/data/addons";
 import { services } from "@/lib/data/services";
 import {
   CARE_PLANS,
-  BILLING_INTERVALS,
   STORE_ADDON,
   CALENDLY_URL,
   STANDALONE_HOSTING,
-  type BillingInterval,
   type CarePlan,
 } from "@/lib/data/care-plans";
 
@@ -35,26 +33,6 @@ interface CalculatedTotals {
   recurring: number;
 }
 
-function effectiveMonthly(plan: CarePlan, interval: BillingInterval) {
-  if (interval === "sixMonth") return plan.upfront.sixMonth;
-  if (interval === "twelveMonth") return plan.upfront.twelveMonth;
-  return plan.monthly;
-}
-
-function intervalNote(interval: BillingInterval) {
-  if (interval === "sixMonth") return "billed every 6 months";
-  if (interval === "twelveMonth") return "billed yearly";
-  return "billed monthly";
-}
-
-function renewalNote(interval: BillingInterval): string | null {
-  if (interval === "sixMonth")
-    return "Billed upfront. Renews automatically every 6 months at the same rate unless cancelled.";
-  if (interval === "twelveMonth")
-    return "Billed upfront. Renews automatically every 12 months at the same rate unless cancelled.";
-  return null;
-}
-
 export default function QuotingComponent() {
   // Standalone-hosting flow (dynamic Stripe price_data).
   const [selectedService, setSelectedService] = useState("");
@@ -64,10 +42,7 @@ export default function QuotingComponent() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Care-plan flow (Stripe Price IDs).
-  const [planInterval, setPlanInterval] = useState<
-    Record<string, BillingInterval>
-  >({});
+  // Care-plan flow (Stripe Price IDs). Monthly only.
   const [planStore, setPlanStore] = useState<Record<string, boolean>>({});
   const [planTerms, setPlanTerms] = useState<Record<string, boolean>>({});
   const [planLoading, setPlanLoading] = useState<string | null>(null);
@@ -152,7 +127,6 @@ export default function QuotingComponent() {
         body: JSON.stringify({
           carePlan: {
             planId: plan.id,
-            interval: planInterval[plan.id] ?? "monthly",
             storeAddon: !!planStore[plan.id],
             termsAccepted: !!planTerms[plan.id],
           },
@@ -231,9 +205,8 @@ export default function QuotingComponent() {
           {/* Care plan cards */}
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
             {CARE_PLANS.map((plan) => {
-              const interval = planInterval[plan.id] ?? "monthly";
               const store = !!planStore[plan.id];
-              const monthly = effectiveMonthly(plan, interval);
+              const monthly = plan.monthly;
               const isCheckout = plan.mode === "checkout";
               const loading = planLoading === plan.id;
 
@@ -275,43 +248,6 @@ export default function QuotingComponent() {
 
                   {isCheckout ? (
                     <div className="mt-6 flex flex-col gap-4 border-t border-border pt-5">
-                      {/* Billing interval */}
-                      <div>
-                        <p className="mb-2 font-mono text-label-sm uppercase text-muted-foreground">
-                          Billing
-                        </p>
-                        <div className="flex flex-col gap-1.5">
-                          {BILLING_INTERVALS.map((bi) => (
-                            <label
-                              key={bi.id}
-                              className="flex cursor-pointer items-center gap-2 text-small text-foreground"
-                            >
-                              <input
-                                type="radio"
-                                name={`billing-${plan.id}`}
-                                checked={interval === bi.id}
-                                onChange={() =>
-                                  setPlanInterval((prev) => ({
-                                    ...prev,
-                                    [plan.id]: bi.id,
-                                  }))
-                                }
-                                className="accent-accent"
-                              />
-                              <span>{bi.label}</span>
-                              <span className="text-muted-foreground">
-                                · {bi.note}
-                              </span>
-                            </label>
-                          ))}
-                        </div>
-                        {renewalNote(interval) && (
-                          <p className="mt-3 text-small text-muted-foreground">
-                            {renewalNote(interval)}
-                          </p>
-                        )}
-                      </div>
-
                       {/* Store add-on */}
                       <label className="flex cursor-pointer items-center gap-2 text-small text-foreground">
                         <input
@@ -335,11 +271,7 @@ export default function QuotingComponent() {
                           ${(monthly + (store ? STORE_ADDON.monthly : 0)).toLocaleString()}
                           /mo
                         </span>{" "}
-                        {intervalNote(interval)}
-                        {store ? ", store included" : ""}
-                        {renewalNote(interval) && (
-                          <span className="mt-1 block">{renewalNote(interval)}</span>
-                        )}
+                        billed monthly{store ? ", store included" : ""}
                       </div>
 
                       {/* Terms acceptance (required) */}
@@ -356,7 +288,7 @@ export default function QuotingComponent() {
                           className="mt-0.5 accent-accent"
                         />
                         <span>
-                          I agree to a 3-month minimum term and the{" "}
+                          I agree to the{" "}
                           <Link
                             href="/terms-and-conditions"
                             target="_blank"
@@ -387,11 +319,6 @@ export default function QuotingComponent() {
                     </div>
                   ) : (
                     <div className="mt-6 flex flex-col gap-3 border-t border-border pt-5">
-                      <p className="text-small text-muted-foreground">
-                        Upfront: ${plan.upfront.sixMonth.toLocaleString()}/mo for
-                        6 months, ${plan.upfront.twelveMonth.toLocaleString()}/mo
-                        for 12.
-                      </p>
                       <a
                         href={CALENDLY_URL}
                         target="_blank"
@@ -414,7 +341,7 @@ export default function QuotingComponent() {
           )}
 
           <p className="mt-6 max-w-3xl text-small text-muted-foreground">
-            3-month minimum, then month-to-month. Online stores add $
+            Billed monthly, cancel any time. Online stores add $
             {STORE_ADDON.monthly}/month to any plan. Hours reset each month and
             don&apos;t roll over. Extra work outside your plan is billed at
             $165/hr.

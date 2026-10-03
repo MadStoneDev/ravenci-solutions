@@ -77,22 +77,12 @@ export default function TermsAndConditionsPage() {
           </p>
           <ul className="pl-5">
             <li className="mb-1 list-disc">
-              <span className="font-semibold text-foreground">
-                Monthly care plans
-              </span>{" "}
-              have a minimum term of three months. After the minimum term, they
-              continue month-to-month and may be cancelled with 30 days' written
-              notice. The plan remains active and billable until the notice
-              period ends.
-            </li>
-            <li className="mb-1 list-disc">
-              <span className="font-semibold text-foreground">
-                Plans paid 6 or 12 months upfront
-              </span>{" "}
-              are billed in advance for the full period and renew automatically
-              at the same rate for the same period unless cancelled in writing
-              before the renewal date. Amounts paid for a period already paid are
-              non-refundable, except where a refund is required by law.
+              <span className="font-semibold text-foreground">Care plans</span>{" "}
+              are billed monthly in advance and can be cancelled at any time by
+              giving written notice. The plan stays active until the end of the
+              current billing month, and no further charges are made after that.
+              Payments for the current month are non-refundable, except where a
+              refund is required by law.
             </li>
             <li className="mb-1 list-disc">
               <span className="font-semibold text-foreground">

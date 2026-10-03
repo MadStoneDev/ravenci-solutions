@@ -36,13 +36,6 @@ export const metadata: Metadata = {
 
 const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
-const UPFRONT_HEAD = [
-  "Plan",
-  "3-month minimum",
-  "6 months upfront",
-  "12 months upfront",
-];
-
 export default function WebsiteMaintenancePage() {
   const proofTestimonial = getTestimonialByID("geoff-beisler");
 
@@ -120,7 +113,7 @@ export default function WebsiteMaintenancePage() {
           <p className="mt-6 text-lead text-muted-foreground">
             Every plan includes hosting, updates, security and backups. Higher
             plans add hours each month for design, development and content work.
-            3-month minimum, then month-to-month.
+            Billed monthly, cancel any time.
           </p>
           <p className="mt-4 text-body text-muted-foreground">
             Since October 2024 I only host sites that are on a care plan, so
@@ -205,54 +198,10 @@ export default function WebsiteMaintenancePage() {
         </div>
       </section>
 
-      {/* Upfront savings */}
-      <section className={`${SECTION} border-b border-border`}>
-        <div className="mb-8 flex flex-col gap-3">
-          <SectionLabel index="04" label="Save upfront" />
-          <h2 className="text-display-m text-foreground">Pay 6 or 12 months upfront and save</h2>
-          <p className="max-w-2xl text-body text-muted-foreground">
-            6 months upfront saves about 5%, 12 months about 10%. Same plan,
-            lower effective monthly.
-          </p>
-        </div>
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[480px] border-collapse text-small">
-            <thead>
-              <tr className="border-b border-border text-left">
-                {UPFRONT_HEAD.map((h, i) => (
-                  <th
-                    key={h}
-                    className={`py-2 font-medium text-foreground ${i === 0 ? "pr-4" : "px-4"}`}
-                  >
-                    {h}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {CARE_PLANS.map((plan) => (
-                <tr key={plan.id} className="border-b border-border">
-                  <td className="py-2.5 pr-4 font-medium text-foreground">{plan.name}</td>
-                  <td className="px-4 py-2.5 text-muted-foreground">
-                    ${plan.monthly.toLocaleString()}/mo
-                  </td>
-                  <td className="px-4 py-2.5 text-muted-foreground">
-                    ${plan.upfront.sixMonth.toLocaleString()}/mo
-                  </td>
-                  <td className="px-4 py-2.5 text-muted-foreground">
-                    ${plan.upfront.twelveMonth.toLocaleString()}/mo
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
       {/* Standalone hosting */}
       <section className={`${SECTION} border-b border-border`}>
         <div className="mb-8 flex flex-col gap-3">
-          <SectionLabel index="05" label="Hosting only" />
+          <SectionLabel index="04" label="Hosting only" />
           <h2 className="text-display-m text-foreground">Just need hosting?</h2>
         </div>
         <div className="max-w-xl rounded-sm border border-border bg-card p-6">
@@ -283,7 +232,7 @@ export default function WebsiteMaintenancePage() {
       {/* FAQ */}
       <section className={`${SECTION} border-b border-border`}>
         <div className="mb-8 flex flex-col gap-3">
-          <SectionLabel index="06" label="Questions" />
+          <SectionLabel index="05" label="Questions" />
           <h2 className="text-display-m text-foreground">Common questions</h2>
         </div>
         <Accordion

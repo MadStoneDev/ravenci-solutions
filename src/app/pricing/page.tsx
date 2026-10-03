@@ -33,10 +33,6 @@ type PriceItem = {
   bullets?: string[];
   timeline?: string;
 };
-type UpfrontTable = {
-  head: string[];
-  rows: string[][];
-};
 type PriceGroup = {
   heading: string;
   href: string;
@@ -46,7 +42,6 @@ type PriceGroup = {
   items: PriceItem[];
   /** Note rendered below the cards. */
   footnote?: string;
-  table?: UpfrontTable;
 };
 
 const groups: PriceGroup[] = [
@@ -144,7 +139,7 @@ const groups: PriceGroup[] = [
         line: "Larger builds designed to scale from where you are now to where you're heading.",
         bullets: [
           "Architecture planned for growth and higher traffic",
-          "Detailed discovery and technical planning upfront",
+          "Detailed discovery and technical planning at the start",
           "Phased delivery with regular check-ins",
           "Ongoing development available on a Partner plan",
         ],
@@ -212,7 +207,7 @@ const groups: PriceGroup[] = [
           "AI visibility tracking: how ChatGPT, Gemini and Google's AI describe you",
           "Monthly report on rankings, traffic and enquiries",
         ],
-        timeline: "Minimum term: 3 months",
+        timeline: "Billed monthly, cancel any time. Most results build over 3 to 6 months.",
       },
       {
         name: "eCommerce SEO + Campaigns",
@@ -241,7 +236,7 @@ const groups: PriceGroup[] = [
     heading: "Care Plans",
     href: "/website-maintenance",
     blurb:
-      "Every plan includes hosting, updates, security and backups. Higher plans add hours each month for design, development and content work. 3-month minimum, then month-to-month. Save by paying 6 or 12 months upfront.",
+      "Every plan includes hosting, updates, security and backups. Higher plans add hours each month for design, development and content work. Billed monthly, cancel any time.",
     items: [
       {
         name: "Maintenance",
@@ -289,16 +284,7 @@ const groups: PriceGroup[] = [
       },
     ],
     footnote:
-      "Paying upfront? 6 months saves about 5%, 12 months saves about 10%. Online stores add $200/month to any plan. Hours reset each month and don't roll over.",
-    table: {
-      head: ["Plan", "3-month minimum", "6 months upfront", "12 months upfront"],
-      rows: [
-        ["Maintenance", "$249/mo", "$239/mo", "$225/mo"],
-        ["Website Care", "$549/mo", "$519/mo", "$495/mo"],
-        ["Growth", "$1,390/mo", "$1,320/mo", "$1,250/mo"],
-        ["Partner", "$2,750/mo", "$2,600/mo", "$2,475/mo"],
-      ],
-    },
+      "Online stores add $200/month to any plan. Hours reset each month and don't roll over.",
   },
   {
     heading: "Hosting",
@@ -435,44 +421,6 @@ export default function PricingPage() {
                 <p className="mt-4 text-small text-muted-foreground">
                   {group.footnote}
                 </p>
-              )}
-              {group.table && (
-                <div className="mt-6 overflow-x-auto">
-                  <table className="w-full min-w-[480px] border-collapse text-small">
-                    <thead>
-                      <tr className="border-b border-border text-left">
-                        {group.table.head.map((h, i) => (
-                          <th
-                            key={h}
-                            className={`py-2 font-medium text-foreground ${
-                              i === 0 ? "pr-4" : "px-4"
-                            }`}
-                          >
-                            {h}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {group.table.rows.map((row) => (
-                        <tr key={row[0]} className="border-b border-border">
-                          {row.map((cell, i) => (
-                            <td
-                              key={i}
-                              className={`py-2.5 ${
-                                i === 0
-                                  ? "pr-4 font-medium text-foreground"
-                                  : "px-4 text-muted-foreground"
-                              }`}
-                            >
-                              {cell}
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
               )}
             </div>
           ))}
