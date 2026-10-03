@@ -5,12 +5,12 @@ import QuotingComponent from "@/components/quoting-component";
 export const metadata = {
   title: "Get a Quote | RAVENCI Solutions",
   description:
-    "Configure your hosting or maintenance plan and check out securely. For project work, request a proposal.",
+    "Choose a care plan (from $249/mo) or standalone managed hosting ($39/mo) and check out securely. For a website, eCommerce or app project, request a proposal.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Get a Quote | RAVENCI Solutions",
     description:
-      "Configure your hosting or maintenance plan and check out securely. For project work, request a proposal.",
+      "Choose a care plan (from $249/mo) or standalone managed hosting ($39/mo) and check out securely. For a website, eCommerce or app project, request a proposal.",
     url: "/quote",
     type: "website" as const,
   },

@@ -2,13 +2,17 @@ import { NextRequest, NextResponse } from "next/server";
 import { Stripe } from "stripe";
 import { checkRateLimit } from "@/lib/api-guards";
 import {
-  CARE_PLAN_PRICE_IDS,
-  STORE_ADDON_PRICE_IDS,
+  getCarePlanPriceIds,
+  getStoreAddonPriceIds,
   isPlaceholderPriceId,
   type BillingInterval,
 } from "@/lib/data/care-plans";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+
+// Use the TEST Price IDs when running against a test secret key, LIVE otherwise,
+// so the full care-plan flow can be exercised before go-live.
+const IS_TEST_MODE = (process.env.STRIPE_SECRET_KEY ?? "").startsWith("sk_test_");
 
 // Server-side addon prices - MUST match your frontend exactly
 const ADDON_PRICES: Record<string, { price: number; isRecurring: boolean }> = {
@@ -143,13 +147,26 @@ export async function POST(request: NextRequest) {
         );
       }
 
+      // The 3-month minimum + Terms of Service acceptance is required.
+      if (body.carePlan.termsAccepted !== true) {
+        return NextResponse.json(
+          { error: "Please accept the 3-month minimum term and Terms of Service." },
+          { status: 400 },
+        );
+      }
+
       const planPriceId =
-        CARE_PLAN_PRICE_IDS[planId as "maintenance" | "website-care"][interval];
+        getCarePlanPriceIds(IS_TEST_MODE)[planId as "maintenance" | "website-care"][
+          interval
+        ];
       const careLineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [
         { price: planPriceId, quantity: 1 },
       ];
       if (storeAddon) {
-        careLineItems.push({ price: STORE_ADDON_PRICE_IDS[interval], quantity: 1 });
+        careLineItems.push({
+          price: getStoreAddonPriceIds(IS_TEST_MODE)[interval],
+          quantity: 1,
+        });
       }
 
       // Fail safe until the real Price IDs are dropped in.
@@ -163,6 +180,8 @@ export async function POST(request: NextRequest) {
         );
       }
 
+      // No tax is applied: automatic_tax stays off and no tax_rates are set, so
+      // the customer is charged exactly the listed price.
       const careSession = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         line_items: careLineItems,
@@ -174,6 +193,9 @@ export async function POST(request: NextRequest) {
           care_plan: planId,
           billing_interval: interval,
           store_addon: storeAddon ? "true" : "false",
+          terms_accepted: "true",
+          terms_accepted_at: new Date().toISOString(),
+          terms_version: "3-month-minimum+tos",
           comments: typeof body.comments === "string" ? body.comments : "",
         },
         allow_promotion_codes: true,

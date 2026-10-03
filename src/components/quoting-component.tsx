@@ -47,6 +47,14 @@ function intervalNote(interval: BillingInterval) {
   return "billed monthly";
 }
 
+function renewalNote(interval: BillingInterval): string | null {
+  if (interval === "sixMonth")
+    return "Billed upfront. Renews automatically every 6 months at the same rate unless cancelled.";
+  if (interval === "twelveMonth")
+    return "Billed upfront. Renews automatically every 12 months at the same rate unless cancelled.";
+  return null;
+}
+
 export default function QuotingComponent() {
   // Standalone-hosting flow (dynamic Stripe price_data).
   const [selectedService, setSelectedService] = useState("");
@@ -61,6 +69,7 @@ export default function QuotingComponent() {
     Record<string, BillingInterval>
   >({});
   const [planStore, setPlanStore] = useState<Record<string, boolean>>({});
+  const [planTerms, setPlanTerms] = useState<Record<string, boolean>>({});
   const [planLoading, setPlanLoading] = useState<string | null>(null);
   const [planError, setPlanError] = useState<string | null>(null);
 
@@ -145,6 +154,7 @@ export default function QuotingComponent() {
             planId: plan.id,
             interval: planInterval[plan.id] ?? "monthly",
             storeAddon: !!planStore[plan.id],
+            termsAccepted: !!planTerms[plan.id],
           },
         }),
       });
@@ -295,6 +305,11 @@ export default function QuotingComponent() {
                             </label>
                           ))}
                         </div>
+                        {renewalNote(interval) && (
+                          <p className="mt-3 text-small text-muted-foreground">
+                            {renewalNote(interval)}
+                          </p>
+                        )}
                       </div>
 
                       {/* Store add-on */}
@@ -322,11 +337,40 @@ export default function QuotingComponent() {
                         </span>{" "}
                         {intervalNote(interval)}
                         {store ? ", store included" : ""}
+                        {renewalNote(interval) && (
+                          <span className="mt-1 block">{renewalNote(interval)}</span>
+                        )}
                       </div>
+
+                      {/* Terms acceptance (required) */}
+                      <label className="flex cursor-pointer items-start gap-2 text-small text-foreground">
+                        <input
+                          type="checkbox"
+                          checked={!!planTerms[plan.id]}
+                          onChange={(e) =>
+                            setPlanTerms((prev) => ({
+                              ...prev,
+                              [plan.id]: e.target.checked,
+                            }))
+                          }
+                          className="mt-0.5 accent-accent"
+                        />
+                        <span>
+                          I agree to a 3-month minimum term and the{" "}
+                          <Link
+                            href="/terms-and-conditions"
+                            target="_blank"
+                            className="font-medium text-accent underline underline-offset-2 hover:no-underline"
+                          >
+                            Terms of Service
+                          </Link>
+                          .
+                        </span>
+                      </label>
 
                       <button
                         onClick={() => handleCarePlanCheckout(plan)}
-                        disabled={loading}
+                        disabled={loading || !planTerms[plan.id]}
                         className="flex h-11 w-full items-center justify-center gap-2 rounded-sm bg-accent px-6 font-semibold text-accent-foreground transition-colors hover:bg-accent/90 disabled:cursor-not-allowed disabled:opacity-50"
                       >
                         {loading ? (
