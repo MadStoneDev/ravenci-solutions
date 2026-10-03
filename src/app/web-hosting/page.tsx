@@ -420,7 +420,7 @@ export default function WebHostingPage() {
           {[
             { name: "Website Maintenance", href: "/website-maintenance", description: "Keep your site secure and up to date" },
             { name: "Website Design", href: "/web-development", description: "Custom websites built to perform" },
-            { name: "Retainer Packages", href: "/retainer-packages", description: "Ongoing development and support" },
+            { name: "SEO & Content", href: "/seo-and-content", description: "Get found on Google and AI search" },
           ].map((service) => (
             <Link
               key={service.href}

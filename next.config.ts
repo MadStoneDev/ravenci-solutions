@@ -62,6 +62,13 @@ const nextConfig: NextConfig = {
         destination: "/launch-your-vision",
         permanent: true,
       },
+      {
+        // Care Plans and Maintenance merged into one section on /pricing;
+        // details now live on /website-maintenance.
+        source: "/retainer-packages",
+        destination: "/website-maintenance",
+        permanent: true,
+      },
     ];
   },
   webpack: (config, { dev }) => {

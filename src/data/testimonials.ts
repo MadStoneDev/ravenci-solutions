@@ -17,7 +17,7 @@ export const testimonials: Testimonial[] = [
     author: "Geoff Beisler",
     company: "Green Earth Trees",
     image: null,
-    pages: ["homepage", "retainer-packages"],
+    pages: ["homepage", "website-maintenance"],
   },
   {
     id: "adam-bisset",

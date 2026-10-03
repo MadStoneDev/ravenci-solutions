@@ -480,7 +480,7 @@ export const MANAGED_WEB: ServicePageData = {
   pricingAnchor: {
     fromLabel: "FROM",
     price: "$39/mo",
-    note: "Hosting from $39/mo. Hosting plus maintenance from $269/mo. One-off tidy-up $495.",
+    note: "Standalone hosting $39/mo. Care plans from $249/mo include hosting, maintenance and support, up to $2,750/mo for the Partner plan.",
     ticks: [
       "99.9% uptime",
       "Daily backups with quick restore",
@@ -512,14 +512,15 @@ export const MANAGED_WEB: ServicePageData = {
   sticky: { label: "Get managed", href: "/launch-your-vision", startingPrice: 39 },
   metaTitle: "Managed Web | RAVENCI Solutions",
   metaDescription:
-    "Managed web hosting and maintenance from Brisbane. Hosting, SSL, daily backups, security, uptime monitoring and updates in one package. From $39/mo, or hosting plus maintenance from $269/mo.",
+    "Managed web hosting and care plans from Brisbane. Hosting, SSL, daily backups, security, uptime monitoring and updates. Standalone hosting from $39/mo, care plans from $249/mo.",
   schema: {
     serviceType: "Managed Web Hosting & Maintenance",
     offers: [
-      { name: "Managed hosting", price: "39", description: "Cloud hosting with SSL, daily backups, security monitoring and Brisbane-based support, billed monthly." },
-      { name: "Hosting + maintenance", price: "269", description: "Hosting plus ongoing maintenance, updates and monitoring in one monthly package." },
-      { name: "Monthly maintenance", price: "249", description: "Ongoing updates, security, backups and performance checks, billed monthly." },
-      { name: "One-off tidy-up", price: "495", description: "A one-off round of updates, fixes, plugin tests and security checks." },
+      { name: "Managed hosting", price: "39", description: "Standalone cloud hosting with SSL, daily backups, security monitoring and Brisbane-based support, billed monthly." },
+      { name: "Maintenance", price: "249", description: "Care plan with hosting included: updates, security, daily backups and monitoring, billed monthly." },
+      { name: "Website Care", price: "549", description: "Everything in Maintenance plus 2 hours a month of design, development or content work." },
+      { name: "Growth", price: "1390", description: "Everything in Maintenance plus 8 hours a month for new pages, landing pages and features." },
+      { name: "Partner", price: "2750", description: "Everything in Maintenance plus 20 hours a month across design, development and content." },
     ],
   },
 };
@@ -539,7 +540,7 @@ export const SEO_CONTENT: ServicePageData = {
   pricingAnchor: {
     fromLabel: "FROM",
     price: "$1,750/mo",
-    note: "Standard SEO retainer. eCommerce SEO and campaigns from $2,250/mo. Copywriting from $390 per page.",
+    note: "Standard SEO plan. eCommerce SEO and campaigns from $2,250/mo. Copywriting from $390 per page.",
     ticks: [
       "I focus on leads and sales, not just traffic",
       "Transparent AUD pricing, clear scopes",

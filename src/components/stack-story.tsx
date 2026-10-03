@@ -10,7 +10,7 @@ const STEPS = [
   { n: "03", name: "Host", copy: "Managed Australian-supported hosting from $39/mo. SSL, daily backups, monitoring, 99.9% uptime.", tag: "Live, monitored" },
   { n: "04", name: "Secure", copy: "Patching, firewall, domain and DNS management, and a restore that has actually been tested.", tag: "Patch log" },
   { n: "05", name: "Optimise", copy: "SEO, AEO and GEO: found by Google, and quoted correctly by the AI assistants your buyers now ask.", tag: "Monthly report" },
-  { n: "06", name: "Maintain", copy: "Updates, content changes and new features on retainer from $249/mo. You email me, not a ticket system.", tag: "Care plan" },
+  { n: "06", name: "Maintain", copy: "Updates, content changes and new features on a care plan from $249/mo. You email me, not a ticket system.", tag: "Care plan" },
 ];
 
 const PAD = "px-5 py-16 md:px-12 md:py-24 lg:px-20";

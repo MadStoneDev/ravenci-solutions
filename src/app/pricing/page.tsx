@@ -1,6 +1,7 @@
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Link from "next/link";
 import { Route } from "next";
+import { IconCheck } from "@tabler/icons-react";
 
 import Breadcrumbs from "@/components/breadcrumbs";
 import SectionLabel from "@/components/section-label";
@@ -12,25 +13,40 @@ import { getTestimonialByID } from "@/data/testimonials";
 export const metadata = {
   title: "Pricing | RAVENCI Solutions",
   description:
-    "What it costs to work with RAVENCI. Websites from $7,500, eCommerce from $12,000, branding from $3,500, hosting from $39/mo. Clear pricing.",
+    "What it costs to work with RAVENCI. Websites from $7,500, eCommerce from $12,000, branding from $3,500, care plans from $249/mo, hosting from $39/mo.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Pricing | RAVENCI Solutions",
     description:
-      "What it costs to work with RAVENCI. Websites from $7,500, eCommerce from $12,000, branding from $3,500, hosting from $39/mo. Clear pricing.",
+      "What it costs to work with RAVENCI. Websites from $7,500, eCommerce from $12,000, branding from $3,500, care plans from $249/mo, hosting from $39/mo.",
     url: "/pricing",
     type: "website",
   },
   twitter: { ...TWITTER_DEFAULTS },
 };
 
-type PriceItem = { name: string; price: string; line: string };
+type PriceItem = {
+  name: string;
+  price: string;
+  line: string;
+  bullets?: string[];
+  timeline?: string;
+};
+type UpfrontTable = {
+  head: string[];
+  rows: string[][];
+};
 type PriceGroup = {
   heading: string;
   href: string;
   blurb: string;
+  /** Short note under the blurb, e.g. payment terms. */
+  note?: string;
   items: PriceItem[];
+  /** Note rendered below the cards. */
+  footnote?: string;
+  table?: UpfrontTable;
 };
 
 const groups: PriceGroup[] = [
@@ -39,26 +55,55 @@ const groups: PriceGroup[] = [
     href: "/web-development",
     blurb:
       "Custom sites built to last, owned by you, still fast in five years.",
+    note: "50% deposit to start, 50% at launch.",
     items: [
       {
         name: "Business Website",
         price: "from $7,500",
         line: "For an established business whose site should look as credible as they are.",
+        bullets: [
+          "Up to 10 custom-designed pages, signed off before build",
+          "WordPress + RAVENCI Builder, so you can edit it yourself",
+          "85+ PageSpeed guaranteed, with SEO foundations in place",
+          "Launch, training and 30 days of support",
+        ],
+        timeline: "Typically 3 to 6 weeks",
       },
       {
         name: "Custom Website",
         price: "from $10,000",
         line: "For sites that need integrations or bespoke flows off-the-shelf won't cover.",
+        bullets: [
+          "Everything in Business Website",
+          "Integrations like booking systems, CRMs or practice software",
+          "Custom forms, calculators or member areas",
+          "More pages and content structure",
+        ],
+        timeline: "Typically 6 to 10 weeks",
       },
       {
         name: "eCommerce",
         price: "from $12,000",
         line: "A store built to sell and to last, on the right platform for your products.",
+        bullets: [
+          "Shopify or BigCommerce, set up properly from the start",
+          "Custom design, product and collection pages",
+          "Payments, shipping and tax configured",
+          "Training so you can run it day-to-day",
+        ],
+        timeline: "Typically 8 to 12 weeks",
       },
       {
         name: "Custom eCommerce",
         price: "from $18,000",
-        line: "For stores with real complexity: large catalogues, custom logic, migrations.",
+        line: "For stores with real complexity.",
+        bullets: [
+          "Everything in eCommerce",
+          "Large catalogues, custom logic or wholesale pricing",
+          "Migration from your old store, with redirects so you keep your rankings",
+          "Headless builds when the catalogue demands it",
+        ],
+        timeline: "Typically 10 to 16 weeks",
       },
     ],
   },
@@ -67,21 +112,43 @@ const groups: PriceGroup[] = [
     href: "/web-apps",
     blurb:
       "Custom software built around how your business actually works, not bent around someone else's.",
+    note: "50% deposit to start, 50% at launch.",
     items: [
       {
         name: "Web App / Client Portal",
         price: "from $35,000",
         line: "Logins, roles, job tracking and document handover, wired into the tools you already run.",
+        bullets: [
+          "Secure logins with different access levels",
+          "Built around your actual workflow",
+          "Integrations with tools like Xero, Procore or your practice software",
+          "Hosting, security and support after launch",
+        ],
+        timeline: "Typically 3 to 4 months",
       },
       {
         name: "Business Platform",
         price: "from $55,000",
         line: "A full platform that replaces the spreadsheets and duplicate systems eating your team's time.",
+        bullets: [
+          "Everything in Web App",
+          "Multiple connected modules, dashboards and reporting",
+          "Data migration from your existing systems",
+          "Staged rollout so your team isn't disrupted",
+        ],
+        timeline: "Typically 4 to 6 months",
       },
       {
         name: "Enterprise Build",
         price: "from $75,000",
         line: "Larger builds designed to scale from where you are now to where you're heading.",
+        bullets: [
+          "Architecture planned for growth and higher traffic",
+          "Detailed discovery and technical planning upfront",
+          "Phased delivery with regular check-ins",
+          "Ongoing development available on a Partner plan",
+        ],
+        timeline: "Timeline scoped during discovery",
       },
     ],
   },
@@ -94,21 +161,38 @@ const groups: PriceGroup[] = [
         name: "Logo + Guidelines",
         price: "from $3,500",
         line: "A logo and the rules for using it consistently.",
+        bullets: [
+          "3 initial concepts, refined to one",
+          "Full logo set for print, web and social",
+          "A simple guide covering colours, fonts and usage",
+        ],
       },
       {
         name: "Full Brand Identity",
         price: "from $10,000",
         line: "The complete system: logo, type, colour, and how it all holds together.",
+        bullets: [
+          "Everything in Logo + Guidelines",
+          "Complete typography and colour system",
+          "Stationery, templates and social assets",
+          "A detailed brand guide your team and suppliers can follow",
+        ],
       },
       {
         name: "Premium Signage",
         price: "Get a quote",
         line: "Signage designed to match the rest of the brand.",
+        bullets: [
+          "Designed to match your brand, with print-ready files for your supplier",
+        ],
       },
       {
         name: "Vehicle Wraps",
         price: "Get a quote",
         line: "Vehicle branding that turns the work ute into a moving billboard.",
+        bullets: [
+          "Designed to match your brand, with print-ready files for your supplier",
+        ],
       },
     ],
   },
@@ -120,64 +204,101 @@ const groups: PriceGroup[] = [
       {
         name: "Standard SEO",
         price: "from $1,750/mo",
-        line: "Ongoing work to lift you up the rankings and keep you there.",
+        line: "Getting found on Google and AI search, then staying found.",
+        bullets: [
+          "Technical fixes and ongoing health checks",
+          "Pages or articles written or improved each month",
+          "Local SEO and Google Business Profile management",
+          "AI visibility tracking: how ChatGPT, Gemini and Google's AI describe you",
+          "Monthly report on rankings, traffic and enquiries",
+        ],
+        timeline: "Minimum term: 3 months",
       },
       {
         name: "eCommerce SEO + Campaigns",
         price: "from $2,250/mo",
         line: "SEO built around product pages, plus campaign support.",
+        bullets: [
+          "Everything in Standard SEO",
+          "Product and collection page optimisation",
+          "Structured data so products show up properly in search and AI answers",
+          "Support for seasonal campaigns and promotions",
+        ],
       },
       {
         name: "Copywriting",
         price: "from $390/page",
         line: "Words written to read well and rank, one page at a time.",
+        bullets: [
+          "Written to read well for people and rank for search",
+          "Researched around the terms your customers actually use",
+          "One round of revisions included",
+        ],
       },
     ],
   },
   {
     heading: "Care Plans",
-    href: "/retainer-packages",
+    href: "/website-maintenance",
     blurb:
-      "A digital partner on retainer, for a fraction of hiring in-house.",
+      "Every plan includes hosting, updates, security and backups. Higher plans add hours each month for design, development and content work. 3-month minimum, then month-to-month. Save by paying 6 or 12 months upfront.",
     items: [
+      {
+        name: "Maintenance",
+        price: "$249/mo",
+        line: "For a site that just needs to stay safe and fast.",
+        bullets: [
+          "Hosting included",
+          "Updates, security, daily backups and monitoring",
+          "Minor fixes when something breaks",
+          "Issues looked at the next business day",
+        ],
+      },
       {
         name: "Website Care",
-        price: "$350/mo",
-        line: "Ongoing hours and support for a business website.",
+        price: "$549/mo",
+        line: "For businesses that regularly need small changes.",
+        bullets: [
+          "Everything in Maintenance",
+          "2 hours a month of design, development or content work",
+          "Requests handled within 2 business days",
+          "Extra hours at $150 instead of $165",
+        ],
       },
       {
-        name: "eCommerce Care",
-        price: "$750/mo",
-        line: "The same, sized for a store that needs more hands-on time.",
+        name: "Growth",
+        price: "$1,390/mo",
+        line: "For businesses actively adding to their site.",
+        bullets: [
+          "Everything in Maintenance",
+          "8 hours a month for new pages, landing pages and features",
+          "Priority turnaround, within 1 business day",
+          "Extra hours at $140",
+        ],
       },
       {
-        name: "Growth Essentials",
-        price: "$1,800/mo",
-        line: "More hours and a lower overage rate for businesses actively growing.",
-      },
-      {
-        name: "Growth Partner",
-        price: "$3,000/mo",
-        line: "The most hands-on tier, for businesses treating the site as a channel.",
+        name: "Partner",
+        price: "$2,750/mo",
+        line: "About half a day a week of my time, for a fraction of hiring in-house.",
+        bullets: [
+          "Everything in Maintenance",
+          "20 hours a month across design, development and content",
+          "Same-day response and a monthly planning call",
+          "Extra hours at $125",
+        ],
       },
     ],
-  },
-  {
-    heading: "Maintenance",
-    href: "/website-maintenance",
-    blurb: "Updates, security, and backups so nothing drifts into trouble.",
-    items: [
-      {
-        name: "Monthly Maintenance",
-        price: "$249/mo",
-        line: "Updates, security, backups, and monitoring in one package.",
-      },
-      {
-        name: "One-Off Maintenance",
-        price: "$495",
-        line: "A single tidy-up for a site that's fallen behind.",
-      },
-    ],
+    footnote:
+      "Paying upfront? 6 months saves about 5%, 12 months saves about 10%. Online stores add $200/month to any plan. Hours reset each month and don't roll over.",
+    table: {
+      head: ["Plan", "3-month minimum", "6 months upfront", "12 months upfront"],
+      rows: [
+        ["Maintenance", "$249/mo", "$239/mo", "$225/mo"],
+        ["Website Care", "$549/mo", "$519/mo", "$495/mo"],
+        ["Growth", "$1,390/mo", "$1,320/mo", "$1,250/mo"],
+        ["Partner", "$2,750/mo", "$2,600/mo", "$2,475/mo"],
+      ],
+    },
   },
   {
     heading: "Hosting",
@@ -186,8 +307,14 @@ const groups: PriceGroup[] = [
     items: [
       {
         name: "Managed Hosting",
-        price: "from $39/mo",
-        line: "All-inclusive: fast servers worldwide, SSL, monitoring, no surprise fees.",
+        price: "$39/mo",
+        line: "For sites that don't need a care plan.",
+        bullets: [
+          "Fast servers, SSL and uptime monitoring",
+          "Daily backups",
+          "Brisbane-based support",
+          "Included free on every care plan",
+        ],
       },
     ],
   },
@@ -258,25 +385,95 @@ export default function PricingPage() {
                   See details
                 </Link>
               </div>
-              <p className="mb-6 text-body text-muted-foreground">
-                {group.blurb}
-              </p>
-              <div className="divide-y divide-border border-y border-border">
+              <p className="text-body text-muted-foreground">{group.blurb}</p>
+              {group.note && (
+                <p className="mt-2 text-small font-medium text-foreground">
+                  {group.note}
+                </p>
+              )}
+              <div className="mt-6 divide-y divide-border border-y border-border">
                 {group.items.map((item) => (
                   <div
                     key={item.name}
-                    className="py-4 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6"
+                    className="py-5 flex flex-col sm:flex-row gap-2 sm:gap-6"
                   >
                     <div className="sm:w-52 flex-shrink-0">
                       <p className="font-medium text-foreground">{item.name}</p>
                       <p className="font-bold text-accent">{item.price}</p>
                     </div>
-                    <p className="text-small text-muted-foreground sm:pt-0.5">
-                      {item.line}
-                    </p>
+                    <div className="flex-1">
+                      <p className="text-small text-muted-foreground">
+                        {item.line}
+                      </p>
+                      {item.bullets && (
+                        <ul className="mt-3 flex flex-col gap-1.5">
+                          {item.bullets.map((b) => (
+                            <li
+                              key={b}
+                              className="flex items-start gap-2 text-small text-muted-foreground"
+                            >
+                              <IconCheck
+                                size={16}
+                                aria-hidden
+                                className="mt-0.5 shrink-0 text-accent"
+                              />
+                              <span>{b}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {item.timeline && (
+                        <p className="mt-3 font-mono text-label-sm uppercase text-muted-foreground">
+                          {item.timeline}
+                        </p>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
+              {group.footnote && (
+                <p className="mt-4 text-small text-muted-foreground">
+                  {group.footnote}
+                </p>
+              )}
+              {group.table && (
+                <div className="mt-6 overflow-x-auto">
+                  <table className="w-full min-w-[480px] border-collapse text-small">
+                    <thead>
+                      <tr className="border-b border-border text-left">
+                        {group.table.head.map((h, i) => (
+                          <th
+                            key={h}
+                            className={`py-2 font-medium text-foreground ${
+                              i === 0 ? "pr-4" : "px-4"
+                            }`}
+                          >
+                            {h}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {group.table.rows.map((row) => (
+                        <tr key={row[0]} className="border-b border-border">
+                          {row.map((cell, i) => (
+                            <td
+                              key={i}
+                              className={`py-2.5 ${
+                                i === 0
+                                  ? "pr-4 font-medium text-foreground"
+                                  : "px-4 text-muted-foreground"
+                              }`}
+                            >
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
             </div>
           ))}
 

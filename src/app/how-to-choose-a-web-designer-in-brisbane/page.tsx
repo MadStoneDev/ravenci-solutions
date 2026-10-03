@@ -229,7 +229,7 @@ const ravenciScorecard = [
   {
     question: "Post-launch support?",
     answer:
-      "30 days of post-launch bug fixes included. Ongoing maintenance plan or retainer packages from $350/mo for ongoing support.",
+      "30 days of post-launch bug fixes included. Care plans from $249/mo for ongoing support.",
   },
   {
     question: "What if you leave or I stop trading?",

@@ -15,7 +15,7 @@ export default function StickyCTA({
   link,
   label = "Get a quote",
   startingPrice,
-  priceNote = "ex GST",
+  priceNote,
 }: StickyCTAProps) {
   const formatted = useMemo(() => {
     if (typeof startingPrice !== "number") return null;
@@ -33,7 +33,9 @@ export default function StickyCTA({
           {formatted ? (
             <div className="leading-tight">
               <p className="font-medium text-foreground">{`From ${formatted}`}</p>
-              <p className="text-small text-muted-foreground">{priceNote}</p>
+              {priceNote && (
+                <p className="text-small text-muted-foreground">{priceNote}</p>
+              )}
             </div>
           ) : (
             <p className="font-medium text-foreground">Ready to start?</p>
