@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Stripe } from "stripe";
 import { checkRateLimit } from "@/lib/api-guards";
+import {
+  CARE_PLAN_PRICE_IDS,
+  STORE_ADDON_PRICE_ID,
+  isPlaceholderPriceId,
+  type BillingInterval,
+} from "@/lib/data/care-plans";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
@@ -30,9 +36,6 @@ const SERVICE_PRICES: Record<
   { basePrice: number; isRecurring: boolean }
 > = {
   "web-hosting": { basePrice: 39, isRecurring: true },
-  "monthly-web-maintenance": { basePrice: 249, isRecurring: true },
-  "oneoff-web-maintenance": { basePrice: 495, isRecurring: false },
-  "web-hosting-maintenance": { basePrice: 269, isRecurring: true },
 };
 
 function calculateServerTotals(
@@ -115,6 +118,76 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
+
+    // === CARE-PLAN CHECKOUT (Stripe Price IDs) ===
+    // Maintenance and Website Care only. Growth/Partner are book-a-call.
+    if (body.carePlan) {
+      const planId = body.carePlan.planId;
+      const interval = body.carePlan.interval as BillingInterval;
+      const storeAddon = body.carePlan.storeAddon === true;
+
+      if (planId !== "maintenance" && planId !== "website-care") {
+        return NextResponse.json(
+          { error: "This plan isn't available for online checkout. Please book a call." },
+          { status: 400 },
+        );
+      }
+      if (
+        interval !== "monthly" &&
+        interval !== "sixMonth" &&
+        interval !== "twelveMonth"
+      ) {
+        return NextResponse.json(
+          { error: "Invalid billing interval" },
+          { status: 400 },
+        );
+      }
+
+      const planPriceId =
+        CARE_PLAN_PRICE_IDS[planId as "maintenance" | "website-care"][interval];
+      const careLineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [
+        { price: planPriceId, quantity: 1 },
+      ];
+      if (storeAddon) {
+        careLineItems.push({ price: STORE_ADDON_PRICE_ID, quantity: 1 });
+      }
+
+      // Fail safe until the real Price IDs are dropped in.
+      if (careLineItems.some((li) => isPlaceholderPriceId(li.price as string))) {
+        return NextResponse.json(
+          {
+            error:
+              "Online checkout for care plans isn't live yet. Please book a call and I'll set you up.",
+          },
+          { status: 503 },
+        );
+      }
+
+      const careSession = await stripe.checkout.sessions.create({
+        payment_method_types: ["card"],
+        line_items: careLineItems,
+        mode: "subscription",
+        success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/quote/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/quote`,
+        metadata: {
+          payment_type: "care_plan",
+          care_plan: planId,
+          billing_interval: interval,
+          store_addon: storeAddon ? "true" : "false",
+          comments: typeof body.comments === "string" ? body.comments : "",
+        },
+        allow_promotion_codes: true,
+        ...(body.customerEmail &&
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.customerEmail)
+          ? { customer_email: body.customerEmail }
+          : {}),
+      });
+
+      return NextResponse.json({
+        checkoutUrl: careSession.url,
+        sessionId: careSession.id,
+      });
+    }
 
     validateInput(body);
 

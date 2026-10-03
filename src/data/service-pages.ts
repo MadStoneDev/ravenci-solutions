@@ -499,7 +499,7 @@ export const MANAGED_WEB: ServicePageData = {
   ],
   faq: [
     { question: "What's included?", answer: "Cloud hosting, SSL, daily backups, security monitoring and patching, uptime monitoring, performance checks, and Brisbane-based support. No hidden fees or surprise add-ons." },
-    { question: "Can I host elsewhere and still get your other services?", answer: "I prefer to host the sites I maintain so I can guarantee performance and security, but I can work with other quality hosts. The hosting plus maintenance bundle is the best value, because everything's optimised to work together." },
+    { question: "Can I host elsewhere and still get your other services?", answer: "I prefer to host the sites I maintain so I can guarantee performance and security, but I can work with other quality hosts. A care plan is the best value, because hosting and maintenance are optimised to work together." },
     { question: "What if my site goes down or traffic spikes?", answer: "I monitor 24/7 and usually restore within two hours during business hours. The cloud hosting scales automatically for traffic spikes, so a busy day doesn't take your site down." },
     { question: "Do you migrate my existing website?", answer: "Yes, I handle the full migration from your current host, though extra charges may apply. Your site will be faster and more secure from day one." },
     { question: "Is maintenance really necessary?", answer: "An unmaintained site is a soft target. Outdated plugins and no backups are how sites get hacked or go down, and fixing a breach or rebuilding after one costs far more than keeping it maintained, on top of the sales you lose while it's offline." },
