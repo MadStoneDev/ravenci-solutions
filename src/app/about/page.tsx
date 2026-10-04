@@ -119,12 +119,13 @@ export default function AboutPage() {
       <section className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}>
         <div className="mx-auto max-w-3xl">
           <SectionLabel index="02" label="What makes me different" tone="muted" />
-          <h2 className="mt-3 text-display-m text-foreground">Built to a standard, not to a deadline</h2>
+          <h2 className="mt-3 text-display-m text-foreground">Built to a standard that holds up</h2>
           <div className="mt-6 flex flex-col gap-4 text-body text-muted-foreground">
             <p>
-              My background is engineering, not web or graphic design. It taught
-              me to make every decision intentional: every component solid, and
-              the finished thing tested under real conditions before it ships.
+              I&apos;ve spent 25+ years building for the web, and I came to it from
+              engineering. That discipline never left: every decision is
+              intentional, every component solid, and the finished thing is tested
+              under real conditions before it ships.
             </p>
             <p>
               That&apos;s why I guarantee 85+ Google PageSpeed. Performance isn&apos;t
