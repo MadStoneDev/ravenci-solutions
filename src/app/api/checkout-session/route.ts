@@ -1,8 +1,6 @@
 ﻿// /app/api/checkout-session/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { Stripe } from "stripe";
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+import { stripe } from "@/lib/stripe";
 
 export async function GET(request: NextRequest) {
   try {

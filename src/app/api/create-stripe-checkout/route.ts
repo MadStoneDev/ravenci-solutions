@@ -1,18 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Stripe } from "stripe";
 import { checkRateLimit } from "@/lib/api-guards";
+import { stripe, IS_TEST_MODE } from "@/lib/stripe";
 import {
   getCarePlanPriceIds,
   getStoreAddonPriceId,
   getHostingPriceId,
   isPlaceholderPriceId,
 } from "@/lib/data/care-plans";
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-
-// Use the TEST Price IDs when running against a test secret key, LIVE otherwise,
-// so the full care-plan flow can be exercised before go-live.
-const IS_TEST_MODE = (process.env.STRIPE_SECRET_KEY ?? "").startsWith("sk_test_");
 
 // Server-side addon prices. Only the add-ons offered on the standalone hosting
 // plan in the UI are purchasable. Project-type add-ons (copywriting, SEO
