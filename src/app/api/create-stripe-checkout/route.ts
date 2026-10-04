@@ -4,6 +4,7 @@ import { checkRateLimit } from "@/lib/api-guards";
 import {
   getCarePlanPriceIds,
   getStoreAddonPriceId,
+  getHostingPriceId,
   isPlaceholderPriceId,
 } from "@/lib/data/care-plans";
 
@@ -244,46 +245,67 @@ export async function POST(request: NextRequest) {
       coupon_code: couponCode || "",
     };
 
-    // === SINGLE PAYMENT CHECKOUT ===
-    const lineItems: any[] = [];
+    // === HOSTING CHECKOUT (base via Stripe Price ID + add-ons as line items) ===
+    // Managed Hosting ($39/mo) is the only service here. Its base uses a Stripe
+    // Price ID; the optional add-ons ride along on the same subscription as a
+    // mixed cart (recurring add-ons renew; one-time add-ons bill once on the
+    // first invoice).
+    const base = SERVICE_PRICES[service.id];
+    const hostingPriceId = getHostingPriceId(IS_TEST_MODE);
 
-    // Add one-time payment if exists
-    if (totals.oneTime > 0) {
+    // Fail safe until the real Price ID is dropped in.
+    if (isPlaceholderPriceId(hostingPriceId)) {
+      return NextResponse.json(
+        {
+          error:
+            "Online checkout for hosting isn't live yet. Please book a call and I'll set you up.",
+        },
+        { status: 503 },
+      );
+    }
+
+    // Split the validated totals into base vs add-ons; the base is charged by the
+    // Price ID, so only the add-on amounts go into dynamic line items.
+    const baseRecurring = base.isRecurring ? base.basePrice : 0;
+    const baseOneTime = base.isRecurring ? 0 : base.basePrice;
+    const addonRecurring = totals.recurring - baseRecurring;
+    const addonOneTime = totals.oneTime - baseOneTime;
+
+    const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [
+      { price: hostingPriceId, quantity: 1 },
+    ];
+
+    if (addonRecurring > 0) {
       lineItems.push({
         price_data: {
           currency: "aud",
-          product_data: {
-            name: `${service.name}, Complete Package`,
-            description: description,
-          },
-          unit_amount: Math.round(totals.oneTime * 100),
+          product_data: { name: `${service.name}, monthly add-ons` },
+          unit_amount: Math.round(addonRecurring * 100),
+          recurring: { interval: "month" },
         },
         quantity: 1,
       });
     }
 
-    // Add recurring subscription if exists
-    if (totals.recurring > 0) {
+    if (addonOneTime > 0) {
       lineItems.push({
         price_data: {
           currency: "aud",
           product_data: {
-            name: `${service.name}, Monthly Services`,
-            description: `Recurring services: hosting, maintenance, etc.`,
+            name: `${service.name}, one-time add-ons`,
+            description,
           },
-          unit_amount: Math.round(totals.recurring * 100),
-          recurring: {
-            interval: "month",
-          },
+          unit_amount: Math.round(addonOneTime * 100),
         },
         quantity: 1,
       });
     }
 
+    // No tax is applied: automatic_tax stays off and no tax_rates are set.
     const sessionConfig: Stripe.Checkout.SessionCreateParams = {
       payment_method_types: ["card"],
       line_items: lineItems,
-      mode: totals.recurring > 0 ? "subscription" : "payment",
+      mode: base.isRecurring ? "subscription" : "payment",
       success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/quote/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/quote`,
       metadata: {

@@ -27,12 +27,18 @@ const CARE_PLAN_PRICE_IDS_TEST: CarePlanPriceIds = {
 };
 
 const CARE_PLAN_PRICE_IDS_LIVE: CarePlanPriceIds = {
-  maintenance: "REPLACE_WITH_LIVE_PRICE_ID_maintenance_monthly", // $249/mo
-  "website-care": "REPLACE_WITH_LIVE_PRICE_ID_websitecare_monthly", // $549/mo
+  maintenance: "price_1UMoFJB9qPQKWGdBo1GyeKjR", // $249/mo (live)
+  "website-care": "price_1UMoGcB9qPQKWGdBljJXo4UI", // $549/mo (live)
 };
 
 const STORE_ADDON_PRICE_ID_TEST = "price_1UMovqB9qPQKWGdBnRBKoNn1"; // $200/mo (test)
-const STORE_ADDON_PRICE_ID_LIVE = "REPLACE_WITH_LIVE_PRICE_ID_store_addon_monthly"; // $200/mo
+const STORE_ADDON_PRICE_ID_LIVE = "price_1UMoKOB9qPQKWGdBh2RUWhsP"; // $200/mo (live)
+
+// Standalone Managed Hosting base price ($39/mo). Add-ons (email hosting,
+// malware protection, WordPress migration) ride along as dynamic line items on
+// the same subscription (mixed cart: recurring + one-time on the first invoice).
+const HOSTING_PRICE_ID_TEST = "price_1UMov5B9qPQKWGdBJIkrGx0m"; // $39/mo (test)
+const HOSTING_PRICE_ID_LIVE = "price_1UMoEwB9qPQKWGdBlhurA1nc"; // $39/mo (live)
 
 /** Care-plan Price IDs for the active Stripe mode. */
 export function getCarePlanPriceIds(isTestMode: boolean): CarePlanPriceIds {
@@ -42,6 +48,11 @@ export function getCarePlanPriceIds(isTestMode: boolean): CarePlanPriceIds {
 /** Store add-on monthly Price ID for the active Stripe mode. */
 export function getStoreAddonPriceId(isTestMode: boolean): string {
   return isTestMode ? STORE_ADDON_PRICE_ID_TEST : STORE_ADDON_PRICE_ID_LIVE;
+}
+
+/** Standalone Managed Hosting base ($39/mo) Price ID for the active Stripe mode. */
+export function getHostingPriceId(isTestMode: boolean): string {
+  return isTestMode ? HOSTING_PRICE_ID_TEST : HOSTING_PRICE_ID_LIVE;
 }
 
 /** True while a Price ID is still a placeholder, so checkout can fail safe. */
