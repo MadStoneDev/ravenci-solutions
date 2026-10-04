@@ -22,8 +22,8 @@ export const STORE_ADDON = {
 type CarePlanPriceIds = Record<"maintenance" | "website-care", string>;
 
 const CARE_PLAN_PRICE_IDS_TEST: CarePlanPriceIds = {
-  maintenance: "REPLACE_WITH_TEST_PRICE_ID_maintenance_monthly", // $249/mo
-  "website-care": "REPLACE_WITH_TEST_PRICE_ID_websitecare_monthly", // $549/mo
+  maintenance: "price_1UMovQB9qPQKWGdBFBYljP1K", // $249/mo (test)
+  "website-care": "price_1UMovcB9qPQKWGdBh0aXj8nq", // $549/mo (test)
 };
 
 const CARE_PLAN_PRICE_IDS_LIVE: CarePlanPriceIds = {
@@ -31,7 +31,7 @@ const CARE_PLAN_PRICE_IDS_LIVE: CarePlanPriceIds = {
   "website-care": "REPLACE_WITH_LIVE_PRICE_ID_websitecare_monthly", // $549/mo
 };
 
-const STORE_ADDON_PRICE_ID_TEST = "REPLACE_WITH_TEST_PRICE_ID_store_addon_monthly"; // $200/mo
+const STORE_ADDON_PRICE_ID_TEST = "price_1UMovqB9qPQKWGdBnRBKoNn1"; // $200/mo (test)
 const STORE_ADDON_PRICE_ID_LIVE = "REPLACE_WITH_LIVE_PRICE_ID_store_addon_monthly"; // $200/mo
 
 /** Care-plan Price IDs for the active Stripe mode. */
