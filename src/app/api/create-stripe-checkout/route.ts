@@ -13,10 +13,13 @@ import {
 // plan in the UI are purchasable. Project-type add-ons (copywriting, SEO
 // content, contact forms, etc.) are proposal-only and must never be charged
 // here; they are deliberately excluded so a crafted request can't buy them.
-const ADDON_PRICES: Record<string, { price: number; isRecurring: boolean }> = {
-  "email-hosting": { price: 5, isRecurring: true },
-  "malware-protection": { price: 10, isRecurring: true },
-  "wordpress-migration": { price: 175, isRecurring: false },
+const ADDON_PRICES: Record<
+  string,
+  { price: number; isRecurring: boolean; name: string }
+> = {
+  "email-hosting": { price: 5, isRecurring: true, name: "Email Hosting" },
+  "malware-protection": { price: 10, isRecurring: true, name: "Malware Protection" },
+  "wordpress-migration": { price: 175, isRecurring: false, name: "WordPress Migration" },
 };
 
 // Server-side service prices - MUST match your frontend exactly
@@ -213,22 +216,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Build the product description with addons and comments
-    let description = service.description;
-
-    // Add selected addons to description
-    const selectedAddonsList = Object.entries(addons)
-      .filter(([_, quantity]) => (quantity as number) > 0)
-      .map(([addonId, quantity]) => `${addonId} (${quantity})`);
-
-    if (selectedAddonsList.length > 0) {
-      description += ` | Add-ons: ${selectedAddonsList.join(", ")}`;
-    }
-
-    if (comments) {
-      description += ` | Notes: ${comments}`;
-    }
-
     const baseMetadata = {
       service_id: service.id,
       service_name: service.name,
@@ -259,40 +246,27 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Split the validated totals into base vs add-ons; the base is charged by the
-    // Price ID, so only the add-on amounts go into dynamic line items.
-    const baseRecurring = base.isRecurring ? base.basePrice : 0;
-    const baseOneTime = base.isRecurring ? 0 : base.basePrice;
-    const addonRecurring = totals.recurring - baseRecurring;
-    const addonOneTime = totals.oneTime - baseOneTime;
-
+    // The base is charged by the Price ID; each selected add-on is its own line
+    // item with its real name, so the customer sees exactly what they're buying.
     const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [
       { price: hostingPriceId, quantity: 1 },
     ];
 
-    if (addonRecurring > 0) {
+    for (const [addonId, rawQty] of Object.entries(addons)) {
+      const quantity = rawQty as number;
+      if (quantity <= 0) continue;
+      const addon = ADDON_PRICES[addonId];
+      if (!addon) continue; // validated above; guard for safety
       lineItems.push({
         price_data: {
           currency: "aud",
-          product_data: { name: `${service.name}, monthly add-ons` },
-          unit_amount: Math.round(addonRecurring * 100),
-          recurring: { interval: "month" },
+          product_data: { name: addon.name },
+          unit_amount: Math.round(addon.price * 100),
+          ...(addon.isRecurring
+            ? { recurring: { interval: "month" as const } }
+            : {}),
         },
-        quantity: 1,
-      });
-    }
-
-    if (addonOneTime > 0) {
-      lineItems.push({
-        price_data: {
-          currency: "aud",
-          product_data: {
-            name: `${service.name}, one-time add-ons`,
-            description,
-          },
-          unit_amount: Math.round(addonOneTime * 100),
-        },
-        quantity: 1,
+        quantity,
       });
     }
 
