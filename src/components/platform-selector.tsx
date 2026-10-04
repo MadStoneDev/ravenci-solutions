@@ -20,10 +20,10 @@ const OPTIONS: PlatformOption[] = [
   {
     key: "content",
     num: "01",
-    label: "A content site people read",
+    label: "A content site you can edit",
     stack: "WordPress + RAVENCI Builder",
     reason:
-      "You publish regularly and want to edit pages yourself without a developer and without the layout falling apart.",
+      "You want to edit pages yourself without a developer and without the layout falling apart.",
     spec: [
       "A custom block system, so there's no page-builder bloat to slow it down",
       "85+ PageSpeed on a CMS, which most WordPress sites never reach",
@@ -82,7 +82,11 @@ export default function PlatformSelector() {
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-[380px_1fr]">
       {/* Options */}
-      <div className="flex gap-3 overflow-x-auto lg:flex-col lg:overflow-visible" role="tablist" aria-label="Platform options">
+      <div
+        className="flex gap-3 overflow-x-auto lg:flex-col lg:overflow-visible"
+        role="tablist"
+        aria-label="Platform options"
+      >
         {OPTIONS.map((o) => {
           const isActive = o.key === selected;
           return (
@@ -98,7 +102,11 @@ export default function PlatformSelector() {
                   : "border border-foreground/20 text-foreground hover:bg-muted"
               }`}
             >
-              <span className={`font-mono text-label ${isActive ? "text-background/70" : "text-muted-foreground"}`}>
+              <span
+                className={`font-mono text-label ${
+                  isActive ? "text-background/70" : "text-muted-foreground"
+                }`}
+              >
                 {o.num}
               </span>
               <span className="text-body font-semibold">{o.label}</span>
@@ -110,21 +118,33 @@ export default function PlatformSelector() {
       {/* Detail card. Keyed by selection so the CSS assemble animation replays
           on change without an animation library. */}
       <div className="rounded-sm border border-border bg-card p-8">
-        <span className="font-mono text-label uppercase text-muted-foreground">Recommended stack</span>
+        <span className="font-mono text-label uppercase text-muted-foreground">
+          Recommended stack
+        </span>
         <div className="my-4 h-px w-full bg-border" />
         <div key={selected} className="rv-assemble">
           <h3 className="text-heading-m text-foreground">{active.stack}</h3>
-          <p className="mt-3 text-body text-muted-foreground">{active.reason}</p>
+          <p className="mt-3 text-body text-muted-foreground">
+            {active.reason}
+          </p>
           <ul className="mt-5 flex flex-col gap-2.5">
             {active.spec.map((s) => (
-              <li key={s} className="flex items-start gap-3 text-small text-foreground">
-                <span aria-hidden className="mt-1.5 h-2 w-2 shrink-0 bg-accent" />
+              <li
+                key={s}
+                className="flex items-start gap-3 text-small text-foreground"
+              >
+                <span
+                  aria-hidden
+                  className="mt-1.5 h-2 w-2 shrink-0 bg-accent"
+                />
                 {s}
               </li>
             ))}
           </ul>
           <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-5">
-            <span className="font-mono text-label uppercase text-foreground">{active.price}</span>
+            <span className="font-mono text-label uppercase text-foreground">
+              {active.price}
+            </span>
             <Link
               href="/launch-your-vision"
               className="inline-flex items-center gap-1 text-small font-medium text-accent hover:underline"

@@ -12,12 +12,13 @@ const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 export const metadata = {
   title: "About | RAVENCI Solutions",
   description:
-    "Meet RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency and websites that hold up.",
+    "RAVENCI Solutions is a Brisbane-based web studio. Richard Haddad brings engineering discipline to building" +
+    " custom websites for Australian businesses.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "About | RAVENCI Solutions",
     description:
-      "Meet RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and websites that genuinely perform.",
+      "RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and websites that genuinely perform.",
     url: "/about",
     type: "website" as const,
   },
@@ -33,17 +34,42 @@ const STATS = [
 ];
 
 const VALUES = [
-  { title: "Transparency", description: "No jargon, no hidden fees. I explain everything in plain English and keep you informed at every stage." },
-  { title: "Client ownership", description: "You own what you pay for: your website, your content, your domain. No lock-in contracts, no proprietary traps." },
-  { title: "Education", description: "Every project comes with tailored video training and full access after launch, so you're never guessing how to manage your own site." },
-  { title: "Integrity", description: "Honest timelines, honest pricing. If something isn't right for your business, I'll tell you, even if it means a different approach." },
+  {
+    title: "Transparency",
+    description:
+      "No jargon, no hidden fees. I explain everything in plain English and keep you informed at every stage.",
+  },
+  {
+    title: "Client ownership",
+    description:
+      "You own what you pay for: your website, your content, your domain. No lock-in contracts, no proprietary traps.",
+  },
+  {
+    title: "Education",
+    description:
+      "Every project comes with tailored video training and full access after launch, so you're never guessing how to manage your own site.",
+  },
+  {
+    title: "Integrity",
+    description:
+      "Honest timelines, honest pricing. If something isn't right for your business, I'll tell you, even if it means a different approach.",
+  },
 ];
 
 const QUALIFICATIONS = [
-  { title: "Structural Engineering degree", detail: "for analytical thinking and problem solving" },
-  { title: "Ten years in steel detailing and structural drafting", detail: "where a thing either holds up under load or it doesn't" },
+  {
+    title: "Structural Engineering degree",
+    detail: "for analytical thinking and problem solving",
+  },
+  {
+    title: "Ten years in steel detailing and structural drafting",
+    detail: "where a thing either holds up under load or it doesn't",
+  },
   { title: "Graphic Design diploma", detail: "for professional visual design" },
-  { title: "25+ years digital experience", detail: "across construction, trades, medical, legal and retail" },
+  {
+    title: "25+ years digital experience",
+    detail: "across construction, trades, medical, legal and retail",
+  },
 ];
 
 export default function AboutPage() {
@@ -56,10 +82,12 @@ export default function AboutPage() {
         <div className="flex max-w-3xl flex-col gap-4">
           <Breadcrumbs items={[{ label: "About" }]} />
           <SectionLabel label="About" tick />
-          <h1 className="text-display-l text-foreground">The engineering behind your website</h1>
+          <h1 className="text-display-l text-foreground">
+            Your website, engineered to last
+          </h1>
           <p className="text-lead text-muted-foreground">
-            I take the long view on what your website needs to do, and I build it
-            so it still holds up in five years.
+            I've been building websites long before I started RAVENCI. It has
+            been my passion for over 25 years.
           </p>
         </div>
       </section>
@@ -84,26 +112,32 @@ export default function AboutPage() {
             <div className="flex h-24 w-24 items-center justify-center rounded-full border border-border font-mono text-heading-s text-accent">
               RH
             </div>
-            <span className="text-heading-s text-foreground">Richard Haddad</span>
-            <span className="font-mono text-label uppercase text-muted-foreground">Founder · RAVENCI Solutions</span>
+            <span className="text-heading-s text-foreground">
+              Richard Haddad
+            </span>
+            <span className="font-mono text-label uppercase text-muted-foreground">
+              Founder · RAVENCI Solutions
+            </span>
           </div>
           <div className="flex max-w-2xl flex-col gap-4">
             <SectionLabel index="01" label="The story" />
             <p className="text-body text-muted-foreground">
-              I&apos;m a structural engineer turned web developer, with a
-              multicultural upbringing that spans the Middle East and Australia.
-              Before the web, I spent ten years in steel detailing and structural
-              drafting, with a Structural Engineering degree behind that, and a
-              Graphic Design diploma alongside it.
+              I'm a structural engineer before I returned to my passion of being
+              a web developer, with a multicultural upbringing that spans the
+              Middle East and Australia. Before the web, I spent ten years in
+              steel detailing and structural drafting, with a Structural
+              Engineering degree behind that, and a Graphic Design diploma
+              alongside it.
             </p>
             <p className="text-body text-muted-foreground">
               That mix, analytical thinking and visual craft, shapes how I work.
               Everything has to serve a purpose, and everything has to hold up.
             </p>
             <p className="text-body text-muted-foreground">
-              After 25+ years in the digital space, I founded RAVENCI in Brisbane
-              in 2018 to offer Australian businesses something different: websites
-              and designs built with the same discipline and attention to detail.
+              After 25+ years in the digital space, I founded RAVENCI in
+              Brisbane in 2018 to offer Australian businesses something
+              different: websites and designs built with the same discipline and
+              attention to detail.
             </p>
             <p className="text-body text-muted-foreground">
               RAVENCI runs as a founder-led studio backed by a network of
@@ -116,47 +150,72 @@ export default function AboutPage() {
       </section>
 
       {/* What makes me different (dark) */}
-      <section className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}>
+      <section
+        className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}
+      >
         <div className="mx-auto max-w-3xl">
-          <SectionLabel index="02" label="What makes me different" tone="muted" />
-          <h2 className="mt-3 text-display-m text-foreground">Built to a standard that holds up</h2>
+          <SectionLabel
+            index="02"
+            label="What makes me different"
+            tone="muted"
+          />
+          <h2 className="mt-3 text-display-m text-foreground">
+            Built to a standard that holds up
+          </h2>
           <div className="mt-6 flex flex-col gap-4 text-body text-muted-foreground">
             <p>
-              I&apos;ve spent 25+ years building for the web, and I came to it from
-              engineering. That discipline never left: every decision is
-              intentional, every component solid, and the finished thing is tested
-              under real conditions before it ships.
+              I&apos;ve spent 25+ years building for the web, and I came to it
+              from engineering. That discipline never left: every decision is
+              intentional, every component solid, and the finished thing is
+              tested under real conditions before it ships.
             </p>
             <p>
-              That&apos;s why I guarantee 85+ Google PageSpeed. Performance isn&apos;t
-              optional, and I&apos;ve seen what happens when shortcuts get taken.
+              That&apos;s why I guarantee 85+ Google PageSpeed. Performance
+              isn&apos;t optional, and I&apos;ve seen what happens when
+              shortcuts get taken.
             </p>
           </div>
 
-          <h3 className="mt-10 text-heading-s text-foreground">The qualifications behind the work</h3>
+          <h3 className="mt-10 text-heading-s text-foreground">
+            The qualifications behind the work
+          </h3>
           <ul className="mt-4 flex flex-col gap-3">
             {QUALIFICATIONS.map((q) => (
-              <li key={q.title} className="flex items-start gap-3 text-body text-muted-foreground">
-                <IconCheck size={20} aria-hidden className="mt-0.5 shrink-0 text-foreground" />
+              <li
+                key={q.title}
+                className="flex items-start gap-3 text-body text-muted-foreground"
+              >
+                <IconCheck
+                  size={20}
+                  aria-hidden
+                  className="mt-0.5 shrink-0 text-foreground"
+                />
                 <span>
-                  <span className="font-semibold text-foreground">{q.title}</span> {q.detail}
+                  <span className="font-semibold text-foreground">
+                    {q.title}
+                  </span>{" "}
+                  {q.detail}
                 </span>
               </li>
             ))}
           </ul>
 
-          <h3 className="mt-10 text-heading-s text-foreground">You own everything</h3>
+          <h3 className="mt-10 text-heading-s text-foreground">
+            You own everything
+          </h3>
           <p className="mt-3 text-body text-muted-foreground">
             When I build your website, it&apos;s yours. Your code, your content,
             your domain. No lock-in, no proprietary systems. If you ever want to
             move on, you take everything with you.
           </p>
 
-          <h3 className="mt-10 text-heading-s text-foreground">I teach you, too</h3>
+          <h3 className="mt-10 text-heading-s text-foreground">
+            I teach you, too
+          </h3>
           <p className="mt-3 text-body text-muted-foreground">
             Every project includes training videos showing you exactly how to
-            manage your site. I don&apos;t build dependency. I want you confident
-            making updates and running your site on your own terms.
+            manage your site. I don&apos;t build dependency. I want you
+            confident making updates and running your site on your own terms.
           </p>
         </div>
       </section>
@@ -169,9 +228,14 @@ export default function AboutPage() {
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {VALUES.map((v) => (
-            <div key={v.title} className="rounded-sm border border-border bg-card p-8">
+            <div
+              key={v.title}
+              className="rounded-sm border border-border bg-card p-8"
+            >
               <h3 className="text-heading-s text-foreground">{v.title}</h3>
-              <p className="mt-2 text-body text-muted-foreground">{v.description}</p>
+              <p className="mt-2 text-body text-muted-foreground">
+                {v.description}
+              </p>
             </div>
           ))}
         </div>
@@ -186,14 +250,18 @@ export default function AboutPage() {
               &ldquo;{geoff.content}&rdquo;
             </blockquote>
             <figcaption className="mt-4 text-small text-muted-foreground">
-              <span className="font-semibold text-foreground">{geoff.author}</span>
+              <span className="font-semibold text-foreground">
+                {geoff.author}
+              </span>
               {geoff.company ? ` · ${geoff.company}` : ""}
             </figcaption>
           </figure>
         )}
         <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-2xl">
-            <h2 className="text-display-m text-foreground">Ready to work with me?</h2>
+            <h2 className="text-display-m text-foreground">
+              Ready to work with me?
+            </h2>
             <p className="mt-4 text-body text-muted-foreground">
               Starting from scratch, or rebuilding something that should be
               working harder? Tell me about your project.
@@ -217,8 +285,15 @@ export default function AboutPage() {
             mainEntity: {
               "@type": "Organization",
               name: "RAVENCI Solutions",
-              founder: { "@type": "Person", name: "Richard Haddad", jobTitle: "Founder" },
-              foundingLocation: { "@type": "Place", name: "Brisbane, Australia" },
+              founder: {
+                "@type": "Person",
+                name: "Richard Haddad",
+                jobTitle: "Founder",
+              },
+              foundingLocation: {
+                "@type": "Place",
+                name: "Brisbane, Australia",
+              },
               areaServed: "Australia",
             },
           }),
@@ -232,8 +307,20 @@ export default function AboutPage() {
             "@type": "Person",
             name: "Richard Haddad",
             jobTitle: "Founder",
-            worksFor: { "@type": "Organization", name: "RAVENCI Solutions", url: "https://ravenci.solutions" },
-            knowsAbout: ["Web Design and Development", "Next.js", "React", "WordPress", "UI/UX Design", "Structural Engineering", "SEO"],
+            worksFor: {
+              "@type": "Organization",
+              name: "RAVENCI Solutions",
+              url: "https://ravenci.solutions",
+            },
+            knowsAbout: [
+              "Web Design and Development",
+              "Next.js",
+              "React",
+              "WordPress",
+              "UI/UX Design",
+              "Structural Engineering",
+              "SEO",
+            ],
             sameAs: ["https://www.linkedin.com/company/91459779/"],
           }),
         }}

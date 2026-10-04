@@ -5,12 +5,42 @@ import { useEffect, useRef, useState } from "react";
 import SectionLabel from "@/components/section-label";
 
 const STEPS = [
-  { n: "01", name: "Design", copy: "Wireframes and a full visual design you sign off before a line of code is written.", tag: "Signed-off design" },
-  { n: "02", name: "Build", copy: "Hand-built on the right platform. Your code, your content, your domain. No lock-in.", tag: "Repo + CMS" },
-  { n: "03", name: "Host", copy: "Managed Australian-supported hosting from $39/mo. SSL, daily backups, monitoring, 99.9% uptime.", tag: "Live, monitored" },
-  { n: "04", name: "Secure", copy: "Patching, firewall, domain and DNS management, and a restore that has actually been tested.", tag: "Patch log" },
-  { n: "05", name: "Optimise", copy: "SEO, AEO and GEO: found by Google, and quoted correctly by the AI assistants your buyers now ask.", tag: "Monthly report" },
-  { n: "06", name: "Maintain", copy: "Updates, content changes and new features on a care plan from $249/mo. You email me, not a ticket system.", tag: "Care plan" },
+  {
+    n: "01",
+    name: "Design",
+    copy: "Bring your own design or I'll create one. In either case, it starts with your vision.",
+    tag: "Wireframes, Branding",
+  },
+  {
+    n: "02",
+    name: "Build",
+    copy: "Built on the platform that's right for your business, and you own it.",
+    tag: "Any Platform",
+  },
+  {
+    n: "03",
+    name: "Host",
+    copy: "Hosted and managed for you, with free SSL, daily backups and constant monitoring.",
+    tag: "Live, Monitored",
+  },
+  {
+    n: "04",
+    name: "Secure",
+    copy: "Servers patched, your domain and DNS protected, and backups tested to actually restore.",
+    tag: "Security, Backups",
+  },
+  {
+    n: "05",
+    name: "Optimise",
+    copy: "Optimised for search engines and AI assistants, so customers find you.",
+    tag: "Monthly Retainer",
+  },
+  {
+    n: "06",
+    name: "Maintain",
+    copy: "Updates, content changes and support on a care plan that suits you. You email me, not a ticket system.",
+    tag: "Ongoing Care Plan",
+  },
 ];
 
 const PAD = "px-5 py-16 md:px-12 md:py-24 lg:px-20";
@@ -18,28 +48,45 @@ const PAD = "px-5 py-16 md:px-12 md:py-24 lg:px-20";
 function Intro() {
   return (
     <div className="flex flex-col gap-4">
-      <SectionLabel index="02" label="The whole stack" tone="muted" />
-      <h2 className="text-display-m text-foreground">One person, the whole stack.</h2>
+      <SectionLabel index="02" label="The whole process" tone="muted" />
+      <h2 className="text-display-m text-foreground">
+        From strategy to launch, and long after
+      </h2>
       <p className="text-body text-muted-foreground">
-        Most agencies hand you off: a designer, then a developer, then a support
-        queue, then a hosting company who has never seen your site. I do all six
-        steps, so nothing falls between them.
+        Your website is an investment, and like any investment, it needs looking
+        after. Most business owners don't have the time or expertise to keep
+        their site secure, up-to-date and running smoothly. That's my job. I
+        don't walk away after launch, and I don't disappear when you need me.
       </p>
     </div>
   );
 }
 
-function Row({ step, active }: { step: (typeof STEPS)[number]; active: boolean }) {
+function Row({
+  step,
+  active,
+}: {
+  step: (typeof STEPS)[number];
+  active: boolean;
+}) {
   return (
     <div
       className={`flex flex-col gap-2 border-t border-white/10 py-5 transition-opacity duration-base md:flex-row md:items-baseline md:gap-6 ${
         active ? "bg-accent/30 px-4 opacity-100" : "opacity-55"
       }`}
     >
-      <span className="font-mono text-label text-muted-foreground md:w-10">{step.n}</span>
-      <span className="text-heading-s text-foreground md:w-36 md:shrink-0">{step.name}</span>
-      <span className="flex-1 text-small text-muted-foreground">{step.copy}</span>
-      <span className="font-mono text-label-sm uppercase text-foreground/80 md:w-44 md:text-right">{step.tag}</span>
+      <span className="font-mono text-label text-muted-foreground md:w-10">
+        {step.n}
+      </span>
+      <span className="text-heading-s text-foreground md:w-36 md:shrink-0">
+        {step.name}
+      </span>
+      <span className="flex-1 text-small text-muted-foreground">
+        {step.copy}
+      </span>
+      <span className="font-mono text-label-sm uppercase text-foreground/80 md:w-44 md:text-right">
+        {step.tag}
+      </span>
     </div>
   );
 }
@@ -47,7 +94,7 @@ function Row({ step, active }: { step: (typeof STEPS)[number]; active: boolean }
 function Closing() {
   return (
     <p className="mt-8 text-heading-s text-foreground">
-      Built once. Built properly. Still working in five years.
+      Built once. Built properly. Maintained to last.
     </p>
   );
 }
@@ -132,9 +179,14 @@ export default function StackStory() {
             <div className="flex w-[420px] shrink-0 flex-col gap-8">
               <Intro />
               <div className="flex flex-col gap-2">
-                <span className="font-mono text-label uppercase text-muted-foreground">Progress</span>
+                <span className="font-mono text-label uppercase text-muted-foreground">
+                  Progress
+                </span>
                 <div className="h-0.5 w-full overflow-hidden bg-white/15">
-                  <div className="h-full bg-accent" style={{ width: `${progress * 100}%` }} />
+                  <div
+                    className="h-full bg-accent"
+                    style={{ width: `${progress * 100}%` }}
+                  />
                 </div>
                 <span className="font-mono text-label text-foreground">
                   {STEPS[active].n}/{STEPS[STEPS.length - 1].n}

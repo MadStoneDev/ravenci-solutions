@@ -29,36 +29,129 @@ export const metadata = {
 };
 
 const LIGHT = "px-5 py-16 md:px-12 md:py-24 lg:px-20";
-const DARK = "dark bg-background text-foreground px-5 py-16 md:px-12 md:py-24 lg:px-20";
+const DARK =
+  "dark bg-background text-foreground px-5 py-16 md:px-12 md:py-24 lg:px-20";
 
 const INDUSTRIES = [
-  { n: "01", label: "Construction", headline: "Builders, developers, architects, engineers", blurb: "Project showcases that win tenders, secure client and tender portals, and Procore, Xero and Deputy talking to each other.", chips: ["Procore", "Xero", "Tender portal"], href: "/construction" },
-  { n: "02", label: "Healthcare", headline: "Practices, clinics, allied health, recruiters", blurb: "Online booking wired to HotDoc, Cliniko or Halaxy, patient portals, and content written to stay inside AHPRA's advertising rules.", chips: ["HotDoc", "Cliniko", "AHPRA-aware"], href: "/healthcare" },
-  { n: "03", label: "eCommerce", headline: "Retail and wholesale brands that need to sell", blurb: "Shopify and BigCommerce done properly, headless when the catalogue demands it, and B2B portals with real wholesale pricing.", chips: ["Shopify", "BigCommerce", "B2B portal"], href: "/ecommerce" },
+  {
+    n: "01",
+    label: "Construction",
+    headline: "Builders, developers, architects, engineers",
+    blurb:
+      "Project showcases that win tenders, secure client and tender portals, and Procore, Xero and Deputy talking to each other.",
+    chips: ["Procore", "Xero", "Tender portal"],
+    href: "/construction",
+  },
+  {
+    n: "02",
+    label: "Healthcare",
+    headline: "Practices, clinics, allied health, recruiters",
+    blurb:
+      "Online booking wired to HotDoc, Cliniko or Halaxy, patient portals, and content written to stay inside AHPRA's advertising rules.",
+    chips: ["HotDoc", "Cliniko", "AHPRA-aware"],
+    href: "/healthcare",
+  },
+  {
+    n: "03",
+    label: "eCommerce",
+    headline: "Retail and wholesale brands that need to sell",
+    blurb:
+      "Shopify and BigCommerce done properly, headless when the catalogue demands it, and B2B portals with real wholesale pricing.",
+    chips: ["Shopify", "BigCommerce", "B2B portal"],
+    href: "/ecommerce",
+  },
 ];
 
 const WORK_FEATURED = [
-  { slug: "goingdark", category: "eCommerce / Shopify", name: "GoingDark", blurb: "An inherited thermal and night-vision store, rebuilt properly on Shopify.", metricValue: "+38.5%", metricLabel: "Purchases" },
-  { slug: "peninsula-homes", category: "Construction", name: "Peninsula Homes", blurb: "A Sydney Northern Beaches builder whose site had to look as considered as the houses.", metricValue: "80%", metricLabel: "Work from referrals" },
-  { slug: "nikita-morell", category: "Professional services", name: "Nikita Morell", blurb: "A copywriter for architects whose own site had to out-write the architects." },
+  {
+    slug: "goingdark",
+    category: "eCommerce / Shopify",
+    name: "GoingDark",
+    blurb:
+      "An inherited thermal and night-vision store, rebuilt properly on Shopify.",
+    metricValue: "+38.5%",
+    metricLabel: "Purchases",
+  },
+  {
+    slug: "peninsula-homes",
+    category: "Construction",
+    name: "Peninsula Homes",
+    blurb:
+      "A Sydney Northern Beaches builder whose site had to look as considered as the houses.",
+    metricValue: "80%",
+    metricLabel: "Work from referrals",
+  },
+  {
+    slug: "nikita-morell",
+    category: "Professional services",
+    name: "Nikita Morell",
+    blurb:
+      "A copywriter for architects whose own site had to out-write the architects.",
+  },
 ];
 
 const WORK_COMPACT = [
-  { slug: "covenant-security-solutions", name: "Covenant Security", services: "Brand identity, print, vehicle signage" },
-  { slug: "sac-consulting", name: "SAC Consulting", services: "Web development" },
-  { slug: "cadeaurable", name: "Cadeaurable", services: "Branding, stationery, eCommerce" },
+  {
+    slug: "covenant-security-solutions",
+    name: "Covenant Security",
+    services: "Brand identity, print, vehicle signage",
+  },
+  {
+    slug: "sac-consulting",
+    name: "SAC Consulting",
+    services: "Web development",
+  },
+  {
+    slug: "cadeaurable",
+    name: "Cadeaurable",
+    services: "Branding, stationery, eCommerce",
+  },
 ];
 
 const COMPARISON = [
-  { feature: "You speak to the person building it", ravenci: "Always", agency: "Account manager", diy: "Nobody" },
-  { feature: "85+ PageSpeed in writing", ravenci: "Guaranteed", agency: "Rarely", diy: "No" },
-  { feature: "You own the code, content and domain", ravenci: "Yes", agency: "Sometimes", diy: "Platform owns it" },
-  { feature: "Hosting, security and backups included", ravenci: "From $39/mo", agency: "Outsourced", diy: "Bundled, unmanaged" },
-  { feature: "Plugin clutter and subscription stack", ravenci: "None", agency: "15 to 30 plugins", diy: "Paid apps forever" },
-  { feature: "Still working in five years", ravenci: "By design", agency: "Rebuild at 3 years", diy: "Rebuild at 2 years" },
+  {
+    feature: "You speak to the person building it",
+    ravenci: "Always",
+    agency: "Account manager",
+    diy: "Nobody",
+  },
+  {
+    feature: "85+ PageSpeed in writing",
+    ravenci: "Guaranteed",
+    agency: "Rarely",
+    diy: "No",
+  },
+  {
+    feature: "You own the code, content and domain",
+    ravenci: "Yes",
+    agency: "Sometimes",
+    diy: "Platform owns it",
+  },
+  {
+    feature: "Hosting, security and backups included",
+    ravenci: "From $39/mo",
+    agency: "Outsourced",
+    diy: "Bundled, unmanaged",
+  },
+  {
+    feature: "Plugin clutter and subscription stack",
+    ravenci: "None",
+    agency: "15 to 30 plugins",
+    diy: "Paid apps forever",
+  },
+  {
+    feature: "Still working in five years",
+    ravenci: "By design",
+    agency: "Rebuild at 3 years",
+    diy: "Rebuild at 2 years",
+  },
 ];
 
-const TRUST = ["Shopify Partner", "BigCommerce Partner", "Synergy Wholesale Partner"];
+const TRUST = [
+  "Shopify Partner",
+  "BigCommerce Partner",
+  "Synergy Wholesale Partner",
+];
 
 const TESTIMONIALS = [
   {
@@ -83,7 +176,13 @@ function WorkThumb({ slug, name }: { slug: string; name: string }) {
   return (
     <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-muted">
       {img && (
-        <Image src={img} alt={`${name} project`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-top transition-transform duration-slow ease-standard group-hover:scale-105" />
+        <Image
+          src={img}
+          alt={`${name} project`}
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover object-top transition-transform duration-slow ease-standard group-hover:scale-105"
+        />
       )}
     </div>
   );
@@ -100,11 +199,12 @@ export default async function Home() {
           <div className="flex max-w-xl flex-col gap-6">
             <SectionLabel index="01" label="Build" tick />
             <h1 className="text-display-xl text-foreground">
-              Websites engineered to still be working in five years.
+              Custom websites, engineered to last
             </h1>
             <p className="text-lead text-muted-foreground">
-              Designed, developed, hosted, secured, optimised and maintained. One
-              engineer, one number to call, accountable for the whole stack.
+              Stop settling for over-used templates. Own a website tailored to
+              you and your customers, built by someone who's been developing
+              websites for over 25 years.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" variant="primary">
@@ -145,12 +245,12 @@ export default async function Home() {
           <div className="flex flex-col gap-3">
             <SectionLabel index="03" label="Platform" />
             <h2 className="text-display-m text-foreground">
-              Right tool for the business, <em className="not-italic text-accent">not the agency.</em>
+              The right tool for your business
             </h2>
           </div>
           <p className="max-w-sm text-small text-muted-foreground">
-            Tell me your situation. I&apos;ll tell you what I&apos;d build it on and
-            why, including when the answer is cheaper than you expected.
+            I've been coding long enough to know what works. Tell me what you
+            need and I'll tell you what platform is best for you.
           </p>
         </div>
         <PlatformSelector />
@@ -160,21 +260,39 @@ export default async function Home() {
       <section className={`${LIGHT} border-b border-border`}>
         <div className="mb-10 flex flex-col gap-3">
           <SectionLabel index="04" label="Industries" />
-          <h2 className="text-display-m text-foreground">I know your software before you name it.</h2>
+          <h2 className="text-display-m text-foreground">
+            I know your software before you name it.
+          </h2>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {INDUSTRIES.map((ind) => (
-            <Link key={ind.href} href={ind.href} className="group flex flex-col gap-4 rounded-sm border border-border bg-card p-8 transition-colors duration-fast hover:border-foreground/30">
+            <Link
+              key={ind.href}
+              href={ind.href}
+              className="group flex flex-col gap-4 rounded-sm border border-border bg-card p-8 transition-colors duration-fast hover:border-foreground/30"
+            >
               <SectionLabel index={ind.n} label={ind.label} />
               <h3 className="text-heading-m text-foreground">{ind.headline}</h3>
-              <p className="flex-1 text-small text-muted-foreground">{ind.blurb}</p>
+              <p className="flex-1 text-small text-muted-foreground">
+                {ind.blurb}
+              </p>
               <div className="flex flex-wrap gap-2">
                 {ind.chips.map((c) => (
-                  <span key={c} className="rounded-sm border border-border px-2.5 py-1 font-mono text-label-sm uppercase text-muted-foreground">{c}</span>
+                  <span
+                    key={c}
+                    className="rounded-sm border border-border px-2.5 py-1 font-mono text-label-sm uppercase text-muted-foreground"
+                  >
+                    {c}
+                  </span>
                 ))}
               </div>
               <span className="inline-flex items-center gap-1 text-small font-medium text-accent">
-                {ind.label} websites <IconArrowRight size={16} aria-hidden className="transition-transform duration-fast group-hover:translate-x-1" />
+                {ind.label} websites{" "}
+                <IconArrowRight
+                  size={16}
+                  aria-hidden
+                  className="transition-transform duration-fast group-hover:translate-x-1"
+                />
               </span>
             </Link>
           ))}
@@ -186,24 +304,41 @@ export default async function Home() {
         <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
           <div className="flex flex-col gap-3">
             <SectionLabel index="05" label="Selected work" />
-            <h2 className="text-display-m text-foreground">Built for Australian businesses. Measured after launch.</h2>
+            <h2 className="text-display-m text-foreground">
+              Built for Australian businesses. Measured after launch.
+            </h2>
           </div>
-          <Link href="/case-studies" className="inline-flex items-center gap-1 text-small font-medium text-accent hover:underline">
+          <Link
+            href="/case-studies"
+            className="inline-flex items-center gap-1 text-small font-medium text-accent hover:underline"
+          >
             All case studies <IconArrowRight size={16} aria-hidden />
           </Link>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {WORK_FEATURED.map((w) => (
-            <Link key={w.slug} href={`/case-studies/${w.slug}`} className="group flex flex-col overflow-hidden rounded-sm border border-border bg-card transition-colors duration-fast hover:border-foreground/30">
+            <Link
+              key={w.slug}
+              href={`/case-studies/${w.slug}`}
+              className="group flex flex-col overflow-hidden rounded-sm border border-border bg-card transition-colors duration-fast hover:border-foreground/30"
+            >
               <WorkThumb slug={w.slug} name={w.name} />
               <div className="flex flex-1 flex-col gap-2 p-6">
-                <span className="font-mono text-label uppercase text-accent">{w.category}</span>
+                <span className="font-mono text-label uppercase text-accent">
+                  {w.category}
+                </span>
                 <span className="text-heading-s text-foreground">{w.name}</span>
-                <span className="flex-1 text-small text-muted-foreground">{w.blurb}</span>
+                <span className="flex-1 text-small text-muted-foreground">
+                  {w.blurb}
+                </span>
                 {w.metricValue && (
                   <div className="mt-2 flex items-baseline gap-2 border-t border-border pt-3">
-                    <span className="tnum text-heading-m text-accent">{w.metricValue}</span>
-                    <span className="font-mono text-label-sm uppercase text-muted-foreground">{w.metricLabel}</span>
+                    <span className="tnum text-heading-m text-accent">
+                      {w.metricValue}
+                    </span>
+                    <span className="font-mono text-label-sm uppercase text-muted-foreground">
+                      {w.metricLabel}
+                    </span>
                   </div>
                 )}
               </div>
@@ -212,12 +347,22 @@ export default async function Home() {
         </div>
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {WORK_COMPACT.map((w) => (
-            <Link key={w.slug} href={`/case-studies/${w.slug}`} className="group flex items-center justify-between gap-4 rounded-sm border border-border bg-card p-5 transition-colors duration-fast hover:border-foreground/30">
+            <Link
+              key={w.slug}
+              href={`/case-studies/${w.slug}`}
+              className="group flex items-center justify-between gap-4 rounded-sm border border-border bg-card p-5 transition-colors duration-fast hover:border-foreground/30"
+            >
               <div className="flex flex-col">
                 <span className="text-heading-s text-foreground">{w.name}</span>
-                <span className="text-small text-muted-foreground">{w.services}</span>
+                <span className="text-small text-muted-foreground">
+                  {w.services}
+                </span>
               </div>
-              <IconArrowRight size={18} aria-hidden className="shrink-0 text-accent transition-transform duration-fast group-hover:translate-x-1" />
+              <IconArrowRight
+                size={18}
+                aria-hidden
+                className="shrink-0 text-accent transition-transform duration-fast group-hover:translate-x-1"
+              />
             </Link>
           ))}
         </div>
@@ -229,22 +374,27 @@ export default async function Home() {
           {score !== null && (
             <div className="flex shrink-0 items-center gap-5">
               <div className="flex h-28 w-28 items-center justify-center rounded-full border-4 border-accent">
-                <span className="tnum text-metric text-foreground">{score}</span>
+                <span className="tnum text-metric text-foreground">
+                  {score}
+                </span>
               </div>
               <span className="font-mono text-label uppercase text-muted-foreground">
-                Live PageSpeed<br />this URL, mobile
+                Live PageSpeed
+                <br />
+                this URL, mobile
               </span>
             </div>
           )}
           <div className="flex flex-col gap-4">
             <SectionLabel index="06" label="Proof" tone="muted" />
             <h2 className="max-w-2xl text-display-m text-foreground">
-              {score !== null ? `This site scores ${score}. ` : ""}Your site will score 85+ or I keep working.
+              {score !== null ? `This site scores ${score}. ` : ""}Your site
+              will score 85+ or I keep working.
             </h2>
             <p className="max-w-2xl text-body text-muted-foreground">
               Not a target. A written guarantee on every build. Performance is a
-              structural decision, so it gets made at the start, not bolted on after
-              launch.
+              structural decision, so it gets made at the start, not bolted on
+              after launch.
             </p>
           </div>
         </div>
@@ -254,19 +404,33 @@ export default async function Home() {
           <table className="w-full min-w-[640px] border-collapse text-left">
             <thead>
               <tr className="border-b border-white/15">
-                <th className="py-3 pr-4 font-mono text-label uppercase text-muted-foreground">What you get</th>
-                <th className="bg-accent/30 px-4 py-3 text-heading-s text-foreground">RAVENCI</th>
-                <th className="px-4 py-3 text-small text-muted-foreground">Typical agency</th>
-                <th className="px-4 py-3 text-small text-muted-foreground">DIY builder</th>
+                <th className="py-3 pr-4 font-mono text-label uppercase text-muted-foreground">
+                  What you get
+                </th>
+                <th className="bg-accent/30 px-4 py-3 text-heading-s text-foreground">
+                  RAVENCI
+                </th>
+                <th className="px-4 py-3 text-small text-muted-foreground">
+                  Typical agency
+                </th>
+                <th className="px-4 py-3 text-small text-muted-foreground">
+                  DIY builder
+                </th>
               </tr>
             </thead>
             <tbody>
               {COMPARISON.map((row) => (
                 <tr key={row.feature} className="border-b border-white/10">
-                  <td className="py-4 pr-4 text-small text-foreground/90">{row.feature}</td>
+                  <td className="py-4 pr-4 text-small text-foreground/90">
+                    {row.feature}
+                  </td>
                   <td className="bg-accent/30 px-4 py-4">
                     <span className="flex items-center gap-2 text-small font-semibold text-foreground">
-                      <IconCheck size={16} aria-hidden className="shrink-0 text-foreground" />
+                      <IconCheck
+                        size={16}
+                        aria-hidden
+                        className="shrink-0 text-foreground"
+                      />
                       {row.ravenci}
                     </span>
                   </td>
@@ -289,9 +453,13 @@ export default async function Home() {
         </div>
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
           <span className="font-mono text-label-sm uppercase text-muted-foreground">
-            Custom sites from $7,500 / eCommerce from $12,000 / maintenance from $249/mo
+            Custom sites from $7,500 / eCommerce from $12,000 / maintenance from
+            $249/mo
           </span>
-          <Link href="/pricing" className="inline-flex items-center gap-1 text-small font-medium text-accent hover:underline">
+          <Link
+            href="/pricing"
+            className="inline-flex items-center gap-1 text-small font-medium text-accent hover:underline"
+          >
             See full pricing <IconArrowRight size={16} aria-hidden />
           </Link>
         </div>
@@ -301,13 +469,17 @@ export default async function Home() {
       <section className={`${LIGHT} border-b border-border`}>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {TESTIMONIALS.map((t) => (
-            <figure key={t.name} className="flex flex-col rounded-sm border border-border bg-card p-9">
+            <figure
+              key={t.name}
+              className="flex flex-col rounded-sm border border-border bg-card p-9"
+            >
               <SectionLabel label={t.label} />
               <blockquote className="mt-5 flex-1 text-heading-s font-normal text-foreground">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
               <figcaption className="mt-6 text-small text-muted-foreground">
-                <span className="font-semibold text-foreground">{t.name}</span> · {t.company}
+                <span className="font-semibold text-foreground">{t.name}</span>{" "}
+                · {t.company}
               </figcaption>
             </figure>
           ))}
@@ -321,25 +493,32 @@ export default async function Home() {
             <div className="flex h-24 w-24 items-center justify-center rounded-full border border-border font-mono text-heading-s text-accent">
               RH
             </div>
-            <span className="text-heading-s text-foreground">Richard Haddad</span>
-            <span className="font-mono text-label uppercase text-muted-foreground">Founder · RAVENCI Solutions</span>
+            <span className="text-heading-s text-foreground">
+              Richard Haddad
+            </span>
+            <span className="font-mono text-label uppercase text-muted-foreground">
+              Founder · RAVENCI Solutions
+            </span>
           </div>
           <div className="flex max-w-3xl flex-col gap-5">
             <SectionLabel index="07" label="Who builds it" />
             <p className="text-display-m font-normal leading-tight text-foreground">
-              I trained as a structural engineer. Ten years in steel detailing and
-              structural drafting taught me that a thing either holds up under load
-              or it doesn&apos;t, and that you find out later, not on the day it&apos;s
-              handed over.
+              I trained as a structural engineer. Ten years in steel detailing
+              and structural drafting taught me that a thing either holds up
+              under load or it doesn&apos;t, and that you find out later, not on
+              the day it&apos;s handed over.
             </p>
             <p className="text-body text-muted-foreground">
-              I&apos;ve been building for the web for 25 years and running RAVENCI
-              from Brisbane since 2018. I design it, I build it, I host it, I patch
-              it, and I answer the phone when something breaks. The sites I built
-              five years ago are still fast, still ranking, still running. That&apos;s
-              the whole pitch.
+              I&apos;ve been building for the web for 25 years and running
+              RAVENCI from Brisbane since 2018. I design it, I build it, I host
+              it, I patch it, and I answer the phone when something breaks. The
+              sites I built five years ago are still fast, still ranking, still
+              running. That&apos;s the whole pitch.
             </p>
-            <Link href="/about" className="inline-flex items-center gap-1 text-small font-medium text-accent hover:underline">
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-1 text-small font-medium text-accent hover:underline"
+            >
               More about how I work <IconArrowRight size={16} aria-hidden />
             </Link>
           </div>
@@ -351,15 +530,28 @@ export default async function Home() {
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
           <div className="flex flex-col gap-4 lg:w-[440px] lg:shrink-0">
             <SectionLabel index="08" label="Free check" tone="muted" />
-            <h2 className="text-display-m text-foreground">Can Google and AI actually find you?</h2>
+            <h2 className="text-display-m text-foreground">
+              Can Google and AI actually find you?
+            </h2>
             <p className="text-body text-muted-foreground">
-              I&apos;ll run your site through the same checks I use on client work and
-              send back what search engines and AI assistants see. No pitch attached.
+              I&apos;ll run your site through the same checks I use on client
+              work and send back what search engines and AI assistants see. No
+              pitch attached.
             </p>
             <ul className="mt-2 flex flex-col gap-2.5">
-              {["Technical SEO and Core Web Vitals", "How AI assistants describe your business", "What your three nearest competitors are doing"].map((b) => (
-                <li key={b} className="flex items-start gap-3 text-small text-muted-foreground">
-                  <span aria-hidden className="mt-1.5 h-2 w-2 shrink-0 bg-accent" />
+              {[
+                "Technical SEO and Core Web Vitals",
+                "How AI assistants describe your business",
+                "What your three nearest competitors are doing",
+              ].map((b) => (
+                <li
+                  key={b}
+                  className="flex items-start gap-3 text-small text-muted-foreground"
+                >
+                  <span
+                    aria-hidden
+                    className="mt-1.5 h-2 w-2 shrink-0 bg-accent"
+                  />
                   {b}
                 </li>
               ))}
