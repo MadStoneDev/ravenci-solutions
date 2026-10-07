@@ -9,37 +9,45 @@ const STEPS = [
     n: "01",
     name: "Design",
     copy: "Bring your own design or I'll create one. In either case, it starts with your vision.",
-    tag: "Wireframes, Branding",
+    tag: "Wireframes, Branding, Your Way",
   },
   {
     n: "02",
     name: "Build",
-    copy: "Built on the platform that's right for your business, and you own it.",
-    tag: "Any Platform",
+    copy:
+      "I have no ties to any one platform. I build on whatever suits your business" +
+      " best, and you own it outright.",
+    tag: "WordPress, Shopify, Next.js, Anything!",
   },
   {
     n: "03",
     name: "Host",
-    copy: "Hosted and managed for you, with free SSL, daily backups and constant monitoring.",
-    tag: "Live, Monitored",
+    copy:
+      "Your site needs somewhere to live. I host it, manage it, and throw in a free SSL (the padlock next to your" +
+      " domain).",
+    tag: "Live, Monitored, Managed",
   },
   {
     n: "04",
     name: "Secure",
-    copy: "Servers patched, your domain and DNS protected, and backups tested to actually restore.",
-    tag: "Security, Backups",
+    copy:
+      "Security updates, protected domains, and working daily backups, because backups that don't restore are" +
+      " useless.",
+    tag: "Security, Backups, Firewall",
   },
   {
     n: "05",
     name: "Optimise",
-    copy: "Optimised for search engines and AI assistants, so customers find you.",
-    tag: "Monthly Retainer",
+    copy:
+      "SEO/AEO/GEO. Basically, when people search Google or ask AI, your" +
+      " business comes up.",
+    tag: "Retainer, SEO, Analytics, Growth",
   },
   {
     n: "06",
     name: "Maintain",
-    copy: "Updates, content changes and support on a care plan that suits you. You email me, not a ticket system.",
-    tag: "Ongoing Care Plan",
+    copy: "Updates, content changes and support on a suitable care plan. Need something changed? Email me.",
+    tag: "Updates, Care Plan, Maintenance, Support",
   },
 ];
 
@@ -53,10 +61,22 @@ function Intro() {
         From strategy to launch, and long after
       </h2>
       <p className="text-body text-muted-foreground">
-        Your website is an investment, and like any investment, it needs looking
-        after. Most business owners don't have the time or expertise to keep
-        their site secure, up-to-date and running smoothly. That's my job. I
-        don't walk away after launch, and I don't disappear when you need me.
+        You'll never truly value your website if you see it as just another
+        product. Your website is an investment, and it should be treated as one.
+      </p>
+      <p className="text-lead text-muted-foreground">
+        An investment should:
+        <br />
+        <ol className={`indent-4`}>
+          <li>1. bring a return,</li>
+          <li>2. be cared for, and</li>
+          <li>3. grow over time.</li>
+        </ol>
+      </p>
+      <p className="text-lead text-muted-foreground">
+        Most business owners don't have the time or the expertise to keep their
+        site growing, secure, up to date and running smoothly. That's fine,
+        because that's my job. I'm in it for the long run.
       </p>
     </div>
   );
@@ -71,7 +91,7 @@ function Row({
 }) {
   return (
     <div
-      className={`flex flex-col gap-2 border-t border-white/10 py-5 transition-opacity duration-base md:flex-row md:items-baseline md:gap-6 ${
+      className={`flex flex-col gap-2 border-t border-white/10 py-5 transition-opacity duration-base md:flex-row md:items-center md:gap-6 ${
         active ? "bg-accent/30 px-4 opacity-100" : "opacity-55"
       }`}
     >
@@ -84,7 +104,7 @@ function Row({
       <span className="flex-1 text-small text-muted-foreground">
         {step.copy}
       </span>
-      <span className="font-mono text-label-sm uppercase text-foreground/80 md:w-44 md:text-right">
+      <span className="font-mono text-label-sm uppercase text-foreground/80 md:w-44 md:text-right leading-4">
         {step.tag}
       </span>
     </div>

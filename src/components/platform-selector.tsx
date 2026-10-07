@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { IconArrowRight } from "@tabler/icons-react";
 
-type PlatformKey = "content" | "store" | "app" | "design";
+type PlatformKey = "content" | "store" | "app";
 
 interface PlatformOption {
   key: PlatformKey;
@@ -23,11 +23,15 @@ const OPTIONS: PlatformOption[] = [
     label: "A content site you can edit",
     stack: "WordPress + RAVENCI Builder",
     reason:
-      "You want to edit pages yourself without a developer and without the layout falling apart.",
+      "This setup is great if you want to edit pages yourself without a developer and without the layout falling" +
+      " apart. I built my own builder to be simple to use. After launch, I record videos showing you how to use" +
+      " the builder with your own site. Not generic tutorials you have to figure out how to apply. Your site, your pages.",
     spec: [
-      "A custom block system, so there's no page-builder bloat to slow it down",
-      "85+ PageSpeed on a CMS, which most WordPress sites never reach",
-      "Hosted, patched and backed up by me from $39/mo",
+      "A custom block system, without all the extra bloat (needly code that weighs a site down)",
+      "Scores 85+ on Google's speed test, which a lot of sites never reach",
+      "As many pages as your website needs",
+      "Basic analytics and SEO out of the box",
+      "Two months' free hosting and maintenance after launch",
     ],
     price: "FROM $7,500",
   },
@@ -37,11 +41,15 @@ const OPTIONS: PlatformOption[] = [
     label: "An online store",
     stack: "Shopify, or BigCommerce for big catalogues",
     reason:
-      "You're selling, so the platform should handle payments, tax and fraud, and I should spend the budget on the buying experience.",
+      "If you're after an online store to sell products, handle payments, and everything in between, this is" +
+      " the setup for you. If you have a preference for a platform, let me know. Otherwise, I'll choose the one that" +
+      " suits your business best.",
     spec: [
-      "A theme built from scratch against your products, not a bought template",
-      "Headless on Next.js only when the catalogue or content genuinely needs it",
-      "Wholesale and B2B pricing tiers where you sell both ways",
+      "A theme that fits your industry and vibe",
+      "Designed for your branding and target audience",
+      "Customised so you're not paying for a stack of monthly add-ons",
+      "Set up with your products and articles",
+      "Configured with the shipping, taxes and payment methods that you offer",
     ],
     price: "FROM $12,000",
   },
@@ -49,29 +57,19 @@ const OPTIONS: PlatformOption[] = [
     key: "app",
     num: "03",
     label: "A custom app or client portal",
-    stack: "Next.js 15, React and a Postgres database",
+    stack: "Next.js, Node, Express and Postgres",
     reason:
-      "Your process doesn't fit off-the-shelf software, so the site becomes a tool your staff and clients actually log into.",
+      "Going for something bigger, like a custom online platform for your users? This is my bread and butter, and" +
+      " it's the setup I recommend. I look after the frontend (what your visitors see) and the backend (the" +
+      " behind-the-scenes part that stores your data and makes it all work).",
     spec: [
-      "Logins, roles and permissions built properly from day one",
-      "Integrations with your CRM, booking, accounting or industry software",
-      "Australian hosting, monitored, with a restore that's been tested",
+      "User portal with logins, registrations, roles and permissions",
+      "Admin dashboard for your team and moderators",
+      "Integrations with a CRM, booking engine, accounting or industry-specific software",
+      "Australian hosting for your site and your database, so your data stays onshore",
+      "Ongoing maintenance and monitoring with error tracking",
     ],
     price: "QUOTED ON SCOPE",
-  },
-  {
-    key: "design",
-    num: "04",
-    label: "I already have a design",
-    stack: "Build-only, on the platform that suits it",
-    reason:
-      "Your designer has done their job. You need someone who'll build it exactly, not approximately, and stand behind the result.",
-    spec: [
-      "Pixel-accurate build against your files, on WordPress, Shopify or Next.js",
-      "The same 85+ PageSpeed guarantee as a full RAVENCI build",
-      "Your designer keeps the relationship, I keep the code honest",
-    ],
-    price: "QUOTED ON PAGES",
   },
 ];
 
@@ -122,7 +120,7 @@ export default function PlatformSelector() {
           Recommended stack
         </span>
         <div className="my-4 h-px w-full bg-border" />
-        <div key={selected} className="rv-assemble">
+        <div key={selected} className="rv-assemble max-w-3xl">
           <h3 className="text-heading-m text-foreground">{active.stack}</h3>
           <p className="mt-3 text-body text-muted-foreground">
             {active.reason}

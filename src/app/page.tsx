@@ -202,9 +202,18 @@ export default async function Home() {
               Custom websites, engineered to last
             </h1>
             <p className="text-lead text-muted-foreground">
-              Stop settling for over-used templates. Own a website tailored to
-              you and your customers, built by someone who's been developing
-              websites for over 25 years.
+              Why settle for over-used templates? I bet you promise your
+              customers a solution that's just right for them. So why does your
+              website look exactly like your competitors'?
+            </p>
+            <p className="text-lead text-muted-foreground">
+              I've been building websites for over 25 years, professionally for
+              the last 8. If you want a copy-and-paste site, there are plenty of
+              people who'll sell you one. That's not what I do. Every site I
+              build is tailored to the business it's for, and its customers.
+            </p>
+            <p className="text-lead text-muted-foreground">
+              If that's what you're after, let's talk.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" variant="primary">
@@ -392,9 +401,7 @@ export default async function Home() {
               will score 85+ or I keep working.
             </h2>
             <p className="max-w-2xl text-body text-muted-foreground">
-              Not a target. A written guarantee on every build. Performance is a
-              structural decision, so it gets made at the start, not bolted on
-              after launch.
+              What your website scores in terms of page speed and performance
             </p>
           </div>
         </div>
