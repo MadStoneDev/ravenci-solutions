@@ -580,6 +580,7 @@ export default async function Home() {
             </ul>
             <a
               href={`/audit/sample-visibility-report`}
+              target="_blank"
               className={`flex flex-row items-center gap-1 text-small italic text-muted-foreground hover:text-accent transition-all`}
             >
               See a sample report
