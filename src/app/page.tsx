@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { IconArrowRight, IconCheck, IconX } from "@tabler/icons-react";
+import {
+  IconArrowRight,
+  IconCheck,
+  IconExternalLink,
+  IconX,
+} from "@tabler/icons-react";
 
 import SectionLabel from "@/components/section-label";
 import VisibilityCheckForm from "@/components/visibility-check-form";
@@ -573,6 +578,13 @@ export default async function Home() {
                 </li>
               ))}
             </ul>
+            <a
+              href={`/audit/sample-visibility-report`}
+              className={`flex flex-row items-center gap-1 text-small italic text-muted-foreground hover:text-accent transition-all`}
+            >
+              See a sample report
+              <IconExternalLink size={18} />
+            </a>
           </div>
           <div className="flex-1">
             <VisibilityCheckForm />
