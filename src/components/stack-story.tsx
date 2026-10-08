@@ -64,16 +64,13 @@ function Intro() {
         You'll never truly value your website if you see it as just another
         product. Your website is an investment, and it should be treated as one.
       </p>
-      <p className="text-lead text-muted-foreground">
-        An investment should:
-        <br />
-        <ol className={`indent-4`}>
-          <li>1. bring a return,</li>
-          <li>2. be cared for, and</li>
-          <li>3. grow over time.</li>
-        </ol>
-      </p>
-      <p className="text-lead text-muted-foreground">
+      <p className="text-body text-muted-foreground">An investment should:</p>
+      <ol className={`indent-4 text-body text-muted-foreground`}>
+        <li>1. bring a return,</li>
+        <li>2. be cared for, and</li>
+        <li>3. grow over time.</li>
+      </ol>
+      <p className="text-body text-muted-foreground">
         Most business owners don't have the time or the expertise to keep their
         site growing, secure, up to date and running smoothly. That's fine,
         because that's my job. I'm in it for the long run.

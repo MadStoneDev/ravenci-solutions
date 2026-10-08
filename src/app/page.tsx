@@ -36,39 +36,55 @@ const INDUSTRIES = [
   {
     n: "01",
     label: "Construction",
-    headline: "Builders, developers, architects, engineers",
+    headline: "Builders, developers, engineers",
     blurb:
-      "Project showcases that win tenders, secure client and tender portals, and Procore, Xero and Deputy talking to each other.",
-    chips: ["Procore", "Xero", "Tender portal"],
+      "You want councils, city planners and architects to choose you for their next big development." +
+      " Your website should showcase your capabilities, past work and expertise. I know, because I spent 14 years" +
+      " in the industry, from construction sites to steel detailing and structural drafting.",
+    chips: ["Showcases", "Capability Statements", "14 Years in the Industry"],
     href: "/construction",
   },
   {
     n: "02",
     label: "Healthcare",
-    headline: "Practices, clinics, allied health, recruiters",
+    headline: "Practices, clinics, allied health, wellness",
     blurb:
-      "Online booking wired to HotDoc, Cliniko or Halaxy, patient portals, and content written to stay inside AHPRA's advertising rules.",
-    chips: ["HotDoc", "Cliniko", "AHPRA-aware"],
+      "People value convenience. They want to book appointments online, know if you're bulk billed or not and learn" +
+      " about the doctors. Some things they'd rather read about than ask in a room full of other patients. I build" +
+      " AHPRA-aware sites that give them all of that.",
+    chips: ["Online Booking", "Practitioner Profiles", "AHPRA-aware"],
     href: "/healthcare",
   },
   {
     n: "03",
     label: "eCommerce",
-    headline: "Retail and wholesale brands that need to sell",
+    headline: "Retail and online stores",
     blurb:
-      "Shopify and BigCommerce done properly, headless when the catalogue demands it, and B2B portals with real wholesale pricing.",
-    chips: ["Shopify", "BigCommerce", "B2B portal"],
+      "I've designed and built many online stores and each one used the platform that was most appropriate for the" +
+      " business. Shopify, BigCommerce, ThriveCart, Square, WooCommerce. I don't push the platform I prefer." +
+      " I've worked with all of them. I pick the right one for you.",
+    chips: ["Store Setup", "Product Populating", "POS Integration"],
     href: "/ecommerce",
   },
 ];
 
 const WORK_FEATURED = [
   {
+    slug: "dirt",
+    category: "Creative Services",
+    name: "DIRT",
+    blurb:
+      "A branding and positioning creative who wanted a very custom build that makes her stand out the way she makes" +
+      " her customers do too.",
+    metricValue: "+56%",
+    metricLabel: "Traffic",
+  },
+  {
     slug: "goingdark",
     category: "eCommerce / Shopify",
     name: "GoingDark",
     blurb:
-      "An inherited thermal and night-vision store, rebuilt properly on Shopify.",
+      "Thermal and night-vision hunting supplies store, redesign and rebuilt properly on Shopify.",
     metricValue: "+38.5%",
     metricLabel: "Purchases",
   },
@@ -77,16 +93,9 @@ const WORK_FEATURED = [
     category: "Construction",
     name: "Peninsula Homes",
     blurb:
-      "A Sydney Northern Beaches builder whose site had to look as considered as the houses.",
+      "A Sydney Northern Beaches builder whose site I collaborated on with an amazing team.",
     metricValue: "80%",
     metricLabel: "Work from referrals",
-  },
-  {
-    slug: "nikita-morell",
-    category: "Professional services",
-    name: "Nikita Morell",
-    blurb:
-      "A copywriter for architects whose own site had to out-write the architects.",
   },
 ];
 
@@ -97,53 +106,47 @@ const WORK_COMPACT = [
     services: "Brand identity, print, vehicle signage",
   },
   {
+    slug: "nikita-morell",
+    name: "Nikita Morell",
+    services: "Copywriting Services",
+  },
+  {
     slug: "sac-consulting",
     name: "SAC Consulting",
     services: "Web development",
-  },
-  {
-    slug: "cadeaurable",
-    name: "Cadeaurable",
-    services: "Branding, stationery, eCommerce",
   },
 ];
 
 const COMPARISON = [
   {
-    feature: "You speak to the person building it",
+    feature: "You talk to the person building it",
     ravenci: "Always",
     agency: "Account manager",
-    diy: "Nobody",
+    diy: "You're on your own",
   },
   {
-    feature: "85+ PageSpeed in writing",
-    ravenci: "Guaranteed",
-    agency: "Rarely",
-    diy: "No",
+    feature: "Built for speed",
+    ravenci: "From start to finish",
+    agency: "Varies",
+    diy: "Not usually",
   },
   {
-    feature: "You own the code, content and domain",
-    ravenci: "Yes",
-    agency: "Sometimes",
-    diy: "Platform owns it",
+    feature: "You own your site",
+    ravenci: "Code, content and domain",
+    agency: "Partly",
+    diy: "Locked to the Platform",
   },
   {
-    feature: "Hosting, security and backups included",
-    ravenci: "From $39/mo",
-    agency: "Outsourced",
-    diy: "Bundled, unmanaged",
+    feature: "Ongoing care",
+    ravenci: "Monthly, cancel any time",
+    agency: "Contracts and tickets",
+    diy: "All on you",
   },
   {
-    feature: "Plugin clutter and subscription stack",
-    ravenci: "None",
-    agency: "15 to 30 plugins",
-    diy: "Paid apps forever",
-  },
-  {
-    feature: "Still working in five years",
-    ravenci: "By design",
-    agency: "Rebuild at 3 years",
-    diy: "Rebuild at 2 years",
+    feature: "Add-ons and subscriptions",
+    ravenci: "Only what's needed",
+    agency: "Heavily reliant on them",
+    diy: "Paid apps for everything",
   },
 ];
 
@@ -269,9 +272,7 @@ export default async function Home() {
       <section className={`${LIGHT} border-b border-border`}>
         <div className="mb-10 flex flex-col gap-3">
           <SectionLabel index="04" label="Industries" />
-          <h2 className="text-display-m text-foreground">
-            I know your software before you name it.
-          </h2>
+          <h2 className="text-display-m text-foreground">Who I work with</h2>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {INDUSTRIES.map((ind) => (
@@ -314,7 +315,7 @@ export default async function Home() {
           <div className="flex flex-col gap-3">
             <SectionLabel index="05" label="Selected work" />
             <h2 className="text-display-m text-foreground">
-              Built for Australian businesses. Measured after launch.
+              Work I've done for some amazing Aussie businesses
             </h2>
           </div>
           <Link
@@ -397,11 +398,14 @@ export default async function Home() {
           <div className="flex flex-col gap-4">
             <SectionLabel index="06" label="Proof" tone="muted" />
             <h2 className="max-w-2xl text-display-m text-foreground">
-              {score !== null ? `This site scores ${score}. ` : ""}Your site
-              will score 85+ or I keep working.
+              Why work with me
             </h2>
             <p className="max-w-2xl text-body text-muted-foreground">
-              What your website scores in terms of page speed and performance
+              I build fast sites, give you honest pricing, and I'm here after
+              your website goes live. The internet keeps changing. Security
+              risks change, search engines change and now AI has thrown a
+              spanner in the works. You don't want to be left stranded. I stand
+              by my work.
             </p>
           </div>
         </div>
@@ -508,19 +512,23 @@ export default async function Home() {
             </span>
           </div>
           <div className="flex max-w-3xl flex-col gap-5">
-            <SectionLabel index="07" label="Who builds it" />
+            <SectionLabel index="07" label="The guy behind it all" />
             <p className="text-display-m font-normal leading-tight text-foreground">
-              I trained as a structural engineer. Ten years in steel detailing
-              and structural drafting taught me that a thing either holds up
-              under load or it doesn&apos;t, and that you find out later, not on
-              the day it&apos;s handed over.
+              I've been everywhere, man. Sort of. I was born overseas, came to
+              Australia when I was 10 years old, grew up in Sydney and then
+              moved to Brisbane. I have a bachelor's degree in structural
+              engineering, worked 5 years on construction sites, 4 years in
+              steel detailing and 5 years in structural drafting.
+            </p>
+            <p className="text-display-m leading-tight text-foreground font-bold">
+              Through it all, since I was 11, I've been coding and building
+              websites.
             </p>
             <p className="text-body text-muted-foreground">
-              I&apos;ve been building for the web for 25 years and running
-              RAVENCI from Brisbane since 2018. I design it, I build it, I host
-              it, I patch it, and I answer the phone when something breaks. The
-              sites I built five years ago are still fast, still ranking, still
-              running. That&apos;s the whole pitch.
+              For over 25 years, my passion has been what I do now. My
+              engineering career only further instilled in me my love for
+              solving problems. I bring all of that to RAVENCI. Every problem
+              has a solution and no two solutions are necessarily the same.
             </p>
             <Link
               href="/about"
