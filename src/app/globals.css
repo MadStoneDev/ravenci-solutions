@@ -44,6 +44,8 @@
     /* --- status -------------------------------------------------- [NEW] */
     --destructive: 2 71% 41%;        /* #B4231F */
     --destructive-foreground: 0 0% 100%;
+    --warning: 30 90% 38%;           /* #B86C0A amber, ~3.4:1 on paper */
+    --warning-foreground: 0 0% 100%;
 
     /* --- LEGACY shadcn tokens (used only by src/components/ui/button.tsx
        until the new Button lands). Remove when button.tsx is replaced. */
@@ -101,6 +103,8 @@
 
     --destructive: 2 71% 55%;
     --destructive-foreground: 240 9% 6%;
+    --warning: 38 96% 56%;           /* #FBAD28 amber on charcoal */
+    --warning-foreground: 240 9% 6%;
 
     /* LEGACY */
     --primary: 45 18% 96%;

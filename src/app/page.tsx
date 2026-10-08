@@ -515,20 +515,21 @@ export default async function Home() {
             <SectionLabel index="07" label="The guy behind it all" />
             <p className="text-display-m font-normal leading-tight text-foreground">
               I've been everywhere, man. Sort of. I was born overseas, came to
-              Australia when I was 10 years old, grew up in Sydney and then
-              moved to Brisbane. I have a bachelor's degree in structural
-              engineering, worked 5 years on construction sites, 4 years in
-              steel detailing and 5 years in structural drafting.
+              Australia when I was 10, grew up in Sydney and then moved to
+              Brisbane. I have a bachelor's degree in civil engineering
+              (majoring in structural), worked 5 years on construction sites, 4
+              years in steel detailing and 5 years in structural drafting.
             </p>
             <p className="text-display-m leading-tight text-foreground font-bold">
               Through it all, since I was 11, I've been coding and building
               websites.
             </p>
             <p className="text-body text-muted-foreground">
-              For over 25 years, my passion has been what I do now. My
-              engineering career only further instilled in me my love for
-              solving problems. I bring all of that to RAVENCI. Every problem
-              has a solution and no two solutions are necessarily the same.
+              It's been my passion for over 25 years, and now it's my job.
+              Engineering made me love solving problems even more. I've learned
+              that every problem has a solution and no two solutions are the
+              same. I bring all of that to RAVENCI, my own business that I've
+              been running for the past 8 years.
             </p>
             <Link
               href="/about"
@@ -549,15 +550,16 @@ export default async function Home() {
               Can Google and AI actually find you?
             </h2>
             <p className="text-body text-muted-foreground">
-              I&apos;ll run your site through the same checks I use on client
-              work and send back what search engines and AI assistants see. No
-              pitch attached.
+              Fill out the form and I'll go through your site and run it against
+              the same checks I use on client work. Then I'll send you a
+              completely free report on how you show up for search engines and
+              AI assistants.
             </p>
             <ul className="mt-2 flex flex-col gap-2.5">
               {[
-                "Technical SEO and Core Web Vitals",
+                "Technical SEO and site speed",
                 "How AI assistants describe your business",
-                "What your three nearest competitors are doing",
+                "What you can do to improve",
               ].map((b) => (
                 <li
                   key={b}

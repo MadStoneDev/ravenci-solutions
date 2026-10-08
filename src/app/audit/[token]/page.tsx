@@ -3,7 +3,10 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
-import { IconCheck, IconAlertTriangle } from "@tabler/icons-react";
+import {
+  IconCircleCheckFilled,
+  IconAlertTriangleFilled,
+} from "@tabler/icons-react";
 
 import { getAuditByToken, getAllAuditTokens } from "@/lib/audits";
 import { mdxComponents } from "@/lib/mdx-components";
@@ -52,7 +55,7 @@ export default async function AuditReportPage({
   }
 
   return (
-    <main className="report-page flex min-h-screen flex-col bg-background text-foreground">
+    <main className="relative report-page flex min-h-screen flex-col bg-background text-foreground">
       {/* Print stylesheet, applies when user prints or saves as PDF */}
       <style
         dangerouslySetInnerHTML={{
@@ -76,11 +79,6 @@ export default async function AuditReportPage({
           `,
         }}
       />
-
-      {/* Floating action buttons, hidden in print */}
-      <div className="no-print fixed top-6 right-6 z-50 flex flex-col gap-2">
-        <PrintButton />
-      </div>
 
       <div className="mx-auto max-w-4xl px-5 py-12 md:px-10 md:py-20">
         {/* Cover */}
@@ -116,6 +114,11 @@ export default async function AuditReportPage({
                 </span>
               </p>
             </div>
+          </div>
+
+          {/* Floating action buttons, hidden in print */}
+          <div className="no-print mt-5 ">
+            <PrintButton />
           </div>
         </header>
 
@@ -160,59 +163,68 @@ export default async function AuditReportPage({
           <h2 className="mb-6 border-l-2 border-accent pl-4 text-heading-m text-foreground">
             Findings by Category
           </h2>
-          <div className="space-y-8">
+          <div className="space-y-6">
             {audit.categories.map((cat) => (
-              <div key={cat.id} className="avoid-break">
-                <div className="mb-2 flex flex-wrap items-baseline gap-3">
-                  <h3 className="text-heading-s text-foreground">
+              <div
+                key={cat.id}
+                className="avoid-break rounded-lg border border-border bg-card p-5 md:p-6"
+              >
+                <div className="mb-3 flex flex-wrap items-baseline gap-3 border-b border-border pb-3">
+                  <h3 className="text-heading-s font-semibold text-foreground">
                     {cat.label}
                   </h3>
-                  <span className="rounded-full border border-border bg-muted px-3 py-0.5 text-small font-semibold text-foreground">
+                  <span className="rounded-full border border-border bg-muted px-3 py-0.5 text-small font-bold text-foreground">
                     {cat.score}/100
                   </span>
                 </div>
-                <p className="mb-4 text-small text-muted-foreground">
+                <p className="mb-5 text-small text-muted-foreground">
                   {cat.summary}
                 </p>
 
                 {cat.findings.length > 0 && (
-                  <>
-                    <p className={`mb-2 ${LABEL}`}>What we found</p>
-                    <ul className="mb-4 space-y-1.5">
+                  <div className="mb-5">
+                    <p className="mb-2 flex items-center gap-2 font-mono text-label-sm uppercase tracking-wide text-foreground">
+                      <span className="h-3.5 w-1 rounded-full bg-warning" />
+                      What we found
+                    </p>
+                    <ul className="space-y-2 border-l-2 border-warning/40 pl-4">
                       {cat.findings.map((f, j) => (
                         <li
                           key={j}
-                          className="flex items-start gap-2 text-small text-muted-foreground"
+                          className="flex items-start gap-2.5 text-small text-foreground/80"
                         >
-                          <IconAlertTriangle
-                            size={14}
-                            className="mt-1 flex-shrink-0 text-muted-foreground"
+                          <IconAlertTriangleFilled
+                            size={16}
+                            className="mt-0.5 flex-shrink-0 text-warning"
                           />
                           <span>{f}</span>
                         </li>
                       ))}
                     </ul>
-                  </>
+                  </div>
                 )}
 
                 {cat.recommendations.length > 0 && (
-                  <>
-                    <p className={`mb-2 ${LABEL}`}>Recommendations</p>
-                    <ul className="space-y-1.5">
+                  <div>
+                    <p className="mb-2 flex items-center gap-2 font-mono text-label-sm uppercase tracking-wide text-foreground">
+                      <span className="h-3.5 w-1 rounded-full bg-accent" />
+                      Recommendations
+                    </p>
+                    <ul className="space-y-2 border-l-2 border-accent/40 pl-4">
                       {cat.recommendations.map((r, j) => (
                         <li
                           key={j}
-                          className="flex items-start gap-2 text-small text-muted-foreground"
+                          className="flex items-start gap-2.5 text-small text-foreground/80"
                         >
-                          <IconCheck
-                            size={14}
-                            className="mt-1 flex-shrink-0 text-accent"
+                          <IconCircleCheckFilled
+                            size={17}
+                            className="mt-0.5 flex-shrink-0 text-accent"
                           />
                           <span>{r}</span>
                         </li>
                       ))}
                     </ul>
-                  </>
+                  </div>
                 )}
               </div>
             ))}
@@ -250,28 +262,43 @@ export default async function AuditReportPage({
         {/* CTA */}
         <section className="avoid-break mt-16 border-t border-border pt-10">
           <h2 className="mb-4 text-heading-m text-foreground">
-            Want a hand fixing any of this?
+            Need a hand with this?
           </h2>
           <p className="mb-6 text-body text-muted-foreground">
-            If any of the issues above are worth fixing and you&apos;d like
-            RAVENCI&apos;s help, reply to the email this report came in on with
-            your rough timeline and budget. I&apos;ll come back with options
-            that fit. No sales call required, no obligation.
+            If you're keen to go ahead with the above fixes but need someone to
+            do it for you, I can help. Reply to the email this report came in on
+            with your rough timeline and budget. I'll give you some options. No
+            obligation.
           </p>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             <div>
               <p className="text-body font-semibold text-foreground">Website</p>
-              <p className="text-muted-foreground">ravenci.solutions</p>
+              <a
+                href={`https://ravenci.solutions`}
+                className="text-muted-foreground hover:text-accent transition-all"
+              >
+                ravenci.solutions
+              </a>
             </div>
             <div>
               <p className="text-body font-semibold text-foreground">Phone</p>
-              <p className="text-muted-foreground">07 3106 1836</p>
+              <a
+                href={`tel:61731061836`}
+                className="text-muted-foreground hover:text-accent transition-all"
+              >
+                07 3106 1836
+              </a>
             </div>
             <div>
               <p className="text-body font-semibold text-foreground">
                 Brisbane, AU
               </p>
-              <p className="text-muted-foreground">hello@ravenci.solutions</p>
+              <a
+                href={`mailto:hello@ravenci.solutions`}
+                className="text-muted-foreground hover:text-accent transition-all"
+              >
+                hello@ravenci.solutions
+              </a>
             </div>
           </div>
           <div className="no-print mt-8">
