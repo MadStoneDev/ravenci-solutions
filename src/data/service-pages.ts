@@ -495,7 +495,7 @@ export const MANAGED_WEB: ServicePageData = {
     { title: "Uptime monitoring", description: "24/7 monitoring, so if something goes wrong at 3am I know about it before your customers do." },
     { title: "Performance checks", description: "Regular optimisation of speed, database and overall performance so pages keep loading instantly." },
     { title: "Content and link checks", description: "Regular checks of forms, links and content across browsers and devices to make sure everything works." },
-    { title: "Support and monthly reports", description: "Brisbane-based support you can reach directly, a two-hour response during business hours, and a monthly report of the work done." },
+    { title: "Support and monthly reports", description: "Brisbane-based support you can reach directly, with priority response on the higher plans, and a monthly report of the work done." },
   ],
   faq: [
     { question: "What's included?", answer: "Cloud hosting, SSL, daily backups, security monitoring and patching, uptime monitoring, performance checks, and Brisbane-based support. No hidden fees or surprise add-ons." },

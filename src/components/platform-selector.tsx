@@ -31,7 +31,7 @@ const OPTIONS: PlatformOption[] = [
       "Scores 85+ on Google's speed test, which a lot of sites never reach",
       "As many pages as your website needs",
       "Basic analytics and SEO out of the box",
-      "Two months' free hosting and maintenance after launch",
+      "One free month of hosting and maintenance after launch",
     ],
     price: "FROM $7,500",
   },

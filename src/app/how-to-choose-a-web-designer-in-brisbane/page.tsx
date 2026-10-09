@@ -229,7 +229,7 @@ const ravenciScorecard = [
   {
     question: "Post-launch support?",
     answer:
-      "30 days of post-launch bug fixes included. Care plans from $249/mo for ongoing support.",
+      "One free month of hosting and maintenance post-launch, and you can reach me any time after that. Care plans from $249/mo keep it hosted, updated and secure, with priority support on the higher plans.",
   },
   {
     question: "What if you leave or I stop trading?",

@@ -84,7 +84,7 @@ export const CARE_PLANS: CarePlan[] = [
       "Hosting included",
       "Updates, security, daily backups and monitoring",
       "Minor fixes when something breaks",
-      "Issues looked at the next business day",
+      "Issues looked at within 24 to 48 hours",
     ],
     mode: "checkout",
   },
@@ -96,7 +96,7 @@ export const CARE_PLANS: CarePlan[] = [
     bullets: [
       "Everything in Maintenance",
       "2 hours a month of design, development or content work",
-      "Requests handled within 2 business days",
+      "Requests handled within 24 to 48 hours",
       "Extra hours at $150 instead of $165",
     ],
     mode: "checkout",
@@ -109,7 +109,7 @@ export const CARE_PLANS: CarePlan[] = [
     bullets: [
       "Everything in Maintenance",
       "8 hours a month for new pages, landing pages and features",
-      "Priority turnaround, within 1 business day",
+      "Priority same-day response",
       "Extra hours at $140",
     ],
     mode: "book",
@@ -122,7 +122,7 @@ export const CARE_PLANS: CarePlan[] = [
     bullets: [
       "Everything in Maintenance",
       "20 hours a month across design, development and content",
-      "Same-day response and a monthly planning call",
+      "Priority 2-hour response and a monthly planning call",
       "Extra hours at $125",
     ],
     mode: "book",
