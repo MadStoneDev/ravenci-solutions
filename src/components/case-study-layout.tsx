@@ -75,8 +75,14 @@ function CaseMedia({
 }
 
 function MetricsBand({ metrics }: { metrics: CaseStudyMetric[] }) {
+  const cols =
+    metrics.length === 4
+      ? "grid-cols-2 lg:grid-cols-4"
+      : metrics.length === 2
+        ? "grid-cols-1 sm:grid-cols-2"
+        : "grid-cols-1 sm:grid-cols-3";
   return (
-    <dl className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+    <dl className={`grid gap-8 ${cols}`}>
       {metrics.map((m) => (
         <div key={m.label} className="flex flex-col gap-1">
           <dt className="sr-only">{m.label}</dt>
@@ -223,12 +229,29 @@ function ChallengeApproach({ cs }: { cs: CaseStudy }) {
 
 function WhatIBuilt({ cs }: { cs: CaseStudy }) {
   if (!cs.features || cs.features.length === 0) return null;
+  // Premium leads this section with the results (stat band + narrative) above
+  // the feature spotlights; the other variants show the results in their own
+  // dedicated section, so here they stay feature-only.
+  const premium = cs.template === "premium";
+  const metrics = cs.results.metrics ?? [];
   return (
     <section className={`${SECTION} border-b border-border`}>
       <div className="mb-10 flex flex-col gap-3">
-        <SectionLabel index="03" label="What I built" />
+        <SectionLabel index="03" label={premium ? "The results" : "What I built"} />
         <h2 className="text-heading-m text-foreground">{cs.results.heading || "The work"}</h2>
       </div>
+      {premium && metrics.length > 0 && (
+        <div className="mb-10">
+          <MetricsBand metrics={metrics} />
+        </div>
+      )}
+      {premium && cs.results.paragraphs.length > 0 && (
+        <div className="mb-12 flex max-w-3xl flex-col gap-4">
+          {cs.results.paragraphs.map((p, i) => (
+            <p key={i} className="text-body text-muted-foreground">{p}</p>
+          ))}
+        </div>
+      )}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {cs.features.map((f, i) => (
           <div key={f.title} className="flex flex-col overflow-hidden rounded-sm border border-border bg-card">

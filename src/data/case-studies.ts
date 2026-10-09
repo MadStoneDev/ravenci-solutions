@@ -332,7 +332,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     industry: "ecommerce",
     industryLabel: "eCommerce",
     services: ["web-development", "ecommerce", "seo-and-content"],
-    serviceLabels: ["Web Development", "Shopify", "SEO"],
+    serviceLabels: ["Web Development", "Shopify", "SEO / AEO / GEO"],
     excerpt:
       "An Australian thermal and night vision retailer for serious hunters, pairing carefully chosen gear from Pulsar, HikMicro, PARD and Nocpix with the kind of expert guidance you can't get from a big-box store.",
     featuredImage: "/showcase-images/goingdark/full-page.png",
@@ -343,7 +343,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     template: "premium",
     metaTitle: "GoingDark Case Study | RAVENCI Solutions",
     metaDescription:
-      "GoingDark inherited a sluggish BigCommerce store from previous owners. We migrated them to a clean Shopify build, fixed the SEO mess, and the trajectory turned around: purchaser rate up 38.5% in three months.",
+      "We rebuilt GoingDark on Shopify and fixed its SEO foundations. The result: conversion rate up 62% month on month, with organic search now driving 64% of traffic.",
     heroHeadline: "An Inherited Store, Rebuilt Properly",
     heroSubheadline:
       "An Australian thermal and night vision retailer inherited a sluggish BigCommerce store from previous owners, and the technical debt that came with it. We migrated them to a clean Shopify build, fixed the SEO foundations, and the numbers turned around within months.",
@@ -375,6 +375,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         "Paid theme customised for GoingDark's expert voice, saved thousands vs full custom",
         "Hundreds of 404s fixed, missing alt text added, content restructured for search",
         "Logo refreshed where the inherited files were low-res and rough",
+        "Ongoing SEO, AEO and GEO work, with organic search now driving 64% of traffic and no paid ads",
         "Ongoing strategic input: pushing for differentiation, not imitation",
       ],
       image: "/showcase-images/goingdark/goingdark-shopify-dashboard.png",
@@ -403,13 +404,15 @@ export const CASE_STUDIES: CaseStudy[] = [
       heading: "The Results",
       paragraphs: [
         "GoingDark relaunched on Shopify on 27 January 2025. By April, three months in, the trajectory had clearly turned around. Purchaser rate grew 38.5%. Organic search traffic grew 12.5%. Average session duration jumped 57%, with visitors spending dramatically more time on the site than they were before.",
+        "A fresh month of numbers tells the same story. Month on month, sessions fell 28%, but every step of the buying funnel went up: add-to-carts rose 12%, checkouts reached rose 10%, and completed purchases rose 17%. The conversion rate climbed 62%. Fewer people are landing on the store, but far more of them are there to buy. In GA4, organic search now drives 64% of all traffic, organic and direct together make up 95%, and there's no paid search at all, so none of this was bought. Revenue per user is up 16%. The old store pulled in people who browsed and left; the rebuild and the ongoing SEO brought in people actually looking for what GoingDark sells.",
         "The site itself sits at 100 Accessibility, 92 Best Practices and 92 SEO in PageSpeed, with First Contentful Paint at 0.5s and Largest Contentful Paint at 0.8s. Fast for any ecommerce site, fast enough on Shopify that the platform overhead doesn't tell on day-to-day shopping.",
         "The harder shift has been ongoing: pushing back gently when Jo's tempted to copy what bigger competitors are doing. In a niche category like night vision, the brand that stands out wins. We're still working with GoingDark monthly on that, alongside the SEO foundation we rebuilt during migration.",
       ],
       metrics: [
-        { value: "+38.5%", label: "Purchaser Rate" },
-        { value: "+12.5%", label: "Organic Search" },
-        { value: "+57%", label: "Session Duration" },
+        { value: "+62%", label: "Conversion Rate (MoM)" },
+        { value: "+16%", label: "Revenue per User (MoM)" },
+        { value: "64%", label: "Traffic from Organic" },
+        { value: "0%", label: "Paid Search" },
       ],
     },
     galleryImages: [

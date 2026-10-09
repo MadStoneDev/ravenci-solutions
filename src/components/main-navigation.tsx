@@ -17,7 +17,7 @@ const SERVICES: NavLink[] = [
   { href: "/web-development", label: "Website Design & Development" },
   { href: "/ecommerce", label: "eCommerce" },
   { href: "/web-apps", label: "Web Apps & Client Portals" },
-  { href: "/website-maintenance", label: "Managed Web" },
+  { href: "/website-maintenance", label: "Hosting & Web Care" },
   { href: "/seo-and-content", label: "SEO / AEO / GEO" },
 ];
 

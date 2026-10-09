@@ -376,7 +376,7 @@ export const ECOMMERCE: ServicePageData = {
     { question: "Which platform should I choose, Shopify or BigCommerce?", answer: "Most product businesses under 5,000 SKUs do best on Shopify. BigCommerce suits larger catalogues, B2B requirements, or businesses that need multi-storefront from one dashboard. I recommend based on your operations, catalogue size and growth plans, not my preference." },
     { question: "Can you migrate my existing store?", answer: "Yes. I migrate products, customers, order history and SEO equity (URL redirects, meta data, structured data). Migrations are scoped and quoted separately based on catalogue size, platform and integration complexity." },
     { question: "How long does an eCommerce build take?", answer: "A standard build takes six to eight weeks. Custom eCommerce with advanced integrations like ERP, multi-channel or custom filtering takes eight to ten weeks or more. I give you regular progress updates and stick to the agreed timeline." },
-    { question: "Do you handle ongoing store management?", answer: "I train your team to handle daily operations: orders, product updates, promotions. For ongoing platform support, my Managed Web plans cover maintenance, updates and performance monitoring. Most eCommerce clients add a plan after launch." },
+    { question: "Do you handle ongoing store management?", answer: "I train your team to handle daily operations: orders, product updates, promotions. For ongoing platform support, my Hosting & Web Care plans cover maintenance, updates and performance monitoring. Most eCommerce clients add a plan after launch." },
     { question: "What about payments and shipping for Australian businesses?", answer: "I configure Australian payment gateways (Shopify Payments, Stripe, PayPal, Afterpay, Zip), GST calculation, and shipping zones for domestic and international delivery. I also set up Australia Post, Sendle or your preferred carrier for real-time rates." },
   ],
   closingCta: {
@@ -467,8 +467,8 @@ export const WEB_APPS: ServicePageData = {
 
 export const MANAGED_WEB: ServicePageData = {
   slug: "website-maintenance",
-  breadcrumbLabel: "Managed Web",
-  name: "Managed Web",
+  breadcrumbLabel: "Hosting & Web Care",
+  name: "Hosting & Web Care",
   outcome:
     "I host, secure and look after your website so it stays fast, online and out of your hands.",
   supporting:
@@ -509,12 +509,12 @@ export const MANAGED_WEB: ServicePageData = {
     body: "Tell me about your site and I'll set up hosting and maintenance that keeps it fast, secure and online. One invoice, one person to call.",
     primary: { label: "Get started", href: "/launch-your-vision" },
   },
-  sticky: { label: "Get managed", href: "/launch-your-vision", startingPrice: 39 },
-  metaTitle: "Managed Web | RAVENCI Solutions",
+  sticky: { label: "Get covered", href: "/launch-your-vision", startingPrice: 39 },
+  metaTitle: "Hosting & Web Care | RAVENCI Solutions",
   metaDescription:
-    "Managed web hosting and care plans from Brisbane. Hosting, SSL, daily backups, security, uptime monitoring and updates. Standalone hosting from $39/mo, care plans from $249/mo.",
+    "Website hosting and care plans from Brisbane. Hosting, SSL, daily backups, security, uptime monitoring and updates. Standalone hosting from $39/mo, care plans from $249/mo.",
   schema: {
-    serviceType: "Managed Web Hosting & Maintenance",
+    serviceType: "Website Hosting & Maintenance",
     offers: [
       { name: "Managed hosting", price: "39", description: "Standalone cloud hosting with SSL, daily backups, security monitoring and Brisbane-based support, billed monthly." },
       { name: "Maintenance", price: "249", description: "Care plan with hosting included: updates, security, daily backups and monitoring, billed monthly." },
