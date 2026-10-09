@@ -214,8 +214,8 @@ export const addons: Record<string, Addon> = {
     maxQty: 1,
   },
   "maintenance-addon": {
-    title: "Web Maintenance",
-    price: 249,
+    title: "Maintenance",
+    price: 239,
     isRecurring: true,
     recurringPeriod: "monthly",
     description: "Website maintenance",

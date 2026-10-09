@@ -17,11 +17,13 @@ import SectionLabel from "@/components/section-label";
 import { addons } from "@/lib/data/addons";
 import { services } from "@/lib/data/services";
 import {
-  CARE_PLANS,
+  RUNNING_OFFERS,
+  WEBSITE_CARE_TIERS,
+  WEBSITE_CARE_ADDONS,
   STORE_ADDON,
+  AD_HOC_HOURLY,
   CALENDLY_URL,
-  STANDALONE_HOSTING,
-  type CarePlan,
+  type RunningOffer,
 } from "@/lib/data/care-plans";
 
 interface SelectedAddons {
@@ -116,8 +118,8 @@ export default function QuotingComponent() {
     }
   };
 
-  const handleCarePlanCheckout = async (plan: CarePlan) => {
-    setPlanLoading(plan.id);
+  const handleCarePlanCheckout = async (offer: RunningOffer) => {
+    setPlanLoading(offer.id);
     setPlanError(null);
 
     try {
@@ -126,9 +128,9 @@ export default function QuotingComponent() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           carePlan: {
-            planId: plan.id,
-            storeAddon: !!planStore[plan.id],
-            termsAccepted: !!planTerms[plan.id],
+            planId: offer.id,
+            storeAddon: !!planStore[offer.id],
+            termsAccepted: !!planTerms[offer.id],
           },
         }),
       });
@@ -180,16 +182,15 @@ export default function QuotingComponent() {
           <div className="max-w-3xl">
             <Breadcrumbs items={[{ label: "Get a Quote" }]} />
             <div className="mt-4">
-              <SectionLabel index="01" label="Care Plans" tick />
+              <SectionLabel index="01" label="Hosting & Website Care" tick />
             </div>
             <h1 className="mt-4 text-display-l text-foreground">
-              Care plans &amp; hosting
+              Hosting and website care
             </h1>
             <p className="mt-6 text-lead text-muted-foreground">
-              Every plan includes hosting, updates, security and backups. Higher
-              plans add hours each month for design, development and content
-              work. Pick a plan and check out securely, or book a call for the
-              larger tiers.
+              Keep it running (hosting and maintenance), or keep it improving
+              (Website Care). Pick what you need and check out securely, or book
+              a call for Website Care. Billed monthly, cancel any time.
             </p>
             <p className="mt-4 text-small text-muted-foreground">
               Looking for a website, eCommerce, branding, SEO or an app project?{" "}
@@ -202,23 +203,26 @@ export default function QuotingComponent() {
             </p>
           </div>
 
-          {/* Care plan cards */}
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-            {CARE_PLANS.map((plan) => {
-              const store = !!planStore[plan.id];
-              const monthly = plan.monthly;
-              const isCheckout = plan.mode === "checkout";
-              const loading = planLoading === plan.id;
+          {/* Keep it running: hosting & maintenance */}
+          <h2 className="mt-12 text-heading-s text-foreground">Keep it running</h2>
+          <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {RUNNING_OFFERS.map((offer) => {
+              const store = !!planStore[offer.id];
+              const monthly = offer.monthly;
+              const loading = planLoading === offer.id;
+              // Hosting routes to its own configurator (sub-add-ons). Maintenance
+              // and Hosting + Maintenance check out as subscriptions here.
+              const isHosting = offer.id === "hosting";
 
               return (
                 <div
-                  key={plan.id}
-                  className="flex flex-col rounded-sm border border-border bg-card p-6"
+                  key={offer.id}
+                  className={`flex flex-col rounded-sm border bg-card p-6 ${
+                    offer.featured ? "border-accent" : "border-border"
+                  }`}
                 >
                   <div className="flex items-baseline justify-between gap-2">
-                    <h2 className="text-heading-s text-foreground">
-                      {plan.name}
-                    </h2>
+                    <h3 className="text-heading-s text-foreground">{offer.name}</h3>
                     <p className="text-heading-s text-accent">
                       ${monthly.toLocaleString()}
                       <span className="text-small font-normal text-muted-foreground">
@@ -226,45 +230,46 @@ export default function QuotingComponent() {
                       </span>
                     </p>
                   </div>
-                  <p className="mt-2 text-small text-muted-foreground">
-                    {plan.line}
-                  </p>
+                  <p className="mt-2 text-small text-muted-foreground">{offer.line}</p>
 
                   <ul className="mt-4 flex flex-1 flex-col gap-2">
-                    {plan.bullets.map((b) => (
+                    {offer.bullets.map((b) => (
                       <li
                         key={b}
                         className="flex items-start gap-2 text-small text-muted-foreground"
                       >
-                        <IconCheck
-                          size={16}
-                          aria-hidden
-                          className="mt-0.5 shrink-0 text-accent"
-                        />
+                        <IconCheck size={16} aria-hidden className="mt-0.5 shrink-0 text-accent" />
                         <span>{b}</span>
                       </li>
                     ))}
                   </ul>
 
-                  {isCheckout ? (
+                  {isHosting ? (
+                    <div className="mt-6 border-t border-border pt-5">
+                      <button
+                        onClick={() => handleServiceSelection("web-hosting")}
+                        className="flex h-11 w-full items-center justify-center rounded-sm border border-foreground px-6 font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
+                      >
+                        Configure hosting
+                      </button>
+                    </div>
+                  ) : (
                     <div className="mt-6 flex flex-col gap-4 border-t border-border pt-5">
-                      {/* Store add-on */}
-                      <label className="flex cursor-pointer items-center gap-2 text-small text-foreground">
-                        <input
-                          type="checkbox"
-                          checked={store}
-                          onChange={(e) =>
-                            setPlanStore((prev) => ({
-                              ...prev,
-                              [plan.id]: e.target.checked,
-                            }))
-                          }
-                          className="accent-accent"
-                        />
-                        <span>
-                          Add {STORE_ADDON.label} (+${STORE_ADDON.monthly}/mo)
-                        </span>
-                      </label>
+                      {offer.storeAddonAllowed && (
+                        <label className="flex cursor-pointer items-center gap-2 text-small text-foreground">
+                          <input
+                            type="checkbox"
+                            checked={store}
+                            onChange={(e) =>
+                              setPlanStore((prev) => ({ ...prev, [offer.id]: e.target.checked }))
+                            }
+                            className="accent-accent"
+                          />
+                          <span>
+                            Add {STORE_ADDON.label} (+${STORE_ADDON.monthly}/mo)
+                          </span>
+                        </label>
+                      )}
 
                       <div className="text-small text-muted-foreground">
                         <span className="font-medium text-foreground">
@@ -278,12 +283,9 @@ export default function QuotingComponent() {
                       <label className="flex cursor-pointer items-start gap-2 text-small text-foreground">
                         <input
                           type="checkbox"
-                          checked={!!planTerms[plan.id]}
+                          checked={!!planTerms[offer.id]}
                           onChange={(e) =>
-                            setPlanTerms((prev) => ({
-                              ...prev,
-                              [plan.id]: e.target.checked,
-                            }))
+                            setPlanTerms((prev) => ({ ...prev, [offer.id]: e.target.checked }))
                           }
                           className="mt-0.5 accent-accent"
                         />
@@ -301,8 +303,8 @@ export default function QuotingComponent() {
                       </label>
 
                       <button
-                        onClick={() => handleCarePlanCheckout(plan)}
-                        disabled={loading || !planTerms[plan.id]}
+                        onClick={() => handleCarePlanCheckout(offer)}
+                        disabled={loading || !planTerms[offer.id]}
                         className="flex h-11 w-full items-center justify-center gap-2 rounded-sm bg-accent px-6 font-semibold text-accent-foreground transition-colors hover:bg-accent/90 disabled:cursor-not-allowed disabled:opacity-50"
                       >
                         {loading ? (
@@ -317,17 +319,6 @@ export default function QuotingComponent() {
                         )}
                       </button>
                     </div>
-                  ) : (
-                    <div className="mt-6 flex flex-col gap-3 border-t border-border pt-5">
-                      <a
-                        href={CALENDLY_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex h-11 w-full items-center justify-center rounded-sm border border-foreground px-6 font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
-                      >
-                        Book a call
-                      </a>
-                    </div>
                   )}
                 </div>
               );
@@ -341,47 +332,77 @@ export default function QuotingComponent() {
           )}
 
           <p className="mt-6 max-w-3xl text-small text-muted-foreground">
-            Billed monthly, cancel any time. Online stores add $
-            {STORE_ADDON.monthly}/month to any plan. Hours reset each month and
-            don&apos;t roll over. Extra work outside your plan is billed at
-            $165/hr.
+            Billed monthly, cancel any time. Hosting on its own is for sites
+            maintained by another reputable provider. The online-store add-on (+$
+            {STORE_ADDON.monthly}/mo) goes on Maintenance or Hosting + Maintenance
+            only. Extra work outside a plan is ${AD_HOC_HOURLY}/hr.
           </p>
 
-          {/* Standalone hosting */}
-          <div className="mt-12">
-            <h2 className="text-heading-s text-foreground">
-              Just need hosting?
-            </h2>
-            <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2">
-              {Object.values(services).map((service) => (
-                <div
-                  key={service.id}
-                  onClick={() => handleServiceSelection(service.id)}
-                  className="flex cursor-pointer flex-col items-start justify-between rounded-sm border border-border bg-card p-6 transition-colors hover:border-accent"
-                >
-                  <section>
-                    <div className="mb-4 inline-block rounded-sm bg-accent/10 p-3 text-accent">
-                      {service.icon && service.icon}
-                    </div>
-                    <h3 className="mb-2 text-heading-s text-foreground">
-                      {service.name}
-                    </h3>
-                    <p className="mb-4 text-small text-muted-foreground">
-                      {service.description}
-                    </p>
-                  </section>
-                  <div className="text-heading-s text-accent">
-                    ${service.basePrice.toFixed(0)}
-                    {service.isRecurring && (
-                      <span className="text-small font-normal text-muted-foreground">
-                        /{service.recurringPeriod}
+          {/* Keep it improving: Website Care */}
+          <h2 className="mt-12 text-heading-s text-foreground">
+            Keep it improving: Website Care
+          </h2>
+          <p className="mt-2 max-w-3xl text-small text-muted-foreground">
+            A monthly block of my time for design, development and content, with
+            priority when you need something done. Separate from hosting and
+            maintenance. Book a call and I&apos;ll set you up.
+          </p>
+          <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {WEBSITE_CARE_TIERS.map((tier) => (
+              <div
+                key={tier.id}
+                className="flex flex-col rounded-sm border border-border bg-card p-6"
+              >
+                <div className="flex items-baseline justify-between gap-2">
+                  <h3 className="text-heading-s text-foreground">{tier.name}</h3>
+                  <p className="text-heading-s text-accent">
+                    {tier.monthly === null ? (
+                      <span className="text-small font-medium text-muted-foreground">
+                        Pricing on request
                       </span>
+                    ) : (
+                      <>
+                        ${tier.monthly.toLocaleString()}
+                        <span className="text-small font-normal text-muted-foreground">
+                          /mo
+                        </span>
+                      </>
                     )}
-                  </div>
+                  </p>
                 </div>
-              ))}
-            </div>
+                <p className="mt-2 text-small text-muted-foreground">{tier.line}</p>
+                <ul className="mt-4 flex flex-1 flex-col gap-2">
+                  {tier.bullets.map((b) => (
+                    <li
+                      key={b}
+                      className="flex items-start gap-2 text-small text-muted-foreground"
+                    >
+                      <IconCheck size={16} aria-hidden className="mt-0.5 shrink-0 text-accent" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 border-t border-border pt-5">
+                  <a
+                    href={CALENDLY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-11 w-full items-center justify-center rounded-sm border border-foreground px-6 font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
+                  >
+                    Book a call
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
+          <p className="mt-6 max-w-3xl text-small text-muted-foreground">
+            Add maintenance to a Website Care plan for $
+            {WEBSITE_CARE_ADDONS.maintenance.monthly}/mo, or hosting and
+            maintenance for ${WEBSITE_CARE_ADDONS["hosting-maintenance"].monthly}/mo.
+            Month to month, up to 25% of unused hours roll into the next month,
+            then expire. An optional 12-month contract rolls all unused hours
+            over, each month&apos;s lasting two months.
+          </p>
         </section>
       </main>
     );

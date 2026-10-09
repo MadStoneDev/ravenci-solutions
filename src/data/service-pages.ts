@@ -376,7 +376,7 @@ export const ECOMMERCE: ServicePageData = {
     { question: "Which platform should I choose, Shopify or BigCommerce?", answer: "Most product businesses under 5,000 SKUs do best on Shopify. BigCommerce suits larger catalogues, B2B requirements, or businesses that need multi-storefront from one dashboard. I recommend based on your operations, catalogue size and growth plans, not my preference." },
     { question: "Can you migrate my existing store?", answer: "Yes. I migrate products, customers, order history and SEO equity (URL redirects, meta data, structured data). Migrations are scoped and quoted separately based on catalogue size, platform and integration complexity." },
     { question: "How long does an eCommerce build take?", answer: "A standard build takes six to eight weeks. Custom eCommerce with advanced integrations like ERP, multi-channel or custom filtering takes eight to ten weeks or more. I give you regular progress updates and stick to the agreed timeline." },
-    { question: "Do you handle ongoing store management?", answer: "I train your team to handle daily operations: orders, product updates, promotions. For ongoing platform support, my Hosting & Web Care plans cover maintenance, updates and performance monitoring. Most eCommerce clients add a plan after launch." },
+    { question: "Do you handle ongoing store management?", answer: "I train your team to handle daily operations: orders, product updates, promotions. For ongoing platform support, my Hosting & Website Care plans cover maintenance, updates and performance monitoring. Most eCommerce clients add a plan after launch." },
     { question: "What about payments and shipping for Australian businesses?", answer: "I configure Australian payment gateways (Shopify Payments, Stripe, PayPal, Afterpay, Zip), GST calculation, and shipping zones for domestic and international delivery. I also set up Australia Post, Sendle or your preferred carrier for real-time rates." },
   ],
   closingCta: {
@@ -467,20 +467,20 @@ export const WEB_APPS: ServicePageData = {
 
 export const MANAGED_WEB: ServicePageData = {
   slug: "website-maintenance",
-  breadcrumbLabel: "Hosting & Web Care",
-  name: "Hosting & Web Care",
+  breadcrumbLabel: "Hosting & Website Care",
+  name: "Hosting & Website Care",
   outcome:
     "I host, secure and look after your website so it stays fast, online and out of your hands.",
   supporting:
-    "Since October 2024 I only host sites that are on ongoing maintenance, so hosting and care come together. That's why my sites stay fast and secure instead of quietly rotting.",
+    "Since October 2024 I only host sites that are being maintained, whether by me or another reputable provider. That's why my sites stay fast and secure instead of quietly rotting.",
   heroCtas: {
     primary: { label: "Get started", href: "/launch-your-vision" },
     secondary: { label: "What's covered", href: "#included" },
   },
   pricingAnchor: {
-    fromLabel: "FROM",
+    fromLabel: "PRICING",
     price: "$39/mo",
-    note: "Standalone hosting $39/mo. Care plans from $249/mo include hosting, maintenance and support, up to $2,750/mo for the Partner plan.",
+    note: "Hosting $39/mo, Maintenance $239/mo, Hosting + Maintenance $269/mo. Website Care (design and dev time) is separate, priced on request.",
     ticks: [
       "99.9% uptime",
       "Daily backups with quick restore",
@@ -495,11 +495,12 @@ export const MANAGED_WEB: ServicePageData = {
     { title: "Uptime monitoring", description: "24/7 monitoring, so if something goes wrong at 3am I know about it before your customers do." },
     { title: "Performance checks", description: "Regular optimisation of speed, database and overall performance so pages keep loading instantly." },
     { title: "Content and link checks", description: "Regular checks of forms, links and content across browsers and devices to make sure everything works." },
-    { title: "Support and monthly reports", description: "Brisbane-based support you can reach directly, with priority response on the higher plans, and a monthly report of the work done." },
+    { title: "Support and monthly reports", description: "Brisbane-based support you can reach directly, issues looked at by the next business day, and a monthly report of the work I did. (Priority turnaround is a Website Care thing.)" },
   ],
   faq: [
-    { question: "What's included?", answer: "Cloud hosting, SSL, daily backups, security monitoring and patching, uptime monitoring, performance checks, and Brisbane-based support. No hidden fees or surprise add-ons." },
-    { question: "Can I host elsewhere and still get your other services?", answer: "I prefer to host the sites I maintain so I can guarantee performance and security, but I can work with other quality hosts. A care plan is the best value, because hosting and maintenance are optimised to work together." },
+    { question: "What's included?", answer: "Cloud hosting, SSL, daily backups, security monitoring and patching, uptime monitoring, performance checks, and Brisbane-based support. No hidden fees or surprise add-ons. Running an online store adds $180/mo to Maintenance or Hosting + Maintenance." },
+    { question: "What's the difference between maintenance and Website Care?", answer: "Maintenance keeps a site running: updates, security, backups, hosting. Website Care is a block of my time each month for design, development and content, with priority when you need something done. Most sites want maintenance; Website Care is for sites that keep changing." },
+    { question: "Can I host elsewhere and still get maintenance?", answer: "Yes. Maintenance is $239/mo for a site hosted somewhere else. I'd rather host what I maintain so it's all in one place, but I don't insist on it." },
     { question: "What if my site goes down or traffic spikes?", answer: "I monitor 24/7 and usually restore within two hours during business hours. The cloud hosting scales automatically for traffic spikes, so a busy day doesn't take your site down." },
     { question: "Do you migrate my existing website?", answer: "Yes, I handle the full migration from your current host, though extra charges may apply. Your site will be faster and more secure from day one." },
     { question: "Is maintenance really necessary?", answer: "An unmaintained site is a soft target. Outdated plugins and no backups are how sites get hacked or go down, and fixing a breach or rebuilding after one costs far more than keeping it maintained, on top of the sales you lose while it's offline." },
@@ -510,17 +511,18 @@ export const MANAGED_WEB: ServicePageData = {
     primary: { label: "Get started", href: "/launch-your-vision" },
   },
   sticky: { label: "Get covered", href: "/launch-your-vision", startingPrice: 39 },
-  metaTitle: "Hosting & Web Care | RAVENCI Solutions",
+  metaTitle: "Hosting & Website Care | RAVENCI Solutions",
   metaDescription:
-    "Website hosting and care plans from Brisbane. Hosting, SSL, daily backups, security, uptime monitoring and updates. Standalone hosting from $39/mo, care plans from $249/mo.",
+    "Hosting and website care from Brisbane. Hosting $39/mo, maintenance $239/mo, both together $269/mo. SSL, daily backups, security and monitoring. Website Care billed separately.",
   schema: {
     serviceType: "Website Hosting & Maintenance",
     offers: [
-      { name: "Managed hosting", price: "39", description: "Standalone cloud hosting with SSL, daily backups, security monitoring and Brisbane-based support, billed monthly." },
-      { name: "Maintenance", price: "249", description: "Care plan with hosting included: updates, security, daily backups and monitoring, billed monthly." },
-      { name: "Website Care", price: "549", description: "Everything in Maintenance plus 2 hours a month of design, development or content work." },
-      { name: "Growth", price: "1390", description: "Everything in Maintenance plus 8 hours a month for new pages, landing pages and features." },
-      { name: "Partner", price: "2750", description: "Everything in Maintenance plus 20 hours a month across design, development and content." },
+      { name: "Hosting", price: "39", description: "Standalone cloud hosting with SSL, daily backups, security monitoring and Brisbane-based support, for sites maintained by another reputable provider. Billed monthly." },
+      { name: "Maintenance", price: "239", description: "Updates, security, daily backups and monitoring for a site hosted elsewhere, billed monthly." },
+      { name: "Hosting + Maintenance", price: "269", description: "Hosting and maintenance together: updates, security, daily backups, monitoring and small fixes. Billed monthly." },
+      { name: "Website Care: Cover", price: "320", description: "2 hours a month of design, development or content work with priority support. Hosting and maintenance not included." },
+      { name: "Website Care: Growth", price: "1200", description: "8 hours a month for new pages, features and content with priority support. Hosting and maintenance not included." },
+      { name: "Website Care: Partner", price: "2800", description: "20 hours a month across design, development and content, two-hour response and a monthly planning call. Hosting and maintenance not included." },
     ],
   },
 };

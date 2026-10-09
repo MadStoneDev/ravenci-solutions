@@ -11,19 +11,19 @@ interface Service {
   addons?: string[];
 }
 
-// Care plans (Maintenance, Website Care, Growth, Partner) live in
-// src/lib/data/care-plans.ts and check out via Stripe Price IDs. What remains
-// here is standalone managed hosting, for clients who don't want a care plan.
+// Hosting, maintenance and Website Care live in src/lib/data/care-plans.ts and
+// check out via Stripe Price IDs. What remains here is the standalone hosting
+// configurator (sub-add-ons like email hosting and migration).
 export const services: Record<string, Service> = {
   "web-hosting": {
     id: "web-hosting",
-    name: "Managed Hosting",
+    name: "Hosting",
     icon: <IconServer size={40} />,
     basePrice: 39,
     isRecurring: true,
     recurringPeriod: "monthly",
     description:
-      "Standalone managed hosting with SSL, daily backups and 99.9% uptime. Included free on every care plan.",
+      "Managed hosting with SSL, daily backups and 99.9% uptime, for a site maintained by another reputable provider.",
     addons: ["email-hosting", "malware-protection", "wordpress-migration"],
   },
 };

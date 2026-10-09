@@ -9,17 +9,23 @@ import { Button } from "@/components/ui/button";
 import StickyCTA from "@/components/sticky-cta";
 import ProofCluster from "@/components/proof-cluster";
 import { getTestimonialByID } from "@/data/testimonials";
+import {
+  RUNNING_OFFERS,
+  WEBSITE_CARE_TIERS,
+  WEBSITE_CARE_ADDONS,
+  STORE_ADDON,
+} from "@/lib/data/care-plans";
 
 export const metadata = {
   title: "Pricing | RAVENCI Solutions",
   description:
-    "What it costs to work with RAVENCI. Websites from $7,500, eCommerce from $12,000, branding from $3,500, care plans from $249/mo, hosting from $39/mo.",
+    "What it costs to work with me. Websites from $7,500, eCommerce from $12,000, branding from $3,500. Hosting $39/mo, maintenance $239/mo, Website Care $320 to $2,800/mo.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     ...OG_DEFAULTS,
     title: "Pricing | RAVENCI Solutions",
     description:
-      "What it costs to work with RAVENCI. Websites from $7,500, eCommerce from $12,000, branding from $3,500, care plans from $249/mo, hosting from $39/mo.",
+      "What it costs to work with me. Websites from $7,500, eCommerce from $12,000, branding from $3,500. Hosting $39/mo, maintenance $239/mo, Website Care $320 to $2,800/mo.",
     url: "/pricing",
     type: "website",
   },
@@ -44,12 +50,27 @@ type PriceGroup = {
   footnote?: string;
 };
 
+// The hosting/maintenance and Website Care figures come straight from
+// care-plans.ts, so this page can't drift from /website-maintenance.
+const runningItems: PriceItem[] = RUNNING_OFFERS.map((o) => ({
+  name: o.name,
+  price: `$${o.monthly}/mo`,
+  line: o.line,
+  bullets: o.bullets,
+}));
+
+const webCareItems: PriceItem[] = WEBSITE_CARE_TIERS.map((t) => ({
+  name: t.name,
+  price: t.monthly === null ? "Pricing on request" : `$${t.monthly.toLocaleString()}/mo`,
+  line: t.line,
+  bullets: t.bullets,
+}));
+
 const groups: PriceGroup[] = [
   {
     heading: "Websites",
     href: "/web-development",
-    blurb:
-      "Custom sites built to last, owned by you, still fast in five years.",
+    blurb: "Custom sites built to last, owned by you, still fast in five years.",
     note: "50% deposit, 25% when you see the first version, 25% before launch. Larger projects can be staged to suit.",
     items: [
       {
@@ -67,7 +88,7 @@ const groups: PriceGroup[] = [
       {
         name: "Custom Website",
         price: "from $10,000",
-        line: "For sites that need integrations or bespoke flows off-the-shelf won't cover.",
+        line: "A Next.js build for sites that need integrations or flows off-the-shelf won't cover.",
         bullets: [
           "Everything in Business Website",
           "Integrations like booking systems, CRMs or practice software",
@@ -105,8 +126,7 @@ const groups: PriceGroup[] = [
   {
     heading: "Web Apps & Platforms",
     href: "/web-apps",
-    blurb:
-      "Custom software built around how your business actually works, not bent around someone else's.",
+    blurb: "Custom software built around how your business actually works.",
     note: "50% deposit, 25% when you see the first version, 25% before launch. Larger projects can be staged to suit.",
     items: [
       {
@@ -141,7 +161,7 @@ const groups: PriceGroup[] = [
           "Architecture planned for growth and higher traffic",
           "Detailed discovery and technical planning at the start",
           "Phased delivery with regular check-ins",
-          "Ongoing development available on a Partner plan",
+          "Ongoing development available on a Website Care plan",
         ],
         timeline: "Timeline scoped during discovery",
       },
@@ -233,76 +253,20 @@ const groups: PriceGroup[] = [
     ],
   },
   {
-    heading: "Care Plans",
+    heading: "Hosting & maintenance",
     href: "/website-maintenance",
     blurb:
-      "Every plan includes hosting, updates, security and backups. Higher plans add hours each month for design, development and content work. Billed monthly, cancel any time.",
-    items: [
-      {
-        name: "Maintenance",
-        price: "$249/mo",
-        line: "For a site that just needs to stay safe and fast.",
-        bullets: [
-          "Hosting included",
-          "Updates, security, daily backups and monitoring",
-          "Minor fixes when something breaks",
-          "Issues looked at within 24 to 48 hours",
-        ],
-      },
-      {
-        name: "Website Care",
-        price: "$549/mo",
-        line: "For businesses that regularly need small changes.",
-        bullets: [
-          "Everything in Maintenance",
-          "2 hours a month of design, development or content work",
-          "Requests handled within 24 to 48 hours",
-          "Extra hours at $150 instead of $165",
-        ],
-      },
-      {
-        name: "Growth",
-        price: "$1,390/mo",
-        line: "For businesses actively adding to their site.",
-        bullets: [
-          "Everything in Maintenance",
-          "8 hours a month for new pages, landing pages and features",
-          "Priority same-day response",
-          "Extra hours at $140",
-        ],
-      },
-      {
-        name: "Partner",
-        price: "$2,750/mo",
-        line: "About half a day a week of my time, for a fraction of hiring in-house.",
-        bullets: [
-          "Everything in Maintenance",
-          "20 hours a month across design, development and content",
-          "Priority 2-hour response and a monthly planning call",
-          "Extra hours at $125",
-        ],
-      },
-    ],
-    footnote:
-      "Online stores add $200/month to any plan. Hours reset each month and don't roll over.",
+      "Keeping your site fast, secure and online. Billed monthly, cancel any time. Hosting + Maintenance is the one most sites want.",
+    items: runningItems,
+    footnote: `Running an online store adds $${STORE_ADDON.monthly}/mo to Maintenance or Hosting + Maintenance. Hosting on its own is for sites maintained by another reputable provider.`,
   },
   {
-    heading: "Hosting",
-    href: "/web-hosting",
-    blurb: "Fast, managed hosting with Brisbane-based support.",
-    items: [
-      {
-        name: "Managed Hosting",
-        price: "$39/mo",
-        line: "For sites that don't need a care plan.",
-        bullets: [
-          "Fast servers, SSL and uptime monitoring",
-          "Daily backups",
-          "Brisbane-based support",
-          "Included free on every care plan",
-        ],
-      },
-    ],
+    heading: "Website Care",
+    href: "/website-maintenance",
+    blurb:
+      "A monthly block of my time for design, development and content, with priority support. Hosting and maintenance aren't included.",
+    items: webCareItems,
+    footnote: `Add maintenance for $${WEBSITE_CARE_ADDONS.maintenance.monthly}/mo, or hosting and maintenance for $${WEBSITE_CARE_ADDONS["hosting-maintenance"].monthly}/mo (each $10 less than on its own). Month to month, up to 25% of unused hours roll into the next month; an optional 12-month contract rolls all of them over.`,
   },
 ];
 
@@ -322,9 +286,9 @@ export default function PricingPage() {
             Clear pricing, scoped up front
           </h1>
           <p className="mt-6 text-lead text-muted-foreground">
-            No surprises. You know the starting point before I ever get on a
-            call. Every project is quoted properly once I understand what you
-            need, but here's where each thing starts.
+            You'll know the starting point before we ever get on a call. I quote
+            every project properly once I understand what you need, but here's
+            where each thing starts.
           </p>
         </div>
       </section>
@@ -340,16 +304,14 @@ export default function PricingPage() {
             <p>
               You can buy a website for $999. You'll get one page, no revisions,
               and a template you'll be rebuilding inside two years. The cheapest
-              quote is usually the most expensive site you'll ever own, because
-              you pay for it twice.
+              quote is usually the most expensive site you'll own, because you
+              pay for it twice.
             </p>
             <p>
-              A RAVENCI build is custom, owned by you, editable by you, and
-              built on a system with no plugin clutter to rot. The sites I built
-              five years ago are still fast, still ranking, still untouched.
-              You're not buying pages. You're buying a business asset that keeps
-              working after launch day. Tell me the problem, I'll take it from
-              there.
+              What I build is custom, owned by you, editable by you, and built on
+              a system with no plugin clutter to rot. The sites I built five
+              years ago are still fast, still ranking, still running. That's the
+              whole pitch. Tell me the problem, I'll take it from there.
             </p>
           </div>
         </div>
@@ -426,9 +388,9 @@ export default function PricingPage() {
           ))}
 
           <p className="text-small text-muted-foreground">
-            Additional work outside a project or plan is billed at $165/hr, and
-            I always confirm before doing anything beyond what's agreed. Not
-            sure what your project needs?{" "}
+            Work outside a project or plan is $165/hr, and I always confirm
+            before doing anything beyond what's agreed. Not sure what your
+            project needs?{" "}
             <Link
               href="/cost-of-a-website-in-brisbane"
               className="font-medium text-accent underline underline-offset-4 hover:no-underline"

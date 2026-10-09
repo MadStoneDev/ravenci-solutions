@@ -111,13 +111,15 @@ export async function POST(request: NextRequest) {
 
     const body = await request.json();
 
-    // === CARE-PLAN CHECKOUT (Stripe Price IDs) ===
-    // Maintenance and Website Care only. Growth/Partner are book-a-call.
+    // === HOSTING & MAINTENANCE CHECKOUT (Stripe Price IDs) ===
+    // Maintenance ($239) and Hosting + Maintenance ($269) only. The store
+    // add-on rides along on these two. Website Care (Cover/Growth/Partner) is
+    // book-a-call, so it never reaches here.
     if (body.carePlan) {
       const planId = body.carePlan.planId;
       const storeAddon = body.carePlan.storeAddon === true;
 
-      if (planId !== "maintenance" && planId !== "website-care") {
+      if (planId !== "maintenance" && planId !== "hosting-maintenance") {
         return NextResponse.json(
           { error: "This plan isn't available for online checkout. Please book a call." },
           { status: 400 },
@@ -133,7 +135,7 @@ export async function POST(request: NextRequest) {
       }
 
       const planPriceId =
-        getCarePlanPriceIds(IS_TEST_MODE)[planId as "maintenance" | "website-care"];
+        getCarePlanPriceIds(IS_TEST_MODE)[planId as "maintenance" | "hosting-maintenance"];
       const careLineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [
         { price: planPriceId, quantity: 1 },
       ];

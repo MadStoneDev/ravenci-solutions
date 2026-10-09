@@ -69,11 +69,11 @@ export default function TermsAndConditionsPage() {
           </p>
           <p>These Terms of Service were last updated on 3 October 2026.</p>
 
-          <h3 className="mt-4 text-heading-s text-foreground">Care Plans and Hosting</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Hosting, Maintenance and Website Care</h3>
           <p>
-            The following terms apply to RAVENCI care plans, the online store
-            add-on, and standalone hosting, in addition to any separate proposal
-            or agreement for project work:
+            The following terms apply to hosting, maintenance, Website Care, and
+            the online store add-on, in addition to any separate proposal or
+            agreement for project work:
           </p>
           <ul className="pl-5">
             <li className="mb-1 list-disc">
@@ -86,23 +86,38 @@ export default function TermsAndConditionsPage() {
             </li>
             <li className="mb-1 list-disc">
               <span className="font-semibold text-foreground">
-                Included hours
+                Website Care hours
               </span>{" "}
-              reset each month and do not roll over. Included hours cover design,
-              development, content updates, and small SEO tasks. Work beyond the
-              included hours is billed at the plan's extra-hour rate and is only
-              carried out after we confirm it with you.
+              cover design, development, content updates and small SEO tasks.
+              Month to month, up to 25% of unused hours roll into the next month
+              and then expire. Work beyond the included hours is billed at the
+              plan&apos;s extra-hour rate, and only after we confirm it with you.
+            </li>
+            <li className="mb-1 list-disc">
+              <span className="font-semibold text-foreground">
+                The optional 12-month Website Care contract
+              </span>{" "}
+              is billed monthly. In exchange for the 12-month commitment, all
+              unused hours roll over, and each month&apos;s rolled-over hours
+              expire after two months. If the contract is ended early, a fee
+              equal to one month of the plan applies and all rolled-over hours
+              are forfeited. At the end of the term, any remaining rolled-over
+              hours are forfeited. [NEEDS LEGAL REVIEW]
             </li>
             <li className="mb-1 list-disc">
               <span className="font-semibold text-foreground">Hosting</span> is
-              included with every care plan for as long as the plan is active.
-              Standalone managed hosting, without a care plan, is $39 per month.
+              included in the Hosting + Maintenance plan for as long as it is
+              active. Maintenance on its own, and the Website Care plans (Cover,
+              Growth and Partner), do not include hosting. Standalone hosting,
+              for sites maintained by another reputable provider, is $39 per
+              month.
             </li>
             <li className="mb-1 list-disc">
               <span className="font-semibold text-foreground">
                 The online store add-on
               </span>{" "}
-              is $200 per month and may be added to any care plan.
+              is $180 per month and may be added to the Maintenance or Hosting +
+              Maintenance plans only. It is not available on Website Care plans.
             </li>
             <li className="mb-1 list-disc">
               <span className="font-semibold text-foreground">

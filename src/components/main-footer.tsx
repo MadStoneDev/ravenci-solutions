@@ -12,7 +12,7 @@ const COLUMNS: { heading: string; links: FooterLink[] }[] = [
       { href: "/web-development", label: "Website Design & Development" },
       { href: "/ecommerce", label: "eCommerce" },
       { href: "/web-apps", label: "Web Apps & Client Portals" },
-      { href: "/website-maintenance", label: "Hosting & Web Care" },
+      { href: "/website-maintenance", label: "Hosting & Website Care" },
       { href: "/seo-and-content", label: "SEO / AEO / GEO" },
     ],
   },

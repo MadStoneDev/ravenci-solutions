@@ -12,13 +12,14 @@ const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 export const metadata = {
   title: "About | RAVENCI Solutions",
   description:
-    "RAVENCI Solutions is a Brisbane-based web studio. Richard Haddad brings engineering discipline to building" +
-    " custom websites for Australian businesses.",
+    "I'm Richard Haddad. I run RAVENCI from Brisbane, building custom websites for Australian businesses." +
+    " 25 years building for the web, RAVENCI since 2018, with a background in structural engineering and drafting.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "About | RAVENCI Solutions",
     description:
-      "RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and websites that genuinely perform.",
+      "Richard Haddad, founder of RAVENCI. 25 years building for the web, running RAVENCI since 2018," +
+      " with a structural engineering and drafting background.",
     url: "/about",
     type: "website" as const,
   },
@@ -27,53 +28,46 @@ export const metadata = {
 };
 
 const STATS = [
-  { value: "25+", label: "Years in digital" },
-  { value: "75+", label: "Australian businesses" },
+  { value: "25", label: "Years building for the web" },
+  { value: "8", label: "Years running RAVENCI" },
   { value: "467", label: "Projects delivered" },
-  { value: "85+", label: "PageSpeed guaranteed" },
+  { value: "100+", label: "Businesses helped" },
 ];
 
 const VALUES = [
   {
-    title: "Transparency",
+    title: "Plain English",
     description:
-      "No jargon, no hidden fees. I explain everything in plain English and keep you informed at every stage.",
+      "I explain what I'm doing and why, in words that make sense. The price is written down before we start, and the price is the price.",
   },
   {
-    title: "Client ownership",
+    title: "The honest answer",
     description:
-      "You own what you pay for: your website, your content, your domain. No lock-in contracts, no proprietary traps.",
-  },
-  {
-    title: "Education",
-    description:
-      "Every project comes with tailored video training and full access after launch, so you're never guessing how to manage your own site.",
-  },
-  {
-    title: "Integrity",
-    description:
-      "Honest timelines, honest pricing. If something isn't right for your business, I'll tell you, even if it means a different approach.",
+      "If a smaller build or a simple fix is the right call, I'll say so, even when it's less work for me. If something won't work for your business, you'll hear it early.",
   },
 ];
 
+// [TODO: Richard to confirm. Current site said "Structural Engineering degree",
+// but your records have this as an undergraduate certificate, so I've softened
+// it to "training". Say whichever is accurate.]
 const QUALIFICATIONS = [
   {
-    title: "Structural Engineering degree",
-    detail: "for analytical thinking and problem solving",
+    title: "I'm based in Brisbane.",
+    detail:
+      "As great as video calls are, I'd love to meet you face to face too.",
   },
   {
-    title: "Ten years in steel detailing and structural drafting",
-    detail: "where a thing either holds up under load or it doesn't",
+    title: "I do the work myself.",
+    detail: "I don't outsource. You hired me not so I would palm off the work.",
   },
-  { title: "Graphic Design diploma", detail: "for professional visual design" },
   {
-    title: "25+ years digital experience",
-    detail: "across construction, trades, medical, legal and retail",
+    title: "I'm really good at what I do.",
+    detail: "Not trying to be cocky. I've been doing this for 25 years.",
   },
 ];
 
 export default function AboutPage() {
-  const geoff = getTestimonialByID("geoff-beisler");
+  const viv = getTestimonialByID("viv-luhrs");
 
   return (
     <main className="flex flex-col">
@@ -83,11 +77,14 @@ export default function AboutPage() {
           <Breadcrumbs items={[{ label: "About" }]} />
           <SectionLabel label="About" tick />
           <h1 className="text-display-l text-foreground">
-            Your website, engineered to last
+            building more than websites
           </h1>
           <p className="text-lead text-muted-foreground">
-            I've been building websites long before I started RAVENCI. It has
-            been my passion for over 25 years.
+            I've been coding and building websites for over 25 years. The best
+            thing about what I do now is that I've been running a business for 8
+            years in an industry that's been my passion for decades. What's
+            changed in that time? I no longer just build websites. I build
+            investments that keep paying off.
           </p>
         </div>
       </section>
@@ -122,28 +119,21 @@ export default function AboutPage() {
           <div className="flex max-w-2xl flex-col gap-4">
             <SectionLabel index="01" label="The story" />
             <p className="text-body text-muted-foreground">
-              I'm a structural engineer before I returned to my passion of being
-              a web developer, with a multicultural upbringing that spans the
-              Middle East and Australia. Before the web, I spent ten years in
-              steel detailing and structural drafting, with a Structural
-              Engineering degree behind that, and a Graphic Design diploma
-              alongside it.
+              I was born overseas and came to Australia when I was 10. A year
+              later I was teaching myself to code, and I haven't stopped since.
             </p>
             <p className="text-body text-muted-foreground">
-              That mix, analytical thinking and visual craft, shapes how I work.
-              Everything has to serve a purpose, and everything has to hold up.
+              I studied civil engineering at UNSW, majoring in structural, and
+              spent over a decade working in the industry. Five years on
+              construction sites, four years in steel detailing and another five
+              in structural drafting. Somewhere in there I picked up a Diploma
+              of Graphic Design and a Certificate in Journalism too. Just
+              because.
             </p>
             <p className="text-body text-muted-foreground">
-              After 25+ years in the digital space, I founded RAVENCI in
-              Brisbane in 2018 to offer Australian businesses something
-              different: websites and designs built with the same discipline and
-              attention to detail.
-            </p>
-            <p className="text-body text-muted-foreground">
-              RAVENCI runs as a founder-led studio backed by a network of
-              specialist collaborators. You get the accountability of dealing
-              directly with the person doing the work, plus specialist expertise
-              whenever your project needs it.
+              The entire time, I kept building websites and platforms on the
+              side. In 2018 I decided to take the leap and started what's now,
+              RAVENCI.
             </p>
           </div>
         </div>
@@ -160,24 +150,27 @@ export default function AboutPage() {
             tone="muted"
           />
           <h2 className="mt-3 text-display-m text-foreground">
-            Built to a standard that holds up
+            Many, many things
           </h2>
           <div className="mt-6 flex flex-col gap-4 text-body text-muted-foreground">
+            <p>But let's focus on just the business stuff.</p>
+
             <p>
-              I&apos;ve spent 25+ years building for the web, and I came to it
-              from engineering. That discipline never left: every decision is
-              intentional, every component solid, and the finished thing is
-              tested under real conditions before it ships.
+              From start to finish, you deal with me. The guy you contacted, the
+              one who did the work (sounds like a Friends episode). And the very
+              same developer who's still available to support you, fix any
+              problems and push your business even further.
             </p>
             <p>
-              That&apos;s why I guarantee 85+ Google PageSpeed. Performance
-              isn&apos;t optional, and I&apos;ve seen what happens when
-              shortcuts get taken.
+              I'm a perfectionist. In fact, I care so much about detail that I'd
+              rather build my own platforms and tools, like RAVENCI Builder for
+              WordPress and RankRiot for SEO, than use something that is
+              half-baked.
             </p>
           </div>
 
           <h3 className="mt-10 text-heading-s text-foreground">
-            The qualifications behind the work
+            You're in good hands
           </h3>
           <ul className="mt-4 flex flex-col gap-3">
             {QUALIFICATIONS.map((q) => (
@@ -201,21 +194,24 @@ export default function AboutPage() {
           </ul>
 
           <h3 className="mt-10 text-heading-s text-foreground">
-            You own everything
+            You own it all
           </h3>
           <p className="mt-3 text-body text-muted-foreground">
-            When I build your website, it&apos;s yours. Your code, your content,
-            your domain. No lock-in, no proprietary systems. If you ever want to
-            move on, you take everything with you.
+            Your investment is yours. Sounds obvious, but you'd be surprised how
+            many developers will lay claim to what you've paid for. Not me. I
+            build your site and it's all yours. Code, content and domain.
           </p>
 
           <h3 className="mt-10 text-heading-s text-foreground">
-            I teach you, too
+            You can run it yourself
           </h3>
           <p className="mt-3 text-body text-muted-foreground">
-            Every project includes training videos showing you exactly how to
-            manage your site. I don&apos;t build dependency. I want you
-            confident making updates and running your site on your own terms.
+            Every build comes with short training videos showing you how to run
+            your own site, step by step. These aren't generic tutorials that
+            you'll then have to translate and adapt to what you have. The videos
+            are recorded for you on your new website. I'm not interested in
+            making you dependent on me. I don't need to. If you're going to
+            stay, and I want you to, I'd rather it be because you want to also.
           </p>
         </div>
       </section>
@@ -243,17 +239,17 @@ export default function AboutPage() {
 
       {/* Testimonial + CTA (dark) */}
       <section className={`dark bg-background text-foreground ${SECTION}`}>
-        {geoff && (
+        {viv && (
           <figure className="mx-auto mb-12 max-w-3xl">
             <SectionLabel label="5.0 · Google review" tone="muted" />
             <blockquote className="mt-4 text-heading-m text-foreground">
-              &ldquo;{geoff.content}&rdquo;
+              &ldquo;{viv.content}&rdquo;
             </blockquote>
             <figcaption className="mt-4 text-small text-muted-foreground">
               <span className="font-semibold text-foreground">
-                {geoff.author}
+                {viv.author}
               </span>
-              {geoff.company ? ` · ${geoff.company}` : ""}
+              {viv.company ? ` · ${viv.company}` : ""}
             </figcaption>
           </figure>
         )}
@@ -263,8 +259,8 @@ export default function AboutPage() {
               Ready to work with me?
             </h2>
             <p className="mt-4 text-body text-muted-foreground">
-              Starting from scratch, or rebuilding something that should be
-              working harder? Tell me about your project.
+              Starting fresh, or rebuilding something that should be doing more?
+              Tell me about it.
             </p>
           </div>
           <Button asChild size="lg" variant="primary">
@@ -281,7 +277,7 @@ export default function AboutPage() {
             "@type": "AboutPage",
             name: "About RAVENCI Solutions",
             description:
-              "Meet the person behind RAVENCI Solutions. 25+ years of digital experience, an engineering mindset, and a commitment to transparency.",
+              "Richard Haddad runs RAVENCI Solutions from Brisbane. 25 years building for the web, RAVENCI since 2018, with a background in structural engineering and drafting.",
             mainEntity: {
               "@type": "Organization",
               name: "RAVENCI Solutions",
