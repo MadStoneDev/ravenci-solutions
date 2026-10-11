@@ -115,12 +115,6 @@ const steps = [
   },
 ];
 
-const stats = [
-  { value: "25+", label: "Years of digital experience" },
-  { value: "467", label: "Projects delivered" },
-  { value: "85+", label: "PageSpeed guaranteed" },
-];
-
 const faqItems = [
   {
     title: "How long does the full process take?",
@@ -251,16 +245,13 @@ export default function OurProcessPage() {
           <h2 className="mt-3 text-display-m text-foreground">
             Results by design, not by luck
           </h2>
-          <dl className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-3">
-            {stats.map((s) => (
-              <div key={s.label} className="flex flex-col gap-1">
-                <dt className="sr-only">{s.label}</dt>
-                <dd className="tnum text-metric text-foreground">{s.value}</dd>
-                <p className="text-small text-muted-foreground">{s.label}</p>
-              </div>
-            ))}
-          </dl>
-          <p className="mx-auto mt-12 max-w-2xl text-body text-muted-foreground">
+          <div className="mx-auto mt-10 flex max-w-md flex-col items-center gap-1.5">
+            <span className="tnum text-metric text-accent">90+</span>
+            <p className="font-mono text-label uppercase text-muted-foreground">
+              Google SEO score at handoff, every build
+            </p>
+          </div>
+          <p className="mx-auto mt-10 max-w-2xl text-body text-muted-foreground">
             I follow the same steps on every project because they work. Each one
             is there because 25+ years taught me it matters.
           </p>

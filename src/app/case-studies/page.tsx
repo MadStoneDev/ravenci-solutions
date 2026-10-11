@@ -28,9 +28,9 @@ export const metadata: Metadata = {
 
 const STATS = [
   { value: "25+", label: "Years in digital" },
-  { value: "75+", label: "Australian businesses" },
+  { value: "100+", label: "Australian businesses" },
   { value: "467", label: "Projects delivered" },
-  { value: "85+", label: "PageSpeed guaranteed" },
+  { value: "95/100", label: "Avg Google Best-Practices" },
 ];
 
 export default function CaseStudiesPage() {

@@ -188,6 +188,7 @@ function WorkThumb({ slug, name }: { slug: string; name: string }) {
           src={img}
           alt={`${name} project`}
           fill
+          priority
           sizes="(max-width: 768px) 100vw, 33vw"
           className="object-cover object-top transition-transform duration-slow ease-standard group-hover:scale-105"
         />

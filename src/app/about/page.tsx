@@ -27,29 +27,29 @@ export const metadata = {
   alternates: { canonical: "/about" },
 };
 
-const STATS = [
-  { value: "25", label: "Years building for the web" },
-  { value: "8", label: "Years running RAVENCI" },
-  { value: "467", label: "Projects delivered" },
-  { value: "100+", label: "Businesses helped" },
-];
-
 const VALUES = [
   {
-    title: "Plain English",
+    title: "No tricks",
     description:
-      "I explain what I'm doing and why, in words that make sense. The price is written down before we start, and the price is the price.",
+      "I won't bury you in jargon to make you feel like that's why you need me. If I can't explain it in plain English, that's on me.",
   },
   {
-    title: "The honest answer",
+    title: "Nothing shifty",
     description:
-      "If a smaller build or a simple fix is the right call, I'll say so, even when it's less work for me. If something won't work for your business, you'll hear it early.",
+      "I'm not interested in doing anything deceptive or illegal, no matter who's paying.",
+  },
+  {
+    title: "Money is not king",
+    description:
+      "We're all trying to make a living, but money isn't what drives me. I build websites because I like solving problems, and knowing that what I do actually helps people.",
+  },
+  {
+    title: "Easy to reach",
+    description:
+      "Ask any of my past clients. I'm easy to get a hold of and I do respond, always.",
   },
 ];
 
-// [TODO: Richard to confirm. Current site said "Structural Engineering degree",
-// but your records have this as an undergraduate certificate, so I've softened
-// it to "training". Say whichever is accurate.]
 const QUALIFICATIONS = [
   {
     title: "I'm based in Brisbane.",
@@ -89,19 +89,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className={`${SECTION} border-b border-border`}>
-        <dl className="grid grid-cols-2 gap-8 md:grid-cols-4">
-          {STATS.map((s) => (
-            <div key={s.label} className="flex flex-col gap-1">
-              <dt className="sr-only">{s.label}</dt>
-              <dd className="tnum text-metric text-accent">{s.value}</dd>
-              <p className="text-small text-muted-foreground">{s.label}</p>
-            </div>
-          ))}
-        </dl>
-      </section>
-
       {/* Story */}
       <section className={`${SECTION} border-b border-border`}>
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
@@ -132,8 +119,8 @@ export default function AboutPage() {
             </p>
             <p className="text-body text-muted-foreground">
               The entire time, I kept building websites and platforms on the
-              side. In 2018 I decided to take the leap and started what's now,
-              RAVENCI.
+              side. Finally in 2018, I decided to take the leap and started
+              what's now, RAVENCI.
             </p>
           </div>
         </div>
@@ -219,8 +206,10 @@ export default function AboutPage() {
       {/* Values */}
       <section className={`${SECTION} border-b border-border`}>
         <div className="mb-10 flex flex-col gap-3">
-          <SectionLabel index="03" label="What I stand for" />
-          <h2 className="text-display-m text-foreground">What I stand for</h2>
+          <SectionLabel index="03" label="My Promise" />
+          <h2 className="text-display-m text-foreground">
+            What I won't budge on
+          </h2>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {VALUES.map((v) => (
