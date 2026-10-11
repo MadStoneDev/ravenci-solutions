@@ -140,7 +140,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceLabels: ["Web Development"],
     excerpt:
       "A branding agency that builds brands to win bids in construction and property: fresh positioning and \"grounded, gutsy, impossible to ignore\" identity work for an industry where most competitors sound and look the same.",
-    featuredImage: "/showcase-images/dirt/full-page.jpg",
+    featuredImage: "/showcase-images/dirt/full-page.webp",
     cardImage: "/showcase-images/Client - The DIRT Agency.png",
     featuredImageScroll: true,
     featuredImageScrollDuration: 120, // page is much taller than typical
@@ -258,7 +258,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceLabels: ["Web Development", "Web Maintenance"],
     excerpt:
       "Australian accountants and Xero specialists. NNAccountability helps businesses set up Xero, train their teams on it, integrate the platforms it talks to, and handle the day-to-day BAS, bookkeeping and accounting work underneath.",
-    featuredImage: "/showcase-images/nnaccountability/full-page.png",
+    featuredImage: "/showcase-images/nnaccountability/full-page.webp",
     cardImage: "/showcase-images/Client - NNAccountability.png",
     featuredImageScroll: true,
     clientLogo: "/clients/nnaccountability-logo.svg",
@@ -335,7 +335,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceLabels: ["Web Development", "Shopify", "SEO / AEO / GEO"],
     excerpt:
       "An Australian thermal and night vision retailer for serious hunters, pairing carefully chosen gear from Pulsar, HikMicro, PARD and Nocpix with the kind of expert guidance you can't get from a big-box store.",
-    featuredImage: "/showcase-images/goingdark/full-page.png",
+    featuredImage: "/showcase-images/goingdark/full-page.webp",
     cardImage: "/showcase-images/Client - GoingDark.png",
     featuredImageScroll: true,
     clientLogo: "/clients/going-dark-logo.svg",
@@ -434,7 +434,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceLabels: ["Web Development", "Web Maintenance"],
     excerpt:
       "A Sydney Northern Beaches builder designing and building beautiful, environmentally efficient, bespoke homes, with 80% of work coming through referrals from families who've experienced the difference.",
-    featuredImage: "/showcase-images/peninsula-homes/full-page.png",
+    featuredImage: "/showcase-images/peninsula-homes/full-page.webp",
     cardImage: "/showcase-images/Client - Peninsula Homes.png",
     featuredImageScroll: true,
     clientLogo: "/clients/peninsula-homes-logo.svg",
@@ -558,7 +558,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     excerpt:
       "Brisbane security specialists installing alarms, CCTV, access control and intercoms for homes and businesses from Hervey Bay down to the Gold Coast. Adam and Jason built Covenant from a list of trusted contacts and a reputation for getting it right, and were booked a month or two in advance within their first year of trading.",
-    featuredImage: "/showcase-images/covenant-security-solutions/full-page-alternative.png",
+    featuredImage: "/showcase-images/covenant-security-solutions/full-page.webp",
     cardImage: "/showcase-images/Client - Covenant Security.png",
     featuredImageScroll: true,
     clientLogo: "/clients/covenant-security-solutions-logo.svg",
@@ -685,7 +685,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceLabels: ["Web Development"],
     excerpt:
       "Australian workplace culture consultancy preventing sexual harassment and transforming how organisations operate. Skye Charry leads the practice (background in law, gender equity and 'boots on the ground' leadership capability), running bespoke workshops for organisations of every size, in-person or online, anywhere in the country.",
-    featuredImage: "/showcase-images/sac-consulting/full-page.jpg",
+    featuredImage: "/showcase-images/sac-consulting/full-page.webp",
     cardImage: "/showcase-images/Client - SAC Consulting.png",
     featuredImageScroll: true,
     clientLogo: "/clients/sac-consulting-logo.svg",
@@ -774,7 +774,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceLabels: ["Web Development"],
     excerpt:
       "Solo copywriter writing exclusively for architects, and as far as I'm concerned, no one's better at what she does. Engaging, creative, down-to-earth writing that gets read end-to-end before it gets put down. Architects who want to sound human (and win the projects they want) hire Nikita.",
-    featuredImage: "/showcase-images/nikita-morell/full-page.jpg",
+    featuredImage: "/showcase-images/nikita-morell/full-page.webp",
     cardImage: "/showcase-images/Client - Nikita Morell.png",
     featuredImageScroll: true,
     clientLogo: "/clients/nikita-morell-logo.svg",
@@ -988,7 +988,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     excerpt:
       "Gold Coast remedial building specialists (concrete cancer repair, structural defect repair, waterproofing) for residential, commercial and industrial properties across south-east Queensland.",
-    featuredImage: "/showcase-images/coast-remedial/full-page.jpg",
+    featuredImage: "/showcase-images/coast-remedial/full-page.webp",
     cardImage: "/showcase-images/Client - Coast Remedial Solutions.png",
     featuredImageScroll: true,
     clientLogo: "/clients/coast-remedial-solutions-logo.svg",

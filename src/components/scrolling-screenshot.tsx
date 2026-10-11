@@ -25,10 +25,12 @@ export default function ScrollingScreenshot({
   const { props: imageProps } = getImageProps({
     src,
     alt,
-    width: 1920,
-    height: 10800,
-    quality: 75,
-    sizes: "100vw",
+    // Sources are now 1280px wide; the scroll frame never renders wider than
+    // that, so requesting more just wastes pixels on encode/decode.
+    width: 1280,
+    height: 7200,
+    quality: 72,
+    sizes: "(max-width: 1280px) 100vw, 1280px",
   });
 
   useEffect(() => {
@@ -72,7 +74,7 @@ export default function ScrollingScreenshot({
           ref={imageRef}
           src={imageProps.src}
           srcSet={imageProps.srcSet as string}
-          sizes="100vw"
+          sizes="(max-width: 1280px) 100vw, 1280px"
           alt={alt}
           loading="lazy"
           decoding="async"
