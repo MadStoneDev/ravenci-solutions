@@ -103,10 +103,10 @@ export default function WebsiteMaintenancePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
 
       {/* Hero */}
-      <section className={`${SECTION} border-b border-border`}>
+      <section className="px-5 pt-5 pb-10 md:px-12 md:pt-10 md:pb-20 lg:px-20 border-b border-border">
         <div className="max-w-3xl">
           <Breadcrumbs items={[{ label: "Hosting & Website Care" }]} />
-          <div className="mt-4">
+          <div className="mt-5 md:mt-10">
             <SectionLabel index="01" label="Hosting & Website Care" tick />
           </div>
           <h1 className="mt-4 text-display-l text-foreground">

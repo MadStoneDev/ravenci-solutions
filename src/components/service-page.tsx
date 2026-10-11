@@ -83,10 +83,10 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       )}
 
       {/* Hero */}
-      <section className={`${SECTION} border-b border-border`}>
+      <section className="px-5 pt-5 pb-10 md:px-12 md:pt-10 md:pb-20 lg:px-20 border-b border-border">
+        <Breadcrumbs items={[{ label: data.breadcrumbLabel }]} className="mb-5 md:mb-10" />
         <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
           <div className="flex flex-col gap-5 lg:max-w-[640px]">
-            <Breadcrumbs items={[{ label: data.breadcrumbLabel }]} />
             <SectionLabel index="01" label="Service" tick />
             <h1 className="text-display-l text-foreground">{data.name}</h1>
             <p className="text-lead text-foreground">{data.outcome}</p>

@@ -276,10 +276,10 @@ export default function PricingPage() {
   return (
     <main className="flex flex-col">
       {/* Hero */}
-      <section className="px-5 py-14 md:px-12 md:py-20 lg:px-20">
+      <section className="px-5 pt-5 pb-10 md:px-12 md:pt-10 md:pb-20 lg:px-20">
         <div className="max-w-3xl">
           <Breadcrumbs items={[{ label: "Pricing" }]} />
-          <div className="mt-4">
+          <div className="mt-5 md:mt-10">
             <SectionLabel index="01" label="Pricing" tick />
           </div>
           <h1 className="mt-4 text-display-l text-foreground">

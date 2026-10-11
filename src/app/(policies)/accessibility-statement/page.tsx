@@ -25,9 +25,9 @@ export const metadata: Metadata = {
 export default function AccessibilityStatementPage() {
   return (
     <main className="flex flex-col">
-      <section className={`${SECTION} border-b border-border`}>
+      <section className="px-5 pt-5 pb-10 md:px-12 md:pt-10 md:pb-20 lg:px-20 border-b border-border">
+        <Breadcrumbs items={[{ label: "Accessibility Statement" }]} className="mb-5 md:mb-10" />
         <div className="flex max-w-3xl flex-col gap-4">
-          <Breadcrumbs items={[{ label: "Accessibility Statement" }]} />
           <SectionLabel label="Legal" tick />
           <h1 className="text-display-l text-foreground">
             Accessibility Statement

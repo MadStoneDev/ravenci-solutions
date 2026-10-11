@@ -282,16 +282,23 @@ export default function CaseStudyLayout({ caseStudy: cs }: { caseStudy: CaseStud
   const metrics = cs.results.metrics ?? [];
   const isDarkHero = cs.template !== "visual-showcase";
   const wide = cs.template === "premium";
-  const heroSection = wide ? SECTION_WIDE : SECTION;
+  // Standard hero vertical rhythm (40/80 desktop, 20/40 mobile), variant-aware
+  // horizontal gutters so premium keeps its wider margins.
+  const heroPad = wide
+    ? "px-5 pt-5 pb-10 md:px-16 md:pt-10 md:pb-20 lg:px-32"
+    : "px-5 pt-5 pb-10 md:px-12 md:pt-10 md:pb-20 lg:px-20";
 
   return (
     <div className="flex flex-col">
       {/* Hero */}
       <section
-        className={`${isDarkHero ? "dark bg-background text-foreground" : ""} ${heroSection} ${!isDarkHero ? "border-b border-border" : ""}`}
+        className={`${isDarkHero ? "dark bg-background text-foreground" : ""} ${heroPad} ${!isDarkHero ? "border-b border-border" : ""}`}
       >
+        <Breadcrumbs
+          items={[{ label: "Case Studies", href: "/case-studies" }, { label: cs.clientName }]}
+          className="mb-5 md:mb-10"
+        />
         <div className={`flex flex-col gap-5 ${wide ? "max-w-4xl" : "max-w-3xl"}`}>
-          <Breadcrumbs items={[{ label: "Case Studies", href: "/case-studies" }, { label: cs.clientName }]} />
           <SectionLabel label={cs.industryLabel} tone={isDarkHero ? "muted" : "accent"} tick />
           <h1 className={wide ? "text-display-xl text-foreground" : "text-display-l text-foreground"}>
             {cs.heroHeadline}

@@ -64,14 +64,20 @@ export default function CaseStudiesPage() {
 
   return (
     <main className="flex flex-col">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdItemList) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdItemList) }}
+      />
 
       {/* Hero */}
-      <section className={`${SECTION} border-b border-border`}>
+      <section className="px-5 pt-5 pb-10 md:px-12 md:pt-10 md:pb-20 lg:px-20 border-b border-border">
+        <Breadcrumbs items={[{ label: "Case Studies" }]} className="mb-5 md:mb-10" />
         <div className="flex max-w-3xl flex-col gap-4">
-          <Breadcrumbs items={[{ label: "Case Studies" }]} />
-          <SectionLabel label="Selected work" tick />
+          <SectionLabel label="My Portfolio" tick />
           <h1 className="text-display-l text-foreground">
             The work speaks for itself
           </h1>

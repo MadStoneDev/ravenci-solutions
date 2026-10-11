@@ -203,7 +203,7 @@ export default async function Home() {
   return (
     <main className="flex flex-col">
       {/* 1 - Hero */}
-      <section className={`${LIGHT} border-b border-border`}>
+      <section className="px-5 pt-10 pb-10 md:px-12 md:pt-20 md:pb-20 lg:px-20 border-b border-border">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-16">
           <div className="flex max-w-xl flex-col gap-6">
             <SectionLabel index="01" label="Build" tick />

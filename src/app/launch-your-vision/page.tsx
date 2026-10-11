@@ -3,8 +3,6 @@ import LaunchYourVisionStepper from "@/components/launch-your-vision-stepper";
 import Breadcrumbs from "@/components/breadcrumbs";
 import SectionLabel from "@/components/section-label";
 
-const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
-
 export const metadata = {
   title: "Launch Your Vision | RAVENCI Solutions",
   description:
@@ -24,10 +22,10 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <main className="flex flex-col">
-      <section className={SECTION}>
+      <section className="px-5 pt-5 pb-10 md:px-12 md:pt-10 md:pb-20 lg:px-20">
         <article className="flex flex-col">
+          <Breadcrumbs items={[{ label: "Launch Your Vision" }]} className="mb-5 md:mb-10" />
           <div className="flex max-w-3xl flex-col gap-4">
-            <Breadcrumbs items={[{ label: "Launch Your Vision" }]} />
             <SectionLabel label="Start a project" tick />
             <h1 className="text-display-l text-foreground">
               Launch Your Vision

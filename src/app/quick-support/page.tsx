@@ -24,9 +24,10 @@ export const metadata = {
 export default function QuickSupportPage() {
   return (
     <main className="flex flex-col">
-      <section className={`${SECTION} border-b border-border`}>
+      <section className="px-5 pt-5 pb-10 md:px-12 md:pt-10 md:pb-20 lg:px-20 border-b border-border">
         <article className="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
-          <Breadcrumbs items={[{ label: "Quick Support" }]} />
+          {/* Kept in the centered flow; mb nets 20/40 below with the gap-4. */}
+          <Breadcrumbs items={[{ label: "Quick Support" }]} className="mb-1 md:mb-6" />
           <SectionLabel label="Remote support session" tick />
           <h1 className="text-display-l text-foreground">Quick Support</h1>
           <p className="max-w-lg text-lead text-muted-foreground">

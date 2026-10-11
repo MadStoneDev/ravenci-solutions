@@ -9,17 +9,20 @@ interface BreadcrumbItem {
 export default function Breadcrumbs({
   items,
   dark = false,
+  className = "",
 }: {
   items: BreadcrumbItem[];
   /** Deprecated — kept for call-site compatibility. Colours now come from the
    *  active token palette; wrap in a `dark` scope for charcoal sections. */
   dark?: boolean;
+  /** Extra classes for the nav, e.g. hero spacing below the trail. */
+  className?: string;
 }) {
   void dark;
   return (
     <nav
       aria-label="Breadcrumb"
-      className="flex flex-wrap items-center gap-1 text-small text-muted-foreground"
+      className={`flex flex-wrap items-center gap-1 text-small text-muted-foreground ${className}`}
     >
       <Link
         href="/"

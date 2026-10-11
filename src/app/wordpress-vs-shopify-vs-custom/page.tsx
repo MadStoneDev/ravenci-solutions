@@ -330,11 +330,12 @@ export default function PlatformComparisonPage() {
   return (
     <main className="flex flex-col">
       {/* Hero */}
-      <section className={`${SECTION} border-b border-border`}>
+      <section className="px-5 pt-5 pb-10 md:px-12 md:pt-10 md:pb-20 lg:px-20 border-b border-border">
+        <Breadcrumbs
+          items={[{ label: "WordPress vs Shopify vs Custom Next.js" }]}
+          className="mb-5 md:mb-10"
+        />
         <article className="flex max-w-3xl flex-col gap-4">
-          <Breadcrumbs
-            items={[{ label: "WordPress vs Shopify vs Custom Next.js" }]}
-          />
           <SectionLabel label="Platform Comparison, 2026" tick />
           <h1 className="text-display-l text-foreground">
             WordPress vs Shopify vs Custom Next.js
