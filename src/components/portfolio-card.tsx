@@ -11,10 +11,17 @@ import { useCallback, useEffect, useState } from "react";
 
 import type { PortfolioItem } from "@/data/portfolio";
 
+/** A src is renderable by next/image only if it's absolute or a full URL. */
+const isValidSrc = (s: string | undefined): s is string =>
+  typeof s === "string" && (s.startsWith("/") || /^https?:\/\//.test(s));
+
 /**
  * A portfolio card for work without a full case-study page. The card matches
  * CaseStudyCard visually, but instead of linking it opens the item's images in
  * an accessible lightbox (Esc / arrow keys / backdrop click to dismiss).
+ *
+ * Items whose images aren't ready yet (placeholder / "coming-soon" src) render
+ * a "Coming soon" tile and stay non-interactive until real images are added.
  */
 export default function PortfolioCard({
   item,
@@ -23,19 +30,25 @@ export default function PortfolioCard({
   item: PortfolioItem;
   priority?: boolean;
 }) {
-  const images =
-    item.images && item.images.length > 0 ? item.images : [item.image];
+  const gallery = (
+    item.images && item.images.length > 0 ? item.images : [item.image]
+  ).filter(isValidSrc);
+  const thumb = isValidSrc(item.image) ? item.image : (gallery[0] ?? null);
+  const hasGallery = gallery.length > 0;
+  const objPos =
+    item.imagePosition === "center" ? "object-center" : "object-top";
+
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
   const close = useCallback(() => setOpen(false), []);
   const prev = useCallback(
-    () => setIndex((i) => (i - 1 + images.length) % images.length),
-    [images.length],
+    () => setIndex((i) => (i - 1 + gallery.length) % gallery.length),
+    [gallery.length],
   );
   const next = useCallback(
-    () => setIndex((i) => (i + 1) % images.length),
-    [images.length],
+    () => setIndex((i) => (i + 1) % gallery.length),
+    [gallery.length],
   );
 
   useEffect(() => {
@@ -54,6 +67,68 @@ export default function PortfolioCard({
     };
   }, [open, close, prev, next]);
 
+  const content = (
+    <>
+      <div className="relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden border-b border-border bg-muted">
+        {thumb ? (
+          <Image
+            src={thumb}
+            alt={`${item.title} — ${item.label}`}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+            priority={priority}
+            className={`object-cover ${objPos} transition-transform duration-slow ease-standard group-hover:scale-105`}
+          />
+        ) : (
+          <span className="font-mono text-label-sm uppercase text-muted-foreground">
+            Coming soon
+          </span>
+        )}
+      </div>
+
+      <div className="flex flex-1 flex-col p-6">
+        <span className="mb-2 font-mono text-label uppercase text-accent">
+          {item.label}
+        </span>
+        <h3 className="text-heading-s text-foreground">{item.title}</h3>
+        <p className="mt-2 line-clamp-3 flex-1 text-small text-muted-foreground">
+          {item.excerpt}
+        </p>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {item.tags.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="rounded-sm border border-border px-2.5 py-1 font-mono text-label-sm uppercase text-muted-foreground"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {hasGallery && (
+          <span className="mt-4 inline-flex items-center gap-1.5 text-small font-medium text-accent">
+            <IconPhoto
+              size={16}
+              aria-hidden
+              className="transition-transform duration-fast group-hover:scale-110"
+            />
+            {gallery.length > 1 ? "View gallery" : "View work"}
+          </span>
+        )}
+      </div>
+    </>
+  );
+
+  // No images yet — a static informational card, not a lightbox trigger.
+  if (!hasGallery) {
+    return (
+      <div className="group flex flex-col overflow-hidden rounded-sm border border-border bg-card">
+        {content}
+      </div>
+    );
+  }
+
   return (
     <>
       <button
@@ -64,46 +139,7 @@ export default function PortfolioCard({
         }}
         className="group flex flex-col overflow-hidden rounded-sm border border-border bg-card text-left transition-colors duration-fast hover:border-foreground/30"
       >
-        <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-border bg-muted">
-          <Image
-            src={item.image}
-            alt={`${item.title} — ${item.label}`}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            priority={priority}
-            className="object-cover object-top transition-transform duration-slow ease-standard group-hover:scale-105"
-          />
-        </div>
-
-        <div className="flex flex-1 flex-col p-6">
-          <span className="mb-2 font-mono text-label uppercase text-accent">
-            {item.label}
-          </span>
-          <h3 className="text-heading-s text-foreground">{item.title}</h3>
-          <p className="mt-2 line-clamp-3 flex-1 text-small text-muted-foreground">
-            {item.excerpt}
-          </p>
-
-          <div className="mt-4 flex flex-wrap gap-2">
-            {item.tags.slice(0, 3).map((tag) => (
-              <span
-                key={tag}
-                className="rounded-sm border border-border px-2.5 py-1 font-mono text-label-sm uppercase text-muted-foreground"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <span className="mt-4 inline-flex items-center gap-1.5 text-small font-medium text-accent">
-            <IconPhoto
-              size={16}
-              aria-hidden
-              className="transition-transform duration-fast group-hover:scale-110"
-            />
-            {images.length > 1 ? "View gallery" : "View work"}
-          </span>
-        </div>
+        {content}
       </button>
 
       {open && (
@@ -129,17 +165,17 @@ export default function PortfolioCard({
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={images[index]}
-              alt={`${item.title} — ${item.label} (${index + 1} of ${images.length})`}
+              src={gallery[index]}
+              alt={`${item.title} — ${item.label} (${index + 1} of ${gallery.length})`}
               className="max-h-[82vh] w-auto max-w-full rounded-sm object-contain"
             />
             <figcaption className="text-small text-white/70">
               {item.title}
-              {images.length > 1 ? ` · ${index + 1} / ${images.length}` : ""}
+              {gallery.length > 1 ? ` · ${index + 1} / ${gallery.length}` : ""}
             </figcaption>
           </figure>
 
-          {images.length > 1 && (
+          {gallery.length > 1 && (
             <>
               <button
                 type="button"

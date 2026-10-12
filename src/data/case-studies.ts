@@ -137,7 +137,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     industry: "other",
     industryLabel: "Technology",
     services: ["web-development"],
-    serviceLabels: ["Web Development"],
+    serviceLabels: ["Web Development", "Plasmic", "Coolify", "Headless CMS"],
     excerpt:
       "A branding agency that builds brands to win bids in construction and property: fresh positioning and \"grounded, gutsy, impossible to ignore\" identity work for an industry where most competitors sound and look the same.",
     featuredImage: "/showcase-images/dirt/full-page.webp",
@@ -332,7 +332,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     industry: "ecommerce",
     industryLabel: "eCommerce",
     services: ["web-development", "ecommerce", "seo-and-content"],
-    serviceLabels: ["Web Development", "Shopify", "SEO / AEO / GEO"],
+    serviceLabels: ["Web Development", "Shopify", "SEO / AEO / GEO", "eCommerce"],
     excerpt:
       "An Australian thermal and night vision retailer for serious hunters, pairing carefully chosen gear from Pulsar, HikMicro, PARD and Nocpix with the kind of expert guidance you can't get from a big-box store.",
     featuredImage: "/showcase-images/goingdark/full-page.webp",
@@ -431,7 +431,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     industry: "construction",
     industryLabel: "Construction",
     services: ["web-development", "maintenance"],
-    serviceLabels: ["Web Development", "Web Maintenance"],
+    serviceLabels: ["Web Development", "Web Maintenance", "WordPress", "Collaboration"],
     excerpt:
       "A Sydney Northern Beaches builder designing and building beautiful, environmentally efficient, bespoke homes, with 80% of work coming through referrals from families who've experienced the difference.",
     featuredImage: "/showcase-images/peninsula-homes/full-page.webp",
@@ -550,11 +550,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     industryLabel: "Security",
     services: ["business-design", "web-development", "maintenance"],
     serviceLabels: [
-      "Brand Identity",
-      "Print & Stationery",
-      "Vehicle & Window Signage",
       "Web Development",
       "Web Maintenance",
+      "WordPress",
+      "A/B Testing",
+      "Integration",
     ],
     excerpt:
       "Brisbane security specialists installing alarms, CCTV, access control and intercoms for homes and businesses from Hervey Bay down to the Gold Coast. Adam and Jason built Covenant from a list of trusted contacts and a reputation for getting it right, and were booked a month or two in advance within their first year of trading.",
@@ -682,7 +682,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     industry: "professional-services",
     industryLabel: "Professional Services",
     services: ["web-development"],
-    serviceLabels: ["Web Development"],
+    serviceLabels: ["Web Development", "WordPress", "Web Maintenance", "Podcasts"],
     excerpt:
       "Australian workplace culture consultancy preventing sexual harassment and transforming how organisations operate. Skye Charry leads the practice (background in law, gender equity and 'boots on the ground' leadership capability), running bespoke workshops for organisations of every size, in-person or online, anywhere in the country.",
     featuredImage: "/showcase-images/sac-consulting/full-page.webp",
@@ -771,7 +771,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     industry: "professional-services",
     industryLabel: "Professional Services",
     services: ["web-development"],
-    serviceLabels: ["Web Development"],
+    serviceLabels: ["Web Development", "ActiveCampaign", "WordPress", "Web Maintenance", "Integration"],
     excerpt:
       "Solo copywriter writing exclusively for architects, and as far as I'm concerned, no one's better at what she does. Engaging, creative, down-to-earth writing that gets read end-to-end before it gets put down. Architects who want to sound human (and win the projects they want) hire Nikita.",
     featuredImage: "/showcase-images/nikita-morell/full-page.webp",
@@ -879,10 +879,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     industryLabel: "eCommerce",
     services: ["business-design", "web-development", "ecommerce"],
     serviceLabels: [
-      "Branding Design",
-      "Stationery Design and Print",
       "Web Development",
       "eCommerce",
+      "BigCommerce",
+      "Online Store",
+      "Customisation",
     ],
     excerpt:
       "Personalised laser-cut event decor and custom gifts: engraved wedding signage, cake toppers, tags, keepsakes, designed and made in Brisbane by Micha Haddad. She ships across Australia and to the US and Canada via Etsy, and a lot of her customers won't trust their custom work to anyone else.",
