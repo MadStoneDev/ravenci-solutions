@@ -46,6 +46,23 @@ function CaseMedia({
 }) {
   const frame = `relative w-full overflow-hidden bg-muted ${className ?? "aspect-[16/9] rounded-sm border border-border"}`;
 
+  // Authors leave "coming-soon" (or any non-path) as a placeholder for media
+  // not yet produced. Render a tile rather than handing an invalid src to
+  // next/image, which throws "Failed to parse src".
+  const isPlaceholder =
+    !src ||
+    src === "coming-soon" ||
+    (!src.startsWith("/") && !/^https?:\/\//.test(src));
+  if (isPlaceholder) {
+    return (
+      <div className={`${frame} flex items-center justify-center`}>
+        <span className="font-mono text-label-sm uppercase text-muted-foreground">
+          Coming soon
+        </span>
+      </div>
+    );
+  }
+
   if (/\.(mp4|webm)$/i.test(src)) {
     return (
       <div className={frame}>
