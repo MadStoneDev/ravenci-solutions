@@ -29,7 +29,7 @@ const INDUSTRIES: NavLink[] = [
 
 const PRIMARY: NavLink[] = [
   { href: "/case-studies", label: "Work" },
-  { href: "/our-process", label: "Process" },
+  { href: "/process", label: "Process" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
 ];

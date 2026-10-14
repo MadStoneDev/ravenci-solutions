@@ -9,6 +9,7 @@ import {
   IconRocket,
   IconHeartHandshake,
   IconCheck,
+  IconMessage,
 } from "@tabler/icons-react";
 
 import Accordion from "@/components/accordion";
@@ -27,129 +28,143 @@ export const metadata = {
     title: "My Process | RAVENCI Solutions",
     description:
       "How RAVENCI in Brisbane delivers results: my 6-step process from discovery to launch and beyond, with 25+ years of experience behind every decision.",
-    url: "/our-process",
+    url: "/process",
     type: "website" as const,
   },
   twitter: { ...TWITTER_DEFAULTS },
-  alternates: { canonical: "/our-process" },
+  alternates: { canonical: "/process" },
 };
 
 const steps = [
   {
     number: "01",
-    name: "Discovery & Consultation",
-    icon: IconSearch,
+    name: "The Chat",
+    icon: IconMessage,
     description:
-      "I dig into your business goals, your audience, your competitors and your current site, to get the full picture before a line of code gets written.",
+      "I learn about your business, hear you out and find out what you're after. I spend an hour or so with you," +
+      " just having a conversation about you and your business.",
     highlights: [
-      "In-depth business and audience analysis",
-      "Competitor and market research",
-      "Technical requirements gathering",
-      "Clear project scope and timeline",
+      "Your goals, your customers and your competitors",
+      "What's working now and what isn't",
+      "Your budget and timeline, upfront",
     ],
   },
   {
     number: "02",
-    name: "Strategy & Planning",
+    name: "The Proposal",
     icon: IconBulb,
     description:
-      "With a solid understanding of your needs, I map out the entire project. Information architecture, user journeys, technology choices, and content strategy, all planned before design begins.",
+      "After chewing on my notes from our conversation, I come back with a strategy and a price. It's based on" +
+      " what your business actually needs, which isn't always what you came in asking for. If I think you need an" +
+      " adjusted scope or a different approach to better reach your goal, this is where I'll tell you.",
     highlights: [
-      "Site architecture and user flow mapping",
-      "Technology and platform selection",
-      "Content strategy and SEO planning",
-      "Detailed project roadmap with milestones",
+      "A clear scope so you know what you're getting",
+      "A fixed price with an itemised quote",
+      "A planned timeline",
     ],
   },
   {
     number: "03",
-    name: "Design & Prototyping",
-    icon: IconPalette,
+    name: "The Work",
+    icon: IconCode,
     description:
-      "I create wireframes and visual designs so you see exactly how the site will look and feel before development starts. No surprises.",
+      "After you've signed off on the proposal, I get to designing, developing or both. If I'm designing, you will" +
+      " need to greenlight the work before I build it. Once the work is in development, I give you a" +
+      " link to the staging website so you can see it away from your final domain.",
     highlights: [
-      "Wireframes for layout and structure",
-      "High-fidelity visual designs",
-      "Mobile-first responsive layouts",
-      "Design review and revision rounds",
+      "Design signed off before development starts",
+      "Built to suit your business, not a template",
+      "A first look on a private staging link",
     ],
   },
   {
     number: "04",
-    name: "Development & Build",
-    icon: IconCode,
+    name: "The Feedback",
+    icon: IconPalette,
     description:
-      "Clean, performant code built to modern standards. I build with speed, accessibility and SEO in from the start, not bolted on after.",
+      "With the link to the staging site, you review the work and come back to me with feedback. I then make the" +
+      " changes. We generally go through two rounds of this. Meanwhile, I'm testing your site across various devices" +
+      " and browsers so nothing surprises us on launch day.",
     highlights: [
-      "Clean, maintainable code",
-      "85+ Google PageSpeed guaranteed",
-      "SEO-optimised structure and markup",
-      "CMS setup with user training",
+      "Feedback and revisions",
+      "Tested on real devices and browsers",
+      "Speed, accessibility and responsiveness checked",
     ],
   },
   {
     number: "05",
-    name: "Testing & Launch",
+    name: "The Launch",
     icon: IconRocket,
     description:
-      "Before anything goes live, I test across devices, browsers and screen sizes. Performance audits, accessibility checks, and a final review with you, so launch day holds no surprises.",
+      "This is the most exciting part of the process! You won't need to be nervous, though, because leading up to" +
+      " launch day, I'll help you prepare for it with advice on how to market and share your new website, what to look" +
+      " out for and also what to expect.",
     highlights: [
-      "Cross-browser and device testing",
-      "Performance and speed audits",
-      "Accessibility compliance checks",
-      "Guided launch and go-live support",
+      "Launch and redirects handled for you",
+      "SEO foundations set up so Google can find you",
+      "You get to show off your shiny new website",
     ],
   },
   {
     number: "06",
-    name: "Ongoing Support & Growth",
+    name: "The Aftercare",
     icon: IconHeartHandshake,
     description:
-      "Launch day is just the beginning. I provide ongoing maintenance, security updates, performance monitoring, and strategic guidance to keep your site performing and up to date.",
+      "In the first month, I record the tutorials on your live site so you know how to edit the" +
+      " content yourself. Hosting and maintenance are also free this month. After that, it's up to you. Stay on a" +
+      " monthly plan, or hire me on a retainer, or take your site elsewhere. The site is yours.",
     highlights: [
-      "Proactive maintenance and security updates",
-      "Performance monitoring and reporting",
-      "Content updates and feature enhancements",
-      "Strategic growth recommendations",
+      "Video tutorials recorded just for you",
+      "One free month of hosting and maintenance",
+      "Website Care if you want ongoing changes and priority support",
     ],
   },
 ];
 
 const faqItems = [
   {
-    title: "How long does the full process take?",
+    title: "How long does it take?",
     summary:
-      "Foundation websites take 3 weeks, Growth websites 4-6 weeks, and Premium Brand & Web projects 10-14 weeks. A detailed timeline is provided during the Strategy & Planning phase.",
+      "It depends on the project. A business website usually takes 3 to 6 weeks, a custom website 6 to 10, and an online store 8 to 12. You'll get a timeline with the proposal.",
     content:
-      "Timelines vary by project scope. A Foundation Website typically takes 3 weeks. A Growth Website runs 4 to 6 weeks. Premium Brand & Web projects take 10 to 14 weeks. I provide a detailed timeline during the Strategy & Planning phase and keep you updated at every milestone.",
+      "It depends on what we're building. A business website usually takes 3 to 6 weeks, a custom website 6 to 10 weeks, and an online store 8 to 12. Bigger stores and web apps take longer. Either way, you'll get a planned timeline with the proposal, so you know before we start.",
   },
   {
-    title: "What do I need to provide to get started?",
+    title: "What do I need to have ready?",
     summary:
-      "At minimum, an understanding of your business goals and target audience. Existing branding, content, or design preferences help but aren't required. RAVENCI can handle content and design from scratch.",
+      "Just a good idea of your business and who your customers are. Branding, content and design ideas help, but I can handle those too.",
     content:
-      "I'll guide you through everything during Discovery. At minimum, I need an understanding of your business goals and target audience. If you have existing branding, content, or design preferences, that helps too, but it's not required. I can handle content and design from scratch.",
+      "Not much. I'll mostly need to know your business and who your customers are, which is why we start with a" +
+      " chat. If you already have" +
+      " branding, content or a design in mind, great. If not, I can take care of those as well.",
   },
   {
-    title: "How involved do I need to be during the process?",
+    title: "How involved do I need to be?",
     summary:
-      "As involved as you prefer. Some clients collaborate at every step; others review at key milestones. At minimum, your input is needed during Discovery, design review, and final pre-launch approval.",
+      "As much as you like. At minimum, I'll need you for The Chat, signing off the proposal and design, and your feedback before launch.",
     content:
-      "As involved as you'd like to be. Some clients prefer detailed collaboration at every step; others prefer to review at key milestones. At minimum, I'll need your input during Discovery, design review, and final approval before launch.",
+      "As much or as little as you like. Some clients want to see everything, others just want the key moments. At minimum, I'll need you for The Chat, signing off on the proposal and design, and your feedback on the staging site before we launch.",
   },
   {
-    title: "What happens if I want changes mid-project?",
+    title: "What if I want changes partway through?",
     summary:
-      "Every RAVENCI package includes revision rounds at design and development stages. If requirements change significantly, scope adjustments are discussed transparently with no hidden fees.",
+      "Two rounds of feedback are included. If you want something outside the agreed scope, I'll quote it first and only go ahead once you're happy.",
     content:
-      "Every package includes revision rounds at the design and development stages. If your requirements change significantly, I'll discuss scope adjustments transparently. No hidden fees or surprises.",
+      "Two rounds of feedback are built in, so changes are expected. If you want something that's outside what we agreed in the proposal, I'll tell you what it'll cost before I do anything. You won't get a surprise bill.",
+  },
+  {
+    title: "How does payment work?",
+    summary:
+      "Generally 50% to start, 25% when you see the first version, and 25% before launch. Bigger projects can be staged differently.",
+    content:
+      "Generally it's 50% to start, 25% when you see the first version on the staging site, and the final 25% before launch. Larger projects can be broken up differently to suit.",
   },
   {
     title: "Do you work with businesses outside Brisbane?",
     summary:
-      "Yes. While RAVENCI is Brisbane-based, the process works just as well for remote clients across Australia and internationally via video calls and screen sharing.",
+      "Yes. I work with businesses all over Australia, from Sydney to the Gold Coast, over video calls.",
     content:
-      "Absolutely. While I'm based in Brisbane and love working with local businesses, my process works just as well for remote clients across Australia and internationally. Video calls and screen sharing keep communication clear.",
+      "Yes. I'm based in Brisbane and love meeting people face to face, but I work with businesses all over Australia, from Sydney's Northern Beaches to the Gold Coast. Video calls and screen sharing work just as well.",
   },
 ];
 
@@ -158,30 +173,34 @@ export default function OurProcessPage() {
     <main className="flex flex-col">
       {/* Hero */}
       <section className="px-5 pt-5 pb-10 md:px-12 md:pt-10 md:pb-20 lg:px-20 border-b border-border">
-        <Breadcrumbs items={[{ label: "My Process" }]} className="mb-5 md:mb-10" />
+        <Breadcrumbs
+          items={[{ label: "My Process" }]}
+          className="mb-5 md:mb-10"
+        />
         <div className="flex max-w-3xl flex-col gap-4">
           <SectionLabel label="My Process" tick />
           <h1 className="text-display-l text-foreground">
-            How I run a project, start to finish
+            What working with me looks like
           </h1>
           <p className="text-lead text-muted-foreground">
-            The six steps I follow on every build, refined over 25+ years.
+            Over the years of running RAVENCI, I've refined the way I run
+            projects. I've learned along the way from the good and the bad, and
+            I've come up with a process that just makes sense.
           </p>
-          <p className="text-body text-muted-foreground">
-            RAVENCI&apos;s web development process follows six steps: Discovery,
-            Strategy, Design, Development, Testing, and Ongoing Support.
-            Foundation websites take 3 weeks, Growth websites 4 to 6 weeks, and
-            Premium Brand & Web projects 10 to 14 weeks. Every project includes
-            revision rounds and 85+ PageSpeed guaranteed.
+          <p className="text-lead text-muted-foreground">
+            With six straightforward steps from first contact to delivery and
+            beyond, this process works for my clients, and also for me as a
+            business owner.
           </p>
         </div>
       </section>
 
       {/* Intro statement */}
       <section className={`${SECTION} border-b border-border`}>
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-lg text-center">
           <h2 className="text-heading-m text-foreground">
-            Good websites come from planning and discipline, not luck.
+            The longer you've been doing something, the smarter you should get
+            at doing it.
           </h2>
         </div>
       </section>
@@ -191,7 +210,7 @@ export default function OurProcessPage() {
         <div className="mb-10 flex flex-col gap-3">
           <SectionLabel index="01" label="The steps" />
           <h2 className="text-display-m text-foreground">
-            Six steps, start to launch and beyond
+            Straightforward and methodical
           </h2>
         </div>
         <div className="mx-auto flex max-w-4xl flex-col gap-6">
@@ -241,19 +260,19 @@ export default function OurProcessPage() {
         className={`dark bg-background text-foreground ${SECTION} border-b border-white/10`}
       >
         <div className="mx-auto max-w-4xl text-center">
-          <SectionLabel index="02" label="Why process matters" tone="muted" />
+          <SectionLabel
+            index="02"
+            label="The Point of the Process"
+            tone="muted"
+          />
           <h2 className="mt-3 text-display-m text-foreground">
-            Results by design, not by luck
+            No surprises. That's it.
           </h2>
-          <div className="mx-auto mt-10 flex max-w-md flex-col items-center gap-1.5">
-            <span className="tnum text-metric text-accent">90+</span>
-            <p className="font-mono text-label uppercase text-muted-foreground">
-              Google SEO score at handoff, every build
-            </p>
-          </div>
           <p className="mx-auto mt-10 max-w-2xl text-body text-muted-foreground">
-            I follow the same steps on every project because they work. Each one
-            is there because 25+ years taught me it matters.
+            This process didn't happen by accident. After 8 years of running
+            RAVENCI, developing websites and working on digital projects, I've
+            realised that having a process gives you confidence in knowing what
+            to expect, and helps me stay on top of what comes next.
           </p>
         </div>
       </section>

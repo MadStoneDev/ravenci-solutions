@@ -69,6 +69,12 @@ const nextConfig: NextConfig = {
         destination: "/website-maintenance",
         permanent: true,
       },
+      {
+        // Renamed to the singular voice; keep old links and SEO working.
+        source: "/our-process",
+        destination: "/process",
+        permanent: true,
+      },
     ];
   },
   webpack: (config, { dev }) => {
