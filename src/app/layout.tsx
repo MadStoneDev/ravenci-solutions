@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import MicrosoftClarity from "@/components/metrics-microsoft-clarity";
-import OpenPanel from "@/components/metrics-openpanel";
 
 import "./globals.css";
 
@@ -219,7 +218,6 @@ export default function RootLayout({
         </ReCaptchaProvider>
 
         <MicrosoftClarity />
-        <OpenPanel />
         <CookieConsent />
       </body>
     </html>
