@@ -17,8 +17,8 @@ const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
 export const revalidate = 3600; // re-check scheduled posts at most hourly
 
-export function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  return (await getAllSlugs()).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -26,7 +26,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const article = getArticleBySlug((await params).slug);
+  const article = await getArticleBySlug((await params).slug);
 
   if (!article) {
     return {
@@ -75,8 +75,8 @@ export default async function ArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
-  const relatedArticles = getRelatedArticles(slug, 2);
+  const article = await getArticleBySlug(slug);
+  const relatedArticles = await getRelatedArticles(slug, 2);
 
   if (!article) {
     notFound();

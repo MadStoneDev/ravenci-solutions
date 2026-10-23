@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { CASE_STUDIES } from "@/data/case-studies";
 import { getAllArticles } from "@/lib/articles";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://ravenci.solutions";
 
   // Core pages with their priorities
@@ -196,7 +196,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Article pages
-  const articlePages: MetadataRoute.Sitemap = getAllArticles().map((a) => ({
+  const articlePages: MetadataRoute.Sitemap = (await getAllArticles()).map((a) => ({
     url: `${baseUrl}/articles/${a.slug}`,
     lastModified: new Date(a.updatedAt || a.publishedAt || a.scheduleDate),
     changeFrequency: "monthly" as const,

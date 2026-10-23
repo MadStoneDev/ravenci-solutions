@@ -26,8 +26,8 @@ export const metadata = {
   alternates: { canonical: "/articles" },
 };
 
-export default function ArticlesPage() {
-  const articles = getAllArticles();
+export default async function ArticlesPage() {
+  const articles = await getAllArticles();
 
   return (
     <main className="flex flex-col">

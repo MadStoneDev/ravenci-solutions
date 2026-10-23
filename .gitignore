@@ -55,3 +55,6 @@ dod-screens/
 # Local editor / CLI state (personal, not shared)
 .claude/settings.local.json
 .idea/workspace.xml
+
+# Local PocketBase dev instance (binary + data). Schema/hooks live in pocketbase/
+.pocketbase/

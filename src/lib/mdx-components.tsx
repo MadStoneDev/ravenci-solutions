@@ -1,7 +1,13 @@
 import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
 
+import { Callout } from "@/components/mdx/Callout";
+import { Checklist } from "@/components/mdx/Checklist";
+
 export const mdxComponents: MDXComponents = {
+  // Custom MDX component blocks (authored in the admin editor)
+  Callout,
+  Checklist,
   h1: ({ children }) => (
     <h1 className="mb-6 mt-12 text-heading-m text-foreground">{children}</h1>
   ),

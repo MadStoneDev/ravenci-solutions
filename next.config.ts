@@ -4,6 +4,27 @@ import type { NextConfig } from "next";
 // is easier than debugging a broken site, so favour explicit hosts over
 // wildcards where practical.
 const isDev = process.env.NODE_ENV === "development";
+
+// PocketBase origin (the articles CMS). Empty until configured, in which case the
+// site reads the legacy .mdx files and none of this applies.
+const pbUrl = (process.env.POCKETBASE_URL ?? "").replace(/\/+$/, "");
+const pbImagePattern = (() => {
+  if (!pbUrl) return [];
+  try {
+    const u = new URL(pbUrl);
+    return [
+      {
+        protocol: u.protocol.replace(":", "") as "http" | "https",
+        hostname: u.hostname,
+        port: u.port || "",
+        pathname: "/api/files/**",
+      },
+    ];
+  } catch {
+    return [];
+  }
+})();
+
 const csp = [
   "default-src 'self'",
   // 'unsafe-inline' is required for Next.js inline hydration scripts and
@@ -13,9 +34,9 @@ const csp = [
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://www.clarity.ms https://*.clarity.ms https://www.google.com https://www.gstatic.com https://js.stripe.com https://*.stripe.com https://assets.calendly.com`,
   // Tailwind/CSS-in-JS injects inline styles.
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-  "img-src 'self' data: blob: https:",
+  `img-src 'self' data: blob: https:${pbUrl ? " " + pbUrl : ""}`,
   "font-src 'self' data: https://fonts.gstatic.com",
-  "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com https://www.google.com https://api.stripe.com https://*.upstash.io https://getscreen.me",
+  `connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com https://www.google.com https://api.stripe.com https://*.upstash.io https://getscreen.me${pbUrl ? " " + pbUrl : ""}`,
   "frame-src https://js.stripe.com https://www.google.com https://*.calendly.com https://getscreen.me",
   "media-src 'self' blob:",
   "object-src 'none'",
@@ -41,6 +62,7 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
+    remotePatterns: pbImagePattern,
   },
   async headers() {
     return [

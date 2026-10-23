@@ -2,13 +2,22 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
+import {
+  ARTICLES_TAG,
+  POCKETBASE_URL,
+  isPocketBaseEnabled,
+  recordToArticle,
+  type ArticleRecord,
+} from "@/lib/pocketbase";
+
 const ARTICLES_DIR = path.join(process.cwd(), "src/content/articles");
 
 export interface ArticleFrontmatter {
   title: string;
   slug: string;
   excerpt: string;
-  featuredImage: { src: string; alt: string; width: number; height: number };
+  // Optional: an article may have no featured image. Pages already null-check it.
+  featuredImage?: { src: string; alt: string; width: number; height: number };
   author: string;
   categories: string[];
   seo: {
@@ -25,20 +34,72 @@ export interface Article extends ArticleFrontmatter {
   content: string;
 }
 
-export function getAllArticles(): ArticleFrontmatter[] {
+/**
+ * Backend switch: with POCKETBASE_URL set we read from PocketBase; otherwise we
+ * fall back to the legacy .mdx files in src/content/articles. This keeps the live
+ * site working off the committed MDX until PocketBase is wired up in production.
+ */
+
+// ---------------------------------------------------------------------------
+// PocketBase backend (public reads, tagged for on-demand revalidation)
+// ---------------------------------------------------------------------------
+
+const PUBLISHED_FILTER = 'status = "published" && scheduleDate <= @now';
+
+async function pbFetchArticles(params: {
+  filter?: string;
+  sort?: string;
+  perPage?: number;
+}): Promise<ArticleRecord[]> {
+  const search = new URLSearchParams({
+    perPage: String(params.perPage ?? 500),
+    sort: params.sort ?? "-scheduleDate",
+    skipTotal: "true",
+  });
+  if (params.filter) search.set("filter", params.filter);
+
+  const url = `${POCKETBASE_URL}/api/collections/articles/records?${search.toString()}`;
+  const res = await fetch(url, {
+    next: { tags: [ARTICLES_TAG], revalidate: 3600 },
+  });
+  if (!res.ok) {
+    throw new Error(`PocketBase articles fetch failed: ${res.status}`);
+  }
+  const json = (await res.json()) as { items: ArticleRecord[] };
+  return json.items ?? [];
+}
+
+// ---------------------------------------------------------------------------
+// Legacy MDX backend
+// ---------------------------------------------------------------------------
+
+function mdxReadAll(): ArticleFrontmatter[] {
   const files = fs.readdirSync(ARTICLES_DIR).filter((f) => f.endsWith(".mdx"));
+  return files.map((file) => {
+    const raw = fs.readFileSync(path.join(ARTICLES_DIR, file), "utf-8");
+    const { data } = matter(raw);
+    return {
+      ...(data as ArticleFrontmatter),
+      slug: file.replace(/\.mdx$/, ""),
+    };
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Public API (stable signatures — now async)
+// ---------------------------------------------------------------------------
+
+export async function getAllArticles(): Promise<ArticleFrontmatter[]> {
+  if (isPocketBaseEnabled()) {
+    const records = await pbFetchArticles({
+      filter: PUBLISHED_FILTER,
+      sort: "-scheduleDate",
+    });
+    return records.map(recordToArticle);
+  }
+
   const now = new Date();
-
-  return files
-    .map((file) => {
-      const raw = fs.readFileSync(path.join(ARTICLES_DIR, file), "utf-8");
-      const { data } = matter(raw);
-
-      return {
-        ...(data as ArticleFrontmatter),
-        slug: file.replace(/\.mdx$/, ""),
-      };
-    })
+  return mdxReadAll()
     .filter((a) => new Date(a.scheduleDate) <= now)
     .sort(
       (a, b) =>
@@ -46,19 +107,31 @@ export function getAllArticles(): ArticleFrontmatter[] {
     );
 }
 
-export function getArticleBySlug(slug: string): Article | undefined {
+export async function getArticleBySlug(
+  slug: string,
+): Promise<Article | undefined> {
+  if (isPocketBaseEnabled()) {
+    const filter = `slug = ${JSON.stringify(slug)} && ${PUBLISHED_FILTER}`;
+    const records = await pbFetchArticles({ filter, perPage: 1 });
+    return records[0] ? recordToArticle(records[0]) : undefined;
+  }
+
   const filePath = path.join(ARTICLES_DIR, `${slug}.mdx`);
   if (!fs.existsSync(filePath)) return undefined;
 
   const raw = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(raw);
-
   if (new Date(data.scheduleDate) > new Date()) return undefined;
 
   return { ...(data as ArticleFrontmatter), slug, content };
 }
 
-export function getAllSlugs(): string[] {
+export async function getAllSlugs(): Promise<string[]> {
+  if (isPocketBaseEnabled()) {
+    const records = await pbFetchArticles({ filter: PUBLISHED_FILTER });
+    return records.map((r) => r.slug);
+  }
+
   return fs
     .readdirSync(ARTICLES_DIR)
     .filter((f) => f.endsWith(".mdx"))
@@ -66,11 +139,11 @@ export function getAllSlugs(): string[] {
 }
 
 // Related articles for cross-linking: most shared categories first, then recency.
-export function getRelatedArticles(
+export async function getRelatedArticles(
   slug: string,
   count: number,
-): ArticleFrontmatter[] {
-  const all = getAllArticles();
+): Promise<ArticleFrontmatter[]> {
+  const all = await getAllArticles();
   const current = all.find((a) => a.slug === slug);
   const others = all.filter((a) => a.slug !== slug);
   if (!current) return others.slice(0, count);
