@@ -51,7 +51,7 @@ export async function POST(request: Request) {
     // no/invalid body is fine
   }
 
-  revalidateTag(ARTICLES_TAG);
+  revalidateTag(ARTICLES_TAG, "max");
   revalidatePath("/articles");
   if (slug) revalidatePath(`/articles/${slug}`);
 

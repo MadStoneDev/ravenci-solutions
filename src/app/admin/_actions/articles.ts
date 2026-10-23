@@ -9,7 +9,8 @@ import { ARTICLES_TAG, pbFileUrl } from "@/lib/pocketbase";
 
 /** Revalidate the public article surfaces plus the admin list. */
 function revalidateArticle(slug?: string) {
-  revalidateTag(ARTICLES_TAG);
+  // Next 16: revalidateTag takes a cacheLife profile as the 2nd arg.
+  revalidateTag(ARTICLES_TAG, "max");
   revalidatePath("/articles");
   if (slug) revalidatePath(`/articles/${slug}`);
   revalidatePath("/admin/articles");

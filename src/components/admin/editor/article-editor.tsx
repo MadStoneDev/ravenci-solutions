@@ -8,6 +8,7 @@ import {
   IconEye,
   IconX,
   IconPhoto,
+  IconAlertTriangle,
 } from "@tabler/icons-react";
 import type { EditorView } from "@codemirror/view";
 
@@ -24,6 +25,7 @@ import {
 } from "@/app/admin/_actions/articles";
 
 const MdxCodeEditor = dynamic(() => import("./mdx-code-editor"), { ssr: false });
+const BlocksEditor = dynamic(() => import("./blocks-editor"), { ssr: false });
 
 type Status = "draft" | "scheduled" | "published";
 
@@ -106,6 +108,7 @@ export function ArticleEditor({
     ok: true,
   });
   const saving = saveState === "saving";
+  const [mode, setMode] = useState<"blocks" | "mdx">("blocks");
   const [showMediaPicker, setShowMediaPicker] = useState(false);
   const cmViewRef = useRef<EditorView | null>(null);
 
@@ -229,6 +232,8 @@ export function ArticleEditor({
     setShowMediaPicker(false);
   }
 
+  const hasComponents = /<(Callout|Checklist|[A-Z]\w+)[\s/>]/.test(content);
+
   const primaryLabel =
     status === "scheduled"
       ? "Schedule"
@@ -261,6 +266,28 @@ export function ArticleEditor({
         </span>
 
         <div className="ml-auto flex items-center gap-2">
+          <div
+            role="group"
+            aria-label="Editing mode"
+            className="flex rounded-sm border border-border p-0.5"
+          >
+            {(["blocks", "mdx"] as const).map((m) => (
+              <button
+                key={m}
+                type="button"
+                aria-pressed={mode === m}
+                onClick={() => setMode(m)}
+                className={cn(
+                  "rounded-[2px] px-2.5 py-1 text-small capitalize transition-colors",
+                  mode === m
+                    ? "bg-foreground text-background"
+                    : "text-subtle hover:text-foreground",
+                )}
+              >
+                {m === "mdx" ? "MDX" : m}
+              </button>
+            ))}
+          </div>
           {slug && (
             <a
               href={`https://ravenci.solutions/articles/${slug}`}
@@ -305,49 +332,69 @@ export function ArticleEditor({
               className="w-full bg-transparent text-display-m text-foreground outline-none placeholder:text-muted-foreground/50"
             />
 
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <span className={LABEL}>MDX — body only</span>
-                <div className="flex items-center gap-3">
-                  <button
-                    type="button"
-                    onClick={() => setShowMediaPicker(true)}
-                    className="inline-flex items-center gap-1 text-label-sm text-accent hover:underline"
-                  >
-                    <IconPhoto className="h-3.5 w-3.5" /> Insert image
-                  </button>
-                  <span
-                    className={cn(
-                      "font-mono text-label-sm",
-                      mdxStatus.ok ? "text-[#2f7a47]" : "text-destructive",
-                    )}
-                  >
-                    {mdxStatus.ok ? "● Valid MDX" : "● Invalid MDX"}
-                  </span>
+            {mode === "mdx" ? (
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className={LABEL}>MDX — body only</span>
+                  <div className="flex items-center gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setShowMediaPicker(true)}
+                      className="inline-flex items-center gap-1 text-label-sm text-accent hover:underline"
+                    >
+                      <IconPhoto className="h-3.5 w-3.5" /> Insert image
+                    </button>
+                    <span
+                      className={cn(
+                        "font-mono text-label-sm",
+                        mdxStatus.ok ? "text-[#2f7a47]" : "text-destructive",
+                      )}
+                    >
+                      {mdxStatus.ok ? "● Valid MDX" : "● Invalid MDX"}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <MdxCodeEditor
-                value={content}
-                onChange={(v) => {
-                  setContent(v);
-                  markDirty();
-                }}
-                onReady={(view) => {
-                  cmViewRef.current = view;
-                }}
-              />
-              {!mdxStatus.ok && mdxStatus.message && (
-                <p className="font-mono text-label-sm text-destructive">
-                  {mdxStatus.message}
+                <MdxCodeEditor
+                  value={content}
+                  onChange={(v) => {
+                    setContent(v);
+                    markDirty();
+                  }}
+                  onReady={(view) => {
+                    cmViewRef.current = view;
+                  }}
+                />
+                {!mdxStatus.ok && mdxStatus.message && (
+                  <p className="font-mono text-label-sm text-destructive">
+                    {mdxStatus.message}
+                  </p>
+                )}
+                <p className="text-small text-muted-foreground">
+                  Frontmatter is managed in the side panel; this is the body
+                  only. Use MDX components like{" "}
+                  <code className="font-mono">&lt;Callout&gt;</code> and{" "}
+                  <code className="font-mono">&lt;Checklist&gt;</code> directly.
                 </p>
-              )}
-              <p className="text-small text-muted-foreground">
-                Frontmatter is managed in the side panel; this is the body only.
-                Use MDX components like{" "}
-                <code className="font-mono">&lt;Callout&gt;</code> and{" "}
-                <code className="font-mono">&lt;Checklist&gt;</code> directly.
-              </p>
-            </div>
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {hasComponents && (
+                  <p className="flex items-start gap-2 rounded-sm border border-warning/40 bg-warning/10 p-3 text-small text-subtle">
+                    <IconAlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-warning" />
+                    This article uses MDX components (Callout, Checklist…). Edit
+                    those in MDX mode — the block editor may not preserve them.
+                  </p>
+                )}
+                <BlocksEditor
+                  key={id ?? "new"}
+                  value={content}
+                  onChange={(md) => {
+                    setContent(md);
+                    markDirty();
+                  }}
+                />
+              </div>
+            )}
           </div>
         </main>
 
