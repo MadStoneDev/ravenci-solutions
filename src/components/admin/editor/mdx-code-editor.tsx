@@ -10,7 +10,10 @@ const theme = EditorView.theme({
   ".cm-content": {
     fontFamily: "var(--font-jetbrains-mono), monospace",
     caretColor: "hsl(var(--foreground))",
+    // Fill the box so clicking anywhere (not just on a text line) focuses.
+    minHeight: "60vh",
   },
+  ".cm-scroller": { minHeight: "60vh" },
   // Make the text cursor visible (was invisible: no caret color was set).
   ".cm-cursor, .cm-dropCursor": {
     borderLeftColor: "hsl(var(--foreground))",

@@ -39,7 +39,7 @@ export default function BlocksEditor({
   }, [editor]);
 
   return (
-    <div className="rounded-sm border border-border bg-card py-2">
+    <div className="min-h-[60vh] rounded-sm border border-border bg-card py-2 [&_.bn-editor]:min-h-[56vh]">
       <BlockNoteView
         editor={editor}
         onChange={async () => {
