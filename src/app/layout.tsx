@@ -12,6 +12,7 @@ import MainNavigation from "@/components/main-navigation";
 import SpinningCircleText from "@/components/spinning-circle-text";
 import ReCaptchaProvider from "@/components/recaptcha-provider";
 import CookieConsent from "@/components/cookie-consent";
+import SiteChrome from "@/components/site-chrome";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
@@ -208,13 +209,20 @@ export default function RootLayout({
           Skip to main content
         </a>
         <ReCaptchaProvider>
-          <MainNavigation />
-          <div id="main-content" className="pt-16 md:pt-[76px]">
+          {/* Public pages get the site chrome; /admin renders bare (its own
+              shell). Toggled client-side via usePathname so every public page
+              stays statically rendered. */}
+          <SiteChrome
+            nav={<MainNavigation />}
+            footer={
+              <>
+                <MainFooter />
+                <SpinningCircleText text={"Book Now · Free Consultation · "} />
+              </>
+            }
+          >
             {children}
-          </div>
-          <MainFooter />
-
-          <SpinningCircleText text={"Book Now · Free Consultation · "} />
+          </SiteChrome>
         </ReCaptchaProvider>
 
         <MicrosoftClarity />
