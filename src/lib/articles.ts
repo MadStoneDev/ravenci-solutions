@@ -85,19 +85,7 @@ function mdxReadAll(): ArticleFrontmatter[] {
   });
 }
 
-// ---------------------------------------------------------------------------
-// Public API (stable signatures — now async)
-// ---------------------------------------------------------------------------
-
-export async function getAllArticles(): Promise<ArticleFrontmatter[]> {
-  if (isPocketBaseEnabled()) {
-    const records = await pbFetchArticles({
-      filter: PUBLISHED_FILTER,
-      sort: "-scheduleDate",
-    });
-    return records.map(recordToArticle);
-  }
-
+function mdxGetAll(): ArticleFrontmatter[] {
   const now = new Date();
   return mdxReadAll()
     .filter((a) => new Date(a.scheduleDate) <= now)
@@ -107,35 +95,70 @@ export async function getAllArticles(): Promise<ArticleFrontmatter[]> {
     );
 }
 
-export async function getArticleBySlug(
-  slug: string,
-): Promise<Article | undefined> {
-  if (isPocketBaseEnabled()) {
-    const filter = `slug = ${JSON.stringify(slug)} && ${PUBLISHED_FILTER}`;
-    const records = await pbFetchArticles({ filter, perPage: 1 });
-    return records[0] ? recordToArticle(records[0]) : undefined;
-  }
-
+function mdxGetBySlug(slug: string): Article | undefined {
   const filePath = path.join(ARTICLES_DIR, `${slug}.mdx`);
   if (!fs.existsSync(filePath)) return undefined;
-
   const raw = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(raw);
   if (new Date(data.scheduleDate) > new Date()) return undefined;
-
   return { ...(data as ArticleFrontmatter), slug, content };
 }
 
-export async function getAllSlugs(): Promise<string[]> {
-  if (isPocketBaseEnabled()) {
-    const records = await pbFetchArticles({ filter: PUBLISHED_FILTER });
-    return records.map((r) => r.slug);
-  }
-
+function mdxGetSlugs(): string[] {
   return fs
     .readdirSync(ARTICLES_DIR)
     .filter((f) => f.endsWith(".mdx"))
     .map((f) => f.replace(/\.mdx$/, ""));
+}
+
+// ---------------------------------------------------------------------------
+// Public API (stable signatures — now async)
+// ---------------------------------------------------------------------------
+
+export async function getAllArticles(): Promise<ArticleFrontmatter[]> {
+  if (isPocketBaseEnabled()) {
+    try {
+      const records = await pbFetchArticles({
+        filter: PUBLISHED_FILTER,
+        sort: "-scheduleDate",
+      });
+      return records.map(recordToArticle);
+    } catch (e) {
+      // CMS unreachable (e.g. at build time) — fall back to the committed MDX
+      // files so the site never ships empty or fails to build.
+      console.error("[articles] PocketBase unreachable, using MDX fallback:", e);
+    }
+  }
+  return mdxGetAll();
+}
+
+export async function getArticleBySlug(
+  slug: string,
+): Promise<Article | undefined> {
+  if (isPocketBaseEnabled()) {
+    try {
+      const filter = `slug = ${JSON.stringify(slug)} && ${PUBLISHED_FILTER}`;
+      const records = await pbFetchArticles({ filter, perPage: 1 });
+      // PocketBase is the source of truth when reachable: a miss means the
+      // article isn't published (so unpublish/delete actually hides it).
+      return records[0] ? recordToArticle(records[0]) : undefined;
+    } catch (e) {
+      console.error("[articles] PocketBase unreachable, using MDX fallback:", e);
+    }
+  }
+  return mdxGetBySlug(slug);
+}
+
+export async function getAllSlugs(): Promise<string[]> {
+  if (isPocketBaseEnabled()) {
+    try {
+      const records = await pbFetchArticles({ filter: PUBLISHED_FILTER });
+      return records.map((r) => r.slug);
+    } catch (e) {
+      console.error("[articles] PocketBase unreachable, using MDX fallback:", e);
+    }
+  }
+  return mdxGetSlugs();
 }
 
 // Related articles for cross-linking: most shared categories first, then recency.
