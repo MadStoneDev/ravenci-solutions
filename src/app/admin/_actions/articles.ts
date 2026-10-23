@@ -103,23 +103,23 @@ export async function saveArticle(raw: ArticleInput): Promise<SaveResult> {
   };
 
   if (input.status === "published") {
+    // The editor sends the "Published on" date; it drives both the displayed
+    // date and the list order. Fall back to the existing value, then now.
+    let existingSchedule: string | undefined;
+    let existingPublished: string | undefined;
     if (input.id) {
-      // Updating an existing article: preserve its original go-live date and
-      // first-published time. Only edits to the body change (contentUpdatedAt).
       try {
         const rec = await pb.collection("articles").getOne(input.id);
-        data.scheduleDate =
-          (rec.scheduleDate as string) || input.scheduleDate || now;
-        data.publishedAt = (rec.publishedAt as string) || now;
+        existingSchedule = rec.scheduleDate as string;
+        existingPublished = rec.publishedAt as string;
       } catch {
-        data.scheduleDate = input.scheduleDate || now;
-        data.publishedAt = now;
+        // new/unknown — fall through to now
       }
-    } else {
-      // First publish.
-      data.scheduleDate = input.scheduleDate || now;
-      data.publishedAt = now;
     }
+    const goLive =
+      input.scheduleDate || existingSchedule || existingPublished || now;
+    data.scheduleDate = goLive;
+    data.publishedAt = goLive;
   } else if (input.status === "scheduled") {
     data.scheduleDate = input.scheduleDate;
   }

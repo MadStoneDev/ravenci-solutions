@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, useTransition } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import {
@@ -78,7 +78,9 @@ export function ArticleEditor({ initial }: { initial?: AdminArticleFull }) {
   const [image, setImage] = useState(initial?.featuredImage);
   const [status, setStatus] = useState<Status>(initial?.status ?? "draft");
 
-  const initialParts = isoToBrisbaneParts(initial?.scheduleDate);
+  const initialParts = isoToBrisbaneParts(
+    initial?.scheduleDate ?? initial?.publishedAt,
+  );
   const [schedDate, setSchedDate] = useState(initialParts.date);
   const [schedTime, setSchedTime] = useState(initialParts.time || "09:00");
 
@@ -94,7 +96,7 @@ export function ArticleEditor({ initial }: { initial?: AdminArticleFull }) {
   const [mdxStatus, setMdxStatus] = useState<{ ok: boolean; message?: string }>({
     ok: true,
   });
-  const [pending, startTransition] = useTransition();
+  const saving = saveState === "saving";
 
   // Auto-slug from title until first publish or manual edit.
   const slugTouched = useRef(Boolean(initial?.slug));
@@ -125,7 +127,7 @@ export function ArticleEditor({ initial }: { initial?: AdminArticleFull }) {
       featuredImageAlt: imageAlt,
       status: targetStatus,
       scheduleDate:
-        targetStatus === "scheduled"
+        targetStatus === "scheduled" || targetStatus === "published"
           ? brisbanePartsToIso(schedDate, schedTime)
           : undefined,
     }),
@@ -136,25 +138,21 @@ export function ArticleEditor({ initial }: { initial?: AdminArticleFull }) {
   );
 
   const doSave = useCallback(
-    (targetStatus: Status) =>
-      new Promise<boolean>((resolve) => {
-        setError(undefined);
-        setSaveState("saving");
-        startTransition(async () => {
-          const res = await saveArticle(buildInput(targetStatus));
-          if (res.ok) {
-            if (res.id) setId(res.id);
-            if (res.slug) setSlug(res.slug);
-            setStatus(targetStatus);
-            setSaveState("saved");
-            resolve(true);
-          } else {
-            setError(res.error);
-            setSaveState("error");
-            resolve(false);
-          }
-        });
-      }),
+    async (targetStatus: Status): Promise<boolean> => {
+      setError(undefined);
+      setSaveState("saving");
+      const res = await saveArticle(buildInput(targetStatus));
+      if (res.ok) {
+        if (res.id) setId(res.id);
+        if (res.slug) setSlug(res.slug);
+        setStatus(targetStatus);
+        setSaveState("saved");
+        return true;
+      }
+      setError(res.error);
+      setSaveState("error");
+      return false;
+    },
     [buildInput],
   );
 
@@ -247,11 +245,11 @@ export function ArticleEditor({ initial }: { initial?: AdminArticleFull }) {
           )}
           <button
             type="button"
-            disabled={pending}
+            disabled={saving}
             onClick={() => doSave(status)}
             className="inline-flex items-center rounded-sm bg-accent px-4 py-1.5 text-small font-medium text-accent-foreground transition-opacity hover:opacity-90 disabled:opacity-50"
           >
-            {pending ? "Saving…" : primaryLabel}
+            {saving ? "Saving…" : primaryLabel}
           </button>
         </div>
       </header>
@@ -335,10 +333,12 @@ export function ArticleEditor({ initial }: { initial?: AdminArticleFull }) {
                 </button>
               ))}
             </div>
-            {status === "scheduled" && (
+            {(status === "scheduled" || status === "published") && (
               <div className="grid grid-cols-2 gap-2 pt-1">
                 <div className="space-y-1">
-                  <label className={LABEL}>Date</label>
+                  <label className={LABEL}>
+                    {status === "published" ? "Published on" : "Date"}
+                  </label>
                   <input
                     type="date"
                     value={schedDate}
