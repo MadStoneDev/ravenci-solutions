@@ -56,6 +56,68 @@ export async function fetchAdminArticles(
   return records.map(recordToListItem);
 }
 
+/** Full article for the editor (all editable fields). */
+export interface AdminArticleFull {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  featuredImage?: { url: string; name: string; width: number; height: number };
+  featuredImageAlt: string;
+  author: string;
+  categories: string[];
+  metaTitle: string;
+  metaDescription: string;
+  metaKeywords: string;
+  status: ArticleStatus;
+  scheduleDate?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+}
+
+function recordToFull(r: ArticleRecord): AdminArticleFull {
+  return {
+    id: r.id,
+    title: r.title ?? "",
+    slug: r.slug,
+    excerpt: r.excerpt ?? "",
+    content: r.content ?? "",
+    featuredImage: r.featuredImage
+      ? {
+          url: pbFileUrl("articles", r.id, r.featuredImage),
+          name: r.featuredImage,
+          width: r.featuredImageWidth || 0,
+          height: r.featuredImageHeight || 0,
+        }
+      : undefined,
+    featuredImageAlt: r.featuredImageAlt ?? "",
+    author: r.author || "Richard",
+    categories: Array.isArray(r.categories) ? r.categories : [],
+    metaTitle: r.metaTitle ?? "",
+    metaDescription: r.metaDescription ?? "",
+    metaKeywords: r.metaKeywords ?? "",
+    status: r.status,
+    scheduleDate: pbDate(r.scheduleDate),
+    publishedAt: pbDate(r.publishedAt),
+    updatedAt: pbDate(r.contentUpdatedAt) ?? pbDate(r.updated),
+  };
+}
+
+export async function getAdminArticleBySlug(
+  pb: PocketBase,
+  slug: string,
+): Promise<AdminArticleFull | undefined> {
+  try {
+    const rec = await pb
+      .collection("articles")
+      .getFirstListItem<ArticleRecord>(`slug = ${JSON.stringify(slug)}`);
+    return recordToFull(rec);
+  } catch {
+    return undefined;
+  }
+}
+
 export interface ArticleStats {
   published: number;
   scheduled: number;
