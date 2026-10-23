@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>Edit article — RAVENCI Admin</title>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f7f6f3}
+a{color:#8e1a81}a:hover{color:#6d1263}
+.blk{position:relative}
+.blk:hover .handle{opacity:1}
+.cmd:hover{background:#f7f6f3}
+.field:focus{outline:2px solid #8e1a81;outline-offset:1px}
+</style>
+</helmet>
+<div style="min-height: 1500px; background: #f7f6f3; color: #0e0e11; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column;">
+
+  <!-- Top bar -->
+  <header style="position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; padding: 12px 24px; border-bottom: 1px solid #e0ddd6; background: #ffffff;">
+    <a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 10px 0 6px; border-radius: 3px; color: #45454f; text-decoration: none; font-size: 14px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>
+      Articles
+    </a>
+    <span aria-hidden="true" style="width: 1px; height: 20px; background: #e0ddd6;"></span>
+    <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: #e7f1ea; color: #1f5c34;"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 50%; background: #2f7a47;"></span>Published</span>
+    <span style="font-size: 13px; color: #5a5a63; display: inline-flex; align-items: center; gap: 6px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>
+      Saved · unpublished changes
+    </span>
+
+    <!-- Mode switch -->
+    <div role="group" aria-label="Editing mode" style="margin-left: auto; display: inline-flex; padding: 3px; gap: 3px; border: 1px solid #e0ddd6; border-radius: 3px; background: #f7f6f3;">
+      <button onClick="{{toBlocks}}" aria-pressed="{{blocksPressed}}" style="{{blocksBtn}}">Blocks</button>
+      <button onClick="{{toMdx}}" aria-pressed="{{mdxPressed}}" style="{{mdxBtn}}">MDX</button>
+    </div>
+
+    <a href="https://ravenci.solutions/articles/php2shell-php-security-scare" style="display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 14px; border-radius: 3px; border: 1px solid #e0ddd6; color: #0e0e11; text-decoration: none; font-size: 14px; font-weight: 500; background: #ffffff;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+      Preview
+    </a>
+    <button style="height: 40px; padding: 0 14px; border-radius: 3px; border: 1px solid #e0ddd6; background: #ffffff; font: inherit; font-size: 14px; font-weight: 500; color: #0e0e11; cursor: pointer;">Save draft</button>
+    <button style="height: 40px; padding: 0 18px; border-radius: 3px; border: 0; background: #8e1a81; color: #ffffff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;">Update article</button>
+  </header>
+
+  <div style="display: flex; flex-wrap: wrap; flex: 1 1 auto;">
+
+    <!-- Writing canvas -->
+    <main style="flex: 999 1 560px; min-width: 0; box-sizing: border-box; padding: 48px 32px 96px; display: flex; justify-content: center;">
+      <div style="width: 100%; max-width: 720px; display: flex; flex-direction: column; gap: 4px;">
+
+        <sc-if value="{{isBlocks}}" hint-placeholder-val="{{true}}">
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+
+            <!-- Featured image block -->
+            <figure style="margin: 0 0 28px; position: relative; border-radius: 3px; overflow: hidden; border: 1px solid #e0ddd6; background: #0e0e11;">
+              <img src="../../public/articles/digital-padlocks-cybersecurity.jpg" alt="Glowing digital padlocks over circuit board lines representing website security" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover;">
+              <div style="position: absolute; top: 12px; right: 12px; display: flex; gap: 8px;">
+                <button style="height: 36px; padding: 0 12px; border-radius: 3px; border: 0; background: rgba(255,255,255,0.94); color: #0e0e11; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;">Replace</button>
+                <button aria-label="Remove featured image" style="width: 36px; height: 36px; border-radius: 3px; border: 0; background: rgba(255,255,255,0.94); color: #0e0e11; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+                </button>
+              </div>
+              <figcaption style="position: absolute; left: 12px; bottom: 12px; display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 10px; border-radius: 3px; background: rgba(14,14,17,0.78); color: #f7f6f3; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;">Featured image · 3000 × 2000</figcaption>
+            </figure>
+
+            <!-- Title -->
+            <h1 style="margin: 0 0 8px; font-size: 40px; line-height: 1.1; letter-spacing: -0.03em; font-weight: 700;">PHP2Shell: The PHP Security Scare and What You Should Do About It</h1>
+            <p style="margin: 0 0 28px; font-size: 14px; color: #5a5a63;">By Richard · 5 min read · 23 October 2026</p>
+
+            <!-- Paragraph with hover handle -->
+            <div class="blk" style="display: flex; gap: 8px; margin-left: -56px;">
+              <div class="handle" style="opacity: 1; display: flex; gap: 2px; padding-top: 4px; width: 48px; justify-content: flex-end;">
+                <button aria-label="Add block" style="width: 22px; height: 26px; border: 0; background: transparent; color: #5a5a63; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+                </button>
+                <button aria-label="Drag to reorder or open block menu" style="width: 22px; height: 26px; border: 0; background: #ebe9e3; border-radius: 3px; color: #45454f; cursor: grab; padding: 0; display: flex; align-items: center; justify-content: center;">
+                  <svg width="12" height="16" viewBox="0 0 12 16" fill="currentColor" aria-hidden="true"><circle cx="3" cy="3" r="1.4"></circle><circle cx="9" cy="3" r="1.4"></circle><circle cx="3" cy="8" r="1.4"></circle><circle cx="9" cy="8" r="1.4"></circle><circle cx="3" cy="13" r="1.4"></circle><circle cx="9" cy="13" r="1.4"></circle></svg>
+                </button>
+              </div>
+              <p style="margin: 0; padding: 2px 8px; font-size: 17px; line-height: 1.7; color: #45454f; flex: 1 1 auto; border-radius: 3px; box-shadow: inset 0 0 0 1px #e0ddd6; background: #ffffff;">PHP is cooked. We're all cooked. What do we do?!</p>
+            </div>
+
+            <p style="margin: 0; padding: 2px 8px; font-size: 17px; line-height: 1.7; color: #45454f;">Well, we relax. We massage our earlobes while repeating, "woosah", which helps with neither the PHP issue nor your stress levels. Allegedly.</p>
+            <p style="margin: 0; padding: 2px 8px; font-size: 17px; line-height: 1.7; color: #45454f;">Don't get me wrong, this is quite a critical security vulnerability and we need to act fast, but it doesn't mean your website is already in trouble. Think of it like keeping your front door closed and locked but the bolt is fragile.</p>
+
+            <!-- Heading block -->
+            <h2 style="margin: 24px 0 4px; padding: 2px 8px; font-size: 26px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 700;">What the LLM happened?</h2>
+            <p style="margin: 0; padding: 2px 8px; font-size: 17px; line-height: 1.7; color: #45454f;">Ok, that jargon slipped out. In plain words:</p>
+
+            <!-- List block -->
+            <ul style="margin: 0; padding: 2px 8px 2px 32px; font-size: 17px; line-height: 1.7; color: #45454f; display: flex; flex-direction: column; gap: 6px;">
+              <li>On 20 October 2026, the people behind a programming language that many websites use (PHP) warned the world about two critical security flaws and released an official fix the next day.</li>
+              <li>The first known attack was spotted by Amazon and it took place on 17 October.</li>
+            </ul>
+
+            <!-- MDX component block -->
+            <div style="margin: 20px 0; border: 1px solid #e0ddd6; border-radius: 3px; background: #ffffff; overflow: hidden;">
+              <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 1px solid #ebe9e3; background: #fbfaf8;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8e1a81" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 5l-3 14"></path></svg>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #0e0e11;">&lt;Callout type="warning"&gt;</span>
+                <span style="margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #5a5a63;">MDX component</span>
+              </div>
+              <div style="display: flex; gap: 12px; padding: 16px; background: #fdf3e7; border-left: 0;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9a4d06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M12 9v4M12 17h.01"></path><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path></svg>
+                <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5c2f05;">Still on PHP 8.1 or older? There's no official fix for your version. Ask your host whether they've backported the patch.</p>
+              </div>
+            </div>
+
+            <!-- New block with slash menu -->
+            <div style="position: relative; margin-top: 8px;">
+              <p style="margin: 0; padding: 2px 8px; font-size: 17px; line-height: 1.7; color: #0e0e11;">/<span aria-hidden="true" style="display: inline-block; width: 2px; height: 20px; background: #8e1a81; vertical-align: -4px; margin-left: 1px;"></span></p>
+              <div role="listbox" aria-label="Insert block" style="margin-top: 8px; width: 320px; border: 1px solid #e0ddd6; border-radius: 6px; background: #ffffff; box-shadow: 0 8px 24px -8px rgba(14,14,17,0.18); padding: 6px; display: flex; flex-direction: column;">
+                <span style="padding: 8px 10px 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #5a5a63;">Basic</span>
+                <sc-for list="{{basic}}" as="c" hint-placeholder-count="5">
+                  <button class="cmd" role="option" aria-selected="{{c.sel}}" style="{{c.style}}">
+                    <span aria-hidden="true" style="width: 32px; height: 32px; border-radius: 3px; border: 1px solid #e0ddd6; background: #ffffff; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; color: #0e0e11;">{{c.glyph}}</span>
+                    <span style="display: flex; flex-direction: column; align-items: flex-start; gap: 1px;">
+                      <span style="font-size: 14px; font-weight: 600; color: #0e0e11;">{{c.name}}</span>
+                      <span style="font-size: 12px; color: #5a5a63;">{{c.hint}}</span>
+                    </span>
+                  </button>
+                </sc-for>
+                <span style="padding: 10px 10px 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #5a5a63;">Components</span>
+                <sc-for list="{{comps}}" as="c" hint-placeholder-count="3">
+                  <button class="cmd" role="option" aria-selected="false" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 6px 10px; border: 0; border-radius: 3px; background: transparent; font: inherit; text-align: left; cursor: pointer;">
+                    <span aria-hidden="true" style="width: 32px; height: 32px; border-radius: 3px; border: 1px solid #e0ddd6; background: #f5e8f3; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; color: #7a1670;">&lt;/&gt;</span>
+                    <span style="display: flex; flex-direction: column; align-items: flex-start; gap: 1px;">
+                      <span style="font-size: 14px; font-weight: 600; color: #0e0e11;">{{c.name}}</span>
+                      <span style="font-size: 12px; color: #5a5a63;">{{c.hint}}</span>
+                    </span>
+                  </button>
+                </sc-for>
+                <div style="display: flex; gap: 12px; padding: 8px 10px 4px; border-top: 1px solid #ebe9e3; margin-top: 6px; font-size: 12px; color: #5a5a63;">
+                  <span><span style="font-family: 'JetBrains Mono', monospace;">↑↓</span> move</span>
+                  <span><span style="font-family: 'JetBrains Mono', monospace;">↵</span> insert</span>
+                  <span><span style="font-family: 'JetBrains Mono', monospace;">esc</span> close</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- MDX source mode -->
+        <sc-if value="{{isMdx}}" hint-placeholder-val="{{false}}">
+          <div style="border: 1px solid #e0ddd6; border-radius: 3px; background: #ffffff; overflow: hidden;">
+            <div style="display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-bottom: 1px solid #ebe9e3; background: #fbfaf8;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #0e0e11;">php2shell-php-security-scare.mdx</span>
+              <span style="margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #1f5c34;"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 50%; background: #2f7a47;"></span>Valid MDX</span>
+            </div>
+            <pre style="margin: 0; padding: 20px 20px 28px; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.75; color: #0e0e11; white-space: pre-wrap;"><span style="color: #8a8a93;">1  </span>PHP is cooked. We're all cooked. What do we do?!
+<span style="color: #8a8a93;">2  </span>
+<span style="color: #8a8a93;">3  </span>Well, we relax. We massage our earlobes while repeating, "woosah", …
+<span style="color: #8a8a93;">4  </span>
+<span style="color: #8a8a93;">5  </span><span style="color: #8e1a81;">## What the LLM happened?</span>
+<span style="color: #8a8a93;">6  </span>
+<span style="color: #8a8a93;">7  </span>Ok, that jargon slipped out. In plain words:
+<span style="color: #8a8a93;">8  </span>
+<span style="color: #8a8a93;">9  </span><span style="color: #8e1a81;">-</span> On 20 October 2026, the people behind a programming language …
+<span style="color: #8a8a93;">10 </span><span style="color: #8e1a81;">-</span> The first known attack was spotted by Amazon and it took place on 17 October.
+<span style="color: #8a8a93;">11 </span>
+<span style="color: #8a8a93;">12 </span><span style="color: #1f5c34;">&lt;Callout type="warning"&gt;</span>
+<span style="color: #8a8a93;">13 </span>  Still on PHP 8.1 or older? There's no official fix for your version.
+<span style="color: #8a8a93;">14 </span><span style="color: #1f5c34;">&lt;/Callout&gt;</span></pre>
+          </div>
+          <p style="margin: 12px 0 0; font-size: 13px; color: #5a5a63;">Frontmatter is managed in the side panel, so this view shows the body only. Switching back to Blocks keeps your edits.</p>
+        </sc-if>
+      </div>
+    </main>
+
+    <!-- Settings panel -->
+    <aside aria-label="Article settings" style="flex: 1 1 340px; max-width: 380px; box-sizing: border-box; border-left: 1px solid #e0ddd6; background: #ffffff; padding: 24px; display: flex; flex-direction: column; gap: 28px;">
+
+      <!-- Publishing -->
+      <section style="display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #5a5a63;">Publishing</h2>
+        <div role="radiogroup" aria-label="Status" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; padding: 3px; border: 1px solid #e0ddd6; border-radius: 3px; background: #f7f6f3;">
+          <sc-for list="{{statuses}}" as="s" hint-placeholder-count="3">
+            <button role="radio" aria-checked="{{s.on}}" onClick="{{s.pick}}" style="{{s.style}}">{{s.label}}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{isScheduled}}" hint-placeholder-val="{{false}}">
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
+            <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500;">Date
+              <input class="field" type="date" value="2026-10-28" style="height: 40px; padding: 0 10px; border: 1px solid #e0ddd6; border-radius: 3px; font: inherit; font-size: 14px; color: #0e0e11; background: #ffffff;">
+            </label>
+            <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500;">Time (AEST)
+              <input class="field" type="time" value="09:00" style="height: 40px; padding: 0 10px; border: 1px solid #e0ddd6; border-radius: 3px; font: inherit; font-size: 14px; color: #0e0e11; background: #ffffff;">
+            </label>
+          </div>
+        </sc-if>
+        <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #5a5a63;">{{statusNote}}</p>
+      </section>
+
+      <!-- URL -->
+      <section style="display: flex; flex-direction: column; gap: 8px;">
+        <label for="slug" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #5a5a63;">URL</label>
+        <div style="display: flex; align-items: center; border: 1px solid #e0ddd6; border-radius: 3px; overflow: hidden;">
+          <span style="padding: 0 0 0 10px; font-size: 13px; color: #5a5a63; white-space: nowrap;">/articles/</span>
+          <input id="slug" class="field" value="php2shell-php-security-scare" style="flex: 1 1 auto; min-width: 0; height: 40px; padding: 0 10px 0 2px; border: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #0e0e11; background: transparent;">
+        </div>
+        <span style="font-size: 12px; color: #5a5a63;">Locked after publishing. Changing it adds a redirect.</span>
+      </section>
+
+      <!-- Excerpt -->
+      <section style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; align-items: baseline;">
+          <label for="excerpt" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #5a5a63;">Excerpt</label>
+          <span style="margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5a5a63;">158</span>
+        </div>
+        <textarea id="excerpt" class="field" rows="4" style="padding: 10px; border: 1px solid #e0ddd6; border-radius: 3px; font: inherit; font-size: 14px; line-height: 1.5; color: #0e0e11; resize: vertical;">PHP is cooked. We're all cooked. Or are we? Here's what PHP2Shell actually means for your website, minus the fearmongering, and what you should do right now.</textarea>
+      </section>
+
+      <!-- Featured image -->
+      <section style="display: flex; flex-direction: column; gap: 8px;">
+        <h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #5a5a63;">Featured image</h2>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <img src="../../public/articles/digital-padlocks-cybersecurity.jpg" alt="" style="width: 72px; height: 48px; object-fit: cover; border-radius: 3px; border: 1px solid #e0ddd6;">
+          <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #0e0e11; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">digital-padlocks-cybersecurity.jpg</span>
+            <span style="font-size: 12px; color: #5a5a63;">3000 × 2000 · 412 KB</span>
+          </div>
+        </div>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500;">Alt text
+          <input class="field" value="Glowing digital padlocks over circuit board lines representing website security" style="height: 40px; padding: 0 10px; border: 1px solid #e0ddd6; border-radius: 3px; font: inherit; font-size: 14px; color: #0e0e11;">
+        </label>
+      </section>
+
+      <!-- Category -->
+      <section style="display: flex; flex-direction: column; gap: 8px;">
+        <h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #5a5a63;">Categories</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+          <span style="display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 6px 0 10px; border-radius: 3px; background: #0e0e11; color: #f7f6f3; font-size: 13px;">Business Technology
+            <button aria-label="Remove Business Technology" style="width: 20px; height: 20px; border: 0; background: transparent; color: #f7f6f3; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg></button>
+          </span>
+          <button style="height: 30px; padding: 0 10px; border-radius: 3px; border: 1px dashed #c9c5bc; background: transparent; font: inherit; font-size: 13px; color: #45454f; cursor: pointer;">+ Add</button>
+        </div>
+      </section>
+
+      <!-- SEO -->
+      <section style="display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #5a5a63;">Search &amp; social</h2>
+        <div style="border: 1px solid #e0ddd6; border-radius: 3px; padding: 14px; display: flex; flex-direction: column; gap: 4px; background: #fbfaf8;">
+          <span style="font-size: 12px; color: #45454f;">ravenci.solutions › articles</span>
+          <span style="font-size: 17px; line-height: 1.3; color: #1a0dab;">PHP2Shell: What Business Owners Should Do Now | RAVENCI Solutions</span>
+          <span style="font-size: 13px; line-height: 1.5; color: #45454f;">PHP2Shell put millions of websites at risk in October 2026. Here's what happened, why a firewall didn't stop it, and what to ask your web developer.</span>
+        </div>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500;">
+          <span style="display: flex;">Meta title <span style="margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 400; color: #1f5c34;">45 / 60</span></span>
+          <input class="field" value="PHP2Shell: What Business Owners Should Do Now" style="height: 40px; padding: 0 10px; border: 1px solid #e0ddd6; border-radius: 3px; font: inherit; font-size: 14px; color: #0e0e11;">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500;">
+          <span style="display: flex;">Meta description <span style="margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 400; color: #1f5c34;">150 / 160</span></span>
+          <textarea class="field" rows="3" style="padding: 10px; border: 1px solid #e0ddd6; border-radius: 3px; font: inherit; font-size: 14px; line-height: 1.5; color: #0e0e11; resize: vertical;">PHP2Shell put millions of websites at risk in October 2026. Here's what happened, why a firewall didn't stop it, and what to ask your web developer.</textarea>
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500;">Keywords
+          <input class="field" value="php2shell, php vulnerability, php security, wordpress security" style="height: 40px; padding: 0 10px; border: 1px solid #e0ddd6; border-radius: 3px; font: inherit; font-size: 14px; color: #0e0e11;">
+        </label>
+      </section>
+
+      <section style="padding-top: 16px; border-top: 1px solid #ebe9e3; display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: #5a5a63;">
+        <span>Published 23 Oct 2026, 4:39 pm</span>
+        <span>Last updated 23 Oct 2026, 5:30 pm</span>
+        <button style="align-self: flex-start; margin-top: 8px; height: 36px; padding: 0; border: 0; background: transparent; font: inherit; font-size: 13px; font-weight: 600; color: #b3221b; cursor: pointer;">Move to trash</button>
+      </section>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { mode: 'blocks', status: 'published' }; }
+  renderVals() {
+    var self = this;
+    var mode = this.state.mode;
+    var seg = function (on) {
+      return 'height: 32px; padding: 0 14px; border: 0; border-radius: 2px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; background: ' + (on ? '#0e0e11' : 'transparent') + '; color: ' + (on ? '#f7f6f3' : '#45454f') + ';';
+    };
+    var st = this.state.status;
+    var notes = {
+      draft: 'Only you can see drafts. Nothing changes on the live site.',
+      scheduled: 'Goes live on its own at the time below. The date shown on the article will match.',
+      published: 'Live now. Changes stay as a draft until you press Update article.'
+    };
+    var statuses = [['draft', 'Draft'], ['scheduled', 'Scheduled'], ['published', 'Published']].map(function (d) {
+      var on = st === d[0];
+      return {
+        label: d[1], on: on ? 'true' : 'false',
+        pick: function () { self.setState({ status: d[0] }); },
+        style: 'height: 34px; border: 0; border-radius: 2px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; background: ' + (on ? '#ffffff' : 'transparent') + '; color: ' + (on ? '#0e0e11' : '#45454f') + '; box-shadow: ' + (on ? '0 1px 2px rgba(14,14,17,0.08)' : 'none') + ';'
+      };
+    });
+    var basic = [
+      { glyph: 'Aa', name: 'Text', hint: 'Plain paragraph' },
+      { glyph: 'H2', name: 'Heading', hint: 'Section heading' },
+      { glyph: '•', name: 'List', hint: 'Bulleted or numbered' },
+      { glyph: '“', name: 'Quote', hint: 'Pull quote' },
+      { glyph: '▢', name: 'Image', hint: 'Upload or pick from media' },
+      { glyph: '{}', name: 'Code', hint: 'Syntax-highlighted block' }
+    ].map(function (c, i) {
+      return Object.assign({}, c, {
+        sel: i === 0 ? 'true' : 'false',
+        style: 'display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 6px 10px; border: 0; border-radius: 3px; font: inherit; text-align: left; cursor: pointer; background: ' + (i === 0 ? '#f5e8f3' : 'transparent') + ';'
+      });
+    });
+    var comps = [
+      { name: 'Callout', hint: 'Note, tip or warning box' },
+      { name: 'Checklist', hint: 'Printable tick-box list' },
+      { name: 'Raw MDX', hint: 'Write any JSX by hand' }
+    ];
+    return {
+      isBlocks: mode === 'blocks', isMdx: mode === 'mdx',
+      blocksPressed: mode === 'blocks' ? 'true' : 'false', mdxPressed: mode === 'mdx' ? 'true' : 'false',
+      blocksBtn: seg(mode === 'blocks'), mdxBtn: seg(mode === 'mdx'),
+      toBlocks: function () { self.setState({ mode: 'blocks' }); },
+      toMdx: function () { self.setState({ mode: 'mdx' }); },
+      statuses: statuses, isScheduled: st === 'scheduled', statusNote: notes[st],
+      basic: basic, comps: comps
+    };
+  }
+}
+</script>
+</body>
+</html>
