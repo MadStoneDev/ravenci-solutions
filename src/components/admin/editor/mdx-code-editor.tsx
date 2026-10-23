@@ -7,7 +7,19 @@ import { EditorView } from "@codemirror/view";
 
 const theme = EditorView.theme({
   "&": { fontSize: "13px", backgroundColor: "transparent" },
-  ".cm-content": { fontFamily: "var(--font-jetbrains-mono), monospace" },
+  ".cm-content": {
+    fontFamily: "var(--font-jetbrains-mono), monospace",
+    caretColor: "hsl(var(--foreground))",
+  },
+  // Make the text cursor visible (was invisible: no caret color was set).
+  ".cm-cursor, .cm-dropCursor": {
+    borderLeftColor: "hsl(var(--foreground))",
+    borderLeftWidth: "2px",
+  },
+  "&.cm-focused .cm-cursor": { borderLeftColor: "hsl(var(--foreground))" },
+  ".cm-selectionBackground, ::selection": {
+    backgroundColor: "hsl(var(--accent) / 0.2)",
+  },
   ".cm-gutters": { backgroundColor: "transparent", border: "none" },
   "&.cm-focused": { outline: "none" },
 });
