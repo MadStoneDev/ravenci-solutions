@@ -1,6 +1,5 @@
 "use client";
 
-import "@blocknote/core/fonts/inter.css";
 import "@blocknote/mantine/style.css";
 import { BlockNoteView } from "@blocknote/mantine";
 import { useCreateBlockNote } from "@blocknote/react";
@@ -39,7 +38,9 @@ export default function BlocksEditor({
   }, [editor]);
 
   return (
-    <div className="min-h-[60vh] rounded-sm border border-border bg-card py-2 [&_.bn-editor]:min-h-[56vh]">
+    // No border/background of its own — inherits the page (see globals.css
+    // .bn-container overrides). min-height so it fills the canvas.
+    <div className="min-h-[56vh]">
       <BlockNoteView
         editor={editor}
         onChange={async () => {

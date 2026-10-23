@@ -269,3 +269,29 @@
     color: hsl(var(--foreground));
   }
 }
+
+/* ==========================================================================
+   Articles admin — BlockNote editor inherits the page (no embedded widget).
+   ========================================================================== */
+.bn-container {
+  --bn-colors-editor-background: transparent;
+  --bn-colors-editor-text: inherit;
+  background: transparent;
+}
+.bn-container .bn-editor {
+  font-family: inherit;
+  min-height: 56vh;
+}
+/* Align the editor text with the title's left edge by offsetting BlockNote's
+   54px inline padding (the drag handle sits in the left whitespace). Desktop
+   only — on mobile there isn't room, so keep the default padding. */
+@media (min-width: 768px) {
+  .bn-container .bn-editor {
+    margin-inline-start: -54px;
+  }
+}
+/* Non-italic placeholder, same colour as the title placeholder. */
+.bn-container .bn-block-content:has(.ProseMirror-trailingBreak:only-child)::after {
+  font-style: normal;
+  color: hsl(var(--muted-foreground) / 0.5);
+}

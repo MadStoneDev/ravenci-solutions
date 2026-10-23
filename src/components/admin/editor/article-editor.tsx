@@ -16,6 +16,7 @@ import { cn } from "@/lib/utils";
 import { validateMdx } from "@/lib/mdx/validate";
 import type { AdminArticleFull } from "@/lib/admin-articles";
 import type { MediaItem } from "@/lib/admin-media";
+import { SegmentedControl } from "@/components/admin/segmented-control";
 import { MediaPickerModal } from "./media-picker-modal";
 import {
   saveArticle,
@@ -266,28 +267,16 @@ export function ArticleEditor({
         </span>
 
         <div className="ml-auto flex items-center gap-2">
-          <div
-            role="group"
-            aria-label="Editing mode"
-            className="flex rounded-sm border border-border p-0.5"
-          >
-            {(["blocks", "mdx"] as const).map((m) => (
-              <button
-                key={m}
-                type="button"
-                aria-pressed={mode === m}
-                onClick={() => setMode(m)}
-                className={cn(
-                  "rounded-[2px] px-2.5 py-1 text-small capitalize transition-colors",
-                  mode === m
-                    ? "bg-foreground text-background"
-                    : "text-subtle hover:text-foreground",
-                )}
-              >
-                {m === "mdx" ? "MDX" : m}
-              </button>
-            ))}
-          </div>
+          <SegmentedControl
+            size="sm"
+            ariaLabel="Editing mode"
+            value={mode}
+            onChange={setMode}
+            options={[
+              { value: "blocks", label: "Blocks" },
+              { value: "mdx", label: "MDX" },
+            ]}
+          />
           {slug && (
             <a
               href={`https://ravenci.solutions/articles/${slug}`}
@@ -332,28 +321,40 @@ export function ArticleEditor({
               className="w-full bg-transparent text-display-m text-foreground outline-none placeholder:text-muted-foreground/50"
             />
 
-            {mode === "mdx" ? (
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <span className={LABEL}>MDX — body only</span>
-                  <div className="flex items-center gap-3">
-                    <button
-                      type="button"
-                      onClick={() => setShowMediaPicker(true)}
-                      className="inline-flex items-center gap-1 text-label-sm text-accent hover:underline"
-                    >
-                      <IconPhoto className="h-3.5 w-3.5" /> Insert image
-                    </button>
-                    <span
-                      className={cn(
-                        "font-mono text-label-sm",
-                        mdxStatus.ok ? "text-[#2f7a47]" : "text-destructive",
-                      )}
-                    >
-                      {mdxStatus.ok ? "● Valid MDX" : "● Invalid MDX"}
-                    </span>
-                  </div>
+            <div className="space-y-2">
+              {/* Shared header row — same height in both modes, so switching
+                  causes no vertical shift. */}
+              <div className="flex h-5 items-center justify-between">
+                <span className={LABEL}>
+                  {mode === "mdx" ? "MDX — body only" : "Blocks"}
+                </span>
+                <div className="flex items-center gap-3">
+                  {mode === "mdx" && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => setShowMediaPicker(true)}
+                        className={cn(
+                          LABEL,
+                          "inline-flex items-center gap-1 hover:text-foreground",
+                        )}
+                      >
+                        <IconPhoto className="h-3.5 w-3.5" /> Insert image
+                      </button>
+                      <span
+                        className={cn(
+                          "font-mono text-label-sm",
+                          mdxStatus.ok ? "text-[#2f7a47]" : "text-destructive",
+                        )}
+                      >
+                        {mdxStatus.ok ? "● Valid MDX" : "● Invalid MDX"}
+                      </span>
+                    </>
+                  )}
                 </div>
+              </div>
+
+              {mode === "mdx" ? (
                 <MdxCodeEditor
                   value={content}
                   onChange={(v) => {
@@ -364,27 +365,7 @@ export function ArticleEditor({
                     cmViewRef.current = view;
                   }}
                 />
-                {!mdxStatus.ok && mdxStatus.message && (
-                  <p className="font-mono text-label-sm text-destructive">
-                    {mdxStatus.message}
-                  </p>
-                )}
-                <p className="text-small text-muted-foreground">
-                  Frontmatter is managed in the side panel; this is the body
-                  only. Use MDX components like{" "}
-                  <code className="font-mono">&lt;Callout&gt;</code> and{" "}
-                  <code className="font-mono">&lt;Checklist&gt;</code> directly.
-                </p>
-              </div>
-            ) : (
-              <div className="space-y-2">
-                {hasComponents && (
-                  <p className="flex items-start gap-2 rounded-sm border border-warning/40 bg-warning/10 p-3 text-small text-subtle">
-                    <IconAlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-warning" />
-                    This article uses MDX components (Callout, Checklist…). Edit
-                    those in MDX mode — the block editor may not preserve them.
-                  </p>
-                )}
+              ) : (
                 <BlocksEditor
                   key={id ?? "new"}
                   value={content}
@@ -393,8 +374,30 @@ export function ArticleEditor({
                     markDirty();
                   }}
                 />
-              </div>
-            )}
+              )}
+
+              {/* Helpers below the editor (don't shift the editor itself). */}
+              {mode === "mdx" && !mdxStatus.ok && mdxStatus.message && (
+                <p className="font-mono text-label-sm text-destructive">
+                  {mdxStatus.message}
+                </p>
+              )}
+              {mode === "mdx" && (
+                <p className="text-small text-muted-foreground">
+                  Frontmatter is managed in the side panel; this is the body
+                  only. Use MDX components like{" "}
+                  <code className="font-mono">&lt;Callout&gt;</code> and{" "}
+                  <code className="font-mono">&lt;Checklist&gt;</code> directly.
+                </p>
+              )}
+              {mode === "blocks" && hasComponents && (
+                <p className="flex items-start gap-2 rounded-sm border border-warning/40 bg-warning/10 p-3 text-small text-subtle">
+                  <IconAlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-warning" />
+                  This article uses MDX components (Callout, Checklist…). Edit
+                  those in MDX mode — the block editor may not preserve them.
+                </p>
+              )}
+            </div>
           </div>
         </main>
 
@@ -403,23 +406,17 @@ export function ArticleEditor({
           {/* Publishing */}
           <section className="space-y-2">
             <span className={LABEL}>Publishing</span>
-            <div className="flex rounded-sm border border-border p-0.5">
-              {(["draft", "scheduled", "published"] as const).map((s) => (
-                <button
-                  key={s}
-                  type="button"
-                  onClick={() => setStatus(s)}
-                  className={cn(
-                    "flex-1 rounded-[2px] px-2 py-1.5 text-small capitalize transition-colors",
-                    status === s
-                      ? "bg-card text-foreground shadow-1"
-                      : "text-subtle hover:text-foreground",
-                  )}
-                >
-                  {s}
-                </button>
-              ))}
-            </div>
+            <SegmentedControl
+              size="md"
+              ariaLabel="Publishing status"
+              value={status}
+              onChange={setStatus}
+              options={[
+                { value: "draft", label: "Draft" },
+                { value: "scheduled", label: "Scheduled" },
+                { value: "published", label: "Published" },
+              ]}
+            />
             {(status === "scheduled" || status === "published") && (
               <div className="grid grid-cols-2 gap-2 pt-1">
                 <div className="space-y-1">
