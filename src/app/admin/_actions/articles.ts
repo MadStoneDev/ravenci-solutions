@@ -103,16 +103,21 @@ export async function saveArticle(raw: ArticleInput): Promise<SaveResult> {
   };
 
   if (input.status === "published") {
-    data.scheduleDate = input.scheduleDate || now;
-    // set publishedAt the first time it goes live
     if (input.id) {
+      // Updating an existing article: preserve its original go-live date and
+      // first-published time. Only edits to the body change (contentUpdatedAt).
       try {
         const rec = await pb.collection("articles").getOne(input.id);
-        data.publishedAt = rec.publishedAt || now;
+        data.scheduleDate =
+          (rec.scheduleDate as string) || input.scheduleDate || now;
+        data.publishedAt = (rec.publishedAt as string) || now;
       } catch {
+        data.scheduleDate = input.scheduleDate || now;
         data.publishedAt = now;
       }
     } else {
+      // First publish.
+      data.scheduleDate = input.scheduleDate || now;
       data.publishedAt = now;
     }
   } else if (input.status === "scheduled") {
