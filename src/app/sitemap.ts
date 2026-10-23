@@ -198,7 +198,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Article pages
   const articlePages: MetadataRoute.Sitemap = getAllArticles().map((a) => ({
     url: `${baseUrl}/articles/${a.slug}`,
-    lastModified: new Date(a.updatedAt || a.publishedAt),
+    lastModified: new Date(a.updatedAt || a.publishedAt || a.scheduleDate),
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
