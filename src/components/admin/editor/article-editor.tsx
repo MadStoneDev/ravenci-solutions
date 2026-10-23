@@ -268,7 +268,6 @@ export function ArticleEditor({
 
         <div className="ml-auto flex items-center gap-2">
           <SegmentedControl
-            size="sm"
             ariaLabel="Editing mode"
             value={mode}
             onChange={setMode}
@@ -344,7 +343,7 @@ export function ArticleEditor({
                       <span
                         className={cn(
                           "font-mono text-label-sm",
-                          mdxStatus.ok ? "text-[#2f7a47]" : "text-destructive",
+                          mdxStatus.ok ? "text-success" : "text-destructive",
                         )}
                       >
                         {mdxStatus.ok ? "● Valid MDX" : "● Invalid MDX"}
@@ -354,27 +353,33 @@ export function ArticleEditor({
                 </div>
               </div>
 
-              {mode === "mdx" ? (
-                <MdxCodeEditor
-                  value={content}
-                  onChange={(v) => {
-                    setContent(v);
-                    markDirty();
-                  }}
-                  onReady={(view) => {
-                    cmViewRef.current = view;
-                  }}
-                />
-              ) : (
-                <BlocksEditor
-                  key={id ?? "new"}
-                  value={content}
-                  onChange={(md) => {
-                    setContent(md);
-                    markDirty();
-                  }}
-                />
-              )}
+              {/* One shared frame for both modes: same border, background,
+                  width and min-height, so switching causes no shift. No
+                  overflow-hidden, so BlockNote's drag handle can render in the
+                  left gutter. */}
+              <div className="min-h-[600px] rounded-sm border border-border bg-card">
+                {mode === "mdx" ? (
+                  <MdxCodeEditor
+                    value={content}
+                    onChange={(v) => {
+                      setContent(v);
+                      markDirty();
+                    }}
+                    onReady={(view) => {
+                      cmViewRef.current = view;
+                    }}
+                  />
+                ) : (
+                  <BlocksEditor
+                    key={id ?? "new"}
+                    value={content}
+                    onChange={(md) => {
+                      setContent(md);
+                      markDirty();
+                    }}
+                  />
+                )}
+              </div>
 
               {/* Helpers below the editor (don't shift the editor itself). */}
               {mode === "mdx" && !mdxStatus.ok && mdxStatus.message && (
@@ -407,7 +412,7 @@ export function ArticleEditor({
           <section className="space-y-2">
             <span className={LABEL}>Publishing</span>
             <SegmentedControl
-              size="md"
+              fullWidth
               ariaLabel="Publishing status"
               value={status}
               onChange={setStatus}

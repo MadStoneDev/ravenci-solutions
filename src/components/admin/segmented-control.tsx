@@ -9,21 +9,22 @@ interface Option<T extends string> {
 
 /**
  * One shared segmented control for the editor's Blocks/MDX toggle and the
- * Draft/Scheduled/Published control. Subtle dark active state; sans font only.
- * size="sm" is the compact secondary toggle; size="md" fills its row.
+ * Draft/Scheduled/Published control. Consistent 13px sans, same height/padding
+ * and a single subtle active state. `fullWidth` makes the segments share the row
+ * (used by Publishing); otherwise it's compact (the toggle).
  */
 export function SegmentedControl<T extends string>({
   options,
   value,
   onChange,
   ariaLabel,
-  size = "md",
+  fullWidth = false,
 }: {
   options: Option<T>[];
   value: T;
   onChange: (v: T) => void;
   ariaLabel: string;
-  size?: "sm" | "md";
+  fullWidth?: boolean;
 }) {
   return (
     <div
@@ -31,7 +32,7 @@ export function SegmentedControl<T extends string>({
       aria-label={ariaLabel}
       className={cn(
         "inline-flex rounded-sm border border-border p-0.5",
-        size === "md" && "flex w-full",
+        fullWidth && "flex w-full",
       )}
     >
       {options.map((o) => {
@@ -43,10 +44,8 @@ export function SegmentedControl<T extends string>({
             aria-pressed={active}
             onClick={() => onChange(o.value)}
             className={cn(
-              "rounded-[2px] font-sans transition-colors",
-              size === "sm"
-                ? "px-2 py-0.5 text-[13px]"
-                : "flex-1 px-2 py-1.5 text-small",
+              "rounded-[2px] px-3 py-1 text-[13px] font-sans transition-colors",
+              fullWidth && "flex-1",
               active
                 ? "bg-foreground/10 text-foreground"
                 : "text-subtle hover:text-foreground",

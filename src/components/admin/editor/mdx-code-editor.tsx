@@ -10,10 +10,10 @@ const theme = EditorView.theme({
   ".cm-content": {
     fontFamily: "var(--font-jetbrains-mono), monospace",
     caretColor: "hsl(var(--foreground))",
-    // Fill the box so clicking anywhere (not just on a text line) focuses.
-    minHeight: "60vh",
+    padding: "20px 0",
+    // Fill the frame so clicking anywhere (not just a text line) focuses.
+    minHeight: "560px",
   },
-  ".cm-scroller": { minHeight: "60vh" },
   // Make the text cursor visible (was invisible: no caret color was set).
   ".cm-cursor, .cm-dropCursor": {
     borderLeftColor: "hsl(var(--foreground))",
@@ -23,7 +23,12 @@ const theme = EditorView.theme({
   ".cm-selectionBackground, ::selection": {
     backgroundColor: "hsl(var(--accent) / 0.2)",
   },
-  ".cm-gutters": { backgroundColor: "transparent", border: "none" },
+  ".cm-gutters": {
+    backgroundColor: "transparent",
+    border: "none",
+    paddingLeft: "8px",
+  },
+  ".cm-editor": { minHeight: "600px" },
   "&.cm-focused": { outline: "none" },
 });
 
@@ -36,26 +41,26 @@ export default function MdxCodeEditor({
   onChange: (v: string) => void;
   onReady?: (view: EditorView) => void;
 }) {
+  // No border/background here — the shared EditorFrame in article-editor provides
+  // it so both modes look identical.
   return (
-    <div className="overflow-hidden rounded-sm border border-border bg-card">
-      <CodeMirror
-        value={value}
-        onChange={onChange}
-        onCreateEditor={(view) => onReady?.(view)}
-        theme="none"
-        extensions={[
-          markdown({ base: markdownLanguage, codeLanguages: languages }),
-          EditorView.lineWrapping,
-          theme,
-        ]}
-        basicSetup={{
-          lineNumbers: true,
-          foldGutter: false,
-          highlightActiveLine: false,
-          highlightActiveLineGutter: false,
-        }}
-        className="min-h-[50vh] text-foreground"
-      />
-    </div>
+    <CodeMirror
+      value={value}
+      onChange={onChange}
+      onCreateEditor={(view) => onReady?.(view)}
+      theme="none"
+      extensions={[
+        markdown({ base: markdownLanguage, codeLanguages: languages }),
+        EditorView.lineWrapping,
+        theme,
+      ]}
+      basicSetup={{
+        lineNumbers: true,
+        foldGutter: false,
+        highlightActiveLine: false,
+        highlightActiveLineGutter: false,
+      }}
+      className="text-foreground"
+    />
   );
 }

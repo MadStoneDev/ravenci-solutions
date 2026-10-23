@@ -38,17 +38,15 @@ export default function BlocksEditor({
   }, [editor]);
 
   return (
-    // No border/background of its own — inherits the page (see globals.css
-    // .bn-container overrides). min-height so it fills the canvas.
-    <div className="min-h-[56vh]">
-      <BlockNoteView
-        editor={editor}
-        onChange={async () => {
-          if (!ready.current) return;
-          const md = await editor.blocksToMarkdownLossy(editor.document);
-          onChange(md);
-        }}
-      />
-    </div>
+    // No wrapper of its own — the shared EditorFrame provides the box, and
+    // globals.css .bn-container overrides make it inherit the page.
+    <BlockNoteView
+      editor={editor}
+      onChange={async () => {
+        if (!ready.current) return;
+        const md = await editor.blocksToMarkdownLossy(editor.document);
+        onChange(md);
+      }}
+    />
   );
 }

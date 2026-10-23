@@ -46,6 +46,7 @@
     --destructive-foreground: 0 0% 100%;
     --warning: 30 90% 38%;           /* #B86C0A amber, ~3.4:1 on paper */
     --warning-foreground: 0 0% 100%;
+    --success: 142 44% 33%;          /* #2F7A47 green, status "published"/valid */
 
     /* --- LEGACY shadcn tokens (used only by src/components/ui/button.tsx
        until the new Button lands). Remove when button.tsx is replaced. */
@@ -105,6 +106,7 @@
     --destructive-foreground: 240 9% 6%;
     --warning: 38 96% 56%;           /* #FBAD28 amber on charcoal */
     --warning-foreground: 240 9% 6%;
+    --success: 142 40% 62%;          /* #7FC79C green, readable on charcoal */
 
     /* LEGACY */
     --primary: 45 18% 96%;
@@ -120,6 +122,12 @@
 
 @layer base {
   * { @apply border-border; }
+
+  /* Buttons inherit page typography instead of the UA 16px default, so a button
+     with no explicit text-size class matches the text around it. */
+  button {
+    font: inherit;
+  }
 
   body {
     @apply bg-background text-foreground;
@@ -273,22 +281,19 @@
 /* ==========================================================================
    Articles admin — BlockNote editor inherits the page (no embedded widget).
    ========================================================================== */
-.bn-container {
+/* [data-color-scheme] matches BlockNote's own theme selector so these win over
+   its dark theme (which otherwise forces #1f1f1f background + Inter font). */
+.bn-container[data-color-scheme] {
   --bn-colors-editor-background: transparent;
   --bn-colors-editor-text: inherit;
+  --bn-font-family: inherit;
   background: transparent;
 }
-.bn-container .bn-editor {
+.bn-container[data-color-scheme] .bn-editor {
+  margin-inline-start: 0;
+  padding: 20px; /* matches the CodeMirror content inset so both align in the frame */
+  min-height: 560px;
   font-family: inherit;
-  min-height: 56vh;
-}
-/* Align the editor text with the title's left edge by offsetting BlockNote's
-   54px inline padding (the drag handle sits in the left whitespace). Desktop
-   only — on mobile there isn't room, so keep the default padding. */
-@media (min-width: 768px) {
-  .bn-container .bn-editor {
-    margin-inline-start: -54px;
-  }
 }
 /* Non-italic placeholder, same colour as the title placeholder. */
 .bn-container .bn-block-content:has(.ProseMirror-trailingBreak:only-child)::after {
