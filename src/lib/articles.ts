@@ -17,7 +17,7 @@ export interface ArticleFrontmatter {
     metaKeywords?: string;
   };
   scheduleDate: string;
-  publishedAt: string;
+  publishedAt?: string;
   updatedAt?: string;
 }
 
@@ -33,13 +33,16 @@ export function getAllArticles(): ArticleFrontmatter[] {
     .map((file) => {
       const raw = fs.readFileSync(path.join(ARTICLES_DIR, file), "utf-8");
       const { data } = matter(raw);
-      return data as ArticleFrontmatter;
+
+      return {
+        ...(data as ArticleFrontmatter),
+        slug: file.replace(/\.mdx$/, ""),
+      };
     })
     .filter((a) => new Date(a.scheduleDate) <= now)
     .sort(
       (a, b) =>
-        new Date(b.scheduleDate).getTime() -
-        new Date(a.scheduleDate).getTime(),
+        new Date(b.scheduleDate).getTime() - new Date(a.scheduleDate).getTime(),
     );
 }
 
@@ -50,7 +53,9 @@ export function getArticleBySlug(slug: string): Article | undefined {
   const raw = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(raw);
 
-  return { ...(data as ArticleFrontmatter), content };
+  if (new Date(data.scheduleDate) > new Date()) return undefined;
+
+  return { ...(data as ArticleFrontmatter), slug, content };
 }
 
 export function getAllSlugs(): string[] {

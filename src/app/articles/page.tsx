@@ -8,6 +8,8 @@ import { getAllArticles } from "@/lib/articles";
 
 const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 
+export const revalidate = 3600; // re-check scheduled posts at most hourly
+
 export const metadata = {
   title: "Articles & Insights | RAVENCI Solutions",
   description:
@@ -31,7 +33,10 @@ export default function ArticlesPage() {
     <main className="flex flex-col">
       {/* Hero */}
       <section className="px-5 pt-5 pb-10 md:px-12 md:pt-10 md:pb-20 lg:px-20 border-b border-border">
-        <Breadcrumbs items={[{ label: "Articles" }]} className="mb-5 md:mb-10" />
+        <Breadcrumbs
+          items={[{ label: "Articles" }]}
+          className="mb-5 md:mb-10"
+        />
         <div className="flex max-w-3xl flex-col gap-4">
           <SectionLabel label="Writing" tick />
           <h1 className="text-display-l text-foreground">Articles</h1>
@@ -44,48 +49,54 @@ export default function ArticlesPage() {
       {/* Grid */}
       <section className={SECTION}>
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article) => (
-            <Link
-              key={article.slug}
-              href={`/articles/${article.slug}`}
-              className="group flex flex-col overflow-hidden rounded-sm border border-border bg-card transition-colors duration-fast hover:border-foreground/30"
-            >
-              {article.featuredImage && (
-                <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-border bg-muted">
-                  <Image
-                    src={article.featuredImage.src}
-                    alt={article.featuredImage.alt || article.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover object-center transition-transform duration-slow ease-standard group-hover:scale-105"
-                  />
+          {articles.map((article) => {
+            const displayDate = article.publishedAt ?? article.scheduleDate;
+
+            return (
+              <Link
+                key={article.slug}
+                href={`/articles/${article.slug}`}
+                className="group flex flex-col overflow-hidden rounded-sm border border-border bg-card transition-colors duration-fast hover:border-foreground/30"
+              >
+                {article.featuredImage && (
+                  <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-border bg-muted">
+                    <Image
+                      src={article.featuredImage.src}
+                      alt={article.featuredImage.alt || article.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover object-center transition-transform duration-slow ease-standard group-hover:scale-105"
+                    />
+                  </div>
+                )}
+                <div className="flex flex-1 flex-col p-6">
+                  {article.categories.length > 0 && (
+                    <span className="mb-2 font-mono text-label uppercase text-accent">
+                      {article.categories[0]}
+                    </span>
+                  )}
+                  <h2 className="text-heading-s text-foreground">
+                    {article.title}
+                  </h2>
+                  {displayDate && (
+                    <time
+                      dateTime={new Date(displayDate).toISOString()}
+                      className="mt-2 text-small text-muted-foreground"
+                    >
+                      {new Date(displayDate).toLocaleDateString("en-AU", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </time>
+                  )}
+                  <p className="mt-2 line-clamp-3 flex-1 text-small text-muted-foreground">
+                    {article.excerpt}
+                  </p>
                 </div>
-              )}
-              <div className="flex flex-1 flex-col p-6">
-                {article.categories.length > 0 && (
-                  <span className="mb-2 font-mono text-label uppercase text-accent">
-                    {article.categories[0]}
-                  </span>
-                )}
-                <h2 className="text-heading-s text-foreground">{article.title}</h2>
-                {article.publishedAt && (
-                  <time
-                    dateTime={new Date(article.publishedAt).toISOString()}
-                    className="mt-2 text-small text-muted-foreground"
-                  >
-                    {new Date(article.publishedAt).toLocaleDateString("en-AU", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </time>
-                )}
-                <p className="mt-2 line-clamp-3 flex-1 text-small text-muted-foreground">
-                  {article.excerpt}
-                </p>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </section>
 
