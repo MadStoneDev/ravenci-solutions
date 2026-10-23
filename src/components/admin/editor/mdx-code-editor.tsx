@@ -15,15 +15,18 @@ const theme = EditorView.theme({
 export default function MdxCodeEditor({
   value,
   onChange,
+  onReady,
 }: {
   value: string;
   onChange: (v: string) => void;
+  onReady?: (view: EditorView) => void;
 }) {
   return (
     <div className="overflow-hidden rounded-sm border border-border bg-card">
       <CodeMirror
         value={value}
         onChange={onChange}
+        onCreateEditor={(view) => onReady?.(view)}
         theme="none"
         extensions={[
           markdown({ base: markdownLanguage, codeLanguages: languages }),

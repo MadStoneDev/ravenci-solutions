@@ -9,10 +9,13 @@ import {
   IconX,
   IconPhoto,
 } from "@tabler/icons-react";
+import type { EditorView } from "@codemirror/view";
 
 import { cn } from "@/lib/utils";
 import { validateMdx } from "@/lib/mdx/validate";
 import type { AdminArticleFull } from "@/lib/admin-articles";
+import type { MediaItem } from "@/lib/admin-media";
+import { MediaPickerModal } from "./media-picker-modal";
 import {
   saveArticle,
   uploadFeaturedImage,
@@ -60,7 +63,13 @@ const STATUS_NOTE: Record<Status, string> = {
   published: "Live now. Changes stay local until you press the button above.",
 };
 
-export function ArticleEditor({ initial }: { initial?: AdminArticleFull }) {
+export function ArticleEditor({
+  initial,
+  categorySuggestions = [],
+}: {
+  initial?: AdminArticleFull;
+  categorySuggestions?: string[];
+}) {
   const [id, setId] = useState(initial?.id);
   const [title, setTitle] = useState(initial?.title ?? "");
   const [slug, setSlug] = useState(initial?.slug ?? "");
@@ -97,6 +106,8 @@ export function ArticleEditor({ initial }: { initial?: AdminArticleFull }) {
     ok: true,
   });
   const saving = saveState === "saving";
+  const [showMediaPicker, setShowMediaPicker] = useState(false);
+  const cmViewRef = useRef<EditorView | null>(null);
 
   // Auto-slug from title until first publish or manual edit.
   const slugTouched = useRef(Boolean(initial?.slug));
@@ -201,6 +212,23 @@ export function ArticleEditor({ initial }: { initial?: AdminArticleFull }) {
     }
   }
 
+  function insertImageMarkdown(item: MediaItem) {
+    const md = `![${item.alt || ""}](${item.url})`;
+    const view = cmViewRef.current;
+    if (view) {
+      const { from, to } = view.state.selection.main;
+      view.dispatch({
+        changes: { from, to, insert: md },
+        selection: { anchor: from + md.length },
+      });
+      view.focus();
+    } else {
+      setContent((c) => (c ? `${c}\n\n${md}\n` : `${md}\n`));
+    }
+    markDirty();
+    setShowMediaPicker(false);
+  }
+
   const primaryLabel =
     status === "scheduled"
       ? "Schedule"
@@ -280,20 +308,32 @@ export function ArticleEditor({ initial }: { initial?: AdminArticleFull }) {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <span className={LABEL}>MDX — body only</span>
-                <span
-                  className={cn(
-                    "font-mono text-label-sm",
-                    mdxStatus.ok ? "text-[#2f7a47]" : "text-destructive",
-                  )}
-                >
-                  {mdxStatus.ok ? "● Valid MDX" : "● Invalid MDX"}
-                </span>
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setShowMediaPicker(true)}
+                    className="inline-flex items-center gap-1 text-label-sm text-accent hover:underline"
+                  >
+                    <IconPhoto className="h-3.5 w-3.5" /> Insert image
+                  </button>
+                  <span
+                    className={cn(
+                      "font-mono text-label-sm",
+                      mdxStatus.ok ? "text-[#2f7a47]" : "text-destructive",
+                    )}
+                  >
+                    {mdxStatus.ok ? "● Valid MDX" : "● Invalid MDX"}
+                  </span>
+                </div>
               </div>
               <MdxCodeEditor
                 value={content}
                 onChange={(v) => {
                   setContent(v);
                   markDirty();
+                }}
+                onReady={(view) => {
+                  cmViewRef.current = view;
                 }}
               />
               {!mdxStatus.ok && mdxStatus.message && (
@@ -466,7 +506,11 @@ export function ArticleEditor({ initial }: { initial?: AdminArticleFull }) {
           {/* Categories */}
           <section className="space-y-2">
             <span className={LABEL}>Categories</span>
-            <CategoryEditor value={categories} onChange={setCategories} />
+            <CategoryEditor
+              value={categories}
+              onChange={setCategories}
+              suggestions={categorySuggestions}
+            />
           </section>
 
           {/* Search & social */}
@@ -513,6 +557,13 @@ export function ArticleEditor({ initial }: { initial?: AdminArticleFull }) {
           )}
         </aside>
       </div>
+
+      {showMediaPicker && (
+        <MediaPickerModal
+          onClose={() => setShowMediaPicker(false)}
+          onPick={insertImageMarkdown}
+        />
+      )}
     </div>
   );
 }
@@ -565,11 +616,14 @@ function Counter({
 function CategoryEditor({
   value,
   onChange,
+  suggestions = [],
 }: {
   value: string[];
   onChange: (v: string[]) => void;
+  suggestions?: string[];
 }) {
   const [input, setInput] = useState("");
+  const available = suggestions.filter((s) => !value.includes(s));
   return (
     <div className="flex flex-wrap items-center gap-1.5">
       {value.map((c) => (
@@ -588,6 +642,7 @@ function CategoryEditor({
         </span>
       ))}
       <input
+        list="category-suggestions"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={(e) => {
@@ -598,8 +653,13 @@ function CategoryEditor({
           }
         }}
         placeholder="+ Add"
-        className="w-20 rounded-sm border border-dashed border-border bg-transparent px-2 py-1 text-small outline-none focus:border-accent"
+        className="w-28 rounded-sm border border-dashed border-border bg-transparent px-2 py-1 text-small outline-none focus:border-accent"
       />
+      <datalist id="category-suggestions">
+        {available.map((s) => (
+          <option key={s} value={s} />
+        ))}
+      </datalist>
     </div>
   );
 }
