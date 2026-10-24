@@ -62,7 +62,15 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
-    remotePatterns: pbImagePattern,
+    remotePatterns: [
+      ...pbImagePattern,
+      {
+        protocol: "https",
+        hostname: "cms.ravenci.solutions",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
   async headers() {
     return [

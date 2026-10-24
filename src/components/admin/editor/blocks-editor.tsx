@@ -45,10 +45,15 @@ export default function BlocksEditor({
     ...darkDefaultTheme,
     colors: {
       ...darkDefaultTheme.colors,
-      editor: {
-        text: "inherit",
-        background: "transparent", // or any colour, e.g. "#17171c"
-      },
+      // Keep `editor` empty — do NOT give it colours, and do NOT drop this and
+      // rely on the `...darkDefaultTheme` spread above. This theme object is
+      // applied inline to both the editor container AND the slash-menu portal:
+      //  - Any editor colour here is written inline and overrides the
+      //    globals.css `.bn-container` rule that makes the editor transparent.
+      //  - It also leaks onto the menu portal and strips its styling.
+      // Leaving it {} lets globals.css own the editor surface while the menu
+      // keeps its dark default theme.
+      editor: {},
     },
     fontFamily: "inherit",
   } satisfies Theme;
@@ -58,6 +63,7 @@ export default function BlocksEditor({
     // globals.css .bn-container overrides make it inherit the page.
     <BlockNoteView
       editor={editor}
+      theme={editorTheme}
       onChange={async () => {
         if (!ready.current) return;
         const md = await editor.blocksToMarkdownLossy(editor.document);

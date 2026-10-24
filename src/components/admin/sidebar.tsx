@@ -58,43 +58,110 @@ export function AdminSidebar({
     .join("");
 
   return (
-    <nav
-      aria-label="Admin"
-      className="flex w-full shrink-0 flex-col gap-7 border-b border-border p-4 md:h-screen md:w-[240px] md:border-b-0 md:border-r md:p-6 md:sticky md:top-0"
-    >
-      <div className="flex items-center gap-2">
-        <span className="text-heading-s font-bold tracking-tight text-foreground">
-          RAVENCI
-        </span>
-        <span className="rounded-sm border border-border px-1.5 py-0.5 font-mono text-label-sm text-muted-foreground">
-          Admin
-        </span>
-      </div>
-
-      <NavGroup label="Content" items={content} pathname={pathname} />
-      <NavGroup label="Site" items={site} pathname={pathname} />
-
-      <div className="mt-auto flex items-center gap-3 border-t border-border pt-4">
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent font-mono text-label-sm text-accent-foreground">
-          {initials}
-        </span>
-        <div className="min-w-0 flex-1">
-          <p className="truncate text-small font-medium text-foreground">
-            {user.name ?? "Owner"}
-          </p>
-          <p className="truncate text-label-sm text-muted-foreground">Owner</p>
+    <>
+      {/* Mobile: one compact row of icons — content on the left, site/account
+          on the right. Labels are dropped to save vertical space (each item
+          keeps an aria-label + title). The full sidebar takes over at md+. */}
+      <nav
+        aria-label="Admin"
+        className="flex items-center justify-between gap-2 border-b border-border px-2 py-2 md:hidden"
+      >
+        <div className="flex items-center gap-1">
+          {content.map((item) => (
+            <MobileIconLink key={item.href} item={item} pathname={pathname} />
+          ))}
         </div>
-        <form action={logout}>
-          <button
-            type="submit"
-            aria-label="Sign out"
-            className="rounded-sm p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+        <div className="flex items-center gap-1">
+          {site.map((item) => (
+            <MobileIconLink key={item.href} item={item} pathname={pathname} />
+          ))}
+          <span
+            title={user.name ?? user.email}
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent font-mono text-label-sm text-accent-foreground"
           >
-            <IconLogout className="h-4 w-4" />
-          </button>
-        </form>
-      </div>
-    </nav>
+            {initials}
+          </span>
+          <form action={logout}>
+            <button
+              type="submit"
+              aria-label="Sign out"
+              title="Sign out"
+              className="flex h-9 w-9 items-center justify-center rounded-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <IconLogout className="h-[18px] w-[18px]" />
+            </button>
+          </form>
+        </div>
+      </nav>
+
+      {/* Desktop: full vertical sidebar. */}
+      <nav
+        aria-label="Admin"
+        className="hidden shrink-0 flex-col gap-7 overflow-y-auto border-r border-border p-6 md:flex md:h-full md:w-[240px]"
+      >
+        <div className="flex items-center gap-2">
+          <span className="text-heading-s font-bold tracking-tight text-foreground">
+            RAVENCI
+          </span>
+          <span className="rounded-sm border border-border px-1.5 py-0.5 font-mono text-label-sm text-muted-foreground">
+            Admin
+          </span>
+        </div>
+
+        <NavGroup label="Content" items={content} pathname={pathname} />
+        <NavGroup label="Site" items={site} pathname={pathname} />
+
+        <div className="mt-auto flex items-center gap-3 border-t border-border pt-4">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent font-mono text-label-sm text-accent-foreground">
+            {initials}
+          </span>
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-small font-medium text-foreground">
+              {user.name ?? "Owner"}
+            </p>
+            <p className="truncate text-label-sm text-muted-foreground">Owner</p>
+          </div>
+          <form action={logout}>
+            <button
+              type="submit"
+              aria-label="Sign out"
+              className="rounded-sm p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <IconLogout className="h-4 w-4" />
+            </button>
+          </form>
+        </div>
+      </nav>
+    </>
+  );
+}
+
+function MobileIconLink({
+  item,
+  pathname,
+}: {
+  item: NavItem;
+  pathname: string;
+}) {
+  const active =
+    !item.external &&
+    (pathname === item.href || pathname.startsWith(item.href + "/"));
+  const Icon = item.icon;
+  return (
+    <Link
+      href={item.href}
+      target={item.external ? "_blank" : undefined}
+      rel={item.external ? "noopener noreferrer" : undefined}
+      aria-label={item.label}
+      aria-current={active ? "page" : undefined}
+      title={item.label}
+      className={cn(
+        "flex h-9 w-9 items-center justify-center rounded-sm transition-colors",
+        active ? "bg-foreground text-background" : "text-subtle hover:bg-muted",
+      )}
+    >
+      <Icon className="h-[18px] w-[18px]" />
+    </Link>
   );
 }
 
