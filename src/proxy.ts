@@ -28,7 +28,7 @@ function cookieLooksValid(raw: string | undefined): boolean {
   }
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const raw = request.cookies.get(AUTH_COOKIE)?.value;
   const authed = cookieLooksValid(raw);

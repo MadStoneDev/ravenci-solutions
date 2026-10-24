@@ -127,7 +127,9 @@ const faqItems = [
     summary:
       "It depends on the project. A business website usually takes 3 to 6 weeks, a custom website 6 to 10, and an online store 8 to 12. You'll get a timeline with the proposal.",
     content:
-      "It depends on what we're building. A business website usually takes 3 to 6 weeks, a custom website 6 to 10 weeks, and an online store 8 to 12. Bigger stores and web apps take longer. Either way, you'll get a planned timeline with the proposal, so you know before we start.",
+      "It depends on what's being built. A business website usually takes 3 to 6 weeks, a custom website 6 to 10" +
+      " weeks, and an online store 8 to 12. Bigger stores and web apps take longer. Either way, you'll get a planned" +
+      " timeline with the proposal, so you know before I start.",
   },
   {
     title: "What do I need to have ready?",
@@ -135,8 +137,7 @@ const faqItems = [
       "Just a good idea of your business and who your customers are. Branding, content and design ideas help, but I can handle those too.",
     content:
       "Not much. I'll mostly need to know your business and who your customers are, which is why we start with a" +
-      " chat. If you already have" +
-      " branding, content or a design in mind, great. If not, I can take care of those as well.",
+      " chat. If you already have branding, content or a design in mind, great. If not, I'll look after those as well.",
   },
   {
     title: "How involved do I need to be?",
@@ -162,9 +163,10 @@ const faqItems = [
   {
     title: "Do you work with businesses outside Brisbane?",
     summary:
-      "Yes. I work with businesses all over Australia, from Sydney to the Gold Coast, over video calls.",
+      "Yes. I work with businesses all over Australia, and we can meet over video calls.",
     content:
-      "Yes. I'm based in Brisbane and love meeting people face to face, but I work with businesses all over Australia, from Sydney's Northern Beaches to the Gold Coast. Video calls and screen sharing work just as well.",
+      "Yes. Although I'm based in Brisbane and love meeting people face to face, but I work with businesses all over" +
+      " Australia and video calls make this a lot easier.",
   },
 ];
 
