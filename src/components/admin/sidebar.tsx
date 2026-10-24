@@ -119,7 +119,9 @@ export function AdminSidebar({
             <p className="truncate text-small font-medium text-foreground">
               {user.name ?? "Owner"}
             </p>
-            <p className="truncate text-label-sm text-muted-foreground">Owner</p>
+            <p className="truncate text-label-sm text-muted-foreground">
+              Owner
+            </p>
           </div>
           <form action={logout}>
             <button
