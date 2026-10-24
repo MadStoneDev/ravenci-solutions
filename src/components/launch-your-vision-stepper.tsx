@@ -1,9 +1,10 @@
 "use client";
 
 import { sendGTMEvent } from "@next/third-parties/google";
-import { useState } from "react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { useState, useRef } from "react";
 import Link from "next/link";
+
+import { Turnstile, type TurnstileHandle } from "@/components/turnstile";
 
 import {
   IconArrowRight,
@@ -97,7 +98,8 @@ const BUDGET_OPTIONS: Budget[] = [
 const TOTAL_STEPS = 6;
 
 export default function LaunchYourVisionStepper() {
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  const turnstileRef = useRef<TurnstileHandle>(null);
+  const [turnstileToken, setTurnstileToken] = useState("");
   const [step, setStep] = useState(1);
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "loading" | "success" | "error"
@@ -153,15 +155,15 @@ export default function LaunchYourVisionStepper() {
     setErrorMessage("");
 
     try {
-      const recaptchaToken = executeRecaptcha
-        ? await executeRecaptcha("launch_your_vision")
-        : "";
+      if (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken) {
+        throw new Error("Please complete the verification challenge.");
+      }
 
       const res = await fetch("/api/launch-your-vision", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          recaptchaToken,
+          turnstileToken,
           name: form.name,
           email: form.email,
           phone: form.phone,
@@ -220,6 +222,7 @@ export default function LaunchYourVisionStepper() {
       });
       setSubmitStatus("error");
       setErrorMessage(e instanceof Error ? e.message : "Submission failed");
+      turnstileRef.current?.reset();
     }
   };
 
@@ -497,6 +500,11 @@ export default function LaunchYourVisionStepper() {
                 </Link>
                 .
               </p>
+              <Turnstile
+                ref={turnstileRef}
+                onToken={setTurnstileToken}
+                action="launch_your_vision"
+              />
             </div>
           </Step>
         )}

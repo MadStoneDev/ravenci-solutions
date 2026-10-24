@@ -3,7 +3,7 @@ import { Recipient, EmailParams, Sender, MailerSend } from "mailersend";
 import {
   checkRateLimit,
   escapeHtml,
-  verifyRecaptcha,
+  verifyTurnstile,
 } from "@/lib/api-guards";
 import { upsertSubscriber } from "@/lib/mailerlite";
 
@@ -37,13 +37,13 @@ export async function POST(request: Request) {
       businessName,
       websiteUrl,
       intent,
-      recaptchaToken,
+      turnstileToken,
     } = body;
 
-    const recaptcha = await verifyRecaptcha(recaptchaToken);
-    if (!recaptcha.ok) {
+    const verification = await verifyTurnstile(turnstileToken);
+    if (!verification.ok) {
       return NextResponse.json(
-        { message: recaptcha.reason ?? "reCAPTCHA verification failed" },
+        { message: verification.reason ?? "Verification failed" },
         { status: 400 },
       );
     }

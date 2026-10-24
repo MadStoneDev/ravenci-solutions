@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 import {
   IconDownload,
@@ -10,12 +9,15 @@ import {
   IconArrowRight,
 } from "@tabler/icons-react";
 
+import { Turnstile, type TurnstileHandle } from "@/components/turnstile";
+
 const FIELD =
   "h-12 w-full rounded-sm border border-input/60 bg-background px-3.5 text-body text-foreground outline-none transition-colors focus:border-accent";
 const LABEL = "mb-1.5 block font-mono text-label-sm uppercase text-muted-foreground";
 
 export default function AuditReportGate() {
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  const turnstileRef = useRef<TurnstileHandle>(null);
+  const [turnstileToken, setTurnstileToken] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle",
   );
@@ -28,14 +30,14 @@ export default function AuditReportGate() {
     setErrorMessage("");
 
     try {
-      const recaptchaToken = executeRecaptcha
-        ? await executeRecaptcha("audit_report_request")
-        : "";
+      if (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken) {
+        throw new Error("Please complete the verification challenge.");
+      }
 
       const res = await fetch("/api/audit-report-request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, recaptchaToken }),
+        body: JSON.stringify({ ...form, turnstileToken }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -45,6 +47,7 @@ export default function AuditReportGate() {
     } catch (e) {
       setStatus("error");
       setErrorMessage(e instanceof Error ? e.message : "Submission failed");
+      turnstileRef.current?.reset();
     }
   };
 
@@ -129,6 +132,12 @@ export default function AuditReportGate() {
             <p className="text-small text-destructive">{errorMessage}</p>
           </div>
         )}
+
+        <Turnstile
+          ref={turnstileRef}
+          onToken={setTurnstileToken}
+          action="audit_report_request"
+        />
 
         <button
           type="submit"

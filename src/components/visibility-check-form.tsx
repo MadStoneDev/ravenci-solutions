@@ -1,17 +1,18 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { useState, useCallback, useRef } from "react";
 import { IconSearch, IconCheck } from "@tabler/icons-react";
 
 import { trackLead } from "@/lib/analytics";
+import { Turnstile, type TurnstileHandle } from "@/components/turnstile";
 
 const FIELD =
   "h-12 w-full rounded-sm border border-input/60 bg-background px-3.5 text-body text-foreground outline-none transition-colors focus:border-accent";
 const LABEL = "mb-1.5 block font-mono text-label-sm uppercase text-muted-foreground";
 
 export default function VisibilityCheckForm() {
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  const turnstileRef = useRef<TurnstileHandle>(null);
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -30,15 +31,14 @@ export default function VisibilityCheckForm() {
       setErrorMessage("");
 
       try {
-        let recaptchaToken = "";
-        if (executeRecaptcha) {
-          recaptchaToken = await executeRecaptcha("visibility_check");
+        if (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken) {
+          throw new Error("Please complete the verification challenge.");
         }
 
         const response = await fetch("/api/visibility-check", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...formData, recaptchaToken }),
+          body: JSON.stringify({ ...formData, turnstileToken }),
         });
 
         if (!response.ok) {
@@ -54,9 +54,10 @@ export default function VisibilityCheckForm() {
         setErrorMessage(
           err instanceof Error ? err.message : "Something went wrong. Please try again.",
         );
+        turnstileRef.current?.reset();
       }
     },
-    [executeRecaptcha, formData],
+    [turnstileToken, formData],
   );
 
   if (status === "success") {
@@ -150,6 +151,13 @@ export default function VisibilityCheckForm() {
         </div>
       )}
 
+      <Turnstile
+        ref={turnstileRef}
+        onToken={setTurnstileToken}
+        action="visibility_check"
+        className="mt-4"
+      />
+
       <button
         type="submit"
         disabled={status === "loading"}
@@ -170,7 +178,7 @@ export default function VisibilityCheckForm() {
 
       <p className="mt-3 text-small text-muted-foreground">
         Sent by me, usually within a business day. No mailing list, no follow-up
-        sequence. Protected by reCAPTCHA.
+        sequence. Protected by Cloudflare Turnstile.
       </p>
     </form>
   );
