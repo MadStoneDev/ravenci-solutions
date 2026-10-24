@@ -1,7 +1,11 @@
 "use client";
 
 import "@blocknote/mantine/style.css";
-import { BlockNoteView } from "@blocknote/mantine";
+import {
+  BlockNoteView,
+  darkDefaultTheme,
+  type Theme,
+} from "@blocknote/mantine";
 import { useCreateBlockNote } from "@blocknote/react";
 import { useEffect, useRef } from "react";
 
@@ -36,6 +40,18 @@ export default function BlocksEditor({
     // init once on mount; parent remounts (keyed) when re-entering blocks mode
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [editor]);
+
+  const editorTheme = {
+    ...darkDefaultTheme,
+    colors: {
+      ...darkDefaultTheme.colors,
+      editor: {
+        text: "inherit",
+        background: "transparent", // or any colour, e.g. "#17171c"
+      },
+    },
+    fontFamily: "inherit",
+  } satisfies Theme;
 
   return (
     // No wrapper of its own — the shared EditorFrame provides the box, and
