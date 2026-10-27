@@ -252,6 +252,9 @@ export function ArticleEditor({
 
   const hasComponents = /<(Callout|Checklist|[A-Z]\w+)[\s/>]/.test(content);
 
+  const charCount = content.length;
+  const wordCount = content.trim() ? content.trim().split(/\s+/).length : 0;
+
   const primaryLabel =
     status === "scheduled"
       ? "Schedule"
@@ -399,6 +402,18 @@ export function ArticleEditor({
                     }}
                   />
                 )}
+              </div>
+
+              {/* Live word / character count of the body, in both modes. */}
+              <div className="flex h-5 items-center justify-end gap-4 font-mono text-label-sm text-muted-foreground">
+                <span>
+                  {wordCount.toLocaleString("en-AU")}{" "}
+                  {wordCount === 1 ? "word" : "words"}
+                </span>
+                <span>
+                  {charCount.toLocaleString("en-AU")}{" "}
+                  {charCount === 1 ? "character" : "characters"}
+                </span>
               </div>
 
               {/* Helpers below the editor (don't shift the editor itself). */}
