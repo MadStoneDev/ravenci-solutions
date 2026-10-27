@@ -25,7 +25,9 @@ import {
   type ArticleInput,
 } from "@/app/admin/_actions/articles";
 
-const MdxCodeEditor = dynamic(() => import("./mdx-code-editor"), { ssr: false });
+const MdxCodeEditor = dynamic(() => import("./mdx-code-editor"), {
+  ssr: false,
+});
 const BlocksEditor = dynamic(() => import("./blocks-editor"), { ssr: false });
 
 type Status = "draft" | "scheduled" | "published";
@@ -105,9 +107,11 @@ export function ArticleEditor({
     "idle" | "saving" | "saved" | "dirty" | "error"
   >("idle");
   const [error, setError] = useState<string>();
-  const [mdxStatus, setMdxStatus] = useState<{ ok: boolean; message?: string }>({
-    ok: true,
-  });
+  const [mdxStatus, setMdxStatus] = useState<{ ok: boolean; message?: string }>(
+    {
+      ok: true,
+    },
+  );
   const saving = saveState === "saving";
   const [mode, setMode] = useState<"blocks" | "mdx">("blocks");
   const [showMediaPicker, setShowMediaPicker] = useState(false);
@@ -147,8 +151,19 @@ export function ArticleEditor({
           : undefined,
     }),
     [
-      id, title, slug, excerpt, content, categories, metaTitle, metaDescription,
-      metaKeywords, imageAlt, schedDate, schedTime, initial?.author,
+      id,
+      title,
+      slug,
+      excerpt,
+      content,
+      categories,
+      metaTitle,
+      metaDescription,
+      metaKeywords,
+      imageAlt,
+      schedDate,
+      schedTime,
+      initial?.author,
     ],
   );
 
@@ -309,7 +324,7 @@ export function ArticleEditor({
       <div className="flex flex-1 flex-col lg:flex-row">
         {/* Canvas */}
         <main className="min-w-0 flex-1 px-4 py-8 md:px-8">
-          <div className="mx-auto max-w-[720px] space-y-6">
+          <div className="mx-auto max-w-[1200px] space-y-6">
             <input
               value={title}
               onChange={(e) => {
@@ -576,7 +591,12 @@ export function ArticleEditor({
                 {metaDescription || excerpt}
               </p>
             </div>
-            <Counter label="Meta title" value={metaTitle} max={60} onChange={setMetaTitle} />
+            <Counter
+              label="Meta title"
+              value={metaTitle}
+              max={60}
+              onChange={setMetaTitle}
+            />
             <Counter
               label="Meta description"
               value={metaDescription}
@@ -597,10 +617,16 @@ export function ArticleEditor({
           {(initial?.publishedAt || initial?.updatedAt) && (
             <section className="space-y-1 border-t border-border pt-4 text-label-sm text-muted-foreground">
               {initial?.publishedAt && (
-                <p>Published {new Date(initial.publishedAt).toLocaleString("en-AU")}</p>
+                <p>
+                  Published{" "}
+                  {new Date(initial.publishedAt).toLocaleString("en-AU")}
+                </p>
               )}
               {initial?.updatedAt && (
-                <p>Last updated {new Date(initial.updatedAt).toLocaleString("en-AU")}</p>
+                <p>
+                  Last updated{" "}
+                  {new Date(initial.updatedAt).toLocaleString("en-AU")}
+                </p>
               )}
             </section>
           )}
@@ -697,7 +723,8 @@ function CategoryEditor({
         onKeyDown={(e) => {
           if (e.key === "Enter" && input.trim()) {
             e.preventDefault();
-            if (!value.includes(input.trim())) onChange([...value, input.trim()]);
+            if (!value.includes(input.trim()))
+              onChange([...value, input.trim()]);
             setInput("");
           }
         }}
