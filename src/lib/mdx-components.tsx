@@ -27,7 +27,7 @@ export const mdxComponents: MDXComponents = {
     <h6 className="mb-2 mt-4 text-small font-semibold text-foreground">{children}</h6>
   ),
   p: ({ children }) => (
-    <p className="mb-6 text-body leading-relaxed text-subtle">{children}</p>
+    <p className="mb-8 text-body leading-relaxed text-subtle">{children}</p>
   ),
   a: ({ href, children }) => {
     const isExternal = href?.startsWith("http");
@@ -45,18 +45,18 @@ export const mdxComponents: MDXComponents = {
   strong: ({ children }) => <strong className="font-semibold text-foreground">{children}</strong>,
   em: ({ children }) => <em className="italic">{children}</em>,
   ul: ({ children }) => (
-    <ul className="mb-6 list-disc space-y-1.5 pl-6 text-body leading-relaxed text-subtle">
+    <ul className="mb-8 list-disc space-y-1.5 pl-6 text-body leading-relaxed text-subtle">
       {children}
     </ul>
   ),
   ol: ({ children }) => (
-    <ol className="mb-6 list-decimal space-y-1.5 pl-6 text-body leading-relaxed text-subtle">
+    <ol className="mb-8 list-decimal space-y-1.5 pl-6 text-body leading-relaxed text-subtle">
       {children}
     </ol>
   ),
   li: ({ children }) => <li>{children}</li>,
   blockquote: ({ children }) => (
-    <blockquote className="my-6 border-l-2 border-accent pl-4 text-lead italic text-muted-foreground">
+    <blockquote className="my-8 border-l-2 border-accent pl-4 text-lead italic text-muted-foreground">
       {children}
     </blockquote>
   ),
@@ -66,12 +66,12 @@ export const mdxComponents: MDXComponents = {
     </code>
   ),
   pre: ({ children }) => (
-    <pre className="mb-6 overflow-x-auto rounded-sm border border-border bg-muted p-4 font-mono text-small">
+    <pre className="mb-8 overflow-x-auto rounded-sm border border-border bg-muted p-4 font-mono text-small">
       {children}
     </pre>
   ),
   img: ({ src, alt }) => (
-    <span className="my-6 block">
+    <span className="my-8 block">
       <Image
         src={src || ""}
         alt={alt || ""}
