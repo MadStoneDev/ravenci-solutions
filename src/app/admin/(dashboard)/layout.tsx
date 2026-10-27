@@ -16,9 +16,11 @@ export default async function DashboardLayout({
   }
 
   return (
-    <div className="flex min-h-screen flex-col md:flex-row">
+    <div className="flex h-dvh flex-col overflow-hidden md:flex-row">
       <AdminSidebar user={user} articleCount={articleCount} />
-      <div className="min-w-0 flex-1">{children}</div>
+      {/* Scrolls for normal pages; the editor fills it with h-full and scrolls
+          internally instead. min-h-0 lets this shrink below its content. */}
+      <div className="min-h-0 min-w-0 flex-1 overflow-y-auto">{children}</div>
     </div>
   );
 }

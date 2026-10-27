@@ -22,8 +22,11 @@ export interface AdminArticleListItem {
   scheduleDate?: string;
   publishedAt?: string;
   updatedAt?: string;
+  createdAt?: string;
   readMins: number;
 }
+
+export type SortKey = "created" | "modified" | "name";
 
 function wordCount(s: string): number {
   const t = s.trim();
@@ -38,11 +41,13 @@ export function recordToListItem(r: ArticleRecord): AdminArticleListItem {
     status: r.status,
     categories: Array.isArray(r.categories) ? r.categories : [],
     thumbUrl: r.featuredImage
-      ? pbFileUrl("articles", r.id, r.featuredImage, "400x250")
+      ? // Small thumb for the list rows (displayed in a 96x60 box, ~2x retina).
+        pbFileUrl("articles", r.id, r.featuredImage, "200x120")
       : undefined,
     scheduleDate: pbDate(r.scheduleDate),
     publishedAt: pbDate(r.publishedAt),
     updatedAt: pbDate(r.contentUpdatedAt) ?? pbDate(r.updated),
+    createdAt: pbDate(r.created),
     readMins: Math.max(1, Math.round(wordCount(r.content ?? "") / 200)),
   };
 }
@@ -146,6 +151,28 @@ export function computeStats(items: AdminArticleListItem[]): ArticleStats {
     all: items.length,
     nextToGoLive: upcoming[0],
   };
+}
+
+/** Explicit list sorting chosen from the toolbar. */
+export function sortArticles(
+  items: AdminArticleListItem[],
+  sort: SortKey,
+): AdminArticleListItem[] {
+  const arr = [...items];
+  const ts = (v?: string) => (v ? new Date(v).getTime() : 0);
+  switch (sort) {
+    case "name":
+      return arr.sort((a, b) =>
+        (a.title || "").localeCompare(b.title || "", undefined, {
+          sensitivity: "base",
+        }),
+      );
+    case "modified":
+      return arr.sort((a, b) => ts(b.updatedAt) - ts(a.updatedAt));
+    case "created":
+    default:
+      return arr.sort((a, b) => ts(b.createdAt) - ts(a.createdAt));
+  }
 }
 
 /** Sort for display: scheduled/published by scheduleDate desc, drafts by updated desc. */

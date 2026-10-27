@@ -10,7 +10,6 @@ import { archivo, jetbrainsMono } from "@/lib/fonts";
 import MainFooter from "@/components/main-footer";
 import MainNavigation from "@/components/main-navigation";
 import SpinningCircleText from "@/components/spinning-circle-text";
-import ReCaptchaProvider from "@/components/recaptcha-provider";
 import CookieConsent from "@/components/cookie-consent";
 import SiteChrome from "@/components/site-chrome";
 
@@ -208,22 +207,20 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <ReCaptchaProvider>
-          {/* Public pages get the site chrome; /admin renders bare (its own
-              shell). Toggled client-side via usePathname so every public page
-              stays statically rendered. */}
-          <SiteChrome
-            nav={<MainNavigation />}
-            footer={
-              <>
-                <MainFooter />
-                <SpinningCircleText text={"Book Now · Free Consultation · "} />
-              </>
-            }
-          >
-            {children}
-          </SiteChrome>
-        </ReCaptchaProvider>
+        {/* Public pages get the site chrome; /admin renders bare (its own
+            shell). Toggled client-side via usePathname so every public page
+            stays statically rendered. */}
+        <SiteChrome
+          nav={<MainNavigation />}
+          footer={
+            <>
+              <MainFooter />
+              <SpinningCircleText text={"Book Now · Free Consultation · "} />
+            </>
+          }
+        >
+          {children}
+        </SiteChrome>
 
         <MicrosoftClarity />
         <CookieConsent />

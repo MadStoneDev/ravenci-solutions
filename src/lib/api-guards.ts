@@ -1,4 +1,4 @@
-// Shared guards for public-facing API routes: reCAPTCHA + per-IP rate limit.
+// Shared guards for public-facing API routes: Turnstile + per-IP rate limit.
 // Rate limit is backed by Upstash Redis so it works correctly across multiple
 // app instances. If Upstash isn't configured we fall back to a per-instance
 // in-memory limiter rather than allowing everything through, this still
@@ -82,29 +82,30 @@ export async function checkRateLimit(
   return { ok: true };
 }
 
-export async function verifyRecaptcha(
+export async function verifyTurnstile(
   token: string | undefined,
-  minScore = 0.5,
+  remoteIp?: string,
 ): Promise<{ ok: boolean; reason?: string }> {
-  const secret = process.env.RECAPTCHA_SECRET_KEY;
+  const secret = process.env.TURNSTILE_SECRET_KEY;
 
   // Fail closed in production. In dev with no secret configured, allow
   // through so local form testing still works.
   if (!secret) {
     if (process.env.NODE_ENV === "production") {
-      return { ok: false, reason: "reCAPTCHA not configured" };
+      return { ok: false, reason: "Turnstile not configured" };
     }
     return { ok: true };
   }
 
   if (!token) {
-    return { ok: false, reason: "Missing reCAPTCHA token" };
+    return { ok: false, reason: "Missing Turnstile token" };
   }
 
   try {
     const params = new URLSearchParams({ secret, response: token });
+    if (remoteIp) params.set("remoteip", remoteIp);
     const res = await fetch(
-      "https://www.google.com/recaptcha/api/siteverify",
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
       {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -112,13 +113,13 @@ export async function verifyRecaptcha(
         signal: AbortSignal.timeout(5000),
       },
     );
-    const data = (await res.json()) as { success: boolean; score?: number };
-    if (!data.success || (data.score ?? 0) < minScore) {
-      return { ok: false, reason: "reCAPTCHA verification failed" };
+    const data = (await res.json()) as { success: boolean };
+    if (!data.success) {
+      return { ok: false, reason: "Turnstile verification failed" };
     }
     return { ok: true };
   } catch {
-    return { ok: false, reason: "reCAPTCHA verification error" };
+    return { ok: false, reason: "Turnstile verification error" };
   }
 }
 

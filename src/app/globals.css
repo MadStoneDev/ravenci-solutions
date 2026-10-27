@@ -288,11 +288,17 @@
   --bn-colors-editor-text: inherit;
   --bn-font-family: inherit;
   background: transparent;
+  /* Fill the frame: stretch as a flex child, and lay the editor out as a
+     column so .bn-editor can grow to the full height. */
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 .bn-container[data-color-scheme] .bn-editor {
   margin-inline-start: 0;
   padding: 20px; /* matches the CodeMirror content inset so both align in the frame */
-  min-height: 560px;
+  flex: 1; /* fill the parent frame instead of a fixed min-height */
   font-family: inherit;
 }
 /* Non-italic placeholder, same colour as the title placeholder. */

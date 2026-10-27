@@ -9,6 +9,7 @@ import {
   IconX,
   IconPhoto,
   IconAlertTriangle,
+  IconAdjustmentsHorizontal,
 } from "@tabler/icons-react";
 import type { EditorView } from "@codemirror/view";
 
@@ -115,6 +116,7 @@ export function ArticleEditor({
   const saving = saveState === "saving";
   const [mode, setMode] = useState<"blocks" | "mdx">("blocks");
   const [showMediaPicker, setShowMediaPicker] = useState(false);
+  const [showPanel, setShowPanel] = useState(false); // mobile side-panel drawer
   const cmViewRef = useRef<EditorView | null>(null);
 
   // Auto-slug from title until first publish or manual edit.
@@ -260,7 +262,7 @@ export function ArticleEditor({
         : "Save draft";
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex h-full flex-col overflow-hidden">
       {/* Top bar */}
       <header className="sticky top-0 z-10 flex flex-wrap items-center gap-3 border-b border-border bg-background/95 px-4 py-2.5 backdrop-blur md:px-6">
         <Link
@@ -321,10 +323,10 @@ export function ArticleEditor({
         </div>
       )}
 
-      <div className="flex flex-1 flex-col lg:flex-row">
+      <div className="flex min-h-0 flex-1 flex-col lg:flex-row">
         {/* Canvas */}
-        <main className="min-w-0 flex-1 px-4 py-8 md:px-8">
-          <div className="mx-auto max-w-[1200px] space-y-6">
+        <main className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden p-4 lg:p-8">
+          <div className="mx-auto flex min-h-0 w-full max-w-[1200px] flex-1 flex-col space-y-6">
             <input
               value={title}
               onChange={(e) => {
@@ -335,7 +337,7 @@ export function ArticleEditor({
               className="w-full bg-transparent text-display-m text-foreground outline-none placeholder:text-muted-foreground/50"
             />
 
-            <div className="space-y-2">
+            <div className="flex min-h-0 flex-1 flex-col space-y-2">
               {/* Shared header row — same height in both modes, so switching
                   causes no vertical shift. */}
               <div className="flex h-5 items-center justify-between">
@@ -372,7 +374,10 @@ export function ArticleEditor({
                   width and min-height, so switching causes no shift. No
                   overflow-hidden, so BlockNote's drag handle can render in the
                   left gutter. */}
-              <div className="min-h-[600px] rounded-sm border border-border bg-card">
+              {/* Internal scroll: the canvas stays fixed and the editor scrolls
+                  here. `min-h-0` lets it shrink to the available height instead
+                  of forcing a floor that would push the page. */}
+              <div className="flex min-h-0 flex-grow flex-col overflow-y-auto rounded-sm border border-border bg-card">
                 {mode === "mdx" ? (
                   <MdxCodeEditor
                     value={content}
@@ -421,8 +426,31 @@ export function ArticleEditor({
           </div>
         </main>
 
-        {/* Side panel */}
-        <aside className="w-full shrink-0 space-y-7 border-t border-border p-6 lg:w-[360px] lg:border-l lg:border-t-0">
+        {/* Side panel — inline on desktop, a right-side slide-over drawer on
+            mobile (one element so its inputs/datalist exist only once). */}
+        <aside
+          className={cn(
+            "shrink-0 space-y-7 overflow-y-auto border-border p-6",
+            // Mobile: fixed drawer from the right at 80% width.
+            "fixed right-0 top-0 z-30 h-full w-4/5 border-l bg-background shadow-xl transition-transform duration-200",
+            showPanel ? "translate-x-0" : "translate-x-full",
+            // Desktop: static inline panel, no transform.
+            "lg:static lg:z-auto lg:h-auto lg:w-[360px] lg:translate-x-0 lg:border-l lg:bg-transparent lg:shadow-none",
+          )}
+        >
+          {/* Mobile-only drawer header */}
+          <div className="flex items-center justify-between lg:hidden">
+            <span className={LABEL}>Article settings</span>
+            <button
+              type="button"
+              onClick={() => setShowPanel(false)}
+              aria-label="Close settings"
+              className="rounded-sm p-1 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <IconX className="h-5 w-5" />
+            </button>
+          </div>
+
           {/* Publishing */}
           <section className="space-y-2">
             <span className={LABEL}>Publishing</span>
@@ -632,6 +660,26 @@ export function ArticleEditor({
           )}
         </aside>
       </div>
+
+      {/* Mobile: tab on the right edge to open the settings drawer */}
+      <button
+        type="button"
+        onClick={() => setShowPanel(true)}
+        aria-label="Open article settings"
+        className="fixed right-0 top-1/2 z-20 flex -translate-y-1/2 items-center justify-center rounded-l-md border border-r-0 border-border bg-card px-2.5 py-4 text-subtle shadow-md transition-colors hover:text-foreground lg:hidden"
+      >
+        <IconAdjustmentsHorizontal className="h-5 w-5" />
+      </button>
+
+      {/* Mobile: backdrop behind the open drawer */}
+      {showPanel && (
+        <button
+          type="button"
+          aria-label="Close settings"
+          onClick={() => setShowPanel(false)}
+          className="fixed inset-0 z-20 bg-black/50 lg:hidden"
+        />
+      )}
 
       {showMediaPicker && (
         <MediaPickerModal

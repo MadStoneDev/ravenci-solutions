@@ -6,14 +6,16 @@ import { requireUser } from "@/lib/admin-auth";
 import {
   fetchAdminArticles,
   computeStats,
-  sortForStatus,
+  sortArticles,
   type ArticleStatus,
+  type SortKey,
   type AdminArticleListItem,
 } from "@/lib/admin-articles";
 import { formatDate, formatTime, relativeTime } from "@/lib/admin-format";
 import { cn } from "@/lib/utils";
 import { StatusPill } from "@/components/admin/status-pill";
 import { SearchBox } from "@/components/admin/search-box";
+import { SortSelect } from "@/components/admin/sort-select";
 import { RowActions } from "@/components/admin/row-actions";
 
 export const dynamic = "force-dynamic";
@@ -28,7 +30,7 @@ const TABS: { key: "all" | ArticleStatus; label: string }[] = [
 export default async function AdminArticlesPage({
   searchParams,
 }: {
-  searchParams: Promise<{ status?: string; q?: string }>;
+  searchParams: Promise<{ status?: string; q?: string; sort?: string }>;
 }) {
   const sp = await searchParams;
   const status = (
@@ -37,13 +39,19 @@ export default async function AdminArticlesPage({
       : "all"
   ) as "all" | ArticleStatus;
   const q = (sp.q ?? "").trim().toLowerCase();
+  const sort = (
+    ["created", "modified", "name"].includes(sp.sort ?? "")
+      ? sp.sort
+      : "created"
+  ) as SortKey;
 
   const { pb } = await requireUser();
   const all = await fetchAdminArticles(pb);
   const stats = computeStats(all);
 
-  let rows = sortForStatus(all, status);
+  let rows = status === "all" ? all : all.filter((a) => a.status === status);
   if (q) rows = rows.filter((a) => a.title.toLowerCase().includes(q));
+  rows = sortArticles(rows, sort);
 
   const counts = {
     all: stats.all,
@@ -92,10 +100,11 @@ export default async function AdminArticlesPage({
         <div role="tablist" className="flex flex-wrap gap-1">
           {TABS.map((t) => {
             const active = status === t.key;
-            const href =
-              t.key === "all"
-                ? `/admin/articles${q ? `?q=${encodeURIComponent(q)}` : ""}`
-                : `/admin/articles?status=${t.key}${q ? `&q=${encodeURIComponent(q)}` : ""}`;
+            const qs = new URLSearchParams();
+            if (t.key !== "all") qs.set("status", t.key);
+            if (q) qs.set("q", q);
+            if (sort !== "created") qs.set("sort", sort);
+            const href = `/admin/articles${qs.toString() ? `?${qs}` : ""}`;
             return (
               <Link
                 key={t.key}
@@ -117,13 +126,14 @@ export default async function AdminArticlesPage({
             );
           })}
         </div>
-        <div className="pb-2">
+        <div className="flex items-center gap-2 pb-2">
+          <SortSelect />
           <SearchBox />
         </div>
       </div>
 
       {/* List */}
-      <div className="overflow-hidden rounded-sm border border-border bg-card">
+      <div className="rounded-sm border border-border bg-card">
         {rows.length === 0 ? (
           <p className="p-12 text-center text-small text-muted-foreground">
             {q ? "No articles match your search." : "Nothing here yet."}
@@ -193,8 +203,8 @@ function Row({ article: a }: { article: AdminArticleListItem }) {
         : "";
 
   return (
-    <li className="flex items-center gap-4 p-3 transition-colors hover:bg-muted/40">
-      <div className="relative hidden h-[60px] w-[96px] shrink-0 overflow-hidden rounded-sm border border-border bg-muted sm:block">
+    <li className="relative flex items-start gap-4 p-3 transition-colors hover:bg-muted/40">
+      <div className="relative w-[96px] shrink-0 self-stretch overflow-hidden rounded-sm border border-border bg-muted">
         {a.thumbUrl ? (
           <Image
             src={a.thumbUrl}
@@ -213,7 +223,7 @@ function Row({ article: a }: { article: AdminArticleListItem }) {
       <div className="min-w-0 flex-1">
         <Link
           href={`/admin/articles/${a.slug}`}
-          className="line-clamp-1 text-body font-medium text-foreground hover:text-accent"
+          className="block break-words text-body font-medium text-foreground hover:text-accent"
         >
           {a.title || "(untitled)"}
         </Link>
@@ -222,7 +232,7 @@ function Row({ article: a }: { article: AdminArticleListItem }) {
         </p>
       </div>
 
-      <div className="hidden shrink-0 md:block">
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2">
         <StatusPill status={a.status} />
       </div>
 
