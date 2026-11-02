@@ -416,11 +416,11 @@ export const ECOMMERCE: ServicePageData = {
 export const WEB_APPS: ServicePageData = {
   slug: "web-apps",
   breadcrumbLabel: "Web Apps & Client Portals",
-  name: "Web Apps & Client Portals",
+  name: "Custom web apps and client portals, built in Brisbane",
   outcome:
-    "I replace the spreadsheets and duplicate systems eating your team's time with custom software built around how your business actually works.",
+    "I replace the spreadsheets and duplicate systems eating your team's time with software built around how your business actually works.",
   supporting:
-    "Logins, roles, job tracking, document handover, and integrations with the CRM, booking, accounting or industry software you already run.",
+    "Software is what I love building most. Alongside client work, I build and run my own products, including a file-sharing app, a QR code platform, a note-taking app, and RankRiot, the site crawler I use for SEO audits. Before RAVENCI, I built a document control system for the engineering firm I worked at, to speed up the team's day-to-day work. Logins, roles, job tracking, document handover, and integrations with the software you already run: that's the kind of thing I build.",
   heroCtas: {
     primary: { label: "Request a proposal", href: "/launch-your-vision" },
     secondary: { label: "What's included", href: "#included" },
@@ -430,10 +430,15 @@ export const WEB_APPS: ServicePageData = {
     price: "$35,000",
     note: "Priced from a floor and scoped to what you need. Business platforms from $55,000, enterprise builds from $75,000.",
     ticks: [
-      "Fixed pricing, no scope creep",
-      "Built to scale from startup to enterprise",
-      "Brisbane-based, Australian business understanding",
+      "Fixed price, scoped upfront",
+      "Built to grow with your business",
+      "Brisbane-based, with Australian hosting available",
     ],
+  },
+  headings: {
+    included: "What's included in every web app I build",
+    relatedWork: "Custom software and integrations I've built",
+    faq: "Questions about custom web apps",
   },
   included: [
     { title: "Custom workflow design", description: "Built specifically for how your business operates, not bent around someone else's software." },
@@ -443,7 +448,7 @@ export const WEB_APPS: ServicePageData = {
     { title: "Talks to your existing tools", description: "Connects to Xero, your CRM and your booking system so data flows automatically instead of being re-typed three times." },
     { title: "Works on every device", description: "Your team uses it on the desktop, on the road, on a phone. Same data, same experience." },
     { title: "Your data, properly protected", description: "Encrypted connections, secure logins, and the permissions structure your industry expects." },
-    { title: "Grows with you", description: "Handles ten users or ten thousand without slowing down. You won't outgrow it the year after I ship it." },
+    { title: "Grows with you", description: "Built so you can add users, features and data over time without starting again. You shouldn't outgrow it the year after I hand it over." },
   ],
   process: {
     heading: "How a build runs.",
@@ -465,9 +470,11 @@ export const WEB_APPS: ServicePageData = {
   faq: [
     { question: "How do you make sure the app solves our business problems?", answer: "I start every project by mapping your current workflows and finding the bottlenecks. You'll see exactly how the app improves your operations before I write a line of code." },
     { question: "Can it integrate with our existing systems?", answer: "Yes. Every build includes API integration. I commonly connect accounting software like Xero and QuickBooks, CRM systems, and other business tools, so your app works with what you already use." },
+    { question: "Have you built software like this before?", answer: 'Yes, and not just for clients. I build and run my own software products, so I deal with the same things you will: real users, logins, payments, bugs at inconvenient hours, and features people keep asking for. You can see some of them on my <a href="/labs" class="text-accent hover:underline">Labs page</a>.' },
     { question: "What if our needs change as we grow?", answer: "I build everything with scale in mind, so the architecture handles more users, data and features over time. I also offer ongoing development to add features as the business evolves." },
-    { question: "How do you handle data security and backups?", answer: "The database platforms I use are secure and stable, and they protect your privacy and your customers'. I use cloud hosting close to your users so it's fast as well as safe." },
+    { question: "How do you handle data security and backups?", answer: "Everyone gets access to only what they need, through secure logins and role-based permissions. Data is backed up, and for businesses that need it, like healthcare or government work, it's kept on Australian servers. I'll talk you through exactly where your data lives and who can see it before anything is built." },
     { question: "What return can we expect from a custom app?", answer: "Most clients are after saved time, fewer manual errors, and faster decisions from better information. I scope each build around the specific problems costing you money, so the return is tied to what it actually fixes for you." },
+    { question: "Do I really need a custom app, or is there software that already does this?", answer: "Sometimes there is, and if so I'll tell you. Custom software makes sense when off-the-shelf tools force you to work around them, or when you're paying for five systems that don't talk to each other. If an existing product does the job, you're better off with that, and I'd rather say so upfront than build something you don't need." },
   ],
   closingCta: {
     heading: "Tell me what's slowing your team down.",
@@ -475,9 +482,10 @@ export const WEB_APPS: ServicePageData = {
     primary: { label: "Start a project", href: "/launch-your-vision" },
   },
   sticky: { label: "Request a proposal", href: "/launch-your-vision", startingPrice: 35000 },
-  metaTitle: "Web App Development | RAVENCI Solutions",
+  metaTitle: "Custom Web App & Software Development Brisbane | RAVENCI",
   metaDescription:
-    "Replace your spreadsheets with software that works. Custom web applications that eliminate manual work and scale with your Brisbane business.",
+    "Custom web apps, client portals and business software, built in Brisbane. Replace spreadsheets and double handling with software that fits how you work. From $35,000.",
+  serviceName: "Custom web app and software development in Brisbane",
   schema: { serviceType: "Web App Development" },
 };
 
