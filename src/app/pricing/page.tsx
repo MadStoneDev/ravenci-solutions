@@ -107,7 +107,7 @@ const groups: PriceGroup[] = [
           "Payments, shipping and tax configured",
           "Training so you can run it day-to-day",
         ],
-        timeline: "Typically 8 to 12 weeks",
+        timeline: "Typically 6 to 8 weeks",
       },
       {
         name: "Custom eCommerce",
@@ -119,7 +119,7 @@ const groups: PriceGroup[] = [
           "Migration from your old store, with redirects so you keep your rankings",
           "Headless builds when the catalogue demands it",
         ],
-        timeline: "Typically 10 to 16 weeks",
+        timeline: "Typically 8 to 10 weeks",
       },
     ],
   },

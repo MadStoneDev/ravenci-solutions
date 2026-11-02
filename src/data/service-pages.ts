@@ -345,11 +345,11 @@ export const BUILD_ONLY: ServicePageData = {
 export const ECOMMERCE: ServicePageData = {
   slug: "ecommerce",
   breadcrumbLabel: "eCommerce",
-  name: "eCommerce",
+  name: "eCommerce websites in Brisbane, on Shopify and BigCommerce",
   outcome:
     "I build you a Shopify or BigCommerce store that sells, with the product discovery, checkout, shipping logic and inventory sync that turn a good-looking store into one that makes you money.",
   supporting:
-    "Certified Shopify and BigCommerce partner. I recommend the platform that fits your operations, catalogue size and growth plans, not the one that's easiest for me.",
+    "I've designed and built online stores on Shopify, BigCommerce, WooCommerce, Square and ThriveCart, and each one used the platform that suited that business best. I don't push the platform I prefer. I'm a certified Shopify and BigCommerce partner, and I'll recommend what fits your products, your catalogue and where you're heading.",
   heroCtas: {
     primary: { label: "Request a proposal", href: "/launch-your-vision" },
     secondary: { label: "What's included", href: "#included" },
@@ -363,6 +363,11 @@ export const ECOMMERCE: ServicePageData = {
       "Checkout configured for Australian buyers",
       "You own the store and the data",
     ],
+  },
+  headings: {
+    included: "What's included in every online store I build",
+    relatedWork: "Online stores I've built for Australian businesses",
+    faq: "Questions about eCommerce websites",
   },
   included: [
     { title: "Custom theme design", description: "Your store looks and feels like your brand, not a template with your logo dropped in. Designed around how your customers browse and buy." },
@@ -392,7 +397,7 @@ export const ECOMMERCE: ServicePageData = {
     { question: "Which platform should I choose, Shopify or BigCommerce?", answer: "Most product businesses under 5,000 SKUs do best on Shopify. BigCommerce suits larger catalogues, B2B requirements, or businesses that need multi-storefront from one dashboard. I recommend based on your operations, catalogue size and growth plans, not my preference." },
     { question: "Can you migrate my existing store?", answer: "Yes. I migrate products, customers, order history and SEO equity (URL redirects, meta data, structured data). Migrations are scoped and quoted separately based on catalogue size, platform and integration complexity." },
     { question: "How long does an eCommerce build take?", answer: "A standard build takes six to eight weeks. Custom eCommerce with advanced integrations like ERP, multi-channel or custom filtering takes eight to ten weeks or more. I give you regular progress updates and stick to the agreed timeline." },
-    { question: "Do you handle ongoing store management?", answer: "I train your team to handle daily operations: orders, product updates, promotions. For ongoing platform support, my Hosting & Website Care plans cover maintenance, updates and performance monitoring. Most eCommerce clients add a plan after launch." },
+    { question: "Do you handle ongoing store management?", answer: 'I train your team to run the day-to-day: orders, product updates and promotions. For keeping the store itself updated, secure and monitored, my <a href="/website-maintenance" class="text-accent hover:underline">Hosting & Website Care plans</a> cover it, with online stores adding $180 a month to maintenance. Most eCommerce clients add a plan after launch.' },
     { question: "What about payments and shipping for Australian businesses?", answer: "I configure Australian payment gateways (Shopify Payments, Stripe, PayPal, Afterpay, Zip), GST calculation, and shipping zones for domestic and international delivery. I also set up Australia Post, Sendle or your preferred carrier for real-time rates." },
   ],
   closingCta: {
@@ -403,7 +408,8 @@ export const ECOMMERCE: ServicePageData = {
   sticky: { label: "Request a proposal", href: "/launch-your-vision", startingPrice: 12000 },
   metaTitle: "eCommerce Website Development Brisbane | Shopify & BigCommerce | RAVENCI",
   metaDescription:
-    "Custom Shopify and BigCommerce stores for Australian product businesses. Certified partner, 25+ years. eCommerce builds from $12,000. Brisbane-based.",
+    "Custom Shopify and BigCommerce stores for Australian product businesses. Certified partner, building websites for 25 years. Stores from $12,000. Brisbane-based.",
+  serviceName: "eCommerce website development in Brisbane",
   schema: {
     serviceType: "eCommerce Website Development",
     offers: [
