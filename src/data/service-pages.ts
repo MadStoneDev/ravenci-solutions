@@ -484,7 +484,7 @@ export const WEB_APPS: ServicePageData = {
 export const MANAGED_WEB: ServicePageData = {
   slug: "website-maintenance",
   breadcrumbLabel: "Hosting & Website Care",
-  name: "Hosting & Website Care",
+  name: "Website hosting, maintenance and care in Brisbane",
   outcome:
     "I host, secure and look after your website so it stays fast, online and out of your hands.",
   supporting:
@@ -504,22 +504,26 @@ export const MANAGED_WEB: ServicePageData = {
     ],
   },
   included: [
-    { title: "Managed cloud hosting", description: "Fast servers worldwide so your site loads quickly wherever your visitor is, with automatic scaling when traffic spikes." },
+    { title: "Managed cloud hosting", description: "Fast, reliable cloud servers so your site loads quickly for your customers, with room to handle a busy day. If your data needs to stay in Australia, your site stays on Australian servers." },
     { title: "SSL and secure setup", description: "Encrypted connection, secure setup, and the lock icon your customers expect to see." },
     { title: "Daily backups", description: "Backed up daily with quick restore points, so if anything ever goes wrong it's back the way it was yesterday in minutes." },
     { title: "Security monitoring and patching", description: "Continuous scans against malware and vulnerabilities, plus software, plugin and theme updates to keep everything current." },
     { title: "Uptime monitoring", description: "24/7 monitoring, so if something goes wrong at 3am I know about it before your customers do." },
     { title: "Performance checks", description: "Regular optimisation of speed, database and overall performance so pages keep loading instantly." },
     { title: "Content and link checks", description: "Regular checks of forms, links and content across browsers and devices to make sure everything works." },
-    { title: "Support and monthly reports", description: "Brisbane-based support you can reach directly, issues looked at by the next business day, and a monthly report of the work I did. (Priority turnaround is a Website Care thing.)" },
+    { title: "Support and monthly reports", description: "Support from me, here in Brisbane, that you can reach directly, issues looked at by the next business day, and a monthly report of the work I did. (Priority turnaround is a Website Care thing.)" },
   ],
+  headings: {
+    faq: "Questions about website maintenance",
+  },
   faq: [
-    { question: "What's included?", answer: "Cloud hosting, SSL, daily backups, security monitoring and patching, uptime monitoring, performance checks, and Brisbane-based support. No hidden fees or surprise add-ons. Running an online store adds $180/mo to Maintenance or Hosting + Maintenance." },
+    { question: "What's included?", answer: "Cloud hosting, SSL, daily backups, security monitoring and patching, uptime monitoring, performance checks, and Brisbane-based support. Running an online store adds $180/mo to Maintenance or Hosting + Maintenance." },
     { question: "What's the difference between maintenance and Website Care?", answer: "Maintenance keeps a site running: updates, security, backups, hosting. Website Care is a block of my time each month for design, development and content, with priority when you need something done. Most sites want maintenance; Website Care is for sites that keep changing." },
     { question: "Can I host elsewhere and still get maintenance?", answer: "Yes. Maintenance is $239/mo for a site hosted somewhere else. I'd rather host what I maintain so it's all in one place, but I don't insist on it." },
-    { question: "What if my site goes down or traffic spikes?", answer: "I monitor 24/7 and usually restore within two hours during business hours. The cloud hosting scales automatically for traffic spikes, so a busy day doesn't take your site down." },
-    { question: "Do you migrate my existing website?", answer: "Yes, I handle the full migration from your current host, though extra charges may apply. Your site will be faster and more secure from day one." },
+    { question: "What if my site goes down or traffic spikes?", answer: "I monitor your site around the clock, so I usually know it's down before you do. Issues are looked at by the next business day, or faster on a Website Care plan. And hosting is set up to cope with a busy day, so a spike in traffic shouldn't take your site down." },
+    { question: "Do you migrate my existing website?", answer: "Yes. I handle the full move from your current host, including your files, database, email settings and DNS, so you don't have to touch any of it. Simple sites are usually straightforward. Bigger or messier ones can take more work, and if so I'll quote it upfront before I start. And if you ever decide to move on from me, I'll help with that too. It's your website." },
     { question: "Is maintenance really necessary?", answer: "An unmaintained site is a soft target. Outdated plugins and no backups are how sites get hacked or go down, and fixing a breach or rebuilding after one costs far more than keeping it maintained, on top of the sales you lose while it's offline." },
+    { question: "Do you look after websites you didn't build?", answer: "Yes. A lot of the sites I maintain started that way. Before taking one on, I'll have a look at what's under the hood, so we both know what we're dealing with: outdated plugins, a theme nobody's updated in years, or something that's held together with sticky tape. I'll tell you honestly what it needs." },
   ],
   closingCta: {
     heading: "Want it handled?",
@@ -527,9 +531,10 @@ export const MANAGED_WEB: ServicePageData = {
     primary: { label: "Get started", href: "/launch-your-vision" },
   },
   sticky: { label: "Get covered", href: "/launch-your-vision", startingPrice: 39 },
-  metaTitle: "Hosting & Website Care | RAVENCI Solutions",
+  metaTitle: "Website Maintenance & Hosting Brisbane | RAVENCI Solutions",
   metaDescription:
-    "Hosting and website care from Brisbane. Hosting $39/mo, maintenance $239/mo, both together $269/mo. SSL, daily backups, security and monitoring. Website Care billed separately.",
+    "Website maintenance and hosting in Brisbane. Hosting $39/mo, maintenance $239/mo, both $269/mo. Updates, security, daily backups and monitoring. Cancel any time.",
+  serviceName: "Website maintenance and hosting in Brisbane",
   schema: {
     serviceType: "Website Hosting & Maintenance",
     offers: [
