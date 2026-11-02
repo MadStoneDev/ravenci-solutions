@@ -614,11 +614,11 @@ export const SEO_CONTENT: ServicePageData = {
 export const BRANDING: ServicePageData = {
   slug: "business-design",
   breadcrumbLabel: "Branding",
-  name: "Branding that looks as established as the work behind it",
+  name: "Business branding and logo design in Brisbane",
   outcome:
-    "I design the brand that makes a customer trust you before you've said a word, from the logo out to the ute in the car park.",
+    "Your brand is what makes a customer trust you before you've said a word. It's the logo on your quote, the sign out the front and the ute in the car park.",
   supporting:
-    "Logo and guidelines, full identity systems, signage and vehicle wraps. I don't print in-house, but I coordinate it through the same local suppliers and installers I've worked with for close to a decade.",
+    "I have a Diploma of Graphic Design, and I've been designing brands for Brisbane and Queensland businesses alongside their websites for years. That's the part most people don't think about: when the same person designs your brand and builds your website, they actually match. Logos and guidelines, full identity systems, signage and vehicle wraps.",
   heroCtas: {
     primary: { label: "Request a proposal", href: "/launch-your-vision" },
     secondary: { label: "What's included", href: "#included" },
@@ -633,46 +633,51 @@ export const BRANDING: ServicePageData = {
       "Print-ready for suppliers I trust",
     ],
   },
+  headings: {
+    included: "What you get with your branding",
+    relatedWork: "Branding I've done for Queensland businesses",
+    faq: "Questions about branding",
+  },
   included: [
     {
       title: "Logo and visual identity",
       description:
-        "A custom logo with several concepts to choose from, plus the colour palette and typography that hold the whole brand together.",
+        "A custom logo, with several concepts to choose from, plus the colours and fonts that hold the whole brand together.",
     },
     {
       title: "Brand guidelines",
       description:
-        "A style guide so the brand stays consistent as you grow, whoever ends up using it.",
+        "A simple guide that keeps your brand consistent as you grow, whoever ends up using it. Your sign writer, your printer, or the new admin person making a flyer in Canva.",
     },
     {
       title: "Print-ready stationery",
       description:
-        "Business cards, letterhead, email signatures, and invoice or quote templates, all built to match.",
+        "Business cards, letterhead, email signatures, and quote and invoice templates, all designed to match.",
     },
     {
       title: "Signage",
       description:
-        "Shopfront and reception graphics, window graphics, outdoor banners, wayfinding and A-frame signs, with installation coordinated.",
+        "Shopfront, reception and window graphics, banners, wayfinding and A-frames, with installation coordinated for you.",
     },
     {
       title: "Vehicle wraps",
       description:
-        "Partial or full wraps for sedans, utes, vans and buses: one of the best ongoing bits of marketing you'll ever own.",
+        "Partial or full wraps for cars, utes, vans and buses. Honestly, one of the best ongoing bits of marketing you'll ever pay for. It works every time you drive somewhere.",
     },
     {
       title: "Print and install handled",
       description:
-        "I don't print in-house, but I've used the same trusted local suppliers and installers for close to a decade, and I coordinate the lot.",
+        "Printing and installation coordinated through trusted local suppliers and installers I've worked with over the years. You deal with me, not three different businesses.",
     },
     {
       title: "Files in standard formats",
       description:
-        "Web-ready PNG and JPG, print-ready PDF and SVG, organised and labelled. They're yours, to use however you need.",
+        "Web-ready PNG and JPG, print-ready PDF and SVG, organised and labelled. They're yours to use however you need.",
     },
     {
       title: "Works with what you have",
       description:
-        "Starting from scratch or evolving an existing brand, I work out what's already pulling its weight and build from there.",
+        "Starting from scratch or refreshing an existing brand, I work out what's already pulling its weight and build from there.",
     },
   ],
   process: {
@@ -686,35 +691,40 @@ export const BRANDING: ServicePageData = {
     ],
   },
   relatedWork: [
-    { href: "/case-studies/covenant-security-solutions", category: "Security", title: "Covenant Security", blurb: "Brand identity, print and vehicle signage for a new security firm." },
-    { href: "/case-studies/cadeaurable", category: "eCommerce", title: "Cadeaurable", blurb: "Branding and stationery for a personalised-gifts brand, through to the store." },
-    { href: "/case-studies/coast-remedial-solutions", category: "Construction", title: "Coast Remedial Solutions", blurb: "A brand built for a remedial building specialist." },
+    { href: "/case-studies/covenant-security-solutions", category: "Security", title: "Covenant Security", blurb: "Brand identity, print and vehicle signage for a new Brisbane security firm." },
+    { href: "/case-studies/cadeaurable", category: "eCommerce", title: "Cadeaurable", blurb: "Branding, stationery and packaging for a Brisbane personalised-gifts maker, right through to her online store." },
+    { href: "/case-studies/coast-remedial-solutions", category: "Construction", title: "Coast Remedial Solutions", blurb: "Brand identity and a capability statement for Gold Coast remedial building specialists." },
   ],
   faq: [
     {
-      question: "How long does design work take?",
+      question: "How long does branding take?",
       answer:
-        "Logo and guidelines take about six weeks, a full brand identity about eight, and signage or vehicle wraps four to six. I keep you updated throughout and involve you in every decision.",
+        "Logo and guidelines take about six weeks, a full brand identity about eight, and signage or vehicle wraps four to six. I keep you updated the whole way and involve you in every decision.",
     },
     {
-      question: "What if I don't like the initial concepts?",
+      question: "What if I don't like the first concepts?",
       answer:
-        "Every package includes revisions, and I show you several directions up front rather than a single option. We refine until it genuinely represents your business.",
+        "That's what revisions are for. I show you several directions up front, not one take-it-or-leave-it option, and we refine until it genuinely feels like your business.",
+    },
+    {
+      question: "Can you design our website to match the new brand?",
+      answer:
+        'Yes, and that\'s really where it pays off. Because I design brands and <a href="/web-development" class="text-accent hover:underline">build websites</a>, your logo, colours and fonts carry straight through to the site instead of getting lost in translation between a designer and a developer.',
     },
     {
       question: "Do you handle printing and installation?",
       answer:
-        "I don't print in-house, but I work with trusted local suppliers and installers I've collaborated with for close to a decade, and I coordinate the whole thing.",
+        "I don't print in-house, but I work with local suppliers and installers I've used for close to a decade, and I coordinate the whole thing so you don't have to.",
     },
     {
-      question: "Can you work with our existing brand guidelines?",
+      question: "Can you work with our existing brand?",
       answer:
-        "Yes. I can work within what you already have or help evolve and strengthen it, after working out what's already doing its job and what needs improvement.",
+        "Yes. I can work within your current guidelines or help refresh them, once I've worked out what's already doing its job and what isn't.",
     },
     {
-      question: "What file formats do we receive?",
+      question: "What files do we get?",
       answer:
-        "Industry-standard formats: web-ready PNG and JPG, print-ready PDF and SVG, all organised and labelled. You own every file.",
+        "Web-ready PNG and JPG, print-ready PDF and SVG, all organised and labelled. You own every file.",
     },
   ],
   closingCta: {
@@ -723,9 +733,10 @@ export const BRANDING: ServicePageData = {
     primary: { label: "Start a project", href: "/launch-your-vision" },
   },
   sticky: { label: "Request a proposal", href: "/launch-your-vision", startingPrice: 3500 },
-  metaTitle: "Branding & Brand Identity Brisbane | RAVENCI",
+  metaTitle: "Branding & Logo Design Brisbane | RAVENCI Solutions",
   metaDescription:
-    "Branding and brand identity for established Brisbane businesses. Logo and guidelines from $3,500, full identity from $10,000, plus signage and vehicle wraps.",
+    "Business branding and logo design in Brisbane. Logos, brand guidelines, signage and vehicle wraps, from the person who builds your website too. From $3,500.",
+  serviceName: "Branding and brand identity design in Brisbane",
   schema: {
     serviceType: "Branding",
     offers: [
