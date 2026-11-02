@@ -225,6 +225,9 @@ export const PROFESSIONAL_SERVICES: IndustryPageData = {
   headline: "Websites for professional services firms",
   intro:
     "Your clients choose you on reputation, and your website should back that up, not quietly undercut it. I build credibility-first sites for Brisbane accountants, bookkeepers, lawyers, financial advisers and consultants, with careful migrations that protect your rankings and content structured around your advertising obligations. One senior developer, you own everything, no lock-in. From $7,500, 85+ PageSpeed guaranteed.",
+  introExtra: [
+    "Before RAVENCI, I spent five years at van der Meer Consulting, a firm of about 100 people across three offices. Alongside my drafting work, I set up the IT and network for the Brisbane office when we first opened here, trained junior staff, and built a document control system along with other tools to speed up the day-to-day work. So I know what it's like inside a professional firm: the clients are busy, the partners are busier, and nobody wants to think about the website until something goes wrong.",
+  ],
   pains: [
     { title: "You look smaller than you are", description: "A dated or clumsy site chips away at your reputation, quietly costing you the better enquiries before they ever reach you." },
     { title: "A rebuild can cost you your rankings", description: "Redirect mapping and careful migration carry across the search positions you've spent years earning, instead of losing them on launch day." },
