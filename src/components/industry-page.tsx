@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import Accordion from "@/components/accordion";
 import Breadcrumbs from "@/components/breadcrumbs";
 import SectionLabel from "@/components/section-label";
 import { Button } from "@/components/ui/button";
@@ -24,11 +25,25 @@ export default function IndustryPage({ data }: { data: IndustryPageData }) {
     ],
   };
 
+  const faqJsonLd =
+    data.faq && data.faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: data.faq.map((q) => ({
+            "@type": "Question",
+            name: q.question,
+            // Strip any inline markup (e.g. links) so the schema text is plain.
+            acceptedAnswer: { "@type": "Answer", text: q.answer.replace(/<[^>]+>/g, "") },
+          })),
+        }
+      : null;
+
   const serviceJsonLd = data.schema && {
     "@context": "https://schema.org",
     "@type": "Service",
     serviceType: data.schema.serviceType,
-    name: data.metaTitle,
+    name: data.serviceName ?? data.metaTitle,
     description: data.metaDescription,
     provider: {
       "@type": "ProfessionalService",
@@ -57,6 +72,9 @@ export default function IndustryPage({ data }: { data: IndustryPageData }) {
   return (
     <main className="flex flex-col">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      {faqJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       {serviceJsonLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       )}
@@ -68,6 +86,11 @@ export default function IndustryPage({ data }: { data: IndustryPageData }) {
           <SectionLabel label={`Industry / ${data.industryLabel}`} tick />
           <h1 className="text-display-l text-foreground">{data.headline}</h1>
           <p className="text-lead text-muted-foreground">{data.intro}</p>
+          {data.introExtra?.map((para, i) => (
+            <p key={i} className="text-body text-muted-foreground">
+              {para}
+            </p>
+          ))}
           <div className="mt-2 flex flex-wrap gap-3">
             <Button asChild size="lg" variant="primary">
               <Link href={data.cta.primary.href}>Start a project</Link>
@@ -85,7 +108,7 @@ export default function IndustryPage({ data }: { data: IndustryPageData }) {
       <section className={`${SECTION} border-b border-border`}>
         <div className="mb-10 flex flex-col gap-3">
           <SectionLabel index="01" label="What I hear" />
-          <h2 className="text-heading-m text-foreground">The problems I hear, every time</h2>
+          <h2 className="text-heading-m text-foreground">{data.headings?.pains ?? "The problems I hear, every time"}</h2>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {data.pains.map((pain, i) => (
@@ -105,7 +128,7 @@ export default function IndustryPage({ data }: { data: IndustryPageData }) {
         <div className="mb-10 flex flex-col gap-3">
           <SectionLabel index="02" label="What I build" tone="muted" />
           <h2 className="text-heading-m text-foreground">
-            Built for how {data.industryLabel.toLowerCase()} actually runs
+            {data.headings?.solutions ?? `Built for how ${data.industryLabel.toLowerCase()} actually runs`}
           </h2>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -117,7 +140,13 @@ export default function IndustryPage({ data }: { data: IndustryPageData }) {
           ))}
         </div>
 
-        <div className="mt-8 flex flex-col gap-4 rounded-sm border border-white/15 p-7 md:flex-row md:items-center md:gap-8">
+        {data.integrationsNote && (
+          <p className="mt-8 text-body text-muted-foreground">{data.integrationsNote}</p>
+        )}
+
+        <div
+          className={`${data.integrationsNote ? "mt-4" : "mt-8"} flex flex-col gap-4 rounded-sm border border-white/15 p-7 md:flex-row md:items-center md:gap-8`}
+        >
           <span className="font-mono text-label uppercase text-muted-foreground md:w-40 md:shrink-0">
             Integrations
           </span>
@@ -144,7 +173,7 @@ export default function IndustryPage({ data }: { data: IndustryPageData }) {
         <section id="work" className={`${SECTION} border-b border-border`}>
           <div className="mb-10 flex flex-col gap-3">
             <SectionLabel index="03" label={`${data.industryLabel} work`} />
-            <h2 className="text-heading-m text-foreground">Built for this industry</h2>
+            <h2 className="text-heading-m text-foreground">{data.headings?.caseStudies ?? "Built for this industry"}</h2>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {data.caseStudies.map((work) => {
@@ -210,6 +239,23 @@ export default function IndustryPage({ data }: { data: IndustryPageData }) {
               {data.testimonial.role ? ` · ${data.testimonial.role}` : ""}
             </figcaption>
           </figure>
+        </section>
+      )}
+
+      {/* FAQ (optional per page) */}
+      {data.faq && data.faq.length > 0 && (
+        <section className={`${SECTION} border-b border-border`}>
+          <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
+            <div className="flex flex-col gap-4 lg:w-[360px] lg:shrink-0">
+              <SectionLabel index="04" label="Questions" />
+              <h2 className="text-heading-m text-foreground">{data.headings?.faq ?? "Common questions"}</h2>
+            </div>
+            <div className="flex-1">
+              <Accordion
+                items={data.faq.map((q) => ({ title: q.question, content: q.answer, summary: q.answer }))}
+              />
+            </div>
+          </div>
         </section>
       )}
 
