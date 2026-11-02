@@ -143,28 +143,65 @@ export const CONSTRUCTION: IndustryPageData = {
 export const HEALTHCARE: IndustryPageData = {
   slug: "healthcare",
   industryLabel: "Healthcare",
-  metaTitle: "Healthcare Websites Brisbane | RAVENCI Solutions",
+  metaTitle: "Medical & Healthcare Website Design Brisbane | RAVENCI",
   metaDescription:
-    "Websites for Brisbane healthcare practices. Online booking, patient privacy, NDIS-ready, Cliniko and HotDoc integration, AHPRA-aware. From $7,500.",
-  headline: "Websites for healthcare practices",
+    "Websites for Brisbane medical practices, clinics and allied health. Online booking, privacy-aware forms and AHPRA-aware content. From $7,500.",
+  headline: "Websites for Brisbane medical practices and clinics",
   intro:
-    "Your patients look you up before they book, and a slow or dated site quietly tells them the practice is behind. I build fast, privacy-aware sites for Brisbane medical practices, allied health and NDIS providers that take bookings through the tools you already run, and handle AHPRA advertising rules and patient privacy properly from day one. From $7,500, 85+ PageSpeed guaranteed.",
+    "People value convenience. They want to book online, find out whether you bulk bill, and learn a bit about the doctors before they walk in. Some things they'd rather read about at home than ask about in a waiting room full of other patients.",
+  introExtra: [
+    "I'll be upfront: I'm not a healthcare-only agency. But I've built a site for a medical careers business that places doctors, nurses and practitioners, with content that had to stay within AHPRA's rules, and I've connected Cliniko and other booking systems into a client's website. I know where the traps are, and I'd rather tell you about them before you fall into one.",
+    "I build for GPs, specialists, allied health and wellness practices in Brisbane and across Australia. From $7,500, with 85+ on Google's PageSpeed test guaranteed.",
+  ],
+  headings: {
+    pains: "What practice owners tell me about their websites",
+    solutions: "What I build for healthcare practices",
+    faq: "Questions practice owners ask me",
+  },
   pains: [
-    { title: "A dated site loses patients before they book", description: "Patients judge the practice by the website. A slow or clumsy one sends them to the next result before they ever call." },
-    { title: "The phone never stops", description: "Bookings, forms and results handled by phone bury your front desk. I wire online booking into the tools you already run so the admin drops." },
-    { title: "Patient privacy is a real exposure", description: "The Australian Privacy Principles apply from day one. SSL, secure forms and proper data handling are built in, not bolted on." },
-    { title: "NDIS participants expect transparency", description: "Clear service listings, pricing transparency and accessibility features that NDIS participants look for, done properly." },
+    { title: "Patients judge the practice by the website", description: "A slow, dated site quietly tells people the practice is behind. They click the next result before they ever pick up the phone." },
+    { title: "The phone never stops", description: "Bookings, questions and forms all handled by phone bury your front desk. Online booking that actually works takes a lot of that off their plate." },
+    { title: "Patient privacy is a real responsibility", description: "Health information is treated as sensitive under Australian privacy law. Your contact and intake forms need to handle it properly, not just look secure." },
+    { title: "Advertising rules are easy to break by accident", description: "Testimonials, \"best\" claims and promised results can all land you in trouble with AHPRA. Most generic web designers, and most AI tools, won't warn you." },
   ],
   solutions: [
-    { title: "Booking that fits your tools", description: "Online booking wired into HotDoc, Cliniko, Halaxy or whatever you already run, so it reduces calls instead of adding another system." },
-    { title: "Patient portals and secure forms", description: "Encrypted intake forms and secure areas so patients handle forms and results online, safely." },
-    { title: "AHPRA-aware, accessible content", description: "Copy and claims structured around AHPRA advertising rules, and built to WCAG 2.1 AA so every patient can use it." },
+    { title: "Online booking that fits your tools", description: "Booking connected to the system you already run, set up so it feels like part of your site rather than a bolt-on. Fewer calls, not another system to manage." },
+    { title: "Secure forms", description: "Contact and intake forms built with patient privacy in mind, with SSL and careful handling of what's collected and where it goes." },
+    { title: "AHPRA-aware, accessible content", description: "Pages written and structured around AHPRA's advertising rules, and built to WCAG 2.1 AA so every patient can use the site, including people using screen readers." },
   ],
+  integrationsNote: "I can connect your site to the software you already run, like:",
   integrations: ["CLINIKO", "HALAXY", "HOTDOC", "HEALTHENGINE", "NOOKAL", "BEST PRACTICE", "COVIU", "[YOUR SYSTEM]"],
   stats: [
-    { value: "25+", label: "Years in digital" },
+    { value: "25+", label: "Years building websites" },
     { value: "75+", label: "Australian businesses" },
     { value: "85+", label: "PageSpeed, guaranteed", accent: true },
+  ],
+  faq: [
+    {
+      question: "Can you connect online booking to Cliniko, HotDoc or Halaxy?",
+      answer:
+        "Yes. Most practice software offers a booking widget or link, and I'll set it up so it looks and works like part of your site. If your system has an API, I can go further than that. Tell me what you use and I'll tell you what's possible.",
+    },
+    {
+      question: "Can I put patient testimonials on my website?",
+      answer:
+        "Not about clinical care. AHPRA's advertising rules don't allow testimonials about the clinical side of a regulated health service. Reviews about things like parking, wait times or friendly reception staff are a different story. I'll help you work out what's safe to show.",
+    },
+    {
+      question: "Does the Privacy Act apply to my practice?",
+      answer:
+        "Almost certainly. Most small businesses are exempt from the Privacy Act, but health service providers aren't, whatever their size. That means how your website collects and stores patient information matters, and I build forms with that in mind.",
+    },
+    {
+      question: "What does a medical practice website actually need?",
+      answer:
+        'More than most people expect: AHPRA-compliant content, privacy-aware forms, booking, practitioner profiles and clear information about fees and billing. I\'ve written a <a href="/medical-practice-website-requirements" class="text-accent hover:underline">full guide to what Australian medical practice websites need</a>.',
+    },
+    {
+      question: "How much does a website for a practice cost?",
+      answer:
+        'Most practice websites I do start at $7,500 for a WordPress site you can edit yourself, or $10,000 for a custom build with deeper booking or software integrations. My <a href="/cost-of-a-website-in-brisbane" class="text-accent hover:underline">Brisbane website cost guide</a> breaks down the rest.',
+    },
   ],
   cta: {
     heading: "Ready to modernise your practice?",
@@ -172,9 +209,10 @@ export const HEALTHCARE: IndustryPageData = {
     primary: { label: "Start a project", href: "/launch-your-vision" },
     secondary: CTA_SECONDARY,
   },
+  serviceName: "Medical and healthcare website design in Brisbane",
   schema: {
     serviceType: "Healthcare Website Design",
-    offers: [{ name: "Healthcare Website", price: "7500", description: "Patient portals, online booking, privacy compliance, NDIS-ready, telehealth integration." }],
+    offers: [{ name: "Healthcare Website", price: "7500", description: "Websites for medical practices, clinics and allied health, with online booking, privacy-aware forms and AHPRA-aware content." }],
   },
 };
 
