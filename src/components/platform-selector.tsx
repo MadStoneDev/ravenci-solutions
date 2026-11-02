@@ -27,7 +27,7 @@ const OPTIONS: PlatformOption[] = [
       " apart. I built my own builder to be simple to use. After launch, I record videos showing you how to use" +
       " the builder with your own site. Not generic tutorials you have to figure out how to apply. Your site, your pages.",
     spec: [
-      "A custom block system, without all the extra bloat (needly code that weighs a site down)",
+      "A custom block system, without all the extra bloat (needless code that weighs a site down)",
       "Scores 85+ on Google's speed test, which a lot of sites never reach",
       "As many pages as your website needs",
       "Basic analytics and SEO out of the box",

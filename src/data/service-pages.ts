@@ -60,6 +60,10 @@ export interface ServicePageData {
   heroCtas: { primary: CtaLink; secondary?: CtaLink };
   pricingAnchor: PricingAnchor;
   included: IncludedItem[];
+  /** Optional per-page overrides for section headings that otherwise use the
+   * template defaults ("Included in every build", "Built this way",
+   * "Common questions"). Set only where a page needs its own wording. */
+  headings?: { included?: string; relatedWork?: string; faq?: string };
   process?: { heading: string; note?: string; steps: ProcessStep[] };
   relatedWork?: RelatedWorkItem[];
   faq: ServiceFaq[];
@@ -81,11 +85,11 @@ export interface ServicePageData {
 export const WEB_DEVELOPMENT: ServicePageData = {
   slug: "web-development",
   breadcrumbLabel: "Website Design & Development",
-  name: "Website Design & Development",
+  name: "Web design and development in Brisbane",
   outcome:
-    "One senior developer designs it around your business and hand-builds it. The whole website, not just the look.",
+    "I design your website around your business, then I build it by hand. Not a template with your logo dropped in. The whole thing, from the layout you see to the code underneath it.",
   supporting:
-    "Your site has to carry real load: traffic, content, integrations, and years of edits by people who aren't developers. I build it to handle all of that.",
+    "I'm based in Brisbane and work with businesses here and right across Australia, mostly builders, clinics and professional firms. Your site has to handle real traffic, the tools you already use, and years of edits by people who aren't developers. That's what I build it for.",
   heroCtas: {
     primary: { label: "Request a proposal", href: "/launch-your-vision" },
     secondary: { label: "What's included", href: "#included" },
@@ -93,67 +97,72 @@ export const WEB_DEVELOPMENT: ServicePageData = {
   pricingAnchor: {
     fromLabel: "FROM",
     price: "$7,500",
-    note: "Scoped and fixed before we start. Custom sites from $10,000, eCommerce from $12,000.",
+    note: "Every project is scoped and priced before we start. WordPress sites from $7,500, custom builds from $10,000 and online stores from $12,000.",
     ticks: [
       "85+ PageSpeed guaranteed",
       "You own the code and content",
       "Tailored video training included",
     ],
   },
+  headings: {
+    included: "What's included in every website I build",
+    relatedWork: "Websites I've built for Australian businesses",
+    faq: "Questions about getting a website built",
+  },
   included: [
     {
-      title: "Responsive design",
+      title: "Built for phones first",
       description:
-        "Drawn mobile-first and tested on real devices, not just a browser resize.",
+        "Most of your customers will see your site on their phone before anything else. I design for that and test on real devices, not just a shrunk-down browser window.",
     },
     {
       title: "A CMS you'll actually use",
       description:
-        "My own block system. Edit any page without a developer and without breaking the layout.",
+        "The CMS is the part where you edit your content. Mine is my own block system, RAVENCI Builder, so you can change any page yourself without calling me and without wrecking the layout.",
     },
     {
-      title: "Performance optimisation",
+      title: "Speed, guaranteed",
       description:
-        "Core Web Vitals handled in the build, not patched by a caching plugin afterwards.",
+        "85+ on Google's PageSpeed test. I build it fast from the start rather than patching it with a caching plugin afterwards.",
     },
     {
-      title: "SEO built in",
+      title: "SEO from day one",
       description:
-        "Structure, markup and schema done while the site is built, not bolted on afterwards.",
+        "Page structure, schema (code that tells Google and AI what your business does) and local signals for Brisbane searches, all set up while I build. Not bolted on later.",
     },
     {
-      title: "Accessibility to WCAG 2.1 AA",
+      title: "Accessible to WCAG 2.1 AA",
       description:
-        "Keyboard navigation, proper contrast, and real labels. It's becoming a legal requirement in Australia.",
+        "Keyboard navigation, readable contrast and proper labels. It's good for your customers, and more and more it's expected of Australian businesses.",
     },
     {
-      title: "Video training, made for you",
+      title: "Training videos for your site",
       description:
-        "Recorded against your site, not a generic tutorial. So you're not dependent on me.",
+        "I record them on your actual website, so you're not trying to translate a generic tutorial. I don't want you dependent on me.",
     },
     {
       title: "Analytics and Search Console",
       description:
-        "Configured and verified, in accounts you own, before launch day.",
+        "Set up and verified before launch, in accounts you own.",
     },
     {
-      title: "SSL and a secure launch",
+      title: "A safe launch",
       description:
-        "Certificates, redirects and a migration plan so you don't lose rankings on the switch.",
+        "SSL (the padlock next to your web address), redirects from your old pages and a migration plan, so you don't lose the Google rankings you've already earned.",
     },
     {
       title: "Revision rounds",
       description:
-        "Built into every project. The design stage is the right time to change your mind.",
+        "Built into every project. The design stage is the best time to change your mind, so I'd rather you do it then.",
     },
   ],
   process: {
-    heading: "First look in about three weeks. Then feedback, final touches, and live.",
-    note: "Once the design's signed off I start building. You'll see the site on a private staging link around three weeks in, then we run two rounds of feedback and the final polish before going live. Bigger sites take longer. I scope the exact timeline with the fixed price, so you know before we start.",
+    heading: "How your website gets built",
+    note: "Once you've signed off the design, I start building. Around three weeks in, you'll see your site on a private staging link (a hidden copy only you and I can see). We go through two rounds of feedback, I polish it, and it goes live. Bigger sites take longer, and I'll tell you exactly how long in the proposal so there are no surprises.",
     steps: [
       {
         title: "Design sign-off",
-        description: "We lock the design before I write code. Bring your own and we start right here.",
+        description: "We lock in the design before I write any code. Already have a design? We start here.",
       },
       {
         title: "Development",
@@ -165,15 +174,15 @@ export const WEB_DEVELOPMENT: ServicePageData = {
       },
       {
         title: "Feedback",
-        description: "Two rounds. You review it, I make the changes.",
+        description: "Two rounds. You tell me what to change, I change it.",
       },
       {
         title: "Final touches",
-        description: "Performance, accessibility and cross-device checks.",
+        description: "Speed, accessibility and testing across phones, tablets and browsers.",
       },
       {
         title: "Go live",
-        description: "Launch, then hosting, patching, changes and reporting.",
+        description: "Launch day, then hosting, updates and support for as long as you want it.",
       },
     ],
   },
@@ -199,29 +208,34 @@ export const WEB_DEVELOPMENT: ServicePageData = {
   ],
   faq: [
     {
-      question: "How long does a typical website take to build?",
+      question: "How long does it take to build a website?",
       answer:
-        "A foundation site takes about three weeks, a growth site four to six, and a premium brand and web project ten to fourteen. The variable is almost always content, not code.",
+        "A WordPress business site usually takes three to six weeks. A custom build with integrations takes six to ten, and an online store eight to twelve. Honestly, what slows most projects down isn't the code. It's waiting on content. The sooner you have your words and photos ready, the sooner you launch.",
     },
     {
-      question: "What if I am not happy with the result?",
+      question: "What if I'm not happy with the result?",
       answer:
-        "You sign off the design before I write any code, and revision rounds are written into every project. Nothing gets built that you have not already seen and approved.",
+        "You sign off the design before I write a single line of code, and revision rounds are built into every project. Nothing gets built that you haven't already seen and approved. And if something still isn't right, tell me. I'd rather fix it than have you put up with it.",
     },
     {
       question: "Can I update the website myself after it launches?",
       answer:
-        "Yes, and you will want to. I build on my own block system so you can edit any page without breaking the layout, and every project includes video training recorded against your actual site.",
+        "Yes, and I want you to. My block system lets you edit any page without breaking the layout, and I record training videos on your actual site so you know exactly how.",
     },
     {
-      question: "What makes this more expensive than a $999 website?",
+      question: "Why does it cost more than a $999 website?",
       answer:
-        "A $999 site is one page, no revisions, and a template you'll be replacing inside two years. What I build is meant to still be doing its job years after launch.",
+        "Because with a $999 website, you usually end up paying twice. It's often one page, no revisions, and a template you'll be replacing within two years. I build sites to still be doing their job five years from now.",
+    },
+    {
+      question: "Do you work with businesses outside Brisbane?",
+      answer:
+        "Yes. I'm in Brisbane, but I've built sites for businesses in Sydney, on the Gold Coast and across Australia. Video calls work fine, and if you're local, I'm happy to meet in person.",
     },
     {
       question: "Do you handle hosting and domains too?",
       answer:
-        "I do. Managed hosting starts at $39 a month with SSL, daily backups and monitoring, and I manage domains and DNS as part of it. One invoice, one person to call.",
+        "I do. Hosting and maintenance together is $269 a month and covers SSL, daily backups, updates, security and monitoring. I can look after your domain and DNS too. One invoice, one person to call.",
     },
   ],
   closingCta: {
@@ -230,9 +244,9 @@ export const WEB_DEVELOPMENT: ServicePageData = {
     primary: { label: "Launch your vision", href: "/launch-your-vision" },
   },
   sticky: { label: "Request a proposal", href: "/launch-your-vision", startingPrice: 7500 },
-  metaTitle: "Custom Website Design Brisbane, Built to Last | RAVENCI",
+  metaTitle: "Web Design & Development Brisbane | RAVENCI Solutions",
   metaDescription:
-    "Custom websites for established Brisbane businesses. Fast, owned by you, still working in five years. No templates, no plugin clutter. From $7,500.",
+    "Brisbane web design and development by one developer. Custom-built, owned by you, easy to edit and still fast in five years. From $7,500.",
   schema: {
     serviceType: "Website Design & Development",
     offers: [
