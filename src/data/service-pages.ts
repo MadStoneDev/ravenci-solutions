@@ -78,6 +78,8 @@ export interface ServicePageData {
   // SEO
   metaTitle: string;
   metaDescription: string;
+  /** Optional Service schema name. Falls back to the hero `name` when unset. */
+  serviceName?: string;
   /** Optional Service schema offers for JSON-LD. */
   schema?: { serviceType: string; offers?: ServiceSchemaOffer[] };
 }
@@ -544,11 +546,11 @@ export const MANAGED_WEB: ServicePageData = {
 export const SEO_CONTENT: ServicePageData = {
   slug: "seo-and-content",
   breadcrumbLabel: "SEO / AEO / GEO",
-  name: "SEO / AEO / GEO",
+  name: "SEO for Brisbane businesses, on Google and in AI answers",
   outcome:
-    "I make sure the right customers can find you when they search, and that the answer they get is yours.",
+    "Your customers are searching for what you do. Some type it into Google. More and more are asking ChatGPT, Gemini or Google's AI instead. I make sure they find you either way, and that what they're told about you is actually right.",
   supporting:
-    "Technical SEO, content and local presence for Google, plus the structured data that helps AI assistants quote you correctly when buyers ask them instead.",
+    "SEO gets you found on Google. AEO (answer engine optimisation) and GEO (generative engine optimisation) are the newer names for getting found, and quoted correctly, by AI assistants. Different acronyms, same goal: the right people finding you. I do all three for businesses in Brisbane and across Australia.",
   heroCtas: {
     primary: { label: "Request a proposal", href: "/launch-your-vision" },
     secondary: { label: "What's included", href: "#included" },
@@ -556,32 +558,38 @@ export const SEO_CONTENT: ServicePageData = {
   pricingAnchor: {
     fromLabel: "FROM",
     price: "$1,750/mo",
-    note: "Standard SEO plan. eCommerce SEO and campaigns from $2,250/mo. Copywriting from $390 per page.",
+    note: "Standard SEO from $1,750/mo. eCommerce SEO and campaigns from $2,250/mo. Copywriting from $390 per page. Billed monthly, cancel any time.",
     ticks: [
-      "I focus on leads and sales, not just traffic",
-      "Transparent AUD pricing, clear scopes",
-      "Content written for your customers first",
+      "Leads and sales, not just traffic",
+      "Clear monthly pricing in AUD",
+      "Written for your customers first",
     ],
   },
+  headings: {
+    included: "What's included in my monthly SEO plans",
+    relatedWork: "SEO results for Australian businesses",
+    faq: "Questions about SEO and AI search",
+  },
   included: [
-    { title: "Technical SEO", description: "I make sure Google can read your site properly: crawlability, indexation and sitemaps sorted so the right pages get found." },
-    { title: "Keyword research", description: "In-depth research into the terms your customers actually search for, up to 50 target terms." },
-    { title: "On-page optimisation", description: "On-page work across your key pages, up to eight a month, plus internal linking improvements." },
-    { title: "Content strategy and articles", description: "Content planning that brings the right customers in, with two articles or posts a month and on-page refreshes." },
-    { title: "Local SEO", description: "Optimisation for local searches to win in Brisbane and your service areas, including Google Business Profile." },
-    { title: "Structured data", description: "Schema markup on your key templates, so search engines and AI assistants understand exactly what each page is about." },
-    { title: "Conversion-focused copy", description: "Website copy written to move visitors towards enquiries and sales, not just to fill the page." },
-    { title: "Monthly reporting and strategy call", description: "Clear reporting on rankings, traffic quality and conversions, plus a monthly strategy call." },
+    { title: "Technical SEO", description: "I make sure Google can actually read your site: what's indexed, what's broken and what's slowing it down. I check it with RankRiot, a site crawler I built myself." },
+    { title: "Keyword research", description: "Finding the words your customers actually use, not the ones your industry uses. They're often not the same." },
+    { title: "On-page improvements", description: "Titles, headings, content and internal links on your key pages, improved month by month." },
+    { title: "New content", description: "Pages or articles written or improved each month, aimed at the questions your customers are actually asking." },
+    { title: "Local SEO", description: "Your Google Business Profile looked after, and your site set up to win searches in Brisbane and the areas you serve." },
+    { title: "AI visibility tracking", description: "I track how ChatGPT, Gemini and Google's AI describe your business, and work on what they get wrong." },
+    { title: "Structured data", description: "Schema (code that tells search engines and AI what your business is and does) on your key pages." },
+    { title: "Monthly report", description: "What I did, what changed in your rankings, traffic and enquiries, and what's next. In plain English." },
   ],
   relatedWork: [
     { href: "/case-studies/goingdark", category: "eCommerce", title: "GoingDark", blurb: "Fixed hundreds of 404s, added alt text and restructured pages. Organic search up 12.5% three months after relaunch." },
   ],
   faq: [
-    { question: "How long does it take to see SEO results?", answer: "Most businesses start seeing improvements in three to six months, with significant gains typically within six to twelve. It depends on your competition, domain authority and how consistently the work gets done." },
-    { question: "Do you guarantee specific rankings or traffic?", answer: "No ethical SEO provider can guarantee rankings. What I guarantee is disciplined execution and measurable improvements in visibility, traffic quality and conversions." },
-    { question: "Can you work with our existing marketing team?", answer: "Yes. I work well alongside in-house teams, provide training and guidelines, and fit in wherever you need me." },
-    { question: "What industries do you work with?", answer: "I work across industries, with strong experience in professional services, healthcare, retail and B2B." },
-    { question: "How do you measure success and ROI?", answer: "I track organic traffic growth, rankings, conversions, and revenue attributed to organic channels, reported to you every month." },
+    { question: "What's the difference between SEO, AEO and GEO?", answer: "Honestly, less than the acronyms suggest. SEO is getting found on search engines like Google. AEO and GEO are about getting found, and described correctly, by AI tools like ChatGPT and Google's AI Overviews. They mostly rely on the same things: a site that's easy to read, content that answers real questions, and a business other sites talk about. I do them together because they work together." },
+    { question: "How long does it take to see results?", answer: "Usually three to six months before you notice a real difference, and longer in competitive markets. Anyone promising page one in a few weeks is either guessing or about to do something that gets you penalised later." },
+    { question: "Do you guarantee rankings?", answer: "No, and be wary of anyone who does. Nobody controls Google. What I can promise is honest work done every month, and reporting that shows you exactly what changed." },
+    { question: "Can you work alongside our marketing team?", answer: "Yes. I'm happy to fit in with an in-house team or another agency, whether that's handling the technical side, writing content, or training your people to do more of it themselves." },
+    { question: "What industries do you work with?", answer: "Mostly construction, healthcare and professional services, plus online stores. I build websites for these industries too, so I understand how their customers search." },
+    { question: "Do I have to sign a contract?", answer: "No. SEO plans are billed monthly and you can cancel any time. If I'm not earning my place, you shouldn't have to keep paying me." },
   ],
   closingCta: {
     heading: "Want to get found?",
@@ -589,9 +597,10 @@ export const SEO_CONTENT: ServicePageData = {
     primary: { label: "Start a project", href: "/launch-your-vision" },
   },
   sticky: { label: "Request a proposal", href: "/launch-your-vision", startingPrice: 1750 },
-  metaTitle: "SEO & Content Services | RAVENCI Solutions",
+  metaTitle: "SEO Services Brisbane, for Google and AI Search | RAVENCI",
   metaDescription:
-    "SEO and content in Brisbane, Australia that gets you found and converts. Transparent AUD pricing. On-page SEO, content, and ethical link building.",
+    "SEO, AEO and GEO for Brisbane businesses. Get found on Google and described correctly by ChatGPT and Google's AI. From $1,750/mo, cancel any time.",
+  serviceName: "SEO services in Brisbane",
   schema: {
     serviceType: "SEO & Content",
     offers: [

@@ -42,7 +42,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         "@context": "https://schema.org",
         "@type": "Service",
         serviceType: data.schema.serviceType,
-        name: data.name,
+        name: data.serviceName ?? data.name,
         description: data.metaDescription,
         provider: {
           "@type": "ProfessionalService",
@@ -60,7 +60,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           ? {
               hasOfferCatalog: {
                 "@type": "OfferCatalog",
-                name: `${data.name} packages`,
+                name: `${data.serviceName ?? data.name} packages`,
                 itemListElement: data.schema.offers.map((o) => ({
                   "@type": "Offer",
                   name: o.name,
