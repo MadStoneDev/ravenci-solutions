@@ -1,6 +1,5 @@
 ﻿"use client";
 
-import { useEffect, useRef } from "react";
 import Link from "next/link";
 
 export default function SpinningCircleText({
@@ -12,16 +11,11 @@ export default function SpinningCircleText({
   const padding = 10;
   const radius = (size - padding * 2) / 2;
   const center = size / 2;
-  const circumference = Math.PI * radius * 2;
 
   const pathD = `
     M ${center},${padding}
     A ${radius},${radius} 0 1 1 ${center},${size - padding}
     A ${radius},${radius} 0 1 1 ${center},${padding}`;
-
-  const textLength = text.length * 8;
-  const repetitions = Math.ceil(circumference / textLength);
-  const repeatedText = text.repeat(repetitions);
 
   return (
     <Link
@@ -30,6 +24,7 @@ export default function SpinningCircleText({
       target="_blank"
     >
       <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[70%] h-[70%] rounded-full z-10">
+        {/* eslint-disable-next-line @next/next/no-img-element -- static SVG logo; next/image optimisation adds nothing here */}
         <img
           src={`/ravenci-symbol-avatar.svg`}
           alt="Ravenci Logo"

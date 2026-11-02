@@ -124,8 +124,11 @@ async function handleInstallmentPayment(invoiceId: string) {
       expand: ["subscription"],
     });
 
-    // FIXED: Cast to any to access expanded property, then validate
-    const invoiceWithExpanded = invoice as any;
+    // Type the expanded `subscription` property, which the base Invoice type
+    // doesn't include, so we can read it without `any`.
+    const invoiceWithExpanded = invoice as Stripe.Invoice & {
+      subscription?: string | Stripe.Subscription | null;
+    };
 
     if (!invoiceWithExpanded.subscription) {
       console.error("No subscription found in invoice");

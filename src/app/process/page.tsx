@@ -2,7 +2,6 @@ import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/metadata";
 import Link from "next/link";
 
 import {
-  IconSearch,
   IconBulb,
   IconPalette,
   IconCode,

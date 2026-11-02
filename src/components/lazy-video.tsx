@@ -53,6 +53,7 @@ export default function LazyVideo({ src, poster, className }: LazyVideoProps) {
           <source src={src} type="video/mp4" />
         </video>
       ) : (
+        // eslint-disable-next-line @next/next/no-img-element -- full-bleed video poster fallback; next/image sizing would fight the object-cover layout
         <img
           src={poster}
           alt=""

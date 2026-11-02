@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IconArrowRight, IconExternalLink } from "@tabler/icons-react";
+import { IconExternalLink } from "@tabler/icons-react";
 
 import Breadcrumbs from "@/components/breadcrumbs";
 import SectionLabel from "@/components/section-label";

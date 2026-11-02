@@ -62,7 +62,13 @@ function calculateServerTotals(
   return { oneTime: oneTimeTotal, recurring: recurringTotal };
 }
 
-function validateInput(body: any) {
+function validateInput(body: {
+  service?: { id?: unknown };
+  addons?: unknown;
+  paymentMethod?: unknown;
+  totals?: { oneTime?: number; recurring?: number };
+  customerEmail?: string;
+}) {
   if (!body.service?.id || typeof body.service.id !== "string") {
     throw new Error("Invalid service data");
   }
