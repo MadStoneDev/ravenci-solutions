@@ -4,7 +4,8 @@ import FooterEmailCapture from "@/components/footer-email-capture";
 
 type FooterLink = { href: string; label: string; external?: boolean };
 
-// IA per README §2: existing slugs, Branding + Mobile Apps dropped, Labs kept.
+// IA per README §2: existing slugs, Mobile Apps dropped, Labs kept. Branding
+// stays out of the main nav but is linked here in the footer.
 const COLUMNS: { heading: string; links: FooterLink[] }[] = [
   {
     heading: "Services",
@@ -14,6 +15,7 @@ const COLUMNS: { heading: string; links: FooterLink[] }[] = [
       { href: "/web-apps", label: "Web Apps & Client Portals" },
       { href: "/website-maintenance", label: "Hosting & Website Care" },
       { href: "/seo-and-content", label: "SEO / AEO / GEO" },
+      { href: "/business-design", label: "Branding & Brand Identity" },
     ],
   },
   {
