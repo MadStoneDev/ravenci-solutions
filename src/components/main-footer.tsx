@@ -133,8 +133,11 @@ export default function MainFooter() {
             <Link href="/privacy-policy" className="hover:text-foreground">
               Privacy Policy
             </Link>
-            <Link href="/terms-and-conditions" className="hover:text-foreground">
+            <Link href="/terms-of-service" className="hover:text-foreground">
               Terms of Service
+            </Link>
+            <Link href="/terms-and-conditions" className="hover:text-foreground">
+              Terms &amp; Conditions
             </Link>
             <Link href="/accessibility-statement" className="hover:text-foreground">
               Accessibility
