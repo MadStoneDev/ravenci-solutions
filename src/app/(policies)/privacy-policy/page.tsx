@@ -9,12 +9,12 @@ const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 export const metadata: Metadata = {
   title: "Privacy Policy | RAVENCI Solutions",
   description:
-    "How RAVENCI Solutions collects, uses, and protects personal information across our website and services.",
+    "How RAVENCI Solutions collects, uses and protects your personal information across ravenci.solutions and its services.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Privacy Policy | RAVENCI Solutions",
     description:
-      "How RAVENCI Solutions collects, uses, and protects personal information across our website and services.",
+      "How RAVENCI Solutions collects, uses and protects your personal information across ravenci.solutions and its services.",
     url: "/privacy-policy",
     type: "website",
   },
@@ -31,343 +31,262 @@ export default function PrivacyPolicyPage() {
           <SectionLabel label="Legal" tick />
           <h1 className="text-display-l text-foreground">Privacy Policy</h1>
           <p className="text-lead text-muted-foreground">
-            Your privacy is important to us.
+            What I collect, why, and what you can do about it.
           </p>
         </div>
       </section>
 
       <section className={SECTION}>
         <div className="flex max-w-prose flex-col gap-5 text-body text-muted-foreground">
+          <p>Last updated: 9 November 2026</p>
           <p>
-            Your privacy is important to us. It is RAVENCI&#39;s policy to
-            respect your privacy and comply with any applicable law and
-            regulation regarding any personal information we may collect about
-            you, including across our website,{" "}
+            I am Richard Haddad, trading as RAVENCI Solutions (ABN 35 664 615
+            205), a sole trader based in Australia. This policy explains what
+            personal information I collect through my website,{" "}
             <a
               className="text-accent hover:underline"
-              href="https://ravenci.solutions/"
+              href="https://ravenci.solutions"
             >
-              https://ravenci.solutions/
+              ravenci.solutions
             </a>
-            , and other sites we own and operate.{" "}
+            , and the services I provide, why I collect it, and how I look after
+            it. I handle personal information in line with the Australian Privacy
+            Principles.
           </p>
           <p>
-            Personal information is any information about you which can be used
-            to identify you. This includes information about you as a person
-            (such as name, address, and date of birth), your devices, payment
-            details, and even information about how you use a website or online
-            service.{" "}
+            Personal information is any information that can identify you, such as
+            your name, email address, phone number, or details about how you use
+            my website.
           </p>
-          <p>
-            In the event our site contains links to third-party sites and
-            services, please be aware that those sites and services have their
-            own privacy policies. After following a link to any third-party
-            content, you should read their posted privacy policy information
-            about how they collect and use personal information. This Privacy
-            Policy does not apply to any of your activities after you leave our
-            site.{" "}
-          </p>
-          <p>This policy is effective as of 14 April 2021. </p>
-          <p>Last updated: 14 April 2021 </p>
 
-          <h3 className="mt-4 text-heading-s text-foreground">Information We Collect</h3>
-          <p>
-            Information we collect includes both information you knowingly and
-            actively provide us when using or participating in any of our
-            services and promotions, and any information automatically sent by
-            your devices in the course of accessing our products and services.{" "}
-          </p>
-          <h4 className="mt-2 text-body font-semibold text-foreground">Log Data</h4>
-          <p>
-            When you visit our website, our servers may automatically log the
-            standard data provided by your web browser. It may include your
-            device's Internet Protocol (IP) address, your browser type and
-            version, the pages you visit, the time and date of your visit, the
-            time spent on each page, and other details about your visit.{" "}
-          </p>
-          <p>
-            Additionally, if you encounter certain errors while using the site,
-            we may automatically collect data about the error and the
-            circumstances surrounding its occurrence. This data may include
-            technical details about your device, what you were trying to do when
-            the error happened, and other technical information relating to the
-            problem. You may or may not receive notice of such errors, even in
-            the moment they occur, that they have occurred, or what the nature
-            of the error is.{" "}
-          </p>
-          <p>
-            Please be aware that while this information may not be personally
-            identifying by itself, it may be possible to combine it with other
-            data to personally identify individual persons.{" "}
-          </p>
-          <h4 className="mt-2 text-body font-semibold text-foreground">Device Data</h4>
-          <p>
-            When you visit our website or interact with our services, we may
-            automatically collect data about your device, such as:{" "}
-          </p>
-          <ul className="pl-5">
-            <li className="mb-1 list-disc">Device Type</li>
-            <li className="mb-1 list-disc">Operating System</li>
-            <li className="mb-1 list-disc">Geo-location data</li>
-          </ul>
-          <p>
-            Data we collect can depend on the individual settings of your device
-            and software. We recommend checking the policies of your device
-            manufacturer or software provider to learn what information they
-            make available to us.{" "}
-          </p>
-          <h4 className="mt-2 text-body font-semibold text-foreground">Personal Information</h4>
-          <p>
-            We may ask for personal information which may include one or more of
-            the following:{" "}
-          </p>
-          <ul className="pl-5">
-            <li className="mb-1 list-disc">Name</li>
-            <li className="mb-1 list-disc">Email</li>
-          </ul>
-          <h4 className="mt-2 text-body font-semibold text-foreground">
-            Legitimate Reasons for Processing Your Personal Information
-          </h4>
-          <p>
-            We only collect and use your personal information when we have a
-            legitimate reason for doing so. In which instance, we only collect
-            personal information that is reasonably necessary to provide our
-            services to you.{" "}
-          </p>
-          <h4 className="mt-2 text-body font-semibold text-foreground">
-            Collection and Use of Information
-          </h4>
-          <p>
-            We may collect personal information from you when you do any of the
-            following on our website:{" "}
-          </p>
-          <ul className="pl-5">
-            <li className="mb-1 list-disc">
-              Sign up to receive updates from us via email or social media
-              channels
-            </li>
-            <li className="mb-1 list-disc">
-              Use a mobile device or web browser to access our content
-            </li>
-            <li className="mb-1 list-disc">
-              Contact us via email, social media, or on any similar technologies
-            </li>
-            <li className="mb-1 list-disc">
-              When you mention us on social media
-            </li>
-          </ul>
-          <p>
-            We may collect, hold, use, and disclose information for the
-            following purposes, and personal information will not be further
-            processed in a manner that is incompatible with these purposes:{" "}
-          </p>
-          <ul className="pl-5">
-            <li className="mb-1 list-disc">
-              to provide you with our platform's core features and services
-            </li>
-            <li className="mb-1 list-disc">
-              to enable you to customise or personalise your experience of our
-              website
-            </li>
-            <li className="mb-1 list-disc">
-              to contact and communicate with you
-            </li>
-            <li className="mb-1 list-disc">
-              for analytics, market research, and business development,
-              including to operate and improve our website, associated
-              applications, and associated social media platforms
-            </li>
-            <li className="mb-1 list-disc">
-              for security and fraud prevention, and to ensure that our sites
-              and apps are safe, secure, and used in line with our terms of use
-            </li>
-          </ul>
-          <p>
-            Please be aware that we may combine information we collect about you
-            with general information or research data we receive from other
-            trusted sources.{" "}
-          </p>
-          <h4 className="mt-2 text-body font-semibold text-foreground">
-            Security of Your Personal Information
-          </h4>
-          <p>
-            When we collect and process personal information, and while we
-            retain this information, we will protect it within commercially
-            acceptable means to prevent loss and theft, as well as unauthorised
-            access, disclosure, copying, use, or modification.{" "}
-          </p>
-          <p>
-            Although we will do our best to protect the personal information you
-            provide to us, we advise that no method of electronic transmission
-            or storage is 100% secure, and no one can guarantee absolute data
-            security. We will comply with laws applicable to us in respect of
-            any data breach.{" "}
-          </p>
-          <p>
-            You are responsible for selecting any password and its overall
-            security strength, ensuring the security of your own information
-            within the bounds of our services.{" "}
-          </p>
-          <h4 className="mt-2 text-body font-semibold text-foreground">
-            How Long We Keep Your Personal Information
-          </h4>
-          <p>
-            We keep your personal information only for as long as we need to.
-            This time period may depend on what we are using your information
-            for, in accordance with this privacy policy. If your personal
-            information is no longer required, we will delete it or make it
-            anonymous by removing all details that identify you.{" "}
-          </p>
-          <p>
-            However, if necessary, we may retain your personal information for
-            our compliance with a legal, accounting, or reporting obligation or
-            for archiving purposes in the public interest, scientific, or
-            historical research purposes or statistical purposes.{" "}
-          </p>
-          <h3 className="mt-4 text-heading-s text-foreground">Children's Privacy</h3>
-          <p>
-            We do not aim any of our products or services directly at children
-            under the age of 13, and we do not knowingly collect personal
-            information about children under 13.{" "}
-          </p>
           <h3 className="mt-4 text-heading-s text-foreground">
-            Disclosure of Personal Information to Third Parties
+            Information you give me
           </h3>
-          <p>We may disclose personal information to: </p>
+          <p>I collect information you provide directly, for example when you:</p>
           <ul className="pl-5">
             <li className="mb-1 list-disc">
-              a parent, subsidiary, or affiliate of our company
+              fill in a contact or enquiry form (your name, email, phone if you
+              add it, and whatever you write in your message),
             </li>
             <li className="mb-1 list-disc">
-              third party service providers for the purpose of enabling them to
-              provide their services, for example, IT service providers, data
-              storage, hosting and server providers, advertisers, or analytics
-              platforms
+              request a free website audit or visibility check (your website
+              address and the email you want the report sent to),
             </li>
             <li className="mb-1 list-disc">
-              our employees, contractors, and/or related entities
+              sign up to receive updates from me (your email address), or
             </li>
             <li className="mb-1 list-disc">
-              our existing or potential agents or business partners
-            </li>
-            <li className="mb-1 list-disc">
-              courts, tribunals, regulatory authorities, and law enforcement
-              officers, as required by law, in connection with any actual or
-              prospective legal proceedings, or in order to establish, exercise,
-              or defend our legal rights
-            </li>
-            <li className="mb-1 list-disc">
-              third parties, including agents or sub-contractors, who assist us
-              in providing information, products, services, or direct marketing
-              to you
-            </li>
-            <li className="mb-1 list-disc">
-              third parties to collect and process data
+              become a client (the details I need to do the work and invoice you).
             </li>
           </ul>
+
           <h3 className="mt-4 text-heading-s text-foreground">
-            International Transfers of Personal Information
+            Information collected automatically
           </h3>
           <p>
-            The personal information we collect is stored and/or processed in
-            Australia, and United States, or where we or our partners,
-            affiliates, and third-party providers maintain facilities.{" "}
+            When you visit the site, my servers and analytics tools may record
+            standard technical data, such as your IP address, browser type, the
+            pages you view, and the date and time of your visit. On its own this
+            usually does not identify you, but it can when combined with other
+            information.
           </p>
-          <p>
-            The countries to which we store, process, or transfer your personal
-            information may not have the same data protection laws as the
-            country in which you initially provided the information. If we
-            transfer your personal information to third parties in other
-            countries: (i) we will perform those transfers in accordance with
-            the requirements of applicable law; and (ii) we will protect the
-            transferred personal information in accordance with this privacy
-            policy.{" "}
-          </p>
+
           <h3 className="mt-4 text-heading-s text-foreground">
-            Your Rights and Controlling Your Personal Information
+            Cookies and analytics
           </h3>
           <p>
-            You always retain the right to withhold personal information from
-            us, with the understanding that your experience of our website may
-            be affected. We will not discriminate against you for exercising any
-            of your rights over your personal information. If you do provide us
-            with personal information you understand that we will collect, hold,
-            use and disclose it in accordance with this privacy policy. You
-            retain the right to request details of any personal information we
-            hold about you.{" "}
+            Cookies are small files stored on your device. I use a small number
+            of them to run the site and, with your consent, to understand how the
+            site is used so I can improve it.
           </p>
           <p>
-            If we receive personal information about you from a third party, we
-            will protect it as set out in this privacy policy. If you are a
-            third party providing personal information about somebody else, you
-            represent and warrant that you have such person's consent to provide
-            the personal information to us.{" "}
+            When you first visit, a banner lets you accept or decline analytics
+            cookies. Analytics only run if you accept. The analytics tools I use
+            are:
+          </p>
+          <ul className="pl-5">
+            <li className="mb-1 list-disc">
+              Google Analytics and Google Tag Manager, to see which pages are
+              visited and how people find the site, and
+            </li>
+            <li className="mb-1 list-disc">
+              Microsoft Clarity, which can record how visitors interact with
+              pages (such as mouse movement, clicks and scrolling) to help me
+              spot problems and improve the layout.
+            </li>
+          </ul>
+          <p>
+            You can change your mind at any time by clearing cookies in your
+            browser, and you can block cookies in your browser settings, though
+            some parts of the site may not work as well.
+          </p>
+
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Spam protection
+          </h3>
+          <p>
+            I use Cloudflare Turnstile on my forms to tell real people from bots.
+            It may collect limited technical information from your browser to do
+            that. It is there to stop spam, not to track you.
+          </p>
+
+          <h3 className="mt-4 text-heading-s text-foreground">Payments</h3>
+          <p>
+            If you pay me, the payment is handled by my payment providers (such
+            as Stripe and Square). They process your card or bank details on their
+            own secure systems. I do not see or store your full card number.
+          </p>
+
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Why I collect it
+          </h3>
+          <p>I only collect what I reasonably need, and I use it to:</p>
+          <ul className="pl-5">
+            <li className="mb-1 list-disc">
+              reply to your enquiry and provide the services you ask for,
+            </li>
+            <li className="mb-1 list-disc">
+              send you an audit, report or update you requested,
+            </li>
+            <li className="mb-1 list-disc">
+              invoice you and keep proper business records,
+            </li>
+            <li className="mb-1 list-disc">
+              run, protect and improve the website, and
+            </li>
+            <li className="mb-1 list-disc">
+              meet my legal and tax obligations.
+            </li>
+          </ul>
+          <p>I do not sell your personal information to anyone.</p>
+
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Who I share it with
+          </h3>
+          <p>
+            I share personal information only where I need to, and only with
+            providers who help me run my business. These include:
+          </p>
+          <ul className="pl-5">
+            <li className="mb-1 list-disc">
+              email providers I use to send and manage email (MailerSend and
+              MailerLite),
+            </li>
+            <li className="mb-1 list-disc">
+              analytics and spam-protection providers (Google, Microsoft Clarity
+              and Cloudflare),
+            </li>
+            <li className="mb-1 list-disc">
+              payment providers (Stripe and Square),
+            </li>
+            <li className="mb-1 list-disc">
+              hosting and storage providers that run my website and store data,
+              and
+            </li>
+            <li className="mb-1 list-disc">
+              government bodies, courts or authorities where the law requires it.
+            </li>
+          </ul>
+
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Where your information is held
+          </h3>
+          <p>
+            I am based in Australia and I keep personal information in Australia
+            where I can. Some of the providers above are based overseas (for
+            example in the United States), so some information may be stored or
+            processed outside Australia. Where that happens, I take reasonable
+            steps to make sure it is handled with care. Where I have agreed that a
+            client&apos;s data is sensitive or must stay in Australia, I keep it on
+            Australian servers.
+          </p>
+
+          <h3 className="mt-4 text-heading-s text-foreground">
+            How long I keep it
+          </h3>
+          <p>
+            I keep personal information only for as long as I need it for the
+            purpose I collected it, or for as long as the law requires (for
+            example, tax and accounting records). When I no longer need it, I
+            delete it or remove the details that identify you.
+          </p>
+
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Keeping it secure
+          </h3>
+          <p>
+            I take reasonable steps to protect your information from loss, misuse
+            and unauthorised access. No method of sending or storing data online
+            is completely secure, so I cannot promise absolute security, but I
+            treat your information carefully and act quickly if something goes
+            wrong.
+          </p>
+
+          <h3 className="mt-4 text-heading-s text-foreground">Your rights</h3>
+          <p>You can ask me to:</p>
+          <ul className="pl-5">
+            <li className="mb-1 list-disc">
+              tell you what personal information I hold about you,
+            </li>
+            <li className="mb-1 list-disc">
+              correct it if it is wrong or out of date, or
+            </li>
+            <li className="mb-1 list-disc">
+              delete it, where I am not required to keep it.
+            </li>
+          </ul>
+          <p>
+            If you have signed up for updates, every email has an unsubscribe
+            link, and you can opt out at any time. Just email me at the address
+            below and I will help. If you are not happy with how I have handled
+            your information, you can also contact the Office of the Australian
+            Information Commissioner (OAIC) at{" "}
+            <a
+              className="text-accent hover:underline"
+              href="https://www.oaic.gov.au"
+            >
+              oaic.gov.au
+            </a>
+            .
+          </p>
+
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Children&apos;s privacy
+          </h3>
+          <p>
+            My services are aimed at businesses, not children. I do not knowingly
+            collect personal information from children under 13.
+          </p>
+
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Links to other sites
+          </h3>
+          <p>
+            My website may link to other sites I do not control. This policy does
+            not cover them, so please read their own privacy policies when you
+            visit them.
+          </p>
+
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Changes to this policy
+          </h3>
+          <p>
+            I may update this policy from time to time as my business or the law
+            changes. When I do, I will update this page and the date at the top.
+          </p>
+
+          <h3 className="mt-4 text-heading-s text-foreground">Contact</h3>
+          <p>
+            If you have any questions about your privacy or this policy, email me:
           </p>
           <p>
-            If you have previously agreed to us using your personal information
-            for direct marketing purposes, you may change your mind at any time.
-            We will provide you with the ability to unsubscribe from our
-            email-database or opt out of communications. Please be aware we may
-            need to request specific information from you to help us confirm
-            your identity.{" "}
-          </p>
-          <p>
-            If you believe that any information we hold about you is inaccurate,
-            out of date, incomplete, irrelevant, or misleading, please contact
-            us using the details provided in this privacy policy. We will take
-            reasonable steps to correct any information found to be inaccurate,
-            incomplete, misleading, or out of date.{" "}
-          </p>
-          <p>
-            If you believe that we have breached a relevant data protection law
-            and wish to make a complaint, please contact us using the details
-            below and provide us with full details of the alleged breach. We
-            will promptly investigate your complaint and respond to you, in
-            writing, setting out the outcome of our investigation and the steps
-            we will take to deal with your complaint. You also have the right to
-            contact a regulatory body or data protection authority in relation
-            to your complaint.{" "}
-          </p>
-          <h3 className="mt-4 text-heading-s text-foreground">Use of Cookies</h3>
-          <p>
-            We use &ldquo;cookies&rdquo; to collect information about you and
-            your activity across our site. A cookie is a small piece of data
-            that our website stores on your computer, and accesses each time you
-            visit, so we can understand how you use our site. This helps us
-            serve you content based on preferences you have specified.{" "}
-          </p>
-          <p>Please refer to our Cookie Policy for more information. </p>
-          <h3 className="mt-4 text-heading-s text-foreground">Limits of Our Policy</h3>
-          <p>
-            Our website may link to external sites that are not operated by us.
-            Please be aware that we have no control over the content and
-            policies of those sites, and cannot accept responsibility or
-            liability for their respective privacy practices.{" "}
-          </p>
-          <h3 className="mt-4 text-heading-s text-foreground">Changes to This Policy</h3>
-          <p>
-            At our discretion, we may change our privacy policy to reflect
-            updates to our business processes, current acceptable practices, or
-            legislative or regulatory changes. If we decide to change this
-            privacy policy, we will post the changes here at the same link by
-            which you are accessing this privacy policy.{" "}
-          </p>
-          <p>
-            If required by law, we will get your permission or give you the
-            opportunity to opt in to or opt out of, as applicable, any new uses
-            of your personal information.{" "}
-          </p>
-          <h3 className="mt-4 text-heading-s text-foreground">Contact Us</h3>
-          <p>
-            For any questions or concerns regarding your privacy, you may
-            contact us using the following details:{" "}
-          </p>
-          <p>
-            <span className="font-semibold text-foreground">RAVENCI Team</span>
+            <span className="font-semibold text-foreground">
+              Richard Haddad, RAVENCI Solutions
+            </span>
             <br />
             <a
               className="text-accent hover:underline"
-              href="mailto: hello@ravenci.solutions"
+              href="mailto:hello@ravenci.solutions"
             >
               hello@ravenci.solutions
             </a>
