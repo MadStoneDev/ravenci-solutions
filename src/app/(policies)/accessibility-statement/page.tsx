@@ -9,12 +9,12 @@ const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 export const metadata: Metadata = {
   title: "Accessibility Statement | RAVENCI Solutions",
   description:
-    "RAVENCI Solutions is committed to making our website accessible to everyone, including people with disabilities. Learn about our accessibility efforts.",
+    "How RAVENCI Solutions works to keep ravenci.solutions accessible, the standards followed, and how to report an accessibility issue.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Accessibility Statement | RAVENCI Solutions",
     description:
-      "RAVENCI Solutions is committed to making our website accessible to everyone, including people with disabilities. Learn about our accessibility efforts.",
+      "How RAVENCI Solutions works to keep ravenci.solutions accessible, the standards followed, and how to report an accessibility issue.",
     url: "/accessibility-statement",
     type: "website",
   },
@@ -33,7 +33,7 @@ export default function AccessibilityStatementPage() {
             Accessibility Statement
           </h1>
           <p className="text-lead text-muted-foreground">
-            Our commitment to an inclusive web.
+            My commitment to an inclusive web.
           </p>
         </div>
       </section>
@@ -41,71 +41,69 @@ export default function AccessibilityStatementPage() {
       <section className={SECTION}>
         <div className="flex max-w-prose flex-col gap-5 text-body text-muted-foreground">
           <p>
-            RAVENCI Solutions is committed to ensuring our website is accessible
-            to everyone, including people with disabilities. We continuously
-            work to improve the user experience for all visitors and apply the
-            relevant accessibility standards.
+            I want my website to work for everyone, including people with
+            disabilities. I keep working to improve the experience for all
+            visitors and to apply the relevant accessibility standards.
           </p>
 
-          <h3 className="mt-4 text-heading-s text-foreground">Standards We Follow</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Standards I follow
+          </h3>
           <p>
-            We aim to conform to the Web Content Accessibility Guidelines (WCAG)
-            2.1 at Level AA. These guidelines explain how to make web content
-            more accessible to people with a wide range of disabilities,
-            including visual, auditory, physical, speech, cognitive, language,
-            learning, and neurological disabilities.
+            I aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1 at
+            Level AA. These guidelines explain how to make web content more
+            accessible to people with a wide range of disabilities, including
+            visual, auditory, physical, speech, cognitive, language, learning and
+            neurological disabilities.
           </p>
 
-          <h3 className="mt-4 text-heading-s text-foreground">What We Do</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">What I do</h3>
           <ul className="pl-5 list-disc space-y-2">
             <li>
-              Use semantic HTML to ensure content is structured and meaningful
-              for assistive technologies
+              Use semantic HTML so content is structured and meaningful for
+              assistive technologies
             </li>
             <li>
               Provide alternative text for images so screen readers can describe
               visual content
             </li>
+            <li>Keep sufficient colour contrast between text and backgrounds</li>
+            <li>Support keyboard navigation across all interactive elements</li>
             <li>
-              Ensure sufficient colour contrast between text and backgrounds
-            </li>
-            <li>
-              Support keyboard navigation across all interactive elements
-            </li>
-            <li>
-              Use ARIA labels and roles where native HTML elements are not
-              sufficient
+              Use ARIA labels and roles where native HTML elements are not enough
             </li>
             <li>
               Design responsive layouts that work across different screen sizes
               and zoom levels
             </li>
             <li>
-              Avoid content that flashes or blinks in ways that may cause
-              seizures
+              Avoid content that flashes or blinks in ways that may cause seizures
             </li>
           </ul>
 
-          <h3 className="mt-4 text-heading-s text-foreground">Third-Party Content</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Third-party content
+          </h3>
           <p>
-            Our website may include content from third-party services (such as
-            embedded videos, maps, or analytics tools). While we strive to
-            ensure these meet accessibility standards, we cannot guarantee full
-            compliance for content controlled by external providers.
+            My website may include content from third-party services (such as
+            embedded videos, maps or analytics tools). I do my best to make sure
+            these meet accessibility standards, but I cannot guarantee full
+            compliance for content controlled by others.
           </p>
 
-          <h3 className="mt-4 text-heading-s text-foreground">Ongoing Improvements</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Ongoing improvements
+          </h3>
           <p>
-            Accessibility is an ongoing effort. We regularly review our website
-            and make updates to improve usability. As web standards evolve, we
-            update our practices to reflect current best practices.
+            Accessibility is an ongoing effort. I review the website regularly and
+            make updates to improve usability. As web standards evolve, I update
+            my practices to match.
           </p>
 
           <h3 className="mt-4 text-heading-s text-foreground">Feedback</h3>
           <p>
-            If you experience any difficulty accessing our website or have
-            suggestions for improvement, we want to hear from you. Please
-            contact us:
+            If you have trouble using any part of my website, or you have a
+            suggestion, I want to hear from you. Please get in touch:
           </p>
           <ul className="pl-5 list-disc space-y-2">
             <li>
@@ -125,12 +123,12 @@ export default function AccessibilityStatementPage() {
             </li>
           </ul>
           <p>
-            We take accessibility feedback seriously and will do our best to
-            respond within 2 business days.
+            I take accessibility feedback seriously and will do my best to respond
+            within 2 business days.
           </p>
 
           <p className="mt-8 text-small text-muted-foreground">
-            This statement was last updated on 4 March 2026.
+            This statement was last updated on 9 November 2026.
           </p>
         </div>
       </section>
