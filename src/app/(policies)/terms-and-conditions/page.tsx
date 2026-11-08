@@ -9,12 +9,12 @@ const SECTION = "px-5 py-14 md:px-12 md:py-20 lg:px-20";
 export const metadata: Metadata = {
   title: "Terms and Conditions | RAVENCI Solutions",
   description:
-    "Terms of Service governing the use of ravenci.solutions and services provided by RAVENCI Solutions.",
+    "The terms and conditions for using the ravenci.solutions website. For buying services, see the RAVENCI Solutions Terms of Service.",
   openGraph: {
     ...OG_DEFAULTS,
     title: "Terms and Conditions | RAVENCI Solutions",
     description:
-      "Terms of Service governing the use of ravenci.solutions and services provided by RAVENCI Solutions.",
+      "The terms and conditions for using the ravenci.solutions website. For buying services, see the RAVENCI Solutions Terms of Service.",
     url: "/terms-and-conditions",
     type: "website",
   },
@@ -32,254 +32,149 @@ export default function TermsAndConditionsPage() {
           <h1 className="text-display-l text-foreground">
             Terms and Conditions
           </h1>
-          <p className="text-lead text-muted-foreground">Terms of Service.</p>
+          <p className="text-lead text-muted-foreground">
+            The rules for using this website.
+          </p>
         </div>
       </section>
 
       <section className={SECTION}>
         <div className="flex max-w-prose flex-col gap-5 text-body text-muted-foreground">
+          <p>Last updated: 9 November 2026</p>
           <p>
-            These Terms of Service govern your use of the website located at{" "}
+            These terms and conditions cover your use of my website,{" "}
             <a
               className="text-accent hover:underline"
               href="https://ravenci.solutions"
             >
-              https://ravenci.solutions
-            </a>{" "}
-            and any related services provided by RAVENCI.
-          </p>
-          <p>
-            By accessing{" "}
-            <a
-              className="text-accent hover:underline"
-              href="https://ravenci.solutions"
-            >
-              https://ravenci.solutions
+              ravenci.solutions
             </a>
-            , you agree to abide by these Terms of Service and to comply with
-            all applicable laws and regulations. If you do not agree with these
-            Terms of Service, you are prohibited from using or accessing this
-            website or using any other services provided by RAVENCI.
+            . By using the site, you agree to these terms and to follow all
+            applicable laws. If you do not agree, please do not use the site.
           </p>
           <p>
-            We, RAVENCI, reserve the right to review and amend any of these
-            Terms of Service at our sole discretion. Upon doing so, we will
-            update this page. Any changes to these Terms of Service will take
-            effect immediately from the date of publication.
+            These are the rules for using the website itself. When you buy a
+            service from me, the{" "}
+            <a className="text-accent hover:underline" href="/terms-of-service">
+              Terms of Service
+            </a>{" "}
+            apply, and they cover quotes, payment, hosting, ownership and the rest
+            of the working relationship.
           </p>
-          <p>These Terms of Service were last updated on 3 October 2026.</p>
+          <p>
+            I am Richard Haddad, trading as RAVENCI Solutions (ABN 35 664 615
+            205). I may update these terms from time to time, and the current
+            version always lives on this page.
+          </p>
 
-          <h3 className="mt-4 text-heading-s text-foreground">Hosting, Maintenance and Website Care</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Using this website
+          </h3>
           <p>
-            The following terms apply to hosting, maintenance, Website Care, and
-            the online store add-on, in addition to any separate proposal or
-            agreement for project work:
+            You agree that you will not, for yourself or anyone you act for:
           </p>
           <ul className="pl-5">
             <li className="mb-1 list-disc">
-              <span className="font-semibold text-foreground">Care plans</span>{" "}
-              are billed monthly in advance and can be cancelled at any time by
-              giving written notice. The plan stays active until the end of the
-              current billing month, and no further charges are made after that.
-              Payments for the current month are non-refundable, except where a
-              refund is required by law.
+              copy, modify, reverse engineer or make derivative works of the
+              materials or software on this website;
             </li>
             <li className="mb-1 list-disc">
-              <span className="font-semibold text-foreground">
-                Website Care hours
-              </span>{" "}
-              cover design, development, content updates and small SEO tasks.
-              Month to month, up to 25% of unused hours roll into the next month
-              and then expire. Work beyond the included hours is billed at the
-              plan&apos;s extra-hour rate, and only after we confirm it with you.
+              remove any copyright or ownership notices from the materials;
             </li>
             <li className="mb-1 list-disc">
-              <span className="font-semibold text-foreground">
-                The optional 12-month Website Care contract
-              </span>{" "}
-              is billed monthly. In exchange for the 12-month commitment, all
-              unused hours roll over, and each month&apos;s rolled-over hours
-              expire after two months. If the contract is ended early, a fee
-              equal to one month of the plan applies and all rolled-over hours
-              are forfeited. At the end of the term, any remaining rolled-over
-              hours are forfeited. [NEEDS LEGAL REVIEW]
+              copy or mirror the materials on another server;
             </li>
             <li className="mb-1 list-disc">
-              <span className="font-semibold text-foreground">Hosting</span> is
-              included in the Hosting + Maintenance plan for as long as it is
-              active. Maintenance on its own, and the Website Care plans (Cover,
-              Growth and Partner), do not include hosting. Standalone hosting,
-              for sites maintained by another reputable provider, is $39 per
-              month.
+              use the website in a way that abuses, disrupts or overloads it or
+              any service I provide;
             </li>
             <li className="mb-1 list-disc">
-              <span className="font-semibold text-foreground">
-                The online store add-on
-              </span>{" "}
-              is $180 per month and may be added to the Maintenance or Hosting +
-              Maintenance plans only. It is not available on Website Care plans.
+              use the website to send or publish anything harassing, indecent,
+              misleading, fraudulent or unlawful;
             </li>
             <li className="mb-1 list-disc">
-              <span className="font-semibold text-foreground">
-                When a care plan or hosting ends,
-              </span>{" "}
-              hosting continues until the end of the paid period. On request,
-              we'll provide your website files and database and reasonable help
-              moving your site to a new host, provided your account is paid up to
-              date. Additional migration work beyond reasonable assistance is
-              billed at $165 per hour.
-            </li>
-          </ul>
-          <p>Prices are in Australian dollars.</p>
-
-          <h3 className="mt-4 text-heading-s text-foreground">Limitations of Use</h3>
-          <p>
-            By using this website, you warrant on behalf of yourself, your
-            users, and other parties you represent that you will not:
-          </p>
-          <ul className="pl-5">
-            <li className="mb-1 list-disc">
-              modify, copy, prepare derivative works of, decompile, or reverse
-              engineer any materials and software contained on this website;
+              use the website to send spam or unauthorised advertising;
             </li>
             <li className="mb-1 list-disc">
-              remove any copyright or other proprietary notations from any
-              materials and software on this website;
-            </li>
-            <li className="mb-1 list-disc">
-              transfer the materials to another person or "mirror" the materials
-              on any other server;
-            </li>
-            <li className="mb-1 list-disc">
-              knowingly or negligently use this website or any of its associated
-              services in a way that abuses or disrupts our networks or any
-              other service RAVENCI provides;
-            </li>
-            <li className="mb-1 list-disc">
-              use this website or its associated services to transmit or publish
-              any harassing, indecent, obscene, fraudulent, or unlawful
-              material;
-            </li>
-            <li className="mb-1 list-disc">
-              use this website or its associated services in violation of any
-              applicable laws or regulations;
-            </li>
-            <li className="mb-1 list-disc">
-              use this website in conjunction with sending unauthorised
-              advertising or spam;
-            </li>
-            <li className="mb-1 list-disc">
-              harvest, collect, or gather user data without the user's consent;
+              harvest or collect other people&apos;s data without their consent;
               or
             </li>
             <li className="mb-1 list-disc">
-              use this website or its associated services in such a way that may
-              infringe the privacy, intellectual property rights, or other
-              rights of third parties.
+              use the website in a way that infringes the privacy or
+              intellectual property of others.
             </li>
           </ul>
 
-          <h3 className="mt-4 text-heading-s text-foreground">Intellectual Property</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Intellectual property
+          </h3>
           <p>
-            The intellectual property in the materials contained in this website
-            are owned by or licensed to RAVENCI and are protected by applicable
-            copyright and trademark law. We grant our users permission to
-            download one copy of the materials for personal, non-commercial
-            transitory use.
-          </p>
-          <p>
-            This constitutes the grant of a licence, not a transfer of title.
-            This licence shall automatically terminate if you violate any of
-            these restrictions or the Terms of Service, and may be terminated by
-            RAVENCI at any time.
+            The content on this website (text, design, code, logos and images) is
+            owned by or licensed to me and is protected by copyright and trade
+            mark law. You may view and use the site for your own personal,
+            non-commercial use. That is a licence to use the site, not a transfer
+            of ownership, and it ends if you break these terms.
           </p>
 
-          <h3 className="mt-4 text-heading-s text-foreground">Liability</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">
+            The website is provided as is
+          </h3>
           <p>
-            Our website and the materials on our website are provided on an 'as
-            is' basis. To the extent permitted by law, RAVENCI makes no
-            warranties, expressed or implied, and hereby disclaims and negates
-            all other warranties including, without limitation, implied
-            warranties or conditions of merchantability, fitness for a
-            particular purpose, or non-infringement of intellectual property, or
-            other violation of rights.
+            I keep the website accurate and up to date as best I can, but it is
+            provided on an &ldquo;as is&rdquo; basis and is for general
+            information only. To the extent the law allows, I do not guarantee
+            that the website will be error free, uninterrupted, or that the
+            information on it is complete or current.
           </p>
           <p>
-            In no event shall RAVENCI or its suppliers be liable for any
-            consequential loss suffered or incurred by you or any third party
-            arising from the use or inability to use this website or the
-            materials on this website, even if RAVENCI or an authorised
-            representative has been notified, orally or in writing, of the
-            possibility of such damage.
-          </p>
-          <p>
-            In the context of this agreement, &ldquo;consequential loss&rdquo;
-            includes any consequential loss, indirect loss, real or anticipated
-            loss of profit, loss of benefit, loss of revenue, loss of business,
-            loss of goodwill, loss of opportunity, loss of savings, loss of
-            reputation, loss of use and/or loss or corruption of data, whether
-            under statute, contract, equity, tort (including negligence),
-            indemnity, or otherwise.
-          </p>
-          <p>
-            Because some jurisdictions do not allow limitations on implied
-            warranties, or limitations of liability for consequential or
-            incidental damages, these limitations may not apply to you.
+            Nothing in these terms takes away any rights you have under the
+            Australian Consumer Law that cannot be excluded. Beyond those rights,
+            I am not responsible for any loss arising from your use of, or
+            inability to use, this website.
           </p>
 
-          <h3 className="mt-4 text-heading-s text-foreground">Accuracy of Materials</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Links to other sites
+          </h3>
           <p>
-            The materials appearing on our website are not comprehensive and are
-            for general information purposes only. RAVENCI does not warrant or
-            make any representations concerning the accuracy, likely results, or
-            reliability of the use of the materials on this website, or
-            otherwise relating to such materials or on any resources linked to
-            this website.
+            This website may link to sites I do not run. I have not reviewed all
+            of them and I am not responsible for their content. A link is not an
+            endorsement, so please make your own judgement about any site you
+            visit from here.
           </p>
 
-          <h3 className="mt-4 text-heading-s text-foreground">Links</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">
+            Suspending access
+          </h3>
           <p>
-            RAVENCI has not reviewed all of the sites linked to its website and
-            is not responsible for the contents of any such linked site. The
-            inclusion of any link does not imply endorsement, approval, or
-            control by RAVENCI of the site. Use of any such linked site is at
-            your own risk and we strongly advise you make your own
-            investigations with respect to the suitability of those sites.
+            I may suspend or withdraw your access to the website at any time if
+            you break these terms.
           </p>
 
-          <h3 className="mt-4 text-heading-s text-foreground">Right to Terminate</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">
+            If part of these terms does not hold
+          </h3>
           <p>
-            We may suspend or terminate your right to use our website and
-            terminate these Terms of Service immediately upon written notice to
-            you for any breach of these Terms of Service.
+            If any part of these terms is found to be invalid or unenforceable,
+            that part is removed and the rest still applies.
           </p>
 
-          <h3 className="mt-4 text-heading-s text-foreground">Severance</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Governing law</h3>
           <p>
-            Any term of these Terms of Service which is wholly or partially void
-            or unenforceable is severed to the extent that it is void or
-            unenforceable. The validity of the remainder of these Terms of
-            Service is not affected.
+            These terms are governed by the laws of Queensland, Australia, and
+            both of us submit to the non-exclusive jurisdiction of its courts.
           </p>
 
-          <h3 className="mt-4 text-heading-s text-foreground">Governing Law</h3>
+          <h3 className="mt-4 text-heading-s text-foreground">Contact</h3>
+          <p>If you have any questions about these terms, email me:</p>
           <p>
-            These Terms of Service are governed by and construed in accordance
-            with the laws of Australia. You irrevocably submit to the exclusive
-            jurisdiction of the courts in that State or location.
-          </p>
-
-          <h3 className="mt-4 text-heading-s text-foreground">Contact Us</h3>
-          <p>
-            For any questions or concerns regarding these terms, you may contact
-            us using the following details:
-          </p>
-          <p>
-            <span className="font-semibold text-foreground">RAVENCI Team</span>
+            <span className="font-semibold text-foreground">
+              Richard Haddad, RAVENCI Solutions
+            </span>
             <br />
             <a
               className="text-accent hover:underline"
-              href="mailto: hello@ravenci.solutions"
+              href="mailto:hello@ravenci.solutions"
             >
               hello@ravenci.solutions
             </a>
