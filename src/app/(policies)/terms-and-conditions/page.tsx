@@ -27,7 +27,7 @@ export default function TermsAndConditionsPage() {
     <main className="flex flex-col">
       <section className="px-5 pt-5 pb-10 md:px-12 md:pt-10 md:pb-20 lg:px-20 border-b border-border">
         <Breadcrumbs items={[{ label: "Terms and Conditions" }]} className="mb-5 md:mb-10" />
-        <div className="flex max-w-3xl flex-col gap-4">
+        <div className="flex max-w-5xl flex-col gap-4">
           <SectionLabel label="Legal" tick />
           <h1 className="text-display-l text-foreground">
             Terms and Conditions
@@ -39,7 +39,7 @@ export default function TermsAndConditionsPage() {
       </section>
 
       <section className={SECTION}>
-        <div className="flex max-w-prose flex-col gap-5 text-body text-muted-foreground">
+        <div className="flex max-w-5xl flex-col gap-5 text-body text-muted-foreground">
           <p>Last updated: 9 November 2026</p>
           <p>
             These terms and conditions cover your use of my website,{" "}

@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
     <main className="flex flex-col">
       <section className="px-5 pt-5 pb-10 md:px-12 md:pt-10 md:pb-20 lg:px-20 border-b border-border">
         <Breadcrumbs items={[{ label: "Privacy Policy" }]} className="mb-5 md:mb-10" />
-        <div className="flex max-w-3xl flex-col gap-4">
+        <div className="flex max-w-5xl flex-col gap-4">
           <SectionLabel label="Legal" tick />
           <h1 className="text-display-l text-foreground">Privacy Policy</h1>
           <p className="text-lead text-muted-foreground">
@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
       </section>
 
       <section className={SECTION}>
-        <div className="flex max-w-prose flex-col gap-5 text-body text-muted-foreground">
+        <div className="flex max-w-5xl flex-col gap-5 text-body text-muted-foreground">
           <p>Last updated: 9 November 2026</p>
           <p>
             I am Richard Haddad, trading as RAVENCI Solutions (ABN 35 664 615
