@@ -194,7 +194,8 @@ export default function TermsOfServicePage() {
           </p>
           <ul className="pl-5">
             <li className="mb-1 list-disc">
-              your data and backups may be deleted, and
+              your data and backups are kept for 30 days and then removed, as set
+              out in clause 11, and
             </li>
             <li className="mb-1 list-disc">
               a domain I renew on your behalf may be allowed to lapse, which can
@@ -305,6 +306,32 @@ export default function TermsOfServicePage() {
               help you deal with them.
             </li>
           </ul>
+          <h4 className="mt-2 text-body font-semibold text-foreground">
+            Your old website after a new build
+          </h4>
+          <p>
+            When I build you a new website, I keep your old website reachable on a
+            temporary address for 3 months after the new one goes live, as a
+            safety net. After that it is taken down and not kept, so save anything
+            you still need from the old site within those 3 months.
+          </p>
+          <h4 className="mt-2 text-body font-semibold text-foreground">
+            Backups when a service ends
+          </h4>
+          <p>
+            When an ongoing service ends, for any reason, I keep your most recent
+            backup for 30 days and then remove it. I do not hold backups
+            indefinitely, so if you are leaving, download what you need, or ask
+            me, within that month.
+          </p>
+          <h4 className="mt-2 text-body font-semibold text-foreground">Leaving</h4>
+          <p>
+            When a hosting, maintenance or Website Care service ends, hosting runs
+            until the end of the period you have paid for. If your account is paid
+            up to date, I will give you your website files and database, and
+            reasonable help moving to a new host, on request. Migration work
+            beyond reasonable help is billed at $165 per hour.
+          </p>
 
           <h3 className="mt-4 text-heading-s text-foreground">
             12. Search visibility (SEO, AEO, GEO)
