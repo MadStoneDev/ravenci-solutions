@@ -36,7 +36,7 @@ const csp = [
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   `img-src 'self' data: blob: https:${pbUrl ? " " + pbUrl : ""}`,
   "font-src 'self' data: https://fonts.gstatic.com",
-  `connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com https://challenges.cloudflare.com https://api.stripe.com https://*.upstash.io https://getscreen.me${pbUrl ? " " + pbUrl : ""}`,
+  `connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com https://challenges.cloudflare.com https://api.stripe.com https://getscreen.me${pbUrl ? " " + pbUrl : ""}`,
   "frame-src https://js.stripe.com https://challenges.cloudflare.com https://*.calendly.com https://getscreen.me",
   "media-src 'self' blob:",
   "object-src 'none'",

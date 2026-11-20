@@ -1,33 +1,22 @@
 // Shared guards for public-facing API routes: Turnstile + per-IP rate limit.
-// Rate limit is backed by Upstash Redis so it works correctly across multiple
-// app instances. If Upstash isn't configured we fall back to a per-instance
-// in-memory limiter rather than allowing everything through, this still
-// throttles a flooding IP and, crucially, doesn't silently disable the limiter
-// in production if the env vars go missing on a deploy.
+// Rate limit is a fixed-window counter in Valkey (INCR + EXPIRE NX) so it works
+// across multiple app instances. If Valkey isn't configured, or is unreachable,
+// we fail open to a per-instance in-memory limiter rather than erroring or
+// allowing everything through: requests never hang or 500 because of Valkey,
+// a flooding IP is still throttled, and the limiter isn't silently disabled in
+// production if the env var goes missing on a deploy.
 
-import { Ratelimit } from "@upstash/ratelimit";
-import { Redis } from "@upstash/redis";
-
-const upstashUrl = process.env.UPSTASH_URL;
-const upstashToken = process.env.UPSTASH_API_TOKEN;
+import { getRedis } from "@/lib/redis";
 
 const RATE_LIMIT_MAX = 5;
 const RATE_LIMIT_WINDOW_MS = 60_000;
-
-const ratelimit =
-  upstashUrl && upstashToken
-    ? new Ratelimit({
-        redis: new Redis({ url: upstashUrl, token: upstashToken }),
-        limiter: Ratelimit.slidingWindow(RATE_LIMIT_MAX, "1 m"),
-        analytics: false,
-        prefix: "ravenci:ratelimit",
-      })
-    : null;
+const RATE_LIMIT_WINDOW_S = RATE_LIMIT_WINDOW_MS / 1000;
 
 // Per-instance fallback limiter. Not shared across instances, but a reasonable
-// safety net when Upstash is unavailable. Timestamps are pruned on access.
+// safety net when Valkey is unavailable. Timestamps are pruned on access.
 const memoryHits = new Map<string, number[]>();
-let warnedNoUpstash = false;
+let warnedNoValkey = false;
+let lastValkeyErrorLogAt = 0;
 
 function memoryRateLimit(key: string): { ok: boolean; retryAfter?: number } {
   const now = Date.now();
@@ -64,20 +53,60 @@ export async function checkRateLimit(
 ): Promise<{ ok: boolean; retryAfter?: number }> {
   const key = `${scope}:${getClientIp(req)}`;
 
-  if (!ratelimit) {
-    if (process.env.NODE_ENV === "production" && !warnedNoUpstash) {
-      warnedNoUpstash = true;
+  const redis = getRedis();
+  if (!redis) {
+    if (process.env.NODE_ENV === "production" && !warnedNoValkey) {
+      warnedNoValkey = true;
       console.error(
-        "Rate limiting: Upstash not configured in production, using per-instance in-memory fallback.",
+        "Rate limiting: VALKEY_URL not configured in production, using per-instance in-memory fallback.",
       );
     }
     return memoryRateLimit(key);
   }
 
-  const { success, reset } = await ratelimit.limit(key);
+  try {
+    return await valkeyRateLimit(redis, `ratelimit:${key}`);
+  } catch (err) {
+    // Valkey down or slow: fail open to the in-memory limiter. The client's
+    // connect/command timeouts bound this to ~1.5s. Log at most every 30s.
+    const now = Date.now();
+    if (now - lastValkeyErrorLogAt > 30_000) {
+      lastValkeyErrorLogAt = now;
+      console.error(
+        "Rate limiting: Valkey unavailable, using in-memory fallback:",
+        err instanceof Error ? err.message : err,
+      );
+    }
+    return memoryRateLimit(key);
+  }
+}
 
-  if (!success) {
-    return { ok: false, retryAfter: Math.max(1, Math.ceil((reset - Date.now()) / 1000)) };
+// Fixed window: the first hit in a window creates the counter and sets its
+// TTL (EXPIRE NX only sets it once), later hits just increment. The key
+// expires at the end of the window, which resets the count.
+async function valkeyRateLimit(
+  redis: NonNullable<ReturnType<typeof getRedis>>,
+  key: string,
+): Promise<{ ok: boolean; retryAfter?: number }> {
+  const results = await redis
+    .multi()
+    .incr(key)
+    .expire(key, RATE_LIMIT_WINDOW_S, "NX")
+    .pttl(key)
+    .exec();
+
+  // exec() resolves to [err, result] tuples (or null if the transaction was
+  // aborted). Any per-command error is treated like Valkey being down.
+  if (!results) throw new Error("rate limit transaction aborted");
+  for (const [err] of results) if (err) throw err;
+
+  const count = Number(results[0][1]);
+  const pttl = Number(results[2][1]);
+
+  if (count > RATE_LIMIT_MAX) {
+    const retryAfter =
+      pttl > 0 ? Math.max(1, Math.ceil(pttl / 1000)) : RATE_LIMIT_WINDOW_S;
+    return { ok: false, retryAfter };
   }
   return { ok: true };
 }
